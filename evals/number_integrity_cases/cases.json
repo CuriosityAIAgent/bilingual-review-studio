@@ -1,0 +1,74 @@
+[
+  {
+    "id": "num-billon-singular",
+    "category": "number_integrity",
+    "source": "Assets under management crossed 1 billion this year.",
+    "target": "Los activos bajo gestión superaron 1 billón este año.",
+    "expect": "fail",
+    "validator": "number",
+    "note": "Singular billón for English billion (10^9 vs 10^12). Correct rendering is 'mil millones'. Validator flags the bill[oó]n form when source contains 'billion'."
+  },
+  {
+    "id": "num-billones-plural",
+    "category": "number_integrity",
+    "source": "The strategy attracted 12 billion in net new inflows.",
+    "target": "La estrategia atrajo 12 billones en nuevas entradas netas.",
+    "expect": "fail",
+    "validator": "number",
+    "note": "Plural billones for English billion. Should be 'mil millones'. Mantissa 12 is preserved but the scale word is the dangerous 10^12 form, which the validator blocks."
+  },
+  {
+    "id": "num-trillon",
+    "category": "number_integrity",
+    "source": "The market is worth over 2 trillion dollars.",
+    "target": "El mercado vale más de 2 trillones de dólares.",
+    "expect": "fail",
+    "validator": "number",
+    "note": "Non-standard 'trillones' for English trillion. House term is 'billón' (locale scale_terms.trillion). Validator flags trill[oó]n(es) when source has 'trillion'."
+  },
+  {
+    "id": "num-dropped-negative",
+    "category": "number_integrity",
+    "source": "The benchmark fell -1.8% over the period.",
+    "target": "El índice de referencia cayó 1.8% durante el periodo.",
+    "expect": "fail",
+    "validator": "number",
+    "note": "Dropped negative sign: source signed mantissa -1.8 not present in target (only 1.8). Validator compares signed mantissas and flags the missing -1.8."
+  },
+  {
+    "id": "num-changed-digit",
+    "category": "number_integrity",
+    "source": "Net margin expanded to 24.3% in the quarter.",
+    "target": "El margen neto se amplió al 24.7% en el trimestre.",
+    "expect": "fail",
+    "validator": "number",
+    "note": "Changed mantissa: 24.3 became 24.7. Source mantissa 24.3 is absent from the target, a critical numeric drift."
+  },
+  {
+    "id": "num-dropped-percent",
+    "category": "number_integrity",
+    "source": "Default rates remain below 3% across the cohort.",
+    "target": "Las tasas de incumplimiento permanecen por debajo de 3 en la cohorte.",
+    "expect": "fail",
+    "validator": "number",
+    "note": "Dropped percent sign: source has one '%', target has none. The percent-marker count check fails (tgtPct < srcPct)."
+  },
+  {
+    "id": "num-clean-billion-millardos",
+    "category": "number_integrity",
+    "source": "Inflows reached 5 billion dollars in the first half.",
+    "target": "Las entradas alcanzaron los 5 mil millones de dólares en el primer semestre.",
+    "expect": "pass",
+    "validator": "number",
+    "note": "Clean: billion correctly rendered 'mil millones', mantissa 5 preserved, no billón form present."
+  },
+  {
+    "id": "num-clean-signed-percent",
+    "category": "number_integrity",
+    "source": "The position returned -2.4% versus a 24.3% benchmark gain.",
+    "target": "La posición rindió -2.4% frente a una ganancia del 24.3% del índice de referencia.",
+    "expect": "pass",
+    "validator": "number",
+    "note": "Clean: both mantissas (-2.4 and 24.3) preserved with signs, both percent markers preserved. Validator passes."
+  }
+]

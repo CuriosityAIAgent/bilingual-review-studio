@@ -1,0 +1,52 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Neutral Latin-American Spanish (español neutro, es-419) — the v1 default target.
+#
+# Number/locale formatting follows the bank's approved style guide. We do NOT
+# assert a single universally-correct format (institutions vary — spec §10).
+# The default below is the common institutional style; override per desk.
+# ─────────────────────────────────────────────────────────────────────────────
+
+locale: es-419
+name: "Español neutro (Latinoamérica)"
+description: >
+  Pan-regional Spanish for cross-market distribution. No country-specific lexicon,
+  no vosotros (use ustedes), formal institutional register. One deliverable, not
+  N regional variants (spec §2).
+
+number_format:
+  # Default institutional style. OVERRIDE per locale/style config if the desk
+  # uses 1.234,56 (point thousands, comma decimal).
+  thousands_separator: ","
+  decimal_separator: "."
+  example: "1,234.56"
+
+# The billón trap (spec §10) — the single most dangerous finance mistranslation.
+scale_terms:
+  # English 10^9 → Spanish "mil millones" (NEVER "billón", which is 10^12).
+  billion: "mil millones"
+  # English 10^12 → the approved house term. Some institutions prefer
+  # "millones de millones" to avoid ambiguity. Set per glossary; do not hardcode.
+  trillion: "billón"
+  basis_points: "puntos básicos"
+
+style:
+  second_person: ustedes          # never vosotros
+  register: formal
+  percent_placement: after        # "5 %" / "5%" → after the number
+  currency_symbol_placement: before  # "USD 1,234.56" / "$1,234.56"
+
+# Peninsular-only lexicon to flag (must be neutralized before auto-pass).
+regional_flags:
+  peninsular:
+    - vosotros
+    - coche       # → automóvil / vehículo / carro (neutral)
+    - ordenador   # → computadora
+    - móvil       # → teléfono móvil / celular (context)
+    - zumo        # → jugo
+    - cotización (as quote)  # context-dependent
+  mexican:
+    # Genuinely Mexican-only lexicon. NOTE: "computadora" is NEUTRal/pan-LatAm and
+    # is intentionally NOT flagged. Only colloquialisms that clash cross-market.
+    - platicar    # → conversar / hablar
+    - checar      # → verificar / revisar
+    - ahorita     # → en breve / de inmediato (ambiguous register)

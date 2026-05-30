@@ -1,0 +1,56 @@
+[
+  {
+    "id": "disc-fuzzy-variation",
+    "category": "disclaimer",
+    "source": "Past performance is not a guarantee of future results.",
+    "target": "El rendimiento pasado no es garantía de resultados futuros y no debe considerarse indicativo.",
+    "expect": "fail",
+    "validator": "disclaimer",
+    "blockType": "disclaimer",
+    "disclaimer": { "status": "fuzzy", "tmScore": 0.82 },
+    "note": "Fuzzy variation of approved boilerplate: the wording drifts from the locked TM (extra clause added), so PREPARE routes it as a FUZZY match. Disclaimer validator fails (major, blocking) and routes to Compliance — never auto-approve."
+  },
+  {
+    "id": "disc-unknown",
+    "category": "disclaimer",
+    "source": "Capital at risk. This communication is for institutional investors only and is not investment advice.",
+    "target": "Capital en riesgo. Esta comunicación es solo para inversionistas institucionales y no constituye asesoramiento de inversión.",
+    "expect": "fail",
+    "validator": "disclaimer",
+    "blockType": "disclaimer",
+    "disclaimer": { "status": "unknown", "tmScore": 0.31 },
+    "note": "Unknown disclaimer: no approved Spanish wording exists in the TM (similarity below fuzzy floor). Validator fails (critical, blocking) and blocks publish until approved wording is added — regulated boilerplate is never freely machine-translated."
+  },
+  {
+    "id": "disc-exact-match",
+    "category": "disclaimer",
+    "source": "Past performance is not a guarantee of future results.",
+    "target": "El rendimiento pasado no es garantía de resultados futuros.",
+    "expect": "pass",
+    "validator": "disclaimer",
+    "blockType": "disclaimer",
+    "disclaimer": { "status": "exact", "tmScore": 1.0 },
+    "note": "Clean counterpart: exact match to the approved Spanish TM entry. PREPARE auto-fills and locks the wording, and the disclaimer validator passes."
+  },
+  {
+    "id": "disc-english-leakage",
+    "category": "disclaimer",
+    "source": "This material is for informational purposes only and does not constitute investment advice.",
+    "target": "Este material es solo para informational purposes y no constituye asesoramiento de investment.",
+    "expect": "fail",
+    "validator": "english_leakage",
+    "blockType": "disclaimer",
+    "note": "Residual English leakage: untranslated tokens 'informational' (via 'purposes'), 'purposes', and 'investment' remain in the Spanish target. The english_leakage validator counts unambiguously-English words ('investment','for' etc.); three or more makes it major and blocking."
+  },
+  {
+    "id": "disc-clean-no-leakage",
+    "category": "disclaimer",
+    "source": "This material is for informational purposes only and does not constitute investment advice.",
+    "target": "Este material tiene fines exclusivamente informativos y no constituye asesoramiento de inversión.",
+    "expect": "pass",
+    "validator": "english_leakage",
+    "blockType": "disclaimer",
+    "disclaimer": { "status": "exact", "tmScore": 1.0 },
+    "note": "Clean counterpart: fully neutral Spanish with no residual English tokens, matching the approved TM exactly. Both english_leakage and disclaimer validators pass."
+  }
+]

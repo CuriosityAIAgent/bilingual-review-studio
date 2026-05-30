@@ -1,0 +1,22 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# RBAC matrix (spec §4, Appendix C). Roles: author, reviewer, approver, admin, viewer.
+# `in_scope` = limited to the user's/team's assigned segments or document.
+# Disclaimers ALWAYS escalate to approver/compliance regardless of role.
+# ─────────────────────────────────────────────────────────────────────────────
+
+actions:
+  upload_translate:        { author: true,  reviewer: false,        approver: false, admin: true,  viewer: false }
+  edit_target:             { author: in_scope, reviewer: in_scope_neutralize, approver: true, admin: true, viewer: false }
+  propose_change_or_rule:  { author: true,  reviewer: true,         approver: true,  admin: true,  viewer: false }
+  accept_reject:           { author: false, reviewer: in_scope_non_disclaimer, approver: true, admin: true, viewer: false }
+  approve_rule:            { author: false, reviewer: per_policy,   approver: true,  admin: true,  viewer: false }
+  deprecate_rule:          { author: false, reviewer: false,        approver: false, admin: true,  viewer: false }
+  comment:                 { author: true,  reviewer: true,         approver: true,  admin: true,  viewer: false }
+  handoff:                 { author: true,  reviewer: true,         approver: true,  admin: true,  viewer: false }
+  lock_segment:            { author: false, reviewer: false,        approver: true,  admin: true,  viewer: false }
+  approve_publish:         { author: false, reviewer: false,        approver: true,  admin: true,  viewer: false }
+  manage_org:              { author: false, reviewer: false,        approver: false, admin: true,  viewer: false }
+  view:                    { author: true,  reviewer: true,         approver: true,  admin: true,  viewer: true }
+
+# Whether an in-scope reviewer may approve neutralization rules (vs approver-only).
+reviewer_can_approve_rules: false

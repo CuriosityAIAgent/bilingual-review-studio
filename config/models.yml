@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Models & prompts (spec §6) — CONFIG, never hardcoded in source.
+#
+# Principle: the translator and the critic must be DIFFERENT model families so
+# the judge does not share the generator's blind spots. Pin exact IDs per
+# deployment; swap providers without touching code.
+#
+# If a provider's API key is absent at runtime, that stage falls back to a
+# deterministic fixture/heuristic (mode: fixture) so the demo always runs.
+# ─────────────────────────────────────────────────────────────────────────────
+
+translator:
+  provider: anthropic          # anthropic | openai | fixture
+  model: claude-sonnet-4-6     # chosen for register/tone consistency over long docs
+  prompt_version: translator-neutral-es-v1
+  temperature: 0.2
+  max_tokens: 4096
+  fallback: fixture            # used when ANTHROPIC_API_KEY is absent
+
+critic:
+  provider: openai             # a DECORRELATED family from the translator
+  model: gpt-4o                # pin the exact dated id per deployment
+  prompt_version: critic-mqm-regionalism-v1
+  temperature: 0.0
+  max_tokens: 2048
+  fallback: deterministic      # validator-derived critic when OPENAI_API_KEY absent
+
+qe:
+  provider: local              # open-weight model on BANK INFRASTRUCTURE (GPU), not an API
+  model: Unbabel/wmt22-cometkiwi-da   # CometKiwi | xCOMET | MetricX-QE
+  runs_on: bank_infra
+  # In this prototype QE is a heuristic stub (routing signal only — spec §15).
+  # It is NEVER an approval signal; validators + humans are authoritative.
+  fallback: heuristic
+
+versions:
+  glossary_version: neutral-es-2026.1
+  rules_version: neutralization-2026.1

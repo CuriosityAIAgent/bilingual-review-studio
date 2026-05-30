@@ -1,0 +1,112 @@
+[
+  {
+    "id": "seed-billon-singular",
+    "category": "number_integrity",
+    "source": "The fund manages USD 1.2 billion in client assets.",
+    "target": "El fondo gestiona USD 1.2 billón en activos de clientes.",
+    "expect": "fail",
+    "validator": "number",
+    "note": "The billon trap: English billion (10^9) rendered as singular 'billón' (10^12 in Spanish). Should be 'mil millones'. The number validator flags any bill[oó]n(es) form when source has 'billion'."
+  },
+  {
+    "id": "seed-billon-plural",
+    "category": "number_integrity",
+    "source": "Inflows reached 5 billion dollars across the strategy.",
+    "target": "Las entradas alcanzaron los 5 billones de dólares en la estrategia.",
+    "expect": "fail",
+    "validator": "number",
+    "note": "The billon trap, plural form: 'billion' rendered as 'billones' (10^12). Correct is 'mil millones'. Validator catches the bill[oó]nes form."
+  },
+  {
+    "id": "seed-trillon",
+    "category": "number_integrity",
+    "source": "Global debt now exceeds 3 trillion dollars in this segment.",
+    "target": "La deuda mundial ahora supera los 3 trillones de dólares en este segmento.",
+    "expect": "fail",
+    "validator": "number",
+    "note": "English 'trillion' rendered as non-standard 'trillones'. House term per locale scale_terms.trillion is 'billón'. Validator flags trill[oó]n(es) when source has 'trillion'."
+  },
+  {
+    "id": "seed-dropped-negative",
+    "category": "number_integrity",
+    "source": "The portfolio returned -0.5% for the quarter.",
+    "target": "El portafolio rindió 0.5% en el trimestre.",
+    "expect": "fail",
+    "validator": "number",
+    "note": "Dropped negative sign: source mantissa is -0.5 but target only contains 0.5. The number validator compares signed mantissas, so -0.5 is not preserved (sign-flipped error)."
+  },
+  {
+    "id": "seed-changed-percentage",
+    "category": "number_integrity",
+    "source": "Allocation to equities rose to 12.5% of the book.",
+    "target": "La asignación a renta variable subió al 13.5% de la cartera.",
+    "expect": "fail",
+    "validator": "number",
+    "note": "Changed percentage: source 12.5% became 13.5%. Mantissa 12.5 from the source is not present in the target, so the number validator fails it as a critical numeric drift."
+  },
+  {
+    "id": "seed-dropped-percent-sign",
+    "category": "number_integrity",
+    "source": "Cash yields are near 5% in money markets.",
+    "target": "Los rendimientos de efectivo rondan el 5 en los mercados monetarios.",
+    "expect": "fail",
+    "validator": "number",
+    "note": "Dropped percent sign: source has one '%', target has zero. The number validator's percent-marker count check fails when tgtPct < srcPct."
+  },
+  {
+    "id": "seed-wrong-year",
+    "category": "date",
+    "source": "We expect rate cuts to begin in 2026.",
+    "target": "Esperamos que los recortes de tasas comiencen en 2025.",
+    "expect": "fail",
+    "validator": "date",
+    "note": "Changed year: source year 2026 became 2025. The date validator checks every (19|20)dd year in the source survives verbatim in the target; 2026 is missing."
+  },
+  {
+    "id": "seed-dropped-ticker",
+    "category": "ticker",
+    "source": "Our top conviction holding remains $AAPL into the second half.",
+    "target": "Nuestra principal posición de convicción sigue siendo Apple para el segundo semestre.",
+    "expect": "fail",
+    "validator": "ticker",
+    "note": "Dropped ticker: source ticker $AAPL (symbol AAPL) was replaced with the company name 'Apple'. Tickers are identifiers and must appear verbatim; validator fails when 'AAPL' is absent from the target."
+  },
+  {
+    "id": "seed-dnt-translated",
+    "category": "dnt",
+    "source": "Risk is monitored daily through BlackRock Aladdin across the platform.",
+    "target": "El riesgo se monitorea diariamente a través de BlackRock Aladino en toda la plataforma.",
+    "expect": "fail",
+    "validator": "dnt",
+    "note": "DNT product name translated: 'BlackRock Aladdin' (a do-not-translate product) was rendered 'BlackRock Aladino'. Requires dntTerms to include 'BlackRock Aladdin'/'Aladdin' (from KNOWN_DNT). Validator fails because the verbatim DNT token is absent.",
+    "dntTerms": ["BlackRock Aladdin", "Aladdin", "BlackRock"]
+  },
+  {
+    "id": "seed-clean-billion",
+    "category": "number_integrity",
+    "source": "The fund manages USD 1.2 billion in client assets.",
+    "target": "El fondo gestiona USD 1.2 mil millones en activos de clientes.",
+    "expect": "pass",
+    "validator": "number",
+    "note": "Clean counterpart: 'billion' correctly rendered as 'mil millones', mantissa 1.2 preserved. No billón form present, so the number validator passes."
+  },
+  {
+    "id": "seed-clean-ticker-dnt",
+    "category": "dnt",
+    "source": "Our top conviction holding remains $AAPL, monitored via BlackRock Aladdin.",
+    "target": "Nuestra principal posición de convicción sigue siendo $AAPL, monitoreada mediante BlackRock Aladdin.",
+    "expect": "pass",
+    "validator": "ticker",
+    "note": "Clean counterpart: ticker $AAPL preserved verbatim and the DNT product 'BlackRock Aladdin' is kept intact. Both ticker and dnt validators pass.",
+    "dntTerms": ["BlackRock Aladdin", "Aladdin", "BlackRock"]
+  },
+  {
+    "id": "seed-clean-percent-year",
+    "category": "number_integrity",
+    "source": "Allocation to equities rose to 12.5% in 2026, with a -0.5% drawdown.",
+    "target": "La asignación a renta variable subió al 12.5% en 2026, con una caída máxima de -0.5%.",
+    "expect": "pass",
+    "validator": "number",
+    "note": "Clean counterpart covering multiple validators: percentage 12.5% preserved, year 2026 preserved, negative -0.5% preserved with its sign and percent marker. Number and date validators pass."
+  }
+]

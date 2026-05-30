@@ -1,0 +1,57 @@
+[
+  {
+    "id": "tm-001",
+    "source_text": "Past performance is not indicative of future results. The value of investments and the income from them can fall as well as rise, and investors may not recover the amount originally invested.",
+    "target_text": "El rendimiento pasado no es indicativo de resultados futuros. El valor de las inversiones y los ingresos que generan pueden tanto disminuir como aumentar, y los inversionistas podrían no recuperar el monto invertido originalmente.",
+    "locale": "es-419",
+    "kind": "disclaimer",
+    "version": 1,
+    "approved_by": "carmen",
+    "approved_at": "2026-05-01T00:00:00Z",
+    "created_at": "2026-05-01T00:00:00Z"
+  },
+  {
+    "id": "tm-002",
+    "source_text": "This document is for informational purposes only and does not constitute investment advice, an offer, or a solicitation to buy or sell any financial instrument.",
+    "target_text": "Este documento tiene únicamente fines informativos y no constituye asesoramiento de inversión, una oferta ni una invitación para comprar o vender ningún instrumento financiero.",
+    "locale": "es-419",
+    "kind": "disclaimer",
+    "version": 1,
+    "approved_by": "carmen",
+    "approved_at": "2026-05-01T00:00:00Z",
+    "created_at": "2026-05-01T00:00:00Z"
+  },
+  {
+    "id": "tm-003",
+    "source_text": "Investments are subject to market risk, including the possible loss of principal. Diversification does not guarantee a profit or protect against loss in a declining market.",
+    "target_text": "Las inversiones están sujetas a riesgo de mercado, incluida la posible pérdida del capital. La diversificación no garantiza una ganancia ni protege contra pérdidas en un mercado a la baja.",
+    "locale": "es-419",
+    "kind": "disclaimer",
+    "version": 1,
+    "approved_by": "carmen",
+    "approved_at": "2026-05-01T00:00:00Z",
+    "created_at": "2026-05-01T00:00:00Z"
+  },
+  {
+    "id": "tm-004",
+    "source_text": "The views expressed herein are those of the author as of the date of publication and are subject to change without notice. They do not necessarily reflect the views of the bank.",
+    "target_text": "Las opiniones aquí expresadas son las del autor a la fecha de publicación y están sujetas a cambios sin previo aviso. No reflejan necesariamente las opiniones del banco.",
+    "locale": "es-419",
+    "kind": "disclaimer",
+    "version": 1,
+    "approved_by": "carmen",
+    "approved_at": "2026-05-01T00:00:00Z",
+    "created_at": "2026-05-01T00:00:00Z"
+  },
+  {
+    "id": "tm-005",
+    "source_text": "Forecasts are not a reliable indicator of future performance and are based on assumptions that may not materialize. Currency movements may increase or decrease returns for investors.",
+    "target_text": "Las proyecciones no son un indicador confiable del rendimiento futuro y se basan en supuestos que podrían no materializarse. Los movimientos cambiarios pueden aumentar o disminuir los retornos para los inversionistas.",
+    "locale": "es-419",
+    "kind": "disclaimer",
+    "version": 1,
+    "approved_by": "carmen",
+    "approved_at": "2026-05-01T00:00:00Z",
+    "created_at": "2026-05-01T00:00:00Z"
+  }
+]

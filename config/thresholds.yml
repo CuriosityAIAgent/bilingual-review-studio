@@ -1,0 +1,27 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Quality thresholds (spec §9, §15).
+#
+# IMPORTANT: these are PLACEHOLDERS. Real thresholds must be CALIBRATED on a
+# labelled gold set of the bank's own EN→neutral-Spanish documents before any
+# reliance is placed on them (spec §15, open decision §21.6). QE is a routing
+# signal only — never an approval signal.
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Below this QE score a segment is eligible for a refine iteration (routing).
+qe_threshold: 0.72
+
+# Below this QE score a segment is forced to human review regardless of flags.
+human_floor: 0.55
+
+# Maximum refine iterations per segment. A forced rewrite loop over-edits already
+# good high-resource EN→ES text, so we cap hard and stop early (spec §9).
+max_iters: 2
+
+# A refine candidate must beat the incumbent QE by at least this margin to be
+# kept; otherwise we revert (anti over-edit).
+min_qe_gain: 0.0
+
+# Disclaimer fuzzy-match band: at/above exact, auto-fill+lock from approved TM;
+# within [fuzzy_low, exact) route to Compliance; below fuzzy_low treat as unknown.
+disclaimer_exact_match: 0.97
+disclaimer_fuzzy_low: 0.80

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap');
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Bilingual Review Studio — design system (spec §16). "An editorial reading
+   room for translation." The document is the hero; chrome recedes into precise,
+   hairline-ruled ledger surfaces. One brass accent, reserved for earned states.
+   ───────────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Paper (light, default) */
+  --bg:#F2EEE4; --surface:#FFFFFF; --surface-2:#FBF9F2;
+  --ink:#15233B; --ink-soft:#566076; --ink-faint:#8A92A4;
+  --line:#E3DCCC; --line-2:#EEE8DA;
+  --accent:#9A7A34; --accent-bright:#C29B47;
+  --es-tint:#FCFAF3; --en-tint:#EEEAE0;
+  --edited:#B5751E; --memory:#4F6B52; --flag:#A23B2D;
+  --qe-good:#4F6B52; --qe-warn:#B5751E; --qe-low:#A23B2D;
+  --r-sm:7px; --r-md:11px; --r-lg:16px; --r-pill:999px;
+  --shadow-card:0 1px 0 rgba(0,0,0,.02); --shadow-float:0 20px 50px rgba(21,35,59,.26);
+  --ease:cubic-bezier(.2,.7,.2,1); --dur:.18s;
+}
+[data-theme="ink"] {
+  --bg:#0E1626; --surface:#18223A; --surface-2:#141D31;
+  --ink:#ECE6D8; --ink-soft:#9AA6BE; --ink-faint:#697693;
+  --line:#2A395A; --line-2:#212E49;
+  --accent:#C7A24A; --accent-bright:#E0BE64;
+  --es-tint:#1A2742; --en-tint:#131C30;
+  --edited:#D79A47; --memory:#7FA083; --flag:#D9685A;
+  --qe-good:#7FA083; --qe-warn:#D79A47; --qe-low:#D9685A;
+}
+
+* { box-sizing: border-box; }
+html, body { padding: 0; margin: 0; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 16px; line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  position: relative;
+}
+/* Atmosphere: two faint radial gradients + a subtle grain — the paper feel. */
+body::before {
+  content:""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 85% 0%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 70%),
+    radial-gradient(55% 45% at 0% 100%, color-mix(in srgb, var(--ink) 7%, transparent), transparent 70%);
+}
+body::after {
+  content:""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .025;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Typography roles */
+.font-display { font-family:'Fraunces', Georgia, serif; }
+.font-ui { font-family:'Hanken Grotesk', system-ui, sans-serif; }
+.mono { font-family:'IBM Plex Mono', ui-monospace, monospace; font-feature-settings:"tnum"; }
+.doc-body { font-size:16px; line-height:1.62; }
+h1,h2,h3 { font-family:'Fraunces', Georgia, serif; font-weight:600; margin:0; }
+
+a { color: inherit; text-decoration: none; }
+::selection { background: color-mix(in srgb, var(--accent) 28%, transparent); }
+
+/* Label / chrome text */
+.label { font-family:'Hanken Grotesk', sans-serif; font-size:10.5px; font-weight:600;
+  text-transform:uppercase; letter-spacing:.09em; color: var(--ink-soft); }
+.ui-base { font-family:'Hanken Grotesk', sans-serif; font-size:13px; }
+
+/* Hairline + surfaces */
+.hair { border:1px solid var(--line); }
+.card { background:var(--surface); border:1px solid var(--line); border-radius:var(--r-md);
+  box-shadow:var(--shadow-card); }
+
+/* Tags */
+.tag { display:inline-flex; align-items:center; gap:4px; font-family:'Hanken Grotesk', sans-serif;
+  font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.07em;
+  border:1px solid var(--line); border-radius:var(--r-pill); padding:2px 8px; color:var(--ink-soft);
+  background:var(--surface); white-space:nowrap; }
+.tag.edited { color:var(--edited); border-color:color-mix(in srgb, var(--edited) 40%, var(--line)); }
+.tag.memory { color:var(--memory); border-color:color-mix(in srgb, var(--memory) 40%, var(--line)); }
+.tag.flag { color:var(--flag); border-color:color-mix(in srgb, var(--flag) 40%, var(--line)); }
+.tag.accent { color:var(--accent); border-color:color-mix(in srgb, var(--accent) 45%, var(--line)); }
+
+.dot { width:7px; height:7px; border-radius:50%; display:inline-block; }
+
+/* Buttons */
+.btn { font-family:'Hanken Grotesk', sans-serif; font-size:13px; font-weight:600; cursor:pointer;
+  display:inline-flex; align-items:center; gap:7px; border-radius:var(--r-sm); padding:8px 14px;
+  border:1px solid var(--line); background:var(--surface); color:var(--ink);
+  transition:background var(--dur) var(--ease), border-color var(--dur) var(--ease), transform var(--dur) var(--ease); }
+.btn:hover { border-color:var(--ink-faint); }
+.btn:active { transform:translateY(1px); }
+.btn:disabled { opacity:.5; cursor:not-allowed; }
+.btn-primary { background:var(--ink); color:var(--bg); border-color:var(--ink); }
+.btn-primary:hover { background:color-mix(in srgb, var(--ink) 88%, var(--accent)); }
+.btn-accent { background:var(--accent); color:#fff; border-color:var(--accent); }
+.btn-accent:hover { background:var(--accent-bright); }
+.btn-ghost { background:transparent; }
+
+/* Focus ring — brass, on every interactive element */
+:focus-visible { outline:2px solid var(--accent); outline-offset:2px; border-radius:3px; }
+
+/* QE chip */
+.qe { font-family:'IBM Plex Mono', monospace; font-size:11px; display:inline-flex; align-items:center;
+  gap:6px; border:1px solid var(--line); border-radius:var(--r-pill); padding:2px 9px; background:var(--surface); }
+
+/* Ledger inset on edited segments */
+.ledger { position:relative; }
+.ledger::before { content:""; position:absolute; left:-1px; top:0; bottom:0; width:3px; border-radius:3px; background:transparent; }
+.ledger.is-edited::before { background:var(--edited); }
+.ledger.is-memory::before { background:var(--memory); }
+.ledger.is-flag::before { background:var(--flag); }
+.ledger.is-accepted::before { background:var(--memory); }
+
+/* Editable cell */
+.cell { outline:none; border-radius:var(--r-sm); padding:2px 4px; margin:-2px -4px;
+  transition:background var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+.cell[contenteditable="true"]:hover { background:color-mix(in srgb, var(--accent) 6%, transparent); }
+.cell[contenteditable="true"]:focus { background:var(--surface); box-shadow:0 0 0 2px var(--accent); }
+
+/* numeric tokens highlighted in mono */
+.cell .num, .num-hl { font-family:'IBM Plex Mono', monospace; font-size:.92em;
+  background:color-mix(in srgb, var(--accent) 9%, transparent); border-radius:3px; padding:0 2px; }
+
+/* motion */
+@keyframes fadeUp { from { opacity:0; transform:translateY(8px);} to { opacity:1; transform:none;} }
+.fade-up { animation:fadeUp .5s var(--ease) both; }
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.45} }
+.live-dot { animation:pulse 1.6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up, .live-dot { animation: none !important; }
+  * { transition: none !important; }
+}
+
+/* scrollbars */
+::-webkit-scrollbar { width:10px; height:10px; }
+::-webkit-scrollbar-thumb { background:var(--line); border-radius:6px; border:3px solid var(--bg); }

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "reg-ordenador",
+    "category": "regionalism",
+    "source": "Clients can access the dashboard from any computer.",
+    "target": "Los clientes pueden acceder al panel desde cualquier ordenador.",
+    "expect": "fail",
+    "validator": "regionalism",
+    "note": "Peninsular-only 'ordenador' (neutral es-419 uses 'computadora'). Listed in locale regional_flags.peninsular; with no active neutralization rule the validator flags it for human routing."
+  },
+  {
+    "id": "reg-coche",
+    "category": "regionalism",
+    "source": "The lifestyle segment includes financing for a new car.",
+    "target": "El segmento de estilo de vida incluye financiamiento para un coche nuevo.",
+    "expect": "fail",
+    "validator": "regionalism",
+    "note": "Peninsular-only 'coche' (neutral uses 'automóvil/vehículo/carro'). Flagged from regional_flags.peninsular; no active rule means it stays unresolved and the validator fails it."
+  },
+  {
+    "id": "reg-movil",
+    "category": "regionalism",
+    "source": "Alerts are delivered to the client's mobile phone.",
+    "target": "Las alertas se envían al móvil del cliente.",
+    "expect": "fail",
+    "validator": "regionalism",
+    "note": "Peninsular-only 'móvil' for mobile phone (neutral 'teléfono móvil/celular'). Listed in regional_flags.peninsular; validator flags it for neutralization."
+  },
+  {
+    "id": "reg-platicar",
+    "category": "regionalism",
+    "source": "Advisors meet quarterly to talk through the client's goals.",
+    "target": "Los asesores se reúnen trimestralmente para platicar sobre las metas del cliente.",
+    "expect": "fail",
+    "validator": "regionalism",
+    "note": "Mexican-only colloquialism 'platicar' (neutral 'conversar/hablar'). Listed in regional_flags.mexican; clashes cross-market, so the validator flags it."
+  },
+  {
+    "id": "reg-checar",
+    "category": "regionalism",
+    "source": "Operations will check the settlement instructions before release.",
+    "target": "Operaciones va a checar las instrucciones de liquidación antes de liberar.",
+    "expect": "fail",
+    "validator": "regionalism",
+    "note": "Mexican-only colloquialism 'checar' (neutral 'verificar/revisar'). Listed in regional_flags.mexican; validator flags it for neutralization."
+  },
+  {
+    "id": "reg-clean-neutral",
+    "category": "regionalism",
+    "source": "Clients can check the dashboard from any computer or mobile phone.",
+    "target": "Los clientes pueden revisar el panel desde cualquier computadora o teléfono celular.",
+    "expect": "pass",
+    "validator": "regionalism",
+    "note": "Clean neutral es-419: 'computadora', 'teléfono celular', 'revisar' — none of the flagged Peninsular or Mexican lexicon is present, so the validator passes."
+  }
+]

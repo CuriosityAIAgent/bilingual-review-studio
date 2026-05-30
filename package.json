@@ -1,0 +1,40 @@
+{
+  "name": "bilingual-review-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A governed neutral-Spanish financial review workflow — turns reviewer corrections into reusable, auditable institutional memory.",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -p 3007",
+    "build": "next build",
+    "start": "next start -p 3007",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "evals": "vitest run evals",
+    "seed": "node --experimental-strip-types scripts/seed.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0",
+    "@supabase/supabase-js": "^2.101.1",
+    "lucide-react": "^0.469.0",
+    "mammoth": "^1.9.0",
+    "next": "16.1.6",
+    "openai": "^4.77.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "yaml": "^2.6.1",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "postcss": "^8",
+    "tailwindcss": "^4",
+    "typescript": "^5",
+    "vitest": "^2.1.8"
+  }
+}
