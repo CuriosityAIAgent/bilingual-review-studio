@@ -326,6 +326,8 @@ export interface DocModel {
   status: DocStatus;
   created_at: string;
   updated_at: string;
+  /** Monotonic revision for optimistic concurrency (spec §12 — not last-write-wins). */
+  rev: number;
   model_run: ModelRun;
   blocks: Block[];
   figures: Figure[];

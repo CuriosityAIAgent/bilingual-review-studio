@@ -80,7 +80,8 @@ export function applyGlossary(
   let out = text;
   const hits: GlossaryHit[] = [];
   for (const entry of glossary) {
-    if (entry.state === "deprecated") continue;
+    // Only governed (active/approved) glossary entries are applied (spec §13).
+    if (entry.state !== "active" && entry.state !== "approved") continue;
     let applied = false;
     for (const forbidden of entry.forbidden_terms ?? []) {
       const { text: rewritten, count } = replaceTerm(out, forbidden, entry.approved_target);

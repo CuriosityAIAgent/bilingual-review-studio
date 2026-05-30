@@ -86,6 +86,28 @@ export const numberValidator: ValidatorFn = (i: ValidatorInput): ValidatorResult
     severity = "critical";
   }
 
+  // 4) Scale-term preservation (spec §10). The mantissa check alone lets a wrong
+  // SCALE slip past ("1 billion" → "1 millón"). Require the English scale word to
+  // render as the correct Spanish term, not a down/upscaled one.
+  const tgt = i.target.toLowerCase();
+  const hasMilMillones = /\bmil(?:es)?\s+(?:de\s+)?millones\b/.test(tgt); // "mil millones" / "miles de millones"
+  if (hasBillion && !hasMilMillones && !trapForm) {
+    issues.push({
+      span: "billion",
+      message: `"billion" (10^9) must render as "${i.locale.scale_terms.billion}" — scale not preserved.`,
+      expected: i.locale.scale_terms.billion,
+    });
+    if (severity !== "critical") severity = "major";
+  }
+  if (hasTrillion && !/\bbill[oó]n(?:es)?\b/.test(tgt) && !/\btrill[oó]n(?:es)?\b/.test(tgt)) {
+    issues.push({
+      span: "trillion",
+      message: `"trillion" (10^12) must render as the house term "${i.locale.scale_terms.trillion}" — scale not preserved.`,
+      expected: i.locale.scale_terms.trillion,
+    });
+    if (severity !== "critical") severity = "major";
+  }
+
   return {
     validator: "number",
     status: issues.length ? "fail" : "pass",

@@ -35,4 +35,11 @@ describe("extractEntities", () => {
     expect(ents).toHaveLength(1);
     expect(ents[0].kind).toBe("date");
   });
+
+  it("[regression #2] preserves a leading negative sign on scaled numbers", () => {
+    const ents = extractEntities("a loss of -5 million this year");
+    const scaled = ents.find((e) => /million/.test(e.text));
+    expect(scaled?.text.startsWith("-")).toBe(true);
+    expect(scaled?.norm).toBe("-5000000");
+  });
 });

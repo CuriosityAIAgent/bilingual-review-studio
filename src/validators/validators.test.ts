@@ -171,3 +171,40 @@ describe("english leakage validator", () => {
     expect(r.status).toBe("fail");
   });
 });
+
+// ── Regression tests for the Codex review findings ────────────────────────────
+describe("regression: scale + sign + governance", () => {
+  it("[#1] FAILS billion downscaled to million (1 billion → 1 millón)", () => {
+    const r = numberValidator(input("the firm manages 1 billion in assets", "la firma gestiona 1 millón en activos"));
+    expect(r.status).toBe("fail"); // scale not preserved
+  });
+  it("[#2] FAILS a dropped sign on a scaled number (-5 million → 5 millones)", () => {
+    const r = numberValidator(input("a loss of -5 million this year", "una pérdida de 5 millones este año"));
+    expect(r.status).toBe("fail");
+  });
+  it("[#9] FAILS a wrong quarter ordinal (Q3 → primer trimestre)", () => {
+    const r = dateValidator(input("results for Q3", "resultados del primer trimestre"));
+    expect(r.status).toBe("fail");
+  });
+  it("[#9] PASSES the correct quarter ordinal (Q3 → tercer trimestre)", () => {
+    const r = dateValidator(input("results for Q3", "resultados del tercer trimestre"));
+    expect(r.status).toBe("pass");
+  });
+  it("[#10] a PROPOSED rule does NOT supply an auto-applicable suggestion", () => {
+    const rules: NeutralizationRule[] = [{
+      id: "p1", regional_form: "ordenador", neutral_form: "computadora", reason: "", locale: "es-419",
+      state: "proposed", created_at: "", updated_at: "", hits: 0,
+    }];
+    const r = regionalismValidator(input("on the computer", "en el ordenador", { rules }));
+    expect(r.status).toBe("fail");
+    expect(r.issues[0]?.expected).toBeUndefined(); // no auto-suggest from ungoverned rule
+  });
+  it("[#5] a candidate-state glossary entry is NOT enforced", () => {
+    const glossary: GlossaryEntry[] = [{
+      id: "c1", source: "yield curve", approved_target: "curva de rendimientos",
+      forbidden_terms: ["curva de rendimiento"], locale: "es-419", state: "candidate",
+    }];
+    const r = glossaryValidator(input("the yield curve", "la curva de rendimiento", { glossary }));
+    expect(r.status).toBe("pass"); // candidate entries are not yet governed
+  });
+});

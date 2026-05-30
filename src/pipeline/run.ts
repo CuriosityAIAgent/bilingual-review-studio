@@ -157,6 +157,7 @@ export async function runPipeline(input: RunPipelineInput): Promise<DocModel> {
     status: "draft",
     created_at: nowIso(),
     updated_at: nowIso(),
+    rev: 0,
     model_run: buildModelRun(targetLocale),
     blocks: processed,
     figures: [],
@@ -188,7 +189,7 @@ export async function reTranslateDoc(doc: DocModel): Promise<DocModel> {
   const { blocks: processed, appliedRuleIds } = await processBlocks(merged, disclaimerStatus, doc.target_locale);
   await incrementRuleHits(appliedRuleIds);
 
-  const next: DocModel = { ...doc, blocks: processed, updated_at: nowIso(), model_run: buildModelRun(doc.target_locale) };
+  const next: DocModel = { ...doc, blocks: processed, updated_at: nowIso(), rev: doc.rev + 1, model_run: buildModelRun(doc.target_locale) };
   next.metrics = computeMetrics(next);
   return next;
 }

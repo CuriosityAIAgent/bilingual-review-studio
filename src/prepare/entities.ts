@@ -50,10 +50,11 @@ const PATTERNS: Pattern[] = [
   { kind: "number", re: /\b\d[\d,]*\.?\d*\s?(?:bps|basis points)\b/gi, norm: (s) => `${normalizeNumber(s)}bps` },
   // Ticker in parens or with $ prefix (conservative to avoid acronym noise)
   { kind: "ticker", re: /\$[A-Z]{1,5}\b|\((?:NYSE|NASDAQ|LSE)?:?\s?[A-Z]{1,5}\)/g },
-  // Standalone numbers with scale words
-  { kind: "number", re: /\b-?\d[\d,]*\.?\d*\s*(?:thousand|million|billion|trillion|bn|mn|tn|k|m|b)\b/gi, norm: normalizeNumber },
-  // Bare numbers (incl. decimals)
-  { kind: "number", re: /\b-?\d[\d,]*\.?\d+\b|\b-?\d{2,}\b/g, norm: normalizeNumber },
+  // Standalone numbers with scale words. A leading "\b" before "-?" would drop a
+  // negative sign ("-5 million" → "5 million"), so use a Unicode-aware boundary.
+  { kind: "number", re: /(?<![\p{L}\p{N}])-?\d[\d,]*\.?\d*\s*(?:thousand|million|billion|trillion|bn|mn|tn|k|m|b)\b/giu, norm: normalizeNumber },
+  // Bare numbers (incl. decimals), sign preserved.
+  { kind: "number", re: /(?<![\p{L}\p{N}])-?\d[\d,]*\.?\d+(?![\p{L}\p{N}])|(?<![\p{L}\p{N}])-?\d{2,}(?![\p{L}\p{N}])/gu, norm: normalizeNumber },
 ];
 
 // Years / quarters are handled separately so we don't double-count with numbers.

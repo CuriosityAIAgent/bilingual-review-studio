@@ -15,6 +15,7 @@ import type {
 } from "@/src/lib/doc-model";
 import { nowIso } from "@/src/lib/ids";
 import { computeMetrics } from "@/src/metrics";
+import { gateBlock } from "@/src/quality-gate";
 import { type Seat, getSeat } from "@/src/auth";
 import { makeEditEntry, makeHandoffEntry } from "./audit";
 
@@ -35,7 +36,7 @@ function withBlock(doc: DocModel, blockId: string, fn: (b: Block) => Block): Doc
 }
 
 function refresh(doc: DocModel): DocModel {
-  const next = { ...doc, updated_at: nowIso() };
+  const next = { ...doc, updated_at: nowIso(), rev: doc.rev + 1 };
   next.metrics = computeMetrics(next);
   return next;
 }
@@ -119,6 +120,16 @@ export function submitForReview(doc: DocModel, seat: Seat, note: string): DocMod
 
 export function approveDoc(doc: DocModel, seat: Seat, note: string): DocModel {
   transition(doc, "approved");
+  // Validators are authoritative (spec §15): every segment must be auto-pass
+  // eligible or human-resolved (accepted/locked) before approval.
+  const unresolved = doc.blocks.filter(
+    (b) => gateBlock(b, { ocrUsed: doc.source.ocr_used }).route === "human_review",
+  );
+  if (unresolved.length) {
+    throw new Error(
+      `Cannot approve: ${unresolved.length} segment(s) have unresolved blocking issues — accept, edit, or lock them first (spec §15).`,
+    );
+  }
   const entry = makeHandoffEntry({ action: "approve", actor: actorOf(seat), note, status_from: doc.status, status_to: "approved" });
   return refresh({
     ...doc,

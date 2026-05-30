@@ -46,11 +46,20 @@ export default function ReviewPage() {
   const act = useCallback(async (body: ActionBody, label = "") => {
     setBusy(label || body.kind); setError("");
     try {
-      const { doc: next } = await api.action(id, body);
+      // Send the revision we hold so the server can reject stale writes (§12).
+      const { doc: next } = await api.action(id, { ...body, rev: doc?.rev });
       setDoc(next); setRefreshKey((k) => k + 1);
-    } catch (e) { setError((e as Error).message); }
+    } catch (e) {
+      const msg = (e as Error).message;
+      setError(msg);
+      // On a concurrency conflict, reload the latest so the reviewer sees the truth.
+      if (/changed since you loaded/i.test(msg)) {
+        const fresh = await api.getDoc(id).catch(() => null);
+        if (fresh) { setDoc(fresh.doc); setError("Reloaded — another user had changed this document. Re-apply your edit."); }
+      }
+    }
     finally { setBusy(""); }
-  }, [id]);
+  }, [id, doc?.rev]);
 
   const onEdit = (blockId: string, text: string, cats: FlagCategory[]) => act({ kind: "edit", blockId, text, cats });
 

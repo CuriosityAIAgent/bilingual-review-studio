@@ -63,6 +63,11 @@ export function authorize(seat: Seat, action: string, ctx: AuthzContext = {}): A
   switch (verdict) {
     case "in_scope":
     case "in_scope_neutralize":
+      // Disclaimers ALWAYS escalate to Approver/Compliance — never editable under
+      // a scoped (author/reviewer) verdict (spec §10, §11).
+      if (ctx.block?.type === "disclaimer") {
+        return { allowed: false, reason: "disclaimers escalate to Approver/Compliance" };
+      }
       return inScope
         ? { allowed: true, reason: "in assigned scope" }
         : { allowed: false, reason: "outside assigned scope" };

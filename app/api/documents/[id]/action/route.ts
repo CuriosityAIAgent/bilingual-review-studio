@@ -28,6 +28,8 @@ interface Body {
   reason?: string;
   toUserId?: string;
   note?: string;
+  /** Document revision the client is acting on (optimistic concurrency, §12). */
+  rev?: number;
 }
 
 const PERM: Record<string, string> = {
@@ -50,6 +52,12 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
   const store = getStore();
   const doc = await store.getDoc(id);
   if (!doc) return fail("Document not found", 404);
+
+  // Optimistic concurrency (spec §12): reject stale writes instead of clobbering.
+  // retranslate regenerates machine segments and is rev-agnostic.
+  if (typeof body.rev === "number" && body.rev !== doc.rev && body.kind !== "retranslate") {
+    return fail(`This document changed since you loaded it (you have rev ${body.rev}, current is ${doc.rev}). Reload to see the latest.`, 409);
+  }
 
   const action = PERM[body.kind];
   if (!action) return fail(`Unknown action "${body.kind}"`);

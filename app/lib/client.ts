@@ -30,6 +30,7 @@ export interface ActionBody {
   reason?: string;
   toUserId?: string;
   note?: string;
+  rev?: number;
 }
 
 export const api = {

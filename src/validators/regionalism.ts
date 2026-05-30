@@ -27,10 +27,12 @@ export const regionalismValidator: ValidatorFn = (i: ValidatorInput): ValidatorR
   for (const { term, variant } of flags) {
     if (!term || term.length < 3) continue;
     if (hasWord(i.target, term)) {
-      // Prefer an active rule's neutral form; fall back to any rule's suggestion.
-      const rule =
-        i.rules.find((r) => r.regional_form.toLowerCase() === term && (r.state === "active" || r.state === "approved")) ??
-        i.rules.find((r) => r.regional_form.toLowerCase() === term);
+      // Only ACTIVE/APPROVED rules may supply `expected` — it feeds the
+      // deterministic rewrite, so a proposed/deprecated (ungoverned) rule must
+      // never auto-apply through this path (spec §13). Unresolved → route to human.
+      const rule = i.rules.find(
+        (r) => r.regional_form.toLowerCase() === term && (r.state === "active" || r.state === "approved"),
+      );
       issues.push({
         span: term,
         message: `${variant}-only term "${term}" — neutralize for cross-market distribution`,

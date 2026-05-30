@@ -7,20 +7,27 @@
  */
 import { getModels } from "@/src/lib/config";
 import type { CriticFlag } from "@/src/lib/doc-model";
-import { anthropicAvailable, anthropicComplete, parseJsonLoose } from "@/src/providers/clients";
+import { anthropicAvailable, anthropicComplete, parseJsonLoose, stripDelims } from "@/src/providers/clients";
 
 function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-/** Deterministic fixer: replace each flagged span with its suggestion. */
+// Categories where a blind single-token swap is SAFE without a real model.
+// number/accuracy/fluency need genuine re-translation, so the deterministic
+// fixer leaves them for the live model OR routes them to a human (it must never
+// e.g. turn "mil billones" into "mil mil millones").
+const SAFE_DETERMINISTIC = new Set(["regionalism", "terminology", "locale"]);
+
+/** Deterministic fixer: replace each safely-swappable flagged span with its suggestion. */
 export function applySuggestions(current: string, flags: CriticFlag[]): string {
   let out = current;
   for (const f of flags) {
+    if (!SAFE_DETERMINISTIC.has(f.category)) continue;
     const span = (f.span || "").trim();
     const sugg = (f.suggestion || "").trim();
     if (!span || !sugg || span === sugg) continue;
-    // Only apply suggestions that look like replacement text (short, no sentence punctuation).
+    // Only apply suggestions that look like a term (short, no sentence punctuation).
     if (sugg.length > 60 || /[.;:]/.test(sugg)) continue;
     out = out.replace(new RegExp(`(?<![\\p{L}\\p{N}])${escapeRegExp(span)}(?![\\p{L}\\p{N}])`, "giu"), sugg);
   }
@@ -46,7 +53,7 @@ export async function rewriteSegment(
         "Preserve all numbers, %, dates, currencies and DNT tokens exactly.",
         'Return ONLY JSON: {"es":"<corrected translation>"}',
       ].join("\n");
-      const user = `<SOURCE>${source}</SOURCE>\n<TRANSLATION>${current}</TRANSLATION>\nCORRECTIONS:\n${flagList}`;
+      const user = `<SOURCE>${stripDelims(source)}</SOURCE>\n<TRANSLATION>${stripDelims(current)}</TRANSLATION>\nCORRECTIONS:\n${flagList}`;
       const raw = await anthropicComplete({
         model: models.translator.model,
         temperature: 0.1,

@@ -11,7 +11,8 @@ function hasWord(text: string, term: string): boolean {
 export const glossaryValidator: ValidatorFn = (i: ValidatorInput): ValidatorResult => {
   const issues: ValidatorResult["issues"] = [];
   for (const g of i.glossary) {
-    if (g.state === "deprecated") continue;
+    // Enforce only governed (active/approved) glossary terms (spec §13).
+    if (g.state !== "active" && g.state !== "approved") continue;
     // Forbidden variants must never appear in the target.
     for (const forbidden of g.forbidden_terms ?? []) {
       if (hasWord(i.target, forbidden)) {

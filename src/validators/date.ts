@@ -14,12 +14,22 @@ export const dateValidator: ValidatorFn = (i: ValidatorInput): ValidatorResult =
     }
   }
 
+  // Ordinal words per quarter, so "Q3" cannot pass as "primer trimestre".
+  const ORDINALS: Record<string, string[]> = {
+    "1": ["primer", "primero", "1.º", "1er"],
+    "2": ["segundo", "2.º", "2do"],
+    "3": ["tercer", "tercero", "3.º", "3er"],
+    "4": ["cuarto", "4.º", "4to"],
+  };
   const srcQuarters = i.source.match(/\bQ([1-4])\b/gi) || [];
   for (const q of srcQuarters) {
     const num = q.replace(/Q/i, "");
-    // Accept "Q1", "1T", "T1", "primer trimestre" forms by checking the digit survives near a quarter cue.
-    if (!new RegExp(`(?:Q\\s?${num}\\b|\\b${num}\\s?T\\b|\\bT\\s?${num}\\b)`, "i").test(i.target) && !/trimestre/i.test(i.target)) {
-      issues.push({ span: q, message: `Quarter ${q} not clearly preserved`, expected: q });
+    const digitForm = new RegExp(`(?:Q\\s?${num}\\b|\\b${num}\\s?T\\b|\\bT\\s?${num}\\b)`, "i").test(i.target);
+    const ordForm =
+      /trimestre/i.test(i.target) &&
+      (ORDINALS[num] ?? []).some((o) => new RegExp(o.replace(/[.]/g, "\\."), "i").test(i.target));
+    if (!digitForm && !ordForm) {
+      issues.push({ span: q, message: `Quarter ${q} not clearly preserved (wrong or missing quarter)`, expected: q });
     }
   }
 

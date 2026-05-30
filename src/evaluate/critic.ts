@@ -11,7 +11,7 @@
  */
 import { getModels } from "@/src/lib/config";
 import type { CriticFlag, FlagCategory, Severity } from "@/src/lib/doc-model";
-import { openaiAvailable, openaiComplete, parseJsonLoose } from "@/src/providers/clients";
+import { openaiAvailable, openaiComplete, parseJsonLoose, stripDelims } from "@/src/providers/clients";
 import { currencyValidator } from "@/src/validators/currency";
 import { dateValidator } from "@/src/validators/date";
 import { englishLeakageValidator } from "@/src/validators/english_leakage";
@@ -38,7 +38,7 @@ function buildSystemPrompt(): string {
 
 function buildUserPayload(i: ValidatorInput): string {
   const gloss = i.glossary.map((g) => `"${g.source}"→"${g.approved_target}"`).join("; ") || "(none)";
-  return [`GLOSSARY: ${gloss}`, `<SOURCE>${i.source}</SOURCE>`, `<TRANSLATION>${i.target}</TRANSLATION>`].join("\n");
+  return [`GLOSSARY: ${gloss}`, `<SOURCE>${stripDelims(i.source)}</SOURCE>`, `<TRANSLATION>${stripDelims(i.target)}</TRANSLATION>`].join("\n");
 }
 
 function sanitize(raw: unknown): CriticFlag[] {

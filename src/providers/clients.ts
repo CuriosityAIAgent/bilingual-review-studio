@@ -64,6 +64,15 @@ export async function openaiComplete(o: CompleteOpts): Promise<string> {
   return (res.choices[0]?.message?.content ?? "").trim();
 }
 
+/**
+ * Neutralize the data-block delimiters in untrusted text so a malicious document
+ * cannot close the data block and inject instructions (spec §14). Used on all
+ * source-derived text before it is embedded in a prompt.
+ */
+export function stripDelims(s: string): string {
+  return s.replace(/<\/?\s*(?:SEGMENTS|SOURCE|TRANSLATION|DATA)\s*>/gi, " ");
+}
+
 /** Parse a JSON array/object from a model response, tolerating code fences. */
 export function parseJsonLoose<T>(raw: string): T | null {
   let s = raw.trim();
