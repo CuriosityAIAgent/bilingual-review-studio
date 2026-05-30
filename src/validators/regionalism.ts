@@ -15,7 +15,8 @@ function cleanTerm(raw: string): string {
 }
 
 function hasWord(text: string, term: string): boolean {
-  return new RegExp(`(?<![\\p{L}\\p{N}])${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![\\p{L}\\p{N}])`, "iu").test(text);
+  // Plural-aware so a singular flag term (e.g. "ordenador") catches "ordenadores".
+  return new RegExp(`(?<![\\p{L}\\p{N}])${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:es|s)?(?![\\p{L}\\p{N}])`, "iu").test(text);
 }
 
 export const regionalismValidator: ValidatorFn = (i: ValidatorInput): ValidatorResult => {

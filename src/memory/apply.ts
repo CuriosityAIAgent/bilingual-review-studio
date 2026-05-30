@@ -22,9 +22,15 @@ function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-/** Match `from` as a whole word/phrase (Unicode-aware), case-insensitive. */
+/** Match `from` as a whole word/phrase (Unicode-aware), case-insensitive, also
+ * matching a Spanish plural suffix so "ordenador" catches "ordenadores". */
 function termRegex(from: string): RegExp {
-  return new RegExp(`(?<![\\p{L}\\p{N}])(${escapeRegExp(from)})(?![\\p{L}\\p{N}])`, "giu");
+  return new RegExp(`(?<![\\p{L}\\p{N}])(${escapeRegExp(from)})(es|s)?(?![\\p{L}\\p{N}])`, "giu");
+}
+
+/** Spanish pluralization: vowel-final → +s, consonant-final → +es. */
+function pluralize(word: string): string {
+  return /[aeiouáéíóú]$/i.test(word) ? `${word}s` : `${word}es`;
 }
 
 /** Preserve the capitalisation pattern of the matched text on the replacement. */
@@ -39,9 +45,10 @@ function matchCase(matched: string, replacement: string): string {
 
 function replaceTerm(text: string, from: string, to: string): { text: string; count: number } {
   let count = 0;
-  const out = text.replace(termRegex(from), (m) => {
+  const out = text.replace(termRegex(from), (full: string, _base: string, suffix?: string) => {
     count += 1;
-    return matchCase(m, to);
+    // If the source matched a plural, pluralize the neutral replacement to agree.
+    return matchCase(full, suffix ? pluralize(to) : to);
   });
   return { text: out, count };
 }

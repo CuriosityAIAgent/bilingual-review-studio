@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import {
-  CheckCircle2, Download, FileText, PanelLeftClose, PanelRightClose, Send, Sparkles, UserCheck,
+  CheckCircle2, Download, FileText, Hand, Lock, PanelLeftClose, PanelRightClose, RotateCcw, Send, Sparkles, UserCheck,
 } from "lucide-react";
 import { api, type ActionBody } from "@/app/lib/client";
 import type { DocModel, FlagCategory } from "@/src/lib/doc-model";
@@ -11,6 +11,9 @@ import { type SegCaps, SegmentRow } from "@/components/review/SegmentRow";
 import { OutlineNavigator } from "@/components/review/OutlineNavigator";
 import { FeedbackPanel } from "@/components/review/FeedbackPanel";
 import { TeachRuleModal } from "@/components/review/TeachRuleModal";
+import { ProcessStepper } from "@/components/review/ProcessStepper";
+import { FormatToolbar } from "@/components/review/FormatToolbar";
+import { isYourTurn, roleLabel } from "@/app/lib/roles";
 
 const STATUS_COLOR: Record<string, string> = {
   draft: "var(--ink-faint)", in_review: "var(--edited)", changes_requested: "var(--flag)",
@@ -19,7 +22,7 @@ const STATUS_COLOR: Record<string, string> = {
 
 export default function ReviewPage() {
   const { id } = useParams<{ id: string }>();
-  const { seat } = useSeat();
+  const { seat, seats } = useSeat();
   const [doc, setDoc] = useState<DocModel | null>(null);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState("");
@@ -32,16 +35,15 @@ export default function ReviewPage() {
   useEffect(() => { api.getDoc(id).then((r) => setDoc(r.doc)).catch((e) => setError(e.message)); }, [id]);
 
   const role = seat?.role ?? "viewer";
-  const inScope = !doc || !seat || role === "admin" || role === "approver"
-    || doc.assigned_to.team_id === seat.team_id || doc.assigned_to.user_id === seat.user_id;
+  // Turn-based lock: you can only edit/act when the document is handed to you.
+  const yourTurn = doc ? isYourTurn(seat ?? null, doc) : false;
   const caps: SegCaps = {
-    canEdit: role !== "viewer" && inScope,
-    canAccept: role === "approver" || role === "admin" || (role === "reviewer" && inScope),
-    canLock: role === "approver" || role === "admin",
-    canPropose: role !== "viewer",
+    canEdit: yourTurn && role !== "viewer",
+    canAccept: yourTurn && (role === "reviewer" || role === "approver" || role === "admin"),
+    canLock: yourTurn && (role === "approver" || role === "admin"),
+    canPropose: yourTurn && role !== "viewer",
   };
-  const canApproveRules = role === "approver" || role === "admin";
-  const canApprovePublish = role === "approver" || role === "admin";
+  const canApproveRules = role === "approver" || role === "admin"; // governance (memory), not turn-gated
 
   const act = useCallback(async (body: ActionBody, label = "") => {
     setBusy(label || body.kind); setError("");
@@ -96,10 +98,27 @@ export default function ReviewPage() {
     b.validator_results.some((v) => v.status === "fail" && v.blocking)
     || b.critic_flags.some((f) => f.severity === "major" || f.severity === "critical")).length;
 
+  const assignedSeat = seats.find((s) => s.user_id === doc.assigned_to.user_id);
+  const assignedName = assignedSeat?.display_name ?? doc.assigned_to.user_id;
+  const assignedTeam = assignedSeat ? `${roleLabel(assignedSeat.role)} · ${assignedSeat.team_name}` : doc.assigned_to.team_id;
+
+  const guidance = (() => {
+    if (!yourTurn) return "";
+    if (role === "author" || (role === "admin" && (doc.status === "draft" || doc.status === "changes_requested")))
+      return doc.status === "changes_requested"
+        ? "Address the requested changes, then hand off to Marketing."
+        : "Review and neutralize the Spanish, then hand off to Marketing.";
+    if (role === "reviewer" && doc.status === "in_review") return "Review and neutralize regional word choice, then hand off to Supervisory Management.";
+    if (role === "reviewer" && doc.status === "approved") return "Approved by Supervisory Management — deploy to clients when ready.";
+    if (role === "approver" && doc.status === "in_review") return "Give final sign-off, or request major changes to send it back.";
+    return "This document is assigned to you.";
+  })();
+
   return (
     <div>
+      <div style={{ position: "sticky", top: 53, zIndex: 40 }}>
       {/* Workspace sub-bar */}
-      <div style={{ position: "sticky", top: 53, zIndex: 40, background: "color-mix(in srgb, var(--bg) 90%, transparent)", borderBottom: "1px solid var(--line)", backdropFilter: "blur(8px)", padding: "10px 22px", display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
+      <div style={{ background: "color-mix(in srgb, var(--bg) 94%, transparent)", borderBottom: "1px solid var(--line)", backdropFilter: "blur(8px)", padding: "10px 22px", display: "flex", alignItems: "center", gap: 14, flexWrap: "wrap" }}>
         <FileText size={16} style={{ color: "var(--ink-soft)" }} />
         <div style={{ minWidth: 0 }}>
           <div className="font-display" style={{ fontWeight: 600, fontSize: 15, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", maxWidth: 320 }}>{doc.title}</div>
@@ -121,40 +140,86 @@ export default function ReviewPage() {
             <Download size={14} /> Review record
           </a>
 
-          {/* Workflow */}
-          {doc.status === "draft" && (role !== "viewer") && (
-            <button className="btn btn-ghost" disabled={!!busy} onClick={() => act({ kind: "submit", note: "Submitted for neutralization review" }, "submit")}>
-              <Send size={14} /> Submit for review
+          {/* Workflow — the JPM short process (turn-aware: only the holder sees the CTA) */}
+          {yourTurn && (role === "author" || role === "admin") && (doc.status === "draft" || doc.status === "changes_requested") && (
+            <button className="btn btn-primary" disabled={!!busy} onClick={() => act({ kind: "submit", note: "Handed off to Marketing" }, "submit")}>
+              <Send size={14} /> Hand off to Marketing
             </button>
           )}
-          {(doc.status === "in_review" || doc.status === "changes_requested") && canApprovePublish && (
-            <button className="btn btn-primary" disabled={!!busy} onClick={() => act({ kind: "approve", note: "Approved" }, "approve")}>
-              <CheckCircle2 size={14} /> Approve
+          {yourTurn && (role === "reviewer" || role === "admin") && doc.status === "in_review" && (
+            <button className="btn btn-primary" disabled={!!busy} onClick={() => act({ kind: "handoff", toUserId: "carmen", note: "For SM approval" }, "handoff")}>
+              <Send size={14} /> Hand off to Supervisory Management
             </button>
           )}
-          {doc.status === "approved" && canApprovePublish && (
+          {yourTurn && (role === "approver" || role === "admin") && doc.status === "in_review" && (
+            <>
+              <button className="btn btn-ghost" disabled={!!busy} onClick={() => act({ kind: "request_changes", note: "Major changes requested" }, "request_changes")}>
+                <RotateCcw size={14} /> Request major changes
+              </button>
+              <button className="btn btn-primary" disabled={!!busy} onClick={() => act({ kind: "approve", note: "SM approved" }, "approve")}>
+                <CheckCircle2 size={14} /> SM approval
+              </button>
+            </>
+          )}
+          {yourTurn && (role === "reviewer" || role === "admin") && doc.status === "approved" && (
             <button className="btn btn-accent" disabled={!!busy} onClick={() => act({ kind: "publish" }, "publish")}>
-              <CheckCircle2 size={14} /> Publish
+              <Send size={14} /> Deploy to clients
             </button>
           )}
 
+          <div style={{ width: 1, height: 22, background: "var(--line)", margin: "0 2px" }} />
+          <FormatToolbar />
           <button className="btn btn-ghost" aria-label="Toggle outline" onClick={() => setShowOutline((v) => !v)} style={{ padding: "7px 8px" }}><PanelLeftClose size={15} /></button>
           <button className="btn btn-ghost" aria-label="Toggle panel" onClick={() => setShowPanel((v) => !v)} style={{ padding: "7px 8px" }}><PanelRightClose size={15} /></button>
         </div>
       </div>
 
-      {/* Handoff bar */}
-      <div style={{ padding: "8px 22px", display: "flex", alignItems: "center", gap: 10, borderBottom: "1px solid var(--line-2)" }}>
-        <UserCheck size={14} style={{ color: "var(--ink-faint)" }} />
-        <span className="ui-base" style={{ color: "var(--ink-soft)" }}>Assigned to <b>{doc.assigned_to.user_id}</b> · {doc.assigned_to.team_id}</span>
-        <HandoffControl value={handoffTo} onChange={setHandoffTo} onHandoff={(to) => to && act({ kind: "handoff", toUserId: to, note: "Handed off" }, "handoff")} />
-        {error && <span className="ui-base" style={{ color: "var(--flag)", marginLeft: "auto" }}>⚠ {error}</span>}
+      {/* The visible process pipeline */}
+      <ProcessStepper doc={doc} />
+      </div>
+
+      {/* Turn-based lock banner — who holds the document right now */}
+      <div style={{
+        padding: "9px 22px", display: "flex", alignItems: "center", gap: 10, borderBottom: "1px solid var(--line-2)",
+        background: doc.status === "published"
+          ? "color-mix(in srgb, var(--memory) 9%, transparent)"
+          : yourTurn ? "color-mix(in srgb, var(--accent) 9%, transparent)" : "var(--surface-2)",
+      }}>
+        {doc.status === "published" ? (
+          <>
+            <CheckCircle2 size={15} style={{ color: "var(--memory)" }} />
+            <span className="ui-base" style={{ color: "var(--ink)" }}><b>Deployed to clients.</b> This document is locked.</span>
+          </>
+        ) : yourTurn ? (
+          <>
+            <Hand size={15} style={{ color: "var(--accent)" }} />
+            <span className="ui-base" style={{ color: "var(--ink)" }}><b>Your turn ({roleLabel(role)}).</b> {guidance}</span>
+            <div style={{ marginLeft: "auto" }}>
+              <HandoffControl value={handoffTo} onChange={setHandoffTo} onHandoff={(to) => to && act({ kind: "handoff", toUserId: to, note: "Handed off" }, "handoff")} />
+            </div>
+          </>
+        ) : (
+          <>
+            <Lock size={15} style={{ color: "var(--ink-faint)" }} />
+            <span className="ui-base" style={{ color: "var(--ink-soft)" }}>
+              Held by <b style={{ color: "var(--ink)" }}>{assignedName}</b> · {assignedTeam}. Read-only for you until it's handed off.
+            </span>
+          </>
+        )}
+        {error && <span className="ui-base" style={{ color: "var(--flag)", marginLeft: yourTurn ? 0 : "auto" }}>⚠ {error}</span>}
       </div>
 
       {/* Three-column reading room */}
       <div style={{ display: "flex", gap: 28, padding: "24px 22px 80px", maxWidth: 1400, margin: "0 auto", alignItems: "flex-start" }}>
         {showOutline && <OutlineNavigator blocks={doc.blocks} onJump={jump} />}
-        <div style={{ flex: 1, minWidth: 0 }} className="fade-up">
+        <div className="card fade-up" style={{ flex: 1, minWidth: 0, overflow: "hidden" }}>
+          <div style={{ padding: "16px 24px", borderBottom: "1px solid var(--line)", display: "flex", justifyContent: "space-between", alignItems: "baseline", background: "var(--surface-2)" }}>
+            <div>
+              <span className="label">Bilingual review record</span>
+              <div className="font-display" style={{ fontSize: 19, fontWeight: 600 }}>{doc.title}</div>
+            </div>
+            <span className="ui-base" style={{ color: "var(--ink-faint)" }}>{doc.blocks.length} segments · English ⇄ Español neutro</span>
+          </div>
           {doc.blocks.map((b, i) => (
             <SegmentRow
               key={b.id} block={b} index={i} caps={caps}
@@ -165,7 +230,7 @@ export default function ReviewPage() {
               onTeach={(regional, neutral, blockId) => setTeach({ regional, neutral, blockId })}
             />
           ))}
-          <ProvenanceFooter doc={doc} />
+          <div style={{ padding: "0 24px 20px" }}><ProvenanceFooter doc={doc} /></div>
         </div>
         {showPanel && <FeedbackPanel doc={doc} canApproveRules={canApproveRules} onGovern={onGovern} refreshKey={refreshKey} />}
       </div>

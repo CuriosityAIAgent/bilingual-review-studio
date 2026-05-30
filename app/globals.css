@@ -136,3 +136,24 @@ a { color: inherit; text-decoration: none; }
 /* scrollbars */
 ::-webkit-scrollbar { width:10px; height:10px; }
 ::-webkit-scrollbar-thumb { background:var(--line); border-radius:6px; border:3px solid var(--bg); }
+
+/* ── premium polish ─────────────────────────────────────────────────────────── */
+/* Refined elevation — surfaces read as crafted paper, not flat fills. */
+.card { box-shadow: 0 1px 2px rgba(21,35,59,.045), 0 14px 32px -22px rgba(21,35,59,.30); }
+[data-theme="ink"] .card { box-shadow: 0 1px 2px rgba(0,0,0,.25), 0 16px 36px -22px rgba(0,0,0,.6); }
+.card:hover { box-shadow: 0 1px 2px rgba(21,35,59,.06), 0 18px 40px -24px rgba(21,35,59,.34); }
+
+/* Buttons get a faint lift; primary/accent get a soft glow on hover. */
+.btn { box-shadow: 0 1px 0 rgba(21,35,59,.03); }
+.btn-primary:hover, .btn-accent:hover { box-shadow: 0 6px 18px -8px color-mix(in srgb, var(--accent) 55%, transparent); }
+
+/* The QE chip + tags sit on a hairline pill with a touch more refinement. */
+.qe { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--line) 60%, transparent); }
+
+/* Selection + focus feel intentional. */
+.cell[contenteditable="true"]:focus { box-shadow: 0 0 0 2px var(--accent), 0 8px 24px -16px color-mix(in srgb, var(--accent) 50%, transparent); }
+
+/* A hairline brass underline animates in when memory is applied (the learning loop). */
+@keyframes brassUnderline { from { background-size: 0 2px; } to { background-size: 100% 2px; } }
+.learned { background-image: linear-gradient(var(--accent), var(--accent)); background-repeat: no-repeat;
+  background-position: 0 100%; animation: brassUnderline .5s var(--ease) both; }

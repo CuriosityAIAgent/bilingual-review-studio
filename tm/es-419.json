@@ -53,5 +53,16 @@
     "approved_by": "carmen",
     "approved_at": "2026-05-01T00:00:00Z",
     "created_at": "2026-05-01T00:00:00Z"
+  },
+  {
+    "id": "tm-006",
+    "source_text": "This material is for information purposes only and may inform you of certain products and services offered by private banking businesses, part of JPMorgan Chase & Co. Any views, strategies or products discussed may not be appropriate for all individuals and are subject to risks. Investors may get back less than they invested, and past performance is not a reliable indicator of future results. This material should not be regarded as a research report.",
+    "target_text": "Este material tiene únicamente fines informativos y puede informarle sobre ciertos productos y servicios ofrecidos por los negocios de banca privada, parte de JPMorgan Chase & Co. Las opiniones, estrategias o productos analizados pueden no ser apropiados para todas las personas y están sujetos a riesgos. Los inversionistas podrían recuperar menos de lo que invirtieron, y el rendimiento pasado no es un indicador confiable de los resultados futuros. Este material no debe considerarse un informe de análisis.",
+    "locale": "es-419",
+    "kind": "disclaimer",
+    "version": 1,
+    "approved_by": "carmen",
+    "approved_at": "2026-05-01T00:00:00Z",
+    "created_at": "2026-05-01T00:00:00Z"
   }
 ]

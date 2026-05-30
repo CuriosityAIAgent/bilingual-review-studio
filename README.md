@@ -28,33 +28,65 @@ The full loop runs through the real API with real role separation (see
   approver activates it → re-translate auto-neutralizes it everywhere → the
   "edits per 1,000 words" curve falls. Governed lifecycle: only **active/approved**
   rules are ever applied.
-- **RBAC + multi-team handoff** (Author → Reviewer → Approver), append-only
-  `edit_log` / `handoff_log`, exact-match disclaimers auto-locked from approved TM,
+- **The process, shown on top** — a live pipeline: Translate → Checks → Governance
+  → Rewrite → Marketing review → SM approval → Deploy to clients, with done/active
+  state + counts.
+- **Turn-based locking** — a document has ONE holder at a time. Only the holder
+  (or Admin) can edit; everyone else is read-only with a "held by X" banner. The
+  baton passes **Investment Strategy → Marketing → Supervisory Management →
+  deploy**, and a major-change request loops it back. Append-only `edit_log` /
+  `handoff_log`; exact-match disclaimers auto-locked from approved TM;
   optimistic-concurrency stale-write protection (no last-write-wins).
+- **English-left / Spanish-right** text-editor experience with a format toolbar.
+- **Real content:** the 5 latest J.P. Morgan "Top Market Takeaways" pieces ship as
+  samples, translated to neutral es-419.
 - **Export** a bilingual review record (and a reflowed target-only doc).
 
-`npm test` → 76 unit/integration tests + a 31-case finance eval harness.
+`npm test` → 82 unit/integration tests + a 31-case finance eval harness. A full
+HTTP e2e exercises the flywheel, turn lock, hand-off chain, and quality gate.
 
 ---
 
+## Roles & the short process
+
+Everyone logs in and sees the same platform (read-only by default). Each document
+has one holder; editing is turn-based.
+
+| Role | Does | When it's their turn |
+|---|---|---|
+| **Investment Strategist** | drafts + neutralizes, hands off | document is `draft` / `changes_requested` |
+| **Marketing** | reviews + neutralizes, deploys | after submit (`in_review`), and after SM approval (`approved`) |
+| **Supervisory Management** | final sign-off / request changes | after Marketing hands off |
+| **Admin / Viewer** | manage / read-only | — |
+
+Flow: **Strategist → Marketing → Supervisory Management → deploy to clients.**
+Major changes from SM send it back to the Strategist to repeat the steps.
+
+In this build, login is a **mock seat switcher** (top-right) so one person can play
+the whole chain; production swaps in OIDC/SAML → the same RBAC + turn logic.
+
 ## The 90-second demo (what to show senior management)
 
-1. Open the app, seat = **Ana Reyes (Author)**. Click a bundled sample
-   (*Global Markets Outlook*). It translates and opens in the review workspace.
-2. One segment is flagged: a Peninsular word (**"ordenador"**) the validator
-   wants neutralized. A disclaimer at the end is **auto-locked** (sage tag) —
-   it came from approved memory, untouched.
-3. Click **Teach rule** on the flag → propose `ordenador → computadora`.
-4. Switch seat to **Carmen Ortiz (Approver)** → the Governance queue shows the
-   proposed rule → **Approve**. (Try approving as the Reviewer first — it's blocked.)
-5. Click **Re-translate with learnings**. The segment auto-neutralizes to
-   "computadora". Upload another document that uses the same word — it's already
-   neutral. The **edits/1k curve** in the right panel ticks down.
-6. Open the *Fixed Income* sample → the **billón trap** is caught in red.
-7. **Export** the bilingual review record.
+1. Seat = **Ana Reyes (Investment Strategist)**. Open a J.P. Morgan sample
+   (*"If the shock doesn't stick"*). It translates and opens with the **process
+   pipeline on top** and English-left / Spanish-right.
+2. One segment is flagged: the Peninsular word **"ordenador"**. The closing JPM
+   disclaimer is **auto-locked** (sage tag) — it came from approved memory.
+3. Click **Teach rule** → propose `ordenador → computadora`. Click **Hand off to
+   Marketing**. Switch seat to **Diego (Marketing)** — the doc is now *his turn*;
+   as Ana it's read-only.
+4. As **Carmen (Supervisory Management)**, the Governance queue shows the proposed
+   rule → **Approve**. (As the Reviewer the approve is blocked.)
+5. Click **Re-translate with learnings** → the segment auto-neutralizes to
+   "computadora", and the **edits/1k curve** ticks down. Open another piece using
+   the same word — already neutral.
+6. Open *"The U.S.–China relationship"* → the **billón trap** is caught in red
+   ($414.7 billion mis-rendered as "billones").
+7. Hand off to SM → **SM approval** → **Deploy to clients**. **Export** the record.
 
 The headline isn't "it uses Claude and GPT." It's: *reviewer edits fell because the
-system learned the team's neutralization decisions.*
+system learned the team's neutralization decisions, with a governed, auditable
+hand-off at every step.*
 
 ---
 

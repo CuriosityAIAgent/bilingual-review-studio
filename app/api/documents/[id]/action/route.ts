@@ -13,10 +13,12 @@ import {
   approveDoc,
   editSegment,
   handoff,
+  isAssignee,
   lockSegment,
   proposeSegment,
   publishDoc,
   rejectSegment,
+  requestChanges,
   submitForReview,
 } from "@/src/workflow";
 
@@ -41,7 +43,8 @@ const PERM: Record<string, string> = {
   handoff: "handoff",
   submit: "handoff",
   approve: "approve_publish",
-  publish: "approve_publish",
+  publish: "deploy_clients",
+  request_changes: "request_changes",
   retranslate: "upload_translate",
 };
 
@@ -64,6 +67,15 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
   const block = body.blockId ? doc.blocks.find((b) => b.id === body.blockId) : undefined;
   const authz = authorize(seat, action, { doc, block });
   if (!authz.allowed) return fail(`Not permitted: ${authz.reason}`, 403);
+
+  // Turn-based lock (spec §11): only the current holder (or Admin) may act on a
+  // document. Everyone else has read-only access until the baton is handed off.
+  if (!isAssignee(seat, doc)) {
+    return fail(
+      `It's not your turn — this document is held by ${doc.assigned_to.user_id} (${doc.assigned_to.team_id}). You have read-only access until it is handed off to you.`,
+      423,
+    );
+  }
 
   try {
     let next = doc;
@@ -94,6 +106,9 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
         break;
       case "publish":
         next = publishDoc(doc, seat);
+        break;
+      case "request_changes":
+        next = requestChanges(doc, seat, body.note ?? "Major changes requested");
         break;
       case "retranslate":
         next = await reTranslateDoc(doc);

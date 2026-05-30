@@ -20,9 +20,9 @@ export interface Seat extends UserRef {
  * Author (LatAm, Mexican base) → Reviewer (Iberia, neutralize) → Approver (sign-off).
  */
 export const DEMO_SEATS: Seat[] = [
-  { user_id: "ana", display_name: "Ana Reyes", role: "author", team_id: "latam-strategy", team_name: "LatAm Strategy" },
-  { user_id: "diego", display_name: "Diego Serrano", role: "reviewer", team_id: "iberia-marketing", team_name: "Iberia Marketing" },
-  { user_id: "carmen", display_name: "Carmen Ortiz", role: "approver", team_id: "compliance", team_name: "Compliance" },
+  { user_id: "ana", display_name: "Ana Reyes", role: "author", team_id: "latam-strategy", team_name: "Investment Strategy" },
+  { user_id: "diego", display_name: "Diego Serrano", role: "reviewer", team_id: "iberia-marketing", team_name: "Marketing" },
+  { user_id: "carmen", display_name: "Carmen Ortiz", role: "approver", team_id: "compliance", team_name: "Supervisory Management" },
   { user_id: "ops", display_name: "Platform Admin", role: "admin", team_id: "platform", team_name: "Platform" },
   { user_id: "sam", display_name: "Sam Okafor", role: "viewer", team_id: "stakeholders", team_name: "Stakeholders" },
 ];

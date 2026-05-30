@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Languages, LibraryBig, Moon, Sun, Upload } from "lucide-react";
+import { roleLabel } from "@/app/lib/roles";
 import { useSeat, useTheme } from "./Providers";
 
 const ROLE_DOT: Record<string, string> = {
@@ -51,7 +52,7 @@ export function TopBar() {
           >
             {seats.map((s) => (
               <option key={s.user_id} value={s.user_id}>
-                {s.display_name} · {s.role} · {s.team_name}
+                {s.display_name} · {roleLabel(s.role)}
               </option>
             ))}
           </select>

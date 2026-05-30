@@ -40,3 +40,4 @@ yarn-error.log*
 # vitest
 /coverage
 .nvmrc.note
+.gstack/

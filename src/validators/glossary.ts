@@ -5,6 +5,8 @@ import type { ValidatorResult } from "@/src/lib/doc-model";
 import type { ValidatorFn, ValidatorInput } from "./types";
 
 function hasWord(text: string, term: string): boolean {
+  // Exact (NOT plural-tolerant): for glossary, singular vs plural is meaningful
+  // ("curva de rendimiento" forbidden vs "curva de rendimientos" approved).
   return new RegExp(`(?<![\\p{L}\\p{N}])${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?![\\p{L}\\p{N}])`, "iu").test(text);
 }
 

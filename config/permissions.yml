@@ -15,6 +15,10 @@ actions:
   handoff:                 { author: true,  reviewer: true,         approver: true,  admin: true,  viewer: false }
   lock_segment:            { author: false, reviewer: false,        approver: true,  admin: true,  viewer: false }
   approve_publish:         { author: false, reviewer: false,        approver: true,  admin: true,  viewer: false }
+  # SM approves; Marketing (reviewer) deploys to clients after approval (JPM short process).
+  deploy_clients:          { author: false, reviewer: true,         approver: true,  admin: true,  viewer: false }
+  # SM (or Marketing) can send a document back to the Strategist for major changes.
+  request_changes:         { author: false, reviewer: true,         approver: true,  admin: true,  viewer: false }
   manage_org:              { author: false, reviewer: false,        approver: false, admin: true,  viewer: false }
   view:                    { author: true,  reviewer: true,         approver: true,  admin: true,  viewer: true }
 

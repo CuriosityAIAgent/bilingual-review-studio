@@ -16,16 +16,30 @@ import type {
 import { nowIso } from "@/src/lib/ids";
 import { computeMetrics } from "@/src/metrics";
 import { gateBlock } from "@/src/quality-gate";
-import { type Seat, getSeat } from "@/src/auth";
+import { DEMO_SEATS, type Seat, getSeat } from "@/src/auth";
 import { makeEditEntry, makeHandoffEntry } from "./audit";
 
 export const VALID_TRANSITIONS: Record<DocStatus, DocStatus[]> = {
   draft: ["in_review"],
   in_review: ["changes_requested", "approved"],
-  changes_requested: ["in_review"],
-  approved: ["published", "in_review"],
+  changes_requested: ["in_review", "approved"],
+  approved: ["published", "in_review", "changes_requested"],
   published: [],
 };
+
+/**
+ * Turn-based lock (the desk's model): a document has ONE holder — whoever it is
+ * currently assigned to. Only the holder (or an Admin) may edit/act; everyone
+ * else is read-only. A published doc is locked for all. This is what makes the
+ * Strategist → Marketing → SM baton real.
+ */
+export function isAssignee(seat: Seat, doc: DocModel): boolean {
+  if (doc.status === "published") return false;
+  if (seat.role === "admin") return true;
+  return doc.assigned_to.user_id === seat.user_id || doc.assigned_to.team_id === seat.team_id;
+}
+
+const seatByRole = (role: Seat["role"]) => DEMO_SEATS.find((s) => s.role === role);
 
 function actorOf(seat: Seat): ActorRef {
   return { user_id: seat.user_id, team_id: seat.team_id, role: seat.role, display_name: seat.display_name };
@@ -112,10 +126,21 @@ export function handoff(doc: DocModel, seat: Seat, toUserId: string, note: strin
   return refresh({ ...doc, assigned_to: { user_id: to.user_id, team_id: to.team_id }, handoff_log: [...doc.handoff_log, entry] });
 }
 
+/** Strategist hands the document to Marketing for review (the first baton pass). */
 export function submitForReview(doc: DocModel, seat: Seat, note: string): DocModel {
   transition(doc, "in_review");
-  const entry = makeHandoffEntry({ action: "submit", actor: actorOf(seat), note, status_from: doc.status, status_to: "in_review" });
-  return refresh({ ...doc, status: "in_review", handoff_log: [...doc.handoff_log, entry] });
+  const mkt = seatByRole("reviewer") ?? seat;
+  const to = { user_id: mkt.user_id, team_id: mkt.team_id };
+  const entry = makeHandoffEntry({ action: "submit", actor: actorOf(seat), from: doc.assigned_to, to, note, status_from: doc.status, status_to: "in_review" });
+  return refresh({ ...doc, status: "in_review", assigned_to: to, handoff_log: [...doc.handoff_log, entry] });
+}
+
+/** SM sends the document back to the Strategist for major changes (loop). */
+export function requestChanges(doc: DocModel, seat: Seat, note: string): DocModel {
+  transition(doc, "changes_requested");
+  const to = { user_id: doc.owner.user_id, team_id: doc.owner.team_id };
+  const entry = makeHandoffEntry({ action: "reopen", actor: actorOf(seat), from: doc.assigned_to, to, note, status_from: doc.status, status_to: "changes_requested" });
+  return refresh({ ...doc, status: "changes_requested", assigned_to: to, handoff_log: [...doc.handoff_log, entry] });
 }
 
 export function approveDoc(doc: DocModel, seat: Seat, note: string): DocModel {
@@ -130,10 +155,14 @@ export function approveDoc(doc: DocModel, seat: Seat, note: string): DocModel {
       `Cannot approve: ${unresolved.length} segment(s) have unresolved blocking issues — accept, edit, or lock them first (spec §15).`,
     );
   }
-  const entry = makeHandoffEntry({ action: "approve", actor: actorOf(seat), note, status_from: doc.status, status_to: "approved" });
+  // After SM approval the baton returns to Marketing to deploy to clients.
+  const mkt = seatByRole("reviewer") ?? seat;
+  const to = { user_id: mkt.user_id, team_id: mkt.team_id };
+  const entry = makeHandoffEntry({ action: "approve", actor: actorOf(seat), from: doc.assigned_to, to, note, status_from: doc.status, status_to: "approved" });
   return refresh({
     ...doc,
     status: "approved",
+    assigned_to: to,
     approval: { approved_by: seat.user_id, approved_at: nowIso(), approval_scope: "document" },
     handoff_log: [...doc.handoff_log, entry],
   });
