@@ -26,8 +26,12 @@ deterministic validators and humans decide.
 
 ## 1. Railway (hosting)
 
-**One service.** Connect the GitHub repo `CuriosityAIAgent/bilingual-review-studio`;
-Railway's Nixpacks auto-detects Next.js.
+**One service, GitOps.** In the Railway dashboard: New Project → Deploy from GitHub
+repo → `CuriosityAIAgent/bilingual-review-studio` → branch `main`. Railway installs
+its GitHub app and **auto-deploys on every push to `main`** — no local `railway up`.
+Build/start are pinned in `railway.json` at the repo root (build `npm run build`,
+start `npm run start`), so the deploy is reproducible from the repo. Nixpacks
+handles the Node build; `engines.node` pins Node 20.
 
 | Setting | Value |
 |---|---|
