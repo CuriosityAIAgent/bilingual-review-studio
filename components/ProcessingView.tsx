@@ -10,11 +10,14 @@ import { Check } from "lucide-react";
  * stage ("Refining…") until the page redirects — so a longer document that is
  * still working simply stays on the final step rather than racing ahead.
  */
+// Captions name the configured models (translator = Claude Sonnet 4.6, critic =
+// GPT-5). Accurate for a keyed deployment; GPT-5 *reviews*, the translator
+// *rewrites* the segments it flags — the captions reflect that split.
 const STAGES = [
-  { key: "translate", label: "Translate", caption: "Claude Sonnet 4.6 is translating each segment to neutral Spanish…" },
+  { key: "translate", label: "Translate", caption: "The translator (Claude Sonnet 4.6) drafts each segment in neutral Spanish…" },
   { key: "checks", label: "Checks", caption: "Deterministic validators check numbers, dates, glossary and regionalisms…" },
   { key: "governance", label: "Governance", caption: "Applying your governed memory — approved rules and glossary…" },
-  { key: "rewrite", label: "Rewrite", caption: "GPT-5 critiques and refines the weak segments — a second, decorrelated model…" },
+  { key: "rewrite", label: "Rewrite", caption: "GPT-5 reviews the weak segments and the translator refines them — a second, decorrelated model checks the first…" },
 ];
 const STEP_MS = 820;
 
