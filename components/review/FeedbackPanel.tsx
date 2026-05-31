@@ -54,7 +54,7 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey }: {
 
   return (
     <aside style={{ width: 320, flexShrink: 0 }}>
-      <div style={{ position: "sticky", top: 116, maxHeight: "calc(100vh - 140px)", overflowY: "auto", paddingRight: 4 }}>
+      <div style={{ position: "sticky", top: 172, maxHeight: "calc(100dvh - 188px)", overflowY: "auto", overflowX: "hidden", paddingRight: 6 }}>
         <Section title="The learning curve · edits per 1,000 words">
           <div className="card" style={{ padding: 14 }}>
             <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>

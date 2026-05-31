@@ -14,7 +14,7 @@ export function OutlineNavigator({ blocks, onJump }: { blocks: Block[]; onJump: 
 
   return (
     <aside style={{ width: 240, flexShrink: 0 }}>
-      <div style={{ position: "sticky", top: 116 }}>
+      <div style={{ position: "sticky", top: 172, maxHeight: "calc(100dvh - 188px)", overflowY: "auto", overflowX: "hidden" }}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 8 }}>
           <span className="label">Outline</span>
           <span className="mono ui-base" style={{ color: "var(--accent)" }}>{pct}% approved</span>
@@ -22,7 +22,7 @@ export function OutlineNavigator({ blocks, onJump }: { blocks: Block[]; onJump: 
         <div style={{ height: 3, background: "var(--line)", borderRadius: 3, marginBottom: 12, overflow: "hidden" }}>
           <div style={{ width: `${pct}%`, height: "100%", background: "var(--accent)", transition: "width var(--dur) var(--ease)" }} />
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 2, maxHeight: "calc(100vh - 220px)", overflowY: "auto" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
           {blocks.map((b, i) => (
             <button
               key={b.id}
