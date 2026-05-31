@@ -141,3 +141,59 @@ export async function addTm(i: AddTmInput): Promise<TmEntry> {
   await store.saveTm([...next, entry]);
   return entry;
 }
+
+// ── Learn from a finished bilingual pair (bulk TM capture) ────────────────────
+// A reviewer pastes completed English + completed Spanish; alignBilingual()
+// segments and aligns them, and each pair is folded into TM so prior human work
+// is reused on future documents. TM is reference memory (a match score surfaced
+// to the translator / reused on exact match), not an auto-rewrite like a rule —
+// so capture is direct rather than queued. Source steers content only.
+export type TmImportStatus = "new" | "duplicate" | "supersede";
+
+export interface TmImportRow {
+  source_text: string;
+  target_text: string;
+  status: TmImportStatus;
+}
+
+/** Classify each aligned pair against current (non-superseded) TM — no writes. */
+export async function previewTmImport(
+  pairs: { source: string; target: string }[],
+  locale: Locale = "es-419",
+): Promise<TmImportRow[]> {
+  const store = getStore();
+  const active = (await store.getTm()).filter((t) => !t.superseded_by && t.locale === locale);
+  return pairs.map((p) => {
+    const prior = active.find((t) => t.source_text === p.source);
+    const status: TmImportStatus = !prior ? "new" : prior.target_text === p.target ? "duplicate" : "supersede";
+    return { source_text: p.source, target_text: p.target, status };
+  });
+}
+
+export interface TmImportResult {
+  added: number;
+  superseded: number;
+  skipped: number;
+}
+
+/** Commit aligned pairs to TM. Exact duplicates are skipped (no version churn);
+ *  a changed target for an existing source supersedes the prior wording (kept). */
+export async function commitTmImport(
+  pairs: { source: string; target: string }[],
+  approvedBy: string,
+  locale: Locale = "es-419",
+): Promise<TmImportResult> {
+  const result: TmImportResult = { added: 0, superseded: 0, skipped: 0 };
+  for (const p of pairs) {
+    const store = getStore();
+    const prior = (await store.getTm()).find((t) => t.source_text === p.source && !t.superseded_by);
+    if (prior && prior.target_text === p.target) {
+      result.skipped++;
+      continue;
+    }
+    await addTm({ source_text: p.source, target_text: p.target, kind: "segment", locale, approved_by: approvedBy });
+    if (prior) result.superseded++;
+    else result.added++;
+  }
+  return result;
+}

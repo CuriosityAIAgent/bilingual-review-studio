@@ -1,9 +1,17 @@
-# Design Handoff — Bilingual Review Studio
+# Design Handoff — Translation Studio
 
 A brief for **Claude Design**. Goal: take the working product from "clean editorial" to
 **premium, sophisticated, financial-grade** — the feel of a tool a private bank's
 investment-strategy desk would be proud to use in front of clients. This document is
 self-contained; the live app is the reference implementation to push past.
+
+> **Recent changes (since the previous handoff):** product renamed **Bilingual Review
+> Studio → Translation Studio**; identity is now **role-based — no personal names appear
+> anywhere in the UI** (login, top bar, hand-offs, audit log all read by role:
+> Investment Strategist / Marketing / Supervisory Management / Admin / Viewer); the
+> Quality-Estimation signal is now a **real open-weight neural model running in-container**
+> (no longer a heuristic), so the QE chip reflects a genuine score; and a new
+> **"Learn from finished work"** surface has been added (see screen 6).
 
 ---
 
@@ -49,6 +57,18 @@ count (segments, validators flagged, rules neutralized, segments refined).
    feels like placing a document on a desk; a strip of the 5 bundled JPM samples.
 4. **Library / queue.** Documents with status, % approved, edits/1k, owner team.
 5. **Export.** The bilingual review record as a finished artifact (print-to-PDF clean).
+6. **Learn from finished work (bilingual paste → memory).** A second front door, live at
+   `/learn`. Two large paste panes — **English source left, finished Spanish right** — and a
+   single **Process** action. The system segments and aligns both sides by paragraph order,
+   then shows a **review table of aligned pairs** (each tagged *new / updates wording /
+   already known*, with a ledger rule colored by status) before anything is written; an
+   uneven-count banner appears when paragraph breaks don't line up. Confirm with **"Save N
+   to memory"** and the pairs enter governed Translation Memory, to be reused verbatim on
+   future documents. This is the "we learn from what your team already did" moment — it
+   should feel like depositing trusted work into the institution's memory, not a bulk
+   importer. Needs: the two-pane paste state, the aligned-pairs review table (the signature
+   element here — quiet status ledger, the brass "earned" treatment on *new* rows), the
+   uneven-count caution state, and the saved-confirmation state.
 
 ## 4. Aesthetic direction (keep + elevate)
 

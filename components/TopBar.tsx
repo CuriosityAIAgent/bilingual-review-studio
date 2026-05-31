@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { House, Languages, LibraryBig, Moon, Sun } from "lucide-react";
+import { GraduationCap, House, Languages, LibraryBig, Moon, Sun } from "lucide-react";
 import { roleLabel } from "@/app/lib/roles";
 import { useSeat, useTheme } from "./Providers";
 
@@ -34,13 +34,13 @@ export function TopBar() {
       <nav className="font-ui" style={{ display: "flex", gap: 4, marginLeft: 10 }}>
         <NavLink href="/" active={path === "/"} icon={<House size={14} strokeWidth={1.8} />} label="Home" />
         <NavLink href="/library" active={path?.startsWith("/library") || !!isReview} icon={<LibraryBig size={14} strokeWidth={1.8} />} label="Library" />
+        <NavLink href="/learn" active={path?.startsWith("/learn")} icon={<GraduationCap size={14} strokeWidth={1.8} />} label="Learn" />
       </nav>
 
       <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 10 }}>
         {/* Signed-in identity (login screen sets the role) */}
         <span className="dot" style={{ background: ROLE_DOT[seat?.role ?? "viewer"] }} />
-        <span className="ui-base" style={{ fontWeight: 600 }}>{seat?.display_name ?? "—"}</span>
-        <span className="ui-base" style={{ color: "var(--ink-soft)" }}>· {roleLabel(seat?.role ?? "viewer")}</span>
+        <span className="ui-base" style={{ fontWeight: 600 }}>{roleLabel(seat?.role ?? "viewer")}</span>
         <button className="btn btn-ghost ui-base" onClick={signOut} style={{ padding: "5px 11px", marginLeft: 2 }}>
           Sign out
         </button>
