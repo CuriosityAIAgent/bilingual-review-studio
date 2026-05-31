@@ -6,6 +6,7 @@ import { api } from "@/app/lib/client";
 import type { DocSummary } from "@/src/store/types";
 import { roleLabel } from "@/app/lib/roles";
 import { useSeat } from "@/components/Providers";
+import { ProcessingView } from "@/components/ProcessingView";
 
 type Sample = { name: string; title: string; words: number };
 
@@ -33,8 +34,15 @@ export default function HomePage() {
 
   const go = useCallback(async (fn: () => Promise<{ doc_id: string }>) => {
     setBusy("parsing"); setError("");
+    const start = Date.now();
     try {
       const { doc_id } = await fn();
+      // Let the stage animation play through (it runs while the real pipeline
+      // works); if the doc was tiny and returned fast, hold briefly so the
+      // movement is visible. A slow doc just redirects as soon as it's ready.
+      const MIN_MS = 3600;
+      const elapsed = Date.now() - start;
+      if (elapsed < MIN_MS) await new Promise((r) => setTimeout(r, MIN_MS - elapsed));
       router.push(`/review/${doc_id}`);
     } catch (e) { setBusy(""); setError((e as Error).message); }
   }, [router]);
@@ -58,6 +66,15 @@ export default function HomePage() {
   const uploadedNames = new Set(docs.map((d) => d.filename));
   const freshSamples = samples.filter((s) => !uploadedNames.has(s.name));
 
+  // While a document translates, take over the page with the stage animation.
+  if (busy === "parsing") {
+    return (
+      <div style={{ maxWidth: 1040, margin: "0 auto", padding: "40px 24px 96px" }}>
+        <ProcessingView />
+      </div>
+    );
+  }
+
   return (
     <div style={{ maxWidth: 1040, margin: "0 auto", padding: "40px 24px 96px" }}>
       <div className="fade-up" style={{ marginBottom: 30 }}>
@@ -67,14 +84,6 @@ export default function HomePage() {
           English research, translated to neutral Spanish and reviewed through the short process. Open a piece to pick up where it stands, or start something new below.
         </p>
       </div>
-
-      {busy === "parsing" && (
-        <div className="card fade-up" style={{ padding: 28, display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
-          <Sparkles size={20} className="live-dot" style={{ color: "var(--accent)" }} />
-          <span className="font-ui" style={{ fontWeight: 600 }}>Translating…</span>
-          <span className="ui-base" style={{ color: "var(--ink-soft)" }}>reading → segmenting → translating → checking</span>
-        </div>
-      )}
 
       {/* In-progress documents */}
       {docs.length > 0 && (
