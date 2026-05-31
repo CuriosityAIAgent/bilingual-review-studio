@@ -114,16 +114,26 @@
     </div>
   </div>
 
-  <h2>The quality engine: two different AIs</h2>
-  <p>A single model can’t reliably catch its own mistakes. So a <b class="ink">different</b> AI independently reviews the first one’s work — and the document only gets rewritten where it objectively needs it.</p>
+  <h2>How the memory is invoked</h2>
+  <p>The team’s approved terms, phrasings and “avoid this regionalism” rules aren’t applied as a clean-up at the end — they are <b class="ink">loaded first and drive the whole process.</b></p>
+  <div class="grid2">
+    <div class="card"><div class="ls-n" style="color:var(--teal)">01 · LOADED UP FRONT</div><p style="margin:5px 0 0;font-size:13px">Glossary, active rules and prior translations load before anything is translated.</p></div>
+    <div class="card"><div class="ls-n" style="color:var(--teal)">02 · PRIMES THE DRAFT</div><p style="margin:5px 0 0;font-size:13px">Fed into the translator’s instructions, so the first draft already uses our wording.</p></div>
+    <div class="card"><div class="ls-n" style="color:var(--teal)">03 · ENFORCED THROUGHOUT</div><p style="margin:5px 0 0;font-size:13px">Re-applied as hard constraints on every rewrite; the checks flag any drift.</p></div>
+    <div class="card"><div class="ls-n" style="color:var(--teal)">04 · FEEDS BACK IN</div><p style="margin:5px 0 0;font-size:13px">A reviewer’s correction becomes a governed rule, applied to every future document.</p></div>
+  </div>
+
+  <h2>The cross-model cycle, step by step</h2>
+  <p>A single model can’t reliably catch its own mistakes. So a <b class="ink">different</b> AI independently reviews the first one’s work — twice — and the document is only rewritten where it objectively needs it.</p>
 
   <div class="loop">
-    <div class="lstep"><div class="ls-n">01 · WRITE</div><div class="ls-t">Claude Sonnet 4.6 drafts</div><div class="ls-d">primed with our glossary &amp; rules, so it’s right the first time</div></div>
-    <div class="lstep"><div class="ls-n">02 · REVIEW</div><div class="ls-t">GPT-5 critiques</div><div class="ls-d">a different AI family flags exact errors; a score routes effort</div></div>
-    <div class="lstep"><div class="ls-n">03 · REFINE</div><div class="ls-t">Sonnet rewrites the flagged spans</div><div class="ls-d">only what was flagged — not a free-form “make it better”</div></div>
-    <div class="lstep"><div class="ls-n">04 · DECIDE</div><div class="ls-t">Re-check, then keep or revert</div><div class="ls-d">kept only if measurably better; otherwise the prior text stays</div></div>
+    <div class="lstep"><div class="ls-n">01 · DRAFT</div><div class="ls-t">Sonnet writes</div><div class="ls-d">Claude Sonnet 4.6 drafts the Spanish, primed with our glossary &amp; rules</div></div>
+    <div class="lstep"><div class="ls-n">02 · SCORE + CRITIQUE</div><div class="ls-t">we score, GPT-5 critiques</div><div class="ls-d">a score routes effort; GPT-5 (a different AI) returns the exact problems</div></div>
+    <div class="lstep"><div class="ls-n">03 · REFINE</div><div class="ls-t">Sonnet refines using GPT-5’s notes</div><div class="ls-d">rewrites only the flagged spans; our rules re-applied as hard constraints</div></div>
+    <div class="lstep"><div class="ls-n">04 · RE-SCORE + RE-CRITIQUE</div><div class="ls-t">we score, GPT-5 critiques again</div><div class="ls-d">confirms the fix landed and introduced nothing new</div></div>
+    <div class="lstep"><div class="ls-n">05 · KEEP THE BEST</div><div class="ls-t">keep if better, else revert</div><div class="ls-d">repeats until clean (hard cap); good text is left untouched</div></div>
   </div>
-  <div class="loopnote"><b class="ink">Why this matters:</b> good first drafts are left untouched (forcing rewrites degrades them), and any change that doesn’t improve the text is thrown away. Quality can only stay the same or get better — never worse.</div>
+  <div class="loopnote"><b class="ink">In short:</b> Sonnet writes → we score + GPT-5 critiques → Sonnet refines using GPT-5’s notes → we score + GPT-5 critiques again → keep the best. Quality can only stay the same or get better — never worse.</div>
 
   <h2>What’s deterministic vs. what’s AI</h2>
   <p>This is the part that makes it trustworthy in a regulated setting.</p>

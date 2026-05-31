@@ -35,6 +35,36 @@ You paste English text — a research note, a memo, even an email — and hit **
 
 Along the way, every reused glossary term or learned rule is highlighted, every number is checked, and a side panel shows the "learning curve" — edits per thousand words falling over time as the system absorbs our preferences.
 
+## How the memory is invoked (the flywheel)
+
+This is the part that makes it improve with use. Our team's approved terms, phrasings and "avoid this regionalism" rules aren't applied as a clean-up at the end — they are **loaded first and drive the whole process**:
+
+1. **Loaded up front.** Before anything is translated, the approved glossary, the active neutralization rules, and prior translations are loaded.
+2. **They prime the first draft.** Those rules and terms are fed straight into the translator's instructions, so the very first draft already uses our preferred wording — not a generic draft we fix later.
+3. **They're enforced the whole way through.** They're re-applied as hard constraints on every rewrite, and the checks flag any segment that drifts from them.
+4. **Corrections feed back in.** When a reviewer fixes something, that correction can be captured as a new governed rule, approved, and then **automatically applied to every future document.** The more we use it, the less editing it needs.
+
+## The cross-model cycle, step by step
+
+When a segment isn't confident enough, this five-step cycle runs — the heart of the quality engine:
+
+### 1. Draft — *Sonnet writes*
+Claude Sonnet 4.6 produces the first Spanish, already primed with our glossary and rules.
+
+### 2. Score + critique — *we score, GPT-5 critiques*
+A quality model scores the segment to decide if it needs work, and **GPT-5 — a different AI — independently reviews it** and returns the exact problems (not a vague "improve it").
+
+### 3. Refine — *Sonnet rewrites using GPT-5's notes*
+Sonnet rewrites **only the spans GPT-5 flagged**, with our learned rules re-applied as hard constraints.
+
+### 4. Re-score + re-critique — *we score, GPT-5 critiques again*
+The rewrite is scored again and **GPT-5 reviews it again**, to confirm the fix actually landed and introduced nothing new.
+
+### 5. Keep the best
+The rewrite is kept **only if it's measurably better**; otherwise we revert to the previous version. The cycle repeats until the segment is clean (with a hard cap), and good text is left untouched.
+
+In short: **Sonnet writes → we score + GPT-5 critiques → Sonnet refines using GPT-5's notes → we score + GPT-5 critiques again → keep the best.** That cross-model back-and-forth is exactly what drives the quality up.
+
 ## What's deterministic vs. what's AI (this matters for trust)
 
 - **AI (judgment):** the first-draft translation, the independent review, and the routing score.
