@@ -8,7 +8,12 @@
 # ─────────────────────────────────────────────────────────────────────────────
 
 # Below this QE score a segment is eligible for a refine iteration (routing).
-qe_threshold: 0.72
+# Raised from 0.72 → 0.90 so most segments get a cross-model refine pass
+# (GPT-5 critique → Sonnet rewrite → re-score). Segments with a major/critical
+# flag refine regardless of QE. The revert-on-no-gain guard means a rewrite is
+# kept only if objectively better, so quality never drops. (0.95 would refine
+# nearly everything but mostly revert — more cost/latency, not better output.)
+qe_threshold: 0.90
 
 # Below this QE score a segment is forced to human review regardless of flags.
 human_floor: 0.55
