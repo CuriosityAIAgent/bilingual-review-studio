@@ -6,23 +6,37 @@ import { roleLabel } from "@/app/lib/roles";
 import type { DocModel, GlossaryEntry, NeutralizationRule } from "@/src/lib/doc-model";
 
 interface Metrics {
-  curve: { doc_id: string; title: string; edits_per_1k: number }[];
+  curve: { doc_id: string; title: string; created_at: string; edits_per_1k: number }[];
   documents: number; active_rules: number; proposed_rules: number;
   total_rule_hits: number; edits_per_1k_reduction_pct: number;
 }
 
-function Sparkline({ values }: { values: number[] }) {
-  if (values.length < 2) return <div className="ui-base" style={{ color: "var(--ink-faint)" }}>Awaiting more documents…</div>;
+function shortMonth(iso: string): string {
+  const d = new Date(iso);
+  return Number.isNaN(d.getTime()) ? "" : d.toLocaleString("en-US", { month: "short" });
+}
+
+/** Smooth filled trend curve — reviewer edits per 1k over time (per Claude Design comp). */
+function Sparkline({ curve }: { curve: { created_at: string; edits_per_1k: number }[] }) {
+  if (curve.length < 2) return <div className="ui-base" style={{ color: "var(--ink-faint)" }}>Awaiting more documents…</div>;
+  const values = curve.map((c) => c.edits_per_1k);
   const max = Math.max(...values, 1);
-  const w = 220, h = 46;
-  const pts = values.map((v, i) => `${(i / (values.length - 1)) * w},${h - (v / max) * (h - 6) - 3}`).join(" ");
+  const w = 256, h = 52, pad = 4;
+  const x = (i: number) => (i / (values.length - 1)) * w;
+  const y = (v: number) => h - (v / max) * (h - pad * 2) - pad;
+  const line = values.map((v, i) => `${x(i)},${y(v)}`).join(" ");
   return (
-    <svg width={w} height={h} style={{ display: "block" }} aria-label="edits per 1k learning curve">
-      <polyline points={pts} fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" />
-      {values.map((v, i) => (
-        <circle key={i} cx={(i / (values.length - 1)) * w} cy={h - (v / max) * (h - 6) - 3} r="2.5" fill="var(--accent)" />
-      ))}
-    </svg>
+    <div>
+      <svg width="100%" height={h} viewBox={`0 0 ${w} ${h}`} preserveAspectRatio="none" style={{ display: "block" }} aria-label="reviewer edits per 1k trend">
+        <polygon points={`0,${h} ${line} ${w},${h}`} fill="color-mix(in srgb, var(--accent) 9%, transparent)" />
+        <polyline points={line} fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" vectorEffect="non-scaling-stroke" />
+        <circle cx={x(values.length - 1)} cy={y(values[values.length - 1])} r="3" fill="var(--accent)" />
+      </svg>
+      <div className="mono" style={{ display: "flex", justifyContent: "space-between", fontSize: 9, color: "var(--ink-faint)", marginTop: 4 }}>
+        <span>{shortMonth(curve[0].created_at)}</span>
+        <span>{shortMonth(curve[curve.length - 1].created_at)}</span>
+      </div>
+    </div>
   );
 }
 
@@ -55,20 +69,21 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey }: {
   return (
     <aside style={{ width: 320, flexShrink: 0 }}>
       <div style={{ position: "sticky", top: 172, maxHeight: "calc(100dvh - 188px)", overflowY: "auto", overflowX: "hidden", paddingRight: 6 }}>
-        <Section title="The learning curve · edits per 1,000 words">
-          <div className="card" style={{ padding: 14 }}>
-            <div style={{ display: "flex", alignItems: "baseline", gap: 8 }}>
-              <span className="font-display" style={{ fontSize: 26, color: "var(--accent)" }}>
-                {metrics ? `${metrics.edits_per_1k_reduction_pct}%` : "—"}
-              </span>
-              <span className="ui-base" style={{ color: "var(--ink-soft)", display: "inline-flex", alignItems: "center", gap: 4 }}>
-                <TrendingDown size={13} /> reduction across {metrics?.documents ?? 0} docs
-              </span>
+        <Section title="Reviewer edits · per 1,000 words">
+          <div className="card" style={{ padding: 16 }}>
+            <div style={{ display: "flex", alignItems: "baseline", gap: 7 }}>
+              <span className="font-display" style={{ fontSize: 30, lineHeight: 1, letterSpacing: "-0.02em" }}>{doc.metrics.edits_per_1k}</span>
+              <span className="ui-base" style={{ color: "var(--ink-faint)" }}>edits / 1k</span>
             </div>
-            <div style={{ marginTop: 10 }}>
-              <Sparkline values={(metrics?.curve ?? []).map((c) => c.edits_per_1k)} />
+            {metrics && metrics.edits_per_1k_reduction_pct > 0 && (
+              <div className="ui-base" style={{ color: "var(--memory)", display: "inline-flex", alignItems: "center", gap: 4, marginTop: 4, fontWeight: 600 }}>
+                <TrendingDown size={13} /> {metrics.edits_per_1k_reduction_pct}% reduction across {metrics.documents} docs
+              </div>
+            )}
+            <div style={{ marginTop: 12 }}>
+              <Sparkline curve={metrics?.curve ?? []} />
             </div>
-            <div className="ui-base mono" style={{ color: "var(--ink-faint)", marginTop: 6 }}>
+            <div className="ui-base mono" style={{ color: "var(--ink-faint)", marginTop: 10 }}>
               {metrics?.active_rules ?? 0} active rules · {metrics?.total_rule_hits ?? 0} auto-neutralizations
             </div>
           </div>
