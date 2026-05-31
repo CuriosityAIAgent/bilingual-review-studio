@@ -83,11 +83,25 @@ id, temperature, prompt version) and redeploy.
 
 ---
 
-## 3. Supabase (shared, persistent memory)
+## 3. Durable shared memory — Railway Postgres (recommended) or Supabase
 
 By default the app uses a **local file store** — fine for a demo, but it is
-per-container and resets on redeploy. For a real deployment where the whole team
-shares one governed memory and nothing is lost on deploy, switch to Supabase.
+per-container and resets on redeploy. For durable, shared memory pick one:
+
+### Option A — Railway Postgres (recommended for a single internal tool)
+Simplest: one project, one bill, no extra service-role key, lower latency.
+1. In the Railway project → **+ New → Database → Add PostgreSQL**. Railway
+   injects `DATABASE_URL` into your app automatically.
+2. Set one variable: `STORAGE` = `postgres`. (Optionally set `DATABASE_URL`
+   yourself if you use the public proxy URL — append `?sslmode=require`.)
+3. Redeploy. The app **self-migrates** (creates its `brs_documents` /
+   `brs_memory` tables on boot) and **auto-seeds** the glossary/rules/disclaimers
+   on first use. No manual SQL, no service key. Browse rows from Railway's
+   data tab or any SQL client.
+
+### Option B — Supabase (when you later want auth / RLS / managed backups)
+Use this once you need per-user auth + row-level security for the
+Author/Reviewer/Approver workflow, or managed point-in-time backups.
 
 **Steps:**
 1. Create a Supabase project (any region near your users).
