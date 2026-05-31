@@ -35,7 +35,7 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
   const isHead = isTitle || block.type === "subhead";
   const locked = block.seg_status === "locked";
   const editable = caps.canEdit && !locked;
-  const fontSize = isTitle ? 22 : block.type === "subhead" ? 17 : 16.5;
+  const fontSize = isTitle ? 25 : block.type === "subhead" ? 19 : 18.5;
 
   const ledgerClass =
     block.seg_status === "edited" ? "is-edited"

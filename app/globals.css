@@ -77,10 +77,12 @@ a { color: inherit; text-decoration: none; }
   font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:.07em;
   border:1px solid var(--line); border-radius:var(--r-pill); padding:2px 8px; color:var(--ink-soft);
   background:var(--surface); white-space:nowrap; }
-.tag.edited { color:var(--edited); border-color:color-mix(in srgb, var(--edited) 40%, var(--line)); }
-.tag.memory { color:var(--memory); border-color:color-mix(in srgb, var(--memory) 40%, var(--line)); }
-.tag.flag { color:var(--flag); border-color:color-mix(in srgb, var(--flag) 40%, var(--line)); }
-.tag.accent { color:var(--accent); border-color:color-mix(in srgb, var(--accent) 45%, var(--line)); }
+/* Status tags read as soft filled chips (per Claude Design comp); neutral
+   metadata tags stay outlined. Filled = a real state, not just a label. */
+.tag.edited { color:var(--edited); background:color-mix(in srgb, var(--edited) 13%, var(--surface)); border-color:transparent; }
+.tag.memory { color:var(--memory); background:color-mix(in srgb, var(--memory) 14%, var(--surface)); border-color:transparent; }
+.tag.flag { color:var(--flag); background:color-mix(in srgb, var(--flag) 12%, var(--surface)); border-color:transparent; }
+.tag.accent { color:var(--accent); background:color-mix(in srgb, var(--accent) 14%, var(--surface)); border-color:transparent; }
 
 .dot { width:7px; height:7px; border-radius:50%; display:inline-block; }
 
