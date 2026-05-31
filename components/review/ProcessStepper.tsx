@@ -45,6 +45,7 @@ function Node({ state, label, sub, Icon, last }: {
             border: `1.5px solid ${color}`,
             background: state === "done" ? "var(--memory)" : state === "active" ? "color-mix(in srgb, var(--accent) 14%, var(--surface))" : "var(--surface)",
             color: state === "done" ? "#fff" : color,
+            boxShadow: state === "active" ? "0 0 0 4px color-mix(in srgb, var(--accent) 15%, transparent)" : "none",
           }}
         >
           {state === "done" ? <Check size={15} strokeWidth={2.4} /> : <Icon size={14} strokeWidth={1.9} />}

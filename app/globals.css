@@ -101,9 +101,16 @@ a { color: inherit; text-decoration: none; }
 /* Focus ring — brass, on every interactive element */
 :focus-visible { outline:2px solid var(--accent); outline-offset:2px; border-radius:3px; }
 
-/* QE chip */
+/* QE chip — the in-container neural score, with a small fill bar (per Claude
+   Design comp). Bar width tracks the actual score; color tracks the band. */
 .qe { font-family:'IBM Plex Mono', monospace; font-size:11px; display:inline-flex; align-items:center;
-  gap:6px; border:1px solid var(--line); border-radius:var(--r-pill); padding:2px 9px; background:var(--surface); }
+  gap:6px; border:1px solid var(--line); border-radius:var(--r-pill); padding:2px 8px 2px 7px; background:var(--surface); color:var(--ink-soft); }
+.qe .bar { width:30px; height:4px; border-radius:2px; background:var(--line); overflow:hidden; display:inline-block; flex-shrink:0; }
+.qe .bar i { display:block; height:100%; border-radius:2px; background:var(--ink-faint); }
+.qe.hi .bar i { background:var(--qe-good); }
+.qe.mid .bar i { background:var(--qe-warn); }
+.qe.lo .bar i { background:var(--qe-low); }
+.qe b { color:var(--ink); font-weight:500; }
 
 /* Ledger inset on edited segments */
 .ledger { position:relative; }

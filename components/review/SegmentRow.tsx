@@ -21,13 +21,6 @@ interface Props {
   onTeach: (regional: string, neutral: string, blockId: string) => void;
 }
 
-function qeColor(score: number | null): string {
-  if (score === null) return "var(--ink-faint)";
-  if (score >= 0.72) return "var(--qe-good)";
-  if (score >= 0.55) return "var(--qe-warn)";
-  return "var(--qe-low)";
-}
-
 const NUM_SPLIT = /(-?\d[\d,.]*\s?%?|\$[\d,.]+|[A-Z]{2}[A-Z0-9]{9}\d|\$[A-Z]{1,5})/g;
 const NUM_TEST = /^(?:-?\d[\d,.]*\s?%?|\$[\d,.]+|[A-Z]{2}[A-Z0-9]{9}\d|\$[A-Z]{1,5})$/;
 function withNumbers(text: string) {
@@ -89,14 +82,15 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
           <span className="label">Español neutro · target</span>
           {block.qe_score !== null && (
             <span
-              className="qe"
+              className={`qe ${block.qe_score >= 0.72 ? "hi" : block.qe_score >= 0.55 ? "mid" : "lo"}`}
               title={
                 `QE ${block.qe_score} — quality estimate (0–1): the machine's confidence in this translation.\n` +
                 "Routing signal only; the validators and your review decide. Green ≥0.72 · amber ≥0.55 · red below." +
                 (block.critic_flags.length ? `\n\nFlags:\n${block.critic_flags.map((f) => `• ${f.category}: ${f.suggestion}`).join("\n")}` : "")
               }
             >
-              <span className="dot" style={{ background: qeColor(block.qe_score) }} /> QE {block.qe_score}
+              <span className="bar"><i style={{ width: `${Math.round(block.qe_score * 100)}%` }} /></span>
+              QE <b>{block.qe_score}</b>
             </span>
           )}
           {block.seg_status === "edited" && <span className="tag edited">edited</span>}
