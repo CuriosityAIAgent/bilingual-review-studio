@@ -125,13 +125,15 @@ export interface AddTmInput {
 export async function addTm(i: AddTmInput): Promise<TmEntry> {
   const store = getStore();
   const tm = await store.getTm();
+  const locale = i.locale ?? "es-419";
   // Supersede a prior approved entry with the same source (keep it for audit).
-  const prior = tm.find((t) => t.source_text === i.source_text && !t.superseded_by);
+  // Scoped by locale so adding one locale never supersedes another's memory.
+  const prior = tm.find((t) => t.source_text === i.source_text && !t.superseded_by && t.locale === locale);
   const entry: TmEntry = {
     id: id("tm"),
     source_text: i.source_text,
     target_text: i.target_text,
-    locale: i.locale ?? "es-419",
+    locale,
     kind: i.kind ?? "segment",
     version: prior ? prior.version + 1 : 1,
     approved_by: i.approved_by,

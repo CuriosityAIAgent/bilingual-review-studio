@@ -1,6 +1,6 @@
 "use client";
 import { Suspense, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { ArrowRight, Lock } from "lucide-react";
 
 export default function GatePage() {
@@ -12,7 +12,6 @@ export default function GatePage() {
 }
 
 function GateInner() {
-  const router = useRouter();
   const params = useSearchParams();
   // Only allow same-origin absolute paths — never javascript:, protocol-relative
   // (//evil), or cross-origin URLs handed to router.replace.
@@ -37,8 +36,10 @@ function GateInner() {
         setBusy(false);
         return;
       }
-      router.replace(next);
-      router.refresh();
+      // Full navigation (not router.replace) so the app remounts and re-fetches
+      // seats now that the gate cookie exists — otherwise the role picker on the
+      // destination renders empty until a manual refresh.
+      window.location.assign(next);
     } catch {
       setError("Something went wrong. Try again.");
       setBusy(false);
