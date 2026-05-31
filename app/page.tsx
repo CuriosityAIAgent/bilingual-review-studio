@@ -52,7 +52,7 @@ export default function HomePage() {
   return (
     <div style={{ maxWidth: 1040, margin: "0 auto", padding: "40px 24px 96px" }}>
       <div className="fade-up" style={{ marginBottom: 30 }}>
-        <p className="label">{seat ? `Signed in as ${seat.display_name} · ${roleLabel(seat.role)}` : "Translation Studio"}</p>
+        <p className="label">{seat ? `Signed in as ${roleLabel(seat.role)}` : "Translation Studio"}</p>
         <h1 className="font-display" style={{ fontSize: 30, letterSpacing: "-0.02em", marginTop: 4 }}>Current work</h1>
         <p className="doc-body" style={{ color: "var(--ink-soft)", marginTop: 6, maxWidth: 620 }}>
           English research, translated to neutral Spanish and reviewed through the short process. Open a piece to pick up where it stands, or start something new below.

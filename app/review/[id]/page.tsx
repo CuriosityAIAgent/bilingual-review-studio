@@ -99,8 +99,7 @@ export default function ReviewPage() {
     || b.critic_flags.some((f) => f.severity === "major" || f.severity === "critical")).length;
 
   const assignedSeat = seats.find((s) => s.user_id === doc.assigned_to.user_id);
-  const assignedName = assignedSeat?.display_name ?? doc.assigned_to.user_id;
-  const assignedTeam = assignedSeat ? `${roleLabel(assignedSeat.role)} · ${assignedSeat.team_name}` : doc.assigned_to.team_id;
+  const assignedName = assignedSeat ? roleLabel(assignedSeat.role) : doc.assigned_to.team_id;
 
   const guidance = (() => {
     if (!yourTurn) return "";
@@ -202,7 +201,7 @@ export default function ReviewPage() {
           <>
             <Lock size={15} style={{ color: "var(--ink-faint)" }} />
             <span className="ui-base" style={{ color: "var(--ink-soft)" }}>
-              Held by <b style={{ color: "var(--ink)" }}>{assignedName}</b> · {assignedTeam}. Read-only for you until it's handed off.
+              Held by <b style={{ color: "var(--ink)" }}>{assignedName}</b>. Read-only for you until it's handed off.
             </span>
           </>
         )}
@@ -259,7 +258,7 @@ function HandoffControl({ value, onChange, onHandoff }: { value: string; onChang
       <select className="ui-base" value={value} onChange={(e) => onChange(e.target.value)}
         style={{ background: "var(--surface)", border: "1px solid var(--line)", borderRadius: "var(--r-sm)", padding: "5px 9px", color: "var(--ink)" }}>
         <option value="">Hand off to…</option>
-        {seats.filter((s) => s.role !== "viewer").map((s) => <option key={s.user_id} value={s.user_id}>{s.display_name} · {s.role}</option>)}
+        {seats.filter((s) => s.role !== "viewer").map((s) => <option key={s.user_id} value={s.user_id}>{roleLabel(s.role)}</option>)}
       </select>
       <button className="btn btn-ghost ui-base" style={{ padding: "5px 10px" }} disabled={!value} onClick={() => onHandoff(value)}>Hand off</button>
     </div>

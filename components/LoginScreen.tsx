@@ -37,7 +37,6 @@ export function LoginScreen({ seats, onSignIn }: { seats: Seat[]; onSignIn: (id:
               <span className="dot" style={{ width: 11, height: 11, background: ROLE_COLOR[s.role], flexShrink: 0 }} />
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div className="font-display" style={{ fontWeight: 600, fontSize: 16 }}>{roleLabel(s.role)}</div>
-                <div className="ui-base" style={{ color: "var(--ink-soft)" }}>{s.display_name} · {s.team_name}</div>
               </div>
               <span className="ui-base" style={{ color: "var(--accent)", fontWeight: 600 }}>Enter →</span>
             </button>

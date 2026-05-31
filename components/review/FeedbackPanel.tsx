@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { BookOpen, Check, TrendingDown } from "lucide-react";
 import { api } from "@/app/lib/client";
+import { roleLabel } from "@/app/lib/roles";
 import type { DocModel, GlossaryEntry, NeutralizationRule } from "@/src/lib/doc-model";
 
 interface Metrics {
@@ -128,7 +129,7 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey }: {
                 <div key={e.id} className="ui-base" style={{ display: "flex", gap: 6, color: "var(--ink-soft)" }}>
                   <span className="tag" style={{ flexShrink: 0 }}>{e.action}</span>
                   <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                    {e.actor.display_name ?? e.actor.user_id} · {e.error_categories_corrected.join(", ") || "edit"} · HTER {e.hter}
+                    {e.actor.role === "system" ? "System" : roleLabel(e.actor.role)} · {e.error_categories_corrected.join(", ") || "edit"} · HTER {e.hter}
                   </span>
                 </div>
               ))}
