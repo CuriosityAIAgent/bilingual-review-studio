@@ -128,6 +128,8 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
           contentEditable={editable}
           suppressContentEditableWarning
           onBlur={commit}
+          lang="es"
+          spellCheck={false}
           aria-label="Spanish target, editable"
           style={{
             fontSize, fontWeight: isHead ? 600 : 400, minHeight: 24, lineHeight: 1.66,

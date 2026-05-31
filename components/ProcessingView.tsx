@@ -11,10 +11,10 @@ import { Check } from "lucide-react";
  * still working simply stays on the final step rather than racing ahead.
  */
 const STAGES = [
-  { key: "translate", label: "Translate", caption: "Translating each segment…" },
-  { key: "checks", label: "Checks", caption: "Running the deterministic validators…" },
-  { key: "governance", label: "Governance", caption: "Applying your governed memory — rules and glossary…" },
-  { key: "rewrite", label: "Rewrite", caption: "Refining with a second, decorrelated model…" },
+  { key: "translate", label: "Translate", caption: "Claude Sonnet 4.6 is translating each segment to neutral Spanish…" },
+  { key: "checks", label: "Checks", caption: "Deterministic validators check numbers, dates, glossary and regionalisms…" },
+  { key: "governance", label: "Governance", caption: "Applying your governed memory — approved rules and glossary…" },
+  { key: "rewrite", label: "Rewrite", caption: "GPT-4o critiques and refines the weak segments — a second, decorrelated model…" },
 ];
 const STEP_MS = 820;
 
@@ -62,6 +62,9 @@ export function ProcessingView() {
         </div>
 
         <p className="doc-body" style={{ color: "var(--ink-soft)", marginTop: 28, fontSize: 15.5 }}>{STAGES[step].caption}</p>
+        <p className="ui-base" style={{ color: "var(--ink-faint)", marginTop: 10, fontSize: 12, maxWidth: 480, marginInline: "auto" }}>
+          A quality-estimation model (in-container) scores each segment to route attention — a routing signal only. Validators and your review decide.
+        </p>
       </div>
     </div>
   );
