@@ -6,26 +6,27 @@
    hairline-ruled ledger surfaces. One brass accent, reserved for earned states.
    ───────────────────────────────────────────────────────────────────────────── */
 :root {
-  /* Paper (light, default) */
-  --bg:#F2EEE4; --surface:#FFFFFF; --surface-2:#FBF9F2;
-  --ink:#15233B; --ink-soft:#566076; --ink-faint:#8A92A4;
-  --line:#E3DCCC; --line-2:#EEE8DA;
-  --accent:#9A7A34; --accent-bright:#C29B47;
-  --es-tint:#FCFAF3; --en-tint:#EEEAE0;
-  --edited:#B5751E; --memory:#4F6B52; --flag:#A23B2D;
-  --qe-good:#4F6B52; --qe-warn:#B5751E; --qe-low:#A23B2D;
-  --r-sm:7px; --r-md:11px; --r-lg:16px; --r-pill:999px;
-  --shadow-card:0 1px 0 rgba(0,0,0,.02); --shadow-float:0 20px 50px rgba(21,35,59,.26);
+  /* Paper (light, default) — J.P. Morgan Private Bank register:
+     crisp near-white, warm near-black ink, bronze accent, teal "earned" spark. */
+  --bg:#F8F6F1; --surface:#FFFFFF; --surface-2:#F3F0EA;
+  --ink:#1E1B17; --ink-soft:#57524A; --ink-faint:#938C80;
+  --line:#E7E2D8; --line-2:#F0ECE3;
+  --accent:#8C6A3C; --accent-bright:#A6824B;
+  --es-tint:#FCFAF6; --en-tint:#F2EEE6;
+  --edited:#B5751E; --memory:#12877A; --flag:#A23B2D;
+  --qe-good:#12877A; --qe-warn:#B5751E; --qe-low:#A23B2D;
+  --r-sm:3px; --r-md:5px; --r-lg:8px; --r-pill:999px;
+  --shadow-card:0 1px 0 rgba(0,0,0,.02); --shadow-float:0 24px 60px rgba(28,26,22,.22);
   --ease:cubic-bezier(.2,.7,.2,1); --dur:.18s;
 }
 [data-theme="ink"] {
-  --bg:#0E1626; --surface:#18223A; --surface-2:#141D31;
-  --ink:#ECE6D8; --ink-soft:#9AA6BE; --ink-faint:#697693;
-  --line:#2A395A; --line-2:#212E49;
-  --accent:#C7A24A; --accent-bright:#E0BE64;
-  --es-tint:#1A2742; --en-tint:#131C30;
-  --edited:#D79A47; --memory:#7FA083; --flag:#D9685A;
-  --qe-good:#7FA083; --qe-warn:#D79A47; --qe-low:#D9685A;
+  --bg:#12110F; --surface:#1B1916; --surface-2:#161512;
+  --ink:#EEE9DD; --ink-soft:#A39B8C; --ink-faint:#6E675B;
+  --line:#322E27; --line-2:#26231D;
+  --accent:#C29A57; --accent-bright:#D8B570;
+  --es-tint:#1C1A16; --en-tint:#151310;
+  --edited:#D79A47; --memory:#3FB6A4; --flag:#D9685A;
+  --qe-good:#3FB6A4; --qe-warn:#D79A47; --qe-low:#D9685A;
 }
 
 * { box-sizing: border-box; }
@@ -43,27 +44,27 @@ body {
 body::before {
   content:""; position: fixed; inset: 0; z-index: -2; pointer-events: none;
   background:
-    radial-gradient(60% 50% at 85% 0%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 70%),
-    radial-gradient(55% 45% at 0% 100%, color-mix(in srgb, var(--ink) 7%, transparent), transparent 70%);
+    radial-gradient(60% 50% at 88% 0%, color-mix(in srgb, var(--accent) 4%, transparent), transparent 72%),
+    radial-gradient(55% 45% at 0% 100%, color-mix(in srgb, var(--ink) 2.5%, transparent), transparent 72%);
 }
 body::after {
-  content:""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .025;
+  content:""; position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .012;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* Typography roles */
-.font-display { font-family:'Fraunces', Georgia, serif; }
+.font-display { font-family:'Fraunces', Georgia, serif; letter-spacing:-.012em; }
 .font-ui { font-family:'Hanken Grotesk', system-ui, sans-serif; }
 .mono { font-family:'IBM Plex Mono', ui-monospace, monospace; font-feature-settings:"tnum"; }
-.doc-body { font-size:16px; line-height:1.62; }
-h1,h2,h3 { font-family:'Fraunces', Georgia, serif; font-weight:600; margin:0; }
+.doc-body { font-size:17px; line-height:1.66; }
+h1,h2,h3 { font-family:'Fraunces', Georgia, serif; font-weight:600; margin:0; letter-spacing:-.014em; }
 
 a { color: inherit; text-decoration: none; }
 ::selection { background: color-mix(in srgb, var(--accent) 28%, transparent); }
 
 /* Label / chrome text */
 .label { font-family:'Hanken Grotesk', sans-serif; font-size:10.5px; font-weight:600;
-  text-transform:uppercase; letter-spacing:.09em; color: var(--ink-soft); }
+  text-transform:uppercase; letter-spacing:.13em; color: var(--ink-soft); }
 .ui-base { font-family:'Hanken Grotesk', sans-serif; font-size:13px; }
 
 /* Hairline + surfaces */
@@ -138,14 +139,15 @@ a { color: inherit; text-decoration: none; }
 ::-webkit-scrollbar-thumb { background:var(--line); border-radius:6px; border:3px solid var(--bg); }
 
 /* ── premium polish ─────────────────────────────────────────────────────────── */
-/* Refined elevation — surfaces read as crafted paper, not flat fills. */
-.card { box-shadow: 0 1px 2px rgba(21,35,59,.045), 0 14px 32px -22px rgba(21,35,59,.30); }
-[data-theme="ink"] .card { box-shadow: 0 1px 2px rgba(0,0,0,.25), 0 16px 36px -22px rgba(0,0,0,.6); }
-.card:hover { box-shadow: 0 1px 2px rgba(21,35,59,.06), 0 18px 40px -24px rgba(21,35,59,.34); }
+/* Elevation is restrained — a private-bank page reads as crisp paper held by
+   hairlines and whitespace, not floating cards. Shadows are a whisper. */
+.card { box-shadow: 0 1px 1px rgba(28,26,22,.03), 0 8px 22px -20px rgba(28,26,22,.20); }
+[data-theme="ink"] .card { box-shadow: 0 1px 2px rgba(0,0,0,.3), 0 14px 32px -24px rgba(0,0,0,.6); }
+.card:hover { box-shadow: 0 1px 1px rgba(28,26,22,.05), 0 12px 26px -22px rgba(28,26,22,.24); border-color:color-mix(in srgb, var(--ink-faint) 45%, var(--line)); }
 
-/* Buttons get a faint lift; primary/accent get a soft glow on hover. */
-.btn { box-shadow: 0 1px 0 rgba(21,35,59,.03); }
-.btn-primary:hover, .btn-accent:hover { box-shadow: 0 6px 18px -8px color-mix(in srgb, var(--accent) 55%, transparent); }
+/* Buttons get a faint lift; the primary action firms up on hover, no glow. */
+.btn { box-shadow: 0 1px 0 rgba(28,26,22,.025); }
+.btn-accent:hover { box-shadow: 0 4px 14px -10px color-mix(in srgb, var(--accent) 50%, transparent); }
 
 /* The QE chip + tags sit on a hairline pill with a touch more refinement. */
 .qe { box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--line) 60%, transparent); }
