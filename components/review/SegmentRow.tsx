@@ -23,9 +23,28 @@ interface Props {
 
 const NUM_SPLIT = /(-?\d[\d,.]*\s?%?|\$[\d,.]+|[A-Z]{2}[A-Z0-9]{9}\d|\$[A-Z]{1,5})/g;
 const NUM_TEST = /^(?:-?\d[\d,.]*\s?%?|\$[\d,.]+|[A-Z]{2}[A-Z0-9]{9}\d|\$[A-Z]{1,5})$/;
-function withNumbers(text: string) {
+function withNumbers(text: string, keyBase = 0) {
   return text.split(NUM_SPLIT).map((p, i) =>
-    NUM_TEST.test(p) ? <span key={i} className="num-hl">{p}</span> : <span key={i}>{p}</span>,
+    NUM_TEST.test(p) ? <span key={`${keyBase}-${i}`} className="num-hl">{p}</span> : <span key={`${keyBase}-${i}`}>{p}</span>,
+  );
+}
+
+const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+/** Render the target text, underlining phrases the governed memory produced
+ *  (applied neutralization rules + glossary terms) — the visible learning loop.
+ *  Numbers/figures still get the mono highlight inside the non-memory gaps. */
+function renderTarget(text: string, mem: { phrase: string; note: string }[]) {
+  const phrases = mem.map((m) => m.phrase).filter(Boolean);
+  if (phrases.length === 0) return withNumbers(text);
+  const sorted = [...new Set(phrases)].sort((a, b) => b.length - a.length).map(escapeRe);
+  const re = new RegExp(`(${sorted.join("|")})`, "gi");
+  const noteFor = (s: string) => mem.find((m) => m.phrase.toLowerCase() === s.toLowerCase())?.note ?? "From governed memory";
+  let k = 0;
+  return text.split(re).filter(Boolean).map((chunk) =>
+    phrases.some((p) => p.toLowerCase() === chunk.toLowerCase())
+      ? <span key={`m-${k++}`} className="mem" title={noteFor(chunk)}>{chunk}</span>
+      : <span key={`g-${k++}`}>{withNumbers(chunk, k)}</span>,
   );
 }
 
@@ -45,6 +64,10 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
     : "";
 
   const failedValidators = block.validator_results.filter((v) => v.status === "fail");
+  const memPhrases = [
+    ...block.neutralization_hits.filter((h) => h.applied).map((h) => ({ phrase: h.neutral_form, note: `Memory rule applied: ${h.regional_form} → ${h.neutral_form}` })),
+    ...block.glossary_hits.filter((h) => h.applied).map((h) => ({ phrase: h.approved_target, note: `Glossary applied: ${h.source} → ${h.approved_target}` })),
+  ];
   const commit = () => {
     const text = ref.current?.innerText.trim() ?? "";
     if (text && text !== block.final_text) onEdit(block.id, text, []);
@@ -112,7 +135,7 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
             color: block.type === "disclaimer" ? "var(--ink-soft)" : "var(--ink)",
           }}
         >
-          {block.final_text}
+          {renderTarget(block.final_text, memPhrases)}
         </div>
 
         {/* Inline flags */}
