@@ -103,7 +103,7 @@ export default function HomePage() {
               })} style={{ padding: "16px 18px", textAlign: "left", cursor: "pointer", display: "flex", flexDirection: "column", gap: 8 }}>
                 <span className="font-display" style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.25 }}>{s.title}</span>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span className="ui-base mono" style={{ color: "var(--ink-faint)" }}>{s.words} words · EN → es-419</span>
+                  <span className="ui-base mono" style={{ color: "var(--ink-faint)" }}>{s.words} words · EN → Neutral Spanish</span>
                   <span className="ui-base" style={{ color: "var(--accent)", fontWeight: 600, display: "inline-flex", gap: 4, alignItems: "center" }}>Open <ArrowRight size={13} /></span>
                 </div>
               </button>

@@ -18,6 +18,16 @@ export const ROLE_LABELS: Record<string, string> = {
 
 export const roleLabel = (role: string): string => ROLE_LABELS[role] ?? role;
 
+/**
+ * Human-facing locale names. The locale CODE stays "es-419" internally (data,
+ * glossary, TM, validators); users only ever see plain language.
+ */
+export const LOCALE_LABELS: Record<string, string> = {
+  "es-419": "Neutral Spanish",
+};
+
+export const localeLabel = (code: string): string => LOCALE_LABELS[code] ?? code;
+
 export type StepGroup = "pipeline" | "review";
 export interface ProcessStep {
   key: string;

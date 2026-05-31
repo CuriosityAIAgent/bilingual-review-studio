@@ -13,7 +13,7 @@ import { FeedbackPanel } from "@/components/review/FeedbackPanel";
 import { TeachRuleModal } from "@/components/review/TeachRuleModal";
 import { ProcessStepper } from "@/components/review/ProcessStepper";
 import { FormatToolbar } from "@/components/review/FormatToolbar";
-import { isYourTurn, roleLabel } from "@/app/lib/roles";
+import { isYourTurn, localeLabel, roleLabel } from "@/app/lib/roles";
 
 const STATUS_COLOR: Record<string, string> = {
   draft: "var(--ink-faint)", in_review: "var(--edited)", changes_requested: "var(--flag)",
@@ -121,7 +121,7 @@ export default function ReviewPage() {
         <FileText size={16} style={{ color: "var(--ink-soft)" }} />
         <div style={{ minWidth: 0 }}>
           <div className="font-display" style={{ fontWeight: 600, fontSize: 15, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", maxWidth: 320 }}>{doc.title}</div>
-          <div className="ui-base mono" style={{ color: "var(--ink-faint)" }}>{doc.source.filename} · {doc.target_locale}</div>
+          <div className="ui-base mono" style={{ color: "var(--ink-faint)" }}>{doc.source.filename} · {localeLabel(doc.target_locale)}</div>
         </div>
         <span className="tag" style={{ color: STATUS_COLOR[doc.status] }}>
           <span className="dot" style={{ background: STATUS_COLOR[doc.status] }} /> {doc.status.replace("_", " ")}
@@ -218,7 +218,7 @@ export default function ReviewPage() {
               <div className="font-display" style={{ fontSize: 19, fontWeight: 600 }}>{doc.title}</div>
             </div>
             <div style={{ textAlign: "right" }}>
-              <span className="ui-base" style={{ color: "var(--ink-faint)" }}>{doc.blocks.length} segments · English ⇄ Español neutro</span>
+              <span className="ui-base" style={{ color: "var(--ink-faint)" }}>{doc.blocks.length} segments · English ⇄ Neutral Spanish</span>
               <div className="ui-base mono" style={{ color: "var(--ink-faint)", fontSize: 10.5, marginTop: 2 }}>
                 QE = machine quality estimate (0–1) · routing only · validators + you decide
               </div>
