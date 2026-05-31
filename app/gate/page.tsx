@@ -14,7 +14,10 @@ export default function GatePage() {
 function GateInner() {
   const router = useRouter();
   const params = useSearchParams();
-  const next = params.get("next") || "/";
+  // Only allow same-origin absolute paths — never javascript:, protocol-relative
+  // (//evil), or cross-origin URLs handed to router.replace.
+  const raw = params.get("next") || "/";
+  const next = raw.startsWith("/") && !raw.startsWith("//") ? raw : "/";
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);

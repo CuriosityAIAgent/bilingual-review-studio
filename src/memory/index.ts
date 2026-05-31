@@ -221,7 +221,10 @@ export async function commitTmImport(
       continue;
     }
     const store = getStore();
-    const prior = (await store.getTm()).find((t) => t.source_text === p.source && !t.superseded_by);
+    // Scope by locale so a same-source entry in another locale (e.g. es-ES)
+    // isn't treated as the prior for an es-419 import — keeps commit consistent
+    // with preview, which already filters by locale.
+    const prior = (await store.getTm()).find((t) => t.source_text === p.source && !t.superseded_by && t.locale === locale);
     if (prior && prior.kind === "disclaimer") {
       result.skipped++;
       continue;

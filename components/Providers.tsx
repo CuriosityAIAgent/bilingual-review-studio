@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useContext, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import type { Seat } from "@/src/auth";
 import { api, getSeatId, setSeatId } from "@/app/lib/client";
 import { LoginScreen } from "./LoginScreen";
@@ -30,6 +31,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("paper");
   const [loggedIn, setLoggedIn] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     setMounted(true);
@@ -63,7 +65,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <SeatContext.Provider value={{ seats, seat, seatId, setSeat, signOut }}>
       <ThemeContext.Provider value={{ theme, setTheme }}>
-        {!mounted ? null : loggedIn ? children : <LoginScreen seats={seats} onSignIn={signIn} />}
+        {/* The access gate must render outside the mock-login wrapper — a fresh
+            visitor has no seat yet and /api/seats is 401'd until they're gated. */}
+        {!mounted ? null : (loggedIn || pathname === "/gate") ? children : <LoginScreen seats={seats} onSignIn={signIn} />}
       </ThemeContext.Provider>
     </SeatContext.Provider>
   );
