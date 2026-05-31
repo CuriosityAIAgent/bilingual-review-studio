@@ -41,3 +41,6 @@ yarn-error.log*
 /coverage
 .nvmrc.note
 .gstack/
+
+# downloaded QE model weights (cached at runtime / build)
+/.models/

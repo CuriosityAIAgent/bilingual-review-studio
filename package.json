@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "next dev -p 3007",
-    "build": "next build",
+    "build": "next build && (node scripts/warm-qe.mjs || true)",
+    "warm-qe": "node scripts/warm-qe.mjs",
     "start": "next start -p ${PORT:-3007}",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
@@ -17,6 +18,7 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.39.0",
+    "@huggingface/transformers": "^3.8.1",
     "@supabase/supabase-js": "^2.101.1",
     "lucide-react": "^0.469.0",
     "mammoth": "^1.9.0",

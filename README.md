@@ -21,6 +21,13 @@ The full loop runs through the real API with real role separation (see
   fixtures otherwise so the demo always runs).
 - **Cross-model critique** (a decorrelated model family) + a **gated refine loop**
   that fixes only objectively-failing segments and reverts on no gain.
+- **Reference-free QE that is a real model, self-hosted in this container** — a
+  cross-lingual embedding model (`Xenova/paraphrase-multilingual-MiniLM-L12-v2`,
+  ONNX/CPU via `@huggingface/transformers`) scores adequacy by comparing the
+  meaning of the English source and the Spanish translation. No external service,
+  no GPU. Weights pre-cached to `.models/` at build (`npm run warm-qe`). A
+  CometKiwi/xCOMET sidecar can drop in via `QE_SERVICE_URL` (same interface). QE
+  is a routing signal only; validators + humans decide.
 - **10 deterministic validators** — number integrity incl. the **billón trap**
   (English *billion* = 10⁹ = "mil millones", never "billón"), currency, date,
   ticker, ISIN check-digit, DNT, glossary, regionalism, disclaimer, English leakage.

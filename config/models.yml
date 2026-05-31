@@ -26,11 +26,13 @@ critic:
   fallback: deterministic      # validator-derived critic when OPENAI_API_KEY absent
 
 qe:
-  provider: local              # open-weight model on BANK INFRASTRUCTURE (GPU), not an API
-  model: Unbabel/wmt22-cometkiwi-da   # CometKiwi | xCOMET | MetricX-QE
-  runs_on: bank_infra
-  # In this prototype QE is a heuristic stub (routing signal only — spec §15).
-  # It is NEVER an approval signal; validators + humans are authoritative.
+  provider: local              # REAL open-weight model, in THIS container (no external service, no GPU)
+  model: Xenova/paraphrase-multilingual-MiniLM-L12-v2   # cross-lingual embeddings (ONNX/CPU)
+  dtype: q8                    # quantized int8 for fast CPU inference
+  runs_in: container
+  # Optional SOTA upgrade: deploy CometKiwi/xCOMET as a Python sidecar and set QE_SERVICE_URL.
+  service_url_env: QE_SERVICE_URL
+  # QE is a routing signal only (spec §15) — NEVER an approval signal; validators + humans decide.
   fallback: heuristic
 
 versions:

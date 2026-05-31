@@ -18,11 +18,14 @@ export type EffectiveMode = "live" | "fixture" | "deterministic" | "heuristic";
 export interface StageConfig {
   provider: ProviderName;
   model: string;
-  prompt_version: string;
+  prompt_version?: string;
   temperature?: number;
   max_tokens?: number;
   fallback?: string;
   runs_on?: string;
+  runs_in?: string;
+  dtype?: string;
+  service_url_env?: string;
 }
 
 export interface ModelsConfig {
@@ -124,7 +127,7 @@ export function buildModelRun(targetLocale = "es-419") {
       effectiveMode("translator") === "live" ? models.translator.model : `${models.translator.model} (fixture)`,
     critic_model_id:
       effectiveMode("critic") === "live" ? models.critic.model : `${models.critic.model} (deterministic)`,
-    qe_model_id: `${models.qe.model} (heuristic)`,
+    qe_model_id: process.env.QE_SERVICE_URL ? `${models.qe.model} (sidecar)` : `${models.qe.model} (in-container)`,
     prompt_version: `${models.translator.prompt_version} | ${models.critic.prompt_version}`,
     glossary_version: models.versions.glossary_version,
     rules_version: models.versions.rules_version,
