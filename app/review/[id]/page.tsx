@@ -218,7 +218,12 @@ export default function ReviewPage() {
               <span className="label">Bilingual review record</span>
               <div className="font-display" style={{ fontSize: 19, fontWeight: 600 }}>{doc.title}</div>
             </div>
-            <span className="ui-base" style={{ color: "var(--ink-faint)" }}>{doc.blocks.length} segments · English ⇄ Español neutro</span>
+            <div style={{ textAlign: "right" }}>
+              <span className="ui-base" style={{ color: "var(--ink-faint)" }}>{doc.blocks.length} segments · English ⇄ Español neutro</span>
+              <div className="ui-base mono" style={{ color: "var(--ink-faint)", fontSize: 10.5, marginTop: 2 }}>
+                QE = machine quality estimate (0–1) · routing only · validators + you decide
+              </div>
+            </div>
           </div>
           {doc.blocks.map((b, i) => (
             <SegmentRow

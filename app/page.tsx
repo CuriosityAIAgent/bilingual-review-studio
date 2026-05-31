@@ -1,170 +1,142 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
-import { ArrowRight, FileText, FileType, Sparkles, Upload as UploadIcon } from "lucide-react";
+import { ArrowRight, FileText, Sparkles, Upload as UploadIcon } from "lucide-react";
 import { api } from "@/app/lib/client";
+import type { DocSummary } from "@/src/store/types";
+import { roleLabel } from "@/app/lib/roles";
 import { useSeat } from "@/components/Providers";
 
-type Status = "idle" | "drag" | "uploading" | "parsing" | "error";
+type Sample = { name: string; title: string; words: number };
 
-export default function UploadPage() {
+const STATUS_COLOR: Record<string, string> = {
+  draft: "var(--ink-faint)", in_review: "var(--edited)", changes_requested: "var(--flag)",
+  approved: "var(--memory)", published: "var(--accent)",
+};
+
+export default function HomePage() {
   const router = useRouter();
   const { seat } = useSeat();
-  const [status, setStatus] = useState<Status>("idle");
-  const [message, setMessage] = useState("");
-  const [samples, setSamples] = useState<{ name: string; title: string; words: number }[]>([]);
-  const [recent, setRecent] = useState<{ doc_id: string; title: string; status: string }[]>([]);
-  const [locale] = useState("es-419");
+  const [samples, setSamples] = useState<Sample[]>([]);
+  const [docs, setDocs] = useState<DocSummary[]>([]);
+  const [busy, setBusy] = useState("");
+  const [error, setError] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const canUpload = !seat || seat.role === "author" || seat.role === "admin";
 
   useEffect(() => {
     api.fixtures().then((r) => setSamples(r.samples)).catch(() => {});
-    api.listDocs().then((r) => setRecent(r.documents.slice(0, 5).map((d) => ({ doc_id: d.doc_id, title: d.title, status: d.status })))).catch(() => {});
+    api.listDocs().then((r) => setDocs(r.documents)).catch(() => {});
   }, []);
 
-  const go = useCallback(
-    async (fn: () => Promise<{ doc_id: string }>) => {
-      setStatus("parsing");
-      setMessage("Reading layout → segmenting → translating → critiquing → validating…");
-      try {
-        const { doc_id } = await fn();
-        router.push(`/review/${doc_id}`);
-      } catch (e) {
-        setStatus("error");
-        setMessage((e as Error).message);
-      }
-    },
-    [router],
-  );
+  const go = useCallback(async (fn: () => Promise<{ doc_id: string }>) => {
+    setBusy("parsing"); setError("");
+    try {
+      const { doc_id } = await fn();
+      router.push(`/review/${doc_id}`);
+    } catch (e) { setBusy(""); setError((e as Error).message); }
+  }, [router]);
 
   const onFile = (file: File) => {
-    const ok = /\.(docx|txt|md)$/i.test(file.name);
-    if (!ok && /\.pdf$/i.test(file.name)) {
-      setStatus("error");
-      setMessage("PDF ingestion is a Phase 3 capability — try DOCX or plain text for now.");
+    if (!/\.(docx|txt|md)$/i.test(file.name)) {
+      setError(/\.pdf$/i.test(file.name) ? "PDF is a Phase 3 capability — try DOCX or plain text." : "Word (.docx) or plain text (.txt/.md) only.");
       return;
     }
-    if (!ok) {
-      setStatus("error");
-      setMessage("Word (.docx) or plain text (.txt/.md) only.");
-      return;
-    }
-    go(() => api.uploadFile(file, locale));
+    go(() => api.uploadFile(file));
   };
 
-  const dragOver = status === "drag";
+  const uploadedNames = new Set(docs.map((d) => d.filename));
+  const freshSamples = samples.filter((s) => !uploadedNames.has(s.name));
 
   return (
-    <div style={{ maxWidth: 720, margin: "0 auto", padding: "72px 24px 96px", textAlign: "center" }}>
-      <div className="fade-up">
-        <p className="label" style={{ marginBottom: 14 }}>Neutral Spanish · español neutro (es-419)</p>
-        <h1 className="font-display" style={{ fontSize: 38, lineHeight: 1.12, letterSpacing: "-0.02em" }}>
-          Bring a document to review.
-        </h1>
-        <p className="doc-body" style={{ color: "var(--ink-soft)", maxWidth: 520, margin: "14px auto 0" }}>
-          A governed neutral-Spanish review workflow. The machine drafts; you neutralize regional
-          word-choice; every correction becomes reusable, auditable institutional memory.
+    <div style={{ maxWidth: 1040, margin: "0 auto", padding: "40px 24px 96px" }}>
+      <div className="fade-up" style={{ marginBottom: 30 }}>
+        <p className="label">{seat ? `Signed in as ${seat.display_name} · ${roleLabel(seat.role)}` : "Translation Studio"}</p>
+        <h1 className="font-display" style={{ fontSize: 30, letterSpacing: "-0.02em", marginTop: 4 }}>Current work</h1>
+        <p className="doc-body" style={{ color: "var(--ink-soft)", marginTop: 6, maxWidth: 620 }}>
+          English research, translated to neutral Spanish and reviewed through the short process. Open a piece to pick up where it stands, or start something new below.
         </p>
       </div>
 
-      {/* Dropzone */}
-      <div
-        className="fade-up"
-        role="button"
-        tabIndex={0}
-        aria-label="Drop a file or browse"
-        onClick={() => canUpload && inputRef.current?.click()}
-        onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && canUpload && inputRef.current?.click()}
-        onDragOver={(e) => { e.preventDefault(); if (canUpload) setStatus("drag"); }}
-        onDragLeave={() => setStatus("idle")}
-        onDrop={(e) => {
-          e.preventDefault();
-          setStatus("idle");
-          const f = e.dataTransfer.files?.[0];
-          if (f && canUpload) onFile(f);
-        }}
-        style={{
-          marginTop: 40, padding: "52px 28px", borderRadius: "var(--r-lg)", cursor: canUpload ? "pointer" : "not-allowed",
-          border: `1.5px dashed ${dragOver ? "var(--accent)" : status === "error" ? "var(--flag)" : "var(--line)"}`,
-          background: dragOver ? "color-mix(in srgb, var(--accent) 7%, var(--surface))" : "var(--surface)",
-          opacity: canUpload ? 1 : 0.6, transition: "all var(--dur) var(--ease)",
-        }}
-      >
-        <input
-          ref={inputRef}
-          type="file"
-          accept=".docx,.txt,.md"
-          style={{ display: "none" }}
-          onChange={(e) => e.target.files?.[0] && onFile(e.target.files[0])}
-        />
-        {status === "parsing" ? (
-          <div className="font-ui">
-            <Sparkles size={26} strokeWidth={1.6} style={{ color: "var(--accent)" }} className="live-dot" />
-            <p style={{ fontWeight: 600, marginTop: 12 }}>Working…</p>
-            <p className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 4 }}>{message}</p>
-          </div>
-        ) : (
-          <>
-            <UploadIcon size={28} strokeWidth={1.5} style={{ color: dragOver ? "var(--accent)" : "var(--ink-faint)" }} />
-            <p className="font-display" style={{ fontSize: 18, fontWeight: 500, marginTop: 12 }}>
-              {canUpload ? "Drop a file or browse" : "Switch to an Author or Admin seat to upload"}
-            </p>
-            <div style={{ display: "flex", gap: 8, justifyContent: "center", marginTop: 16, flexWrap: "wrap" }}>
-              <span className="tag"><FileType size={11} /> DOCX</span>
-              <span className="tag"><FileText size={11} /> Plain text</span>
-              <span className="tag" style={{ opacity: 0.55 }}>PDF · Phase 3</span>
-            </div>
-            {status === "error" && <p className="ui-base" style={{ color: "var(--flag)", marginTop: 16 }}>{message}</p>}
-          </>
-        )}
-      </div>
+      {busy === "parsing" && (
+        <div className="card fade-up" style={{ padding: 28, display: "flex", alignItems: "center", gap: 12, marginBottom: 24 }}>
+          <Sparkles size={20} className="live-dot" style={{ color: "var(--accent)" }} />
+          <span className="font-ui" style={{ fontWeight: 600 }}>Translating…</span>
+          <span className="ui-base" style={{ color: "var(--ink-soft)" }}>reading → segmenting → translating → checking</span>
+        </div>
+      )}
 
-      {/* Sample documents */}
-      {samples.length > 0 && status !== "parsing" && (
-        <div className="fade-up" style={{ marginTop: 28 }}>
-          <p className="label" style={{ marginBottom: 10 }}>Or try a bundled sample</p>
-          <div style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap" }}>
-            {samples.map((s) => (
-              <button
-                key={s.name}
-                className="btn btn-ghost"
-                disabled={!canUpload}
-                onClick={() => go(async () => {
-                  const { text } = await api.fixture(s.name);
-                  return api.uploadText(s.name, text, locale);
-                })}
-                style={{ flexDirection: "column", alignItems: "flex-start", textAlign: "left", padding: "12px 14px", maxWidth: 220 }}
-              >
-                <span className="font-display" style={{ fontWeight: 600, fontSize: 13 }}>{s.title}</span>
-                <span className="ui-base mono" style={{ color: "var(--ink-faint)", fontWeight: 400 }}>{s.words} words</span>
+      {/* In-progress documents */}
+      {docs.length > 0 && (
+        <div style={{ marginBottom: 30 }}>
+          <p className="label" style={{ marginBottom: 12 }}>In progress · {docs.length}</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 12 }}>
+            {docs.map((d) => {
+              const pct = d.block_count ? Math.round((d.approved_count / d.block_count) * 100) : 0;
+              return (
+                <button key={d.doc_id} className="card" onClick={() => router.push(`/review/${d.doc_id}`)}
+                  style={{ padding: "16px 18px", textAlign: "left", cursor: "pointer", display: "flex", flexDirection: "column", gap: 8 }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
+                    <span className="font-display" style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.25 }}>{d.title}</span>
+                    <span className="tag" style={{ color: STATUS_COLOR[d.status], flexShrink: 0 }}>
+                      <span className="dot" style={{ background: STATUS_COLOR[d.status] }} /> {d.status.replace("_", " ")}
+                    </span>
+                  </div>
+                  <div className="ui-base mono" style={{ color: "var(--ink-faint)" }}>{pct}% approved · {d.needs_review_count} to resolve · {d.edits_per_1k} edits/1k</div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* J.P. Morgan briefs to pick up */}
+      {freshSamples.length > 0 && (
+        <div style={{ marginBottom: 36 }}>
+          <p className="label" style={{ marginBottom: 12 }}>J.P. Morgan — Top Market Takeaways</p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 12 }}>
+            {freshSamples.map((s) => (
+              <button key={s.name} className="card" disabled={!!busy} onClick={() => go(async () => {
+                const { text } = await api.fixture(s.name);
+                return api.uploadText(s.name, text);
+              })} style={{ padding: "16px 18px", textAlign: "left", cursor: "pointer", display: "flex", flexDirection: "column", gap: 8 }}>
+                <span className="font-display" style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.25 }}>{s.title}</span>
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                  <span className="ui-base mono" style={{ color: "var(--ink-faint)" }}>{s.words} words · EN → es-419</span>
+                  <span className="ui-base" style={{ color: "var(--accent)", fontWeight: 600, display: "inline-flex", gap: 4, alignItems: "center" }}>Open <ArrowRight size={13} /></span>
+                </div>
               </button>
             ))}
           </div>
         </div>
       )}
 
-      {/* Recent documents */}
-      {recent.length > 0 && (
-        <div style={{ marginTop: 44, textAlign: "left" }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline" }}>
-            <p className="label">Recent documents</p>
-            <Link href="/library" className="ui-base" style={{ color: "var(--accent)", fontWeight: 600, display: "inline-flex", gap: 4, alignItems: "center" }}>
-              Library <ArrowRight size={13} />
-            </Link>
+      {/* Start something new */}
+      <div>
+        <p className="label" style={{ marginBottom: 12 }}>Start something new</p>
+        <div
+          role="button" tabIndex={0} aria-label="Upload a document"
+          onClick={() => canUpload && inputRef.current?.click()}
+          onDragOver={(e) => e.preventDefault()}
+          onDrop={(e) => { e.preventDefault(); const f = e.dataTransfer.files?.[0]; if (f && canUpload) onFile(f); }}
+          className="card"
+          style={{ padding: "26px 24px", display: "flex", alignItems: "center", gap: 16, cursor: canUpload ? "pointer" : "not-allowed", opacity: canUpload ? 1 : 0.6, border: "1.5px dashed var(--line)" }}
+        >
+          <input ref={inputRef} type="file" accept=".docx,.txt,.md" style={{ display: "none" }} onChange={(e) => e.target.files?.[0] && onFile(e.target.files[0])} />
+          <UploadIcon size={22} strokeWidth={1.6} style={{ color: "var(--ink-faint)" }} />
+          <div style={{ flex: 1 }}>
+            <div className="font-display" style={{ fontWeight: 600, fontSize: 16 }}>
+              {canUpload ? "Drop a document or browse" : "Sign in as Investment Strategist to start new work"}
+            </div>
+            <div className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 2 }}>
+              Word (.docx) or plain text · <span style={{ opacity: 0.6 }}>PDF in Phase 3</span>
+            </div>
           </div>
-          <div style={{ marginTop: 10, display: "flex", flexDirection: "column", gap: 8 }}>
-            {recent.map((d) => (
-              <Link key={d.doc_id} href={`/review/${d.doc_id}`} className="card" style={{ padding: "12px 16px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                <span className="font-display" style={{ fontWeight: 500 }}>{d.title}</span>
-                <span className="tag">{d.status}</span>
-              </Link>
-            ))}
-          </div>
+          <FileText size={18} style={{ color: "var(--ink-faint)" }} />
         </div>
-      )}
+        {error && <p className="ui-base" style={{ color: "var(--flag)", marginTop: 12 }}>{error}</p>}
+      </div>
     </div>
   );
 }

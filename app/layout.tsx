@@ -4,9 +4,9 @@ import { Providers } from "@/components/Providers";
 import { TopBar } from "@/components/TopBar";
 
 export const metadata: Metadata = {
-  title: "Bilingual Review Studio",
+  title: "Translation Studio",
   description:
-    "A governed neutral-Spanish financial review workflow — turns reviewer corrections into reusable, auditable institutional memory.",
+    "A governed neutral-Spanish translation workflow — turns reviewer corrections into reusable, auditable institutional memory.",
 };
 
 // Set the theme before paint to avoid a flash (Paper default; honour saved + OS).

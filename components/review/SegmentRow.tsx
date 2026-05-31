@@ -88,8 +88,15 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
         <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 7, flexWrap: "wrap" }}>
           <span className="label">Español neutro · target</span>
           {block.qe_score !== null && (
-            <span className="qe" title={block.critic_flags.map((f) => `${f.category}: ${f.suggestion}`).join("\n") || "no flags"}>
-              <span className="dot" style={{ background: qeColor(block.qe_score) }} /> {block.qe_score}
+            <span
+              className="qe"
+              title={
+                `QE ${block.qe_score} — quality estimate (0–1): the machine's confidence in this translation.\n` +
+                "Routing signal only; the validators and your review decide. Green ≥0.72 · amber ≥0.55 · red below." +
+                (block.critic_flags.length ? `\n\nFlags:\n${block.critic_flags.map((f) => `• ${f.category}: ${f.suggestion}`).join("\n")}` : "")
+              }
+            >
+              <span className="dot" style={{ background: qeColor(block.qe_score) }} /> QE {block.qe_score}
             </span>
           )}
           {block.seg_status === "edited" && <span className="tag edited">edited</span>}
