@@ -21,6 +21,7 @@ export default function HomePage() {
   const [docs, setDocs] = useState<DocSummary[]>([]);
   const [busy, setBusy] = useState("");
   const [error, setError] = useState("");
+  const [paste, setPaste] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const canUpload = !seat || seat.role === "author" || seat.role === "admin";
@@ -40,10 +41,18 @@ export default function HomePage() {
 
   const onFile = (file: File) => {
     if (!/\.(docx|txt|md)$/i.test(file.name)) {
-      setError(/\.pdf$/i.test(file.name) ? "PDF is a Phase 3 capability — try DOCX or plain text." : "Word (.docx) or plain text (.txt/.md) only.");
+      setError(/\.pdf$/i.test(file.name) ? "PDFs aren't supported yet — paste the text below, or use a Word (.docx) or text file." : "Word (.docx) or plain text (.txt/.md) only.");
       return;
     }
     go(() => api.uploadFile(file));
+  };
+
+  const onTranslate = () => {
+    const text = paste.trim();
+    if (!text) return;
+    const firstLine = text.split("\n").find((l) => l.trim()) || "Pasted text";
+    const slug = firstLine.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 48) || "pasted-text";
+    go(() => api.uploadText(`${slug}.md`, text));
   };
 
   const uploadedNames = new Set(docs.map((d) => d.filename));
@@ -114,26 +123,50 @@ export default function HomePage() {
 
       {/* Start something new */}
       <div>
-        <p className="label" style={{ marginBottom: 12 }}>Start something new</p>
+        <p className="label" style={{ marginBottom: 12 }}>Translate something new</p>
+
+        {/* Paste-to-translate — the primary path. Any English (doc, email, memo). */}
+        <div className="card" style={{ padding: 18, marginBottom: 12, opacity: canUpload ? 1 : 0.6 }}>
+          <p className="ui-base" style={{ color: "var(--ink-soft)", marginBottom: 10 }}>
+            {canUpload
+              ? "Paste English — a document, an email, a memo. We split it into paragraphs and translate to neutral Spanish, laid out side by side for review."
+              : "Sign in as Investment Strategist to translate new text."}
+          </p>
+          <textarea
+            value={paste}
+            onChange={(e) => setPaste(e.target.value)}
+            disabled={!canUpload || !!busy}
+            placeholder="Paste English text here…"
+            style={{
+              width: "100%", minHeight: 168, resize: "vertical", padding: "13px 15px",
+              borderRadius: "var(--r-sm)", border: "1px solid var(--line)", background: "var(--surface-2)",
+              color: "var(--ink)", fontFamily: "'Newsreader', Georgia, serif", fontSize: 15.5, lineHeight: 1.6,
+            }}
+          />
+          <div style={{ display: "flex", alignItems: "center", gap: 14, marginTop: 12, flexWrap: "wrap" }}>
+            <button className="btn btn-accent" disabled={!canUpload || !paste.trim() || !!busy} onClick={onTranslate} style={{ padding: "9px 18px" }}>
+              <Sparkles size={15} /> {busy === "parsing" ? "Translating…" : "Translate to Neutral Spanish"}
+            </button>
+            <span className="ui-base" style={{ color: "var(--ink-faint)" }}>EN → Neutral Spanish · segmented into paragraphs</span>
+          </div>
+        </div>
+
+        {/* Secondary: drop a file */}
         <div
           role="button" tabIndex={0} aria-label="Upload a document"
           onClick={() => canUpload && inputRef.current?.click()}
           onDragOver={(e) => e.preventDefault()}
           onDrop={(e) => { e.preventDefault(); const f = e.dataTransfer.files?.[0]; if (f && canUpload) onFile(f); }}
           className="card"
-          style={{ padding: "26px 24px", display: "flex", alignItems: "center", gap: 16, cursor: canUpload ? "pointer" : "not-allowed", opacity: canUpload ? 1 : 0.6, border: "1.5px dashed var(--line)" }}
+          style={{ padding: "16px 20px", display: "flex", alignItems: "center", gap: 14, cursor: canUpload ? "pointer" : "not-allowed", opacity: canUpload ? 1 : 0.6, border: "1.5px dashed var(--line)" }}
         >
           <input ref={inputRef} type="file" accept=".docx,.txt,.md" style={{ display: "none" }} onChange={(e) => e.target.files?.[0] && onFile(e.target.files[0])} />
-          <UploadIcon size={22} strokeWidth={1.6} style={{ color: "var(--ink-faint)" }} />
+          <UploadIcon size={18} strokeWidth={1.6} style={{ color: "var(--ink-faint)" }} />
           <div style={{ flex: 1 }}>
-            <div className="font-display" style={{ fontWeight: 600, fontSize: 16 }}>
-              {canUpload ? "Drop a document or browse" : "Sign in as Investment Strategist to start new work"}
-            </div>
-            <div className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 2 }}>
-              Word (.docx) or plain text · <span style={{ opacity: 0.6 }}>PDF in Phase 3</span>
-            </div>
+            <div className="ui-base" style={{ fontWeight: 600 }}>Or drop a file</div>
+            <div className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 1 }}>Word (.docx) or plain text (.txt, .md)</div>
           </div>
-          <FileText size={18} style={{ color: "var(--ink-faint)" }} />
+          <FileText size={16} style={{ color: "var(--ink-faint)" }} />
         </div>
         {error && <p className="ui-base" style={{ color: "var(--flag)", marginTop: 12 }}>{error}</p>}
       </div>
