@@ -15,6 +15,7 @@ import type {
   UserRef,
 } from "@/src/lib/doc-model";
 import { id, nowIso } from "@/src/lib/ids";
+import { isDisclaimer } from "@/src/prepare/disclaimer";
 import { getStore } from "@/src/store";
 
 // ── Neutralization rules ──────────────────────────────────────────────────────
@@ -163,18 +164,28 @@ export async function previewTmImport(
 ): Promise<TmImportRow[]> {
   const store = getStore();
   const active = (await store.getTm()).filter((t) => !t.superseded_by && t.locale === locale);
+  const seen = new Set<string>();
   return pairs.map((p) => {
-    const prior = active.find((t) => t.source_text === p.source);
-    // Disclaimers are approver/compliance-only (spec §4) and route by kind
-    // (routeDisclaimer filters kind === "disclaimer"). The bulk learn flow must
-    // never alter them, so they are surfaced as protected and left untouched.
-    const status: TmImportStatus = !prior
-      ? "new"
-      : prior.kind === "disclaimer"
+    let status: TmImportStatus;
+    if (seen.has(p.source)) {
+      // Same source paragraph repeated within this paste — only the first is
+      // written, so the repeats are marked duplicate to keep preview == commit.
+      status = "duplicate";
+    } else {
+      seen.add(p.source);
+      const prior = active.find((t) => t.source_text === p.source);
+      // Disclaimers are approver/compliance-only (spec §4) and route by kind
+      // (routeDisclaimer filters kind === "disclaimer"). The bulk learn flow must
+      // never import them — whether or not they're already in TM — so they are
+      // surfaced as protected (detected by content OR a prior disclaimer entry).
+      status = isDisclaimer(p.source) || prior?.kind === "disclaimer"
         ? "protected"
-        : prior.target_text === p.target
-          ? "duplicate"
-          : "supersede";
+        : !prior
+          ? "new"
+          : prior.target_text === p.target
+            ? "duplicate"
+            : "supersede";
+    }
     return { source_text: p.source, target_text: p.target, status };
   });
 }
@@ -193,11 +204,24 @@ export async function commitTmImport(
   locale: Locale = "es-419",
 ): Promise<TmImportResult> {
   const result: TmImportResult = { added: 0, superseded: 0, skipped: 0 };
+  const seen = new Set<string>();
   for (const p of pairs) {
+    // Within-batch repeat: first occurrence wins, so preview == commit and we
+    // never supersede an entry we just wrote in the same import.
+    if (seen.has(p.source)) {
+      result.skipped++;
+      continue;
+    }
+    seen.add(p.source);
+    // Disclaimers are approver/compliance-only (spec §4) and route by kind. The
+    // learn flow must never import one — even a brand-new disclaimer paragraph
+    // would land as kind:"segment" and be invisible to disclaimer routing.
+    if (isDisclaimer(p.source)) {
+      result.skipped++;
+      continue;
+    }
     const store = getStore();
     const prior = (await store.getTm()).find((t) => t.source_text === p.source && !t.superseded_by);
-    // Never supersede a governed disclaimer through the learn flow — that would
-    // demote it to a segment and break disclaimer routing/locking (spec §4/§10).
     if (prior && prior.kind === "disclaimer") {
       result.skipped++;
       continue;
