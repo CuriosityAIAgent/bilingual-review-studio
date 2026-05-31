@@ -19,7 +19,7 @@ translator:
 
 critic:
   provider: openai             # a DECORRELATED family from the translator
-  model: gpt-4o                # pin the exact dated id per deployment
+  model: gpt-5                 # upgraded from gpt-4o; pin a dated id if your account requires one
   prompt_version: critic-mqm-regionalism-v1
   temperature: 0.0
   max_tokens: 2048

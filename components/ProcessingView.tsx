@@ -14,7 +14,7 @@ const STAGES = [
   { key: "translate", label: "Translate", caption: "Claude Sonnet 4.6 is translating each segment to neutral Spanish…" },
   { key: "checks", label: "Checks", caption: "Deterministic validators check numbers, dates, glossary and regionalisms…" },
   { key: "governance", label: "Governance", caption: "Applying your governed memory — approved rules and glossary…" },
-  { key: "rewrite", label: "Rewrite", caption: "GPT-4o critiques and refines the weak segments — a second, decorrelated model…" },
+  { key: "rewrite", label: "Rewrite", caption: "GPT-5 critiques and refines the weak segments — a second, decorrelated model…" },
 ];
 const STEP_MS = 820;
 
