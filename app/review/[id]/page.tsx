@@ -192,14 +192,32 @@ export default function ReviewPage() {
   );
 }
 
+const MODEL_NAMES: Record<string, string> = {
+  "claude-sonnet-4-6": "Claude Sonnet 4.6",
+  "gpt-5": "GPT-5",
+  "gpt-4o": "GPT-4o",
+};
+const modelName = (id: string) => MODEL_NAMES[id] ?? id;
+
 function ProvenanceFooter({ doc }: { doc: DocModel }) {
   const m = doc.model_run;
+  const qeShort = m.qe_model_id.split("/").pop() ?? m.qe_model_id;
+  const rawId = (id: string) => <span className="mono" style={{ fontSize: 11, color: "var(--ink-faint)" }}>({id})</span>;
   return (
-    <div className="ui-base" style={{ marginTop: 32, paddingTop: 16, borderTop: "1px solid var(--line)", color: "var(--ink-faint)", lineHeight: 1.7 }}>
-      <span className="label">Provenance</span><br />
-      translator {m.translator_model_id} · critic {m.critic_model_id} · QE {m.qe_model_id}<br />
-      prompts {m.prompt_version} · rules {m.rules_version} · glossary {m.glossary_version} · config <span className="mono">{m.config_hash}</span><br />
-      QE is a routing signal only — deterministic validators and human approval are authoritative.
+    <div style={{ marginTop: 32, paddingTop: 18, borderTop: "1px solid var(--line)" }}>
+      <span className="label">How this translation was produced</span>
+      <ul className="ui-base" style={{ margin: "12px 0 0", paddingLeft: 18, color: "var(--ink-soft)", lineHeight: 1.75, display: "flex", flexDirection: "column", gap: 6 }}>
+        <li><b style={{ color: "var(--ink)" }}>First draft</b> written by {modelName(m.translator_model_id)} {rawId(m.translator_model_id)} — the translator.</li>
+        <li><b style={{ color: "var(--ink)" }}>Independently checked</b> by {modelName(m.critic_model_id)} {rawId(m.critic_model_id)} — a different AI, so it catches what the first one might miss.</li>
+        <li><b style={{ color: "var(--ink)" }}>Quality-scored</b> by a small model running on our own server ({qeShort}) — it only decides where to focus effort, and never approves the wording.</li>
+        <li><b style={{ color: "var(--ink)" }}>Your team's approved glossary and rules</b> were applied automatically.</li>
+      </ul>
+      <p className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 12 }}>
+        The final Spanish is decided by automated checks and a human sign-off — never by an AI's confidence score.
+      </p>
+      <p className="mono" style={{ fontSize: 10.5, color: "var(--ink-faint)", marginTop: 14, lineHeight: 1.6 }}>
+        Audit · prompts {m.prompt_version} · rules {m.rules_version} · glossary {m.glossary_version} · config {m.config_hash}
+      </p>
     </div>
   );
 }
