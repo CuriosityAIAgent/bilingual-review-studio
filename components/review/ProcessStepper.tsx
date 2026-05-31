@@ -68,13 +68,7 @@ export function ProcessStepper({ doc }: { doc: DocModel }) {
   const s = stats(doc);
   return (
     <div style={{ borderBottom: "1px solid var(--line)", background: "var(--surface-2)" }}>
-      <div style={{ maxWidth: 1400, margin: "0 auto", padding: "14px 22px 12px" }}>
-        <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 12 }}>
-          <span className="label">Process</span>
-          <span className="ui-base" style={{ color: "var(--ink-faint)" }}>
-            automated pipeline → human short process (Investment Strategy → Marketing → Supervisory Management → clients)
-          </span>
-        </div>
+      <div style={{ maxWidth: 1400, margin: "0 auto", padding: "12px 22px" }}>
         <div style={{ display: "flex", alignItems: "flex-start", gap: 4 }}>
           {PROCESS_STEPS.map((step, i) => {
             const state = stepState(step.key, doc.status);
@@ -82,7 +76,15 @@ export function ProcessStepper({ doc }: { doc: DocModel }) {
             return (
               <div key={step.key} style={{ display: "flex", flex: i === PROCESS_STEPS.length - 1 ? "0 0 auto" : "1 1 0", minWidth: 0 }}>
                 <Node state={state} label={step.label} sub={s[step.key]} Icon={ICONS[step.key]} last={i === PROCESS_STEPS.length - 1} />
-                {isGroupEnd && <div style={{ width: 1, alignSelf: "stretch", background: "var(--line)", margin: "0 10px", flexShrink: 0 }} />}
+                {isGroupEnd && (
+                  <div style={{ display: "flex", flexDirection: "column", alignItems: "center", alignSelf: "stretch", margin: "0 14px 0 4px", flexShrink: 0 }}>
+                    <div style={{ width: 1, flex: 1, background: "var(--line)" }} />
+                    <span className="mono" style={{ fontSize: 8, letterSpacing: ".14em", textTransform: "uppercase", color: "var(--ink-faint)", writingMode: "vertical-rl", transform: "rotate(180deg)", padding: "6px 0" }}>
+                      human short-process
+                    </span>
+                    <div style={{ width: 1, flex: 1, background: "var(--line)" }} />
+                  </div>
+                )}
               </div>
             );
           })}

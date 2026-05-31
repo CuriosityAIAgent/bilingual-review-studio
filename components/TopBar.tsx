@@ -34,7 +34,7 @@ export function TopBar() {
       <nav className="font-ui" style={{ display: "flex", gap: 4, marginLeft: 10 }}>
         <NavLink href="/" active={path === "/"} icon={<House size={14} strokeWidth={1.8} />} label="Home" />
         <NavLink href="/library" active={path?.startsWith("/library") || !!isReview} icon={<LibraryBig size={14} strokeWidth={1.8} />} label="Library" />
-        <NavLink href="/learn" active={path?.startsWith("/learn")} icon={<GraduationCap size={14} strokeWidth={1.8} />} label="Learn" />
+        <NavLink href="/train" active={path?.startsWith("/train")} icon={<GraduationCap size={14} strokeWidth={1.8} />} label="Train" />
       </nav>
 
       <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 10 }}>

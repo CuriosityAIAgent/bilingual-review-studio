@@ -155,7 +155,7 @@ against random traffic burning Anthropic/OpenAI credits.
 - [ ] **Access gate (before sharing):** set `ACCESS_CODE`; confirm a fresh browser is bounced to `/gate` and a wrong code is rejected.
 - [ ] **API (Stage 2):** set `ANTHROPIC_API_KEY` (and optionally `OPENAI_API_KEY`); re-translate a doc and confirm live (non-fixture) output.
 - [ ] **Supabase (Stage 3):** project created, `schema.sql` applied, `STORAGE=supabase` + `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` set, memory persists across a redeploy.
-- [ ] **Learn flow:** paste a finished EN/ES pair at `/learn`, confirm segments land in translation memory and are reused on the next document.
+- [ ] **Train flow:** paste a finished EN/ES pair at `/train`, confirm segments land in translation memory and are reused on the next document.
 - [ ] **Auth (pre-GA):** schedule SSO/RBAC integration with IT/security.
 
 ---

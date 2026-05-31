@@ -44,3 +44,6 @@ yarn-error.log*
 
 # downloaded QE model weights (cached at runtime / build)
 /.models/
+
+# typescript incremental build cache (must not be committed — breaks Nixpacks cache mount)
+tsconfig.tsbuildinfo

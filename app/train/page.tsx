@@ -61,8 +61,8 @@ export default function LearnPage() {
   return (
     <div style={{ maxWidth: 1040, margin: "0 auto", padding: "40px 24px 96px" }}>
       <div className="fade-up" style={{ marginBottom: 26 }}>
-        <p className="label">{seat ? `Signed in as ${roleLabel(seat.role)}` : "Translation Studio"} · learn</p>
-        <h1 className="font-display" style={{ fontSize: 30, letterSpacing: "-0.02em", marginTop: 4 }}>Learn from finished work</h1>
+        <p className="label">{seat ? `Signed in as ${roleLabel(seat.role)}` : "Translation Studio"} · train</p>
+        <h1 className="font-display" style={{ fontSize: 30, letterSpacing: "-0.02em", marginTop: 4 }}>Train from finished work</h1>
         <p className="doc-body" style={{ color: "var(--ink-soft)", marginTop: 6, maxWidth: 660 }}>
           Paste an English document you've already translated on the left, and your finished Spanish on the right.
           We align them segment by segment and fold the pairs into translation memory — so future drafts reuse
