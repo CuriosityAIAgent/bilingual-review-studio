@@ -1,5 +1,4 @@
 "use client";
-import { Languages } from "lucide-react";
 import type { Seat } from "@/src/auth";
 import { roleLabel } from "@/app/lib/roles";
 
@@ -18,7 +17,7 @@ export function LoginScreen({ seats, onSignIn }: { seats: Seat[]; onSignIn: (id:
     <div style={{ minHeight: "100vh", display: "grid", placeItems: "center", padding: 24 }}>
       <div className="fade-up" style={{ maxWidth: 480, width: "100%" }}>
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: 9, marginBottom: 18 }}>
-          <Languages size={20} strokeWidth={1.7} style={{ color: "var(--accent)" }} />
+          <span className="seal" aria-hidden style={{ width: 34, height: 34, fontSize: 18 }}>T</span>
           <span className="font-display" style={{ fontWeight: 600, fontSize: 20, letterSpacing: "-0.01em" }}>Translation Studio</span>
         </div>
         <h1 className="font-display" style={{ fontSize: 30, letterSpacing: "-0.02em", textAlign: "center" }}>Who's logging in?</h1>

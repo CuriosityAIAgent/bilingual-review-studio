@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { GraduationCap, House, Languages, LibraryBig, Moon, Sun } from "lucide-react";
+import { GraduationCap, House, LibraryBig, Moon, Sun } from "lucide-react";
 import { roleLabel } from "@/app/lib/roles";
 import { useSeat, useTheme } from "./Providers";
 
@@ -24,8 +24,8 @@ export function TopBar() {
         borderBottom: "1px solid var(--line)", backdropFilter: "blur(10px)",
       }}
     >
-      <Link href="/" style={{ display: "flex", alignItems: "center", gap: 9 }}>
-        <Languages size={18} strokeWidth={1.7} style={{ color: "var(--accent)" }} />
+      <Link href="/" style={{ display: "flex", alignItems: "center", gap: 10 }}>
+        <span className="seal" aria-hidden>T</span>
         <span className="font-display" style={{ fontWeight: 600, fontSize: 16, letterSpacing: "-0.01em" }}>
           Translation Studio
         </span>

@@ -67,6 +67,14 @@ a { color: inherit; text-decoration: none; }
   text-transform:uppercase; letter-spacing:.13em; color: var(--ink-soft); }
 .ui-base { font-family:'Hanken Grotesk', sans-serif; font-size:13px; }
 
+/* Brandmark seal — the monogram tile from the Claude Design comp. A small
+   bronze-edged plate with a Fraunces "T"; the studio's logo across the app. */
+.seal { width:30px; height:30px; border-radius:var(--r-sm); flex-shrink:0;
+  border:1px solid var(--accent); display:grid; place-items:center;
+  background:linear-gradient(160deg, var(--surface), color-mix(in srgb, var(--accent) 14%, var(--surface)));
+  font-family:'Fraunces', Georgia, serif; font-size:16px; font-weight:600; color:var(--accent);
+  box-shadow:0 1px 2px rgba(28,26,22,.06); }
+
 /* Hairline + surfaces */
 .hair { border:1px solid var(--line); }
 .card { background:var(--surface); border:1px solid var(--line); border-radius:var(--r-md);
