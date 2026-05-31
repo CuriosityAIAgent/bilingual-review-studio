@@ -112,6 +112,25 @@ shares one governed memory and nothing is lost on deploy, switch to Supabase.
 
 ---
 
+## 3.5 Access gate (protect a shared preview — do this before sharing a URL)
+
+Before SSO is in place, set a **shared access code** so only people you've given
+the code to can reach the app. This is a front-door lock enforced in
+`middleware.ts` on **every page and every API route** — an un-gated visitor
+can't load the app *or* trigger a single LLM call, so it directly protects
+against random traffic burning Anthropic/OpenAI credits.
+
+| Env var | Value |
+|---|---|
+| `ACCESS_CODE` | any shared secret you hand out (e.g. a passphrase) |
+
+- Set it in Railway → Variables and redeploy. First visit → `/gate` asks for the
+  code; on success a 30-day httpOnly cookie is set (it stores a SHA-256 token,
+  never the code).
+- Leave `ACCESS_CODE` unset to disable the gate (local dev).
+- This is a lock, **not** identity/authorization — it does not replace SSO/RBAC
+  (§4). Everyone who has the code gets in as whatever role they pick.
+
 ## 4. Authentication (current state + path to production)
 
 - **Today:** mock seat switcher (`NEXT_PUBLIC_AUTH_MODE=mock`) — pick a role to
@@ -129,6 +148,7 @@ shares one governed memory and nothing is lost on deploy, switch to Supabase.
 
 - [ ] **Railway:** repo connected, build/start commands set, instance ≥ 1 GB RAM, first deploy green.
 - [ ] **Smoke test (Stage 1):** open the URL, pick a role, open a JPM sample, see the bilingual review record + process stepper.
+- [ ] **Access gate (before sharing):** set `ACCESS_CODE`; confirm a fresh browser is bounced to `/gate` and a wrong code is rejected.
 - [ ] **API (Stage 2):** set `ANTHROPIC_API_KEY` (and optionally `OPENAI_API_KEY`); re-translate a doc and confirm live (non-fixture) output.
 - [ ] **Supabase (Stage 3):** project created, `schema.sql` applied, `STORAGE=supabase` + `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` set, memory persists across a redeploy.
 - [ ] **Learn flow:** paste a finished EN/ES pair at `/learn`, confirm segments land in translation memory and are reused on the next document.
