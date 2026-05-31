@@ -71,7 +71,7 @@ export const api = {
     req<MemoryImportCommit>("/api/memory/import", { method: "POST", body: JSON.stringify({ source_text, target_text, mode: "commit" }) }),
 };
 
-export type TmImportStatus = "new" | "duplicate" | "supersede";
+export type TmImportStatus = "new" | "duplicate" | "supersede" | "protected";
 interface MemoryImportSummary {
   sourceBlocks: number;
   targetBlocks: number;

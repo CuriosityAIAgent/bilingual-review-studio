@@ -148,7 +148,7 @@ export async function addTm(i: AddTmInput): Promise<TmEntry> {
 // is reused on future documents. TM is reference memory (a match score surfaced
 // to the translator / reused on exact match), not an auto-rewrite like a rule —
 // so capture is direct rather than queued. Source steers content only.
-export type TmImportStatus = "new" | "duplicate" | "supersede";
+export type TmImportStatus = "new" | "duplicate" | "supersede" | "protected";
 
 export interface TmImportRow {
   source_text: string;
@@ -165,7 +165,16 @@ export async function previewTmImport(
   const active = (await store.getTm()).filter((t) => !t.superseded_by && t.locale === locale);
   return pairs.map((p) => {
     const prior = active.find((t) => t.source_text === p.source);
-    const status: TmImportStatus = !prior ? "new" : prior.target_text === p.target ? "duplicate" : "supersede";
+    // Disclaimers are approver/compliance-only (spec §4) and route by kind
+    // (routeDisclaimer filters kind === "disclaimer"). The bulk learn flow must
+    // never alter them, so they are surfaced as protected and left untouched.
+    const status: TmImportStatus = !prior
+      ? "new"
+      : prior.kind === "disclaimer"
+        ? "protected"
+        : prior.target_text === p.target
+          ? "duplicate"
+          : "supersede";
     return { source_text: p.source, target_text: p.target, status };
   });
 }
@@ -187,11 +196,19 @@ export async function commitTmImport(
   for (const p of pairs) {
     const store = getStore();
     const prior = (await store.getTm()).find((t) => t.source_text === p.source && !t.superseded_by);
+    // Never supersede a governed disclaimer through the learn flow — that would
+    // demote it to a segment and break disclaimer routing/locking (spec §4/§10).
+    if (prior && prior.kind === "disclaimer") {
+      result.skipped++;
+      continue;
+    }
     if (prior && prior.target_text === p.target) {
       result.skipped++;
       continue;
     }
-    await addTm({ source_text: p.source, target_text: p.target, kind: "segment", locale, approved_by: approvedBy });
+    // Preserve the prior entry's kind (e.g. boilerplate stays boilerplate); new
+    // sources enter as plain segments.
+    await addTm({ source_text: p.source, target_text: p.target, kind: prior ? prior.kind : "segment", locale, approved_by: approvedBy });
     if (prior) result.superseded++;
     else result.added++;
   }

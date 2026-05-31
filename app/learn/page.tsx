@@ -9,6 +9,7 @@ const STATUS: Record<TmImportStatus, { label: string; color: string }> = {
   new: { label: "new", color: "var(--memory)" },
   supersede: { label: "updates wording", color: "var(--edited)" },
   duplicate: { label: "already known", color: "var(--ink-faint)" },
+  protected: { label: "disclaimer · locked", color: "var(--flag)" },
 };
 
 const pane: React.CSSProperties = {
@@ -54,6 +55,7 @@ export default function LearnPage() {
   const newCount = preview?.rows.filter((r) => r.status === "new").length ?? 0;
   const supCount = preview?.rows.filter((r) => r.status === "supersede").length ?? 0;
   const dupCount = preview?.rows.filter((r) => r.status === "duplicate").length ?? 0;
+  const protCount = preview?.rows.filter((r) => r.status === "protected").length ?? 0;
   const mismatch = preview && (preview.sourceExtra.length > 0 || preview.targetExtra.length > 0);
 
   return (
@@ -112,7 +114,7 @@ export default function LearnPage() {
           <div className="card" style={{ padding: "14px 18px", marginBottom: 16, display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center" }}>
             <span className="font-display" style={{ fontWeight: 600, fontSize: 16 }}>{preview.rows.length} aligned segments</span>
             <span className="ui-base mono" style={{ color: "var(--ink-soft)" }}>
-              <b style={{ color: "var(--memory)" }}>{newCount} new</b> · {supCount} updates · {dupCount} already known
+              <b style={{ color: "var(--memory)" }}>{newCount} new</b> · {supCount} updates · {dupCount} already known{protCount > 0 ? ` · ${protCount} disclaimer${protCount > 1 ? "s" : ""} locked` : ""}
             </span>
             <div style={{ marginLeft: "auto", display: "flex", gap: 8 }}>
               <button className="btn btn-ghost ui-base" onClick={() => setPhase("input")} style={{ padding: "7px 12px" }}>Back</button>
