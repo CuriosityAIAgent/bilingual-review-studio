@@ -52,14 +52,19 @@ export async function anthropicComplete(o: CompleteOpts): Promise<string> {
 }
 
 export async function openaiComplete(o: CompleteOpts): Promise<string> {
+  // GPT-5 and the o-series reasoning models reject `max_tokens` and any
+  // non-default `temperature` — they use `max_completion_tokens` and temperature 1.
+  // Older chat models (gpt-4o, gpt-4.1) take the classic shape. Pick per model.
+  const isReasoning = /^(gpt-5|o\d)/i.test(o.model);
   const res = await openai().chat.completions.create({
     model: o.model,
-    temperature: o.temperature ?? 0,
-    max_tokens: o.maxTokens ?? 2048,
     messages: [
       { role: "system", content: o.system },
       { role: "user", content: o.user },
     ],
+    ...(isReasoning
+      ? { max_completion_tokens: o.maxTokens ?? 2048 }
+      : { max_tokens: o.maxTokens ?? 2048, temperature: o.temperature ?? 0 }),
   });
   return (res.choices[0]?.message?.content ?? "").trim();
 }

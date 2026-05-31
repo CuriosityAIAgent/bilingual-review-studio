@@ -203,12 +203,17 @@ function ProvenanceFooter({ doc }: { doc: DocModel }) {
   const m = doc.model_run;
   const qeShort = m.qe_model_id.split("/").pop() ?? m.qe_model_id;
   const rawId = (id: string) => <span className="mono" style={{ fontSize: 11, color: "var(--ink-faint)" }}>({id})</span>;
+  const criticDeterministic = m.critic_model_id.includes("deterministic");
   return (
     <div style={{ marginTop: 32, paddingTop: 18, borderTop: "1px solid var(--line)" }}>
       <span className="label">How this translation was produced</span>
       <ul className="ui-base" style={{ margin: "12px 0 0", paddingLeft: 18, color: "var(--ink-soft)", lineHeight: 1.75, display: "flex", flexDirection: "column", gap: 6 }}>
         <li><b style={{ color: "var(--ink)" }}>First draft</b> written by {modelName(m.translator_model_id)} {rawId(m.translator_model_id)} — the translator.</li>
-        <li><b style={{ color: "var(--ink)" }}>Independently checked</b> by {modelName(m.critic_model_id)} {rawId(m.critic_model_id)} — a different AI, so it catches what the first one might miss.</li>
+        {criticDeterministic ? (
+          <li><b style={{ color: "var(--ink)" }}>Independently checked</b> by deterministic validators — automatic number, glossary and regionalism checks. <span style={{ color: "var(--ink-faint)" }}>(The second-AI review by GPT-5 runs when an OpenAI key is configured.)</span></li>
+        ) : (
+          <li><b style={{ color: "var(--ink)" }}>Independently checked</b> by {modelName(m.critic_model_id)} {rawId(m.critic_model_id)} — a different AI, so it catches what the first one might miss.</li>
+        )}
         <li><b style={{ color: "var(--ink)" }}>Quality-scored</b> by a small model running on our own server ({qeShort}) — it only decides where to focus effort, and never approves the wording.</li>
         <li><b style={{ color: "var(--ink)" }}>Your team's approved glossary and rules</b> were applied automatically.</li>
       </ul>
