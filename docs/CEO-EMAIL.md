@@ -51,19 +51,19 @@ When a segment isn't confident enough, this five-step cycle runs — the heart o
 ### 1. Draft — *Sonnet writes*
 Claude Sonnet 4.6 produces the first Spanish, already primed with our glossary and rules.
 
-### 2. Score + critique — *we score, GPT-5 critiques*
-A quality model scores the segment to decide if it needs work, and **GPT-5 — a different AI — independently reviews it** and returns the exact problems (not a vague "improve it").
+### 2. Score + critique — *QE scores, GPT-5 critiques*
+Our **Quality-Estimation (QE) model** — a small model running on our own server — scores the segment 0–1 to decide whether it needs work. (QE is a *routing* signal only — it decides where to spend effort, it never approves wording.) At the same time, **GPT-5 — a different AI — independently reviews the segment** and returns the exact problems (not a vague "improve it").
 
 ### 3. Refine — *Sonnet rewrites using GPT-5's notes*
 Sonnet rewrites **only the spans GPT-5 flagged**, with our learned rules re-applied as hard constraints.
 
-### 4. Re-score + re-critique — *we score, GPT-5 critiques again*
-The rewrite is scored again and **GPT-5 reviews it again**, to confirm the fix actually landed and introduced nothing new.
+### 4. Re-score + re-critique — *QE re-scores, GPT-5 critiques again*
+The rewrite is scored again by QE and **GPT-5 reviews it again**, to confirm the fix actually landed and introduced nothing new.
 
 ### 5. Keep the best
-The rewrite is kept **only if it's measurably better**; otherwise we revert to the previous version. The cycle repeats until the segment is clean (with a hard cap), and good text is left untouched.
+The rewrite is kept **only if QE and the critic agree it's measurably better**; otherwise we revert to the previous version. The cycle repeats until the segment is clean (with a hard cap), and good text is left untouched.
 
-In short: **Sonnet writes → we score + GPT-5 critiques → Sonnet refines using GPT-5's notes → we score + GPT-5 critiques again → keep the best.** That cross-model back-and-forth is exactly what drives the quality up.
+In short: **Sonnet writes → QE scores + GPT-5 critiques → Sonnet refines using GPT-5's notes → QE re-scores + GPT-5 critiques again → keep the best.** That QE-routed, cross-model back-and-forth is exactly what drives the quality up.
 
 ## What's deterministic vs. what's AI (this matters for trust)
 

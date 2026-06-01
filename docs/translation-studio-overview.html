@@ -128,12 +128,12 @@
 
   <div class="loop">
     <div class="lstep"><div class="ls-n">01 · DRAFT</div><div class="ls-t">Sonnet writes</div><div class="ls-d">Claude Sonnet 4.6 drafts the Spanish, primed with our glossary &amp; rules</div></div>
-    <div class="lstep"><div class="ls-n">02 · SCORE + CRITIQUE</div><div class="ls-t">we score, GPT-5 critiques</div><div class="ls-d">a score routes effort; GPT-5 (a different AI) returns the exact problems</div></div>
+    <div class="lstep"><div class="ls-n">02 · SCORE + CRITIQUE</div><div class="ls-t">QE scores, GPT-5 critiques</div><div class="ls-d">our Quality-Estimation model scores 0–1 to route effort (never approves); GPT-5, a different AI, returns the exact problems</div></div>
     <div class="lstep"><div class="ls-n">03 · REFINE</div><div class="ls-t">Sonnet refines using GPT-5’s notes</div><div class="ls-d">rewrites only the flagged spans; our rules re-applied as hard constraints</div></div>
-    <div class="lstep"><div class="ls-n">04 · RE-SCORE + RE-CRITIQUE</div><div class="ls-t">we score, GPT-5 critiques again</div><div class="ls-d">confirms the fix landed and introduced nothing new</div></div>
-    <div class="lstep"><div class="ls-n">05 · KEEP THE BEST</div><div class="ls-t">keep if better, else revert</div><div class="ls-d">repeats until clean (hard cap); good text is left untouched</div></div>
+    <div class="lstep"><div class="ls-n">04 · RE-SCORE + RE-CRITIQUE</div><div class="ls-t">QE re-scores, GPT-5 critiques again</div><div class="ls-d">confirms the fix landed and introduced nothing new</div></div>
+    <div class="lstep"><div class="ls-n">05 · KEEP THE BEST</div><div class="ls-t">keep if better, else revert</div><div class="ls-d">kept only if QE and the critic agree it improved; repeats until clean (hard cap); good text is left untouched</div></div>
   </div>
-  <div class="loopnote"><b class="ink">In short:</b> Sonnet writes → we score + GPT-5 critiques → Sonnet refines using GPT-5’s notes → we score + GPT-5 critiques again → keep the best. Quality can only stay the same or get better — never worse.</div>
+  <div class="loopnote"><b class="ink">In short:</b> Sonnet writes → QE scores + GPT-5 critiques → Sonnet refines using GPT-5’s notes → QE re-scores + GPT-5 critiques again → keep the best. Quality can only stay the same or get better — never worse.</div>
 
   <h2>What’s deterministic vs. what’s AI</h2>
   <p>This is the part that makes it trustworthy in a regulated setting.</p>
@@ -143,7 +143,7 @@
       <ul>
         <li>The first-draft translation</li>
         <li>The independent cross-model review</li>
-        <li>The routing score (where to focus)</li>
+        <li>The QE routing score (where to focus effort)</li>
       </ul>
     </div>
     <div class="card">
@@ -163,7 +163,7 @@
     <tr><th>Role</th><th>Model</th><th>Why</th></tr>
     <tr><td><span class="ai">Translator</span></td><td><b>Claude Sonnet 4.6</b></td><td>Register &amp; tone consistency over long financial prose. Also does the targeted rewrites.</td></tr>
     <tr><td><span class="ai">Critic</span></td><td><b>GPT-5</b></td><td>Deliberately a <b>different family</b> from the translator, so it doesn’t share its blind spots.</td></tr>
-    <tr><td><span class="det">Quality score</span></td><td><b>Self-hosted</b></td><td>A small model on our own server — no external service, no per-call cost. Routing signal only.</td></tr>
+    <tr><td><span class="det">Quality Estimation (QE)</span></td><td><b>Self-hosted</b></td><td>A small model on our own server that scores each segment 0–1 to route effort — no external service, no per-call cost. Routing signal only; it never approves.</td></tr>
   </table>
   <p style="margin-top:12px;font-size:13px">All three are <b class="ink">configuration, not code</b> — we can swap providers or models by editing one file, no rebuild.</p>
 
