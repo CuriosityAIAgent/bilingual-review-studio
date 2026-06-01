@@ -68,23 +68,19 @@
 
   <div class="head">
     <div class="seal">T</div>
-    <div>
-      <div class="wm">Translation Studio</div>
-      <div class="label" style="margin-top:2px">AI in Wealth Management · Investment Research</div>
-    </div>
+    <div class="wm">Translation Studio</div>
   </div>
 
-  <p class="kicker">Follow-up · for the Investment desk</p>
   <h1>A governed AI translation workflow<br>that learns from our team</h1>
-  <p class="lede">Following up on the idea I shared earlier — we’ve now built it, and it’s running live. This turns our English research into polished, neutral Latin-American Spanish, through a human review process with an audit trail a private bank can stand behind.</p>
+  <p class="lede">It turns our English research into neutral Latin-American Spanish. The machine writes a first draft. Our people review and correct it. Those corrections stick, so the next document needs less fixing than the last. It's live now.</p>
 
   <div class="rule"></div>
 
-  <h2>The one-line version</h2>
-  <p>It is <b class="ink">not</b> “an AI translator.” It’s a <b class="ink">governed review workflow that gets smarter every time our team uses it.</b> A machine writes a first draft; our people review and correct it; and every correction — the right term, the preferred phrasing, the regionalism to avoid — becomes <b class="ink">reusable, auditable institutional memory</b> applied automatically to the next document. The asset isn’t the translation; it’s the memory and the audit trail.</p>
+  <h2>What it really is</h2>
+  <p>Most "AI translation" hands you a draft and stops there. This keeps a person in charge and remembers what they fix. Every correction (a preferred term, a regionalism we want to avoid) becomes a governed rule and gets reused on the next document. The thing we're actually building isn't the translation. It's the memory and the audit trail behind it.</p>
 
   <h2>The workflow</h2>
-  <p>Paste English — a research note, a memo, an email — hit <b class="ink">Translate</b>, and watch it move through the pipeline. The first four steps are automated and take seconds; the last three are our people, each holding the document in turn and handing it down the chain.</p>
+  <p>Paste in English (a research note, a memo, an email), hit <b class="ink">Translate</b>, and watch it move through the pipeline. The first four steps are automated and take seconds. The last three are our people, each holding the document in turn and handing it down the chain.</p>
 
   <div class="phase ph-auto">
     <div class="ph-h"><span class="ph-tag">Automated · seconds</span></div>
@@ -115,25 +111,26 @@
   </div>
 
   <h2>How the memory is invoked</h2>
-  <p>The team’s approved terms, phrasings and “avoid this regionalism” rules aren’t applied as a clean-up at the end — they are <b class="ink">loaded first and drive the whole process.</b></p>
+  <p>The team’s approved terms, phrasings and “avoid this regionalism” rules aren’t a clean-up at the end. They’re <b class="ink">loaded first and drive the whole process.</b></p>
   <div class="grid2">
     <div class="card"><div class="ls-n" style="color:var(--teal)">01 · LOADED UP FRONT</div><p style="margin:5px 0 0;font-size:13px">Glossary, active rules and prior translations load before anything is translated.</p></div>
     <div class="card"><div class="ls-n" style="color:var(--teal)">02 · PRIMES THE DRAFT</div><p style="margin:5px 0 0;font-size:13px">Fed into the translator’s instructions, so the first draft already uses our wording.</p></div>
     <div class="card"><div class="ls-n" style="color:var(--teal)">03 · ENFORCED THROUGHOUT</div><p style="margin:5px 0 0;font-size:13px">Re-applied as hard constraints on every rewrite; the checks flag any drift.</p></div>
     <div class="card"><div class="ls-n" style="color:var(--teal)">04 · FEEDS BACK IN</div><p style="margin:5px 0 0;font-size:13px">A reviewer’s correction becomes a governed rule, applied to every future document.</p></div>
   </div>
+  <p style="margin-top:14px">There’s also a separate <b class="ink">Train</b> page: paste in a document we’ve already translated (English left, finished Spanish right) and it captures those pairings straight into the memory. So we can seed it from work the team has already done, not only from corrections made inside the tool.</p>
 
   <h2>The cross-model cycle, step by step</h2>
-  <p>A single model can’t reliably catch its own mistakes. So a <b class="ink">different</b> AI independently reviews the first one’s work — twice — and the document is only rewritten where it objectively needs it.</p>
+  <p>A model can’t reliably catch its own mistakes. So a <b class="ink">different</b> AI reviews the first one’s work, twice, and the document only gets rewritten where it genuinely needs it.</p>
 
   <div class="loop">
     <div class="lstep"><div class="ls-n">01 · DRAFT</div><div class="ls-t">Sonnet writes</div><div class="ls-d">Claude Sonnet 4.6 drafts the Spanish, primed with our glossary &amp; rules</div></div>
     <div class="lstep"><div class="ls-n">02 · SCORE + CRITIQUE</div><div class="ls-t">QE scores, GPT-5 critiques</div><div class="ls-d">our Quality-Estimation model scores 0–1 to route effort (never approves); GPT-5, a different AI, returns the exact problems</div></div>
-    <div class="lstep"><div class="ls-n">03 · REFINE</div><div class="ls-t">Sonnet refines using GPT-5’s notes</div><div class="ls-d">rewrites only the flagged spans; our rules re-applied as hard constraints</div></div>
+    <div class="lstep"><div class="ls-n">03 · REFINE</div><div class="ls-t">Sonnet refines using GPT-5’s notes</div><div class="ls-d">rewrites the flagged spans (told to leave good text alone); our rules re-applied as hard constraints</div></div>
     <div class="lstep"><div class="ls-n">04 · RE-SCORE + RE-CRITIQUE</div><div class="ls-t">QE re-scores, GPT-5 critiques again</div><div class="ls-d">confirms the fix landed and introduced nothing new</div></div>
-    <div class="lstep"><div class="ls-n">05 · KEEP THE BEST</div><div class="ls-t">keep if better, else revert</div><div class="ls-d">kept only if QE and the critic agree it improved; repeats until clean (hard cap); good text is left untouched</div></div>
+    <div class="lstep"><div class="ls-n">05 · KEEP THE BEST</div><div class="ls-t">keep if better, else revert</div><div class="ls-d">kept only if it removes a serious (major/critical) problem, or scores higher without adding one; otherwise we throw it away. Repeats until clean, with a hard cap. Good text is left alone.</div></div>
   </div>
-  <div class="loopnote"><b class="ink">In short:</b> Sonnet writes → QE scores + GPT-5 critiques → Sonnet refines using GPT-5’s notes → QE re-scores + GPT-5 critiques again → keep the best. Quality can only stay the same or get better — never worse.</div>
+  <div class="loopnote"><b class="ink">In short:</b> Sonnet writes → QE scores + GPT-5 critiques → Sonnet refines using GPT-5’s notes → QE re-scores + GPT-5 critiques again → keep the best. Because a worse rewrite gets discarded, the text only ever stays the same or gets better.</div>
 
   <h2>What’s deterministic vs. what’s AI</h2>
   <p>This is the part that makes it trustworthy in a regulated setting.</p>
@@ -151,33 +148,33 @@
       <ul>
         <li>Number &amp; currency checks (English “billion” never becomes Spanish “billón”)</li>
         <li>Glossary &amp; regionalism enforcement</li>
-        <li>The rule that AI can <b class="ink">never approve</b></li>
-        <li>An append-only audit log of every change</li>
+        <li>The rule that QE/AI can <b class="ink">never approve</b>; validators and a human decide</li>
+        <li>A full edit and hand-off log: every change is appended as an event, never overwritten</li>
       </ul>
     </div>
   </div>
-  <p style="margin-top:14px"><b class="ink">The final Spanish is decided by the deterministic checks plus a human sign-off — never by an AI’s confidence score.</b></p>
+  <p style="margin-top:14px"><b class="ink">The final Spanish is decided by the deterministic checks and a human sign-off, never by an AI’s confidence score.</b></p>
 
   <h2>The models we call</h2>
   <table>
     <tr><th>Role</th><th>Model</th><th>Why</th></tr>
     <tr><td><span class="ai">Translator</span></td><td><b>Claude Sonnet 4.6</b></td><td>Register &amp; tone consistency over long financial prose. Also does the targeted rewrites.</td></tr>
     <tr><td><span class="ai">Critic</span></td><td><b>GPT-5</b></td><td>Deliberately a <b>different family</b> from the translator, so it doesn’t share its blind spots.</td></tr>
-    <tr><td><span class="det">Quality Estimation (QE)</span></td><td><b>Self-hosted</b></td><td>A small model on our own server that scores each segment 0–1 to route effort — no external service, no per-call cost. Routing signal only; it never approves.</td></tr>
+    <tr><td><span class="det">Quality Estimation (QE)</span></td><td><b>Self-hosted</b></td><td>A small model on our own server that scores each segment 0–1 to route effort. No external service, no per-call cost. Routing signal only; it never approves.</td></tr>
   </table>
-  <p style="margin-top:12px;font-size:13px">All three are <b class="ink">configuration, not code</b> — we can swap providers or models by editing one file, no rebuild.</p>
+  <p style="margin-top:12px;font-size:13px">Model choice and settings are <b class="ink">configuration, not code</b>. We can change the model or tune it by editing one file, no rebuild.</p>
 
   <h2>Where this goes if it works</h2>
-  <p>This is the real point. The framework is built configurable from day one, so expanding is changing settings — not rebuilding:</p>
+  <p>The framework was built configurable from day one, so expanding it is mostly a settings change, not a rebuild:</p>
   <div class="grid2">
-    <div class="card"><b class="ink">Other languages</b><p style="margin:4px 0 0;font-size:13px">Same engine, new configuration. The workflow doesn’t change.</p></div>
-    <div class="card"><b class="ink">Other content</b><p style="margin:4px 0 0;font-size:13px">Client letters, disclosures, marketing — anything we translate.</p></div>
+    <div class="card"><b class="ink">Other languages</b><p style="margin:4px 0 0;font-size:13px">Same engine, new configuration and word lists. The workflow doesn’t change.</p></div>
+    <div class="card"><b class="ink">Other content</b><p style="margin:4px 0 0;font-size:13px">Client letters, disclosures, marketing, anything we translate.</p></div>
     <div class="card"><b class="ink">Real multi-user roles</b><p style="margin:4px 0 0;font-size:13px">Each person logs in with their role and formally hands documents down the chain, with full audit.</p></div>
     <div class="card"><b class="ink">A compounding asset</b><p style="margin:4px 0 0;font-size:13px">Every correction makes every future translation better. The memory is the moat.</p></div>
   </div>
 
   <div class="rule"></div>
-  <p style="font-family:'Fraunces',serif;font-size:17px;color:var(--ink)">It’s deployed and access-controlled. Happy to give you a 10-minute walkthrough whenever suits — paste any English in and watch it work.</p>
+  <p style="font-family:'Fraunces',serif;font-size:17px;color:var(--ink)">It’s deployed and access-controlled. Happy to walk you through it in ten minutes whenever suits. Paste any English in and watch it run.</p>
 
   <div class="foot">Translation Studio · governed neutral-Spanish review workflow · human-in-the-loop, fully auditable. Models and thresholds are configuration; the memory and audit trail are the asset.</div>
 
