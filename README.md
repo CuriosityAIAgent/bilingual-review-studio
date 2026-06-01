@@ -7,7 +7,8 @@ drafts; humans correct; every correction is logged, governed, and replayed on th
 next document. The asset is the memory and the audit trail.
 
 Built to the spec in `docs/` (Phases 0–3). Next.js 16 · React 19 · TypeScript ·
-Tailwind v4 · Supabase-or-file storage.
+Tailwind v4 · Postgres / Supabase / local-file storage. Translator: Claude
+Sonnet 4.6 · Critic: GPT-5 (a decorrelated family) · QE: a self-hosted model.
 
 ---
 
@@ -16,7 +17,9 @@ Tailwind v4 · Supabase-or-file storage.
 The full loop runs through the real API with real role separation (see
 `npm test` + the e2e checks):
 
-- **Upload** `.txt` / `.docx` (PDF is Phase 3, optional) → segmented document model.
+- **Paste English or upload** `.txt` / `.docx` → segmented document model. Paste a
+  note, a memo, an email — anything; PDF deferred. A **"Train"** page also ingests
+  a finished English+Spanish pair to seed memory directly.
 - **Translate** to neutral es-419 (Claude when a key is set; deterministic
   fixtures otherwise so the demo always runs).
 - **Cross-model critique** (a decorrelated model family) + a **gated refine loop**
@@ -49,7 +52,7 @@ The full loop runs through the real API with real role separation (see
   samples, translated to neutral es-419.
 - **Export** a bilingual review record (and a reflowed target-only doc).
 
-`npm test` → 82 unit/integration tests + a 31-case finance eval harness. A full
+`npm test` → 87 unit/integration tests + a 31-case finance eval harness. A full
 HTTP e2e exercises the flywheel, turn lock, hand-off chain, and quality gate.
 
 ---
@@ -74,15 +77,15 @@ the whole chain; production swaps in OIDC/SAML → the same RBAC + turn logic.
 
 ## The 90-second demo (what to show senior management)
 
-1. Seat = **Ana Reyes (Investment Strategist)**. Open a J.P. Morgan sample
+1. Seat = **Investment Strategist**. Open a J.P. Morgan sample
    (*"If the shock doesn't stick"*). It translates and opens with the **process
    pipeline on top** and English-left / Spanish-right.
 2. One segment is flagged: the Peninsular word **"ordenador"**. The closing JPM
    disclaimer is **auto-locked** (sage tag) — it came from approved memory.
 3. Click **Teach rule** → propose `ordenador → computadora`. Click **Hand off to
-   Marketing**. Switch seat to **Diego (Marketing)** — the doc is now *his turn*;
-   as Ana it's read-only.
-4. As **Carmen (Supervisory Management)**, the Governance queue shows the proposed
+   Marketing**. Switch seat to **Marketing** — the doc is now *its turn*; as the
+   Investment Strategist it's read-only.
+4. As **Supervisory Management**, the Governance queue shows the proposed
    rule → **Approve**. (As the Reviewer the approve is blocked.)
 5. Click **Re-translate with learnings** → the segment auto-neutralizes to
    "computadora", and the **edits/1k curve** ticks down. Open another piece using
@@ -121,24 +124,30 @@ signal only; validators + humans are authoritative.
 
 ---
 
-## Deploy (GitHub → Railway → Supabase)
+## Deploy (GitHub → Railway → Postgres)
 
-1. **GitHub:** create a repo and push.
-   ```bash
-   gh repo create bilingual-review-studio --private --source=. --remote=origin --push
-   ```
-2. **Railway:** New Project → Deploy from GitHub repo. Nixpacks auto-detects
-   `npm run build` / `npm start` (start binds `$PORT`). Set env vars:
-   `ANTHROPIC_API_KEY`, `OPENAI_API_KEY` (optional), and storage (below).
-3. **Storage — pick one:**
-   - **Supabase (recommended, shared across users & redeploys):** run
-     `supabase/schema.sql` in the Supabase SQL editor, then set
-     `STORAGE=supabase`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`.
-   - **Railway volume (quickest):** attach a volume, set `DATA_DIR=/data`. Memory
-     persists across redeploys and is shared by everyone hitting that instance.
+GitOps: push to `main` and Railway auto-deploys (`railway.json` pins build/start).
 
-Share the Railway URL. People use the **seat switcher** (top-right) to play
-Author / Reviewer / Approver and exercise the full governed workflow.
+1. **GitHub:** push the repo (already at `CuriosityAIAgent/bilingual-review-studio`).
+2. **Railway:** New Project → Deploy from GitHub repo → branch `main`. Nixpacks
+   builds it; the QE model is pre-cached at build. Pick an instance with **≥ 1 GB
+   RAM** (the QE model needs it; no GPU).
+3. **Access gate (set before sharing):** `ACCESS_CODE=<passphrase>`. Every page and
+   API route is then locked behind `/gate` — no LLM call can fire un-gated.
+4. **API keys:** `ANTHROPIC_API_KEY` (translator), `OPENAI_API_KEY` (GPT-5 critic).
+5. **Storage — pick one (durable, shared):**
+   - **Railway Postgres (recommended):** add the Postgres plugin, then on the app
+     service set `STORAGE=postgres` and `DATABASE_URL=${{Postgres.DATABASE_URL}}`.
+     The app self-migrates (creates its tables on boot) and auto-seeds memory — no
+     manual SQL, no service-role key.
+   - **Supabase:** run `supabase/schema.sql`, set `STORAGE=supabase`,
+     `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`. Use when you want Supabase's
+     auth/RLS/managed backups later.
+   - **Local file store (default):** zero setup, but resets on redeploy.
+
+Share the gated URL + the access code. People use the **seat switcher** (top-right)
+to play Investment Strategist / Marketing / Supervisory Management and exercise the
+full governed workflow. (Production swaps the mock seat for SSO; the RBAC stays.)
 
 ---
 
@@ -152,7 +161,9 @@ Author / Reviewer / Approver and exercise the full governed workflow.
 - **Auth:** the seat switcher is a **mock** for the demo (identity travels in the
   `x-brs-seat` header). Production must replace it with OIDC/SAML + server-verified
   sessions; the RBAC decision logic (`src/auth`) stays the same.
-- **QE:** a heuristic stub here; production runs an open-weight QE model on bank
-  infrastructure. It is a routing signal only, never an approval signal.
+- **QE:** a real open-weight model runs **in-container** by default (no external
+  service, no GPU); a heuristic is only the offline fallback. A CometKiwi/xCOMET
+  sidecar can drop in via `QE_SERVICE_URL`. QE is a routing signal only, never an
+  approval signal.
 
 See `docs/decisions/` (ADRs) and `CLAUDE.md` for the full contract.

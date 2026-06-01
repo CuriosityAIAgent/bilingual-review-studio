@@ -1,6 +1,7 @@
 /**
- * Storage abstraction (spec §14, Appendix E). Two backends share this interface:
- *   • file   — local JSON store (default; zero setup; runs immediately)
+ * Storage abstraction (spec §14, Appendix E). Three backends share this interface:
+ *   • file     — local JSON store (default; zero setup; runs immediately)
+ *   • postgres — plain Postgres via DATABASE_URL (Railway plugin); self-migrates
  *   • supabase — Postgres via @supabase/supabase-js (flip with STORAGE=supabase)
  *
  * The document model (with its append-only edit_log/handoff_log) is the unit of

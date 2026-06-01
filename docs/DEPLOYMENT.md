@@ -64,7 +64,7 @@ fixture/heuristic, so partial configuration is safe.
 | Stage | Provider | Env var | Used for | If absent |
 |---|---|---|---|---|
 | **Translator** | Anthropic | `ANTHROPIC_API_KEY` | First-draft EN→neutral-ES (`claude-sonnet-4-6`) | Deterministic fixtures |
-| **Critic** | OpenAI | `OPENAI_API_KEY` | Decorrelated quality critique (`gpt-4o`) — a *different* model family so it doesn't share the translator's blind spots | Validator-derived deterministic critic |
+| **Critic** | OpenAI | `OPENAI_API_KEY` | Decorrelated quality critique (`gpt-5`) — a *different* model family so it doesn't share the translator's blind spots | Validator-derived deterministic critic |
 | **Quality Estimation (QE)** | **none — local, in-container** | *(none)* | Routing-only confidence score per segment | Heuristic |
 
 **Notes for management:**
@@ -168,7 +168,7 @@ against random traffic burning Anthropic/OpenAI credits.
 - [ ] **Smoke test (Stage 1):** open the URL, pick a role, open a JPM sample, see the bilingual review record + process stepper.
 - [ ] **Access gate (before sharing):** set `ACCESS_CODE`; confirm a fresh browser is bounced to `/gate` and a wrong code is rejected.
 - [ ] **API (Stage 2):** set `ANTHROPIC_API_KEY` (and optionally `OPENAI_API_KEY`); re-translate a doc and confirm live (non-fixture) output.
-- [ ] **Supabase (Stage 3):** project created, `schema.sql` applied, `STORAGE=supabase` + `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` set, memory persists across a redeploy.
+- [ ] **Durable storage (Stage 3):** Railway Postgres plugin added; `STORAGE=postgres` + `DATABASE_URL=${{Postgres.DATABASE_URL}}` set on the app; memory + documents persist across a redeploy. (Or Supabase: `schema.sql` applied + `STORAGE=supabase` + `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`.)
 - [ ] **Train flow:** paste a finished EN/ES pair at `/train`, confirm segments land in translation memory and are reused on the next document.
 - [ ] **Auth (pre-GA):** schedule SSO/RBAC integration with IT/security.
 

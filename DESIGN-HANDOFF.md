@@ -58,7 +58,7 @@ count (segments, validators flagged, rules neutralized, segments refined).
 4. **Library / queue.** Documents with status, % approved, edits/1k, owner team.
 5. **Export.** The bilingual review record as a finished artifact (print-to-PDF clean).
 6. **Learn from finished work (bilingual paste → memory).** A second front door, live at
-   `/learn`. Two large paste panes — **English source left, finished Spanish right** — and a
+   `/train`. Two large paste panes — **English source left, finished Spanish right** — and a
    single **Process** action. The system segments and aligns both sides by paragraph order,
    then shows a **review table of aligned pairs** (each tagged *new / updates wording /
    already known*, with a ledger rule colored by status) before anything is written; an
