@@ -53,6 +53,9 @@ function renderTarget(text: string, mem: { phrase: string; note: string }[]) {
 export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onLock, onTeach, onSendToMemory, memoryState = "idle" }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [dirty, setDirty] = useState(false);
+  // Tracks the last text we dispatched, so commit() never fires the same edit
+  // twice (e.g. blur + explicit Save in one click) — which would 409 on rev.
+  const lastSaved = useRef(block.final_text);
   const isTitle = block.type === "title";
   const isHead = isTitle || block.type === "subhead";
   const locked = block.seg_status === "locked";
@@ -73,7 +76,10 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
   ];
   const commit = () => {
     const text = ref.current?.innerText.trim() ?? "";
-    if (text && text !== block.final_text) onEdit(block.id, text, []);
+    if (text && text !== block.final_text && text !== lastSaved.current) {
+      lastSaved.current = text;
+      onEdit(block.id, text, []);
+    }
     setDirty(false);
   };
   const onInput = () => setDirty((ref.current?.innerText.trim() ?? "") !== block.final_text);
@@ -174,7 +180,7 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
               <button
                 className="btn btn-ghost ui-base"
                 style={{ padding: "4px 9px", color: dirty ? "var(--accent)" : "var(--ink-faint)", fontWeight: dirty ? 600 : 400 }}
-                onClick={() => { ref.current?.blur(); commit(); }}
+                onClick={commit}
                 title={dirty ? "Save this edit to the document" : "No unsaved changes (edits also save automatically)"}
               >
                 {dirty ? <><Save size={12} /> Save</> : <><Check size={12} /> Saved</>}
