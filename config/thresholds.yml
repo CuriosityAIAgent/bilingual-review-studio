@@ -30,3 +30,11 @@ min_qe_gain: 0.0
 # within [fuzzy_low, exact) route to Compliance; below fuzzy_low treat as unknown.
 disclaimer_exact_match: 0.97
 disclaimer_fuzzy_low: 0.80
+
+# Train-flow SEMANTIC alignment (learning from published EN/ES that are editorial
+# adaptations, not literal 1:1 translations). Sentences are matched cross-lingually
+# by the QE embedding model; a pair is kept only if its cosine similarity is at or
+# above this floor. Everything below is surfaced as "no confident match" and
+# dropped, so drifted/reorganized text never produces a wrong TM pair. 0.78 keeps
+# genuine paraphrase matches while rejecting same-topic-but-different sentences.
+align_min_cosine: 0.78

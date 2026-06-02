@@ -43,6 +43,23 @@ function cosine(a: number[], b: number[]): number {
   return s;
 }
 
+/**
+ * Embed many strings into the shared multilingual space, mean-pooled and L2-
+ * normalized so a dot product IS the cosine similarity. Used by the semantic
+ * Train aligner to match EN and ES sentences across editorial adaptations.
+ * Returns null if the in-container model is unavailable (caller falls back).
+ */
+export async function embedMany(texts: string[]): Promise<number[][] | null> {
+  if (texts.length === 0) return [];
+  try {
+    const extractor = await getExtractor();
+    const out = await extractor(texts, { pooling: "mean", normalize: true });
+    return out.tolist() as number[][];
+  } catch {
+    return null;
+  }
+}
+
 /** Map the cross-lingual cosine onto a calibrated QE in [0,1] (null = unavailable). */
 export async function neuralQe(source: string, target: string): Promise<number | null> {
   // Optional CometKiwi/xCOMET sidecar (the SOTA upgrade), if deployed.

@@ -157,6 +157,8 @@ export interface TmImportRow {
   source_text: string;
   target_text: string;
   status: TmImportStatus;
+  /** Cross-lingual cosine of the match, when semantic alignment was used. */
+  score?: number;
 }
 
 /** Classify each aligned pair against current (non-superseded) TM — no writes. */

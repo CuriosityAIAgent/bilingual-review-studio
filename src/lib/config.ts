@@ -42,6 +42,7 @@ export interface ThresholdsConfig {
   min_qe_gain: number;
   disclaimer_exact_match: number;
   disclaimer_fuzzy_low: number;
+  align_min_cosine: number;
 }
 
 export interface LocaleConfig {
