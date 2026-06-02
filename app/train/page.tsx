@@ -24,6 +24,7 @@ export default function LearnPage() {
 
   const [source, setSource] = useState("");
   const [target, setTarget] = useState("");
+  const [align, setAlign] = useState<"paragraph" | "semantic">("paragraph");
   const [phase, setPhase] = useState<"input" | "preview" | "done">("input");
   const [preview, setPreview] = useState<MemoryImportPreview | null>(null);
   const [done, setDone] = useState<MemoryImportCommit | null>(null);
@@ -33,7 +34,7 @@ export default function LearnPage() {
   const onProcess = async () => {
     setBusy("process"); setError("");
     try {
-      const r = await api.importMemoryPreview(source, target);
+      const r = await api.importMemoryPreview(source, target, align);
       setPreview(r); setPhase("preview");
     } catch (e) { setError((e as Error).message); }
     finally { setBusy(""); }
@@ -42,7 +43,7 @@ export default function LearnPage() {
   const onSave = async () => {
     setBusy("save"); setError("");
     try {
-      const r = await api.importMemoryCommit(source, target);
+      const r = await api.importMemoryCommit(source, target, align);
       setDone(r); setPhase("done");
     } catch (e) { setError((e as Error).message); }
     finally { setBusy(""); }
@@ -95,16 +96,32 @@ export default function LearnPage() {
                 placeholder="Paste the full Spanish translation…" />
             </div>
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 14, marginTop: 16 }}>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 14, marginTop: 16 }}>
             <button className="btn btn-accent" disabled={!canLearn || !source.trim() || !target.trim() || busy === "process"}
               onClick={onProcess} style={{ padding: "9px 18px" }}>
               {busy === "process" ? <Sparkles size={15} className="live-dot" /> : <ArrowRight size={15} />}
               {busy === "process" ? "Aligning…" : "Process"}
             </button>
-            <span className="ui-base" style={{ color: "var(--ink-faint)" }}>
-              Aligned by paragraph order — you'll review the pairs before anything is saved.
-            </span>
+            <div style={{ display: "inline-flex", border: "1px solid var(--line)", borderRadius: "var(--r-md)", overflow: "hidden" }}>
+              {(["paragraph", "semantic"] as const).map((m) => (
+                <button key={m} onClick={() => setAlign(m)} disabled={!canLearn}
+                  className="ui-base"
+                  style={{
+                    padding: "8px 12px", border: "none", cursor: "pointer",
+                    background: align === m ? "var(--accent)" : "transparent",
+                    color: align === m ? "#fff" : "var(--ink-soft)",
+                    fontWeight: align === m ? 600 : 400,
+                  }}>
+                  {m === "paragraph" ? "Match by paragraph" : "Match by meaning"}
+                </button>
+              ))}
+            </div>
           </div>
+          <p className="ui-base" style={{ color: "var(--ink-faint)", marginTop: 8, maxWidth: 660 }}>
+            {align === "paragraph"
+              ? "Pairs paragraph-by-paragraph. Best when the Spanish is a faithful 1:1 translation of the English."
+              : "Splits both sides into sentences and matches them by meaning, keeping only confident pairs. Use this when the Spanish is a shorter or reordered adaptation, not a literal translation. You'll review every pair (with its match score) before anything is saved."}
+          </p>
         </div>
       )}
 
@@ -112,7 +129,9 @@ export default function LearnPage() {
       {phase === "preview" && preview && (
         <div className="fade-up">
           <div className="card" style={{ padding: "14px 18px", marginBottom: 16, display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center" }}>
-            <span className="font-display" style={{ fontWeight: 600, fontSize: 16 }}>{preview.rows.length} aligned segments</span>
+            <span className="font-display" style={{ fontWeight: 600, fontSize: 16 }}>
+              {preview.rows.length} {preview.align === "semantic" ? "matched sentence pairs" : "aligned segments"}
+            </span>
             <span className="ui-base mono" style={{ color: "var(--ink-soft)" }}>
               <b style={{ color: "var(--memory)" }}>{newCount} new</b> · {supCount} updates · {dupCount} already known{protCount > 0 ? ` · ${protCount} disclaimer${protCount > 1 ? "s" : ""} locked` : ""}
             </span>
@@ -124,12 +143,29 @@ export default function LearnPage() {
             </div>
           </div>
 
-          {mismatch && (
+          {preview.warning && (
+            <div className="card" style={{ padding: "12px 16px", marginBottom: 14, borderColor: "var(--flag)" }}>
+              <span className="ui-base" style={{ color: "var(--flag)" }}>{preview.warning}</span>
+            </div>
+          )}
+
+          {mismatch && preview.align === "semantic" && (
+            <div className="card" style={{ padding: "12px 16px", marginBottom: 14 }}>
+              <span className="ui-base" style={{ color: "var(--ink-soft)" }}>
+                Matched {preview.rows.length} of {preview.sourceBlocks} English sentences.{" "}
+                {preview.sourceExtra.length} English and {preview.targetExtra.length} Spanish sentences had no confident
+                counterpart and were dropped — expected when the Spanish is an adaptation rather than a literal translation.
+              </span>
+            </div>
+          )}
+
+          {mismatch && preview.align !== "semantic" && (
             <div className="card" style={{ padding: "12px 16px", marginBottom: 14, borderColor: "var(--edited)" }}>
               <span className="ui-base" style={{ color: "var(--edited)", fontWeight: 600 }}>Uneven segment counts.</span>{" "}
               <span className="ui-base" style={{ color: "var(--ink-soft)" }}>
                 {preview.sourceBlocks} English vs {preview.targetBlocks} Spanish paragraphs.
-                {preview.sourceExtra.length + preview.targetExtra.length} unmatched paragraph(s) won't be saved — even out the paragraph breaks and re-process to capture them.
+                {preview.sourceExtra.length + preview.targetExtra.length} unmatched paragraph(s) won't be saved. Even out the
+                paragraph breaks and re-process, or switch to “Match by meaning” if the Spanish is an adaptation.
               </span>
             </div>
           )}
@@ -142,6 +178,11 @@ export default function LearnPage() {
                 <div style={{ fontFamily: "'Newsreader',serif", fontSize: 14.5, lineHeight: 1.5 }}>
                   {r.target_text}
                   <span className="tag" style={{ marginLeft: 8, color: STATUS[r.status].color, verticalAlign: "middle" }}>{STATUS[r.status].label}</span>
+                  {r.score != null && (
+                    <span className="tag mono" style={{ marginLeft: 6, color: "var(--memory)", verticalAlign: "middle" }} title="cross-lingual match confidence">
+                      {r.score.toFixed(2)}
+                    </span>
+                  )}
                 </div>
               </div>
             ))}

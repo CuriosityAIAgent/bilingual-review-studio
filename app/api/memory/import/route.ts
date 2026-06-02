@@ -11,6 +11,7 @@
  *  or above the cosine floor — for published EN/ES that is an editorial
  *  adaptation (reordered/merged/condensed) where positional alignment is wrong. */
 import { authorize } from "@/src/auth";
+import { getThresholds } from "@/src/lib/config";
 import { alignBilingual, alignBilingualSemantic } from "@/src/memory/align";
 import { commitTmImport, previewTmImport } from "@/src/memory";
 import { ensureSeeded } from "@/src/memory/seed";
@@ -40,7 +41,33 @@ export async function POST(req: Request) {
   let summary: Record<string, unknown>;
 
   if (body.align === "semantic") {
-    const a = await alignBilingualSemantic(source, target, body.min_score);
+    // min_score is client-supplied but may only TIGHTEN the governed floor, never
+    // loosen it — otherwise a caller could pass 0/-1 and commit garbage to TM.
+    const floor = getThresholds().align_min_cosine;
+    const effectiveMin = typeof body.min_score === "number" ? Math.max(body.min_score, floor) : floor;
+    const a = await alignBilingualSemantic(source, target, effectiveMin);
+
+    // Fail closed: if the embedding model was unavailable we fell back to
+    // POSITIONAL pairing (the very thing semantic mode exists to avoid). Never
+    // commit those guesses; surface it on preview.
+    if (a.method === "positional-fallback") {
+      if ((body.mode ?? "preview") === "commit") {
+        return fail("Semantic alignment is unavailable (embedding model not loaded). Refusing to commit positionally-guessed pairs — retry shortly.", 503);
+      }
+      const rows = await previewTmImport(a.pairs);
+      return ok({
+        rows,
+        align: a.method,
+        minScore: a.minScore,
+        warning: "Embedding model unavailable — showing positional fallback only. Commit is blocked until semantic scoring is available.",
+        sourceBlocks: a.sourceBlocks,
+        targetBlocks: a.targetBlocks,
+        matched: a.pairs.length,
+        sourceExtra: a.sourceExtra,
+        targetExtra: a.targetExtra,
+      });
+    }
+
     pairs = a.pairs;
     summary = {
       align: a.method,

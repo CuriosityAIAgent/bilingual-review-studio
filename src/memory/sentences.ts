@@ -34,11 +34,11 @@ function isAbbrevEnding(fragment: string): boolean {
   return false;
 }
 
-/** Split one already-newline-free chunk into sentences. */
+/** Split one chunk (already rejoined to a single line) into sentences. */
 function splitChunk(chunk: string): string[] {
   // Candidate breaks: end punctuation, optional closing quote/paren, whitespace,
-  // then a capital / opening ¿¡ / digit (start of the next sentence).
-  const parts = chunk.split(/(?<=[.!?])["'»)\]]?\s+(?=[A-ZÁÉÍÓÚÑ¿¡"'(])/);
+  // then a capital / opening ¿¡ / quote / digit (start of the next sentence).
+  const parts = chunk.split(/(?<=[.!?])["'»)\]]?\s+(?=[A-ZÁÉÍÓÚÑ0-9¿¡"'(])/);
   const out: string[] = [];
   for (const raw of parts) {
     const piece = raw.trim();
@@ -55,11 +55,14 @@ function splitChunk(chunk: string): string[] {
   return out;
 }
 
-/** Segment text into sentences, never crossing a paragraph (blank-line) break. */
+/** Segment text into sentences, never crossing a paragraph (blank-line) break.
+ *  Hard-wrapped lines WITHIN a paragraph are rejoined first (a newline mid-
+ *  paragraph is wrapping, not a sentence end), matching the ingester's block
+ *  splitter — otherwise wrapped paste would yield mid-sentence fragments. */
 export function toSentences(text: string): string[] {
   return text
-    .split(/\n+/)
-    .map((line) => line.trim())
+    .split(/\n[ \t]*\n+/) // blank line = paragraph boundary
+    .map((para) => para.replace(/\s*\n\s*/g, " ").trim()) // rejoin wrapped lines
     .filter(Boolean)
     .flatMap(splitChunk)
     .map((s) => s.trim())

@@ -25,6 +25,18 @@ describe("toSentences", () => {
     expect(out).toEqual(["First para sentence.", "Second para sentence."]);
   });
 
+  it("rejoins hard-wrapped lines inside a paragraph (no mid-sentence fragments)", () => {
+    const out = toSentences("Demand rose\nsharply last year. Investors\nreacted quickly.");
+    expect(out).toEqual(["Demand rose sharply last year.", "Investors reacted quickly."]);
+  });
+
+  it("splits when the next sentence starts with a digit", () => {
+    expect(toSentences("Outlook improved. 2026 guidance was raised.")).toEqual([
+      "Outlook improved.",
+      "2026 guidance was raised.",
+    ]);
+  });
+
   it("handles Spanish opening punctuation as a sentence start", () => {
     const out = toSentences("Es válido preguntar. ¿Está el mercado sobrevaluado hoy?");
     expect(out).toHaveLength(2);

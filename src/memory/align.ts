@@ -113,25 +113,38 @@ export async function alignBilingualSemantic(
   const se = emb.slice(0, src.length);
   const te = emb.slice(src.length);
 
-  // All candidate matches at or above the floor, strongest first.
-  const cands: { i: number; j: number; score: number }[] = [];
+  // Full similarity matrix, plus each row/column's best counterpart.
+  const bestT = new Array<number>(se.length).fill(-1); // best target for each source
+  const bestTScore = new Array<number>(se.length).fill(-Infinity);
+  const bestS = new Array<number>(te.length).fill(-1); // best source for each target
+  const bestSScore = new Array<number>(te.length).fill(-Infinity);
   for (let i = 0; i < se.length; i++) {
     for (let j = 0; j < te.length; j++) {
       const score = dot(se[i], te[j]);
-      if (score >= floor) cands.push({ i, j, score });
+      if (score > bestTScore[i]) {
+        bestTScore[i] = score;
+        bestT[i] = j;
+      }
+      if (score > bestSScore[j]) {
+        bestSScore[j] = score;
+        bestS[j] = i;
+      }
     }
   }
-  cands.sort((a, b) => b.score - a.score);
 
-  // Greedy one-to-one: take the strongest match for each still-free sentence.
+  // Keep only MUTUAL-best matches at or above the floor: i's best target is j
+  // AND j's best source is i. This is one-to-one by construction and rejects the
+  // near-tie "both sides point elsewhere" mispairings a global-greedy pass admits.
   const usedS = new Set<number>();
   const usedT = new Set<number>();
   const chosen: { i: number; j: number; score: number }[] = [];
-  for (const c of cands) {
-    if (usedS.has(c.i) || usedT.has(c.j)) continue;
-    usedS.add(c.i);
-    usedT.add(c.j);
-    chosen.push(c);
+  for (let i = 0; i < se.length; i++) {
+    const j = bestT[i];
+    if (j >= 0 && bestS[j] === i && bestTScore[i] >= floor) {
+      usedS.add(i);
+      usedT.add(j);
+      chosen.push({ i, j, score: bestTScore[i] });
+    }
   }
 
   // Present pairs in source order for a readable preview.

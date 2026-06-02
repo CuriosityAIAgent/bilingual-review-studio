@@ -65,21 +65,26 @@ export const api = {
   seats: () => req<{ seats: Seat[] }>("/api/seats"),
   fixtures: () => req<{ samples: { name: string; title: string; words: number }[] }>("/api/fixtures"),
   fixture: (name: string) => req<{ name: string; text: string }>(`/api/fixtures?name=${encodeURIComponent(name)}`),
-  importMemoryPreview: (source_text: string, target_text: string) =>
-    req<MemoryImportPreview>("/api/memory/import", { method: "POST", body: JSON.stringify({ source_text, target_text, mode: "preview" }) }),
-  importMemoryCommit: (source_text: string, target_text: string) =>
-    req<MemoryImportCommit>("/api/memory/import", { method: "POST", body: JSON.stringify({ source_text, target_text, mode: "commit" }) }),
+  importMemoryPreview: (source_text: string, target_text: string, align: AlignMode = "paragraph") =>
+    req<MemoryImportPreview>("/api/memory/import", { method: "POST", body: JSON.stringify({ source_text, target_text, mode: "preview", align }) }),
+  importMemoryCommit: (source_text: string, target_text: string, align: AlignMode = "paragraph") =>
+    req<MemoryImportCommit>("/api/memory/import", { method: "POST", body: JSON.stringify({ source_text, target_text, mode: "commit", align }) }),
 };
 
+export type AlignMode = "paragraph" | "semantic";
 export type TmImportStatus = "new" | "duplicate" | "supersede" | "protected";
 interface MemoryImportSummary {
   sourceBlocks: number;
   targetBlocks: number;
   sourceExtra: string[];
   targetExtra: string[];
+  /** "semantic" / "positional-fallback" when align:"semantic" was requested. */
+  align?: string;
+  matched?: number;
+  warning?: string;
 }
 export interface MemoryImportPreview extends MemoryImportSummary {
-  rows: { source_text: string; target_text: string; status: TmImportStatus }[];
+  rows: { source_text: string; target_text: string; status: TmImportStatus; score?: number }[];
 }
 export interface MemoryImportCommit extends MemoryImportSummary {
   result: { added: number; superseded: number; skipped: number };
