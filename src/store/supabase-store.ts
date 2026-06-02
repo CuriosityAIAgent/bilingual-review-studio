@@ -15,6 +15,7 @@ import type {
   GlossaryEntry,
   NeutralizationRule,
   TmEntry,
+  TmProposal,
 } from "@/src/lib/doc-model";
 import { type DocSummary, type Store, summarize } from "./types";
 
@@ -93,4 +94,6 @@ export class SupabaseStore implements Store {
   saveRules = (rules: NeutralizationRule[]) => this.setMemory("rules", rules);
   getTm = () => this.getMemory<TmEntry[]>("tm", []);
   saveTm = (entries: TmEntry[]) => this.setMemory("tm", entries);
+  getTmProposals = () => this.getMemory<TmProposal[]>("tm_proposals", []);
+  saveTmProposals = (p: TmProposal[]) => this.setMemory("tm_proposals", p);
 }

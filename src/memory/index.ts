@@ -12,6 +12,7 @@ import type {
   Locale,
   NeutralizationRule,
   TmEntry,
+  TmProposal,
   UserRef,
 } from "@/src/lib/doc-model";
 import { id, nowIso } from "@/src/lib/ids";
@@ -244,4 +245,71 @@ export async function commitTmImport(
     else result.added++;
   }
   return result;
+}
+
+// ── TM proposals from reviewer edits (the "process to memory" step) ───────────
+// A reviewer's correction does not silently enter memory. "Send to memory" files
+// a PENDING proposal (English source + corrected Spanish); an approver approves
+// it into TM or rejects it. This keeps the governance promise: memory changes
+// only through an approved step, with a full audit trail.
+
+export interface ProposeTmInput {
+  source_text: string;
+  target_text: string;
+  doc_id: string;
+  doc_title: string;
+  segment_id: string;
+  by: UserRef;
+}
+
+export async function proposeTmFromEdit(i: ProposeTmInput): Promise<TmProposal> {
+  const store = getStore();
+  const proposals = await store.getTmProposals();
+  // If an identical pending proposal already exists, return it (idempotent — a
+  // double-click or re-send doesn't queue duplicates for the approver).
+  const dup = proposals.find(
+    (p) => p.state === "pending" && p.source_text === i.source_text && p.target_text === i.target_text,
+  );
+  if (dup) return dup;
+  const created: TmProposal = {
+    id: id("tmprop"),
+    source_text: i.source_text,
+    target_text: i.target_text,
+    doc_id: i.doc_id,
+    doc_title: i.doc_title,
+    segment_id: i.segment_id,
+    proposed_by: i.by,
+    proposed_at: nowIso(),
+    state: "pending",
+  };
+  await store.saveTmProposals([...proposals, created]);
+  return created;
+}
+
+export async function listTmProposals(state?: TmProposal["state"]): Promise<TmProposal[]> {
+  const proposals = await getStore().getTmProposals();
+  return state ? proposals.filter((p) => p.state === state) : proposals;
+}
+
+/** Approve → fold into TM (governed). Reject → discard. Disclaimers never enter
+ *  via this path (they are approver/compliance-only and routed by kind). */
+export async function decideTmProposal(
+  proposalId: string,
+  approve: boolean,
+  by: string,
+): Promise<{ proposal: TmProposal; addedToTm: boolean }> {
+  const store = getStore();
+  const proposals = await store.getTmProposals();
+  const p = proposals.find((x) => x.id === proposalId);
+  if (!p) throw new Error(`unknown proposal ${proposalId}`);
+  if (p.state !== "pending") return { proposal: p, addedToTm: false };
+
+  let addedToTm = false;
+  if (approve && !isDisclaimer(p.source_text)) {
+    await addTm({ source_text: p.source_text, target_text: p.target_text, kind: "segment", approved_by: by });
+    addedToTm = true;
+  }
+  const decided: TmProposal = { ...p, state: approve ? "approved" : "rejected", decided_by: by, decided_at: nowIso() };
+  await store.saveTmProposals(proposals.map((x) => (x.id === proposalId ? decided : x)));
+  return { proposal: decided, addedToTm };
 }

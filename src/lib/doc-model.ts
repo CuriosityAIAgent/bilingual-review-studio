@@ -391,6 +391,23 @@ export interface TmEntry {
   created_at: string;
 }
 
+/** A reviewer correction proposed for translation memory. Created from an edited
+ *  segment ("Send to memory"); enters TM only after an approver approves it, so
+ *  memory still changes through a governed step (not silently from every edit). */
+export interface TmProposal {
+  id: string;
+  source_text: string;
+  target_text: string;
+  doc_id: string;
+  doc_title: string;
+  segment_id: string;
+  proposed_by: UserRef;
+  proposed_at: string;
+  state: "pending" | "approved" | "rejected";
+  decided_by?: string;
+  decided_at?: string;
+}
+
 // ── Factory helpers ───────────────────────────────────────────────────────────
 export function emptyMetrics(): DocMetrics {
   return {

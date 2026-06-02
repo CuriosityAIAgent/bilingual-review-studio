@@ -1,6 +1,6 @@
 /** Client-side API layer. The mock-auth seat (spec §11) is stored in
  * localStorage and sent as the `x-brs-seat` header on every request. */
-import type { DocModel, GlossaryEntry, NeutralizationRule, TmEntry } from "@/src/lib/doc-model";
+import type { DocModel, GlossaryEntry, NeutralizationRule, TmEntry, TmProposal } from "@/src/lib/doc-model";
 import type { DocSummary } from "@/src/store/types";
 import type { Seat } from "@/src/auth";
 
@@ -69,6 +69,14 @@ export const api = {
     req<MemoryImportPreview>("/api/memory/import", { method: "POST", body: JSON.stringify({ source_text, target_text, mode: "preview", align }) }),
   importMemoryCommit: (source_text: string, target_text: string, align: AlignMode = "paragraph") =>
     req<MemoryImportCommit>("/api/memory/import", { method: "POST", body: JSON.stringify({ source_text, target_text, mode: "commit", align }) }),
+
+  // Reviewer edit → memory (governed): propose, list pending, approve/reject.
+  proposeMemory: (body: { source_text: string; target_text: string; doc_id: string; doc_title: string; segment_id: string }) =>
+    req<{ proposal: TmProposal }>("/api/memory/proposals", { method: "POST", body: JSON.stringify(body) }),
+  listMemoryProposals: (state = "pending") =>
+    req<{ proposals: TmProposal[] }>(`/api/memory/proposals?state=${encodeURIComponent(state)}`),
+  decideMemoryProposal: (id: string, action: "approve" | "reject") =>
+    req<{ proposal: TmProposal; addedToTm: boolean }>(`/api/memory/proposals/${id}`, { method: "POST", body: JSON.stringify({ action }) }),
 };
 
 export type AlignMode = "paragraph" | "semantic";

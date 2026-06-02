@@ -11,7 +11,7 @@
  */
 import { Pool } from "pg";
 import { type DocSummary, type Store, summarize } from "./types";
-import type { DocModel, GlossaryEntry, NeutralizationRule, TmEntry } from "@/src/lib/doc-model";
+import type { DocModel, GlossaryEntry, NeutralizationRule, TmEntry, TmProposal } from "@/src/lib/doc-model";
 
 let _pool: Pool | null = null;
 let _ready: Promise<void> | null = null;
@@ -112,4 +112,6 @@ export class PostgresStore implements Store {
   saveRules = (rules: NeutralizationRule[]) => this.setMemory("rules", rules);
   getTm = () => this.getMemory<TmEntry[]>("tm", []);
   saveTm = (entries: TmEntry[]) => this.setMemory("tm", entries);
+  getTmProposals = () => this.getMemory<TmProposal[]>("tm_proposals", []);
+  saveTmProposals = (p: TmProposal[]) => this.setMemory("tm_proposals", p);
 }

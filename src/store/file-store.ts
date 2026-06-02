@@ -13,6 +13,7 @@ import type {
   GlossaryEntry,
   NeutralizationRule,
   TmEntry,
+  TmProposal,
 } from "@/src/lib/doc-model";
 import { type DocSummary, type Store, summarize } from "./types";
 
@@ -90,5 +91,13 @@ export class FileStore implements Store {
   async saveTm(entries: TmEntry[]): Promise<void> {
     await ensureDirs();
     await writeJson(join(memDir(), "tm.json"), entries);
+  }
+
+  async getTmProposals(): Promise<TmProposal[]> {
+    return readJson<TmProposal[]>(join(memDir(), "tm-proposals.json"), []);
+  }
+  async saveTmProposals(proposals: TmProposal[]): Promise<void> {
+    await ensureDirs();
+    await writeJson(join(memDir(), "tm-proposals.json"), proposals);
   }
 }

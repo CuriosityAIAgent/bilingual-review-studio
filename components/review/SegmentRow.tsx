@@ -1,6 +1,6 @@
 "use client";
-import { useRef } from "react";
-import { AlertTriangle, BookOpen, Check, Lock, Sparkles, X } from "lucide-react";
+import { useRef, useState } from "react";
+import { AlertTriangle, BookOpen, BookPlus, Check, Lock, Save, Sparkles, X } from "lucide-react";
 import type { Block, FlagCategory } from "@/src/lib/doc-model";
 
 export interface SegCaps {
@@ -19,6 +19,8 @@ interface Props {
   onReject: (blockId: string) => void;
   onLock: (blockId: string) => void;
   onTeach: (regional: string, neutral: string, blockId: string) => void;
+  onSendToMemory: (block: Block) => void;
+  memoryState?: "idle" | "sending" | "sent";
 }
 
 const NUM_SPLIT = /(-?\d[\d,.]*\s?%?|\$[\d,.]+|[A-Z]{2}[A-Z0-9]{9}\d|\$[A-Z]{1,5})/g;
@@ -48,8 +50,9 @@ function renderTarget(text: string, mem: { phrase: string; note: string }[]) {
   );
 }
 
-export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onLock, onTeach }: Props) {
+export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onLock, onTeach, onSendToMemory, memoryState = "idle" }: Props) {
   const ref = useRef<HTMLDivElement>(null);
+  const [dirty, setDirty] = useState(false);
   const isTitle = block.type === "title";
   const isHead = isTitle || block.type === "subhead";
   const locked = block.seg_status === "locked";
@@ -71,7 +74,9 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
   const commit = () => {
     const text = ref.current?.innerText.trim() ?? "";
     if (text && text !== block.final_text) onEdit(block.id, text, []);
+    setDirty(false);
   };
+  const onInput = () => setDirty((ref.current?.innerText.trim() ?? "") !== block.final_text);
 
   return (
     <div
@@ -127,6 +132,7 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
           className={`cell doc-body ${isHead ? "font-display" : ""}`}
           contentEditable={editable}
           suppressContentEditableWarning
+          onInput={onInput}
           onBlur={commit}
           lang="es"
           spellCheck={false}
@@ -162,8 +168,29 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
         ))}
 
         {/* Per-segment actions */}
-        {(caps.canAccept || caps.canLock) && !isHead && (
-          <div style={{ display: "flex", gap: 6, marginTop: 12, opacity: 0.92 }}>
+        {(caps.canEdit || caps.canAccept || caps.canLock) && !isHead && (
+          <div style={{ display: "flex", gap: 6, marginTop: 12, opacity: 0.92, flexWrap: "wrap", alignItems: "center" }}>
+            {caps.canEdit && !locked && (
+              <button
+                className="btn btn-ghost ui-base"
+                style={{ padding: "4px 9px", color: dirty ? "var(--accent)" : "var(--ink-faint)", fontWeight: dirty ? 600 : 400 }}
+                onClick={() => { ref.current?.blur(); commit(); }}
+                title={dirty ? "Save this edit to the document" : "No unsaved changes (edits also save automatically)"}
+              >
+                {dirty ? <><Save size={12} /> Save</> : <><Check size={12} /> Saved</>}
+              </button>
+            )}
+            {caps.canPropose && !locked && block.type !== "disclaimer" && (block.seg_status === "edited" || block.seg_status === "accepted") && (
+              <button
+                className="btn btn-ghost ui-base"
+                style={{ padding: "4px 9px", color: memoryState === "sent" ? "var(--memory)" : "var(--accent)" }}
+                disabled={dirty || memoryState !== "idle"}
+                onClick={() => onSendToMemory(block)}
+                title={dirty ? "Save your edit first, then send it to memory" : "Propose this correction for translation memory (an approver reviews it)"}
+              >
+                <BookPlus size={12} /> {memoryState === "sending" ? "Sending…" : memoryState === "sent" ? "Sent for approval" : "Send to memory"}
+              </button>
+            )}
             {caps.canAccept && !locked && (block.seg_status === "edited" || block.seg_status === "proposed" || block.seg_status === "machine") && (
               <button className="btn btn-ghost ui-base" style={{ padding: "4px 9px", color: "var(--memory)" }} onClick={() => onAccept(block.id)}><Check size={12} /> Accept</button>
             )}

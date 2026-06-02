@@ -2,10 +2,10 @@
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import {
-  CheckCircle2, Download, FileText, PanelLeftClose, PanelRightClose, RotateCcw, Send, Sparkles, UserCheck,
+  Check, CheckCircle2, Download, FileText, PanelLeftClose, PanelRightClose, RotateCcw, Send, Sparkles, UserCheck,
 } from "lucide-react";
 import { api, type ActionBody } from "@/app/lib/client";
-import type { DocModel, FlagCategory } from "@/src/lib/doc-model";
+import type { DocModel, FlagCategory, TmProposal } from "@/src/lib/doc-model";
 import { useSeat } from "@/components/Providers";
 import { type SegCaps, SegmentRow } from "@/components/review/SegmentRow";
 import { OutlineNavigator } from "@/components/review/OutlineNavigator";
@@ -25,6 +25,7 @@ export default function ReviewPage() {
   const [showPanel, setShowPanel] = useState(true);
   const [refreshKey, setRefreshKey] = useState(0);
   const [teach, setTeach] = useState<{ regional: string; neutral: string; blockId: string } | null>(null);
+  const [memSent, setMemSent] = useState<Record<string, "idle" | "sending" | "sent">>({});
 
   useEffect(() => { api.getDoc(id).then((r) => setDoc(r.doc)).catch((e) => setError(e.message)); }, [id]);
 
@@ -58,6 +59,24 @@ export default function ReviewPage() {
   }, [id, doc?.rev]);
 
   const onEdit = (blockId: string, text: string, cats: FlagCategory[]) => act({ kind: "edit", blockId, text, cats });
+
+  // Send a corrected segment to memory as a PENDING proposal (governed: an
+  // approver folds it into TM later). The edit itself is already saved.
+  const onSendToMemory = async (block: { id: string; source_text: string; final_text: string }) => {
+    if (!doc) return;
+    setMemSent((s) => ({ ...s, [block.id]: "sending" })); setError("");
+    try {
+      await api.proposeMemory({
+        source_text: block.source_text, target_text: block.final_text,
+        doc_id: id, doc_title: doc.title, segment_id: block.id,
+      });
+      setMemSent((s) => ({ ...s, [block.id]: "sent" }));
+      setRefreshKey((k) => k + 1);
+    } catch (e) {
+      setError((e as Error).message);
+      setMemSent((s) => ({ ...s, [block.id]: "idle" }));
+    }
+  };
 
   const submitRule = async (regional: string, neutral: string, reason: string, variant: string) => {
     setBusy("teach"); setError("");
@@ -173,11 +192,18 @@ export default function ReviewPage() {
               onReject={(bid) => act({ kind: "reject", blockId: bid, reason: "rejected" })}
               onLock={(bid) => act({ kind: "lock", blockId: bid })}
               onTeach={(regional, neutral, blockId) => setTeach({ regional, neutral, blockId })}
+              onSendToMemory={onSendToMemory}
+              memoryState={memSent[b.id] ?? "idle"}
             />
           ))}
           <div style={{ padding: "0 24px 20px" }}><ProvenanceFooter doc={doc} /></div>
         </div>
-        {showPanel && <FeedbackPanel doc={doc} canApproveRules={canApproveRules} onGovern={onGovern} refreshKey={refreshKey} />}
+        {showPanel && (
+          <aside style={{ width: 320, flexShrink: 0, display: "flex", flexDirection: "column", gap: 16 }}>
+            <MemoryProposals canApprove={canApproveRules} refreshKey={refreshKey} onChange={() => setRefreshKey((k) => k + 1)} />
+            <FeedbackPanel doc={doc} canApproveRules={canApproveRules} onGovern={onGovern} refreshKey={refreshKey} />
+          </aside>
+        )}
       </div>
 
       {teach && (
@@ -229,4 +255,60 @@ function ProvenanceFooter({ doc }: { doc: DocModel }) {
 
 function Center({ children }: { children: React.ReactNode }) {
   return <div className="font-ui" style={{ padding: 80, textAlign: "center", color: "var(--ink-soft)" }}>{children}</div>;
+}
+
+/** Pending reviewer corrections waiting to be folded into translation memory.
+ *  Reviewers file these via "Send to memory"; an approver approves/rejects here. */
+function MemoryProposals({ canApprove, refreshKey, onChange }: { canApprove: boolean; refreshKey: number; onChange: () => void }) {
+  const [pending, setPending] = useState<TmProposal[]>([]);
+  const [busyId, setBusyId] = useState("");
+
+  const load = useCallback(() => {
+    api.listMemoryProposals("pending").then((r) => setPending(r.proposals)).catch(() => {});
+  }, []);
+  useEffect(() => { load(); }, [load, refreshKey]);
+
+  const decide = async (id: string, action: "approve" | "reject") => {
+    setBusyId(id);
+    try { await api.decideMemoryProposal(id, action); load(); onChange(); }
+    finally { setBusyId(""); }
+  };
+
+  if (pending.length === 0 && !canApprove) return null;
+
+  return (
+    <div className="card" style={{ padding: "14px 16px" }}>
+      <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+        <span className="label">Edits awaiting memory</span>
+        <span className="tag" style={{ marginLeft: "auto", color: pending.length ? "var(--accent)" : "var(--ink-faint)" }}>{pending.length}</span>
+      </div>
+      <p className="ui-base" style={{ color: "var(--ink-faint)", margin: "0 0 10px" }}>
+        {canApprove
+          ? "Reviewer corrections proposed for translation memory. Approve to fold into memory; reject to discard."
+          : "Your corrections are queued for an approver. They enter memory once approved."}
+      </p>
+      {pending.length === 0 && <p className="ui-base" style={{ color: "var(--ink-faint)" }}>Nothing pending.</p>}
+      <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        {pending.map((p) => (
+          <div key={p.id} style={{ borderLeft: "2px solid var(--accent)", paddingLeft: 10 }}>
+            <div className="ui-base" style={{ color: "var(--ink-soft)", lineHeight: 1.4 }}>{p.source_text.slice(0, 110)}</div>
+            <div className="ui-base" style={{ color: "var(--memory)", lineHeight: 1.4, marginTop: 2 }}>{p.target_text.slice(0, 110)}</div>
+            <div className="mono" style={{ fontSize: 10, color: "var(--ink-faint)", marginTop: 3 }}>
+              from “{(p.doc_title || "document").slice(0, 40)}” · by {p.proposed_by?.user_id}
+            </div>
+            {canApprove && (
+              <div style={{ display: "flex", gap: 6, marginTop: 6 }}>
+                <button className="btn btn-ghost ui-base" disabled={!!busyId} style={{ padding: "3px 9px", color: "var(--memory)" }} onClick={() => decide(p.id, "approve")}>
+                  <Check size={12} /> Approve to memory
+                </button>
+                <button className="btn btn-ghost ui-base" disabled={!!busyId} style={{ padding: "3px 9px", color: "var(--flag)" }} onClick={() => decide(p.id, "reject")}>
+                  Reject
+                </button>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }

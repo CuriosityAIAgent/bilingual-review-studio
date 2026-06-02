@@ -15,6 +15,7 @@ import type {
   Locale,
   NeutralizationRule,
   TmEntry,
+  TmProposal,
 } from "@/src/lib/doc-model";
 
 export interface DocSummary {
@@ -51,6 +52,10 @@ export interface Store {
   // ── memory: translation memory (incl. approved disclaimers) ──────────────────
   getTm(): Promise<TmEntry[]>;
   saveTm(entries: TmEntry[]): Promise<void>;
+
+  // ── memory: TM proposals from reviewer edits (pending → approved/rejected) ────
+  getTmProposals(): Promise<TmProposal[]>;
+  saveTmProposals(proposals: TmProposal[]): Promise<void>;
 }
 
 export function summarize(doc: DocModel): DocSummary {
