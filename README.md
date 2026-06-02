@@ -6,9 +6,10 @@ neutralization*) into **reusable, auditable institutional memory**. The machine
 drafts; humans correct; every correction is logged, governed, and replayed on the
 next document. The asset is the memory and the audit trail.
 
-Built to the spec in `docs/` (Phases 0–3). Next.js 16 · React 19 · TypeScript ·
-Tailwind v4 · Postgres / Supabase / local-file storage. Translator: Claude
-Sonnet 4.6 · Critic: GPT-5 (a decorrelated family) · QE: a self-hosted model.
+Next.js 16 · React 19 · TypeScript · Tailwind v4 · Postgres / Supabase /
+local-file storage. Translator: Claude Sonnet 4.6 · Critic: GPT-5 (a
+decorrelated family) · QE: a self-hosted model. The design contract lives in
+`CLAUDE.md` and the ADRs in `docs/decisions/`.
 
 ---
 
