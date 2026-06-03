@@ -32,6 +32,8 @@ function buildSystemPrompt(): string {
     "Check: faithfulness (nothing added/dropped), glossary adherence, number/date/currency integrity, the",
     'billón rule (English "billion" = 10^9 = "mil millones", NEVER "billón"), neutrality (flag Peninsular-only',
     "OR Mexican-only lexicon and give the neutral alternative), formal register, fluency.",
+    "Consistency: if a phrase or parallel structure REPEATS within this segment, its translation",
+    'must be identical each time — flag any occurrence whose tense or wording differs (category "fluency").',
     "If there are no errors, return [].",
   ].join("\n");
 }
