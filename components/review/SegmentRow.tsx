@@ -31,6 +31,9 @@ function withNumbers(text: string, keyBase = 0) {
 }
 
 const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+// Cap each side of the "edited" diff so a large multi-sentence change can't
+// overflow the column and break the segment layout (full text shown on hover).
+const clip = (s: string, n = 44) => (s.length > n ? `${s.slice(0, n - 1)}…` : s);
 
 /** Render the target text, underlining phrases the governed memory produced
  *  (applied neutralization rules + glossary terms) — the visible learning loop.
@@ -166,11 +169,14 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
         {/* What the reviewer changed, stated below the segment (mirrors the flags).
             Shows for insertions, replacements AND deletion-only edits. */}
         {(edit.from || edit.to) && (
-          <div className="ui-base" style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 9, color: "var(--edited)" }}>
-            <Check size={12} strokeWidth={1.8} />
-            <span style={{ fontWeight: 600 }}>edited</span>
-            <span style={{ color: "var(--ink-soft)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-              <span style={{ textDecoration: "line-through" }}>{edit.from || "—"}</span> → {edit.to || "(removed)"}
+          <div className="ui-base" style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 9, color: "var(--edited)", minWidth: 0 }}>
+            <Check size={12} strokeWidth={1.8} style={{ flexShrink: 0 }} />
+            <span style={{ fontWeight: 600, flexShrink: 0 }}>edited</span>
+            <span
+              title={`${edit.from || "—"} → ${edit.to || "(removed)"}`}
+              style={{ color: "var(--ink-soft)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", minWidth: 0 }}
+            >
+              <span style={{ textDecoration: "line-through" }}>{clip(edit.from) || "—"}</span> → {clip(edit.to) || "(removed)"}
             </span>
           </div>
         )}
