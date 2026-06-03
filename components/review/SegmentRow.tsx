@@ -2,6 +2,7 @@
 import { useRef, useState } from "react";
 import { AlertTriangle, BookOpen, Check, Lock, Save, Sparkles, X } from "lucide-react";
 import type { Block, FlagCategory } from "@/src/lib/doc-model";
+import { changedPhrase } from "@/src/lib/text-diff";
 
 export interface SegCaps {
   canEdit: boolean;
@@ -34,18 +35,19 @@ const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 /** Render the target text, underlining phrases the governed memory produced
  *  (applied neutralization rules + glossary terms) — the visible learning loop.
  *  Numbers/figures still get the mono highlight inside the non-memory gaps. */
-function renderTarget(text: string, mem: { phrase: string; note: string }[]) {
-  const phrases = mem.map((m) => m.phrase).filter(Boolean);
+function renderTarget(text: string, marks: { phrase: string; note: string; cls: string }[]) {
+  const phrases = marks.map((m) => m.phrase).filter(Boolean);
   if (phrases.length === 0) return withNumbers(text);
   const sorted = [...new Set(phrases)].sort((a, b) => b.length - a.length).map(escapeRe);
   const re = new RegExp(`(${sorted.join("|")})`, "gi");
-  const noteFor = (s: string) => mem.find((m) => m.phrase.toLowerCase() === s.toLowerCase())?.note ?? "From governed memory";
+  const markFor = (s: string) => marks.find((m) => m.phrase.toLowerCase() === s.toLowerCase());
   let k = 0;
-  return text.split(re).filter(Boolean).map((chunk) =>
-    phrases.some((p) => p.toLowerCase() === chunk.toLowerCase())
-      ? <span key={`m-${k++}`} className="mem" title={noteFor(chunk)}>{chunk}</span>
-      : <span key={`g-${k++}`}>{withNumbers(chunk, k)}</span>,
-  );
+  return text.split(re).filter(Boolean).map((chunk) => {
+    const m = phrases.some((p) => p.toLowerCase() === chunk.toLowerCase()) ? markFor(chunk) : null;
+    return m
+      ? <span key={`m-${k++}`} className={m.cls} title={m.note}>{chunk}</span>
+      : <span key={`g-${k++}`}>{withNumbers(chunk, k)}</span>;
+  });
 }
 
 export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onLock, onTeach }: Props) {
@@ -68,9 +70,14 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
     : "";
 
   const failedValidators = block.validator_results.filter((v) => v.status === "fail");
-  const memPhrases = [
-    ...block.neutralization_hits.filter((h) => h.applied).map((h) => ({ phrase: h.neutral_form, note: `Memory rule applied: ${h.regional_form} → ${h.neutral_form}` })),
-    ...block.glossary_hits.filter((h) => h.applied).map((h) => ({ phrase: h.approved_target, note: `Glossary applied: ${h.source} → ${h.approved_target}` })),
+  // What the reviewer changed from the machine draft, stated in the note below.
+  // (An inline underline would need a position-aware diff to be accurate — short
+  // tokens, repeats, and overlap with memory highlights make value-matching wrong
+  // — so that's a deliberate follow-up; the note is unambiguous on its own.)
+  const edit = block.seg_status === "edited" ? changedPhrase(block.mt_text, block.final_text) : { from: "", to: "" };
+  const marks = [
+    ...block.neutralization_hits.filter((h) => h.applied).map((h) => ({ phrase: h.neutral_form, note: `Memory rule applied: ${h.regional_form} → ${h.neutral_form}`, cls: "mem" })),
+    ...block.glossary_hits.filter((h) => h.applied).map((h) => ({ phrase: h.approved_target, note: `Glossary applied: ${h.source} → ${h.approved_target}`, cls: "mem" })),
   ];
   const commit = () => {
     const text = ref.current?.innerText.trim() ?? "";
@@ -153,8 +160,20 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
             color: block.type === "disclaimer" ? "var(--ink-soft)" : "var(--ink)",
           }}
         >
-          {renderTarget(block.final_text, memPhrases)}
+          {renderTarget(block.final_text, marks)}
         </div>
+
+        {/* What the reviewer changed, stated below the segment (mirrors the flags).
+            Shows for insertions, replacements AND deletion-only edits. */}
+        {(edit.from || edit.to) && (
+          <div className="ui-base" style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 9, color: "var(--edited)" }}>
+            <Check size={12} strokeWidth={1.8} />
+            <span style={{ fontWeight: 600 }}>edited</span>
+            <span style={{ color: "var(--ink-soft)", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+              <span style={{ textDecoration: "line-through" }}>{edit.from || "—"}</span> → {edit.to || "(removed)"}
+            </span>
+          </div>
+        )}
 
         {/* Inline flags */}
         {block.critic_flags.map((f, i) => (

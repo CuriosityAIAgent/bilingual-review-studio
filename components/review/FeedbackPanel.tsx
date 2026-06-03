@@ -4,6 +4,7 @@ import { BookOpen, Check, TrendingDown } from "lucide-react";
 import { api } from "@/app/lib/client";
 import { roleLabel } from "@/app/lib/roles";
 import type { DocModel, GlossaryEntry, NeutralizationRule } from "@/src/lib/doc-model";
+import { changedPhrase } from "@/src/lib/text-diff";
 
 interface Metrics {
   curve: { doc_id: string; title: string; created_at: string; edits_per_1k: number }[];
@@ -38,18 +39,6 @@ function Sparkline({ curve }: { curve: { created_at: string; edits_per_1k: numbe
       </div>
     </div>
   );
-}
-
-/** The actual changed span between an edit's before/after text — trims the
- *  common prefix/suffix words so the panel shows WHAT changed, not the whole
- *  segment. Empty from/to means a non-text action (accept/lock). */
-function changedPhrase(before: string, after: string): { from: string; to: string } {
-  const a = before.split(/\s+/), b = after.split(/\s+/);
-  let s = 0;
-  while (s < a.length && s < b.length && a[s] === b[s]) s++;
-  let ea = a.length, eb = b.length;
-  while (ea > s && eb > s && a[ea - 1] === b[eb - 1]) { ea--; eb--; }
-  return { from: a.slice(s, ea).join(" "), to: b.slice(s, eb).join(" ") };
 }
 
 export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey, onJump }: {
