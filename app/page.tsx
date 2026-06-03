@@ -1,7 +1,7 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowRight, FileText, Sparkles, Upload as UploadIcon } from "lucide-react";
+import { ArrowRight, FileText, Sparkles, Trash2, Upload as UploadIcon } from "lucide-react";
 import { api } from "@/app/lib/client";
 import type { DocSummary } from "@/src/store/types";
 import { roleLabel } from "@/app/lib/roles";
@@ -23,9 +23,28 @@ export default function HomePage() {
   const [busy, setBusy] = useState("");
   const [error, setError] = useState("");
   const [paste, setPaste] = useState("");
+  const [deleting, setDeleting] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const canUpload = !seat || seat.role === "author" || seat.role === "admin";
+  // Delete is destructive, so require a RESOLVED author/admin seat — don't show
+  // it during the brief null-seat window while /api/seats loads (a viewer would
+  // otherwise see a button that 403s). Mirrors the library page's seat?.role check.
+  const canDelete = seat?.role === "author" || seat?.role === "admin";
+
+  const onDelete = async (e: React.MouseEvent, id: string, title: string) => {
+    e.stopPropagation(); // don't open the doc — the card itself navigates
+    if (!window.confirm(`Delete "${title}"? This removes the in-progress work and can't be undone.`)) return;
+    setDeleting(id); setError("");
+    try {
+      await api.deleteDoc(id);
+      setDocs((ds) => ds.filter((d) => d.doc_id !== id));
+    } catch (err) {
+      setError((err as Error).message);
+    } finally {
+      setDeleting("");
+    }
+  };
 
   useEffect(() => {
     api.fixtures().then((r) => setSamples(r.samples)).catch(() => {});
@@ -92,17 +111,33 @@ export default function HomePage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 12 }}>
             {docs.map((d) => {
               const pct = d.block_count ? Math.round((d.approved_count / d.block_count) * 100) : 0;
+              const open = () => router.push(`/review/${d.doc_id}`);
               return (
-                <button key={d.doc_id} className="card" onClick={() => router.push(`/review/${d.doc_id}`)}
+                <div key={d.doc_id} className="card" role="button" tabIndex={0} onClick={open}
+                  onKeyDown={(e) => {
+                    // Only the card itself navigates on Enter/Space — ignore keys
+                    // bubbling up from the nested delete button (else it navigates).
+                    if (e.target !== e.currentTarget) return;
+                    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+                  }}
                   style={{ padding: "16px 18px", textAlign: "left", cursor: "pointer", display: "flex", flexDirection: "column", gap: 8 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
                     <span className="font-display" style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.25 }}>{d.title}</span>
-                    <span className="tag" style={{ color: STATUS_COLOR[d.status], flexShrink: 0 }}>
-                      <span className="dot" style={{ background: STATUS_COLOR[d.status] }} /> {d.status.replace("_", " ")}
-                    </span>
+                    <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
+                      <span className="tag" style={{ color: STATUS_COLOR[d.status] }}>
+                        <span className="dot" style={{ background: STATUS_COLOR[d.status] }} /> {d.status.replace("_", " ")}
+                      </span>
+                      {canDelete && (
+                        <button className="btn btn-ghost" aria-label={`Delete ${d.title}`} title="Delete this document"
+                          disabled={deleting === d.doc_id} onClick={(e) => onDelete(e, d.doc_id, d.title)}
+                          style={{ padding: "5px 6px", color: "var(--ink-faint)" }}>
+                          <Trash2 size={14} strokeWidth={1.8} />
+                        </button>
+                      )}
+                    </div>
                   </div>
                   <div className="ui-base mono" style={{ color: "var(--ink-faint)" }}>{pct}% approved · {d.needs_review_count} to resolve · {d.edits_per_1k} edits/1k</div>
-                </button>
+                </div>
               );
             })}
           </div>

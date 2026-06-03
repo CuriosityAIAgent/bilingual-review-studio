@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { GraduationCap, House, LibraryBig, Moon, Sun } from "lucide-react";
+import { GraduationCap, House, LibraryBig, Moon, SquarePen, Sun } from "lucide-react";
 import { roleLabel } from "@/app/lib/roles";
 import { useSeat, useTheme } from "./Providers";
 
@@ -33,8 +33,11 @@ export function TopBar() {
 
       <nav className="font-ui" style={{ display: "flex", gap: 4, marginLeft: 10 }}>
         <NavLink href="/" active={path === "/"} icon={<House size={14} strokeWidth={1.8} />} label="Home" />
-        <NavLink href="/library" active={path?.startsWith("/library") || !!isReview} icon={<LibraryBig size={14} strokeWidth={1.8} />} label="Library" />
+        <NavLink href="/library" active={path?.startsWith("/library")} icon={<LibraryBig size={14} strokeWidth={1.8} />} label="Library" />
         <NavLink href="/train" active={path?.startsWith("/train")} icon={<GraduationCap size={14} strokeWidth={1.8} />} label="Train" />
+        {/* The per-document review screen IS the editor — show it as its own tab
+            (it was previously bucketed under "Library", which read as mislabeled). */}
+        {isReview && <NavLink href={path || "/"} active icon={<SquarePen size={14} strokeWidth={1.8} />} label="Editor" />}
       </nav>
 
       <div style={{ marginLeft: "auto", display: "flex", alignItems: "center", gap: 10 }}>
