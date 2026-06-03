@@ -30,6 +30,8 @@ There is one canonical target. We are not maintaining per-market variants in v1;
 
 The **gated cross-model loop** (`src/refine/`) forces **exactly ONE critique pass**, then iterates **only on segments that objectively fail** a validator or carry a major/critical critic flag, and **reverts on no gain** (no improvement → keep prior text). The translator and critic must be **decorrelated model families** so the judge doesn't share the generator's blind spots.
 
+**Fail loud, never garble (ADR 0013).** When a translator key IS configured, a provider error / unparseable / incomplete response THROWS (the request 422s, no draft is saved). The fixture word-substitution translator is ONLY for the no-key offline demo — it must never stand in for a failed live call, because its output looks like a broken half-translation. **Honest provenance (ADR 0014):** the critic only counts as live if a cached liveness probe (`criticProviderLive`) confirms the provider can actually respond; otherwise `model_run.critic_model_id` is stamped `… (deterministic fallback)`. Every fallback logs its reason (`console.error` with `[translate]` / `[critic]` / `[documents]` prefixes) — diagnose from logs, don't guess.
+
 ## QE Is Routing-Only
 
 `qe_score` is a **routing signal**, never an approval signal. **Deterministic validators (`src/validators/`) and humans are authoritative.** A block is auto-pass-eligible only when no blocking validator failure and no major/critical critic flag remains (`hasBlockingValidatorFailure`, `hasMajorOrCriticalFlag`).
@@ -43,6 +45,10 @@ English **billion = 10⁹ = "mil millones"**, **NEVER "billón"** (Spanish *bill
 Roles: **author / reviewer / approver / admin / viewer** (matrix in `config/permissions.yml`). Reviewers neutralize in-scope; only approver/admin lock segments, approve publish, and handle disclaimers; only admin deprecates rules.
 
 **Only `active`/`approved` neutralization rules (and glossary entries) are applied by the system.** Candidate/proposed/deprecated rules are never auto-applied — they sit in the governance queue (`LifecycleState` in `doc-model.ts`).
+
+**Two governed ways memory grows from finished work** (memory NEVER changes silently from a raw edit):
+- **Train page** (`/api/memory/import`) folds a completed EN+ES pair into TM. `align:"paragraph"` (literal 1:1) or `align:"semantic"` — sentence-level cross-lingual matching via the QE model, keeping only mutual-best pairs ≥ `thresholds.align_min_cosine`, for editorial adaptations (ADR 0011).
+- **"Send to memory"** on a reviewer-corrected segment files a **pending `TmProposal`** (`/api/memory/proposals`); an **approver/admin** approves it into TM or rejects it (`/api/memory/proposals/[id]`, ADR 0012). Glossary terms are proposed/activated via `/api/glossary`; `/api/admin/tm` (admin-only) purges machine TM segments for incident cleanup (keeps disclaimers).
 
 ## Repo Layout
 

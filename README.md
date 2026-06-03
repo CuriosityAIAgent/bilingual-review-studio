@@ -8,8 +8,10 @@ next document. The asset is the memory and the audit trail.
 
 Next.js 16 · React 19 · TypeScript · Tailwind v4 · Postgres / Supabase /
 local-file storage. Translator: Claude Sonnet 4.6 · Critic: GPT-5 (a
-decorrelated family) · QE: a self-hosted model. The design contract lives in
-`CLAUDE.md` and the ADRs in `docs/decisions/`.
+decorrelated family; live when the OpenAI key has credit, otherwise an honest
+deterministic critic — the provenance stamp says which actually ran) · QE: a
+self-hosted model. The design contract lives in `CLAUDE.md` and the ADRs in
+`docs/decisions/`.
 
 ---
 
@@ -22,9 +24,22 @@ The full loop runs through the real API with real role separation (see
   note, a memo, an email — anything; PDF deferred. A **"Train"** page also ingests
   a finished English+Spanish pair to seed memory directly.
 - **Translate** to neutral es-419 (Claude when a key is set; deterministic
-  fixtures otherwise so the demo always runs).
+  fixtures only when NO key, for the offline demo). When a key IS configured and
+  the provider fails / returns an unparseable or incomplete response, the request
+  **fails loudly and saves no draft** — it never silently emits garbled
+  word-substitution that looks like a broken translation (ADR 0013).
 - **Cross-model critique** (a decorrelated model family) + a **gated refine loop**
-  that fixes only objectively-failing segments and reverts on no gain.
+  that fixes only objectively-failing segments and reverts on no gain. The live
+  GPT-5 critic runs only when its provider can actually respond (a cached
+  liveness probe); otherwise it falls back to the deterministic critic and the
+  provenance honestly stamps "gpt-5 (deterministic fallback)" (ADR 0014). Every
+  fallback reason is logged for diagnosis.
+- **Learn from finished work, two ways** — the **Train** page folds a completed
+  English+Spanish pair into memory (paragraph match for literal translations, or
+  **semantic sentence-level match** for editorial adaptations, ADR 0011); and
+  **"Send to memory"** turns a reviewer's in-document correction into a *pending*
+  proposal that an approver folds into TM (ADR 0012) — memory only ever changes
+  through an approved step.
 - **Reference-free QE that is a real model, self-hosted in this container** — a
   cross-lingual embedding model (`Xenova/paraphrase-multilingual-MiniLM-L12-v2`,
   ONNX/CPU via `@huggingface/transformers`) scores adequacy by comparing the
@@ -48,7 +63,9 @@ The full loop runs through the real API with real role separation (see
   deploy**, and a major-change request loops it back. Append-only `edit_log` /
   `handoff_log`; exact-match disclaimers auto-locked from approved TM;
   optimistic-concurrency stale-write protection (no last-write-wins).
-- **English-left / Spanish-right** text-editor experience with a format toolbar.
+- **English-left / Spanish-right** text-editor experience with a format toolbar,
+  a Word-style **Save** button at the top of the document ("All changes saved /
+  Saving…") plus per-segment auto-save on blur.
 - **Real content:** the 5 latest J.P. Morgan "Top Market Takeaways" pieces ship as
   samples, translated to neutral es-419.
 - **Export** a bilingual review record (and a reflowed target-only doc).

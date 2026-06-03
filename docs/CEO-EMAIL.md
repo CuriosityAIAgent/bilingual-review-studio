@@ -52,7 +52,7 @@ When a segment isn't confident enough, this five-step cycle runs. It's the heart
 Claude Sonnet 4.6 produces the first Spanish, already primed with our glossary and rules.
 
 ### 2. Score + critique (QE scores, GPT-5 critiques)
-Our **Quality-Estimation (QE) model**, a small model running on our own server, scores the segment 0–1 to decide whether it needs work. QE is a routing signal only: it decides where to spend effort, it never approves wording. At the same time, **GPT-5, a different AI, independently reviews the segment** and returns the exact problems (not a vague "improve it").
+Our **Quality-Estimation (QE) model**, a small model running on our own server, scores the segment 0–1 to decide whether it needs work. QE is a routing signal only: it decides where to spend effort, it never approves wording. At the same time, **GPT-5, a different AI, independently reviews the segment** and returns the exact problems (not a vague "improve it"). If the GPT-5 service is ever unavailable, the system falls back to our own rule-based checks and **records honestly that it did so** — it never claims a GPT-5 review happened when it didn't.
 
 ### 3. Refine (Sonnet rewrites using GPT-5's notes)
 Sonnet rewrites the spans GPT-5 flagged, and is told to leave the good text alone, with our learned rules re-applied as hard constraints.

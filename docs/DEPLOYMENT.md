@@ -63,11 +63,21 @@ fixture/heuristic, so partial configuration is safe.
 
 | Stage | Provider | Env var | Used for | If absent |
 |---|---|---|---|---|
-| **Translator** | Anthropic | `ANTHROPIC_API_KEY` | First-draft EN→neutral-ES (`claude-sonnet-4-6`) | Deterministic fixtures |
+| **Translator** | Anthropic | `ANTHROPIC_API_KEY` | First-draft EN→neutral-ES (`claude-sonnet-4-6`) | Deterministic fixtures (no-key only) |
 | **Critic** | OpenAI | `OPENAI_API_KEY` | Decorrelated quality critique (`gpt-5`) — a *different* model family so it doesn't share the translator's blind spots | Validator-derived deterministic critic |
 | **Quality Estimation (QE)** | **none — local, in-container** | *(none)* | Routing-only confidence score per segment | Heuristic |
 
 **Notes for management:**
+- **A key must have CREDIT, not just exist.** The keys are also monitored for
+  balance/rate limits at run time:
+  - **Anthropic (translator):** if the call fails (no credit, rate limit,
+    timeout), the request **fails loudly and saves no draft** — it never emits
+    garbled fixture text that looks like a broken translation (ADR 0013). Keep it
+    funded.
+  - **OpenAI (critic):** if it can't respond, the system uses the deterministic
+    critic and the document provenance honestly reads `gpt-5 (deterministic
+    fallback)` (ADR 0014). Fund it to get the real GPT-5 cross-model review and
+    the live "gpt-5" label back. Every fallback is logged for diagnosis.
 - **Only the Anthropic key is needed for live translation.** OpenAI is
   recommended (the two-model "decorrelation" is a quality guarantee in the
   design) but optional.
