@@ -25,7 +25,6 @@ export default function ReviewPage() {
   const [showPanel, setShowPanel] = useState(true);
   const [refreshKey, setRefreshKey] = useState(0);
   const [teach, setTeach] = useState<{ regional: string; neutral: string; blockId: string } | null>(null);
-  const [memSent, setMemSent] = useState<Record<string, "idle" | "sending" | "sent">>({});
 
   useEffect(() => { api.getDoc(id).then((r) => setDoc(r.doc)).catch((e) => setError(e.message)); }, [id]);
 
@@ -59,24 +58,6 @@ export default function ReviewPage() {
   }, [id, doc?.rev]);
 
   const onEdit = (blockId: string, text: string, cats: FlagCategory[]) => act({ kind: "edit", blockId, text, cats });
-
-  // Send a corrected segment to memory as a PENDING proposal (governed: an
-  // approver folds it into TM later). The edit itself is already saved.
-  const onSendToMemory = async (block: { id: string; source_text: string; final_text: string }, targetText: string) => {
-    if (!doc) return;
-    setMemSent((s) => ({ ...s, [block.id]: "sending" })); setError("");
-    try {
-      await api.proposeMemory({
-        source_text: block.source_text, target_text: targetText || block.final_text,
-        doc_id: id, doc_title: doc.title, segment_id: block.id,
-      });
-      setMemSent((s) => ({ ...s, [block.id]: "sent" }));
-      setRefreshKey((k) => k + 1);
-    } catch (e) {
-      setError((e as Error).message);
-      setMemSent((s) => ({ ...s, [block.id]: "idle" }));
-    }
-  };
 
   const submitRule = async (regional: string, neutral: string, reason: string, variant: string) => {
     setBusy("teach"); setError("");
@@ -214,8 +195,6 @@ export default function ReviewPage() {
               onReject={(bid) => act({ kind: "reject", blockId: bid, reason: "rejected" })}
               onLock={(bid) => act({ kind: "lock", blockId: bid })}
               onTeach={(regional, neutral, blockId) => setTeach({ regional, neutral, blockId })}
-              onSendToMemory={onSendToMemory}
-              memoryState={memSent[b.id] ?? "idle"}
             />
           ))}
           <div style={{ padding: "0 24px 20px" }}><ProvenanceFooter doc={doc} /></div>

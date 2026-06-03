@@ -5,6 +5,7 @@
  */
 import { authorize } from "@/src/auth";
 import type { FlagCategory } from "@/src/lib/doc-model";
+import { captureEditToMemory } from "@/src/memory";
 import { reTranslateDoc } from "@/src/pipeline/run";
 import { fail, ok, seatFrom } from "@/src/server/context";
 import { getStore } from "@/src/store";
@@ -118,6 +119,16 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
         break;
     }
     await store.saveDoc(next);
+    // Flywheel: a saved edit auto-captures into memory (governed + safeguarded
+    // inside captureEditToMemory). Best-effort — the edit is already saved, so a
+    // capture failure must not fail the request.
+    if (body.kind === "edit" && body.blockId) {
+      try {
+        await captureEditToMemory(next, body.blockId, { user_id: seat.user_id, team_id: seat.team_id });
+      } catch (e) {
+        console.error("[memory] auto-capture on save failed:", (e as Error).message);
+      }
+    }
     return ok({ doc: next });
   } catch (e) {
     return fail((e as Error).message, 422);
