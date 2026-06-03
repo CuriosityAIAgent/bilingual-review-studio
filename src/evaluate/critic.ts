@@ -11,7 +11,7 @@
  */
 import { getModels } from "@/src/lib/config";
 import type { CriticFlag, FlagCategory, Severity } from "@/src/lib/doc-model";
-import { openaiAvailable, openaiComplete, parseJsonLoose, stripDelims } from "@/src/providers/clients";
+import { criticProviderLive, openaiComplete, parseJsonLoose, stripDelims } from "@/src/providers/clients";
 import { currencyValidator } from "@/src/validators/currency";
 import { dateValidator } from "@/src/validators/date";
 import { englishLeakageValidator } from "@/src/validators/english_leakage";
@@ -87,9 +87,12 @@ export function deterministicCritique(i: ValidatorInput): CriticFlag[] {
 }
 
 export async function critique(i: ValidatorInput): Promise<CriticFlag[]> {
-  if (openaiAvailable()) {
+  const models = getModels();
+  // Only attempt the live critic if the provider can actually respond (key set
+  // AND has credit). Otherwise skip straight to the deterministic critic instead
+  // of firing a doomed call per segment — and provenance won't claim GPT-5 ran.
+  if (await criticProviderLive(models.critic.model)) {
     try {
-      const models = getModels();
       const raw = await openaiComplete({
         model: models.critic.model,
         temperature: models.critic.temperature,

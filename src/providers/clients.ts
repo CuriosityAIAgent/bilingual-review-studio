@@ -20,6 +20,36 @@ export function openaiAvailable(): boolean {
   return !!process.env.OPENAI_API_KEY;
 }
 
+// Provider HEALTH (not just key presence). A key with no credit / past a rate
+// limit will fail every call, and we must not then claim the live model ran.
+// This is global provider state, so caching it across requests is correct.
+let _criticLive: { ok: boolean; ts: number } | null = null;
+const CRITIC_PROBE_TTL_MS = 60_000;
+
+/** True only if the OpenAI critic can ACTUALLY complete a call right now
+ *  (key set AND has credit / isn't rate-limited). Cheap 1-token probe, cached. */
+export async function criticProviderLive(model: string): Promise<boolean> {
+  if (!openaiAvailable()) return false;
+  const now = Date.now();
+  if (_criticLive && now - _criticLive.ts < CRITIC_PROBE_TTL_MS) return _criticLive.ok;
+  let ok = false;
+  try {
+    await openaiComplete({ model, system: "ok", user: "ok", maxTokens: 1 });
+    ok = true;
+  } catch {
+    ok = false;
+  }
+  _criticLive = { ok, ts: now };
+  return ok;
+}
+
+/** Last probed critic health (sync), for honest provenance stamping. null = not
+ *  probed yet this window → caller falls back to key-presence labelling. */
+export function criticProviderLiveCached(): boolean | null {
+  if (!openaiAvailable()) return false;
+  return _criticLive ? _criticLive.ok : null;
+}
+
 function anthropic(): Anthropic {
   if (!_anthropic) _anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
   return _anthropic;

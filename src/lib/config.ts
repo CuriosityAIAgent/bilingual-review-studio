@@ -9,6 +9,7 @@ import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { parse as parseYaml } from "yaml";
+import { criticProviderLiveCached } from "@/src/providers/clients";
 
 const CONFIG_DIR = join(process.cwd(), "config");
 
@@ -120,14 +121,23 @@ export function getConfigHash(): string {
   return loadAll().configHash;
 }
 
+/** Honest critic label: "deterministic fallback" when the provider has no key
+ *  OR was probed and can't actually respond (no credit / rate limited). Only a
+ *  verified-live (or as-yet-unprobed-but-keyed) critic keeps the bare model id. */
+function criticModelLabel(model: string): string {
+  return criticProviderLiveCached() === false ? `${model} (deterministic fallback)` : model;
+}
+
 /** Build the provenance block stamped onto every document run (spec §8). */
 export function buildModelRun(targetLocale = "es-419") {
   const { models, thresholds, configHash } = loadAll();
   return {
     translator_model_id:
       effectiveMode("translator") === "live" ? models.translator.model : `${models.translator.model} (fixture)`,
-    critic_model_id:
-      effectiveMode("critic") === "live" ? models.critic.model : `${models.critic.model} (deterministic)`,
+    // Honest critic provenance: a key can be present but out of credit / rate
+    // limited, in which case the live critic never actually ran. Trust the
+    // probed provider health (set during the run) over mere key presence.
+    critic_model_id: criticModelLabel(models.critic.model),
     qe_model_id: process.env.QE_SERVICE_URL ? `${models.qe.model} (sidecar)` : `${models.qe.model} (in-container)`,
     prompt_version: `${models.translator.prompt_version} | ${models.critic.prompt_version}`,
     glossary_version: models.versions.glossary_version,
