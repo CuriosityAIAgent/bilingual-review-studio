@@ -63,7 +63,10 @@ function buildSystemPrompt(ctx: TranslateContext): string {
     `- Preserve every number, %, date, currency exactly; apply the number style "${fmt.example}".`,
     `- "billion" (10^9) -> "${t.billion}", NEVER "billón". "trillion" (10^12) -> "${t.trillion}".`,
     "- Apply the GLOSSARY and ACTIVE NEUTRALIZATION RULES exactly where their terms appear.",
-    "- Faithful: nothing added or dropped. Keep DNT tokens verbatim. Maintain consistency.",
+    "- Faithful: nothing added or dropped. Keep DNT tokens verbatim.",
+    '- CONSISTENCY: when the source repeats the same or a parallel structure (e.g. a refrain like',
+    '  "they bought tech" appearing several times), translate it IDENTICALLY every time — same tense,',
+    "  same wording — across every segment. Never vary the rendering of a repeated phrase.",
     "",
     'Return ONLY a JSON array, no prose, no code fences: [{"id":"b1","es":"..."}]',
   ].join("\n");

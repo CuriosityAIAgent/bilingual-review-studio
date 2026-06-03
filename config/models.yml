@@ -12,7 +12,7 @@
 translator:
   provider: anthropic          # anthropic | openai | fixture
   model: claude-sonnet-4-6     # chosen for register/tone consistency over long docs
-  prompt_version: translator-neutral-es-v1
+  prompt_version: translator-neutral-es-v2   # v2: explicit repeated-structure consistency
   temperature: 0.2
   max_tokens: 4096
   fallback: fixture            # used when ANTHROPIC_API_KEY is absent
@@ -20,7 +20,7 @@ translator:
 critic:
   provider: openai             # a DECORRELATED family from the translator
   model: gpt-5                 # upgraded from gpt-4o; pin a dated id if your account requires one
-  prompt_version: critic-mqm-regionalism-v1
+  prompt_version: critic-mqm-regionalism-v2   # v2: flag inconsistent rendering of a repeated phrase
   temperature: 0.0
   max_tokens: 2048
   fallback: deterministic      # validator-derived critic when OPENAI_API_KEY absent
