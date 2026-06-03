@@ -52,6 +52,7 @@ export async function POST(req: Request) {
     await getStore().saveDoc(doc);
     return ok({ doc_id: doc.doc_id, title: doc.title, blocks: doc.blocks.length });
   } catch (e) {
+    console.error(`[documents] Pipeline failed (file=${filename}, seat=${seat.user_id}): ${(e as Error).message}`);
     return fail(`Pipeline failed: ${(e as Error).message}`, 422);
   }
 }

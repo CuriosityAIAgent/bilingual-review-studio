@@ -36,8 +36,9 @@ export async function criticProviderLive(model: string): Promise<boolean> {
   try {
     await openaiComplete({ model, system: "ok", user: "ok", maxTokens: 1 });
     ok = true;
-  } catch {
+  } catch (e) {
     ok = false;
+    console.error(`[critic] OpenAI unavailable (model=${model}) — using deterministic critic. Reason: ${(e as Error).message}`);
   }
   _criticLive = { ok, ts: now };
   return ok;

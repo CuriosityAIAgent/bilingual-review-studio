@@ -113,6 +113,9 @@ export async function translateSegments(
         user: buildUserPayload(toTranslate, ctx),
       });
     } catch (e) {
+      // Log the REAL reason so we stop guessing (rate limit? credit? timeout?
+      // network?). Surfaces in Railway logs with this prefix.
+      console.error(`[translate] Anthropic call failed (model=${models.translator.model}, segments=${toTranslate.length}): ${(e as Error).message}`);
       throw new Error(
         `Translation service is temporarily unavailable (${(e as Error).message || "provider error"}). ` +
           "No draft was saved — please try again in a moment.",
@@ -120,6 +123,10 @@ export async function translateSegments(
     }
     const parsed = parseJsonLoose<Array<{ id: string; es: string }>>(raw);
     if (!parsed) {
+      // Not an API failure — the model replied but we couldn't parse JSON
+      // (e.g. truncated by max_tokens, a refusal, or prose). Log a snippet so we
+      // can tell truncation from refusal next time.
+      console.error(`[translate] Unparseable model response (model=${models.translator.model}, segments=${toTranslate.length}, len=${raw.length}): ${raw.slice(0, 200).replace(/\s+/g, " ")}`);
       throw new Error("The translation service returned an unreadable response. No draft was saved — please try again.");
     }
     for (const item of parsed) if (item?.id) out[item.id] = item.es ?? "";
@@ -128,6 +135,7 @@ export async function translateSegments(
     // retry, rather than ship a partially-garbled document.
     const missing = toTranslate.filter((s) => !out[s.id]?.trim());
     if (missing.length) {
+      console.error(`[translate] Incomplete response: ${missing.length}/${toTranslate.length} segments missing (model=${models.translator.model})`);
       throw new Error(
         `Translation came back incomplete (${missing.length} of ${toTranslate.length} segments missing). ` +
           "No draft was saved — please try again.",
