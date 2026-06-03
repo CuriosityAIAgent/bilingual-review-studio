@@ -1,18 +1,22 @@
 ---
-name: PR discipline + workspace conventions (2026-05-08)
-description: Founder-stated workflow rules after the May-7 Studio outage caused by skipping plan-eng-review on a deploy change. Every PR follows the 7-step process; one workspace per branch.
+name: PR discipline + workspace conventions
+description: Founder's mandatory 7-step PR process + workspace conventions. Cross-project policy that originated in the living-intelligence project (after its May-7 2026 outage) and applies to Bilingual Review Studio from day one.
 type: feedback
 ---
 
-> Imported into Bilingual Review Studio from the living-intelligence project
-> (`docs/claude-memory/feedback_pr_discipline.md`) on 2026-06-03 — this is
-> founder policy that applies across all projects, including this one.
+> **Cross-project founder policy.** These rules originated in the
+> **living-intelligence** project and apply to every project the founder runs,
+> including Bilingual Review Studio. The canonical copy lives in
+> living-intelligence (`docs/claude-memory/feedback_pr_discipline.md`); this is
+> the BRS-adapted copy. **Note:** the May-7 2026 outage referenced below
+> happened in *living-intelligence*, not in BRS — it's the origin of the policy,
+> not this project's history. BRS began in June 2026.
 
 # PR discipline + workspace conventions
 
-**Why:** On 2026-05-07 the agent attempted to fix the data path bug (D1) without running /plan-eng-review first. Pushed a railway.toml change + told user to clear Railway Root Directory. Railway then deployed the wrong app (portal Next.js instead of intake-server). proud-reflection went down for ~1 hour. The fix-forward attempt also failed because root railway.toml locks the Custom Start Command field in the Railway UI. Studio recovered only via rollback to Root Directory = intake-server.
+**Why the policy exists (origin — living-intelligence):** On 2026-05-07 the agent tried to fix a data-path bug without running `/plan-eng-review` first — pushed a `railway.toml` change, Railway deployed the wrong app, and the Studio went down ~1 hour, recoverable only by rollback. Founder's response (verbatim): *"All I want to say is we need to do this properly, and we need to do this by creating a proper PR... Why are we not being disciplined about going through the different PRs?"* The 7-step process is the result.
 
-Founder's response (verbatim): *"All I want to say is we need to do this properly, and we need to do this by creating a proper PR... How can this come into our book of work? Why are we not being disciplined about going through the different PRs?"*
+**Why it matters for Bilingual Review Studio:** BRS has had no outage, but it has already hit the same *class* of problem this policy guards against — a live-translator error silently fell back to a word-by-word fixture, emitting code-switched garbage, and a tester unknowingly saved three duplicate "glitched" drafts. Fixed via ADR 0013 (fail loud, never silent fixture). Discipline is how we catch that class of issue *before* it ships.
 
 ## Rules
 
@@ -34,47 +38,47 @@ Founder's response (verbatim): *"All I want to say is we need to do this properl
 
 ### 2. One workspace per branch — never `git checkout` between branches in the same Conductor workspace
 
-**Why:** stale build artifacts (`.next` cache), wrong `node_modules` for the branch, dependency mismatches across portal vs intake-server. Caused real bugs during the security hot-fix sprint.
+**Why:** stale build artifacts (`.next` cache) and wrong/mismatched `node_modules` across branches caused real bugs in living-intelligence (a multi-app monorepo: portal vs intake-server).
 
-**How to apply:** when starting work on a different branch, ASK the founder to open a new Conductor workspace pointing at that branch. Don't switch in-place. The agent cannot open Conductor workspaces from inside a session — that's a UI action.
+**How to apply:** when starting work on a different branch, ASK the founder to open a new Conductor workspace pointing at that branch — the agent cannot open Conductor workspaces from inside a session (UI action). **BRS caveat:** BRS is a single Next.js app with one dependency tree, so the stale-artifact risk is much lower here; the founder has approved short-lived feature branches *within* this workspace for small PRs. Reserve separate workspaces for large parallel efforts.
 
-### 3. "It was working" is real evidence — respect founder's instinct on scope
+### 3. "It was working" is real evidence — respect the founder's instinct on scope
 
-**Why:** During the D1 investigation, the agent over-engineered the fix because the codex audit had flagged the underlying issue. The founder pushed back: *"I'm not able to 100% understand why we are doing all this when it was working fine earlier."* The agent should have heard that signal. The pipeline was producing 1-2 briefs/day from Layer 1 alone — Layer 2 being silently dead was not blocking revenue.
+**Why:** the agent has over-engineered fixes off an audit finding when the thing wasn't actually blocking anything.
 
 **How to apply:** when the founder questions whether a fix is necessary, treat it as a real Bayesian update. Ask "what's the cost of leaving this broken?" before proposing more work. Audit findings are a starting point for prioritisation, not a mandate.
 
 ### 4. Deploy changes need an explicit rollback plan in the commit message
 
-**Why:** the May-7 push had no documented rollback plan. When Studio went down, recovery was "try to figure out which Railway setting to revert" rather than "follow these steps to undo." Cost: ~1 hour of stress + Studio downtime.
+**Why:** the May-7 push had no documented rollback plan, so recovery was "figure out which Railway setting to revert" under pressure.
 
-**How to apply:** any commit that changes Railway config, env vars, schema migrations, or auth must have a "Rollback:" section in the commit message with concrete steps. If a rollback isn't possible (e.g., destructive migration), the commit message must say so explicitly.
+**How to apply:** any commit that changes Railway config, env vars, schema migrations, or auth must include a "Rollback:" section with concrete steps. If a rollback isn't possible (e.g., a destructive migration), say so explicitly.
 
 ### 5. /codex review on every implementation PR — not optional
 
-**Why:** Codex caught real bugs in PR1, PR1.5, PR2, PR3 that the agent missed. Multiple rounds in some cases. Each round was right.
+**Why:** Codex repeatedly catches real bugs the agent misses (e.g., on BRS PR #1 it caught a keyboard-nav bug and a permission-flash bug). Each round was right.
 
-**How to apply:** after pushing the feature branch but before merging, run `/codex review` on the cumulative diff. Address all P0/P1 findings. P2/P3 findings either addressed or explicitly noted in the PR description.
+**How to apply:** after pushing the feature branch but before merging, run `/codex review` on the cumulative diff. Address all P0/P1 findings; P2/P3 either addressed or explicitly noted in the PR description.
 
-### 6. The agent's "subagent" output isn't useful in a routine context
+### 6. Agent/routine prompts must start with the operative directive
 
-**Why:** The Trigger 2 prompt-meta-bug surfaced that Claude Code routines, when given an ambiguous prompt, can drift into "let me help you set up this thing" mode instead of executing. The fix was tightening the prompt, not the routine config.
+**Why:** given an ambiguous prompt, an agent can drift into "let me help you set this up" mode instead of executing.
 
-**How to apply:** when designing prompts for Claude Code routines (or any agent that takes a prompt and acts), the prompt MUST start with the operative directive ("You ARE X. Do Y.") and contain NO meta-commentary about how to use the prompt. Documentation about a prompt belongs in a separate file, not the prompt itself.
+**How to apply:** a routine/agent prompt MUST start with the operative directive ("You ARE X. Do Y.") and contain no meta-commentary about how to use the prompt. Documentation about a prompt belongs in a separate file.
 
-## What this looks like in practice
+## What this looks like in practice (BRS example)
 
-**Example: today's "data path bug" if I'd done it right:**
+**The QE-scoring fix** (QE rated a garbled, half-English draft 1.0, because the cross-lingual embedding model scores a copy-of-the-source as a near-perfect match):
 
-1. **Plan:** Open /plan-eng-review for D1. List Railway constraints (Root Directory locking, root railway.toml authority, /data volume + STATE_DIR setup, publisher.js clone-and-push). Sketch 3 options. Identify rollback cost for each. Founder picks one.
-2. **Code:** Implement the chosen option in one commit with clear rollback steps in commit message.
-3. **Review:** /codex review the diff. Address findings.
-4. **Test:** Smoke test against staging if possible; if not, document the test plan.
-5. **Ship:** /ship to push + open PR.
-6. **Land:** /land-and-deploy after merge — watch deploy, verify health endpoint, check pipeline-status.json on next run.
-7. **Document:** Update synthesis.md with D1 status; update memory with learnings.
+1. **Plan:** `/plan-eng-review` — it touches production scoring runtime, so Step 1 is mandatory. Lock the approach (combine the embedding adequacy score with a "did it actually translate to Spanish" signal so a copy-of-source can't score high). Note the rollback.
+2. **Code:** one focused commit.
+3. **Review:** `/codex review` the diff; address findings.
+4. **Test:** add a QE regression test (copy-of-source / heavy English-leak must score low) + run the existing suite.
+5. **Ship:** `/ship` to push + open PR; CI runs `tsc + vitest + next build`.
+6. **Land:** `/land-and-deploy` — merge, wait for CI, verify the deployed Railway container is healthy.
+7. **Document:** `/document-release` — note the QE change + update memory.
 
-**What I actually did:** went straight from "diagnosis" to "push fix" with no plan, no rollback story, no canary check. Result: Studio down.
+**Infrastructure note (2026-06-03):** CI runs on every PR (`.github/workflows/ci.yml`). A *hard* merge gate (branch protection / rulesets) requires GitHub Pro on a private repo, so enforcement is currently CI-signal + discipline: never merge a red PR.
 
 ## Companion files (in the living-intelligence project)
 
