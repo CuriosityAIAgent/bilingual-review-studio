@@ -1,27 +1,31 @@
 "use client";
 import type { CSSProperties } from "react";
 import type { Block } from "@/src/lib/doc-model";
+import { blockNeedsReview } from "@/src/lib/doc-model";
 
-// The outline is a "scan for problems, fix, hand off" navigator. Only two states
-// earn a dot: the machine flagged a problem here, or you've edited it. Everything
-// else is a neutral dot (nothing to flag) — no ceremony, nothing to explain.
-type DotKind = "needsReview" | "edited" | "default";
+// "Scan for problems, fix, hand off." A segment is DONE when it has no
+// outstanding problem; it NEEDS REVIEW when a blocking validator flags one.
+// "edited" is also done, but worth marking as touched.
+type DotKind = "needsReview" | "edited" | "done";
 
-function dotKind(b: Block): DotKind {
-  // Accepted/locked is final (matches SegmentRow + gateBlock) — never flag it,
-  // even if stale validator results linger. We just don't give it its own dot
-  // colour anymore (no accept/lock ceremony in this simplified outline).
-  if (b.seg_status === "locked" || b.seg_status === "accepted") return "default";
-  // Then problems — a still-failing segment stays flagged even after an edit.
-  if (b.validator_results.some((v) => v.status === "fail" && v.blocking)) return "needsReview";
-  if (b.seg_status === "edited") return "edited";
-  return "default";
+function dotKind(b: Block, ocrUsed: boolean): DotKind {
+  // Same human-review definition as the quality gate + the card metric
+  // (validators, critic, disclaimer, QE, and the doc-level OCR flag).
+  // accepted/locked is final → done even for OCR docs.
+  if (b.seg_status === "locked" || b.seg_status === "accepted") return "done";
+  // OCR-derived docs route every other segment to human review (matches the gate).
+  if (ocrUsed || blockNeedsReview(b)) return "needsReview";
+  if (b.seg_status === "edited") return "edited"; // edited & clean — done, but marked as touched
+  return "done"; // clean — no outstanding problem
+  // Note: this client nav-aid uses the DEFAULT QE floor (the browser can't read
+  // config — the whole client does, e.g. SegmentRow's QE chip); the authoritative
+  // card/gate use the configured human_floor. They match on the shipped config.
 }
 
 const COLOR: Record<DotKind, string> = {
   needsReview: "var(--flag)",
   edited: "var(--edited)",
-  default: "var(--ink-faint)",
+  done: "var(--memory)",
 };
 
 // "needs review" gets a halo so it reads as an alert and isn't confused with the
@@ -37,9 +41,10 @@ function dotStyle(kind: DotKind): CSSProperties {
 const LEGEND: { kind: DotKind; label: string }[] = [
   { kind: "needsReview", label: "needs review" },
   { kind: "edited", label: "edited" },
+  { kind: "done", label: "done" },
 ];
 
-export function OutlineNavigator({ blocks, onJump }: { blocks: Block[]; onJump: (id: string) => void }) {
+export function OutlineNavigator({ blocks, onJump, ocrUsed = false }: { blocks: Block[]; onJump: (id: string) => void; ocrUsed?: boolean }) {
   return (
     // alignSelf:stretch makes this column full-height so the sticky panel below
     // stays pinned while the editor scrolls (the row is align-items:flex-start).
@@ -66,7 +71,7 @@ export function OutlineNavigator({ blocks, onJump }: { blocks: Block[]; onJump: 
                 border: "none", background: "transparent", cursor: "pointer", textAlign: "left", color: "var(--ink-soft)",
               }}
             >
-              <span className="dot" style={dotStyle(dotKind(b))} />
+              <span className="dot" style={dotStyle(dotKind(b, ocrUsed))} />
               <span style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", fontWeight: b.type === "title" || b.type === "subhead" ? 600 : 400 }}>
                 {b.final_text || b.source_text}
               </span>

@@ -68,7 +68,8 @@ export default function LibraryPage() {
       ) : (
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
           {shown.map((d) => {
-            const pct = d.block_count ? Math.round((d.approved_count / d.block_count) * 100) : 0;
+            // "done" = no outstanding problem (consistent with the needs-review count).
+            const pct = d.block_count ? Math.round(((d.block_count - d.needs_review_count) / d.block_count) * 100) : 0;
             return (
               <div key={d.doc_id} className="card" style={{ padding: "16px 18px", display: "grid", gridTemplateColumns: "1fr auto auto", gap: 18, alignItems: "center" }}>
                 {isDeleted ? (

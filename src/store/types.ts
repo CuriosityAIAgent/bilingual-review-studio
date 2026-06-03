@@ -17,6 +17,8 @@ import type {
   TmEntry,
   TmProposal,
 } from "@/src/lib/doc-model";
+import { blockNeedsReview } from "@/src/lib/doc-model";
+import { getThresholds } from "@/src/lib/config";
 import { nowIso } from "@/src/lib/ids";
 
 export interface DocSummary {
@@ -83,12 +85,15 @@ export function summarize(doc: DocModel): DocSummary {
   const approved = doc.blocks.filter(
     (b) => b.seg_status === "accepted" || b.seg_status === "locked",
   ).length;
-  const needsReview = doc.blocks.filter(
-    (b) =>
-      b.validator_results.some((v) => v.status === "fail" && v.blocking) ||
-      b.critic_flags.some((f) => f.severity === "major" || f.severity === "critical") ||
-      (b.qe_score !== null && b.qe_score < 0.55),
-  ).length;
+  // Single source of truth (matches the quality gate + the review outline), with
+  // the configured QE floor and the doc-level OCR flag folded in — so "% done"
+  // never overstates readiness (incl. unresolved disclaimers and scanned PDFs).
+  const { human_floor } = getThresholds();
+  const ocr = doc.source.ocr_used;
+  const needsReview = doc.blocks.filter((b) => {
+    if (b.seg_status === "locked" || b.seg_status === "accepted") return false; // final → auto-pass
+    return blockNeedsReview(b, human_floor) || ocr; // OCR routes every other segment to review
+  }).length;
   return {
     doc_id: doc.doc_id,
     title: doc.title,
