@@ -11,7 +11,7 @@
  */
 import { getThresholds } from "@/src/lib/config";
 import type { Block } from "@/src/lib/doc-model";
-import { hasBlockingValidatorFailure } from "@/src/lib/doc-model";
+import { humanReviewReasons } from "@/src/lib/doc-model";
 
 export type GateRoute = "auto_pass" | "human_review";
 
@@ -21,31 +21,14 @@ export interface GateDecision {
 }
 
 export function gateBlock(block: Block, opts: { ocrUsed?: boolean } = {}): GateDecision {
-  const { human_floor } = getThresholds();
-  const reasons: string[] = [];
-
   // Already accepted/locked (e.g. exact TM disclaimer) → auto.
   if (block.seg_status === "locked" || block.seg_status === "accepted") {
     return { route: "auto_pass", reasons: ["already accepted/locked"] };
   }
-
-  if (hasBlockingValidatorFailure(block)) {
-    for (const v of block.validator_results) {
-      if (v.status === "fail" && v.blocking) reasons.push(`validator:${v.validator} (${v.severity ?? "fail"})`);
-    }
-  }
-  const majorFlags = block.critic_flags.filter((f) => f.severity === "major" || f.severity === "critical");
-  if (majorFlags.length) reasons.push(`critic:${majorFlags.length} major/critical flag(s)`);
-
-  // Any disclaimer reaching here is NOT an exact TM match (those are locked and
-  // returned above), so it must be reviewed by Compliance (spec §10).
-  if (block.type === "disclaimer") {
-    reasons.push("disclaimer: not an exact approved-TM match");
-  }
-  if (block.qe_score !== null && block.qe_score < human_floor) {
-    reasons.push(`QE ${block.qe_score} below human floor ${human_floor}`);
-  }
+  // Shared, single-source human-review triggers (validators, critic, disclaimer,
+  // QE) — same logic the queue/card metric and the outline use. Gate adds OCR.
+  const { human_floor } = getThresholds();
+  const reasons = humanReviewReasons(block, human_floor);
   if (opts.ocrUsed) reasons.push("OCR-derived content");
-
   return { route: reasons.length ? "human_review" : "auto_pass", reasons };
 }

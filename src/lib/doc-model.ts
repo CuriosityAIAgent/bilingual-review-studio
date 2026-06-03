@@ -452,3 +452,35 @@ export function hasBlockingValidatorFailure(b: Block): boolean {
 export function hasMajorOrCriticalFlag(b: Block): boolean {
   return b.critic_flags.some((f) => f.severity === "major" || f.severity === "critical");
 }
+
+/** Default QE human-review floor — mirrors thresholds.yml `human_floor`, so the
+ *  client-safe predicate below doesn't need to read config from disk. */
+export const DEFAULT_HUMAN_FLOOR = 0.55;
+
+/**
+ * The human-review triggers for a block — the SINGLE source of truth shared by
+ * the quality gate (src/quality-gate), the queue/card "% done" metric
+ * (store/types summarize), and the review outline. Client-safe (no config/fs):
+ * the gate passes the real human_floor; the others use the default. One reason
+ * string per trigger; empty array = nothing to resolve (auto-pass / done).
+ */
+export function humanReviewReasons(b: Block, humanFloor: number = DEFAULT_HUMAN_FLOOR): string[] {
+  // Accepted/locked (e.g. an exact-TM disclaimer) is final → never needs review.
+  if (b.seg_status === "locked" || b.seg_status === "accepted") return [];
+  const reasons: string[] = [];
+  for (const v of b.validator_results) {
+    if (v.status === "fail" && v.blocking) reasons.push(`validator:${v.validator} (${v.severity ?? "fail"})`);
+  }
+  const major = b.critic_flags.filter((f) => f.severity === "major" || f.severity === "critical");
+  if (major.length) reasons.push(`critic:${major.length} major/critical flag(s)`);
+  // A disclaimer reaching here is not an exact-TM match (those are locked above),
+  // so Compliance must review it (spec §10) — it is never "done" on its own.
+  if (b.type === "disclaimer") reasons.push("disclaimer: not an exact approved-TM match");
+  if (b.qe_score !== null && b.qe_score < humanFloor) reasons.push(`QE ${b.qe_score} below human floor ${humanFloor}`);
+  return reasons;
+}
+
+/** True when a block still needs human review (any trigger above) — i.e. NOT done. */
+export function blockNeedsReview(b: Block, humanFloor: number = DEFAULT_HUMAN_FLOOR): boolean {
+  return humanReviewReasons(b, humanFloor).length > 0;
+}

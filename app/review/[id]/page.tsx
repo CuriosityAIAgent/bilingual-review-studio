@@ -181,7 +181,7 @@ export default function ReviewPage() {
 
       {/* Three-column reading room */}
       <div style={{ display: "flex", gap: 28, padding: "24px 22px 80px", maxWidth: 1400, margin: "0 auto", alignItems: "flex-start" }}>
-        {showOutline && <OutlineNavigator blocks={doc.blocks} onJump={jump} />}
+        {showOutline && <OutlineNavigator blocks={doc.blocks} onJump={jump} ocrUsed={doc.source.ocr_used} />}
         <div className="card fade-up" style={{ flex: 1, minWidth: 0, overflow: "hidden" }}>
           <div style={{ padding: "11px 24px", borderBottom: "1px solid var(--line)", display: "flex", justifyContent: "space-between", alignItems: "center", background: "var(--surface-2)", gap: 12, flexWrap: "wrap" }}>
             <span className="label">Bilingual review record · {doc.blocks.length} segments · EN ⇄ Neutral Spanish</span>

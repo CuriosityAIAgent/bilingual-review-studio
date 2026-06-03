@@ -110,7 +110,8 @@ export default function HomePage() {
           <p className="label" style={{ marginBottom: 12 }}>In progress · {docs.length}</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 12 }}>
             {docs.map((d) => {
-              const pct = d.block_count ? Math.round((d.approved_count / d.block_count) * 100) : 0;
+              // "done" = no outstanding problem (consistent with "X to resolve" beside it).
+              const pct = d.block_count ? Math.round(((d.block_count - d.needs_review_count) / d.block_count) * 100) : 0;
               const open = () => router.push(`/review/${d.doc_id}`);
               return (
                 <div key={d.doc_id} className="card" role="button" tabIndex={0} onClick={open}
