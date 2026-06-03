@@ -95,28 +95,48 @@ export async function translateSegments(
   for (const s of segments) if (s.dnt) out[s.id] = s.source_text;
   if (toTranslate.length === 0) return out;
 
+  // When a real translator key IS configured, a provider failure must NOT
+  // silently fall back to the offline word-substitution fixture — that produces
+  // code-switched garbage ("growth holding up" → "crecimiento holding up") that
+  // looks like a broken half-translation and reads as a "glitch". Fail loudly so
+  // the request errors and the user retries, instead of persisting a bad draft.
+  // Fixtures are ONLY the no-key (demo/offline) path.
   if (anthropicAvailable()) {
+    const models = getModels();
+    let raw: string;
     try {
-      const models = getModels();
-      const raw = await anthropicComplete({
+      raw = await anthropicComplete({
         model: models.translator.model,
         temperature: models.translator.temperature,
         maxTokens: models.translator.max_tokens,
         system: buildSystemPrompt(ctx),
         user: buildUserPayload(toTranslate, ctx),
       });
-      const parsed = parseJsonLoose<Array<{ id: string; es: string }>>(raw);
-      if (parsed) {
-        for (const item of parsed) if (item?.id) out[item.id] = item.es ?? "";
-      }
-      // Backfill any segment the model omitted, with the fixture translator.
-      for (const s of toTranslate) if (!(s.id in out)) out[s.id] = fixtureTranslateSegment(s.source_text);
-      return out;
-    } catch {
-      // fall through to fixtures on any provider error
+    } catch (e) {
+      throw new Error(
+        `Translation service is temporarily unavailable (${(e as Error).message || "provider error"}). ` +
+          "No draft was saved — please try again in a moment.",
+      );
     }
+    const parsed = parseJsonLoose<Array<{ id: string; es: string }>>(raw);
+    if (!parsed) {
+      throw new Error("The translation service returned an unreadable response. No draft was saved — please try again.");
+    }
+    for (const item of parsed) if (item?.id) out[item.id] = item.es ?? "";
+    // Any segment the model dropped or returned empty is a real gap. In live
+    // mode we refuse to paper over it with fixture text — fail and let the user
+    // retry, rather than ship a partially-garbled document.
+    const missing = toTranslate.filter((s) => !out[s.id]?.trim());
+    if (missing.length) {
+      throw new Error(
+        `Translation came back incomplete (${missing.length} of ${toTranslate.length} segments missing). ` +
+          "No draft was saved — please try again.",
+      );
+    }
+    return out;
   }
 
+  // No key configured → deterministic offline fixtures (demo mode only).
   for (const s of toTranslate) out[s.id] = fixtureTranslateSegment(s.source_text);
   return out;
 }

@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import {
-  Check, CheckCircle2, Download, FileText, PanelLeftClose, PanelRightClose, RotateCcw, Send, Sparkles, UserCheck,
+  Check, CheckCircle2, Download, FileText, PanelLeftClose, PanelRightClose, RotateCcw, Save, Send, Sparkles, UserCheck,
 } from "lucide-react";
 import { api, type ActionBody } from "@/app/lib/client";
 import type { DocModel, FlagCategory, TmProposal } from "@/src/lib/doc-model";
@@ -130,6 +130,23 @@ export default function ReviewPage() {
             <span className="dot" style={{ background: turnColor }} /> {turnLabel}
           </span>
           {error && <span className="ui-base" style={{ color: "var(--flag)" }}>⚠ {error}</span>}
+          {/* Top-level Save — Word-style, discoverable. Edits also auto-save on
+              blur; this flushes the focused segment and shows the saved state. */}
+          {caps.canEdit && (
+            <>
+              <span className="ui-base" style={{ color: busy === "edit" ? "var(--accent)" : "var(--memory)", display: "inline-flex", alignItems: "center", gap: 5 }}>
+                {busy === "edit"
+                  ? <><Sparkles size={12} className="live-dot" /> Saving…</>
+                  : <><Check size={13} /> All changes saved</>}
+              </span>
+              <button className="btn btn-primary" disabled={busy === "edit"} onClick={() => (document.activeElement as HTMLElement)?.blur?.()}
+                title="Save now. Your edits also save automatically as you go.">
+                <Save size={14} /> Save
+              </button>
+              <div style={{ width: 1, height: 22, background: "var(--line)", margin: "0 2px" }} />
+            </>
+          )}
+
           <button className="btn btn-ghost" disabled={!!busy} onClick={() => act({ kind: "retranslate" }, "retranslate")}>
             <Sparkles size={14} style={{ color: "var(--accent)" }} /> {busy === "retranslate" ? "Re-translating…" : "Re-translate with learnings"}
           </button>
