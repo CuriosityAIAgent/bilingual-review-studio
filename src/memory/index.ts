@@ -304,12 +304,18 @@ export async function decideTmProposal(
   if (!p) throw new Error(`unknown proposal ${proposalId}`);
   if (p.state !== "pending") return { proposal: p, addedToTm: false };
 
+  // Persist the decision FIRST, so a concurrent approval that re-reads sees a
+  // non-pending state and no-ops (instead of both writing the same pair to TM).
+  // Only then fold into TM. addTm supersedes by source, so even if a race slips
+  // through, TM keeps a single active entry. (No cross-collection transaction is
+  // available in the file/postgres/supabase stores; this ordering is the guard.)
+  const decided: TmProposal = { ...p, state: approve ? "approved" : "rejected", decided_by: by, decided_at: nowIso() };
+  await store.saveTmProposals(proposals.map((x) => (x.id === proposalId ? decided : x)));
+
   let addedToTm = false;
   if (approve && !isDisclaimer(p.source_text)) {
     await addTm({ source_text: p.source_text, target_text: p.target_text, kind: "segment", approved_by: by });
     addedToTm = true;
   }
-  const decided: TmProposal = { ...p, state: approve ? "approved" : "rejected", decided_by: by, decided_at: nowIso() };
-  await store.saveTmProposals(proposals.map((x) => (x.id === proposalId ? decided : x)));
   return { proposal: decided, addedToTm };
 }

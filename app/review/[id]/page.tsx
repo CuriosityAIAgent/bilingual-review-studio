@@ -62,12 +62,12 @@ export default function ReviewPage() {
 
   // Send a corrected segment to memory as a PENDING proposal (governed: an
   // approver folds it into TM later). The edit itself is already saved.
-  const onSendToMemory = async (block: { id: string; source_text: string; final_text: string }) => {
+  const onSendToMemory = async (block: { id: string; source_text: string; final_text: string }, targetText: string) => {
     if (!doc) return;
     setMemSent((s) => ({ ...s, [block.id]: "sending" })); setError("");
     try {
       await api.proposeMemory({
-        source_text: block.source_text, target_text: block.final_text,
+        source_text: block.source_text, target_text: targetText || block.final_text,
         doc_id: id, doc_title: doc.title, segment_id: block.id,
       });
       setMemSent((s) => ({ ...s, [block.id]: "sent" }));

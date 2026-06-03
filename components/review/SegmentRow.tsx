@@ -19,7 +19,7 @@ interface Props {
   onReject: (blockId: string) => void;
   onLock: (blockId: string) => void;
   onTeach: (regional: string, neutral: string, blockId: string) => void;
-  onSendToMemory: (block: Block) => void;
+  onSendToMemory: (block: Block, targetText: string) => void;
   memoryState?: "idle" | "sending" | "sent";
 }
 
@@ -82,7 +82,13 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
     }
     setDirty(false);
   };
-  const onInput = () => setDirty((ref.current?.innerText.trim() ?? "") !== block.final_text);
+  const onInput = () => {
+    // Any fresh keystroke clears the dedupe guard, so re-applying the same text
+    // after a 409 reload still dispatches (the guard only blocks a no-input
+    // double-fire like blur immediately after Save).
+    lastSaved.current = block.final_text;
+    setDirty((ref.current?.innerText.trim() ?? "") !== block.final_text);
+  };
 
   return (
     <div
@@ -191,7 +197,7 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
                 className="btn btn-ghost ui-base"
                 style={{ padding: "4px 9px", color: memoryState === "sent" ? "var(--memory)" : "var(--accent)" }}
                 disabled={dirty || memoryState !== "idle"}
-                onClick={() => onSendToMemory(block)}
+                onClick={() => onSendToMemory(block, ref.current?.innerText.trim() || block.final_text)}
                 title={dirty ? "Save your edit first, then send it to memory" : "Propose this correction for translation memory (an approver reviews it)"}
               >
                 <BookPlus size={12} /> {memoryState === "sending" ? "Sending…" : memoryState === "sent" ? "Sent for approval" : "Send to memory"}

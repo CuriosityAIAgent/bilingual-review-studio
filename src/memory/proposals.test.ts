@@ -34,6 +34,15 @@ describe("TM proposals (edit → memory, governed)", () => {
     expect((await listTmProposals("pending")).length).toBe(0);
   });
 
+  it("deciding an already-decided proposal is a no-op (no double TM write)", async () => {
+    const p = await proposeTmFromEdit({ source_text: "Yields fell.", target_text: "Los rendimientos cayeron.", doc_id: "d1", doc_title: "Doc", segment_id: "b4", by });
+    await decideTmProposal(p.id, true, "carmen");
+    const tmAfterFirst = (await getStore().getTm()).length;
+    const again = await decideTmProposal(p.id, true, "carmen"); // re-approve
+    expect(again.addedToTm).toBe(false);
+    expect((await getStore().getTm()).length).toBe(tmAfterFirst); // no second write
+  });
+
   it("reject discards without touching TM", async () => {
     const p = await proposeTmFromEdit({ source_text: "GDP grew.", target_text: "El PIB creció.", doc_id: "d1", doc_title: "Doc", segment_id: "b3", by });
     const before = (await getStore().getTm()).length;
