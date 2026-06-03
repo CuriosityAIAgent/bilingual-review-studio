@@ -10,7 +10,7 @@
  * other backend. Set STORAGE=postgres + DATABASE_URL to use it.
  */
 import { Pool } from "pg";
-import { type DocSummary, type Store, summarize } from "./types";
+import { type DocSummary, type Store, summarize, tombstone } from "./types";
 import type { DocModel, GlossaryEntry, NeutralizationRule, TmEntry, TmProposal } from "@/src/lib/doc-model";
 
 let _pool: Pool | null = null;
@@ -81,14 +81,34 @@ export class PostgresStore implements Store {
   }
 
   async listDocs(): Promise<DocSummary[]> {
-    await ready();
-    const r = await pool().query<{ doc: DocModel }>(`select doc from brs_documents order by updated_at desc`);
-    return r.rows.map((row) => summarize(row.doc));
+    return this.summaries(false);
   }
 
-  async deleteDoc(docId: string): Promise<void> {
+  async listDeletedDocs(): Promise<DocSummary[]> {
+    return this.summaries(true);
+  }
+
+  private async summaries(deleted: boolean): Promise<DocSummary[]> {
     await ready();
-    await pool().query(`delete from brs_documents where doc_id = $1`, [docId]);
+    const r = await pool().query<{ doc: DocModel }>(`select doc from brs_documents order by updated_at desc`);
+    return r.rows
+      .map((row) => row.doc)
+      .filter((d) => (deleted ? !!d.deleted_at : !d.deleted_at))
+      .map(summarize);
+  }
+
+  // Soft delete: tombstone the doc (kept, recoverable) by stamping deleted_at
+  // inside the stored jsonb. saveDoc re-derives the summary columns.
+  async deleteDoc(docId: string): Promise<void> {
+    const doc = await this.getDoc(docId);
+    if (!doc || doc.deleted_at) return;
+    await this.saveDoc(tombstone(doc, true));
+  }
+
+  async restoreDoc(docId: string): Promise<void> {
+    const doc = await this.getDoc(docId);
+    if (!doc || !doc.deleted_at) return;
+    await this.saveDoc(tombstone(doc, false));
   }
 
   private async getMemory<T>(key: string, fallback: T): Promise<T> {

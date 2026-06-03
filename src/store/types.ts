@@ -17,6 +17,7 @@ import type {
   TmEntry,
   TmProposal,
 } from "@/src/lib/doc-model";
+import { nowIso } from "@/src/lib/ids";
 
 export interface DocSummary {
   doc_id: string;
@@ -32,14 +33,24 @@ export interface DocSummary {
   owner_team: string;
   created_at: string;
   updated_at: string;
+  /** Soft-delete tombstone (null = active). Drives the Library "Deleted" tab. */
+  deleted_at: string | null;
 }
 
 export interface Store {
   // ── documents ──────────────────────────────────────────────────────────────
   saveDoc(doc: DocModel): Promise<void>;
   getDoc(docId: string): Promise<DocModel | null>;
+  /** ACTIVE documents only (soft-deleted ones are excluded). The single
+   * chokepoint every consumer (queue, metrics, home) shares — so a tombstoned
+   * doc can't leak back into the workflow through a forgotten call site. */
   listDocs(): Promise<DocSummary[]>;
+  /** Soft-deleted documents only — backs the Library "Deleted" tab. */
+  listDeletedDocs(): Promise<DocSummary[]>;
+  /** Soft-delete: tombstone the doc (keep it, recoverable). Not a hard delete. */
   deleteDoc(docId: string): Promise<void>;
+  /** Clear the soft-delete tombstone, returning the doc to the active queue. */
+  restoreDoc(docId: string): Promise<void>;
 
   // ── memory: neutral glossary ─────────────────────────────────────────────────
   getGlossary(): Promise<GlossaryEntry[]>;
@@ -56,6 +67,16 @@ export interface Store {
   // ── memory: TM proposals from reviewer edits (pending → approved/rejected) ────
   getTmProposals(): Promise<TmProposal[]>;
   saveTmProposals(proposals: TmProposal[]): Promise<void>;
+}
+
+/** Set/clear the soft-delete tombstone AND advance rev + updated_at, so the
+ * transition participates in optimistic-concurrency and recency sorting exactly
+ * like any other document mutation (a stale rev N edit after delete/restore 409s). */
+export function tombstone(doc: DocModel, deleted: boolean): DocModel {
+  doc.deleted_at = deleted ? nowIso() : null;
+  doc.updated_at = nowIso();
+  doc.rev += 1;
+  return doc;
 }
 
 export function summarize(doc: DocModel): DocSummary {
@@ -82,5 +103,6 @@ export function summarize(doc: DocModel): DocSummary {
     owner_team: doc.owner.team_id,
     created_at: doc.created_at,
     updated_at: doc.updated_at,
+    deleted_at: doc.deleted_at ?? null,
   };
 }

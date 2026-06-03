@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, FileText, Trash2 } from "lucide-react";
+import { ArrowRight, FileText, RotateCcw, Trash2 } from "lucide-react";
 import { api } from "@/app/lib/client";
 import type { DocSummary } from "@/src/store/types";
 import { useSeat } from "@/components/Providers";
@@ -14,14 +14,30 @@ const STATUS_COLOR: Record<string, string> = {
 export default function LibraryPage() {
   const { seat } = useSeat();
   const [docs, setDocs] = useState<DocSummary[]>([]);
+  const [deleted, setDeleted] = useState<DocSummary[]>([]);
   const [filter, setFilter] = useState("all");
   const [loading, setLoading] = useState(true);
 
-  const load = () => api.listDocs().then((r) => setDocs(r.documents)).finally(() => setLoading(false));
-  useEffect(() => { load(); }, []);
+  const loadActive = () => api.listDocs().then((r) => setDocs(r.documents)).finally(() => setLoading(false));
+  const loadDeleted = () => api.listDocs({ deleted: true }).then((r) => setDeleted(r.documents));
+  useEffect(() => { loadActive(); }, []);
+  useEffect(() => { if (filter === "deleted") loadDeleted(); }, [filter]);
 
   const canDelete = seat?.role === "admin" || seat?.role === "author";
-  const shown = filter === "all" ? docs : docs.filter((d) => d.status === filter);
+  const isDeleted = filter === "deleted";
+  const shown = isDeleted ? deleted : filter === "all" ? docs : docs.filter((d) => d.status === filter);
+
+  const onDelete = async (d: DocSummary) => {
+    if (!confirm(`Delete "${d.title}"? It moves to the Deleted tab and can be restored.`)) return;
+    await api.deleteDoc(d.doc_id);
+    loadActive();
+    loadDeleted();
+  };
+  const onRestore = async (d: DocSummary) => {
+    await api.restoreDoc(d.doc_id);
+    loadActive();
+    loadDeleted();
+  };
 
   return (
     <div style={{ maxWidth: 980, margin: "0 auto", padding: "40px 24px 80px" }}>
@@ -31,7 +47,7 @@ export default function LibraryPage() {
           <h1 className="font-display" style={{ fontSize: 28 }}>Library</h1>
         </div>
         <div style={{ display: "flex", gap: 6 }}>
-          {["all", "draft", "in_review", "approved", "published"].map((f) => (
+          {["all", "draft", "in_review", "approved", "published", "deleted"].map((f) => (
             <button key={f} className={`btn btn-ghost ui-base`} onClick={() => setFilter(f)}
               style={{ padding: "6px 11px", fontWeight: 600, color: filter === f ? "var(--ink)" : "var(--ink-soft)", borderColor: filter === f ? "var(--line)" : "transparent" }}>
               {f.replace("_", " ")}
@@ -55,12 +71,21 @@ export default function LibraryPage() {
             const pct = d.block_count ? Math.round((d.approved_count / d.block_count) * 100) : 0;
             return (
               <div key={d.doc_id} className="card" style={{ padding: "16px 18px", display: "grid", gridTemplateColumns: "1fr auto auto", gap: 18, alignItems: "center" }}>
-                <Link href={`/review/${d.doc_id}`} style={{ minWidth: 0 }}>
-                  <div className="font-display" style={{ fontWeight: 600, fontSize: 16 }}>{d.title}</div>
-                  <div className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 3 }}>
-                    {d.source_type.toUpperCase()} · {d.block_count} segments · {d.needs_review_count} need review · team {d.owner_team}
+                {isDeleted ? (
+                  <div style={{ minWidth: 0 }}>
+                    <div className="font-display" style={{ fontWeight: 600, fontSize: 16, color: "var(--ink-soft)" }}>{d.title}</div>
+                    <div className="ui-base" style={{ color: "var(--ink-faint)", marginTop: 3 }}>
+                      {d.source_type.toUpperCase()} · {d.block_count} segments · deleted — restore to edit
+                    </div>
                   </div>
-                </Link>
+                ) : (
+                  <Link href={`/review/${d.doc_id}`} style={{ minWidth: 0 }}>
+                    <div className="font-display" style={{ fontWeight: 600, fontSize: 16 }}>{d.title}</div>
+                    <div className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 3 }}>
+                      {d.source_type.toUpperCase()} · {d.block_count} segments · {d.needs_review_count} need review · team {d.owner_team}
+                    </div>
+                  </Link>
+                )}
                 <div style={{ textAlign: "right" }}>
                   <div className="mono ui-base" style={{ color: "var(--ink-soft)" }}>{pct}% approved</div>
                   <div className="mono ui-base" style={{ color: "var(--ink-faint)" }}>{d.edits_per_1k} edits/1k</div>
@@ -69,14 +94,20 @@ export default function LibraryPage() {
                   <span className="tag" style={{ color: STATUS_COLOR[d.status] }}>
                     <span className="dot" style={{ background: STATUS_COLOR[d.status] }} /> {d.status.replace("_", " ")}
                   </span>
-                  {canDelete && (
-                    <button className="btn btn-ghost" aria-label="Delete" title="Delete"
-                      onClick={async () => { if (confirm(`Delete "${d.title}"?`)) { await api.deleteDoc(d.doc_id); load(); } }}
-                      style={{ padding: "6px 8px", color: "var(--flag)" }}>
+                  {canDelete && (isDeleted ? (
+                    <button className="btn btn-ghost" aria-label="Restore" title="Restore this document"
+                      onClick={() => onRestore(d)} style={{ padding: "6px 8px", color: "var(--memory)" }}>
+                      <RotateCcw size={14} />
+                    </button>
+                  ) : (
+                    <button className="btn btn-ghost" aria-label="Delete" title="Delete (recoverable)"
+                      onClick={() => onDelete(d)} style={{ padding: "6px 8px", color: "var(--flag)" }}>
                       <Trash2 size={14} />
                     </button>
+                  ))}
+                  {!isDeleted && (
+                    <Link href={`/review/${d.doc_id}`} className="btn btn-ghost" style={{ padding: "6px 8px" }}><ArrowRight size={15} /></Link>
                   )}
-                  <Link href={`/review/${d.doc_id}`} className="btn btn-ghost" style={{ padding: "6px 8px" }}><ArrowRight size={15} /></Link>
                 </div>
               </div>
             );

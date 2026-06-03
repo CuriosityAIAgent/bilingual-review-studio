@@ -55,6 +55,9 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
   const store = getStore();
   const doc = await store.getDoc(id);
   if (!doc) return fail("Document not found", 404);
+  // A soft-deleted doc is out of the workflow — no edits/handoff/approve/publish
+  // until it's restored. (Authoritative guard; the UI also hides it.)
+  if (doc.deleted_at) return fail("This document is deleted — restore it before making changes.", 409);
 
   // Optimistic concurrency (spec §12): reject stale writes instead of clobbering.
   // retranslate regenerates machine segments and is rev-agnostic.

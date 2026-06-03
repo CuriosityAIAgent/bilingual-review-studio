@@ -7,6 +7,11 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
   const { id } = await params;
   const doc = await getStore().getDoc(id);
   if (!doc) return fail("Document not found", 404);
+  // A tombstoned doc is out of the workflow: an old /review/:id tab, bookmark,
+  // or shared link must not reopen the editor. Restore it from the Deleted tab.
+  if (doc.deleted_at) {
+    return fail("This document was deleted. Restore it from the Library's Deleted tab to view or edit.", 410);
+  }
   return ok({ doc });
 }
 

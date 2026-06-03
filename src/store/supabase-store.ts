@@ -17,7 +17,7 @@ import type {
   TmEntry,
   TmProposal,
 } from "@/src/lib/doc-model";
-import { type DocSummary, type Store, summarize } from "./types";
+import { type DocSummary, type Store, summarize, tombstone } from "./types";
 
 function client(): SupabaseClient {
   const url = process.env.SUPABASE_URL;
@@ -58,17 +58,37 @@ export class SupabaseStore implements Store {
   }
 
   async listDocs(): Promise<DocSummary[]> {
+    return this.summaries(false);
+  }
+
+  async listDeletedDocs(): Promise<DocSummary[]> {
+    return this.summaries(true);
+  }
+
+  private async summaries(deleted: boolean): Promise<DocSummary[]> {
     const { data, error } = await this.db
       .from("brs_documents")
       .select("doc")
       .order("updated_at", { ascending: false });
     if (error) throw new Error(`listDocs: ${error.message}`);
-    return (data ?? []).map((r) => summarize(r.doc as DocModel));
+    return (data ?? [])
+      .map((r) => r.doc as DocModel)
+      .filter((d) => (deleted ? !!d.deleted_at : !d.deleted_at))
+      .map(summarize);
   }
 
+  // Soft delete: tombstone the doc (kept, recoverable) via deleted_at in the
+  // stored jsonb. saveDoc re-derives the indexed summary columns.
   async deleteDoc(docId: string): Promise<void> {
-    const { error } = await this.db.from("brs_documents").delete().eq("doc_id", docId);
-    if (error) throw new Error(`deleteDoc: ${error.message}`);
+    const doc = await this.getDoc(docId);
+    if (!doc || doc.deleted_at) return;
+    await this.saveDoc(tombstone(doc, true));
+  }
+
+  async restoreDoc(docId: string): Promise<void> {
+    const doc = await this.getDoc(docId);
+    if (!doc || !doc.deleted_at) return;
+    await this.saveDoc(tombstone(doc, false));
   }
 
   private async getMemory<T>(key: string, fallback: T): Promise<T> {

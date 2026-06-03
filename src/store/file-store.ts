@@ -6,7 +6,7 @@
  * audit semantics (spec §10/§14) are enforced at the application layer: the
  * workflow code only ever PUSHES to edit_log/handoff_log, never mutates/deletes.
  */
-import { mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import type {
   DocModel,
@@ -15,7 +15,7 @@ import type {
   TmEntry,
   TmProposal,
 } from "@/src/lib/doc-model";
-import { type DocSummary, type Store, summarize } from "./types";
+import { type DocSummary, type Store, summarize, tombstone } from "./types";
 
 // Resolved lazily so tests (and runtime env changes) can redirect storage.
 const dataDir = () => process.env.DATA_DIR || join(process.cwd(), "data");
@@ -54,6 +54,14 @@ export class FileStore implements Store {
   }
 
   async listDocs(): Promise<DocSummary[]> {
+    return this.summaries((d) => !d.deleted_at);
+  }
+
+  async listDeletedDocs(): Promise<DocSummary[]> {
+    return this.summaries((d) => !!d.deleted_at);
+  }
+
+  private async summaries(keep: (d: DocModel) => boolean): Promise<DocSummary[]> {
     await ensureDirs();
     const files = (await readdir(docsDir())).filter((f) => f.endsWith(".json"));
     const docs = await Promise.all(
@@ -61,12 +69,23 @@ export class FileStore implements Store {
     );
     return docs
       .filter((d): d is DocModel => !!d)
+      .filter(keep)
       .map(summarize)
       .sort((a, b) => b.updated_at.localeCompare(a.updated_at));
   }
 
+  // Soft delete: tombstone the doc (kept on disk, recoverable). The default
+  // queue filters these out; the Library "Deleted" tab lists them.
   async deleteDoc(docId: string): Promise<void> {
-    await rm(join(docsDir(), `${docId}.json`), { force: true });
+    const doc = await this.getDoc(docId);
+    if (!doc || doc.deleted_at) return;
+    await this.saveDoc(tombstone(doc, true));
+  }
+
+  async restoreDoc(docId: string): Promise<void> {
+    const doc = await this.getDoc(docId);
+    if (!doc || !doc.deleted_at) return;
+    await this.saveDoc(tombstone(doc, false));
   }
 
   async getGlossary(): Promise<GlossaryEntry[]> {

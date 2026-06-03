@@ -326,6 +326,10 @@ export interface DocModel {
   status: DocStatus;
   created_at: string;
   updated_at: string;
+  /** Soft-delete tombstone: ISO timestamp when deleted, or null when active.
+   * Deleted docs are kept (recoverable via restore) and filtered out of the
+   * default queue — consistent with the append-only / auditable thesis. */
+  deleted_at: string | null;
   /** Monotonic revision for optimistic concurrency (spec §12 — not last-write-wins). */
   rev: number;
   model_run: ModelRun;

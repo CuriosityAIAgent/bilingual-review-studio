@@ -7,9 +7,13 @@ import { runPipeline } from "@/src/pipeline/run";
 import { getStore } from "@/src/store";
 import type { Locale } from "@/src/lib/doc-model";
 
-export async function GET() {
+export async function GET(req: Request) {
+  // ?deleted=true → the Library "Deleted" tab; default → active docs only.
+  // Filtering lives in the store, so every consumer (queue, metrics, home) is
+  // consistent without each call site remembering to exclude tombstones.
   const store = getStore();
-  return ok({ documents: await store.listDocs() });
+  const wantDeleted = new URL(req.url).searchParams.get("deleted") === "true";
+  return ok({ documents: wantDeleted ? await store.listDeletedDocs() : await store.listDocs() });
 }
 
 export async function POST(req: Request) {
