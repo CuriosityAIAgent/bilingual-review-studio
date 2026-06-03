@@ -1,6 +1,8 @@
 "use client";
 import type { Block } from "@/src/lib/doc-model";
 
+// The dot encodes each segment's review state so the outline doubles as a
+// "jump to what needs attention" navigator. Explained by the legend below.
 function dotColor(b: Block): string {
   if (b.seg_status === "locked" || b.seg_status === "accepted") return "var(--memory)";
   if (b.validator_results.some((v) => v.status === "fail" && v.blocking)) return "var(--flag)";
@@ -8,22 +10,29 @@ function dotColor(b: Block): string {
   return "var(--ink-faint)";
 }
 
-export function OutlineNavigator({ blocks, onJump }: { blocks: Block[]; onJump: (id: string) => void }) {
-  const approved = blocks.filter((b) => b.seg_status === "accepted" || b.seg_status === "locked").length;
-  const pct = blocks.length ? Math.round((approved / blocks.length) * 100) : 0;
+const LEGEND: { color: string; label: string }[] = [
+  { color: "var(--flag)", label: "needs review" },
+  { color: "var(--edited)", label: "edited" },
+  { color: "var(--memory)", label: "accepted / locked" },
+];
 
+export function OutlineNavigator({ blocks, onJump }: { blocks: Block[]; onJump: (id: string) => void }) {
   return (
-    <aside style={{ width: 240, flexShrink: 0 }}>
+    // alignSelf:stretch makes this column full-height so the sticky panel below
+    // stays pinned while the editor scrolls (the row is align-items:flex-start).
+    <aside style={{ width: 240, flexShrink: 0, alignSelf: "stretch" }}>
       <div style={{ position: "sticky", top: 172, maxHeight: "calc(100dvh - 188px)", overflowY: "auto", overflowX: "hidden" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", marginBottom: 8 }}>
-          <span className="label">Outline</span>
-          <span className="mono ui-base" style={{ color: "var(--accent)" }}>{pct}% approved</span>
-        </div>
-        <div style={{ height: 3, background: "var(--line)", borderRadius: 3, marginBottom: 12, overflow: "hidden" }}>
-          <div style={{ width: `${pct}%`, height: "100%", background: "var(--accent)", transition: "width var(--dur) var(--ease)" }} />
+        <span className="label">Outline</span>
+        {/* What the dots mean — navigation aid, not a score. */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "4px 12px", margin: "8px 0 12px" }}>
+          {LEGEND.map((l) => (
+            <span key={l.label} className="ui-base" style={{ display: "inline-flex", alignItems: "center", gap: 5, color: "var(--ink-faint)", fontSize: 11 }}>
+              <span className="dot" style={{ background: l.color }} /> {l.label}
+            </span>
+          ))}
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-          {blocks.map((b, i) => (
+          {blocks.map((b) => (
             <button
               key={b.id}
               onClick={() => onJump(b.id)}
