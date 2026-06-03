@@ -1,0 +1,36 @@
+name: CI
+
+# Runs the same checks the agent runs locally — on every PR to main and on
+# pushes to main — so "wait for CI" (PR-discipline step 6) has real teeth and
+# nothing reaches Railway without a green type-check, test run, and build.
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    name: Type-check · test · build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type-check
+        run: npx tsc --noEmit
+
+      - name: Unit tests
+        run: npx vitest run
+
+      # Build with Next directly (npm run build also warms the QE model, an
+      # unnecessary multi-MB download in CI). This catches build/compile errors.
+      - name: Build
+        run: npx next build
