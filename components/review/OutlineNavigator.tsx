@@ -38,8 +38,9 @@ export function OutlineNavigator({ blocks, onJump }: { blocks: Block[]; onJump: 
     <aside style={{ width: 240, flexShrink: 0, alignSelf: "stretch" }}>
       <div style={{ position: "sticky", top: 172, maxHeight: "calc(100dvh - 188px)", overflowY: "auto", overflowX: "hidden" }}>
         <span className="label">Outline</span>
-        {/* What the dots mean — navigation aid, not a score. */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 12px", margin: "8px 0 12px" }}>
+        {/* What the dots mean — navigation aid, not a score. paddingLeft leaves
+            room for the "needs review" halo so it isn't clipped at the panel edge. */}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 12px", margin: "8px 0 12px", paddingLeft: 3 }}>
           {(Object.keys(DOT) as DotKind[]).map((k) => (
             <span key={k} className="ui-base" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "var(--ink-faint)", fontSize: 11 }}>
               <span className="dot" style={dotStyle(k)} /> {DOT[k].label}
