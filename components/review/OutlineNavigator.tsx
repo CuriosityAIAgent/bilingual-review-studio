@@ -2,34 +2,42 @@
 import type { CSSProperties } from "react";
 import type { Block } from "@/src/lib/doc-model";
 
-// Each segment maps to one outline state. The dot encodes it so the outline
-// doubles as "jump to what needs attention". Explained by the legend below.
-type DotKind = "needsReview" | "edited" | "done" | "untouched";
+// The outline is a "scan for problems, fix, hand off" navigator. Only two states
+// earn a dot: the machine flagged a problem here, or you've edited it. Everything
+// else is a neutral dot (nothing to flag) — no ceremony, nothing to explain.
+type DotKind = "needsReview" | "edited" | "default";
 
 function dotKind(b: Block): DotKind {
-  if (b.seg_status === "locked" || b.seg_status === "accepted") return "done";
+  // Accepted/locked is final (matches SegmentRow + gateBlock) — never flag it,
+  // even if stale validator results linger. We just don't give it its own dot
+  // colour anymore (no accept/lock ceremony in this simplified outline).
+  if (b.seg_status === "locked" || b.seg_status === "accepted") return "default";
+  // Then problems — a still-failing segment stays flagged even after an edit.
   if (b.validator_results.some((v) => v.status === "fail" && v.blocking)) return "needsReview";
   if (b.seg_status === "edited") return "edited";
-  return "untouched";
+  return "default";
 }
+
+const COLOR: Record<DotKind, string> = {
+  needsReview: "var(--flag)",
+  edited: "var(--edited)",
+  default: "var(--ink-faint)",
+};
 
 // "needs review" gets a halo so it reads as an alert and isn't confused with the
 // (similarly warm) "edited" colour — distinguished by shape, not just hue.
-const DOT: Record<DotKind, { color: string; label: string; ring: boolean }> = {
-  needsReview: { color: "var(--flag)", label: "needs review", ring: true },
-  edited: { color: "var(--edited)", label: "edited", ring: false },
-  done: { color: "var(--memory)", label: "accepted / locked", ring: false },
-  untouched: { color: "var(--ink-faint)", label: "untouched", ring: false },
-};
-
 function dotStyle(kind: DotKind): CSSProperties {
-  const d = DOT[kind];
   return {
-    background: d.color,
+    background: COLOR[kind],
     flexShrink: 0,
-    ...(d.ring ? { boxShadow: "0 0 0 2px color-mix(in srgb, var(--flag) 35%, transparent)" } : {}),
+    ...(kind === "needsReview" ? { boxShadow: "0 0 0 2px color-mix(in srgb, var(--flag) 35%, transparent)" } : {}),
   };
 }
+
+const LEGEND: { kind: DotKind; label: string }[] = [
+  { kind: "needsReview", label: "needs review" },
+  { kind: "edited", label: "edited" },
+];
 
 export function OutlineNavigator({ blocks, onJump }: { blocks: Block[]; onJump: (id: string) => void }) {
   return (
@@ -38,12 +46,12 @@ export function OutlineNavigator({ blocks, onJump }: { blocks: Block[]; onJump: 
     <aside style={{ width: 240, flexShrink: 0, alignSelf: "stretch" }}>
       <div style={{ position: "sticky", top: 172, maxHeight: "calc(100dvh - 188px)", overflowY: "auto", overflowX: "hidden" }}>
         <span className="label">Outline</span>
-        {/* What the dots mean — navigation aid, not a score. paddingLeft leaves
-            room for the "needs review" halo so it isn't clipped at the panel edge. */}
+        {/* Only the two states worth acting on. paddingLeft leaves room for the
+            "needs review" halo so it isn't clipped at the panel edge. */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 12px", margin: "8px 0 12px", paddingLeft: 3 }}>
-          {(Object.keys(DOT) as DotKind[]).map((k) => (
-            <span key={k} className="ui-base" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "var(--ink-faint)", fontSize: 11 }}>
-              <span className="dot" style={dotStyle(k)} /> {DOT[k].label}
+          {LEGEND.map((l) => (
+            <span key={l.kind} className="ui-base" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "var(--ink-faint)", fontSize: 11 }}>
+              <span className="dot" style={dotStyle(l.kind)} /> {l.label}
             </span>
           ))}
         </div>
