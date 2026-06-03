@@ -8,6 +8,7 @@
  * policy)/Approver/Admin APPROVE; Admin DEPRECATES.
  */
 import type {
+  DocModel,
   GlossaryEntry,
   Locale,
   NeutralizationRule,
@@ -15,9 +16,12 @@ import type {
   TmProposal,
   UserRef,
 } from "@/src/lib/doc-model";
+import { getLocale } from "@/src/lib/config";
 import { id, nowIso } from "@/src/lib/ids";
 import { isDisclaimer } from "@/src/prepare/disclaimer";
+import { dntTermsFromEntities } from "@/src/prepare/dnt";
 import { getStore } from "@/src/store";
+import { runValidators } from "@/src/validators";
 
 // ── Neutralization rules ──────────────────────────────────────────────────────
 export interface ProposeRuleInput {
@@ -284,6 +288,64 @@ export async function proposeTmFromEdit(i: ProposeTmInput): Promise<TmProposal> 
   };
   await store.saveTmProposals([...proposals, created]);
   return created;
+}
+
+/**
+ * Auto-capture a saved segment edit into memory — the flywheel (ADR 0012) made
+ * automatic. Called after an `edit` action saves. Reuses the governed proposal
+ * flow but AUTO-APPROVES, so the pair lands in active TM instantly while keeping
+ * the proposal→approved audit record (re-add an SM gate later by simply not
+ * auto-approving here).
+ *
+ * Safeguards so a bad edit can't poison memory:
+ *   - never learn disclaimers (compliance-only),
+ *   - skip no-ops / untranslated (target === source),
+ *   - skip if the edited target STILL fails a blocking validator
+ *     (billón, number, currency, residual English, …).
+ *
+ * Best-effort: returns false (never throws to the caller's critical path) when
+ * there's nothing safe to learn. Returns true when a pair was captured.
+ */
+export async function captureEditToMemory(doc: DocModel, blockId: string, by: UserRef): Promise<boolean> {
+  const block = doc.blocks.find((b) => b.id === blockId);
+  if (!block) return false;
+  const source = block.source_text.trim();
+  const target = block.final_text.trim();
+  if (!source || !target) return false;
+  if (block.type === "disclaimer" || isDisclaimer(block.source_text)) return false;
+  if (target.toLowerCase() === source.toLowerCase()) return false; // no-op / untranslated
+
+  // Don't learn a correction that still fails a hard guarantee.
+  const store = getStore();
+  const [glossary, rules] = await Promise.all([store.getGlossary(), store.getRules()]);
+  const results = runValidators({
+    source: block.source_text,
+    target: block.final_text,
+    entities: block.entities,
+    locale: getLocale(doc.target_locale),
+    glossary,
+    rules,
+    dntTerms: dntTermsFromEntities(block.entities),
+    blockType: block.type,
+  });
+  if (results.some((r) => r.status === "fail" && r.blocking)) return false;
+
+  const proposal = await proposeTmFromEdit({
+    source_text: source,
+    target_text: target,
+    doc_id: doc.doc_id,
+    doc_title: doc.title,
+    segment_id: blockId,
+    by,
+  });
+  // v1 governance decision (founder, 2026-06-03): a saved edit feeds memory
+  // immediately — the approver-only TM gate is intentionally relaxed, with the
+  // validator safeguards above as the compensating control. The decision is
+  // stamped "(auto-on-save)" so the audit trail never mistakes it for a real
+  // approver sign-off. Reinstate the gate later by NOT auto-approving here (leave
+  // the proposal pending for the SM/approver queue).
+  await decideTmProposal(proposal.id, true, `${by.user_id} (auto-on-save)`);
+  return true;
 }
 
 export async function listTmProposals(state?: TmProposal["state"]): Promise<TmProposal[]> {
