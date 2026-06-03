@@ -71,8 +71,9 @@ const majorCount = (flags: CriticFlag[]) =>
 export async function refineSegment(mt: string, ctx: RefineContext): Promise<RefineResult> {
   const { qe_threshold, max_iters, min_qe_gain } = getThresholds();
 
+  const qeCtx = { dntTerms: ctx.dntTerms, entities: ctx.entities };
   let best = mt;
-  let bestScore = await qe(ctx.source, best);
+  let bestScore = await qe(ctx.source, best, qeCtx);
   let bestFlags = await critique(validatorInput(best, ctx));
   let i = 0;
 
@@ -80,7 +81,7 @@ export async function refineSegment(mt: string, ctx: RefineContext): Promise<Ref
     const rewritten = await rewriteSegment(best, ctx.source, bestFlags);
     const cand = enforceMemory(rewritten, ctx); // active rules/glossary are hard constraints
     if (cand === best) break; // unchanged → stop
-    const candScore = await qe(ctx.source, cand);
+    const candScore = await qe(ctx.source, cand, qeCtx);
     const candFlags = await critique(validatorInput(cand, ctx));
     // Accept if it reduces major/critical flags (objective fix); QE is only the
     // tie-breaker. This prevents a flat-QE deterministic fix (e.g. billón →

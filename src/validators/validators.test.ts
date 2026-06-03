@@ -170,6 +170,25 @@ describe("english leakage validator", () => {
     const r = englishLeakageValidator(input("the growth market", "the growth mercado"));
     expect(r.status).toBe("fail");
   });
+  it("does NOT flag a kept-in-English DNT/entity name (aligned with QE)", () => {
+    // "Market Outlook Report" is a DNT name = 3 ENGLISH_ONLY words, but allowed.
+    const r = englishLeakageValidator(
+      input("the Market Outlook Report is positive", "el Market Outlook Report es positivo", {
+        dntTerms: ["Market Outlook Report"],
+        entities: [{ kind: "fund", text: "Market Outlook Report", norm: "market outlook report" }],
+      }),
+    );
+    expect(r.status).toBe("pass");
+  });
+  it("STILL flags untranslated words reused outside an allowed name", () => {
+    const r = englishLeakageValidator(
+      input("the Global Income Fund and the market growth", "el Global Income Fund y the market growth", {
+        dntTerms: ["Global Income Fund"],
+        entities: [{ kind: "fund", text: "Global Income Fund", norm: "global income fund" }],
+      }),
+    );
+    expect(r.status).toBe("fail"); // "the", "market", "growth" outside the name
+  });
 });
 
 // ── Regression tests for the Codex review findings ────────────────────────────
