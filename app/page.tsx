@@ -34,7 +34,7 @@ export default function HomePage() {
 
   const onDelete = async (e: React.MouseEvent, id: string, title: string) => {
     e.stopPropagation(); // don't open the doc — the card itself navigates
-    if (!window.confirm(`Delete "${title}"? This removes the in-progress work and can't be undone.`)) return;
+    if (!window.confirm(`Delete "${title}"? It moves to the Deleted tab in the Library and can be restored.`)) return;
     setDeleting(id); setError("");
     try {
       await api.deleteDoc(id);

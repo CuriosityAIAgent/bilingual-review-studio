@@ -157,6 +157,7 @@ export async function runPipeline(input: RunPipelineInput): Promise<DocModel> {
     status: "draft",
     created_at: nowIso(),
     updated_at: nowIso(),
+    deleted_at: null,
     rev: 0,
     model_run: buildModelRun(targetLocale),
     blocks: processed,

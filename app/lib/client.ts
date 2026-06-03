@@ -34,7 +34,8 @@ export interface ActionBody {
 }
 
 export const api = {
-  listDocs: () => req<{ documents: DocSummary[] }>("/api/documents"),
+  listDocs: (opts?: { deleted?: boolean }) =>
+    req<{ documents: DocSummary[] }>(`/api/documents${opts?.deleted ? "?deleted=true" : ""}`),
   getDoc: (id: string) => req<{ doc: DocModel }>(`/api/documents/${id}`),
   uploadText: (filename: string, text: string, locale?: string) =>
     req<{ doc_id: string }>("/api/documents", { method: "POST", body: JSON.stringify({ filename, text, locale }) }),
@@ -50,6 +51,7 @@ export const api = {
   action: (id: string, body: ActionBody) =>
     req<{ doc: DocModel }>(`/api/documents/${id}/action`, { method: "POST", body: JSON.stringify(body) }),
   deleteDoc: (id: string) => req<{ deleted: string }>(`/api/documents/${id}`, { method: "DELETE" }),
+  restoreDoc: (id: string) => req<{ restored: string }>(`/api/documents/${id}/restore`, { method: "POST" }),
   rules: () => req<{ rules: NeutralizationRule[] }>("/api/rules"),
   proposeRule: (body: { regional_form: string; neutral_form: string; reason?: string; variant?: string }) =>
     req<{ rule: NeutralizationRule }>("/api/rules", { method: "POST", body: JSON.stringify(body) }),
