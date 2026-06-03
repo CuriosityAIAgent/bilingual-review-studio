@@ -40,11 +40,24 @@ function Sparkline({ curve }: { curve: { created_at: string; edits_per_1k: numbe
   );
 }
 
-export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey }: {
+/** The actual changed span between an edit's before/after text — trims the
+ *  common prefix/suffix words so the panel shows WHAT changed, not the whole
+ *  segment. Empty from/to means a non-text action (accept/lock). */
+function changedPhrase(before: string, after: string): { from: string; to: string } {
+  const a = before.split(/\s+/), b = after.split(/\s+/);
+  let s = 0;
+  while (s < a.length && s < b.length && a[s] === b[s]) s++;
+  let ea = a.length, eb = b.length;
+  while (ea > s && eb > s && a[ea - 1] === b[eb - 1]) { ea--; eb--; }
+  return { from: a.slice(s, ea).join(" "), to: b.slice(s, eb).join(" ") };
+}
+
+export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey, onJump }: {
   doc: DocModel;
   canApproveRules: boolean;
   onGovern: (ruleId: string, action: "approve" | "deprecate") => void;
   refreshKey: number;
+  onJump?: (blockId: string) => void;
 }) {
   const [rules, setRules] = useState<NeutralizationRule[]>([]);
   const [glossary, setGlossary] = useState<GlossaryEntry[]>([]);
@@ -68,7 +81,9 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey }: {
 
   return (
     <aside style={{ width: 320, flexShrink: 0 }}>
-      <div style={{ position: "sticky", top: 172, maxHeight: "calc(100dvh - 188px)", overflowY: "auto", overflowX: "hidden", paddingRight: 6 }}>
+      {/* Flows with the document (no viewport cap) — extends to the doc's length,
+          and only the page scrolls. Previously a sticky maxHeight cut it off. */}
+      <div style={{ paddingRight: 6 }}>
         <Section title="Reviewer edits · per 1,000 words">
           <div className="card" style={{ padding: 16 }}>
             <div style={{ display: "flex", alignItems: "baseline", gap: 7 }}>
@@ -139,15 +154,42 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey }: {
 
         {recentEdits.length > 0 && (
           <Section title="Recent edits · this document">
-            <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-              {recentEdits.map((e) => (
-                <div key={e.id} className="ui-base" style={{ display: "flex", gap: 6, color: "var(--ink-soft)" }}>
-                  <span className="tag" style={{ flexShrink: 0 }}>{e.action}</span>
-                  <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
-                    {e.actor.role === "system" ? "System" : roleLabel(e.actor.role)} · {e.error_categories_corrected.join(", ") || "edit"} · HTER {e.hter}
-                  </span>
-                </div>
-              ))}
+            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
+              {recentEdits.map((e) => {
+                const { from, to } = changedPhrase(e.before, e.after);
+                // Only edit/propose carry a user text change worth diffing; accept/
+                // reject/lock set before/after to MT-vs-final, so show the action.
+                const showDiff = (e.action === "edit" || e.action === "propose") && !!(from || to);
+                return (
+                  <button
+                    key={e.id}
+                    onClick={() => onJump?.(e.segment_id)}
+                    className="ui-base"
+                    title="Go to this edit"
+                    style={{
+                      display: "flex", flexDirection: "column", gap: 2, alignItems: "flex-start", textAlign: "left",
+                      width: "100%", border: "none", background: "transparent", cursor: "pointer",
+                      padding: "6px 8px", borderRadius: "var(--r-sm)", color: "var(--ink-soft)",
+                    }}
+                  >
+                    <span style={{ maxWidth: "100%", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>
+                      {showDiff ? (
+                        <>
+                          <span style={{ color: "var(--flag)", textDecoration: "line-through" }}>{from || "—"}</span>
+                          {" → "}
+                          <span style={{ color: "var(--memory)" }}>{to || "—"}</span>
+                        </>
+                      ) : (
+                        <span className="tag">{e.action}</span>
+                      )}
+                    </span>
+                    <span className="mono" style={{ fontSize: 10, color: "var(--ink-faint)" }}>
+                      {e.actor.role === "system" ? "System" : roleLabel(e.actor.role)} · {e.action}
+                      {e.error_categories_corrected.length ? ` · ${e.error_categories_corrected.join(", ")}` : ""}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </Section>
         )}

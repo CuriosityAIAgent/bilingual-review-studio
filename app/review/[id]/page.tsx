@@ -202,7 +202,7 @@ export default function ReviewPage() {
         {showPanel && (
           <aside style={{ width: 320, flexShrink: 0, display: "flex", flexDirection: "column", gap: 16 }}>
             <MemoryProposals canApprove={canApproveRules} refreshKey={refreshKey} onChange={() => setRefreshKey((k) => k + 1)} />
-            <FeedbackPanel doc={doc} canApproveRules={canApproveRules} onGovern={onGovern} refreshKey={refreshKey} />
+            <FeedbackPanel doc={doc} canApproveRules={canApproveRules} onGovern={onGovern} refreshKey={refreshKey} onJump={jump} />
           </aside>
         )}
       </div>
