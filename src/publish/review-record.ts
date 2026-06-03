@@ -71,9 +71,13 @@ export function buildReviewRecordHtml(doc: DocModel, opts: { annotations?: boole
         opts.annotations && fails.length
           ? `<div class="flag">✕ ${fails.map((v) => `${v.validator}${v.severity ? `/${v.severity}` : ""}`).join(", ")}</div>`
           : "";
+      // English source on the LEFT, neutral Spanish on the RIGHT — matching the
+      // editor. All translation metadata (status tags, neutralizations, QE, and
+      // the flag callouts) lives on the target side, since it describes the
+      // translation, not the source.
       return `<div class="seg ${cls}">
-        <div class="pane"><span class="lbl">Español neutro (${esc(doc.target_locale)})</span><div class="${titleCls.trim()}">${esc(b.final_text)}</div>${flags}${valFlags}</div>
-        <div class="pane"><span class="lbl">English source</span><div class="en${titleCls}">${esc(b.source_text)}</div><div style="margin-top:6px">${tagsFor(b)}</div></div>
+        <div class="pane"><span class="lbl">English source</span><div class="en${titleCls}">${esc(b.source_text)}</div></div>
+        <div class="pane"><span class="lbl">Español neutro (${esc(doc.target_locale)})</span><div class="${titleCls.trim()}">${esc(b.final_text)}</div>${flags}${valFlags}<div style="margin-top:6px">${tagsFor(b)}</div></div>
       </div>`;
     })
     .join("\n");
@@ -88,7 +92,7 @@ export function buildReviewRecordHtml(doc: DocModel, opts: { annotations?: boole
 <style>${STYLE}</style></head>
 <body><div class="wrap">
 <h1>${esc(doc.title)}</h1>
-<div class="meta">Bilingual Review Record · ${esc(doc.source.filename)} · status: ${esc(doc.status)} · ${doc.blocks.length} segments · ${approved} approved/locked</div>
+<div class="meta">Bilingual Review Record · ${esc(doc.source.filename)} · status: ${esc(doc.status)} · ${doc.blocks.length} segments · ${approved} accepted/locked</div>
 <div class="kpi">Edits per 1,000 words: <b>${m.edits_per_1k}</b> &nbsp;·&nbsp; reviewer accept-rate: <b>${m.reviewer_accept_rate}</b> &nbsp;·&nbsp; regionalism fail-rate: <b>${m.regionalism_fail_rate}</b><br/>
 <span style="color:#566076">Provenance — translator: ${esc(doc.model_run.translator_model_id)} · critic: ${esc(doc.model_run.critic_model_id)} · rules: ${esc(doc.model_run.rules_version)} · config: ${esc(doc.model_run.config_hash)}</span></div>
 ${segs}
@@ -96,15 +100,37 @@ ${segs}
 }
 
 export function buildReflowedHtml(doc: DocModel): string {
-  const body = doc.blocks
-    .map((b) => {
-      if (b.type === "title") return `<h1>${esc(b.final_text)}</h1>`;
-      if (b.type === "subhead") return `<h2>${esc(b.final_text)}</h2>`;
-      if (b.type === "list_item") return `<li>${esc(b.final_text)}</li>`;
-      if (b.type === "disclaimer") return `<p class="disc">${esc(b.final_text)}</p>`;
-      return `<p>${esc(b.final_text)}</p>`;
-    })
-    .join("\n");
+  // Group consecutive list items into a single <ul> so the markup is valid and
+  // copy-pastes cleanly into email (bare <li> renders without bullets).
+  // Limitation: the Block model carries no list-boundary info, so two distinct
+  // lists with no block between them collapse into one <ul>. Rare in prose and
+  // cosmetic in this reading-only export; a true fix needs a boundary field on
+  // Block (ingest), out of scope here.
+  const parts: string[] = [];
+  let listOpen = false;
+  const closeList = () => {
+    if (listOpen) {
+      parts.push("</ul>");
+      listOpen = false;
+    }
+  };
+  for (const b of doc.blocks) {
+    if (b.type === "list_item") {
+      if (!listOpen) {
+        parts.push("<ul>");
+        listOpen = true;
+      }
+      parts.push(`<li>${esc(b.final_text)}</li>`);
+      continue;
+    }
+    closeList();
+    if (b.type === "title") parts.push(`<h1>${esc(b.final_text)}</h1>`);
+    else if (b.type === "subhead") parts.push(`<h2>${esc(b.final_text)}</h2>`);
+    else if (b.type === "disclaimer") parts.push(`<p class="disc">${esc(b.final_text)}</p>`);
+    else parts.push(`<p>${esc(b.final_text)}</p>`);
+  }
+  closeList();
+  const body = parts.join("\n");
   return `<!doctype html><html lang="es"><head><meta charset="utf-8"/>
 <title>${esc(doc.title)}</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Newsreader:opsz,wght@6..72,400&display=swap" rel="stylesheet"/>
