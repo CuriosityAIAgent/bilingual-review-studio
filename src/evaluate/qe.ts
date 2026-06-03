@@ -10,6 +10,8 @@
  * whether to force human review). It is NEVER an approval signal — the
  * deterministic validators and humans are authoritative.
  */
+import type { Entity } from "@/src/lib/doc-model";
+import { residualEnglishWords, stripAllowedNames } from "@/src/lib/leakage-words";
 import { neuralQe } from "./qe-model";
 
 const ENGLISH_STOPWORDS = new Set([
@@ -42,17 +44,84 @@ export function heuristicQe(source: string, mt: string): number {
   return Math.max(0, Math.min(1, Number(score.toFixed(3))));
 }
 
+/** Optional context so QE can tell "shared by design" tokens (names, tickers,
+ * figures, DNT terms) apart from "didn't translate". Pulled from RefineContext. */
+export interface QeContext {
+  dntTerms?: string[];
+  entities?: Entity[];
+}
+
+/** Lowercase content words (incl. Spanish accents), length >= 3. Numbers are
+ * excluded by construction (alphabetic-only), so figures never count as copied. */
+function contentTokens(s: string): string[] {
+  return (s.toLowerCase().match(/[a-záéíóúñü']+/gu) ?? []).filter((t) => t.length >= 3);
+}
+
+/**
+ * Treat a token that appears in both source and target as a CORRECT Spanish
+ * cognate (not an untranslated copy) when it carries Spanish orthography or
+ * morphology. Cheap and dictionary-free — covers the broad cognate class
+ * (fiscal, digital, industrial, principal, regional, posición, capacidad…) that
+ * a hard-coded list can't. The residual-English leak check backstops the common
+ * English words that slip through.
+ *
+ * Known trade-off: a few English-only `-al` words (commercial, financial) are
+ * also treated as Spanish here, so a draft built ENTIRELY of identical-spelling
+ * cognate words could evade the overlap cap. That case is rare and genuinely
+ * ambiguous with a valid translation; realistic garbled drafts carry many
+ * non-cognate English words that still drive overlap high. QE is routing-only,
+ * so we accept this over precision that would need a Spanish lexicon.
+ */
+function looksSpanish(token: string): boolean {
+  if (/[áéíóúñü]/.test(token)) return true;
+  return /(?:ción|ciones|dad|dades|idad|mente|ales|al|ico|ica|icos|icas|oso|osa|tad)$/.test(token);
+}
+
+/**
+ * "Did this actually get translated to Spanish?" — an upper bound on QE in [0,1].
+ *
+ * A reference-free cross-lingual cosine rewards a COPY of the source (it is
+ * trivially adequate to itself), so a half-untranslated / code-switched draft
+ * scores ~1.0. We cap QE by how much of the target is just English copied
+ * verbatim from the source. Kept-in-English names (DNT/entities) are removed as
+ * phrases first, numbers are excluded by tokenization, and Spanish-looking
+ * cognates are skipped. Returns 1 (no cap) when there's nothing to penalise.
+ */
+export function translatednessCap(source: string, mt: string, opts?: QeContext): number {
+  const tgtText = stripAllowedNames(mt, opts);
+  const srcTokens = new Set(contentTokens(source));
+  // Candidate "copied English" tokens: content words that don't look Spanish.
+  const tgt = contentTokens(tgtText).filter((t) => !looksSpanish(t));
+  const overlap = tgt.length ? tgt.filter((t) => srcTokens.has(t)).length / tgt.length : 0;
+  let cap = 1;
+  if (tgt.length >= 4) {
+    if (overlap >= 0.6) cap = 0.25;
+    else if (overlap >= 0.4) cap = 0.55;
+  } else if (tgt.length >= 2 && overlap === 1) {
+    // Short heading copied verbatim from the source (e.g. an untranslated
+    // "Market outlook"). >=2 tokens avoids false-flagging a single ambiguous word.
+    cap = 0.4;
+  }
+  // Residual unambiguous-English words — the SAME shared signal the english_leakage
+  // validator gates on (>=3 = blocking), so QE and the gate agree by construction.
+  if (residualEnglishWords(mt, opts).length >= 3) cap = Math.min(cap, 0.4);
+  return cap;
+}
+
 /**
  * Reference-free QE in [0,1]. Uses the in-container neural model by default;
  * falls back to the heuristic when the model is unavailable. Unit tests
- * (VITEST) use the heuristic to stay fast and offline.
+ * (VITEST) use the heuristic to stay fast and offline. In every path the score
+ * is bounded by `translatednessCap` so a copy-of-the-source can't score high.
  */
-export async function qe(source: string, mt: string): Promise<number> {
+export async function qe(source: string, mt: string, opts?: QeContext): Promise<number> {
   if (!mt.trim()) return 0;
-  if (process.env.VITEST) return heuristicQe(source, mt);
+  const cap = translatednessCap(source, mt, opts);
+
+  if (process.env.VITEST) return clamp(heuristicQe(source, mt), cap);
 
   const model = await neuralQe(source, mt);
-  if (model === null) return heuristicQe(source, mt);
+  if (model === null) return clamp(heuristicQe(source, mt), cap);
 
   // Light sanity floor: a no-op (target === source) is never high-quality,
   // even if the embedding model rates the identical strings as similar.
@@ -60,5 +129,9 @@ export async function qe(source: string, mt: string): Promise<number> {
   if (mt.trim().toLowerCase() === source.trim().toLowerCase() && tokens(source).length > 2) {
     score = Math.min(score, 0.4);
   }
-  return Number(score.toFixed(3));
+  return clamp(score, cap);
+}
+
+function clamp(score: number, cap: number): number {
+  return Number(Math.min(score, cap).toFixed(3));
 }
