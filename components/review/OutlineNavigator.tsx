@@ -1,20 +1,35 @@
 "use client";
+import type { CSSProperties } from "react";
 import type { Block } from "@/src/lib/doc-model";
 
-// The dot encodes each segment's review state so the outline doubles as a
-// "jump to what needs attention" navigator. Explained by the legend below.
-function dotColor(b: Block): string {
-  if (b.seg_status === "locked" || b.seg_status === "accepted") return "var(--memory)";
-  if (b.validator_results.some((v) => v.status === "fail" && v.blocking)) return "var(--flag)";
-  if (b.seg_status === "edited") return "var(--edited)";
-  return "var(--ink-faint)";
+// Each segment maps to one outline state. The dot encodes it so the outline
+// doubles as "jump to what needs attention". Explained by the legend below.
+type DotKind = "needsReview" | "edited" | "done" | "untouched";
+
+function dotKind(b: Block): DotKind {
+  if (b.seg_status === "locked" || b.seg_status === "accepted") return "done";
+  if (b.validator_results.some((v) => v.status === "fail" && v.blocking)) return "needsReview";
+  if (b.seg_status === "edited") return "edited";
+  return "untouched";
 }
 
-const LEGEND: { color: string; label: string }[] = [
-  { color: "var(--flag)", label: "needs review" },
-  { color: "var(--edited)", label: "edited" },
-  { color: "var(--memory)", label: "accepted / locked" },
-];
+// "needs review" gets a halo so it reads as an alert and isn't confused with the
+// (similarly warm) "edited" colour — distinguished by shape, not just hue.
+const DOT: Record<DotKind, { color: string; label: string; ring: boolean }> = {
+  needsReview: { color: "var(--flag)", label: "needs review", ring: true },
+  edited: { color: "var(--edited)", label: "edited", ring: false },
+  done: { color: "var(--memory)", label: "accepted / locked", ring: false },
+  untouched: { color: "var(--ink-faint)", label: "untouched", ring: false },
+};
+
+function dotStyle(kind: DotKind): CSSProperties {
+  const d = DOT[kind];
+  return {
+    background: d.color,
+    flexShrink: 0,
+    ...(d.ring ? { boxShadow: "0 0 0 2px color-mix(in srgb, var(--flag) 35%, transparent)" } : {}),
+  };
+}
 
 export function OutlineNavigator({ blocks, onJump }: { blocks: Block[]; onJump: (id: string) => void }) {
   return (
@@ -24,10 +39,10 @@ export function OutlineNavigator({ blocks, onJump }: { blocks: Block[]; onJump: 
       <div style={{ position: "sticky", top: 172, maxHeight: "calc(100dvh - 188px)", overflowY: "auto", overflowX: "hidden" }}>
         <span className="label">Outline</span>
         {/* What the dots mean — navigation aid, not a score. */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "4px 12px", margin: "8px 0 12px" }}>
-          {LEGEND.map((l) => (
-            <span key={l.label} className="ui-base" style={{ display: "inline-flex", alignItems: "center", gap: 5, color: "var(--ink-faint)", fontSize: 11 }}>
-              <span className="dot" style={{ background: l.color }} /> {l.label}
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px 12px", margin: "8px 0 12px" }}>
+          {(Object.keys(DOT) as DotKind[]).map((k) => (
+            <span key={k} className="ui-base" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "var(--ink-faint)", fontSize: 11 }}>
+              <span className="dot" style={dotStyle(k)} /> {DOT[k].label}
             </span>
           ))}
         </div>
@@ -42,7 +57,7 @@ export function OutlineNavigator({ blocks, onJump }: { blocks: Block[]; onJump: 
                 border: "none", background: "transparent", cursor: "pointer", textAlign: "left", color: "var(--ink-soft)",
               }}
             >
-              <span className="dot" style={{ background: dotColor(b), flexShrink: 0 }} />
+              <span className="dot" style={dotStyle(dotKind(b))} />
               <span style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", fontWeight: b.type === "title" || b.type === "subhead" ? 600 : 400 }}>
                 {b.final_text || b.source_text}
               </span>
