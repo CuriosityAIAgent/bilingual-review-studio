@@ -151,9 +151,14 @@ export default function ReviewPage() {
             <Sparkles size={14} style={{ color: "var(--accent)" }} /> {busy === "retranslate" ? "Re-translating…" : "Re-translate with learnings"}
           </button>
 
-          {/* Export */}
-          <a className="btn btn-ghost" href={`/api/documents/${id}/export?format=record&annotations=1`} target="_blank" rel="noreferrer">
-            <Download size={14} /> Review record
+          {/* Export — continuous Spanish (read / copy-paste / email) + the bilingual audit record */}
+          <a className="btn btn-ghost" href={`/api/documents/${id}/export?format=reflowed`} target="_blank" rel="noreferrer"
+            title="The finished Spanish as one continuous document — for reading, printing, or copy-paste into email">
+            <Download size={14} /> Download translation
+          </a>
+          <a className="btn btn-ghost" href={`/api/documents/${id}/export?format=record&annotations=1`} target="_blank" rel="noreferrer"
+            title="Bilingual side-by-side record with review annotations — the audit view">
+            <FileText size={14} /> Review record
           </a>
 
           {/* Workflow — the JPM short process (turn-aware: only the holder sees the CTA) */}
