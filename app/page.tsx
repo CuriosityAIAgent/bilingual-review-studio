@@ -136,7 +136,7 @@ export default function HomePage() {
                       )}
                     </div>
                   </div>
-                  <div className="ui-base mono" style={{ color: "var(--ink-faint)" }}>{pct}% approved · {d.needs_review_count} to resolve · {d.edits_per_1k} edits/1k</div>
+                  <div className="ui-base mono" style={{ color: "var(--ink-faint)" }}>{pct}% done · {d.needs_review_count} to resolve · {d.edits_per_1k} edits/1k</div>
                 </div>
               );
             })}

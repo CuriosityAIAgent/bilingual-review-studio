@@ -87,7 +87,7 @@ export default function LibraryPage() {
                   </Link>
                 )}
                 <div style={{ textAlign: "right" }}>
-                  <div className="mono ui-base" style={{ color: "var(--ink-soft)" }}>{pct}% approved</div>
+                  <div className="mono ui-base" style={{ color: "var(--ink-soft)" }}>{pct}% done</div>
                   <div className="mono ui-base" style={{ color: "var(--ink-faint)" }}>{d.edits_per_1k} edits/1k</div>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
