@@ -34,7 +34,11 @@ export async function criticProviderLive(model: string): Promise<boolean> {
   if (_criticLive && now - _criticLive.ts < CRITIC_PROBE_TTL_MS) return _criticLive.ok;
   let ok = false;
   try {
-    await openaiComplete({ model, system: "ok", user: "ok", maxTokens: 1 });
+    // Token headroom so a reasoning model (gpt-5/o-series) doesn't spend the whole
+    // budget on reasoning and 400 ("max_tokens reached") — which would FALSELY mark
+    // the critic dead and silently force the deterministic fallback. A non-reasoning
+    // model (gpt-4o) returns content well within this. We only need a non-error reply.
+    await openaiComplete({ model, system: "ok", user: "ok", maxTokens: 16 });
     ok = true;
   } catch (e) {
     ok = false;
