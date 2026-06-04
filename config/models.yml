@@ -19,7 +19,9 @@ translator:
 
 critic:
   provider: openai             # a DECORRELATED family from the translator
-  model: gpt-5                 # upgraded from gpt-4o; pin a dated id if your account requires one
+  model: gpt-4o                # non-reasoning is enough for MQM-style critique and stays decorrelated
+                               # from the Claude translator. Reasoning models (gpt-5/o-series) also work
+                               # but spend output tokens on reasoning (raise max_tokens if you switch).
   prompt_version: critic-mqm-regionalism-v2   # v2: flag inconsistent rendering of a repeated phrase
   temperature: 0.0
   max_tokens: 2048
