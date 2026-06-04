@@ -108,25 +108,23 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
         background: block.seg_status === "edited" ? "color-mix(in srgb, var(--edited) 4%, transparent)" : "transparent",
       }}
     >
-      {/* English source — LEFT, reference */}
-      <div style={{ padding: "18px 28px 18px 16px", borderRight: "1px solid var(--line-2)" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 7 }}>
+      {/* Headers share grid row 1 (equal height) and bodies share row 2, so the
+          English and Spanish bodies always start on the same baseline regardless
+          of how many badges the target header carries (they wrap freely). The
+          edited note is length-capped, so nothing here can overflow the column. */}
+
+      {/* header — English */}
+      <div style={{ padding: "18px 28px 0 16px", borderRight: "1px solid var(--line-2)", minWidth: 0 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
           <span className="label">English · source</span>
           <span className="mono" style={{ fontSize: 10, color: "var(--ink-faint)" }}>#{index + 1}</span>
           {isHead && <span className="tag">{block.type}</span>}
         </div>
-        <div
-          className={`doc-body ${isHead ? "font-display" : ""}`}
-          aria-label="English source, reference"
-          style={{ fontSize, fontWeight: isHead ? 600 : 400, color: "var(--ink-soft)", lineHeight: 1.66 }}
-        >
-          {withNumbers(block.source_text)}
-        </div>
       </div>
 
-      {/* Spanish target — RIGHT, the editable deliverable */}
-      <div style={{ padding: "18px 16px 18px 28px", position: "relative" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 7, marginBottom: 7, flexWrap: "wrap" }}>
+      {/* header — Spanish target */}
+      <div style={{ padding: "18px 16px 0 28px", minWidth: 0 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 7, flexWrap: "wrap" }}>
           <span className="label">Español neutro · target</span>
           {block.qe_score !== null && (
             <span
@@ -146,6 +144,21 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
           {block.seg_status === "accepted" && <span className="tag memory"><Check size={9} /> accepted</span>}
           {block.neutralization_hits.length > 0 && <span className="tag memory"><BookOpen size={9} /> {block.neutralization_hits.length} neutralized</span>}
         </div>
+      </div>
+
+      {/* body — English (reference) */}
+      <div style={{ padding: "0 28px 18px 16px", borderRight: "1px solid var(--line-2)", minWidth: 0 }}>
+        <div
+          className={`doc-body ${isHead ? "font-display" : ""}`}
+          aria-label="English source, reference"
+          style={{ fontSize, fontWeight: isHead ? 600 : 400, color: "var(--ink-soft)", lineHeight: 1.66 }}
+        >
+          {withNumbers(block.source_text)}
+        </div>
+      </div>
+
+      {/* body — Spanish target (editable) + annotations + actions */}
+      <div style={{ padding: "0 16px 18px 28px", position: "relative", minWidth: 0 }}>
         <div
           key={`${block.id}-${block.final_text}`}
           ref={ref}
