@@ -67,8 +67,8 @@ export default function HomePage() {
   }, [router]);
 
   const onFile = (file: File) => {
-    if (!/\.(docx|txt|md)$/i.test(file.name)) {
-      setError(/\.pdf$/i.test(file.name) ? "PDFs aren't supported yet — paste the text below, or use a Word (.docx) or text file." : "Word (.docx) or plain text (.txt/.md) only.");
+    if (!/\.(pdf|docx|txt|md)$/i.test(file.name)) {
+      setError("PDF, Word (.docx), or plain text (.txt/.md) only.");
       return;
     }
     go(() => api.uploadFile(file));
@@ -205,11 +205,11 @@ export default function HomePage() {
           className="card"
           style={{ padding: "16px 20px", display: "flex", alignItems: "center", gap: 14, cursor: canUpload ? "pointer" : "not-allowed", opacity: canUpload ? 1 : 0.6, border: "1.5px dashed var(--line)" }}
         >
-          <input ref={inputRef} type="file" accept=".docx,.txt,.md" style={{ display: "none" }} onChange={(e) => e.target.files?.[0] && onFile(e.target.files[0])} />
+          <input ref={inputRef} type="file" accept=".pdf,.docx,.txt,.md" style={{ display: "none" }} onChange={(e) => e.target.files?.[0] && onFile(e.target.files[0])} />
           <UploadIcon size={18} strokeWidth={1.6} style={{ color: "var(--ink-faint)" }} />
           <div style={{ flex: 1 }}>
             <div className="ui-base" style={{ fontWeight: 600 }}>Or drop a file</div>
-            <div className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 1 }}>Word (.docx) or plain text (.txt, .md)</div>
+            <div className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 1 }}>PDF, Word (.docx), or plain text (.txt, .md) · scanned PDFs need OCR (not yet supported)</div>
           </div>
           <FileText size={16} style={{ color: "var(--ink-faint)" }} />
         </div>
