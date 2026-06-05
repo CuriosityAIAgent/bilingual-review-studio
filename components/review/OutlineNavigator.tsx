@@ -3,12 +3,14 @@ import type { CSSProperties } from "react";
 import type { Block } from "@/src/lib/doc-model";
 import { blockNeedsReview } from "@/src/lib/doc-model";
 
-// "Scan for problems, fix, hand off." A segment is DONE when it has no
-// outstanding problem; it NEEDS REVIEW when a blocking validator flags one.
-// "edited" is also done, but worth marking as touched.
-type DotKind = "needsReview" | "edited" | "done";
+// "Scan for problems, fix, hand off." A segment is DONE when the reviewer has
+// actually read it and it has no outstanding problem; it NEEDS REVIEW when a
+// blocking validator flags one; it is UNREVIEWED while it's still a clean machine
+// draft the reviewer hasn't scrolled past yet. "edited" is also done, but worth
+// marking as touched.
+type DotKind = "needsReview" | "edited" | "unreviewed" | "done";
 
-function dotKind(b: Block, ocrUsed: boolean): DotKind {
+function dotKind(b: Block, ocrUsed: boolean, seen: boolean): DotKind {
   // Same human-review definition as the quality gate + the card metric
   // (validators, critic, disclaimer, QE, and the doc-level OCR flag).
   // accepted/locked is final → done even for OCR docs.
@@ -16,7 +18,11 @@ function dotKind(b: Block, ocrUsed: boolean): DotKind {
   // OCR-derived docs route every other segment to human review (matches the gate).
   if (ocrUsed || blockNeedsReview(b)) return "needsReview";
   if (b.seg_status === "edited") return "edited"; // edited & clean — done, but marked as touched
-  return "done"; // clean — no outstanding problem
+  // A clean, machine-drafted segment is NOT "done" just because the model is
+  // confident — it's done once a human has eyes on it. Stay "unreviewed" until
+  // the reviewer scrolls it into view (confirmed read, no change needed).
+  if (b.seg_status === "machine" && !seen) return "unreviewed";
+  return "done"; // read & clean — no outstanding problem
   // Note: this client nav-aid uses the DEFAULT QE floor (the browser can't read
   // config — the whole client does, e.g. SegmentRow's QE chip); the authoritative
   // card/gate use the configured human_floor. They match on the shipped config.
@@ -25,12 +31,18 @@ function dotKind(b: Block, ocrUsed: boolean): DotKind {
 const COLOR: Record<DotKind, string> = {
   needsReview: "var(--flag)",
   edited: "var(--edited)",
+  unreviewed: "var(--ink-faint)",
   done: "var(--memory)",
 };
 
 // "needs review" gets a halo so it reads as an alert and isn't confused with the
 // (similarly warm) "edited" colour — distinguished by shape, not just hue.
+// "unreviewed" is a hollow ring (not a filled dot) so an un-read draft never
+// looks like a completed segment at a glance.
 function dotStyle(kind: DotKind): CSSProperties {
+  if (kind === "unreviewed") {
+    return { background: "transparent", flexShrink: 0, boxShadow: "inset 0 0 0 1.5px var(--ink-faint)" };
+  }
   return {
     background: COLOR[kind],
     flexShrink: 0,
@@ -41,10 +53,11 @@ function dotStyle(kind: DotKind): CSSProperties {
 const LEGEND: { kind: DotKind; label: string }[] = [
   { kind: "needsReview", label: "needs review" },
   { kind: "edited", label: "edited" },
+  { kind: "unreviewed", label: "unreviewed" },
   { kind: "done", label: "done" },
 ];
 
-export function OutlineNavigator({ blocks, onJump, ocrUsed = false }: { blocks: Block[]; onJump: (id: string) => void; ocrUsed?: boolean }) {
+export function OutlineNavigator({ blocks, onJump, ocrUsed = false, seen }: { blocks: Block[]; onJump: (id: string) => void; ocrUsed?: boolean; seen: Map<string, string> }) {
   return (
     // alignSelf:stretch makes this column full-height so the sticky panel below
     // stays pinned while the editor scrolls (the row is align-items:flex-start).
@@ -71,7 +84,9 @@ export function OutlineNavigator({ blocks, onJump, ocrUsed = false }: { blocks: 
                 border: "none", background: "transparent", cursor: "pointer", textAlign: "left", color: "var(--ink-soft)",
               }}
             >
-              <span className="dot" style={dotStyle(dotKind(b, ocrUsed))} />
+              {/* "seen" only counts if the signature matches the CURRENT text —
+                  a re-translated draft is unseen again until re-scrolled. */}
+              <span className="dot" style={dotStyle(dotKind(b, ocrUsed, seen.get(b.id) === (b.final_text || b.source_text)))} />
               <span style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", fontWeight: b.type === "title" || b.type === "subhead" ? 600 : 400 }}>
                 {b.final_text || b.source_text}
               </span>
