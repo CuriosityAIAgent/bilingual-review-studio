@@ -235,7 +235,7 @@ export default function ReviewPage() {
           </div>
           {doc.blocks.map((b, i) => (
             <SegmentRow
-              key={b.id} block={b} index={i} caps={caps}
+              key={b.id} block={b} index={i} caps={caps} ocrUsed={doc.source.ocr_used}
               onEdit={onEdit}
               onAccept={(bid) => act({ kind: "accept", blockId: bid })}
               onReject={(bid) => act({ kind: "reject", blockId: bid, reason: "rejected" })}
