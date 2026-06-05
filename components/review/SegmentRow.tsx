@@ -84,6 +84,10 @@ export function SegmentRow({ block, index, caps, ocrUsed = false, onEdit, onAcce
   // routine resolve — label it honestly. Accepting is still allowed and is
   // recorded in the append-only edit log.
   const blockingFail = hasBlockingValidatorFailure(block);
+  // Per-block accept right: reviewers may NOT accept/reject DISCLAIMER segments
+  // (they escalate to the approver — src/auth). canLock distinguishes approver/
+  // admin from reviewer, so mirror the server rule and never offer a 403 button.
+  const canAcceptBlock = caps.canAccept && (block.type !== "disclaimer" || caps.canLock);
   // What the reviewer changed from the machine draft, stated in the note below.
   // (An inline underline would need a position-aware diff to be accurate — short
   // tokens, repeats, and overlap with memory highlights make value-matching wrong
@@ -227,10 +231,14 @@ export function SegmentRow({ block, index, caps, ocrUsed = false, onEdit, onAcce
           </div>
         ))}
 
-        {/* Bridge the outline's red "needs review" dot to the action that clears it. */}
-        {needsReview && caps.canAccept && !isHead && (
+        {/* Bridge the outline's red "needs review" dot to the action that clears
+            it — role-aware: only reviewer/approver/admin can Accept, so the author
+            (edit-only) is pointed at edit + hand-off, not a button they lack. */}
+        {needsReview && !isHead && (caps.canEdit || caps.canAccept) && (
           <div className="ui-base" style={{ marginTop: 11, color: "var(--ink-faint)" }}>
-            Needs your review — edit the text to fix it, or {blockingFail ? "Accept anyway to resolve it over the flagged check" : "Accept to resolve it as-is"}. The outline dot turns green once resolved.
+            {canAcceptBlock
+              ? <>Needs your review — edit the text to fix it, or {blockingFail ? "Accept anyway to resolve it over the flagged check" : "Accept to resolve it as-is"}. The outline dot turns green once resolved.</>
+              : <>Needs review — edit the Spanish to fix it (it autosaves). {block.type === "disclaimer" ? "Disclaimers are accepted by Supervisory Management, not at this step." : "Accepting it as resolved happens at the review step, after you hand the document off."}</>}
           </div>
         )}
 
@@ -247,7 +255,7 @@ export function SegmentRow({ block, index, caps, ocrUsed = false, onEdit, onAcce
                 {dirty ? <><Save size={12} /> Save</> : <><Check size={12} /> Saved</>}
               </button>
             )}
-            {caps.canAccept && !locked && (block.seg_status === "edited" || block.seg_status === "proposed" || block.seg_status === "machine") && (
+            {canAcceptBlock && !locked && (block.seg_status === "edited" || block.seg_status === "proposed" || block.seg_status === "machine") && (
               <button
                 className="btn btn-ghost ui-base"
                 style={{ padding: "4px 9px", color: blockingFail ? "var(--flag)" : "var(--memory)" }}
@@ -259,7 +267,7 @@ export function SegmentRow({ block, index, caps, ocrUsed = false, onEdit, onAcce
                 <Check size={12} /> {blockingFail ? "Accept anyway" : "Accept"}
               </button>
             )}
-            {caps.canAccept && (block.seg_status === "edited" || block.seg_status === "proposed") && (
+            {canAcceptBlock && (block.seg_status === "edited" || block.seg_status === "proposed") && (
               <button className="btn btn-ghost ui-base" style={{ padding: "4px 9px", color: "var(--flag)" }} onClick={() => onReject(block.id)}><X size={12} /> Reject</button>
             )}
             {caps.canLock && !locked && (

@@ -138,7 +138,13 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey, onJu
                         </button>
                       </>
                     ) : (
-                      <span className="tag accent">awaiting approver</span>
+                      // Author/reviewer can't approve rules into memory — only
+                      // Supervisory Management (approver) or an admin can. Spell out
+                      // what the status means and who acts.
+                      <span className="ui-base" style={{ display: "inline-flex", alignItems: "center", gap: 6, color: "var(--ink-faint)" }} title="Proposed rules only enter the shared memory once Supervisory Management (or an admin) approves them. Switch to the Supervisory Management seat to approve or deprecate.">
+                        <span className="tag accent">proposed</span>
+                        waiting for Supervisory Management to approve it into memory
+                      </span>
                     )}
                   </div>
                 </div>
