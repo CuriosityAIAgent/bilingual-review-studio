@@ -10,23 +10,50 @@ import { Check } from "lucide-react";
  * stage ("Refining…") until the page redirects — so a longer document that is
  * still working simply stays on the final step rather than racing ahead.
  */
-// Captions name the configured models (translator = Claude Sonnet 4.6, critic =
-// GPT-5). Accurate for a keyed deployment; GPT-5 *reviews*, the translator
-// *rewrites* the segments it flags — the captions reflect that split.
+// The translator is named (it's the one constant — Claude Sonnet 4.6); the
+// critic is referred to generically as "a second, independent model" so the
+// caption stays correct whichever critic the config pins (or when no OpenAI key
+// is present and the deterministic critic stands in). Never hardcode a brand for
+// a configurable stage. The critic *reviews*, the translator *rewrites* what it
+// flags — the captions reflect that split.
 const STAGES = [
   { key: "translate", label: "Translate", caption: "The translator (Claude Sonnet 4.6) drafts each segment in neutral Spanish…" },
   { key: "checks", label: "Checks", caption: "Deterministic validators check numbers, dates, glossary and regionalisms…" },
   { key: "governance", label: "Governance", caption: "Applying your governed memory — approved rules and glossary…" },
-  { key: "rewrite", label: "Rewrite", caption: "GPT-5 reviews the weak segments and the translator refines them — a second, decorrelated model checks the first…" },
+  { key: "rewrite", label: "Rewrite", caption: "A second, independent model reviews the weak segments and the translator refines them — a decorrelated check on the first…" },
+];
+// Rewrite is the slowest stage and the page holds here until the pipeline returns.
+// Rotate through the real sub-steps so a longer document reads as actively working
+// rather than frozen on one caption.
+const REWRITE_SUBSTEPS = [
+  "Quality-scoring each segment to route attention…",
+  "The independent critic flags the weak segments…",
+  "Re-translating only the segments that objectively failed…",
+  "Re-scoring each rewrite — keeping it only if it actually improved…",
+  "Reverting no-gain rewrites and locking in the best version…",
 ];
 const STEP_MS = 820;
+const SUBSTEP_MS = 2100;
 
 export function ProcessingView() {
   const [step, setStep] = useState(0);
+  const [sub, setSub] = useState(0);
+  const [secs, setSecs] = useState(0);
+  const atRewrite = step === STAGES.length - 1;
+
   useEffect(() => {
     const t = setInterval(() => setStep((s) => Math.min(s + 1, STAGES.length - 1)), STEP_MS);
     return () => clearInterval(t);
   }, []);
+
+  // Once we reach (and hold on) the rewrite stage, cycle sub-steps and count
+  // elapsed seconds so the wait visibly progresses on long documents.
+  useEffect(() => {
+    if (!atRewrite) return;
+    const r = setInterval(() => setSub((s) => (s + 1) % REWRITE_SUBSTEPS.length), SUBSTEP_MS);
+    const e = setInterval(() => setSecs((s) => s + 1), 1000);
+    return () => { clearInterval(r); clearInterval(e); };
+  }, [atRewrite]);
 
   return (
     <div className="fade-up" style={{ display: "grid", placeItems: "center", padding: "84px 24px", minHeight: 440 }}>
@@ -64,7 +91,24 @@ export function ProcessingView() {
           })}
         </div>
 
-        <p className="doc-body" style={{ color: "var(--ink-soft)", marginTop: 28, fontSize: 15.5 }}>{STAGES[step].caption}</p>
+        <p className="doc-body" style={{ color: "var(--ink-soft)", marginTop: 28, fontSize: 15.5 }}>
+          {STAGES[step].caption}
+        </p>
+        {/* On the held rewrite stage, the caption above names what the stage does;
+            this line rotates through the actual sub-steps so it reads as working. */}
+        {atRewrite && (
+          <p className="ui-base" style={{ display: "inline-flex", alignItems: "center", gap: 9, color: "var(--ink-soft)", marginTop: 8, fontSize: 13 }}>
+            <span className="dot live-dot" style={{ background: "var(--accent)", flexShrink: 0 }} />
+            {REWRITE_SUBSTEPS[sub]}
+          </p>
+        )}
+        {/* Reassurance for a long refine pass — only after a few seconds, so a
+            fast document never flashes it. */}
+        {atRewrite && secs >= 4 && (
+          <p className="ui-base mono" style={{ color: "var(--ink-faint)", marginTop: 10, fontSize: 12 }}>
+            Still refining — longer documents take a little more time · {secs}s
+          </p>
+        )}
         <p className="ui-base" style={{ color: "var(--ink-faint)", marginTop: 10, fontSize: 12, maxWidth: 480, marginInline: "auto" }}>
           A quality-estimation model (in-container) scores each segment to route attention — a routing signal only. Validators and your review decide.
         </p>

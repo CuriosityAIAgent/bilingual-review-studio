@@ -8,7 +8,8 @@
  *     segments using CURRENT memory, preserving human edits. This is what makes
  *     a freshly-learned neutralization rule visibly take effect (the flywheel).
  */
-import { buildModelRun, getLocale } from "@/src/lib/config";
+import { buildModelRun, getLocale, getModels } from "@/src/lib/config";
+import { criticProviderLive } from "@/src/providers/clients";
 import {
   type Block,
   type DocModel,
@@ -33,6 +34,26 @@ import { getStore } from "@/src/store";
 function titleFromBlocks(blocks: Block[], filename: string): string {
   const t = blocks.find((b) => b.type === "title");
   return t?.source_text || filename.replace(/\.[^.]+$/, "");
+}
+
+/**
+ * Run `fn` over `items` with at most `limit` in flight, preserving input order.
+ * Refine is the slow stage (per-segment critic + QE + optional rewrite) and the
+ * segments are independent, so a bounded pool turns a multi-segment doc's serial
+ * wait into a near-parallel one. The cap (not unbounded Promise.all) keeps us
+ * from tripping the critic provider's rate limit on a long document.
+ */
+async function mapPool<T, R>(items: T[], limit: number, fn: (item: T, index: number) => Promise<R>): Promise<R[]> {
+  const out = new Array<R>(items.length);
+  let next = 0;
+  async function worker(): Promise<void> {
+    while (next < items.length) {
+      const i = next++;
+      out[i] = await fn(items[i], i);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return out;
 }
 
 async function loadMemory() {
@@ -62,14 +83,18 @@ async function processBlocks(
     ctx,
   );
 
-  const appliedRuleIds = new Set<string>();
-  const out: Block[] = [];
+  // Pre-warm the critic liveness probe ONCE before fanning out — otherwise the
+  // first concurrent batch would each fire the cold-start probe in parallel. This
+  // also fixes the probe result before refine, so provenance stamping is stable.
+  await criticProviderLive(getModels().critic.model).catch(() => false);
 
-  for (const b of blocks) {
+  // Process the independent segments through a bounded-concurrency pool (the
+  // refine loop dominates wall-time and is per-segment serial work otherwise).
+  const REFINE_CONCURRENCY = 6;
+  const processOne = async (b: Block): Promise<{ block: Block; ruleIds: string[] }> => {
     // Locked (exact-TM disclaimer) or accepted (exact-TM segment): keep as is.
     if (b.seg_status !== "machine") {
-      out.push({ ...b, qe_score: b.qe_score ?? b.tm_match.score });
-      continue;
+      return { block: { ...b, qe_score: b.qe_score ?? b.tm_match.score }, ruleIds: [] };
     }
 
     const raw = mtMap[b.id] ?? "";
@@ -77,7 +102,6 @@ async function processBlocks(
     const ruleApplied = applyRules(raw, rules);
     const glossApplied = applyGlossary(ruleApplied.text, glossary);
     const enforced = glossApplied.text;
-    for (const h of ruleApplied.hits) appliedRuleIds.add(h.rule_id);
 
     const refineCtx: RefineContext = {
       source: b.source_text,
@@ -103,18 +127,25 @@ async function processBlocks(
       disclaimer: refineCtx.disclaimer,
     });
 
-    out.push({
-      ...b,
-      mt_text: refined.final,
-      final_text: refined.final,
-      qe_score: refined.qe_score,
-      critic_flags: refined.flags,
-      validator_results: validatorResults,
-      neutralization_hits: ruleApplied.hits,
-      glossary_hits: glossApplied.hits,
-      iterations: refined.iterations,
-    });
-  }
+    return {
+      block: {
+        ...b,
+        mt_text: refined.final,
+        final_text: refined.final,
+        qe_score: refined.qe_score,
+        critic_flags: refined.flags,
+        validator_results: validatorResults,
+        neutralization_hits: ruleApplied.hits,
+        glossary_hits: glossApplied.hits,
+        iterations: refined.iterations,
+      },
+      ruleIds: ruleApplied.hits.map((h) => h.rule_id),
+    };
+  };
+
+  const results = await mapPool(blocks, REFINE_CONCURRENCY, processOne);
+  const out = results.map((r) => r.block);
+  const appliedRuleIds = new Set(results.flatMap((r) => r.ruleIds));
 
   return { blocks: out, appliedRuleIds: [...appliedRuleIds] };
 }
@@ -183,8 +214,10 @@ export async function reTranslateDoc(doc: DocModel): Promise<DocModel> {
     locale: getLocale(doc.target_locale),
   });
   // prepare may have re-marked machine segments; preserve human-touched ones.
+  // Index by id so the merge is O(n), not O(n²) find-in-map.
+  const byId = new Map(doc.blocks.map((b) => [b.id, b]));
   const merged = reprepared.map((rb) => {
-    const orig = doc.blocks.find((b) => b.id === rb.id)!;
+    const orig = byId.get(rb.id)!;
     return orig.seg_status === "machine" ? rb : orig;
   });
   const { blocks: processed, appliedRuleIds } = await processBlocks(merged, disclaimerStatus, doc.target_locale);

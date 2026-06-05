@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useParams } from "next/navigation";
 import {
   Check, CheckCircle2, Download, FileText, PanelLeftClose, PanelRightClose, RotateCcw, Save, Send, Sparkles, UserCheck,
@@ -25,8 +25,54 @@ export default function ReviewPage() {
   const [showPanel, setShowPanel] = useState(true);
   const [refreshKey, setRefreshKey] = useState(0);
   const [teach, setTeach] = useState<{ regional: string; neutral: string; blockId: string } | null>(null);
+  // Segments the reviewer has actually scrolled into view, keyed by the TEXT that
+  // was on screen (id → content signature). A clean machine draft only counts as
+  // "done" in the outline once it's been seen — confidence isn't review. Keying on
+  // content (not just id) means a re-translate that rewrites a segment invalidates
+  // the old view, so the reviewer must scroll the new draft. Tracked per page load
+  // (real progress — edits/accepts — persists server-side via seg_status).
+  const [seen, setSeen] = useState<Map<string, string>>(new Map());
+  // The observer callback closes over a stale `doc`; read current signatures from
+  // a ref instead. Refresh only when the doc changes (not on every unrelated
+  // re-render); effects run after commit, so it's current before any intersection.
+  const sigRef = useRef<Record<string, string>>({});
+  useEffect(() => {
+    sigRef.current = Object.fromEntries((doc?.blocks ?? []).map((b) => [b.id, b.final_text || b.source_text]));
+  }, [doc]);
 
   useEffect(() => { api.getDoc(id).then((r) => setDoc(r.doc)).catch((e) => setError(e.message)); }, [id]);
+
+  // Mark a segment seen once a real portion of it has been on screen. Re-runs when
+  // the block set changes (e.g. after a re-translate) so new nodes get observed.
+  const blockIds = doc?.blocks.map((b) => b.id).join(",");
+  useEffect(() => {
+    if (!blockIds) return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        const arrived = entries
+          .filter((e) => e.isIntersecting)
+          .map((e) => e.target.id.replace(/^seg-/, ""));
+        if (!arrived.length) return;
+        setSeen((prev) => {
+          let next = prev;
+          for (const sid of arrived) {
+            const sig = sigRef.current[sid];
+            if (sig != null && next.get(sid) !== sig) {
+              if (next === prev) next = new Map(prev);
+              next.set(sid, sig);
+            }
+          }
+          return next;
+        });
+      },
+      { threshold: 0.6 },
+    );
+    for (const sid of blockIds.split(",")) {
+      const el = document.getElementById(`seg-${sid}`);
+      if (el) obs.observe(el);
+    }
+    return () => obs.disconnect();
+  }, [blockIds]);
 
   const role = seat?.role ?? "viewer";
   // Turn-based lock: you can only edit/act when the document is handed to you.
@@ -181,7 +227,7 @@ export default function ReviewPage() {
 
       {/* Three-column reading room */}
       <div style={{ display: "flex", gap: 28, padding: "24px 22px 80px", maxWidth: 1400, margin: "0 auto", alignItems: "flex-start" }}>
-        {showOutline && <OutlineNavigator blocks={doc.blocks} onJump={jump} ocrUsed={doc.source.ocr_used} />}
+        {showOutline && <OutlineNavigator blocks={doc.blocks} onJump={jump} ocrUsed={doc.source.ocr_used} seen={seen} />}
         <div className="card fade-up" style={{ flex: 1, minWidth: 0, overflow: "hidden" }}>
           <div style={{ padding: "11px 24px", borderBottom: "1px solid var(--line)", display: "flex", justifyContent: "space-between", alignItems: "center", background: "var(--surface-2)", gap: 12, flexWrap: "wrap" }}>
             <span className="label">Bilingual review record · {doc.blocks.length} segments · EN ⇄ Neutral Spanish</span>
@@ -231,13 +277,16 @@ function ProvenanceFooter({ doc }: { doc: DocModel }) {
   const qeShort = m.qe_model_id.split("/").pop() ?? m.qe_model_id;
   const rawId = (id: string) => <span className="mono" style={{ fontSize: 11, color: "var(--ink-faint)" }}>({id})</span>;
   const criticDeterministic = m.critic_model_id.includes("deterministic");
+  // The configured critic, with any "(deterministic fallback)"/"(fixture)" suffix
+  // stripped — so the fallback note names the real model, never a hardcoded brand.
+  const criticBase = m.critic_model_id.replace(/\s*\(.*\)$/, "");
   return (
     <div style={{ marginTop: 32, paddingTop: 18, borderTop: "1px solid var(--line)" }}>
       <span className="label">How this translation was produced</span>
       <ul className="ui-base" style={{ margin: "12px 0 0", paddingLeft: 18, color: "var(--ink-soft)", lineHeight: 1.75, display: "flex", flexDirection: "column", gap: 6 }}>
         <li><b style={{ color: "var(--ink)" }}>First draft</b> written by {modelName(m.translator_model_id)} {rawId(m.translator_model_id)} — the translator.</li>
         {criticDeterministic ? (
-          <li><b style={{ color: "var(--ink)" }}>Independently checked</b> by deterministic validators — automatic number, glossary and regionalism checks. <span style={{ color: "var(--ink-faint)" }}>(The second-AI review by GPT-5 runs when an OpenAI key is configured.)</span></li>
+          <li><b style={{ color: "var(--ink)" }}>Independently checked</b> by deterministic validators — automatic number, glossary and regionalism checks. <span style={{ color: "var(--ink-faint)" }}>(The second-AI review by {modelName(criticBase)} runs when its provider is configured and reachable.)</span></li>
         ) : (
           <li><b style={{ color: "var(--ink)" }}>Independently checked</b> by {modelName(m.critic_model_id)} {rawId(m.critic_model_id)} — a different AI, so it catches what the first one might miss.</li>
         )}

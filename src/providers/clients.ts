@@ -25,6 +25,11 @@ export function openaiAvailable(): boolean {
 // This is global provider state, so caching it across requests is correct.
 let _criticLive: { ok: boolean; ts: number } | null = null;
 const CRITIC_PROBE_TTL_MS = 60_000;
+// A mid-run live-call failure backs off for a SHORTER window than a clean probe
+// result, so one transient blip (a single rate-limited document) doesn't black
+// out the critic fleet-wide for a full minute — the next document re-probes
+// quickly and self-heals once the provider recovers.
+const CRITIC_DOWN_COOLDOWN_MS = 10_000;
 
 /** True only if the OpenAI critic can ACTUALLY complete a call right now
  *  (key set AND has credit / isn't rate-limited). Cheap 1-token probe, cached. */
@@ -53,6 +58,19 @@ export async function criticProviderLive(model: string): Promise<boolean> {
 export function criticProviderLiveCached(): boolean | null {
   if (!openaiAvailable()) return false;
   return _criticLive ? _criticLive.ok : null;
+}
+
+/** Mark the critic provider down after a live call actually failed mid-run (e.g.
+ *  rate-limited under concurrent load). This is the honest counterpart to the
+ *  probe: once a real call fails we must NOT keep claiming the live model ran, so
+ *  later segments skip the doomed call and provenance stamps the fallback. */
+export function markCriticUnavailable(reason: string): void {
+  // Back-date the timestamp so the cached-down state expires after the (shorter)
+  // cooldown, not the full probe TTL — within this run the remaining segments
+  // still skip the doomed live call, but a later document re-probes within
+  // seconds instead of inheriting a 60s blackout from one transient failure.
+  _criticLive = { ok: false, ts: Date.now() - (CRITIC_PROBE_TTL_MS - CRITIC_DOWN_COOLDOWN_MS) };
+  console.error(`[critic] live call failed mid-run — degrading to deterministic critic. Reason: ${reason}`);
 }
 
 function anthropic(): Anthropic {
