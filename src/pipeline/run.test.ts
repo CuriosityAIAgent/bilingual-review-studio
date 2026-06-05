@@ -49,6 +49,26 @@ describe("runPipeline (end-to-end, fixture mode)", () => {
     expect(b.validator_results.find((v) => v.validator === "number")?.status).toBe("pass");
     expect(doc.model_run.config_hash).toBeTruthy();
   });
+
+  it("processes a multi-segment doc through the concurrency pool in source order", async () => {
+    // More paragraphs than the refine pool's concurrency cap (6), so the bounded
+    // mapPool actually queues work across multiple workers. The pool is
+    // order-preserving by index, so block N must still map to source paragraph N
+    // (a reorder bug here would silently scramble the bilingual record).
+    const paras = Array.from({ length: 9 }, (_, i) => `Paragraph number ${i} states a distinct fact about markets.`);
+    const doc = await runPipeline({
+      filename: "multi.txt",
+      buffer: Buffer.from(paras.join("\n\n")),
+      owner,
+    });
+    expect(doc.blocks).toHaveLength(paras.length);
+    // Order preserved end-to-end despite parallel refine.
+    doc.blocks.forEach((b, i) => {
+      expect(b.source_text).toBe(paras[i]);
+      expect(b.final_text).toBeTruthy();
+      expect(b.validator_results).toHaveLength(10);
+    });
+  });
 });
 
 describe("the learning flywheel (dynamic)", () => {

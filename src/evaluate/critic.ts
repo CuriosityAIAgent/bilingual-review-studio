@@ -11,7 +11,7 @@
  */
 import { getModels } from "@/src/lib/config";
 import type { CriticFlag, FlagCategory, Severity } from "@/src/lib/doc-model";
-import { criticProviderLive, openaiComplete, parseJsonLoose, stripDelims } from "@/src/providers/clients";
+import { criticProviderLive, markCriticUnavailable, openaiComplete, parseJsonLoose, stripDelims } from "@/src/providers/clients";
 import { currencyValidator } from "@/src/validators/currency";
 import { dateValidator } from "@/src/validators/date";
 import { englishLeakageValidator } from "@/src/validators/english_leakage";
@@ -107,8 +107,12 @@ export async function critique(i: ValidatorInput): Promise<CriticFlag[]> {
       // Union with deterministic checks so hard guarantees (numbers, billón) are
       // never missed even if the LLM critic overlooks them.
       return mergeFlags(flags, deterministicCritique(i));
-    } catch {
-      /* fall through */
+    } catch (e) {
+      // A live call that was probed healthy still failed (rate-limited under
+      // concurrent load, transient 5xx). Degrade the cached health so the rest
+      // of the run AND the provenance stamp honestly reflect the deterministic
+      // fallback — never claim gpt-4o reviewed segments it didn't (ADR 0014).
+      markCriticUnavailable(e instanceof Error ? e.message : String(e));
     }
   }
   return deterministicCritique(i);
