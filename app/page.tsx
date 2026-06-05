@@ -110,7 +110,9 @@ export default function HomePage() {
           <p className="label" style={{ marginBottom: 12 }}>In progress · {docs.length}</p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 12 }}>
             {docs.map((d) => {
-              // "done" = no outstanding problem (consistent with "X to resolve" beside it).
+              // "clear" = no outstanding machine check (consistent with "X to resolve"
+              // beside it). Distinct from the outline's "done", which means a human
+              // actually reviewed the segment — the card can't know that.
               const pct = d.block_count ? Math.round(((d.block_count - d.needs_review_count) / d.block_count) * 100) : 0;
               const open = () => router.push(`/review/${d.doc_id}`);
               return (
@@ -137,7 +139,7 @@ export default function HomePage() {
                       )}
                     </div>
                   </div>
-                  <div className="ui-base mono" style={{ color: "var(--ink-faint)" }}>{pct}% done · {d.needs_review_count} to resolve · {d.edits_per_1k} edits/1k</div>
+                  <div className="ui-base mono" title="Clear = segments with no outstanding machine check (validator, critic flag, or low QE) or already accepted. This is not the same as 'reviewed' — open the document and Accept each segment to review it." style={{ color: "var(--ink-faint)" }}>{pct}% clear · {d.needs_review_count} to resolve · {d.edits_per_1k} edits/1k</div>
                 </div>
               );
             })}

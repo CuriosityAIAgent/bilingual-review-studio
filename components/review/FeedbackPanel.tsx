@@ -58,6 +58,23 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey, onJu
   }, [refreshKey]);
 
   const proposed = rules.filter((r) => r.state === "proposed");
+  // The queue is the GLOBAL memory queue (rules apply to every document), but it
+  // renders in a per-document sidebar — so surface which proposals actually touch
+  // THIS document and sort those to the top, and label the rest as cross-document.
+  const docHaystack = doc.blocks
+    .map((b) => `${b.source_text} ${b.mt_text} ${b.final_text}`)
+    .join(" ")
+    .toLowerCase();
+  // Word-boundary match (not raw substring) so "red" doesn't match "predicted",
+  // and a blank/untrimmed regional_form never matches — mirrors the regionalism
+  // validator's token-aware matching.
+  const appearsHere = (r: NeutralizationRule) => {
+    const form = r.regional_form?.trim().toLowerCase();
+    if (!form) return false;
+    const esc = form.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    return new RegExp(`(?<![\\p{L}\\p{N}])${esc}(?![\\p{L}\\p{N}])`, "u").test(docHaystack);
+  };
+  const proposedSorted = [...proposed].sort((a, b) => Number(appearsHere(b)) - Number(appearsHere(a)));
   const active = rules.filter((r) => r.state === "active" || r.state === "approved").sort((a, b) => b.hits - a.hits);
   const recentEdits = [...doc.edit_log].reverse().slice(0, 6);
 
@@ -95,12 +112,20 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey, onJu
 
         {proposed.length > 0 && (
           <Section title={`Governance queue · ${proposed.length} proposed`}>
+            <p className="ui-base" style={{ color: "var(--ink-faint)", margin: "-2px 0 9px" }}>
+              Rules awaiting an approver. They enter the shared memory and apply to every document — not only this one.
+            </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
-              {proposed.map((r) => (
+              {proposedSorted.map((r) => (
                 <div key={r.id} className="card" style={{ padding: "10px 12px" }}>
                   <div className="doc-body" style={{ fontSize: 14 }}>
                     <s style={{ color: "var(--flag)" }}>{r.regional_form}</s> → <b style={{ color: "var(--memory)" }}>{r.neutral_form}</b>
                   </div>
+                  {/* Tells the reviewer which queued rules are relevant to the text in
+                      front of them vs. ones proposed from other documents. */}
+                  <span className="tag" style={{ marginTop: 4, color: appearsHere(r) ? "var(--accent)" : "var(--ink-faint)" }}>
+                    {appearsHere(r) ? "appears in this document" : "from another document"}
+                  </span>
                   {r.reason && <div className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 2 }}>{r.reason}</div>}
                   <div style={{ display: "flex", gap: 6, marginTop: 8 }}>
                     {canApproveRules ? (

@@ -2,6 +2,7 @@
 import { useRef, useState } from "react";
 import { AlertTriangle, BookOpen, Check, Lock, Save, Sparkles, X } from "lucide-react";
 import type { Block, FlagCategory } from "@/src/lib/doc-model";
+import { blockNeedsReview, hasBlockingValidatorFailure } from "@/src/lib/doc-model";
 import { changedPhrase } from "@/src/lib/text-diff";
 
 export interface SegCaps {
@@ -15,6 +16,7 @@ interface Props {
   block: Block;
   index: number;
   caps: SegCaps;
+  ocrUsed?: boolean;
   onEdit: (blockId: string, text: string, cats: FlagCategory[]) => void;
   onAccept: (blockId: string) => void;
   onReject: (blockId: string) => void;
@@ -53,7 +55,7 @@ function renderTarget(text: string, marks: { phrase: string; note: string; cls: 
   });
 }
 
-export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onLock, onTeach }: Props) {
+export function SegmentRow({ block, index, caps, ocrUsed = false, onEdit, onAccept, onReject, onLock, onTeach }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [dirty, setDirty] = useState(false);
   // Tracks the last text we dispatched, so commit() never fires the same edit
@@ -73,6 +75,15 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
     : "";
 
   const failedValidators = block.validator_results.filter((v) => v.status === "fail");
+  // Same definition the outline dot and the gate use (incl. the doc-level OCR
+  // flag), so the per-segment cue matches the red "needs review" dot the reviewer
+  // clicked to get here. accepted/locked is final → never needs review.
+  const isFinalSeg = block.seg_status === "accepted" || block.seg_status === "locked";
+  const needsReview = !isFinalSeg && (ocrUsed || blockNeedsReview(block));
+  // A hard (blocking) validator failure means Accept is an OVERRIDE, not a
+  // routine resolve — label it honestly. Accepting is still allowed and is
+  // recorded in the append-only edit log.
+  const blockingFail = hasBlockingValidatorFailure(block);
   // What the reviewer changed from the machine draft, stated in the note below.
   // (An inline underline would need a position-aware diff to be accurate — short
   // tokens, repeats, and overlap with memory highlights make value-matching wrong
@@ -139,6 +150,7 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
               QE <b>{block.qe_score}</b>
             </span>
           )}
+          {needsReview && <span className="tag flag"><AlertTriangle size={9} /> needs review</span>}
           {block.seg_status === "edited" && <span className="tag edited">edited</span>}
           {locked && <span className="tag memory"><Lock size={9} /> locked</span>}
           {block.seg_status === "accepted" && <span className="tag memory"><Check size={9} /> accepted</span>}
@@ -215,6 +227,13 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
           </div>
         ))}
 
+        {/* Bridge the outline's red "needs review" dot to the action that clears it. */}
+        {needsReview && caps.canAccept && !isHead && (
+          <div className="ui-base" style={{ marginTop: 11, color: "var(--ink-faint)" }}>
+            Needs your review — edit the text to fix it, or {blockingFail ? "Accept anyway to resolve it over the flagged check" : "Accept to resolve it as-is"}. The outline dot turns green once resolved.
+          </div>
+        )}
+
         {/* Per-segment actions */}
         {(caps.canEdit || caps.canAccept || caps.canLock) && !isHead && (
           <div style={{ display: "flex", gap: 6, marginTop: 12, opacity: 0.92, flexWrap: "wrap", alignItems: "center" }}>
@@ -229,7 +248,16 @@ export function SegmentRow({ block, index, caps, onEdit, onAccept, onReject, onL
               </button>
             )}
             {caps.canAccept && !locked && (block.seg_status === "edited" || block.seg_status === "proposed" || block.seg_status === "machine") && (
-              <button className="btn btn-ghost ui-base" style={{ padding: "4px 9px", color: "var(--memory)" }} onClick={() => onAccept(block.id)}><Check size={12} /> Accept</button>
+              <button
+                className="btn btn-ghost ui-base"
+                style={{ padding: "4px 9px", color: blockingFail ? "var(--flag)" : "var(--memory)" }}
+                title={blockingFail
+                  ? "This segment failed a hard check (e.g. a number or currency rule). Accepting overrides it and is recorded in the audit log."
+                  : "Mark this segment reviewed and resolved."}
+                onClick={() => onAccept(block.id)}
+              >
+                <Check size={12} /> {blockingFail ? "Accept anyway" : "Accept"}
+              </button>
             )}
             {caps.canAccept && (block.seg_status === "edited" || block.seg_status === "proposed") && (
               <button className="btn btn-ghost ui-base" style={{ padding: "4px 9px", color: "var(--flag)" }} onClick={() => onReject(block.id)}><X size={12} /> Reject</button>
