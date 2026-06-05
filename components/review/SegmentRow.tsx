@@ -227,10 +227,15 @@ export function SegmentRow({ block, index, caps, ocrUsed = false, onEdit, onAcce
           </div>
         ))}
 
-        {/* Bridge the outline's red "needs review" dot to the action that clears it. */}
-        {needsReview && caps.canAccept && !isHead && (
+        {/* Bridge the outline's red "needs review" dot to the action that clears
+            it — and make it role-aware: only reviewer/approver/admin can Accept,
+            so the author is pointed at edit + hand-off instead of a button they
+            don't have. */}
+        {needsReview && !isHead && (caps.canEdit || caps.canAccept) && (
           <div className="ui-base" style={{ marginTop: 11, color: "var(--ink-faint)" }}>
-            Needs your review — edit the text to fix it, or {blockingFail ? "Accept anyway to resolve it over the flagged check" : "Accept to resolve it as-is"}. The outline dot turns green once resolved.
+            {caps.canAccept
+              ? <>Needs your review — edit the text to fix it, or {blockingFail ? "Accept anyway to resolve it over the flagged check" : "Accept to resolve it as-is"}. The outline dot turns green once resolved.</>
+              : <>Needs review — edit the Spanish to fix it (it autosaves). Accepting it as resolved happens at the review step, after you hand the document off.</>}
           </div>
         )}
 
