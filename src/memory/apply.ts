@@ -22,10 +22,12 @@ function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-/** Match `from` as a whole word/phrase (Unicode-aware), case-insensitive, also
- * matching a Spanish plural suffix so "ordenador" catches "ordenadores". */
-function termRegex(from: string): RegExp {
-  return new RegExp(`(?<![\\p{L}\\p{N}])(${escapeRegExp(from)})(es|s)?(?![\\p{L}\\p{N}])`, "giu");
+/** Match `from` as a whole word/phrase (Unicode-aware), case-insensitive. When the
+ * target language inflects for plural (Spanish), also match a trailing -s/-es so
+ * "ordenador" catches "ordenadores"; CJK has no plural so the suffix is omitted. */
+function termRegex(from: string, plural: boolean): RegExp {
+  const suffix = plural ? "(es|s)?" : "";
+  return new RegExp(`(?<![\\p{L}\\p{N}])(${escapeRegExp(from)})${suffix}(?![\\p{L}\\p{N}])`, "giu");
 }
 
 /** Spanish pluralization: vowel-final → +s, consonant-final → +es. */
@@ -43,9 +45,9 @@ function matchCase(matched: string, replacement: string): string {
   return replacement;
 }
 
-function replaceTerm(text: string, from: string, to: string): { text: string; count: number } {
+function replaceTerm(text: string, from: string, to: string, plural: boolean): { text: string; count: number } {
   let count = 0;
-  const out = text.replace(termRegex(from), (full: string, _base: string, suffix?: string) => {
+  const out = text.replace(termRegex(from, plural), (full: string, _base: string, suffix?: string) => {
     count += 1;
     // If the source matched a plural, pluralize the neutral replacement to agree.
     return matchCase(full, suffix ? pluralize(to) : to);
@@ -57,15 +59,22 @@ export function isApplicable(rule: NeutralizationRule): boolean {
   return rule.state === "active" || rule.state === "approved";
 }
 
+/** Memory application options. `plural` toggles plural-suffix matching (Spanish on,
+ *  CJK off); pipeline callers pass `locale.morphology.plural_suffix`. Defaults to
+ *  the Spanish behavior so existing call sites/tests are unaffected. */
+export interface ApplyOpts { plural?: boolean }
+
 /** Apply active neutralization rules; returns rewritten text + hit records. */
 export function applyRules(
   text: string,
   rules: NeutralizationRule[],
+  opts: ApplyOpts = {},
 ): { text: string; hits: NeutralizationHit[] } {
+  const plural = opts.plural ?? true;
   let out = text;
   const hits: NeutralizationHit[] = [];
   for (const rule of rules.filter(isApplicable)) {
-    const { text: rewritten, count } = replaceTerm(out, rule.regional_form, rule.neutral_form);
+    const { text: rewritten, count } = replaceTerm(out, rule.regional_form, rule.neutral_form, plural);
     if (count > 0) {
       out = rewritten;
       hits.push({
@@ -83,7 +92,9 @@ export function applyRules(
 export function applyGlossary(
   text: string,
   glossary: GlossaryEntry[],
+  opts: ApplyOpts = {},
 ): { text: string; hits: GlossaryHit[] } {
+  const plural = opts.plural ?? true;
   let out = text;
   const hits: GlossaryHit[] = [];
   for (const entry of glossary) {
@@ -91,14 +102,14 @@ export function applyGlossary(
     if (entry.state !== "active" && entry.state !== "approved") continue;
     let applied = false;
     for (const forbidden of entry.forbidden_terms ?? []) {
-      const { text: rewritten, count } = replaceTerm(out, forbidden, entry.approved_target);
+      const { text: rewritten, count } = replaceTerm(out, forbidden, entry.approved_target, plural);
       if (count > 0) {
         out = rewritten;
         applied = true;
       }
     }
     // Record a hit if the approved target is present in the segment at all.
-    if (applied || termRegex(entry.approved_target).test(out)) {
+    if (applied || termRegex(entry.approved_target, plural).test(out)) {
       hits.push({ source: entry.source, approved_target: entry.approved_target, applied });
     }
   }

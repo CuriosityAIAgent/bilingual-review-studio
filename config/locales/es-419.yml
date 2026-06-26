@@ -35,6 +35,26 @@ style:
   percent_placement: after        # "5 %" / "5%" → after the number
   currency_symbol_placement: before  # "USD 1,234.56" / "$1,234.56"
 
+# Spanish inflects for plural; memory-term matching appends -s/-es.
+morphology:
+  plural_suffix: true
+
+# Language-specific prompt clauses (the rest of the translator/critic prompts are
+# language-agnostic). Models and prompts are config, never hardcoded in source.
+prompts:
+  # Injected after "Translate each English segment into ". Literal block (|-)
+  # preserves line breaks so the es-419 system prompt is byte-identical to the
+  # prior hardcoded version.
+  translator_target: |-
+    NEUTRAL Latin-American Spanish (español neutro, es-419): pan-regional, no
+    country-specific lexicon, no vosotros (use ustedes). Formal, native, institutional register.
+  # Short descriptor in the critic header.
+  critic_target: "español-neutro (es-419)"
+  # Language-specific checks the critic must run, injected after "...integrity, the".
+  critic_checks: |-
+    billón rule (English "billion" = 10^9 = "mil millones", NEVER "billón"), neutrality (flag Peninsular-only
+    OR Mexican-only lexicon and give the neutral alternative)
+
 # Peninsular-only lexicon to flag (must be neutralized before auto-pass).
 regional_flags:
   peninsular:

@@ -56,11 +56,17 @@ async function mapPool<T, R>(items: T[], limit: number, fn: (item: T, index: num
   return out;
 }
 
-async function loadMemory() {
+async function loadMemory(targetLocale: Locale) {
   const store = getStore();
-  await ensureSeeded(store);
+  await ensureSeeded(store, targetLocale);
   const [glossary, rules, tm] = await Promise.all([store.getGlossary(), store.getRules(), store.getTm()]);
-  return { glossary, rules, tm };
+  // Memory is per target language — a Spanish rule must never apply to a Chinese
+  // doc (or vice-versa). Scope everything to the document's target locale.
+  return {
+    glossary: glossary.filter((g) => g.locale === targetLocale),
+    rules: rules.filter((r) => r.locale === targetLocale),
+    tm: tm.filter((t) => t.locale === targetLocale),
+  };
 }
 
 /** Translate + memory post-pass + refine + validate a set of machine blocks. */
@@ -70,8 +76,9 @@ async function processBlocks(
   targetLocale: Locale,
 ): Promise<{ blocks: Block[]; appliedRuleIds: string[] }> {
   const locale = getLocale(targetLocale);
-  const { glossary, rules, tm: _tm } = await loadMemory();
+  const { glossary, rules, tm: _tm } = await loadMemory(targetLocale);
   void _tm;
+  const plural = locale.morphology?.plural_suffix ?? true;
 
   const dntTerms = Array.from(new Set(blocks.flatMap((b) => dntTermsFromEntities(b.entities))));
   const heading = blocks.find((b) => b.type === "title")?.source_text;
@@ -99,8 +106,8 @@ async function processBlocks(
 
     const raw = mtMap[b.id] ?? "";
     // Deterministic memory enforcement (active rules + glossary are hard constraints).
-    const ruleApplied = applyRules(raw, rules);
-    const glossApplied = applyGlossary(ruleApplied.text, glossary);
+    const ruleApplied = applyRules(raw, rules, { plural });
+    const glossApplied = applyGlossary(ruleApplied.text, glossary, { plural });
     const enforced = glossApplied.text;
 
     const refineCtx: RefineContext = {
@@ -164,7 +171,7 @@ export async function runPipeline(input: RunPipelineInput): Promise<DocModel> {
     throw new Error("No translatable content found in the document.");
   }
 
-  const { glossary, rules, tm } = await loadMemory();
+  const { glossary, rules, tm } = await loadMemory(targetLocale);
   const { blocks: prepared, disclaimerStatus } = prepare({
     blocks: rawBlocks,
     glossary,
@@ -204,7 +211,7 @@ export async function runPipeline(input: RunPipelineInput): Promise<DocModel> {
 
 /** Re-run translate/refine/validate on still-machine segments with CURRENT memory. */
 export async function reTranslateDoc(doc: DocModel): Promise<DocModel> {
-  const { glossary, rules, tm } = await loadMemory();
+  const { glossary, rules, tm } = await loadMemory(doc.target_locale);
   // Recompute disclaimer routing (memory may have changed).
   const { blocks: reprepared, disclaimerStatus } = prepare({
     blocks: doc.blocks,

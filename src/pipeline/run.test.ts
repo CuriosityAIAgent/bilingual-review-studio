@@ -104,4 +104,27 @@ describe("the learning flywheel (dynamic)", () => {
     const rulesAfter = await store.getRules();
     expect(rulesAfter[0].hits).toBeGreaterThan(0);
   });
+
+  it("isolates governed memory by target locale — a non-Spanish rule never touches an es-419 doc", async () => {
+    // A rule tagged for a DIFFERENT target language must not apply to an es-419
+    // document. This is the Phase-0 guarantee multi-target support depends on.
+    const store = getStore();
+    const foreign: NeutralizationRule = {
+      id: "rule_zh_iso", regional_form: "plataforma", neutral_form: "ZH_ONLY_SENTINEL",
+      reason: "wrong-locale rule", locale: "zh-Hans", state: "active",
+      created_at: "", updated_at: "", hits: 0,
+    };
+    const existing = await store.getRules();
+    await store.saveRules([...existing, foreign]);
+
+    const doc = await runPipeline({
+      filename: "isolation.txt",
+      buffer: Buffer.from("The new platform runs on the device"),
+      owner,
+    });
+    // The es-419 fixture renders "platform" → "plataforma"; the zh-Hans rule must
+    // be filtered out, so the sentinel never appears in the Spanish output.
+    expect(doc.target_locale).toBe("es-419");
+    expect(JSON.stringify(doc.blocks)).not.toContain("ZH_ONLY_SENTINEL");
+  });
 });

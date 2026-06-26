@@ -13,9 +13,12 @@
 export const SCHEMA_VERSION = "1.0" as const;
 
 // ── Locales ──────────────────────────────────────────────────────────────────
-// v1 default is neutral Latin-American Spanish. Per-market locales are
-// configurable (spec §2) but neutral is the primary deliverable.
-export type Locale = "es-419" | "es-ES" | "es-MX";
+// Multi-target: neutral Latin-American Spanish was the first deliverable; the
+// pipeline, memory, and validators are locale-parameterized so additional canonical
+// targets (Simplified/Traditional Chinese) plug in via config + governed memory.
+// Each target has its own isolated memory; there is no "neutral Chinese" — zh-Hans
+// (Mainland) and zh-Hant (Taiwan/HK) are distinct deliverables (script + lexicon).
+export type Locale = "es-419" | "es-ES" | "es-MX" | "zh-Hans" | "zh-Hant";
 export const DEFAULT_TARGET_LOCALE: Locale = "es-419";
 
 // ── Roles, teams, status ─────────────────────────────────────────────────────
@@ -402,6 +405,9 @@ export interface TmProposal {
   id: string;
   source_text: string;
   target_text: string;
+  /** Target language this correction belongs to — so it folds into the right
+   *  locale's TM and never contaminates another locale's memory. */
+  locale: Locale;
   doc_id: string;
   doc_title: string;
   segment_id: string;

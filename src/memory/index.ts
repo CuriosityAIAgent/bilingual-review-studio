@@ -260,6 +260,7 @@ export async function commitTmImport(
 export interface ProposeTmInput {
   source_text: string;
   target_text: string;
+  locale: Locale;
   doc_id: string;
   doc_title: string;
   segment_id: string;
@@ -269,16 +270,17 @@ export interface ProposeTmInput {
 export async function proposeTmFromEdit(i: ProposeTmInput): Promise<TmProposal> {
   const store = getStore();
   const proposals = await store.getTmProposals();
-  // If an identical pending proposal already exists, return it (idempotent — a
-  // double-click or re-send doesn't queue duplicates for the approver).
+  // If an identical pending proposal already exists FOR THIS LOCALE, return it
+  // (idempotent — a double-click or re-send doesn't queue duplicates).
   const dup = proposals.find(
-    (p) => p.state === "pending" && p.source_text === i.source_text && p.target_text === i.target_text,
+    (p) => p.state === "pending" && p.locale === i.locale && p.source_text === i.source_text && p.target_text === i.target_text,
   );
   if (dup) return dup;
   const created: TmProposal = {
     id: id("tmprop"),
     source_text: i.source_text,
     target_text: i.target_text,
+    locale: i.locale,
     doc_id: i.doc_id,
     doc_title: i.doc_title,
     segment_id: i.segment_id,
@@ -315,9 +317,13 @@ export async function captureEditToMemory(doc: DocModel, blockId: string, by: Us
   if (block.type === "disclaimer" || isDisclaimer(block.source_text)) return false;
   if (target.toLowerCase() === source.toLowerCase()) return false; // no-op / untranslated
 
-  // Don't learn a correction that still fails a hard guarantee.
+  // Don't learn a correction that still fails a hard guarantee. Validate against
+  // THIS document's locale memory only (a Chinese edit isn't checked against, or
+  // captured into, Spanish memory).
   const store = getStore();
-  const [glossary, rules] = await Promise.all([store.getGlossary(), store.getRules()]);
+  const [allGlossary, allRules] = await Promise.all([store.getGlossary(), store.getRules()]);
+  const glossary = allGlossary.filter((g) => g.locale === doc.target_locale);
+  const rules = allRules.filter((r) => r.locale === doc.target_locale);
   const results = runValidators({
     source: block.source_text,
     target: block.final_text,
@@ -333,6 +339,7 @@ export async function captureEditToMemory(doc: DocModel, blockId: string, by: Us
   const proposal = await proposeTmFromEdit({
     source_text: source,
     target_text: target,
+    locale: doc.target_locale,
     doc_id: doc.doc_id,
     doc_title: doc.title,
     segment_id: blockId,
@@ -376,7 +383,9 @@ export async function decideTmProposal(
 
   let addedToTm = false;
   if (approve && !isDisclaimer(p.source_text)) {
-    await addTm({ source_text: p.source_text, target_text: p.target_text, kind: "segment", approved_by: by });
+    // Fold into THIS proposal's locale TM (never default to es-419). Older
+    // proposals without a locale fall back to es-419 for backward-compat.
+    await addTm({ source_text: p.source_text, target_text: p.target_text, locale: p.locale ?? "es-419", kind: "segment", approved_by: by });
     addedToTm = true;
   }
   return { proposal: decided, addedToTm };

@@ -6,7 +6,7 @@
  * exposes a `config_hash` for reproducibility in `model_run` (spec §8).
  */
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { parse as parseYaml } from "yaml";
 import { criticProviderLiveCached } from "@/src/providers/clients";
@@ -52,7 +52,21 @@ export interface LocaleConfig {
   number_format: { thousands_separator: string; decimal_separator: string; example: string };
   scale_terms: { billion: string; trillion: string; basis_points: string };
   style: Record<string, string>;
-  regional_flags: { peninsular: string[]; mexican: string[] };
+  // Generic variant→flagged-terms map (es-419: peninsular/mexican; zh-Hans:
+  // traditional-only forms; etc.). The regionalism validator iterates the keys,
+  // so any language can declare its own regional variants.
+  regional_flags: Record<string, string[]>;
+  // Language-specific prompt CLAUSES injected into the translator/critic system
+  // prompts (the rest of the prompt is language-agnostic). Keeps prompts as
+  // config, never hardcoding a target language in source.
+  prompts: {
+    translator_target: string; // "...into <X>: <register/script rules>"
+    critic_target: string; // short descriptor for the critic header
+    critic_checks: string; // language-specific checks the critic must run
+  };
+  // Target-language morphology toggles. Spanish inflects for plural; CJK does not,
+  // so memory-term matching/replacement must not append plural suffixes.
+  morphology: { plural_suffix: boolean };
 }
 
 export interface PermissionsConfig {
@@ -77,8 +91,15 @@ function loadAll() {
   const models = readYaml<ModelsConfig>("models.yml");
   const thresholds = readYaml<ThresholdsConfig>("thresholds.yml");
   const permissions = readYaml<PermissionsConfig>("permissions.yml");
-  const es419 = readYaml<LocaleConfig>("locales/es-419.yml");
-  const locales: Record<string, LocaleConfig> = { "es-419": es419 };
+  // Load every locale config in config/locales/*.yml (dynamic, so a new target is
+  // just a new file). Keyed by the `locale` field inside each config.
+  const locales: Record<string, LocaleConfig> = {};
+  // Sorted so config_hash is independent of filesystem enumeration order.
+  for (const file of readdirSync(join(CONFIG_DIR, "locales")).sort()) {
+    if (!/\.ya?ml$/.test(file)) continue;
+    const cfg = readYaml<LocaleConfig>(`locales/${file}`);
+    locales[cfg.locale] = cfg;
+  }
 
   const configHash = createHash("sha256")
     .update(JSON.stringify({ models, thresholds, permissions, locales }))

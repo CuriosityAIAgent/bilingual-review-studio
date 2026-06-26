@@ -51,8 +51,7 @@ function buildSystemPrompt(ctx: TranslateContext): string {
   const fmt = ctx.locale.number_format;
   return [
     "You are a professional financial translator for a private bank. Translate each English",
-    "segment into NEUTRAL Latin-American Spanish (español neutro, es-419): pan-regional, no",
-    "country-specific lexicon, no vosotros (use ustedes). Formal, native, institutional register.",
+    `segment into ${ctx.locale.prompts.translator_target}`,
     "",
     "INPUT: the user message contains a <DATA> block of JSON with `section_heading` (context only)",
     "and `segments` (the array of objects to translate). Translate each segment's `en` field.",

@@ -60,8 +60,9 @@ function validatorInput(target: string, ctx: RefineContext): ValidatorInput {
 
 /** Enforce active rules + glossary deterministically (used after each rewrite). */
 function enforceMemory(text: string, ctx: RefineContext): string {
-  const r = applyRules(text, ctx.rules);
-  const g = applyGlossary(r.text, ctx.glossary);
+  const plural = ctx.locale.morphology?.plural_suffix ?? true;
+  const r = applyRules(text, ctx.rules, { plural });
+  const g = applyGlossary(r.text, ctx.glossary, { plural });
   return g.text;
 }
 
