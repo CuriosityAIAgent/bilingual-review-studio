@@ -16,8 +16,8 @@ import { Check } from "lucide-react";
 // is present and the deterministic critic stands in). Never hardcode a brand for
 // a configurable stage. The critic *reviews*, the translator *rewrites* what it
 // flags — the captions reflect that split.
-const STAGES = [
-  { key: "translate", label: "Translate", caption: "The translator (Claude Sonnet 4.6) drafts each segment in neutral Spanish…" },
+const stagesFor = (targetLabel: string) => [
+  { key: "translate", label: "Translate", caption: `The translator (Claude Sonnet 4.6) drafts each segment in ${targetLabel}…` },
   { key: "checks", label: "Checks", caption: "Deterministic validators check numbers, dates, glossary and regionalisms…" },
   { key: "governance", label: "Governance", caption: "Applying your governed memory — approved rules and glossary…" },
   { key: "rewrite", label: "Rewrite", caption: "A second, independent model reviews the weak segments and the translator refines them — a decorrelated check on the first…" },
@@ -35,7 +35,8 @@ const REWRITE_SUBSTEPS = [
 const STEP_MS = 820;
 const SUBSTEP_MS = 2100;
 
-export function ProcessingView() {
+export function ProcessingView({ targetLabel = "the target language" }: { targetLabel?: string }) {
+  const STAGES = stagesFor(targetLabel);
   const [step, setStep] = useState(0);
   const [sub, setSub] = useState(0);
   const [secs, setSecs] = useState(0);

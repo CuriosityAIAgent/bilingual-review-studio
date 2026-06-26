@@ -178,9 +178,9 @@ export default function ReviewPage() {
             <Sparkles size={14} style={{ color: "var(--accent)" }} /> {busy === "retranslate" ? "Re-translating…" : "Re-translate with learnings"}
           </button>
 
-          {/* Export — continuous Spanish (read / copy-paste / email) + the bilingual audit record */}
+          {/* Export — continuous target-language text (read / copy-paste / email) + the bilingual audit record */}
           <a className="btn btn-ghost" href={`/api/documents/${id}/export?format=reflowed`} target="_blank" rel="noreferrer"
-            title="The finished Spanish as one continuous document — for reading, printing, or copy-paste into email">
+            title={`The finished ${localeLabel(doc.target_locale)} as one continuous document — for reading, printing, or copy-paste into email`}>
             <Download size={14} /> Download translation
           </a>
           <a className="btn btn-ghost" href={`/api/documents/${id}/export?format=record&annotations=1`} target="_blank" rel="noreferrer"
@@ -236,6 +236,8 @@ export default function ReviewPage() {
           {doc.blocks.map((b, i) => (
             <SegmentRow
               key={b.id} block={b} index={i} caps={caps} ocrUsed={doc.source.ocr_used}
+              targetLabel={localeLabel(doc.target_locale)}
+              targetLang={doc.target_locale.startsWith("zh") ? doc.target_locale : "es"}
               onEdit={onEdit}
               onAccept={(bid) => act({ kind: "accept", blockId: bid })}
               onReject={(bid) => act({ kind: "reject", blockId: bid, reason: "rejected" })}
@@ -294,7 +296,7 @@ function ProvenanceFooter({ doc }: { doc: DocModel }) {
         <li><b style={{ color: "var(--ink)" }}>Your team's approved glossary and rules</b> were applied automatically.</li>
       </ul>
       <p className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 12 }}>
-        The final Spanish is decided by automated checks and a human sign-off — never by an AI's confidence score.
+        The final translation is decided by automated checks and a human sign-off — never by an AI's confidence score.
       </p>
       <p className="mono" style={{ fontSize: 10.5, color: "var(--ink-faint)", marginTop: 14, lineHeight: 1.6 }}>
         Audit · prompts {m.prompt_version} · rules {m.rules_version} · glossary {m.glossary_version} · config {m.config_hash}

@@ -6,7 +6,7 @@ import { TopBar } from "@/components/TopBar";
 export const metadata: Metadata = {
   title: "Translation Studio",
   description:
-    "A governed neutral-Spanish translation workflow — turns reviewer corrections into reusable, auditable institutional memory.",
+    "A governed multilingual translation workflow — turns reviewer corrections into reusable, auditable institutional memory.",
 };
 
 // Set the theme before paint to avoid a flash (Paper default; honour saved + OS).

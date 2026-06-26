@@ -16,6 +16,11 @@ interface Props {
   block: Block;
   index: number;
   caps: SegCaps;
+  /** Display name of the target language (e.g. "Neutral Spanish", "Traditional Chinese"). */
+  targetLabel: string;
+  /** BCP-47 lang for the editable cell (e.g. "es", "zh-Hant") — drives screen-reader
+   *  pronunciation and spellcheck. */
+  targetLang: string;
   ocrUsed?: boolean;
   onEdit: (blockId: string, text: string, cats: FlagCategory[]) => void;
   onAccept: (blockId: string) => void;
@@ -55,7 +60,7 @@ function renderTarget(text: string, marks: { phrase: string; note: string; cls: 
   });
 }
 
-export function SegmentRow({ block, index, caps, ocrUsed = false, onEdit, onAccept, onReject, onLock, onTeach }: Props) {
+export function SegmentRow({ block, index, caps, targetLabel, targetLang, ocrUsed = false, onEdit, onAccept, onReject, onLock, onTeach }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   const [dirty, setDirty] = useState(false);
   // Tracks the last text we dispatched, so commit() never fires the same edit
@@ -140,7 +145,7 @@ export function SegmentRow({ block, index, caps, ocrUsed = false, onEdit, onAcce
       {/* header — Spanish target */}
       <div style={{ padding: "18px 16px 0 28px", minWidth: 0 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 7, flexWrap: "wrap" }}>
-          <span className="label">Español neutro · target</span>
+          <span className="label">{targetLabel} · target</span>
           {block.qe_score !== null && (
             <span
               className={`qe ${block.qe_score >= 0.72 ? "hi" : block.qe_score >= 0.55 ? "mid" : "lo"}`}
@@ -183,9 +188,9 @@ export function SegmentRow({ block, index, caps, ocrUsed = false, onEdit, onAcce
           suppressContentEditableWarning
           onInput={onInput}
           onBlur={commit}
-          lang="es"
+          lang={targetLang}
           spellCheck={false}
-          aria-label="Spanish target, editable"
+          aria-label={`${targetLabel} target, editable`}
           style={{
             fontSize, fontWeight: isHead ? 600 : 400, minHeight: 24, lineHeight: 1.66,
             fontStyle: block.type === "disclaimer" ? "italic" : "normal",
@@ -238,7 +243,7 @@ export function SegmentRow({ block, index, caps, ocrUsed = false, onEdit, onAcce
           <div className="ui-base" style={{ marginTop: 11, color: "var(--ink-faint)" }}>
             {canAcceptBlock
               ? <>Needs your review — edit the text to fix it, or {blockingFail ? "Accept anyway to resolve it over the flagged check" : "Accept to resolve it as-is"}. The outline dot turns green once resolved.</>
-              : <>Needs review — edit the Spanish to fix it (it autosaves). {block.type === "disclaimer" ? "Disclaimers are accepted by Supervisory Management, not at this step." : "Accepting it as resolved happens at the review step, after you hand the document off."}</>}
+              : <>Needs review — edit the translation to fix it (it autosaves). {block.type === "disclaimer" ? "Disclaimers are accepted by Supervisory Management, not at this step." : "Accepting it as resolved happens at the review step, after you hand the document off."}</>}
           </div>
         )}
 
