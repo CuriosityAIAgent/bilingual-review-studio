@@ -91,7 +91,7 @@ export default function HomePage() {
   if (busy === "parsing") {
     return (
       <div style={{ maxWidth: 1040, margin: "0 auto", padding: "40px 24px 96px" }}>
-        <ProcessingView />
+        <ProcessingView targetLabel={TARGET_LOCALES.find((l) => l.code === locale)?.label ?? "Neutral Spanish"} />
       </div>
     );
   }
@@ -102,7 +102,7 @@ export default function HomePage() {
         <p className="label">{seat ? `Signed in as ${roleLabel(seat.role)}` : "Translation Studio"}</p>
         <h1 className="font-display" style={{ fontSize: 30, letterSpacing: "-0.02em", marginTop: 4 }}>Current work</h1>
         <p className="doc-body" style={{ color: "var(--ink-soft)", marginTop: 6, maxWidth: 620 }}>
-          English research, translated to neutral Spanish and reviewed through the short process. Open a piece to pick up where it stands, or start something new below.
+          English research, translated and reviewed through the short process. Open a piece to pick up where it stands, or start something new below.
         </p>
       </div>
 
@@ -161,7 +161,7 @@ export default function HomePage() {
               })} style={{ padding: "16px 18px", textAlign: "left", cursor: "pointer", display: "flex", flexDirection: "column", gap: 8 }}>
                 <span className="font-display" style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.25 }}>{s.title}</span>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <span className="ui-base mono" style={{ color: "var(--ink-faint)" }}>{s.words} words · EN → Neutral Spanish</span>
+                  <span className="ui-base mono" style={{ color: "var(--ink-faint)" }}>{s.words} words · EN → {TARGET_LOCALES.find((l) => l.code === locale)?.label ?? "Neutral Spanish"}</span>
                   <span className="ui-base" style={{ color: "var(--accent)", fontWeight: 600, display: "inline-flex", gap: 4, alignItems: "center" }}>Open <ArrowRight size={13} /></span>
                 </div>
               </button>
@@ -178,7 +178,7 @@ export default function HomePage() {
         <div className="card" style={{ padding: 18, marginBottom: 12, opacity: canUpload ? 1 : 0.6 }}>
           <p className="ui-base" style={{ color: "var(--ink-soft)", marginBottom: 10 }}>
             {canUpload
-              ? "Paste English — a document, an email, a memo. We split it into paragraphs and translate to neutral Spanish, laid out side by side for review."
+              ? `Paste English — a document, an email, a memo. We split it into paragraphs and translate to ${TARGET_LOCALES.find((l) => l.code === locale)?.label ?? "Neutral Spanish"}, laid out side by side for review.`
               : "Sign in as Investment Strategist to translate new text."}
           </p>
           <textarea

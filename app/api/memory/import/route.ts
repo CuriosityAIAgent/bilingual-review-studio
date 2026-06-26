@@ -32,7 +32,7 @@ export async function POST(req: Request) {
   };
   const source = (body.source_text ?? "").trim();
   const target = (body.target_text ?? "").trim();
-  if (!source || !target) return fail("Paste both the English source and the Spanish translation.");
+  if (!source || !target) return fail("Paste both the English source and the translation.");
 
   await ensureSeeded(getStore());
 

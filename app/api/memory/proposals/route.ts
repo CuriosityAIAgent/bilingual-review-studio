@@ -33,7 +33,7 @@ export async function POST(req: Request) {
   };
   const source_text = (body.source_text ?? "").trim();
   const target_text = (body.target_text ?? "").trim();
-  if (!source_text || !target_text) return fail("Both the English source and the corrected Spanish are required.");
+  if (!source_text || !target_text) return fail("Both the English source and the corrected translation are required.");
 
   const store = getStore();
   await ensureSeeded(store);
