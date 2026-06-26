@@ -5,7 +5,7 @@ import {
   Check, CheckCircle2, Download, FileText, PanelLeftClose, PanelRightClose, RotateCcw, Save, Send, Sparkles, UserCheck,
 } from "lucide-react";
 import { api, type ActionBody } from "@/app/lib/client";
-import type { DocModel, FlagCategory, TmProposal } from "@/src/lib/doc-model";
+import type { DocModel, FlagCategory, Locale, TmProposal } from "@/src/lib/doc-model";
 import { useSeat } from "@/components/Providers";
 import { type SegCaps, SegmentRow } from "@/components/review/SegmentRow";
 import { OutlineNavigator } from "@/components/review/OutlineNavigator";
@@ -249,7 +249,7 @@ export default function ReviewPage() {
         </div>
         {showPanel && (
           <aside style={{ width: 320, flexShrink: 0, display: "flex", flexDirection: "column", gap: 16 }}>
-            <MemoryProposals canApprove={canApproveRules} refreshKey={refreshKey} onChange={() => setRefreshKey((k) => k + 1)} />
+            <MemoryProposals locale={doc.target_locale} canApprove={canApproveRules} refreshKey={refreshKey} onChange={() => setRefreshKey((k) => k + 1)} />
             <FeedbackPanel doc={doc} canApproveRules={canApproveRules} onGovern={onGovern} refreshKey={refreshKey} onJump={jump} />
           </aside>
         )}
@@ -311,13 +311,15 @@ function Center({ children }: { children: React.ReactNode }) {
 
 /** Pending reviewer corrections waiting to be folded into translation memory.
  *  Reviewers file these via "Send to memory"; an approver approves/rejects here. */
-function MemoryProposals({ canApprove, refreshKey, onChange }: { canApprove: boolean; refreshKey: number; onChange: () => void }) {
+function MemoryProposals({ locale, canApprove, refreshKey, onChange }: { locale: Locale; canApprove: boolean; refreshKey: number; onChange: () => void }) {
   const [pending, setPending] = useState<TmProposal[]>([]);
   const [busyId, setBusyId] = useState("");
 
+  // TM is isolated per target language — only show proposals for THIS doc's locale,
+  // so a zh-Hans review never surfaces Spanish (or zh-Hant) pending corrections.
   const load = useCallback(() => {
-    api.listMemoryProposals("pending").then((r) => setPending(r.proposals)).catch(() => {});
-  }, []);
+    api.listMemoryProposals("pending").then((r) => setPending(r.proposals.filter((p) => p.locale === locale))).catch(() => {});
+  }, [locale]);
   useEffect(() => { load(); }, [load, refreshKey]);
 
   const decide = async (id: string, action: "approve" | "reject") => {
@@ -331,7 +333,7 @@ function MemoryProposals({ canApprove, refreshKey, onChange }: { canApprove: boo
   return (
     <div className="card" style={{ padding: "14px 16px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
-        <span className="label">Edits awaiting memory</span>
+        <span className="label">Edits awaiting memory · {localeLabel(locale)}</span>
         <span className="tag" style={{ marginLeft: "auto", color: pending.length ? "var(--accent)" : "var(--ink-faint)" }}>{pending.length}</span>
       </div>
       <p className="ui-base" style={{ color: "var(--ink-faint)", margin: "0 0 10px" }}>

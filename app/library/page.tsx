@@ -5,11 +5,38 @@ import { ArrowRight, FileText, RotateCcw, Trash2 } from "lucide-react";
 import { api } from "@/app/lib/client";
 import type { DocSummary } from "@/src/store/types";
 import { useSeat } from "@/components/Providers";
+import { TARGET_LOCALES, localeLabel } from "@/app/lib/roles";
 
 const STATUS_COLOR: Record<string, string> = {
   draft: "var(--ink-faint)", in_review: "var(--edited)", changes_requested: "var(--flag)",
   approved: "var(--memory)", published: "var(--accent)",
 };
+
+/**
+ * Group documents by target language for display. Known target locales come
+ * first in TARGET_LOCALES order; any unexpected code falls into a trailing group
+ * keyed by its raw code. Only non-empty groups are returned. Preserves the input
+ * order within each group.
+ */
+function groupByLocale(docs: DocSummary[]): { code: string; label: string; docs: DocSummary[] }[] {
+  const groups: { code: string; label: string; docs: DocSummary[] }[] = [];
+  const indexByCode = new Map<string, number>();
+  for (const d of docs) {
+    const code = d.target_locale;
+    let idx = indexByCode.get(code);
+    if (idx === undefined) {
+      idx = groups.length;
+      indexByCode.set(code, idx);
+      groups.push({ code, label: localeLabel(code), docs: [] });
+    }
+    groups[idx].docs.push(d);
+  }
+  const rank = (code: string) => {
+    const i = TARGET_LOCALES.findIndex((l) => l.code === code);
+    return i === -1 ? TARGET_LOCALES.length : i;
+  };
+  return groups.sort((a, b) => rank(a.code) - rank(b.code));
+}
 
 export default function LibraryPage() {
   const { seat } = useSeat();
@@ -66,53 +93,61 @@ export default function LibraryPage() {
           <Link href="/" className="btn btn-primary" style={{ marginTop: 16, display: "inline-flex" }}>Upload a document</Link>
         </div>
       ) : (
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          {shown.map((d) => {
-            // "done" = no outstanding problem (consistent with the needs-review count).
-            const pct = d.block_count ? Math.round(((d.block_count - d.needs_review_count) / d.block_count) * 100) : 0;
-            return (
-              <div key={d.doc_id} className="card" style={{ padding: "16px 18px", display: "grid", gridTemplateColumns: "1fr auto auto", gap: 18, alignItems: "center" }}>
-                {isDeleted ? (
-                  <div style={{ minWidth: 0 }}>
-                    <div className="font-display" style={{ fontWeight: 600, fontSize: 16, color: "var(--ink-soft)" }}>{d.title}</div>
-                    <div className="ui-base" style={{ color: "var(--ink-faint)", marginTop: 3 }}>
-                      {d.source_type.toUpperCase()} · {d.block_count} segments · deleted — restore to edit
+        <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+          {groupByLocale(shown).map((group) => (
+            <div key={group.code}>
+              <p className="label" style={{ marginBottom: 10, color: "var(--ink-soft)" }}>{group.label} · {group.docs.length}</p>
+              <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+                {group.docs.map((d) => {
+                  // "done" = no outstanding problem (consistent with the needs-review count).
+                  const pct = d.block_count ? Math.round(((d.block_count - d.needs_review_count) / d.block_count) * 100) : 0;
+                  return (
+                    <div key={d.doc_id} className="card" style={{ padding: "16px 18px", display: "grid", gridTemplateColumns: "1fr auto auto", gap: 18, alignItems: "center" }}>
+                      {isDeleted ? (
+                        <div style={{ minWidth: 0 }}>
+                          <div className="font-display" style={{ fontWeight: 600, fontSize: 16, color: "var(--ink-soft)" }}>{d.title}</div>
+                          <div className="ui-base" style={{ color: "var(--ink-faint)", marginTop: 3 }}>
+                            {d.source_type.toUpperCase()} · {d.block_count} segments · deleted — restore to edit
+                          </div>
+                        </div>
+                      ) : (
+                        <Link href={`/review/${d.doc_id}`} style={{ minWidth: 0 }}>
+                          <div className="font-display" style={{ fontWeight: 600, fontSize: 16 }}>{d.title}</div>
+                          <div className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 3 }}>
+                            {d.source_type.toUpperCase()} · {d.block_count} segments · {d.needs_review_count} need review · team {d.owner_team}
+                          </div>
+                        </Link>
+                      )}
+                      <div style={{ textAlign: "right" }}>
+                        <div className="mono ui-base" title="Segments with no outstanding machine check (validator, critic flag, or low QE) or already accepted — not the same as 'reviewed'." style={{ color: "var(--ink-soft)" }}>{pct}% clear</div>
+                        <div className="mono ui-base" style={{ color: "var(--ink-faint)" }}>{d.edits_per_1k} edits/1k</div>
+                      </div>
+                      <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+                        <span className="tag" style={{ color: "var(--ink-soft)" }}>{localeLabel(d.target_locale)}</span>
+                        <span className="tag" style={{ color: STATUS_COLOR[d.status] }}>
+                          <span className="dot" style={{ background: STATUS_COLOR[d.status] }} /> {d.status.replace("_", " ")}
+                        </span>
+                        {canDelete && (isDeleted ? (
+                          <button className="btn btn-ghost" aria-label="Restore" title="Restore this document"
+                            onClick={() => onRestore(d)} style={{ padding: "6px 8px", color: "var(--memory)" }}>
+                            <RotateCcw size={14} />
+                          </button>
+                        ) : (
+                          <button className="btn btn-ghost" aria-label="Delete" title="Delete (recoverable)"
+                            onClick={() => onDelete(d)} style={{ padding: "6px 8px", color: "var(--flag)" }}>
+                            <Trash2 size={14} />
+                          </button>
+                        ))}
+                        {!isDeleted && (
+                          <Link href={`/review/${d.doc_id}`} className="btn btn-ghost" style={{ padding: "6px 8px" }}><ArrowRight size={15} /></Link>
+                        )}
+                      </div>
                     </div>
-                  </div>
-                ) : (
-                  <Link href={`/review/${d.doc_id}`} style={{ minWidth: 0 }}>
-                    <div className="font-display" style={{ fontWeight: 600, fontSize: 16 }}>{d.title}</div>
-                    <div className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 3 }}>
-                      {d.source_type.toUpperCase()} · {d.block_count} segments · {d.needs_review_count} need review · team {d.owner_team}
-                    </div>
-                  </Link>
-                )}
-                <div style={{ textAlign: "right" }}>
-                  <div className="mono ui-base" title="Segments with no outstanding machine check (validator, critic flag, or low QE) or already accepted — not the same as 'reviewed'." style={{ color: "var(--ink-soft)" }}>{pct}% clear</div>
-                  <div className="mono ui-base" style={{ color: "var(--ink-faint)" }}>{d.edits_per_1k} edits/1k</div>
-                </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                  <span className="tag" style={{ color: STATUS_COLOR[d.status] }}>
-                    <span className="dot" style={{ background: STATUS_COLOR[d.status] }} /> {d.status.replace("_", " ")}
-                  </span>
-                  {canDelete && (isDeleted ? (
-                    <button className="btn btn-ghost" aria-label="Restore" title="Restore this document"
-                      onClick={() => onRestore(d)} style={{ padding: "6px 8px", color: "var(--memory)" }}>
-                      <RotateCcw size={14} />
-                    </button>
-                  ) : (
-                    <button className="btn btn-ghost" aria-label="Delete" title="Delete (recoverable)"
-                      onClick={() => onDelete(d)} style={{ padding: "6px 8px", color: "var(--flag)" }}>
-                      <Trash2 size={14} />
-                    </button>
-                  ))}
-                  {!isDeleted && (
-                    <Link href={`/review/${d.doc_id}`} className="btn btn-ghost" style={{ padding: "6px 8px" }}><ArrowRight size={15} /></Link>
-                  )}
-                </div>
+                  );
+                })}
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       )}
     </div>
