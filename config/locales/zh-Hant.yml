@@ -36,6 +36,10 @@ scale_terms:
 morphology:
   plural_suffix: false
 
+# Output must be Traditional script — the script_consistency validator flags any
+# Simplified character.
+script: traditional
+
 style:
   second_person: 您                  # polite form, never 你
   register: formal

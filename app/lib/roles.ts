@@ -30,11 +30,12 @@ export const LOCALE_LABELS: Record<string, string> = {
 
 export const localeLabel = (code: string): string => LOCALE_LABELS[code] ?? code;
 
-/** Target languages selectable at upload (order = display order). zh-Hans is
- *  config-ready but seeded later, so it's omitted from the picker until then. */
+/** Target languages selectable at upload (order = display order). Each carries its
+ *  own isolated governed memory. */
 export const TARGET_LOCALES: { code: string; label: string }[] = [
   { code: "es-419", label: "Neutral Spanish" },
   { code: "zh-Hant", label: "Traditional Chinese" },
+  { code: "zh-Hans", label: "Simplified Chinese" },
 ];
 
 export type StepGroup = "pipeline" | "review";

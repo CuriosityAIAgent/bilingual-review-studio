@@ -27,7 +27,7 @@ export const VALIDATORS: ValidatorFn[] = [
   regionalismValidator,
   disclaimerValidator,
   englishLeakageValidator,
-  scriptConsistencyValidator, // self-gates: only acts on zh-Hant targets
+  scriptConsistencyValidator, // self-gates: only acts on Chinese targets (script field)
 ];
 
 export function runValidators(input: ValidatorInput): ValidatorResult[] {

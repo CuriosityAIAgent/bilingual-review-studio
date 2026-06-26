@@ -1,0 +1,60 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Simplified Chinese (简体中文, zh-Hans) — Mainland-oriented business Chinese, the
+# second Chinese target. Distinct deliverable from Traditional (zh-Hant): different
+# script AND lexicon. Calibrated from the Simplified edition of the J.P. Morgan
+# "2026 Mid-Year Outlook" parallel corpus.
+#
+# The cardinal error is SCRIPT IMPURITY (any Traditional character in the output)
+# — enforced by the script_consistency validator (script: simplified). Lexical
+# house-style differences grow as governed memory via reviewer corrections.
+# ─────────────────────────────────────────────────────────────────────────────
+
+locale: zh-Hans
+name: "简体中文（中国大陆）"
+description: >
+  Simplified-character business Chinese for Mainland distribution. Formal written
+  register, polite 您. Entirely Simplified script — never mix in Traditional
+  characters.
+
+number_format:
+  thousands_separator: ","
+  decimal_separator: "."
+  example: "1,234.56"
+
+# The Chinese number trap (the billón-trap analog): English 10^9 is 十亿 (expressed
+# via 亿, e.g. US$6bn → 60亿美元); 10^12 is 万亿. Never render a billion as 万亿.
+scale_terms:
+  billion: "十亿"
+  trillion: "万亿"
+  basis_points: "基点"
+
+# Simplified inflects nothing for plural; memory matching must not append suffixes.
+morphology:
+  plural_suffix: false
+
+# Output must be Simplified script — the script_consistency validator flags any
+# Traditional character.
+script: simplified
+
+style:
+  second_person: 您                  # honorific form, never 你
+  register: formal
+  percent_placement: after           # half-width %, after the number
+  currency_symbol_placement: after   # amount + 美元 (e.g. 1.5万亿美元)
+
+# Traditional-only LEXICAL forms to flag and neutralise to the Mainland term. Starts
+# empty — house rules are taught via review; script-level purity (no Traditional
+# glyphs) is handled by the script_consistency validator, not here.
+regional_flags: {}
+
+prompts:
+  translator_target: |-
+    Simplified Chinese (简体中文, zh-Hans) for Mainland China distribution. Formal written register,
+    polite second person 您. Use full-width CJK punctuation 。，、；：？（）; keep Latin abbreviations
+    in half-width parentheses, e.g. 人工智能(AI), 数据中心. The output must be ENTIRELY Simplified
+    characters — never use a Traditional character.
+  critic_target: "简体中文 (zh-Hans)"
+  critic_checks: |-
+    the Chinese number trap (English "billion" = 10^9 = 十亿 expressed via 亿, NEVER 万亿 = 10^12 = trillion),
+    SCRIPT PURITY (flag ANY Traditional character — the translation must be wholly Simplified), full-width
+    CJK punctuation, and Mainland business register

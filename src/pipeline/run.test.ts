@@ -170,3 +170,32 @@ describe("zh-Hant (Traditional Chinese) target", () => {
     expect(es.status).toBe("pass");
   });
 });
+
+describe("zh-Hans (Simplified Chinese) target", () => {
+  it("translates to Simplified via the locale fixtures and the script check passes", async () => {
+    const doc = await runPipeline({
+      filename: "outlook-cn.txt",
+      buffer: Buffer.from("Key takeaways\n\nThe world today is structurally very different from a decade ago."),
+      owner,
+      targetLocale: "zh-Hans",
+    });
+    expect(doc.target_locale).toBe("zh-Hans");
+    const joined = doc.blocks.map((b) => b.final_text).join(" ");
+    expect(joined).toContain("要点"); // "Key takeaways" (Simplified 点, not Traditional 點)
+    for (const b of doc.blocks) {
+      expect(b.validator_results.find((v) => v.validator === "script_consistency")?.status).toBe("pass");
+    }
+  });
+
+  it("flags a Traditional character leaking into a Simplified translation", () => {
+    const result = scriptConsistencyValidator({
+      source: "the country",
+      target: "这个國家", // 國 is Traditional; Simplified is 国
+      entities: [],
+      locale: getLocale("zh-Hans"),
+      glossary: [], rules: [], dntTerms: [], blockType: "body",
+    });
+    expect(result.status).toBe("fail");
+    expect(result.issues.some((iss) => iss.span === "國")).toBe(true);
+  });
+});

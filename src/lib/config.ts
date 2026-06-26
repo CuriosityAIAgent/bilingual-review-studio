@@ -67,6 +67,10 @@ export interface LocaleConfig {
   // Target-language morphology toggles. Spanish inflects for plural; CJK does not,
   // so memory-term matching/replacement must not append plural suffixes.
   morphology: { plural_suffix: boolean };
+  // Chinese script the target must use. The script_consistency validator flags the
+  // OTHER script's characters (traditional → flag Simplified; simplified → flag
+  // Traditional). Omit for non-Chinese locales (no script-purity rule).
+  script?: "simplified" | "traditional";
 }
 
 export interface PermissionsConfig {
