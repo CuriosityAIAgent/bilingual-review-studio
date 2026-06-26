@@ -14,20 +14,29 @@ function cleanTerm(raw: string): string {
   return raw.split("(")[0].trim().toLowerCase();
 }
 
-function hasWord(text: string, term: string): boolean {
-  // Plural-aware so a singular flag term (e.g. "ordenador") catches "ordenadores".
-  return new RegExp(`(?<![\\p{L}\\p{N}])${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:es|s)?(?![\\p{L}\\p{N}])`, "iu").test(text);
+function hasWord(text: string, term: string, plural: boolean): boolean {
+  // Plural-aware (Spanish) so a singular flag term catches "ordenadores"; CJK omits.
+  const suffix = plural ? "(?:es|s)?" : "";
+  return new RegExp(`(?<![\\p{L}\\p{N}])${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}${suffix}(?![\\p{L}\\p{N}])`, "iu").test(text);
+}
+
+/** Title-case a regional_flags variant key for display ("peninsular" → "Peninsular",
+ *  "traditional_only" → "Traditional only"). */
+function variantLabel(key: string): string {
+  return key.replace(/_/g, " ").replace(/^\w/, (c) => c.toUpperCase());
 }
 
 export const regionalismValidator: ValidatorFn = (i: ValidatorInput): ValidatorResult => {
   const issues: ValidatorResult["issues"] = [];
-  const flags = [
-    ...(i.locale.regional_flags?.peninsular ?? []).map((t) => ({ term: cleanTerm(t), variant: "Peninsular" })),
-    ...(i.locale.regional_flags?.mexican ?? []).map((t) => ({ term: cleanTerm(t), variant: "Mexican" })),
-  ];
+  const plural = i.locale.morphology?.plural_suffix ?? true;
+  // Generic over every regional variant the locale declares (es-419: peninsular/
+  // mexican; zh-Hant: simplified-only forms that shouldn't appear; etc.).
+  const flags = Object.entries(i.locale.regional_flags ?? {}).flatMap(([variant, terms]) =>
+    (terms ?? []).map((t) => ({ term: cleanTerm(t), variant: variantLabel(variant) })),
+  );
   for (const { term, variant } of flags) {
-    if (!term || term.length < 3) continue;
-    if (hasWord(i.target, term)) {
+    if (!term) continue;
+    if (hasWord(i.target, term, plural)) {
       // Only ACTIVE/APPROVED rules may supply `expected` — it feeds the
       // deterministic rewrite, so a proposed/deprecated (ungoverned) rule must
       // never auto-apply through this path (spec §13). Unresolved → route to human.

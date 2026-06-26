@@ -18,14 +18,14 @@ const by = { user_id: "diego", team_id: "iberia-marketing" };
 
 describe("TM proposals (edit → memory, governed)", () => {
   it("files a pending proposal and is idempotent on identical resend", async () => {
-    const a = await proposeTmFromEdit({ source_text: "Equity markets rose.", target_text: "La renta variable subió.", doc_id: "d1", doc_title: "Doc", segment_id: "b1", by });
-    const b = await proposeTmFromEdit({ source_text: "Equity markets rose.", target_text: "La renta variable subió.", doc_id: "d1", doc_title: "Doc", segment_id: "b1", by });
+    const a = await proposeTmFromEdit({ source_text: "Equity markets rose.", target_text: "La renta variable subió.", locale: "es-419", doc_id: "d1", doc_title: "Doc", segment_id: "b1", by });
+    const b = await proposeTmFromEdit({ source_text: "Equity markets rose.", target_text: "La renta variable subió.", locale: "es-419", doc_id: "d1", doc_title: "Doc", segment_id: "b1", by });
     expect(a.id).toBe(b.id); // deduped
     expect((await listTmProposals("pending")).length).toBe(1);
   });
 
   it("approve folds the pair into TM; the proposal is marked approved", async () => {
-    const p = await proposeTmFromEdit({ source_text: "Tariffs rose sharply.", target_text: "Los aranceles subieron con fuerza.", doc_id: "d1", doc_title: "Doc", segment_id: "b2", by });
+    const p = await proposeTmFromEdit({ source_text: "Tariffs rose sharply.", target_text: "Los aranceles subieron con fuerza.", locale: "es-419", doc_id: "d1", doc_title: "Doc", segment_id: "b2", by });
     const r = await decideTmProposal(p.id, true, "carmen");
     expect(r.addedToTm).toBe(true);
     expect(r.proposal.state).toBe("approved");
@@ -35,7 +35,7 @@ describe("TM proposals (edit → memory, governed)", () => {
   });
 
   it("deciding an already-decided proposal is a no-op (no double TM write)", async () => {
-    const p = await proposeTmFromEdit({ source_text: "Yields fell.", target_text: "Los rendimientos cayeron.", doc_id: "d1", doc_title: "Doc", segment_id: "b4", by });
+    const p = await proposeTmFromEdit({ source_text: "Yields fell.", target_text: "Los rendimientos cayeron.", locale: "es-419", doc_id: "d1", doc_title: "Doc", segment_id: "b4", by });
     await decideTmProposal(p.id, true, "carmen");
     const tmAfterFirst = (await getStore().getTm()).length;
     const again = await decideTmProposal(p.id, true, "carmen"); // re-approve
@@ -44,7 +44,7 @@ describe("TM proposals (edit → memory, governed)", () => {
   });
 
   it("reject discards without touching TM", async () => {
-    const p = await proposeTmFromEdit({ source_text: "GDP grew.", target_text: "El PIB creció.", doc_id: "d1", doc_title: "Doc", segment_id: "b3", by });
+    const p = await proposeTmFromEdit({ source_text: "GDP grew.", target_text: "El PIB creció.", locale: "es-419", doc_id: "d1", doc_title: "Doc", segment_id: "b3", by });
     const before = (await getStore().getTm()).length;
     const r = await decideTmProposal(p.id, false, "carmen");
     expect(r.addedToTm).toBe(false);

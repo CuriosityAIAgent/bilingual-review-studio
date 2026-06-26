@@ -35,10 +35,16 @@ export async function POST(req: Request) {
   const target_text = (body.target_text ?? "").trim();
   if (!source_text || !target_text) return fail("Both the English source and the corrected Spanish are required.");
 
-  await ensureSeeded(getStore());
+  const store = getStore();
+  await ensureSeeded(store);
+  // The proposal belongs to the source document's target language, so it folds
+  // into the right locale's TM (look it up rather than trusting the client).
+  const doc = body.doc_id ? await store.getDoc(body.doc_id).catch(() => null) : null;
+  const locale = doc?.target_locale ?? "es-419";
   const proposal = await proposeTmFromEdit({
     source_text,
     target_text,
+    locale,
     doc_id: body.doc_id ?? "",
     doc_title: body.doc_title ?? "",
     segment_id: body.segment_id ?? "",
