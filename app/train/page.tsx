@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { ArrowRight, BookPlus, RotateCcw, Sparkles } from "lucide-react";
 import { api, type MemoryImportPreview, type MemoryImportCommit, type TmImportStatus } from "@/app/lib/client";
-import { roleLabel } from "@/app/lib/roles";
+import { TARGET_LOCALES, roleLabel } from "@/app/lib/roles";
 import { useSeat } from "@/components/Providers";
 
 const STATUS: Record<TmImportStatus, { label: string; color: string }> = {
@@ -24,7 +24,9 @@ export default function LearnPage() {
 
   const [source, setSource] = useState("");
   const [target, setTarget] = useState("");
+  const [locale, setLocale] = useState("es-419");
   const [align, setAlign] = useState<"paragraph" | "semantic">("paragraph");
+  const targetLabel = TARGET_LOCALES.find((l) => l.code === locale)?.label ?? "Neutral Spanish";
   const [phase, setPhase] = useState<"input" | "preview" | "done">("input");
   const [preview, setPreview] = useState<MemoryImportPreview | null>(null);
   const [done, setDone] = useState<MemoryImportCommit | null>(null);
@@ -34,7 +36,7 @@ export default function LearnPage() {
   const onProcess = async () => {
     setBusy("process"); setError("");
     try {
-      const r = await api.importMemoryPreview(source, target, align);
+      const r = await api.importMemoryPreview(source, target, align, locale);
       setPreview(r); setPhase("preview");
     } catch (e) { setError((e as Error).message); }
     finally { setBusy(""); }
@@ -43,7 +45,7 @@ export default function LearnPage() {
   const onSave = async () => {
     setBusy("save"); setError("");
     try {
-      const r = await api.importMemoryCommit(source, target, align);
+      const r = await api.importMemoryCommit(source, target, align, locale);
       setDone(r); setPhase("done");
     } catch (e) { setError((e as Error).message); }
     finally { setBusy(""); }
@@ -65,9 +67,9 @@ export default function LearnPage() {
         <p className="label">{seat ? `Signed in as ${roleLabel(seat.role)}` : "Translation Studio"} · train</p>
         <h1 className="font-display" style={{ fontSize: 30, letterSpacing: "-0.02em", marginTop: 4 }}>Train from finished work</h1>
         <p className="doc-body" style={{ color: "var(--ink-soft)", marginTop: 6, maxWidth: 660 }}>
-          Paste an English document you've already translated on the left, and your finished Spanish on the right.
-          We align them segment by segment and fold the pairs into translation memory — so future drafts reuse
-          how your team has actually translated, instead of starting cold.
+          Paste an English document you've already translated on the left, and your finished {targetLabel} on the right.
+          We align them segment by segment and fold the pairs into that language's translation memory — so future
+          drafts reuse how your team has actually translated, instead of starting cold.
         </p>
       </div>
 
@@ -90,10 +92,10 @@ export default function LearnPage() {
                 placeholder="Paste the full English document…" />
             </div>
             <div>
-              <p className="label" style={{ marginBottom: 8 }}>Spanish — your finished translation</p>
-              <textarea style={pane} value={target} disabled={!canLearn}
+              <p className="label" style={{ marginBottom: 8 }}>{targetLabel} — your finished translation</p>
+              <textarea style={pane} value={target} disabled={!canLearn} lang={locale.startsWith("zh") ? locale : "es"}
                 onChange={(e) => setTarget(e.target.value)}
-                placeholder="Paste the full Spanish translation…" />
+                placeholder={`Paste the full ${targetLabel} translation…`} />
             </div>
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: 14, marginTop: 16 }}>
@@ -102,6 +104,14 @@ export default function LearnPage() {
               {busy === "process" ? <Sparkles size={15} className="live-dot" /> : <ArrowRight size={15} />}
               {busy === "process" ? "Aligning…" : "Process"}
             </button>
+            {/* Which language's memory this pair folds into. */}
+            <label className="ui-base" style={{ display: "inline-flex", alignItems: "center", gap: 7, color: "var(--ink-soft)" }}>
+              Target
+              <select value={locale} onChange={(e) => setLocale(e.target.value)} disabled={!canLearn}
+                style={{ padding: "7px 9px", borderRadius: "var(--r-sm)", border: "1px solid var(--line)", background: "var(--surface)", color: "var(--ink)", fontSize: 13.5 }}>
+                {TARGET_LOCALES.map((l) => <option key={l.code} value={l.code}>{l.label}</option>)}
+              </select>
+            </label>
             <div style={{ display: "inline-flex", border: "1px solid var(--line)", borderRadius: "var(--r-md)", overflow: "hidden" }}>
               {(["paragraph", "semantic"] as const).map((m) => (
                 <button key={m} onClick={() => setAlign(m)} disabled={!canLearn}
@@ -119,8 +129,8 @@ export default function LearnPage() {
           </div>
           <p className="ui-base" style={{ color: "var(--ink-faint)", marginTop: 8, maxWidth: 660 }}>
             {align === "paragraph"
-              ? "Pairs paragraph-by-paragraph. Best when the Spanish is a faithful 1:1 translation of the English."
-              : "Splits both sides into sentences and matches them by meaning, keeping only confident pairs. Use this when the Spanish is a shorter or reordered adaptation, not a literal translation. You'll review every pair (with its match score) before anything is saved."}
+              ? `Pairs paragraph-by-paragraph. Best when the ${targetLabel} is a faithful 1:1 translation of the English.`
+              : `Splits both sides into sentences and matches them by meaning, keeping only confident pairs. Use this when the ${targetLabel} is a shorter or reordered adaptation, not a literal translation. You'll review every pair (with its match score) before anything is saved.`}
           </p>
         </div>
       )}
@@ -153,8 +163,8 @@ export default function LearnPage() {
             <div className="card" style={{ padding: "12px 16px", marginBottom: 14 }}>
               <span className="ui-base" style={{ color: "var(--ink-soft)" }}>
                 Matched {preview.rows.length} of {preview.sourceBlocks} English sentences.{" "}
-                {preview.sourceExtra.length} English and {preview.targetExtra.length} Spanish sentences had no confident
-                counterpart and were dropped — expected when the Spanish is an adaptation rather than a literal translation.
+                {preview.sourceExtra.length} English and {preview.targetExtra.length} {targetLabel} sentences had no confident
+                counterpart and were dropped — expected when the {targetLabel} is an adaptation rather than a literal translation.
               </span>
             </div>
           )}
@@ -163,9 +173,9 @@ export default function LearnPage() {
             <div className="card" style={{ padding: "12px 16px", marginBottom: 14, borderColor: "var(--edited)" }}>
               <span className="ui-base" style={{ color: "var(--edited)", fontWeight: 600 }}>Uneven segment counts.</span>{" "}
               <span className="ui-base" style={{ color: "var(--ink-soft)" }}>
-                {preview.sourceBlocks} English vs {preview.targetBlocks} Spanish paragraphs.
+                {preview.sourceBlocks} English vs {preview.targetBlocks} {targetLabel} paragraphs.
                 {preview.sourceExtra.length + preview.targetExtra.length} unmatched paragraph(s) won't be saved. Even out the
-                paragraph breaks and re-process, or switch to “Match by meaning” if the Spanish is an adaptation.
+                paragraph breaks and re-process, or switch to “Match by meaning” if the {targetLabel} is an adaptation.
               </span>
             </div>
           )}

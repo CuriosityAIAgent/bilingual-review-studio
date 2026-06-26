@@ -15,9 +15,12 @@ function cleanTerm(raw: string): string {
 }
 
 function hasWord(text: string, term: string, plural: boolean): boolean {
-  // Plural-aware (Spanish) so a singular flag term catches "ordenadores"; CJK omits.
-  const suffix = plural ? "(?:es|s)?" : "";
-  return new RegExp(`(?<![\\p{L}\\p{N}])${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}${suffix}(?![\\p{L}\\p{N}])`, "iu").test(text);
+  // Latin: whole-word + optional plural suffix. CJK (no spaces): substring match,
+  // since a word-boundary check never fires on a term flanked by other characters.
+  const esc = term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return plural
+    ? new RegExp(`(?<![\\p{L}\\p{N}])${esc}(?:es|s)?(?![\\p{L}\\p{N}])`, "iu").test(text)
+    : new RegExp(esc, "iu").test(text);
 }
 
 /** Title-case a regional_flags variant key for display ("peninsular" → "Peninsular",

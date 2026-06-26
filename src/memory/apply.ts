@@ -22,12 +22,15 @@ function escapeRegExp(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-/** Match `from` as a whole word/phrase (Unicode-aware), case-insensitive. When the
- * target language inflects for plural (Spanish), also match a trailing -s/-es so
- * "ordenador" catches "ordenadores"; CJK has no plural so the suffix is omitted. */
+/** Match `from`, case-insensitive. Latin (plural=true) matches a whole word/phrase
+ * with optional -s/-es ("ordenador" catches "ordenadores"). CJK (plural=false) has
+ * NO inter-word spaces, so a word-boundary match would never fire on a term flanked
+ * by other characters (軟件 inside 升級軟件平台) — match it as a substring instead. */
 function termRegex(from: string, plural: boolean): RegExp {
-  const suffix = plural ? "(es|s)?" : "";
-  return new RegExp(`(?<![\\p{L}\\p{N}])(${escapeRegExp(from)})${suffix}(?![\\p{L}\\p{N}])`, "giu");
+  const esc = escapeRegExp(from);
+  return plural
+    ? new RegExp(`(?<![\\p{L}\\p{N}])(${esc})(es|s)?(?![\\p{L}\\p{N}])`, "giu")
+    : new RegExp(`(${esc})`, "giu");
 }
 
 /** Spanish pluralization: vowel-final → +s, consonant-final → +es. */
@@ -49,8 +52,11 @@ function replaceTerm(text: string, from: string, to: string, plural: boolean): {
   let count = 0;
   const out = text.replace(termRegex(from, plural), (full: string, _base: string, suffix?: string) => {
     count += 1;
-    // If the source matched a plural, pluralize the neutral replacement to agree.
-    return matchCase(full, suffix ? pluralize(to) : to);
+    // The CJK regex has no suffix group, so the 3rd callback arg is the match OFFSET
+    // (a number) — guard on `typeof === "string"` so we only pluralize on a real,
+    // matched Latin suffix, never on the offset.
+    const matchedPlural = typeof suffix === "string" && suffix.length > 0;
+    return matchCase(full, matchedPlural ? pluralize(to) : to);
   });
   return { text: out, count };
 }
