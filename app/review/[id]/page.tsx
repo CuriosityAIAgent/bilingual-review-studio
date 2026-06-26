@@ -108,7 +108,7 @@ export default function ReviewPage() {
   const submitRule = async (regional: string, neutral: string, reason: string, variant: string) => {
     setBusy("teach"); setError("");
     try {
-      const { rule } = await api.proposeRule({ regional_form: regional, neutral_form: neutral, reason, variant });
+      const { rule } = await api.proposeRule({ regional_form: regional, neutral_form: neutral, reason, variant, locale: doc?.target_locale });
       if (canApproveRules) {
         await api.governRule(rule.id, "approve");
         const { doc: next } = await api.action(id, { kind: "retranslate" });

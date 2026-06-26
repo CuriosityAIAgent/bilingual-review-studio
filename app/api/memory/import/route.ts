@@ -11,6 +11,7 @@
  *  or above the cosine floor — for published EN/ES that is an editorial
  *  adaptation (reordered/merged/condensed) where positional alignment is wrong. */
 import { authorize } from "@/src/auth";
+import type { Locale } from "@/src/lib/doc-model";
 import { getThresholds } from "@/src/lib/config";
 import { alignBilingual, alignBilingualSemantic } from "@/src/memory/align";
 import { commitTmImport, previewTmImport } from "@/src/memory";
@@ -29,12 +30,16 @@ export async function POST(req: Request) {
     mode?: "preview" | "commit";
     align?: "paragraph" | "semantic";
     min_score?: number;
+    locale?: Locale;
   };
+  // Fold into the selected target language's TM (a Chinese pair never enters
+  // Spanish memory, and vice-versa).
+  const locale: Locale = body.locale ?? "es-419";
   const source = (body.source_text ?? "").trim();
   const target = (body.target_text ?? "").trim();
   if (!source || !target) return fail("Paste both the English source and the translation.");
 
-  await ensureSeeded(getStore());
+  await ensureSeeded(getStore(), locale);
 
   // Build aligned pairs + a summary the UI shows before anything is written.
   let pairs: { source: string; target: string; score?: number }[];
@@ -54,7 +59,7 @@ export async function POST(req: Request) {
       if ((body.mode ?? "preview") === "commit") {
         return fail("Semantic alignment is unavailable (embedding model not loaded). Refusing to commit positionally-guessed pairs — retry shortly.", 503);
       }
-      const rows = await previewTmImport(a.pairs);
+      const rows = await previewTmImport(a.pairs, locale);
       return ok({
         rows,
         align: a.method,
@@ -99,11 +104,11 @@ export async function POST(req: Request) {
   }
 
   if ((body.mode ?? "preview") === "commit") {
-    const result = await commitTmImport(pairs, seat.user_id);
+    const result = await commitTmImport(pairs, seat.user_id, locale);
     return ok({ result, ...summary });
   }
 
-  const rows = await previewTmImport(pairs);
+  const rows = await previewTmImport(pairs, locale);
   // Carry each pair's match score (semantic mode) onto its preview row.
   const scored = rows.map((r, i) => (pairs[i]?.score != null ? { ...r, score: pairs[i].score } : r));
   return ok({ rows: scored, ...summary });

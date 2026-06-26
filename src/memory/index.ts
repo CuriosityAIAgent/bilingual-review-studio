@@ -36,9 +36,12 @@ export interface ProposeRuleInput {
 export async function proposeRule(i: ProposeRuleInput): Promise<NeutralizationRule> {
   const store = getStore();
   const rules = await store.getRules();
-  // Dedup: if an identical (regional→neutral) rule exists, return it.
+  const locale = i.locale ?? "es-419";
+  // Dedup WITHIN the same locale — the same mapping taught for two target languages
+  // is two distinct rules (each applies only to its locale's drafts).
   const existing = rules.find(
     (r) =>
+      r.locale === locale &&
       r.regional_form.toLowerCase() === i.regional_form.toLowerCase() &&
       r.neutral_form.toLowerCase() === i.neutral_form.toLowerCase() &&
       r.state !== "deprecated",
@@ -51,7 +54,7 @@ export async function proposeRule(i: ProposeRuleInput): Promise<NeutralizationRu
     neutral_form: i.neutral_form,
     variant: i.variant,
     reason: i.reason,
-    locale: i.locale ?? "es-419",
+    locale,
     state: "proposed",
     proposed_by: i.proposed_by,
     created_at: nowIso(),

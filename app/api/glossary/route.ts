@@ -4,6 +4,7 @@
  *  it is applied by the system immediately; otherwise it lands as a candidate in
  *  the governance queue (only active entries are ever applied — see CLAUDE.md). */
 import { authorize } from "@/src/auth";
+import type { Locale } from "@/src/lib/doc-model";
 import { approveGlossary, proposeGlossary } from "@/src/memory";
 import { ensureSeeded } from "@/src/memory/seed";
 import { fail, ok, seatFrom } from "@/src/server/context";
@@ -27,6 +28,7 @@ export async function POST(req: Request) {
     domain?: string;
     notes?: string;
     activate?: boolean;
+    locale?: Locale;
   };
   if (!body.source || !body.approved_target) {
     return fail("source and approved_target are required");
@@ -39,13 +41,13 @@ export async function POST(req: Request) {
   }
 
   const store = getStore();
-  await ensureSeeded(store);
+  await ensureSeeded(store, body.locale);
 
   const entry = await proposeGlossary({
     source: body.source,
     approved_target: body.approved_target,
     forbidden_terms: body.forbidden_terms ?? [],
-    locale: "es-419",
+    locale: body.locale ?? "es-419",
     domain: body.domain,
     notes: body.notes,
     approved_by: undefined,

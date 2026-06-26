@@ -53,7 +53,7 @@ export const api = {
   deleteDoc: (id: string) => req<{ deleted: string }>(`/api/documents/${id}`, { method: "DELETE" }),
   restoreDoc: (id: string) => req<{ restored: string }>(`/api/documents/${id}/restore`, { method: "POST" }),
   rules: () => req<{ rules: NeutralizationRule[] }>("/api/rules"),
-  proposeRule: (body: { regional_form: string; neutral_form: string; reason?: string; variant?: string }) =>
+  proposeRule: (body: { regional_form: string; neutral_form: string; reason?: string; variant?: string; locale?: string }) =>
     req<{ rule: NeutralizationRule }>("/api/rules", { method: "POST", body: JSON.stringify(body) }),
   governRule: (id: string, action: "approve" | "deprecate") =>
     req<{ rule: NeutralizationRule }>(`/api/rules/${id}`, { method: "POST", body: JSON.stringify({ action }) }),
@@ -67,10 +67,10 @@ export const api = {
   seats: () => req<{ seats: Seat[] }>("/api/seats"),
   fixtures: () => req<{ samples: { name: string; title: string; words: number }[] }>("/api/fixtures"),
   fixture: (name: string) => req<{ name: string; text: string }>(`/api/fixtures?name=${encodeURIComponent(name)}`),
-  importMemoryPreview: (source_text: string, target_text: string, align: AlignMode = "paragraph") =>
-    req<MemoryImportPreview>("/api/memory/import", { method: "POST", body: JSON.stringify({ source_text, target_text, mode: "preview", align }) }),
-  importMemoryCommit: (source_text: string, target_text: string, align: AlignMode = "paragraph") =>
-    req<MemoryImportCommit>("/api/memory/import", { method: "POST", body: JSON.stringify({ source_text, target_text, mode: "commit", align }) }),
+  importMemoryPreview: (source_text: string, target_text: string, align: AlignMode = "paragraph", locale = "es-419") =>
+    req<MemoryImportPreview>("/api/memory/import", { method: "POST", body: JSON.stringify({ source_text, target_text, mode: "preview", align, locale }) }),
+  importMemoryCommit: (source_text: string, target_text: string, align: AlignMode = "paragraph", locale = "es-419") =>
+    req<MemoryImportCommit>("/api/memory/import", { method: "POST", body: JSON.stringify({ source_text, target_text, mode: "commit", align, locale }) }),
 
   // Reviewer edit → memory (governed): propose, list pending, approve/reject.
   proposeMemory: (body: { source_text: string; target_text: string; doc_id: string; doc_title: string; segment_id: string }) =>

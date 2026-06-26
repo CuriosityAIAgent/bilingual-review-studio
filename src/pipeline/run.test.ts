@@ -7,6 +7,8 @@ import { getLocale } from "@/src/lib/config";
 import { getStore } from "@/src/store";
 import { resetFixtureCache } from "@/src/translate/fixtures";
 import { scriptConsistencyValidator } from "@/src/validators/script_consistency";
+import { glossaryValidator } from "@/src/validators/glossary";
+import type { GlossaryEntry } from "@/src/lib/doc-model";
 import { reTranslateDoc, runPipeline } from "./run";
 
 let tmp: string;
@@ -197,5 +199,34 @@ describe("zh-Hans (Simplified Chinese) target", () => {
     });
     expect(result.status).toBe("fail");
     expect(result.issues.some((iss) => iss.span === "國")).toBe(true);
+  });
+
+  it("applies a learned zh-Hant rule deterministically with no plural inflection (the flywheel for CJK)", async () => {
+    const { applyRules } = await import("@/src/memory/apply");
+    // A Traditional-locale rule taught by a reviewer: 軟件 (Mainland) → 軟體 (house term).
+    const rule: NeutralizationRule = {
+      id: "rule_zh_fly", regional_form: "軟件", neutral_form: "軟體",
+      reason: "house style", locale: "zh-Hant", state: "active",
+      created_at: "", updated_at: "", hits: 0,
+    };
+    // CJK: plural false (no -s/-es suffix matching that would corrupt the term).
+    const applied = applyRules("升級軟件平台與軟件服務", [rule], { plural: false });
+    expect(applied.text).toBe("升級軟體平台與軟體服務");
+    expect(applied.hits.length).toBeGreaterThan(0);
+  });
+
+  it("glossary validator matches CJK terms embedded in running text (no word boundaries)", () => {
+    const g: GlossaryEntry = {
+      id: "g-zh", source: "inflation", approved_target: "通胀", forbidden_terms: ["通货膨胀"],
+      locale: "zh-Hans", domain: "macro", state: "active",
+      approved_by: "system", approved_at: "",
+    };
+    const base = { source: "core inflation eased", entities: [], locale: getLocale("zh-Hans"), rules: [], dntTerms: [], blockType: "body" as const };
+    // Approved term 通胀 embedded in 核心通胀回落 → present → passes.
+    expect(glossaryValidator({ ...base, target: "核心通胀回落", glossary: [g] }).status).toBe("pass");
+    // Forbidden variant 通货膨胀 embedded → flagged.
+    const bad = glossaryValidator({ ...base, target: "核心通货膨胀回落", glossary: [g] });
+    expect(bad.status).toBe("fail");
+    expect(bad.issues.some((iss) => iss.span === "通货膨胀")).toBe(true);
   });
 });
