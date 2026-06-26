@@ -1,0 +1,62 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Traditional Chinese (繁體中文, zh-Hant) — HK/Taiwan-oriented neutral business
+# Chinese, the first Chinese target. Distinct deliverable from Simplified
+# (zh-Hans): different script AND lexicon. Calibrated from the J.P. Morgan
+# "2026 Mid-Year Outlook" parallel corpus.
+#
+# The cardinal error is SCRIPT IMPURITY (any Simplified character in the output)
+# — enforced by the script_consistency validator, the zh-Hant analog of the
+# es-419 regionalism check. Lexical house-style differences are looser and grow
+# as governed memory via reviewer corrections (the flywheel).
+# ─────────────────────────────────────────────────────────────────────────────
+
+locale: zh-Hant
+name: "繁體中文（香港／台灣）"
+description: >
+  Traditional-character business Chinese for HK/Taiwan distribution. Formal
+  written register (書面語), polite 您. Entirely Traditional script — never mix
+  in Simplified characters.
+
+number_format:
+  # Numerals stay Arabic digits; Western thousands grouping inside digit strings
+  # (e.g. 2,000萬桶). Scale words use the Chinese myriad system (萬/億).
+  thousands_separator: ","
+  decimal_separator: "."
+  example: "1,234.56"
+
+# The Chinese number trap (the billón-trap analog): English 10^9 is 十億
+# (expressed via 億, e.g. US$10bn → 100億美元); 10^12 is 萬億. Never render a
+# billion as 萬億.
+scale_terms:
+  billion: "十億"
+  trillion: "萬億"
+  basis_points: "基點"
+
+# Traditional inflects nothing for plural; memory matching must not append suffixes.
+morphology:
+  plural_suffix: false
+
+style:
+  second_person: 您                  # polite form, never 你
+  register: formal
+  percent_placement: after           # half-width %, after the number
+  currency_symbol_placement: after   # amount + 美元 (e.g. 1.5萬億美元)
+
+# Mainland-only LEXICAL forms to flag (in Traditional script) and neutralise to the
+# house term. Starts minimal — the corpus tolerates some Mainland lexicon (e.g. it
+# uses 信息), so house rules are taught via review rather than imposed. Script-level
+# purity (no Simplified glyphs) is handled by the script_consistency validator, not
+# here.
+regional_flags: {}
+
+prompts:
+  translator_target: |-
+    Traditional Chinese (繁體中文, zh-Hant) for Hong Kong / Taiwan distribution. Formal written
+    register (書面語), polite second person 您. Use full-width CJK punctuation 。，、；：？（）《》;
+    keep Latin abbreviations in half-width parentheses, e.g. 人工智能(AI), 台積電(TSMC). The output
+    must be ENTIRELY Traditional characters — never use a Simplified character.
+  critic_target: "繁體中文 (zh-Hant)"
+  critic_checks: |-
+    the Chinese number trap (English "billion" = 10^9 = 十億 expressed via 億, NEVER 萬億 = 10^12 = trillion),
+    SCRIPT PURITY (flag ANY Simplified character — the translation must be wholly Traditional), full-width
+    CJK punctuation, and HK/Taiwan business register

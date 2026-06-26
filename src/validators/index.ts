@@ -12,6 +12,7 @@ import { glossaryValidator } from "./glossary";
 import { isinValidator } from "./isin";
 import { numberValidator } from "./number";
 import { regionalismValidator } from "./regionalism";
+import { scriptConsistencyValidator } from "./script_consistency";
 import { tickerValidator } from "./ticker";
 import type { ValidatorFn, ValidatorInput } from "./types";
 
@@ -26,6 +27,7 @@ export const VALIDATORS: ValidatorFn[] = [
   regionalismValidator,
   disclaimerValidator,
   englishLeakageValidator,
+  scriptConsistencyValidator, // self-gates: only acts on zh-Hant targets
 ];
 
 export function runValidators(input: ValidatorInput): ValidatorResult[] {

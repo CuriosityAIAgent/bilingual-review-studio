@@ -24,9 +24,18 @@ export const roleLabel = (role: string): string => ROLE_LABELS[role] ?? role;
  */
 export const LOCALE_LABELS: Record<string, string> = {
   "es-419": "Neutral Spanish",
+  "zh-Hant": "Traditional Chinese",
+  "zh-Hans": "Simplified Chinese",
 };
 
 export const localeLabel = (code: string): string => LOCALE_LABELS[code] ?? code;
+
+/** Target languages selectable at upload (order = display order). zh-Hans is
+ *  config-ready but seeded later, so it's omitted from the picker until then. */
+export const TARGET_LOCALES: { code: string; label: string }[] = [
+  { code: "es-419", label: "Neutral Spanish" },
+  { code: "zh-Hant", label: "Traditional Chinese" },
+];
 
 export type StepGroup = "pipeline" | "review";
 export interface ProcessStep {

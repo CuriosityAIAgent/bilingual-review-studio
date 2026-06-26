@@ -9,6 +9,16 @@
  * builder surfaces any unresolved disclaimer rather than silently emitting it.
  */
 import type { Block, DocModel } from "@/src/lib/doc-model";
+import { getLocale } from "@/src/lib/config";
+
+/** lang attribute for the exported <html> (es for Spanish, the BCP-47 code for Chinese). */
+function htmlLang(locale: string): string {
+  return locale.startsWith("zh") ? locale : "es";
+}
+/** Human label for the target pane — the target locale's configured name. */
+function targetName(locale: string): string {
+  return getLocale(locale).name;
+}
 
 function esc(s: string): string {
   return s
@@ -77,7 +87,7 @@ export function buildReviewRecordHtml(doc: DocModel, opts: { annotations?: boole
       // translation, not the source.
       return `<div class="seg ${cls}">
         <div class="pane"><span class="lbl">English source</span><div class="en${titleCls}">${esc(b.source_text)}</div></div>
-        <div class="pane"><span class="lbl">Español neutro (${esc(doc.target_locale)})</span><div class="${titleCls.trim()}">${esc(b.final_text)}</div>${flags}${valFlags}<div style="margin-top:6px">${tagsFor(b)}</div></div>
+        <div class="pane"><span class="lbl">${esc(targetName(doc.target_locale))}</span><div class="${titleCls.trim()}">${esc(b.final_text)}</div>${flags}${valFlags}<div style="margin-top:6px">${tagsFor(b)}</div></div>
       </div>`;
     })
     .join("\n");
@@ -85,7 +95,7 @@ export function buildReviewRecordHtml(doc: DocModel, opts: { annotations?: boole
   const m = doc.metrics;
   const approved = doc.blocks.filter((b) => b.seg_status === "accepted" || b.seg_status === "locked").length;
 
-  return `<!doctype html><html lang="es"><head><meta charset="utf-8"/>
+  return `<!doctype html><html lang="${htmlLang(doc.target_locale)}"><head><meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>${esc(doc.title)} — Bilingual Review Record</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet"/>
@@ -131,7 +141,7 @@ export function buildReflowedHtml(doc: DocModel): string {
   }
   closeList();
   const body = parts.join("\n");
-  return `<!doctype html><html lang="es"><head><meta charset="utf-8"/>
+  return `<!doctype html><html lang="${htmlLang(doc.target_locale)}"><head><meta charset="utf-8"/>
 <title>${esc(doc.title)}</title>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Newsreader:opsz,wght@6..72,400&display=swap" rel="stylesheet"/>
 <style>body{max-width:720px;margin:0 auto;padding:48px 32px;font-family:'Newsreader',Georgia,serif;

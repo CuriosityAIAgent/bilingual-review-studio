@@ -3,8 +3,10 @@ import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import type { NeutralizationRule } from "@/src/lib/doc-model";
+import { getLocale } from "@/src/lib/config";
 import { getStore } from "@/src/store";
 import { resetFixtureCache } from "@/src/translate/fixtures";
+import { scriptConsistencyValidator } from "@/src/validators/script_consistency";
 import { reTranslateDoc, runPipeline } from "./run";
 
 let tmp: string;
@@ -44,7 +46,7 @@ describe("runPipeline (end-to-end, fixture mode)", () => {
     const b = doc.blocks[0];
     expect(b.mt_text).toBeTruthy();
     expect(b.final_text).toBeTruthy();
-    expect(b.validator_results).toHaveLength(10); // all §10 validators ran
+    expect(b.validator_results).toHaveLength(11); // all validators ran (incl. script_consistency)
     // "1 billion" → "mil millones" (NOT billón) ⇒ number validator passes.
     expect(b.validator_results.find((v) => v.validator === "number")?.status).toBe("pass");
     expect(doc.model_run.config_hash).toBeTruthy();
@@ -66,7 +68,7 @@ describe("runPipeline (end-to-end, fixture mode)", () => {
     doc.blocks.forEach((b, i) => {
       expect(b.source_text).toBe(paras[i]);
       expect(b.final_text).toBeTruthy();
-      expect(b.validator_results).toHaveLength(10);
+      expect(b.validator_results).toHaveLength(11);
     });
   });
 });
@@ -126,5 +128,45 @@ describe("the learning flywheel (dynamic)", () => {
     // be filtered out, so the sentinel never appears in the Spanish output.
     expect(doc.target_locale).toBe("es-419");
     expect(JSON.stringify(doc.blocks)).not.toContain("ZH_ONLY_SENTINEL");
+  });
+});
+
+describe("zh-Hant (Traditional Chinese) target", () => {
+  it("translates to Traditional via the locale fixtures and the script check passes", async () => {
+    const doc = await runPipeline({
+      filename: "outlook-zh.txt",
+      buffer: Buffer.from("Key takeaways\n\nWe enter the second half of the year selective, but constructive."),
+      owner,
+      targetLocale: "zh-Hant",
+    });
+    expect(doc.target_locale).toBe("zh-Hant");
+    // The seeded zh-Hant fixtures render these to Traditional characters.
+    const joined = doc.blocks.map((b) => b.final_text).join(" ");
+    expect(joined).toContain("要點"); // "Key takeaways"
+    // Every block ran the script-purity validator and it passed on clean Traditional.
+    for (const b of doc.blocks) {
+      expect(b.validator_results.find((v) => v.validator === "script_consistency")?.status).toBe("pass");
+    }
+  });
+
+  it("flags a Simplified character leaking into a Traditional translation", () => {
+    const result = scriptConsistencyValidator({
+      source: "the country",
+      target: "這個国家", // 国 is Simplified; Traditional is 國
+      entities: [],
+      locale: getLocale("zh-Hant"),
+      glossary: [],
+      rules: [],
+      dntTerms: [],
+      blockType: "body",
+    });
+    expect(result.status).toBe("fail");
+    expect(result.issues.some((iss) => iss.span === "国")).toBe(true);
+    // Same validator is a no-op on a Spanish target (self-gates by locale).
+    const es = scriptConsistencyValidator({
+      source: "the country", target: "el país", entities: [],
+      locale: getLocale("es-419"), glossary: [], rules: [], dntTerms: [], blockType: "body",
+    });
+    expect(es.status).toBe("pass");
   });
 });

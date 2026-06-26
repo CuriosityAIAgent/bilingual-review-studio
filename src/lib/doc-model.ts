@@ -133,7 +133,8 @@ export type ValidatorName =
   | "glossary"
   | "regionalism"
   | "disclaimer"
-  | "english_leakage";
+  | "english_leakage"
+  | "script_consistency";
 
 export interface ValidatorIssue {
   span: string;

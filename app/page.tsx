@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { ArrowRight, FileText, Sparkles, Trash2, Upload as UploadIcon } from "lucide-react";
 import { api } from "@/app/lib/client";
 import type { DocSummary } from "@/src/store/types";
-import { roleLabel } from "@/app/lib/roles";
+import { TARGET_LOCALES, roleLabel } from "@/app/lib/roles";
 import { useSeat } from "@/components/Providers";
 import { ProcessingView } from "@/components/ProcessingView";
 
@@ -24,6 +24,8 @@ export default function HomePage() {
   const [error, setError] = useState("");
   const [paste, setPaste] = useState("");
   const [deleting, setDeleting] = useState("");
+  // Target language for new documents. Each target carries its own governed memory.
+  const [locale, setLocale] = useState("es-419");
   const inputRef = useRef<HTMLInputElement>(null);
 
   const canUpload = !seat || seat.role === "author" || seat.role === "admin";
@@ -71,7 +73,7 @@ export default function HomePage() {
       setError("PDF, Word (.docx), or plain text (.txt/.md) only.");
       return;
     }
-    go(() => api.uploadFile(file));
+    go(() => api.uploadFile(file, locale));
   };
 
   const onTranslate = () => {
@@ -79,7 +81,7 @@ export default function HomePage() {
     if (!text) return;
     const firstLine = text.split("\n").find((l) => l.trim()) || "Pasted text";
     const slug = firstLine.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 48) || "pasted-text";
-    go(() => api.uploadText(`${slug}.md`, text));
+    go(() => api.uploadText(`${slug}.md`, text, locale));
   };
 
   const uploadedNames = new Set(docs.map((d) => d.filename));
@@ -155,7 +157,7 @@ export default function HomePage() {
             {freshSamples.map((s) => (
               <button key={s.name} className="card" disabled={!!busy} onClick={() => go(async () => {
                 const { text } = await api.fixture(s.name);
-                return api.uploadText(s.name, text);
+                return api.uploadText(s.name, text, locale);
               })} style={{ padding: "16px 18px", textAlign: "left", cursor: "pointer", display: "flex", flexDirection: "column", gap: 8 }}>
                 <span className="font-display" style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.25 }}>{s.title}</span>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -192,9 +194,21 @@ export default function HomePage() {
           />
           <div style={{ display: "flex", alignItems: "center", gap: 14, marginTop: 12, flexWrap: "wrap" }}>
             <button className="btn btn-accent" disabled={!canUpload || !paste.trim() || !!busy} onClick={onTranslate} style={{ padding: "9px 18px" }}>
-              <Sparkles size={15} /> {busy === "parsing" ? "Translating…" : "Translate to Neutral Spanish"}
+              <Sparkles size={15} /> {busy === "parsing" ? "Translating…" : `Translate to ${TARGET_LOCALES.find((l) => l.code === locale)?.label ?? "Neutral Spanish"}`}
             </button>
-            <span className="ui-base" style={{ color: "var(--ink-faint)" }}>EN → Neutral Spanish · segmented into paragraphs</span>
+            {/* Target language — each carries its own governed memory. */}
+            <label className="ui-base" style={{ display: "inline-flex", alignItems: "center", gap: 7, color: "var(--ink-soft)" }}>
+              Target
+              <select
+                value={locale}
+                onChange={(e) => setLocale(e.target.value)}
+                disabled={!canUpload || !!busy}
+                style={{ padding: "7px 9px", borderRadius: "var(--r-sm)", border: "1px solid var(--line)", background: "var(--surface)", color: "var(--ink)", fontSize: 13.5 }}
+              >
+                {TARGET_LOCALES.map((l) => <option key={l.code} value={l.code}>{l.label}</option>)}
+              </select>
+            </label>
+            <span className="ui-base" style={{ color: "var(--ink-faint)" }}>EN → {TARGET_LOCALES.find((l) => l.code === locale)?.label ?? "Neutral Spanish"} · segmented into paragraphs</span>
           </div>
         </div>
 
