@@ -42,6 +42,13 @@ function groupByLocale(docs: DocSummary[]): { code: string; label: string; docs:
   return groups.sort((a, b) => rank(a.code) - rank(b.code));
 }
 
+/** Humanize slug-like titles (pasted text becomes a hyphen filename with no spaces)
+ *  so cards read as a title, not "inflation-in-particular-to-all-the-more-likely". A
+ *  real title already has spaces and is left untouched. */
+function prettyTitle(t: string): string {
+  return /\s/.test(t) ? t : t.replace(/[-_]+/g, " ").replace(/\s+/g, " ").trim();
+}
+
 export default function HomePage() {
   const router = useRouter();
   const { seat } = useSeat();
@@ -155,24 +162,29 @@ export default function HomePage() {
                         if (e.target !== e.currentTarget) return;
                         if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
                       }}
-                      style={{ padding: "16px 18px", textAlign: "left", cursor: "pointer", display: "flex", flexDirection: "column", gap: 8 }}>
-                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
-                        <span className="font-display" style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.25 }}>{d.title}</span>
-                        <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
-                          <span className="tag" style={{ color: "var(--ink-soft)" }}>{localeLabel(d.target_locale)}</span>
-                          <span className="tag" style={{ color: STATUS_COLOR[d.status] }}>
-                            <span className="dot" style={{ background: STATUS_COLOR[d.status] }} /> {d.status.replace("_", " ")}
-                          </span>
-                          {canDelete && (
-                            <button className="btn btn-ghost" aria-label={`Delete ${d.title}`} title="Delete this document"
-                              disabled={deleting === d.doc_id} onClick={(e) => onDelete(e, d.doc_id, d.title)}
-                              style={{ padding: "5px 6px", color: "var(--ink-faint)" }}>
-                              <Trash2 size={14} strokeWidth={1.8} />
-                            </button>
-                          )}
-                        </div>
+                      style={{ padding: "15px 17px", textAlign: "left", cursor: "pointer", display: "flex", flexDirection: "column", gap: 10, minHeight: 116 }}>
+                      {/* Title (clamped to 2 lines so every card is the same height). The
+                          language is named by the group header above, so no per-card badge. */}
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 8 }}>
+                        <span className="font-display" title={prettyTitle(d.title)}
+                          style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.3, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", wordBreak: "break-word" }}>
+                          {prettyTitle(d.title)}
+                        </span>
+                        {canDelete && (
+                          <button className="btn btn-ghost" aria-label={`Delete ${prettyTitle(d.title)}`} title="Delete this document"
+                            disabled={deleting === d.doc_id} onClick={(e) => onDelete(e, d.doc_id, d.title)}
+                            style={{ padding: "4px 5px", color: "var(--ink-faint)", flexShrink: 0, marginTop: -2 }}>
+                            <Trash2 size={14} strokeWidth={1.8} />
+                          </button>
+                        )}
                       </div>
-                      <div className="ui-base mono" title="Clear = segments with no outstanding machine check (validator, critic flag, or low QE) or already accepted. This is not the same as 'reviewed' — open the document and Accept each segment to review it." style={{ color: "var(--ink-faint)" }}>{pct}% clear · {d.needs_review_count} to resolve · {d.edits_per_1k} edits/1k</div>
+                      {/* Footer pinned to the bottom so status + metrics line up across cards. */}
+                      <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: 6 }}>
+                        <span className="tag" style={{ color: STATUS_COLOR[d.status], alignSelf: "flex-start" }}>
+                          <span className="dot" style={{ background: STATUS_COLOR[d.status] }} /> {d.status.replace("_", " ")}
+                        </span>
+                        <span className="ui-base mono" title="Clear = segments with no outstanding machine check (validator, critic flag, or low QE) or already accepted. This is not the same as 'reviewed' — open the document and Accept each segment to review it." style={{ color: "var(--ink-faint)" }}>{pct}% clear · {d.needs_review_count} to resolve · {d.edits_per_1k} edits/1k</span>
+                      </div>
                     </div>
                   );
                 })}
@@ -191,11 +203,12 @@ export default function HomePage() {
               <button key={s.name} className="card" disabled={!!busy} onClick={() => go(async () => {
                 const { text } = await api.fixture(s.name);
                 return api.uploadText(s.name, text, locale);
-              })} style={{ padding: "16px 18px", textAlign: "left", cursor: "pointer", display: "flex", flexDirection: "column", gap: 8 }}>
-                <span className="font-display" style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.25 }}>{s.title}</span>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+              })} style={{ padding: "15px 17px", textAlign: "left", cursor: "pointer", display: "flex", flexDirection: "column", gap: 10, minHeight: 116 }}>
+                <span className="font-display" title={s.title}
+                  style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.3, display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden", wordBreak: "break-word" }}>{s.title}</span>
+                <div style={{ marginTop: "auto", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 8 }}>
                   <span className="ui-base mono" style={{ color: "var(--ink-faint)" }}>{s.words} words · EN → {TARGET_LOCALES.find((l) => l.code === locale)?.label ?? "Neutral Spanish"}</span>
-                  <span className="ui-base" style={{ color: "var(--accent)", fontWeight: 600, display: "inline-flex", gap: 4, alignItems: "center" }}>Open <ArrowRight size={13} /></span>
+                  <span className="ui-base" style={{ color: "var(--accent)", fontWeight: 600, display: "inline-flex", gap: 4, alignItems: "center", flexShrink: 0 }}>Open <ArrowRight size={13} /></span>
                 </div>
               </button>
             ))}
