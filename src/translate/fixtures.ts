@@ -76,8 +76,19 @@ const WORDS_ZH_HANT: Record<string, string> = {
   valuation: "估值", recession: "經濟衰退", tariffs: "關稅", semiconductor: "半導體",
 };
 
+// Minimal EN→Simplified-Chinese finance gloss (no-key demo only; same caveat).
+const WORDS_ZH_HANS: Record<string, string> = {
+  market: "市场", markets: "市场", equity: "股票", equities: "股票", stock: "股票", stocks: "股票",
+  bond: "债券", bonds: "债券", yield: "收益率", yields: "收益率", growth: "增长", inflation: "通胀",
+  rate: "利率", rates: "利率", portfolio: "投资组合", portfolios: "投资组合", investor: "投资者",
+  investors: "投资者", investment: "投资", risk: "风险", returns: "回报", outlook: "展望",
+  strategy: "策略", bank: "银行", gold: "黄金", liquidity: "流动性", volatility: "波动",
+  valuation: "估值", recession: "经济衰退", tariffs: "关税", semiconductor: "半导体",
+};
+
 const WORDS_BY_LOCALE: Record<string, Record<string, string>> = {
   "es-419": WORDS_ES,
+  "zh-Hans": WORDS_ZH_HANS,
   "zh-Hant": WORDS_ZH_HANT,
 };
 

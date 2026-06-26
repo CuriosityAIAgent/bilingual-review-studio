@@ -1,31 +1,39 @@
-/** Script-consistency validator — the zh-Hant analog of regionalism neutralization.
+/** Script-consistency validator — the Chinese analog of regionalism neutralization.
  *
- * The cardinal Traditional-Chinese error is mixing Simplified characters into a
- * Traditional translation (e.g. a stray 国 in otherwise-繁體 text). This flags any
- * Simplified-only glyph in a zh-Hant target and routes it to a human — the same
+ * The cardinal Chinese error is mixing scripts: a Simplified glyph in a Traditional
+ * translation, or vice-versa (e.g. a stray 国 in otherwise-繁體 text). This flags any
+ * wrong-script character in a Chinese target and routes it to a human — the same
  * "blocks auto-pass" treatment regionalisms get for Spanish.
  *
- * Self-gates by locale (no-op for any non-zh-Hant target), so it lives in the
- * shared validator registry and runs harmlessly on es-419 docs. The Simplified
- * character set lives in ./zh-script. */
+ * Direction comes from the locale config: `script: "traditional"` forbids
+ * Simplified glyphs; `script: "simplified"` forbids Traditional ones. Locales with
+ * no `script` (es-419) are a no-op, so this lives in the shared validator registry
+ * and runs harmlessly on every doc. The character sets live in ./zh-script. */
 import type { ValidatorResult } from "@/src/lib/doc-model";
 import type { ValidatorFn, ValidatorInput } from "./types";
-import { SIMPLIFIED_ONLY } from "./zh-script";
+import { SIMPLIFIED_ONLY, TRADITIONAL_ONLY } from "./zh-script";
 
 export const scriptConsistencyValidator: ValidatorFn = (i: ValidatorInput): ValidatorResult => {
   const pass: ValidatorResult = { validator: "script_consistency", status: "pass", blocking: true, issues: [] };
-  // v1: only Traditional Chinese has a script-purity rule (Simplified target added
-  // with its own forbidden-Traditional set when zh-Hans lands).
-  if (i.locale.locale !== "zh-Hant") return pass;
+
+  // Forbidden set = the OTHER script's characters. No script → no rule.
+  const forbidden =
+    i.locale.script === "traditional" ? SIMPLIFIED_ONLY
+    : i.locale.script === "simplified" ? TRADITIONAL_ONLY
+    : null;
+  if (!forbidden) return pass;
+
+  const wrongScript = i.locale.script === "traditional" ? "Simplified" : "Traditional";
+  const wantScript = i.locale.script === "traditional" ? "Traditional" : "Simplified";
 
   const seen = new Set<string>();
   const issues: ValidatorResult["issues"] = [];
   for (const ch of i.target) {
-    if (SIMPLIFIED_ONLY.has(ch) && !seen.has(ch)) {
+    if (forbidden.has(ch) && !seen.has(ch)) {
       seen.add(ch);
       issues.push({
         span: ch,
-        message: `Simplified character “${ch}” in a Traditional (zh-Hant) translation — render it in Traditional script`,
+        message: `${wrongScript} character “${ch}” in a ${wantScript} (${i.locale.locale}) translation — render it in ${wantScript} script`,
       });
     }
   }
