@@ -60,7 +60,7 @@ function buildSystemPrompt(ctx: TranslateContext): string {
     "",
     "Hard rules:",
     `- Preserve every number, %, date, currency exactly; apply the number style "${fmt.example}".`,
-    `- "billion" (10^9) -> "${t.billion}", NEVER "billón". "trillion" (10^12) -> "${t.trillion}".`,
+    `- "billion" (10^9) -> "${t.billion}", NEVER "${t.trillion}". "trillion" (10^12) -> "${t.trillion}".`,
     "- Apply the GLOSSARY and ACTIVE NEUTRALIZATION RULES exactly where their terms appear.",
     "- Faithful: nothing added or dropped. Keep DNT tokens verbatim.",
     '- CONSISTENCY: when the source repeats the same or a parallel structure (e.g. a refrain like',
@@ -147,6 +147,6 @@ export async function translateSegments(
   }
 
   // No key configured → deterministic offline fixtures (demo mode only).
-  for (const s of toTranslate) out[s.id] = fixtureTranslateSegment(s.source_text);
+  for (const s of toTranslate) out[s.id] = fixtureTranslateSegment(s.source_text, ctx.locale.locale);
   return out;
 }

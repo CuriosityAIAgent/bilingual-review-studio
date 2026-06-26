@@ -18,6 +18,7 @@ import { englishLeakageValidator } from "@/src/validators/english_leakage";
 import { glossaryValidator } from "@/src/validators/glossary";
 import { numberValidator } from "@/src/validators/number";
 import { regionalismValidator } from "@/src/validators/regionalism";
+import { scriptConsistencyValidator } from "@/src/validators/script_consistency";
 import type { ValidatorInput, ValidatorFn } from "@/src/validators/types";
 
 const CATEGORIES: FlagCategory[] = ["terminology", "accuracy", "fluency", "locale", "number", "regionalism"];
@@ -70,6 +71,7 @@ export function deterministicCritique(i: ValidatorInput): CriticFlag[] {
     { v: glossaryValidator, category: "terminology" },
     { v: regionalismValidator, category: "regionalism" },
     { v: englishLeakageValidator, category: "fluency" },
+    { v: scriptConsistencyValidator, category: "regionalism" },
   ];
   const flags: CriticFlag[] = [];
   for (const { v, category } of map) {
