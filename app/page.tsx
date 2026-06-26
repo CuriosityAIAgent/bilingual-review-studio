@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { ArrowRight, FileText, Sparkles, Trash2, Upload as UploadIcon } from "lucide-react";
 import { api } from "@/app/lib/client";
 import type { DocSummary } from "@/src/store/types";
-import { TARGET_LOCALES, roleLabel } from "@/app/lib/roles";
+import { TARGET_LOCALES, roleLabel, localeLabel } from "@/app/lib/roles";
 import { useSeat } from "@/components/Providers";
 import { ProcessingView } from "@/components/ProcessingView";
 
@@ -14,6 +14,33 @@ const STATUS_COLOR: Record<string, string> = {
   draft: "var(--ink-faint)", in_review: "var(--edited)", changes_requested: "var(--flag)",
   approved: "var(--memory)", published: "var(--accent)",
 };
+
+/**
+ * Group documents by target language for display. Known target locales come
+ * first in TARGET_LOCALES order; any unexpected code falls into a trailing group
+ * keyed by its raw code. Only non-empty groups are returned. Preserves the input
+ * order within each group.
+ */
+function groupByLocale(docs: DocSummary[]): { code: string; label: string; docs: DocSummary[] }[] {
+  const groups: { code: string; label: string; docs: DocSummary[] }[] = [];
+  const indexByCode = new Map<string, number>();
+  const codeOf = (d: DocSummary) => d.target_locale;
+  for (const d of docs) {
+    const code = codeOf(d);
+    let idx = indexByCode.get(code);
+    if (idx === undefined) {
+      idx = groups.length;
+      indexByCode.set(code, idx);
+      groups.push({ code, label: localeLabel(code), docs: [] });
+    }
+    groups[idx].docs.push(d);
+  }
+  const rank = (code: string) => {
+    const i = TARGET_LOCALES.findIndex((l) => l.code === code);
+    return i === -1 ? TARGET_LOCALES.length : i;
+  };
+  return groups.sort((a, b) => rank(a.code) - rank(b.code));
+}
 
 export default function HomePage() {
   const router = useRouter();
@@ -110,42 +137,48 @@ export default function HomePage() {
       {docs.length > 0 && (
         <div style={{ marginBottom: 30 }}>
           <p className="label" style={{ marginBottom: 12 }}>In progress · {docs.length}</p>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 12 }}>
-            {docs.map((d) => {
-              // "clear" = no outstanding machine check (consistent with "X to resolve"
-              // beside it). Distinct from the outline's "done", which means a human
-              // actually reviewed the segment — the card can't know that.
-              const pct = d.block_count ? Math.round(((d.block_count - d.needs_review_count) / d.block_count) * 100) : 0;
-              const open = () => router.push(`/review/${d.doc_id}`);
-              return (
-                <div key={d.doc_id} className="card" role="button" tabIndex={0} onClick={open}
-                  onKeyDown={(e) => {
-                    // Only the card itself navigates on Enter/Space — ignore keys
-                    // bubbling up from the nested delete button (else it navigates).
-                    if (e.target !== e.currentTarget) return;
-                    if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
-                  }}
-                  style={{ padding: "16px 18px", textAlign: "left", cursor: "pointer", display: "flex", flexDirection: "column", gap: 8 }}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
-                    <span className="font-display" style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.25 }}>{d.title}</span>
-                    <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
-                      <span className="tag" style={{ color: STATUS_COLOR[d.status] }}>
-                        <span className="dot" style={{ background: STATUS_COLOR[d.status] }} /> {d.status.replace("_", " ")}
-                      </span>
-                      {canDelete && (
-                        <button className="btn btn-ghost" aria-label={`Delete ${d.title}`} title="Delete this document"
-                          disabled={deleting === d.doc_id} onClick={(e) => onDelete(e, d.doc_id, d.title)}
-                          style={{ padding: "5px 6px", color: "var(--ink-faint)" }}>
-                          <Trash2 size={14} strokeWidth={1.8} />
-                        </button>
-                      )}
+          {groupByLocale(docs).map((group) => (
+            <div key={group.code} style={{ marginBottom: 20 }}>
+              <p className="label" style={{ marginBottom: 10, color: "var(--ink-soft)" }}>{group.label} · {group.docs.length}</p>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 12 }}>
+                {group.docs.map((d) => {
+                  // "clear" = no outstanding machine check (consistent with "X to resolve"
+                  // beside it). Distinct from the outline's "done", which means a human
+                  // actually reviewed the segment — the card can't know that.
+                  const pct = d.block_count ? Math.round(((d.block_count - d.needs_review_count) / d.block_count) * 100) : 0;
+                  const open = () => router.push(`/review/${d.doc_id}`);
+                  return (
+                    <div key={d.doc_id} className="card" role="button" tabIndex={0} onClick={open}
+                      onKeyDown={(e) => {
+                        // Only the card itself navigates on Enter/Space — ignore keys
+                        // bubbling up from the nested delete button (else it navigates).
+                        if (e.target !== e.currentTarget) return;
+                        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); }
+                      }}
+                      style={{ padding: "16px 18px", textAlign: "left", cursor: "pointer", display: "flex", flexDirection: "column", gap: 8 }}>
+                      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 10 }}>
+                        <span className="font-display" style={{ fontWeight: 600, fontSize: 15.5, lineHeight: 1.25 }}>{d.title}</span>
+                        <div style={{ display: "flex", alignItems: "center", gap: 8, flexShrink: 0 }}>
+                          <span className="tag" style={{ color: "var(--ink-soft)" }}>{localeLabel(d.target_locale)}</span>
+                          <span className="tag" style={{ color: STATUS_COLOR[d.status] }}>
+                            <span className="dot" style={{ background: STATUS_COLOR[d.status] }} /> {d.status.replace("_", " ")}
+                          </span>
+                          {canDelete && (
+                            <button className="btn btn-ghost" aria-label={`Delete ${d.title}`} title="Delete this document"
+                              disabled={deleting === d.doc_id} onClick={(e) => onDelete(e, d.doc_id, d.title)}
+                              style={{ padding: "5px 6px", color: "var(--ink-faint)" }}>
+                              <Trash2 size={14} strokeWidth={1.8} />
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                      <div className="ui-base mono" title="Clear = segments with no outstanding machine check (validator, critic flag, or low QE) or already accepted. This is not the same as 'reviewed' — open the document and Accept each segment to review it." style={{ color: "var(--ink-faint)" }}>{pct}% clear · {d.needs_review_count} to resolve · {d.edits_per_1k} edits/1k</div>
                     </div>
-                  </div>
-                  <div className="ui-base mono" title="Clear = segments with no outstanding machine check (validator, critic flag, or low QE) or already accepted. This is not the same as 'reviewed' — open the document and Accept each segment to review it." style={{ color: "var(--ink-faint)" }}>{pct}% clear · {d.needs_review_count} to resolve · {d.edits_per_1k} edits/1k</div>
-                </div>
-              );
-            })}
-          </div>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
         </div>
       )}
 

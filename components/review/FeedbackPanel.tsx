@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { BookOpen, Check, TrendingDown } from "lucide-react";
 import { api } from "@/app/lib/client";
-import { roleLabel } from "@/app/lib/roles";
+import { roleLabel, localeLabel } from "@/app/lib/roles";
 import type { DocModel, GlossaryEntry, NeutralizationRule } from "@/src/lib/doc-model";
 import { changedPhrase } from "@/src/lib/text-diff";
 
@@ -54,13 +54,20 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey, onJu
 
   useEffect(() => {
     api.memory().then((r) => { setRules(r.rules); setGlossary(r.glossary); }).catch(() => {});
-    api.metrics().then(setMetrics).catch(() => {});
-  }, [refreshKey]);
+    // Scope the learning-curve / totals card to THIS document's target language.
+    api.metrics(doc.target_locale).then(setMetrics).catch(() => {});
+  }, [refreshKey, doc.target_locale]);
 
-  const proposed = rules.filter((r) => r.state === "proposed");
-  // The queue is the GLOBAL memory queue (rules apply to every document), but it
-  // renders in a per-document sidebar — so surface which proposals actually touch
-  // THIS document and sort those to the top, and label the rest as cross-document.
+  // Each document has ISOLATED governed memory per target language — a zh-Hans doc
+  // must never show es-419 (or zh-Hant) rules/glossary. Scope everything below to
+  // this document's target locale before deriving proposed/active/glossary.
+  const localeRules = rules.filter((r) => r.locale === doc.target_locale);
+  const localeGlossary = glossary.filter((g) => g.locale === doc.target_locale);
+  const proposed = localeRules.filter((r) => r.state === "proposed");
+  // Within this language the queue is the GLOBAL memory queue (rules apply to every
+  // document of this locale), but it renders in a per-document sidebar — so surface
+  // which proposals actually touch THIS document and sort those to the top, and
+  // label the rest as cross-document.
   const docHaystack = doc.blocks
     .map((b) => `${b.source_text} ${b.mt_text} ${b.final_text}`)
     .join(" ")
@@ -75,7 +82,7 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey, onJu
     return new RegExp(`(?<![\\p{L}\\p{N}])${esc}(?![\\p{L}\\p{N}])`, "u").test(docHaystack);
   };
   const proposedSorted = [...proposed].sort((a, b) => Number(appearsHere(b)) - Number(appearsHere(a)));
-  const active = rules.filter((r) => r.state === "active" || r.state === "approved").sort((a, b) => b.hits - a.hits);
+  const active = localeRules.filter((r) => r.state === "active" || r.state === "approved").sort((a, b) => b.hits - a.hits);
   const recentEdits = [...doc.edit_log].reverse().slice(0, 6);
 
   const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
@@ -105,15 +112,15 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey, onJu
               <Sparkline curve={metrics?.curve ?? []} />
             </div>
             <div className="ui-base mono" style={{ color: "var(--ink-faint)", marginTop: 10 }}>
-              {metrics?.active_rules ?? 0} active rules · {metrics?.total_rule_hits ?? 0} auto-neutralizations
+              {active.length} active rules · {metrics?.total_rule_hits ?? 0} auto-neutralizations
             </div>
           </div>
         </Section>
 
         {proposed.length > 0 && (
-          <Section title={`Governance queue · ${proposed.length} proposed`}>
+          <Section title={`Governance queue · ${proposed.length} proposed · ${localeLabel(doc.target_locale)}`}>
             <p className="ui-base" style={{ color: "var(--ink-faint)", margin: "-2px 0 9px" }}>
-              Rules awaiting an approver. They enter the shared memory and apply to every document — not only this one.
+              Rules awaiting an approver. They enter the {localeLabel(doc.target_locale)} memory and apply to every {localeLabel(doc.target_locale)} document — not only this one.
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {proposedSorted.map((r) => (
@@ -121,8 +128,9 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey, onJu
                   <div className="doc-body" style={{ fontSize: 14 }}>
                     <s style={{ color: "var(--flag)" }}>{r.regional_form}</s> → <b style={{ color: "var(--memory)" }}>{r.neutral_form}</b>
                   </div>
-                  {/* Tells the reviewer which queued rules are relevant to the text in
-                      front of them vs. ones proposed from other documents. */}
+                  {/* Tells the reviewer which queued rules (all in this same target
+                      language) are relevant to the text in front of them vs. ones
+                      proposed from other documents of this locale. */}
                   <span className="tag" style={{ marginTop: 4, color: appearsHere(r) ? "var(--accent)" : "var(--ink-faint)" }}>
                     {appearsHere(r) ? "appears in this document" : "from another document"}
                   </span>
@@ -153,7 +161,7 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey, onJu
           </Section>
         )}
 
-        <Section title={`Active neutralization rules · ${active.length}`}>
+        <Section title={`Active neutralization rules · ${active.length} · ${localeLabel(doc.target_locale)}`}>
           <div style={{ display: "flex", flexDirection: "column", gap: 5 }}>
             {active.slice(0, 8).map((r) => (
               <div key={r.id} className="ui-base" style={{ display: "flex", alignItems: "center", gap: 6 }}>
@@ -166,9 +174,11 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey, onJu
           </div>
         </Section>
 
-        <Section title={`Neutral glossary · ${glossary.length} terms`}>
-          <div className="ui-base" style={{ color: "var(--ink-soft)", lineHeight: 1.5 }}>
-            {glossary.slice(0, 6).map((g) => g.source).join(" · ")}{glossary.length > 6 ? " …" : ""}
+        <Section title={`${localeLabel(doc.target_locale)} glossary · ${localeGlossary.length} terms`}>
+          <div className="ui-base" style={{ color: localeGlossary.length ? "var(--ink-soft)" : "var(--ink-faint)", lineHeight: 1.5 }}>
+            {localeGlossary.length
+              ? `${localeGlossary.slice(0, 6).map((g) => g.source).join(" · ")}${localeGlossary.length > 6 ? " …" : ""}`
+              : `No ${localeLabel(doc.target_locale)} glossary terms yet — they grow from finished work.`}
           </div>
         </Section>
 

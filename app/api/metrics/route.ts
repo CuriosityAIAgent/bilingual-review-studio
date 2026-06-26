@@ -1,14 +1,21 @@
 /** GET /api/metrics — the killer metric (spec §1, §15): the learning curve of
  *  edits-per-1,000-words over documents, plus rule-application and regionalism
  *  trend signals. */
+import type { Locale } from "@/src/lib/doc-model";
 import { ensureSeeded } from "@/src/memory/seed";
 import { ok } from "@/src/server/context";
 import { getStore } from "@/src/store";
 
-export async function GET() {
+export async function GET(req: Request) {
   const store = getStore();
-  await ensureSeeded(store);
-  const [summaries, rules] = await Promise.all([store.listDocs(), store.getRules()]);
+  // Optional ?locale scopes EVERY number to one target language, so a Chinese
+  // review never shows Spanish-heavy totals in the sidebar (curve, doc count,
+  // reduction, rule hits). No locale = global (the overview view).
+  const locale = new URL(req.url).searchParams.get("locale") as Locale | null;
+  await ensureSeeded(store, locale ?? "es-419");
+  const [allSummaries, allRules] = await Promise.all([store.listDocs(), store.getRules()]);
+  const summaries = locale ? allSummaries.filter((s) => s.target_locale === locale) : allSummaries;
+  const rules = locale ? allRules.filter((r) => r.locale === locale) : allRules;
 
   const curve = [...summaries]
     .sort((a, b) => a.created_at.localeCompare(b.created_at))
