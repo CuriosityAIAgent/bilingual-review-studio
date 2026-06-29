@@ -1,6 +1,6 @@
 "use client";
-import { useState } from "react";
-import { ArrowRight, BookPlus, RotateCcw, Sparkles } from "lucide-react";
+import { useRef, useState } from "react";
+import { ArrowRight, BookPlus, FileUp, RotateCcw, Sparkles } from "lucide-react";
 import { api, type MemoryImportPreview, type MemoryImportCommit, type TmImportStatus } from "@/app/lib/client";
 import { TARGET_LOCALES, roleLabel } from "@/app/lib/roles";
 import { useSeat } from "@/components/Providers";
@@ -32,12 +32,27 @@ export default function LearnPage() {
   const [done, setDone] = useState<MemoryImportCommit | null>(null);
   const [busy, setBusy] = useState("");
   const [error, setError] = useState("");
+  // Which input produced the current preview — so Save commits via the matching
+  // endpoint (re-reads the same .docx for file imports; re-aligns text for paste).
+  const [src, setSrc] = useState<"paste" | "file">("paste");
+  const [file, setFile] = useState<File | null>(null);
+  const fileRef = useRef<HTMLInputElement>(null);
 
   const onProcess = async () => {
     setBusy("process"); setError("");
     try {
       const r = await api.importMemoryPreview(source, target, align, locale);
-      setPreview(r); setPhase("preview");
+      setSrc("paste"); setPreview(r); setPhase("preview");
+    } catch (e) { setError((e as Error).message); }
+    finally { setBusy(""); }
+  };
+
+  const onProcessFile = async () => {
+    if (!file) return;
+    setBusy("file"); setError("");
+    try {
+      const r = await api.importMemoryDocxPreview(file, locale);
+      setSrc("file"); setPreview(r); setPhase("preview");
     } catch (e) { setError((e as Error).message); }
     finally { setBusy(""); }
   };
@@ -45,7 +60,9 @@ export default function LearnPage() {
   const onSave = async () => {
     setBusy("save"); setError("");
     try {
-      const r = await api.importMemoryCommit(source, target, align, locale);
+      const r = src === "file" && file
+        ? await api.importMemoryDocxCommit(file, locale)
+        : await api.importMemoryCommit(source, target, align, locale);
       setDone(r); setPhase("done");
     } catch (e) { setError((e as Error).message); }
     finally { setBusy(""); }
@@ -53,6 +70,8 @@ export default function LearnPage() {
 
   const reset = () => {
     setSource(""); setTarget(""); setPreview(null); setDone(null); setError(""); setPhase("input");
+    setSrc("paste"); setFile(null);
+    if (fileRef.current) fileRef.current.value = "";
   };
 
   const newCount = preview?.rows.filter((r) => r.status === "new").length ?? 0;
@@ -67,9 +86,9 @@ export default function LearnPage() {
         <p className="label">{seat ? `Signed in as ${roleLabel(seat.role)}` : "Translation Studio"} · train</p>
         <h1 className="font-display" style={{ fontSize: 30, letterSpacing: "-0.02em", marginTop: 4 }}>Train from finished work</h1>
         <p className="doc-body" style={{ color: "var(--ink-soft)", marginTop: 6, maxWidth: 660 }}>
-          Paste an English document you've already translated on the left, and your finished {targetLabel} on the right.
-          We align them segment by segment and fold the pairs into that language's translation memory — so future
-          drafts reuse how your team has actually translated, instead of starting cold.
+          Upload a bilingual Word document — a two-column table of English and your finished {targetLabel} — or paste
+          both sides as text. We turn each pair into translation memory for that language, so future drafts reuse how
+          your team has actually translated, instead of starting cold.
         </p>
       </div>
 
@@ -81,9 +100,47 @@ export default function LearnPage() {
         </div>
       )}
 
-      {/* ── Input: two panes ── */}
+      {/* ── Input ── */}
       {phase === "input" && (
         <div className="fade-up">
+          {/* Target language governs BOTH the upload and the paste path below —
+              a Chinese pair never enters Spanish memory, and vice-versa. */}
+          <label className="ui-base" style={{ display: "inline-flex", alignItems: "center", gap: 8, color: "var(--ink-soft)", marginBottom: 18 }}>
+            Target language
+            <select value={locale} onChange={(e) => setLocale(e.target.value)} disabled={!canLearn}
+              style={{ padding: "7px 10px", borderRadius: "var(--r-sm)", border: "1px solid var(--line)", background: "var(--surface)", color: "var(--ink)", fontSize: 13.5 }}>
+              {TARGET_LOCALES.map((l) => <option key={l.code} value={l.code}>{l.label}</option>)}
+            </select>
+          </label>
+
+          {/* ── Upload a bilingual Word document (two-column table) ── */}
+          <div className="card" style={{ padding: 18, marginBottom: 22, display: "flex", flexWrap: "wrap", alignItems: "center", gap: 14 }}>
+            <FileUp size={20} style={{ color: "var(--accent)", flexShrink: 0 }} />
+            <div style={{ flex: "1 1 280px", minWidth: 0 }}>
+              <p className="ui-base" style={{ fontWeight: 600, color: "var(--ink)" }}>Upload a bilingual Word document</p>
+              <p className="ui-base" style={{ color: "var(--ink-soft)", marginTop: 2 }}>
+                A two-column table — English in one column, {targetLabel} in the other. Each row becomes one memory pair;
+                we detect which column is which.
+              </p>
+              {file && <p className="ui-base mono" style={{ color: "var(--ink-soft)", marginTop: 6 }}>{file.name}</p>}
+            </div>
+            <input ref={fileRef} type="file" accept=".docx" hidden
+              onChange={(e) => { setFile(e.target.files?.[0] ?? null); setError(""); }} />
+            <button className="btn btn-ghost ui-base" disabled={!canLearn} onClick={() => fileRef.current?.click()} style={{ padding: "8px 13px" }}>
+              {file ? "Choose another" : "Choose .docx"}
+            </button>
+            <button className="btn btn-accent" disabled={!canLearn || !file || busy === "file"} onClick={onProcessFile} style={{ padding: "8px 15px" }}>
+              {busy === "file" ? <Sparkles size={14} className="live-dot" /> : <FileUp size={14} />}
+              {busy === "file" ? "Reading…" : "Process document"}
+            </button>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center", gap: 12, margin: "0 0 18px" }}>
+            <div style={{ flex: 1, height: 1, background: "var(--line)" }} />
+            <span className="label" style={{ color: "var(--ink-faint)" }}>or paste the text</span>
+            <div style={{ flex: 1, height: 1, background: "var(--line)" }} />
+          </div>
+
           <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
             <div>
               <p className="label" style={{ marginBottom: 8 }}>English — source</p>
@@ -104,14 +161,6 @@ export default function LearnPage() {
               {busy === "process" ? <Sparkles size={15} className="live-dot" /> : <ArrowRight size={15} />}
               {busy === "process" ? "Aligning…" : "Process"}
             </button>
-            {/* Which language's memory this pair folds into. */}
-            <label className="ui-base" style={{ display: "inline-flex", alignItems: "center", gap: 7, color: "var(--ink-soft)" }}>
-              Target
-              <select value={locale} onChange={(e) => setLocale(e.target.value)} disabled={!canLearn}
-                style={{ padding: "7px 9px", borderRadius: "var(--r-sm)", border: "1px solid var(--line)", background: "var(--surface)", color: "var(--ink)", fontSize: 13.5 }}>
-                {TARGET_LOCALES.map((l) => <option key={l.code} value={l.code}>{l.label}</option>)}
-              </select>
-            </label>
             <div style={{ display: "inline-flex", border: "1px solid var(--line)", borderRadius: "var(--r-md)", overflow: "hidden" }}>
               {(["paragraph", "semantic"] as const).map((m) => (
                 <button key={m} onClick={() => setAlign(m)} disabled={!canLearn}
@@ -140,7 +189,7 @@ export default function LearnPage() {
         <div className="fade-up">
           <div className="card" style={{ padding: "14px 18px", marginBottom: 16, display: "flex", flexWrap: "wrap", gap: 16, alignItems: "center" }}>
             <span className="font-display" style={{ fontWeight: 600, fontSize: 16 }}>
-              {preview.rows.length} {preview.align === "semantic" ? "matched sentence pairs" : "aligned segments"}
+              {preview.rows.length} {preview.align === "table" ? "rows from your document" : preview.align === "semantic" ? "matched sentence pairs" : "aligned segments"}
             </span>
             <span className="ui-base mono" style={{ color: "var(--ink-soft)" }}>
               <b style={{ color: "var(--memory)" }}>{newCount} new</b> · {supCount} updates · {dupCount} already known{protCount > 0 ? ` · ${protCount} disclaimer${protCount > 1 ? "s" : ""} locked` : ""}
@@ -156,6 +205,18 @@ export default function LearnPage() {
           {preview.warning && (
             <div className="card" style={{ padding: "12px 16px", marginBottom: 14, borderColor: "var(--flag)" }}>
               <span className="ui-base" style={{ color: "var(--flag)" }}>{preview.warning}</span>
+            </div>
+          )}
+
+          {preview.align === "table" && (
+            <div className="card" style={{ padding: "12px 16px", marginBottom: 14 }}>
+              <span className="ui-base" style={{ color: "var(--ink-soft)" }}>
+                Read {preview.rowsSeen} row{preview.rowsSeen === 1 ? "" : "s"} from your document
+                {preview.headerSkipped ? " (skipped a header row)" : ""} into{" "}
+                {preview.rows.length} English↔{targetLabel} pair{preview.rows.length === 1 ? "" : "s"}
+                {preview.droppedRows ? ` · dropped ${preview.droppedRows} row${preview.droppedRows === 1 ? "" : "s"} missing one side` : ""}
+                {preview.columnSwapped ? ` · detected ${targetLabel} in the left column` : ""}.
+              </span>
             </div>
           )}
 
