@@ -22,6 +22,18 @@ async function req<T>(path: string, opts: RequestInit = {}): Promise<T> {
   return data as T;
 }
 
+/** Multipart upload of a bilingual Word document to the table-import endpoint. */
+async function importDocx<T>(file: File, locale: string, mode: "preview" | "commit"): Promise<T> {
+  const fd = new FormData();
+  fd.append("file", file);
+  fd.append("locale", locale);
+  fd.append("mode", mode);
+  const res = await fetch("/api/memory/import-docx", { method: "POST", body: fd, headers: { "x-brs-seat": getSeatId() } });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error((data as { error?: string }).error || res.statusText);
+  return data as T;
+}
+
 export interface ActionBody {
   kind: string;
   blockId?: string;
@@ -71,6 +83,10 @@ export const api = {
     req<MemoryImportPreview>("/api/memory/import", { method: "POST", body: JSON.stringify({ source_text, target_text, mode: "preview", align, locale }) }),
   importMemoryCommit: (source_text: string, target_text: string, align: AlignMode = "paragraph", locale = "es-419") =>
     req<MemoryImportCommit>("/api/memory/import", { method: "POST", body: JSON.stringify({ source_text, target_text, mode: "commit", align, locale }) }),
+  // Bilingual Word document (two-column table) → TM. Rows are read straight
+  // through as English↔translation pairs; preview classifies, commit writes.
+  importMemoryDocxPreview: (file: File, locale = "es-419") => importDocx<MemoryImportPreview>(file, locale, "preview"),
+  importMemoryDocxCommit: (file: File, locale = "es-419") => importDocx<MemoryImportCommit>(file, locale, "commit"),
 
   // Reviewer edit → memory (governed): propose, list pending, approve/reject.
   proposeMemory: (body: { source_text: string; target_text: string; doc_id: string; doc_title: string; segment_id: string }) =>
@@ -88,10 +104,20 @@ interface MemoryImportSummary {
   targetBlocks: number;
   sourceExtra: string[];
   targetExtra: string[];
-  /** "semantic" / "positional-fallback" when align:"semantic" was requested. */
+  /** "semantic" / "positional-fallback" (paste) or "table" (Word upload). */
   align?: string;
   matched?: number;
   warning?: string;
+  // ── Word table-import diagnostics (align: "table") ──
+  tables?: number;
+  rowsSeen?: number;
+  headerSkipped?: boolean;
+  droppedRows?: number;
+  /** The translation column was the left one (auto-detected). */
+  columnSwapped?: boolean;
+  /** False when column order couldn't be detected by script (assumed English-left). */
+  columnConfident?: boolean;
+  cjkDetected?: boolean;
 }
 export interface MemoryImportPreview extends MemoryImportSummary {
   rows: { source_text: string; target_text: string; status: TmImportStatus; score?: number }[];
