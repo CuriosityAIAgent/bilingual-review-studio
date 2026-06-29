@@ -22,12 +22,15 @@ async function req<T>(path: string, opts: RequestInit = {}): Promise<T> {
   return data as T;
 }
 
-/** Multipart upload of a bilingual Word document to the table-import endpoint. */
+/** Multipart upload of a bilingual Word document to the table-import endpoint.
+ *  `confirm` is sent on commit to acknowledge the preview the user just saw —
+ *  the server requires it before saving an ambiguous-orientation import. */
 async function importDocx<T>(file: File, locale: string, mode: "preview" | "commit"): Promise<T> {
   const fd = new FormData();
   fd.append("file", file);
   fd.append("locale", locale);
   fd.append("mode", mode);
+  if (mode === "commit") fd.append("confirm", "true");
   const res = await fetch("/api/memory/import-docx", { method: "POST", body: fd, headers: { "x-brs-seat": getSeatId() } });
   const data = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error((data as { error?: string }).error || res.statusText);
@@ -110,6 +113,8 @@ interface MemoryImportSummary {
   warning?: string;
   // ── Word table-import diagnostics (align: "table") ──
   tables?: number;
+  /** Tables ignored because they carried no Chinese (Chinese target only). */
+  skippedTables?: number;
   rowsSeen?: number;
   headerSkipped?: boolean;
   droppedRows?: number;
@@ -118,6 +123,8 @@ interface MemoryImportSummary {
   /** False when column order couldn't be detected by script (assumed English-left). */
   columnConfident?: boolean;
   cjkDetected?: boolean;
+  /** Pairs were capped; the rest of the document was not imported. */
+  truncated?: boolean;
 }
 export interface MemoryImportPreview extends MemoryImportSummary {
   rows: { source_text: string; target_text: string; status: TmImportStatus; score?: number }[];
