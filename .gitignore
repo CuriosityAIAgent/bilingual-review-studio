@@ -49,3 +49,6 @@ yarn-error.log*
 
 # typescript incremental build cache (must not be committed — breaks Nixpacks cache mount)
 tsconfig.tsbuildinfo
+
+# pnpm content-addressable store (stray cache; this repo is npm/package-lock.json)
+.pnpm-store/
