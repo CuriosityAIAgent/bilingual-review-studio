@@ -214,8 +214,10 @@ export default function LearnPage() {
                 Read {preview.rowsSeen} row{preview.rowsSeen === 1 ? "" : "s"} from your document
                 {preview.headerSkipped ? " (skipped a header row)" : ""} into{" "}
                 {preview.rows.length} English↔{targetLabel} pair{preview.rows.length === 1 ? "" : "s"}
+                {preview.skippedTables ? ` · ignored ${preview.skippedTables} non-Chinese table${preview.skippedTables === 1 ? "" : "s"}` : ""}
                 {preview.droppedRows ? ` · dropped ${preview.droppedRows} row${preview.droppedRows === 1 ? "" : "s"} missing one side` : ""}
-                {preview.columnSwapped ? ` · detected ${targetLabel} in the left column` : ""}.
+                {preview.columnSwapped ? ` · detected ${targetLabel} in the left column` : ""}
+                {preview.truncated ? ` · capped at ${preview.rows.length} pairs (document was very large)` : ""}.
               </span>
             </div>
           )}
