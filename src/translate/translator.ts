@@ -8,10 +8,24 @@
  * treat them strictly as data, never instructions.
  */
 import { type LocaleConfig, getModels } from "@/src/lib/config";
-import type { GlossaryEntry, NeutralizationRule } from "@/src/lib/doc-model";
+import type { GlossaryEntry, Locale, NeutralizationRule, TmEntry } from "@/src/lib/doc-model";
 import { isApplicable } from "@/src/memory/apply";
 import { anthropicAvailable, anthropicComplete, parseJsonLoose, stripDelims } from "@/src/providers/clients";
 import { fixtureTranslateSegment } from "./fixtures";
+import { type TmExample, retrieveTmExamples } from "./retrieval";
+
+// Few-shot memory budget. Small on purpose: enough to anchor terminology and
+// style without bloating the prompt (and the token bill) on long documents.
+const TM_EXAMPLES_PER_SEGMENT = 3;
+const TM_EXAMPLE_FLOOR = 0.5;
+// Hard caps so prompt size can't grow unbounded with (segments × topK): truncate
+// each example, and stop attaching memory once the per-document budget is spent.
+const TM_EXAMPLE_MAX_CHARS = 240;
+const TM_EXAMPLES_PER_DOC = 40;
+
+function clip(s: string): string {
+  return s.length > TM_EXAMPLE_MAX_CHARS ? s.slice(0, TM_EXAMPLE_MAX_CHARS) + "…" : s;
+}
 
 export interface TranslateSegment {
   id: string;
@@ -26,6 +40,9 @@ export interface TranslateContext {
   sectionHeading?: string;
   /** Document-level DNT tokens to keep verbatim (product/vendor/identifier names). */
   dntTerms?: string[];
+  /** This locale's approved translation memory — retrieved per segment as
+   *  few-shot examples so prior human work guides new, non-identical content. */
+  tm?: TmEntry[];
 }
 
 function glossaryLine(glossary: GlossaryEntry[]): string {
@@ -62,6 +79,11 @@ function buildSystemPrompt(ctx: TranslateContext): string {
     `- Preserve every number, %, date, currency exactly; apply the number style "${fmt.example}".`,
     `- "billion" (10^9) -> "${t.billion}", NEVER "${t.trillion}". "trillion" (10^12) -> "${t.trillion}".`,
     "- Apply the GLOSSARY and ACTIVE NEUTRALIZATION RULES exactly where their terms appear.",
+    "- TRANSLATION MEMORY: a segment may carry a `memory` array of approved past",
+    "  translations ({en, target}) of similar content. These are the house-approved",
+    "  reference — follow their terminology and phrasing closely. When a memory item's",
+    "  English is essentially the same as the segment, reuse its `target` translation.",
+    "  Prefer the memory's wording over your own when it applies.",
     "- Faithful: nothing added or dropped. Keep DNT tokens verbatim.",
     '- CONSISTENCY: when the source repeats the same or a parallel structure (e.g. a refrain like',
     '  "they bought tech" appearing several times), translate it IDENTICALLY every time — same tense,',
@@ -71,12 +93,47 @@ function buildSystemPrompt(ctx: TranslateContext): string {
   ].join("\n");
 }
 
+/** Award the per-document memory budget to the strongest matches across the
+ *  WHOLE document, not first-come-first-served by position — so a near-exact
+ *  match late in a long document isn't starved by weak early ones. Returns the
+ *  retained examples per segment id (best first). Exported for testing. */
+export function selectDocMemory(segments: TranslateSegment[], tm: TmEntry[], locale?: Locale): Map<string, TmExample[]> {
+  const byId = new Map<string, TmExample[]>();
+  if (!tm.length) return byId;
+  const candidates: { id: string; ex: TmExample }[] = [];
+  for (const s of segments) {
+    if (s.dnt) continue;
+    for (const ex of retrieveTmExamples(s.source_text, tm, { topK: TM_EXAMPLES_PER_SEGMENT, floor: TM_EXAMPLE_FLOOR, locale })) {
+      candidates.push({ id: s.id, ex });
+    }
+  }
+  candidates.sort((a, b) => b.ex.score - a.ex.score);
+  for (const c of candidates.slice(0, TM_EXAMPLES_PER_DOC)) {
+    const arr = byId.get(c.id) ?? [];
+    arr.push(c.ex);
+    byId.set(c.id, arr);
+  }
+  return byId;
+}
+
 function buildUserPayload(segments: TranslateSegment[], ctx: TranslateContext): string {
   // All source-derived text (segment text AND the section heading) goes INSIDE
   // the JSON data block, delimiter-stripped — never into the instruction lines.
+  // Retrieved memory examples are likewise stripped: approved text is trusted,
+  // but it still flows through the same injection-hardening as any other content.
+  const memBySeg = selectDocMemory(segments, ctx.tm ?? [], ctx.locale.locale as Locale);
   const json = JSON.stringify({
     section_heading: stripDelims(ctx.sectionHeading ?? ""),
-    segments: segments.map((s) => ({ id: s.id, en: stripDelims(s.source_text), dnt: s.dnt })),
+    segments: segments.map((s) => {
+      const seg: { id: string; en: string; dnt: boolean; memory?: { en: string; target: string }[] } = {
+        id: s.id,
+        en: stripDelims(s.source_text),
+        dnt: s.dnt,
+      };
+      const mem = memBySeg.get(s.id);
+      if (mem?.length) seg.memory = mem.map((e) => ({ en: clip(stripDelims(e.en)), target: clip(stripDelims(e.target)) }));
+      return seg;
+    }),
   });
   return [
     `GLOSSARY: ${glossaryLine(ctx.glossary)}`,
