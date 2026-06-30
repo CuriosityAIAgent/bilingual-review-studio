@@ -153,6 +153,54 @@ export async function addTm(i: AddTmInput): Promise<TmEntry> {
   return entry;
 }
 
+export interface RemoveTmResult {
+  removed: number;
+  /** Ids that were disclaimers (compliance-only) and therefore left untouched. */
+  skippedDisclaimers: number;
+  /** Ids that matched nothing (already gone / wrong id). */
+  notFound: number;
+}
+
+/** Targeted TM cleanup: hard-delete specific entries by id (incident hygiene —
+ *  e.g. a mis-aligned pair a bad import wrote). TM is normally append-only; this
+ *  is a guarded admin exception (mirrors the purge-segments path). Disclaimers
+ *  are NEVER deleted here — they are compliance-governed and routed by kind. */
+export async function removeTmEntries(ids: string[]): Promise<RemoveTmResult> {
+  const wanted = new Set(ids);
+  if (wanted.size === 0) return { removed: 0, skippedDisclaimers: 0, notFound: 0 };
+  const store = getStore();
+  const tm = await store.getTm();
+  let skippedDisclaimers = 0;
+  const present = new Set<string>();
+  const removedIds = new Set<string>();
+  const kept = tm.filter((t) => {
+    if (!wanted.has(t.id)) return true;
+    present.add(t.id);
+    if (t.kind === "disclaimer") {
+      skippedDisclaimers++;
+      return true; // protect compliance memory
+    }
+    removedIds.add(t.id);
+    return false; // drop it
+  });
+  // Repair the version chain so removal never leaves two active heads for one
+  // source. If a kept entry was superseded by a removed one, re-point it at that
+  // removed entry's OWN successor (walking past any further removed links). When
+  // the chain ends in nothing, superseded_by clears and the predecessor becomes
+  // active again — the simple rollback case.
+  const successorOf = new Map(tm.map((t) => [t.id, t.superseded_by] as const));
+  const restored = kept.map((t) => {
+    if (!t.superseded_by || !removedIds.has(t.superseded_by)) return t;
+    let s: string | undefined = t.superseded_by;
+    while (s && removedIds.has(s)) s = successorOf.get(s);
+    return { ...t, superseded_by: s };
+  });
+  const removed = removedIds.size;
+  if (removed > 0) await store.saveTm(restored);
+  const notFound = [...wanted].filter((id) => !present.has(id)).length;
+  return { removed, skippedDisclaimers, notFound };
+}
+
 // ── Learn from a finished bilingual pair (bulk TM capture) ────────────────────
 // A reviewer pastes completed English + completed Spanish; alignBilingual()
 // segments and aligns them, and each pair is folded into TM so prior human work

@@ -76,13 +76,14 @@ async function processBlocks(
   targetLocale: Locale,
 ): Promise<{ blocks: Block[]; appliedRuleIds: string[] }> {
   const locale = getLocale(targetLocale);
-  const { glossary, rules, tm: _tm } = await loadMemory(targetLocale);
-  void _tm;
+  const { glossary, rules, tm } = await loadMemory(targetLocale);
   const plural = locale.morphology?.plural_suffix ?? true;
 
   const dntTerms = Array.from(new Set(blocks.flatMap((b) => dntTermsFromEntities(b.entities))));
   const heading = blocks.find((b) => b.type === "title")?.source_text;
-  const ctx: TranslateContext = { glossary, rules, locale, dntTerms, sectionHeading: heading };
+  // Pass this locale's approved memory so the translator uses the most similar
+  // past pairs as few-shot examples (retrieval-augmented translation).
+  const ctx: TranslateContext = { glossary, rules, locale, dntTerms, sectionHeading: heading, tm };
 
   const machine = blocks.filter((b) => b.seg_status === "machine");
   const mtMap = await translateSegments(
