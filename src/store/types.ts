@@ -35,6 +35,9 @@ export interface DocSummary {
   owner_team: string;
   created_at: string;
   updated_at: string;
+  /** Who last edited a segment (last human edit_log actor), for the Home cards.
+   * null when no human edit has been recorded yet (machine-only draft). */
+  updated_by: string | null;
   /** Soft-delete tombstone (null = active). Drives the Library "Deleted" tab. */
   deleted_at: string | null;
 }
@@ -94,6 +97,11 @@ export function summarize(doc: DocModel): DocSummary {
     if (b.seg_status === "locked" || b.seg_status === "accepted") return false; // final → auto-pass
     return blockNeedsReview(b, human_floor) || ocr; // OCR routes every other segment to review
   }).length;
+  // "Edited by" = the last HUMAN correction (skip system/service actors), so the
+  // card credits the reviewer, not the pipeline. Falls back to null (no human
+  // edit yet) — the card then shows only the update time.
+  const lastHumanEdit = [...doc.edit_log].reverse().find((e) => e.actor?.role !== "system");
+  const updated_by = lastHumanEdit ? (lastHumanEdit.actor.display_name ?? lastHumanEdit.actor.user_id) : null;
   return {
     doc_id: doc.doc_id,
     title: doc.title,
@@ -108,6 +116,7 @@ export function summarize(doc: DocModel): DocSummary {
     owner_team: doc.owner.team_id,
     created_at: doc.created_at,
     updated_at: doc.updated_at,
+    updated_by,
     deleted_at: doc.deleted_at ?? null,
   };
 }
