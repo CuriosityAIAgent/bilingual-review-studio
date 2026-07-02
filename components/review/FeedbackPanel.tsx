@@ -53,9 +53,17 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey, onJu
   const [metrics, setMetrics] = useState<Metrics | null>(null);
 
   useEffect(() => {
-    api.memory().then((r) => { setRules(r.rules); setGlossary(r.glossary); }).catch(() => {});
+    // Fetch only THIS document's target-language memory (the client-side filter
+    // below is now belt-and-suspenders, but keeps the component correct even if
+    // called against an unfiltered endpoint). `ignore` drops a stale response
+    // from a previous locale: switching documents fast, an older ?locale= call
+    // could otherwise land last and overwrite state with the wrong subset, which
+    // the render's locale filter would then blank out.
+    let ignore = false;
+    api.memory(doc.target_locale).then((r) => { if (!ignore) { setRules(r.rules); setGlossary(r.glossary); } }).catch(() => {});
     // Scope the learning-curve / totals card to THIS document's target language.
-    api.metrics(doc.target_locale).then(setMetrics).catch(() => {});
+    api.metrics(doc.target_locale).then((m) => { if (!ignore) setMetrics(m); }).catch(() => {});
+    return () => { ignore = true; };
   }, [refreshKey, doc.target_locale]);
 
   // Each document has ISOLATED governed memory per target language — a zh-Hans doc
