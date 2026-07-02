@@ -97,10 +97,14 @@ export function summarize(doc: DocModel): DocSummary {
     if (b.seg_status === "locked" || b.seg_status === "accepted") return false; // final → auto-pass
     return blockNeedsReview(b, human_floor) || ocr; // OCR routes every other segment to review
   }).length;
-  // "Edited by" = the last HUMAN correction (skip system/service actors), so the
-  // card credits the reviewer, not the pipeline. Falls back to null (no human
-  // edit yet) — the card then shows only the update time.
-  const lastHumanEdit = [...doc.edit_log].reverse().find((e) => e.actor?.role !== "system");
+  // "Edited by" = the last actual TEXT edit by a human — mirrors the human-edit
+  // set behind edits/1k (src/metrics: "edit" | "neutralize") so the card stays
+  // internally consistent, and skips system/service actors. accept/reject/lock
+  // are status transitions, not edits, so they never show as "edited by". Falls
+  // back to null (no human edit yet) — the card then shows only the update time.
+  const lastHumanEdit = [...doc.edit_log]
+    .reverse()
+    .find((e) => (e.action === "edit" || e.action === "neutralize") && e.actor?.role !== "system");
   const updated_by = lastHumanEdit ? (lastHumanEdit.actor.display_name ?? lastHumanEdit.actor.user_id) : null;
   return {
     doc_id: doc.doc_id,

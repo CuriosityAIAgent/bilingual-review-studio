@@ -82,8 +82,10 @@ export default function HomePage() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    const saved = typeof window !== "undefined" ? window.localStorage.getItem("ts_work_filter") : null;
-    if (saved) setWorkFilter(saved);
+    try {
+      const saved = typeof window !== "undefined" ? window.localStorage.getItem("ts_work_filter") : null;
+      if (saved) setWorkFilter(saved);
+    } catch { /* localStorage can throw (SecurityError) in sandboxed/private modes */ }
   }, []);
   const pickFilter = (code: string) => {
     setWorkFilter(code);
