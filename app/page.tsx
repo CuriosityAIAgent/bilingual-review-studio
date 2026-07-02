@@ -49,6 +49,22 @@ function prettyTitle(t: string): string {
   return /\s/.test(t) ? t : t.replace(/[-_]+/g, " ").replace(/\s+/g, " ").trim();
 }
 
+/** Compact relative time for the "updated" line on Home cards ("3h ago",
+ *  "2d ago"). Falls back to a local date past a week so old docs read cleanly. */
+function relTime(iso: string): string {
+  const then = new Date(iso).getTime();
+  if (Number.isNaN(then)) return "";
+  const s = Math.max(0, Math.round((Date.now() - then) / 1000));
+  if (s < 60) return "just now";
+  const m = Math.round(s / 60);
+  if (m < 60) return `${m}m ago`;
+  const h = Math.round(m / 60);
+  if (h < 24) return `${h}h ago`;
+  const d = Math.round(h / 24);
+  if (d < 7) return `${d}d ago`;
+  return new Date(iso).toLocaleDateString();
+}
+
 export default function HomePage() {
   const router = useRouter();
   const { seat } = useSeat();
@@ -60,7 +76,21 @@ export default function HomePage() {
   const [deleting, setDeleting] = useState("");
   // Target language for new documents. Each target carries its own governed memory.
   const [locale, setLocale] = useState("es-419");
+  // Which target-language group "Current work" shows. Persisted so each team lands
+  // on their own language instead of scrolling past the others. "all" = every group.
+  const [workFilter, setWorkFilter] = useState("all");
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    try {
+      const saved = typeof window !== "undefined" ? window.localStorage.getItem("ts_work_filter") : null;
+      if (saved) setWorkFilter(saved);
+    } catch { /* localStorage can throw (SecurityError) in sandboxed/private modes */ }
+  }, []);
+  const pickFilter = (code: string) => {
+    setWorkFilter(code);
+    try { window.localStorage.setItem("ts_work_filter", code); } catch { /* ignore quota/private-mode */ }
+  };
 
   const canUpload = !seat || seat.role === "author" || seat.role === "admin";
   // Delete is destructive, so require a RESOLVED author/admin seat — don't show
@@ -130,6 +160,12 @@ export default function HomePage() {
     );
   }
 
+  // Group the queue by target language, then apply the team's language filter.
+  // A saved filter that no longer matches any group falls back to "all".
+  const groups = groupByLocale(docs);
+  const activeFilter = groups.some((g) => g.code === workFilter) ? workFilter : "all";
+  const shownGroups = activeFilter === "all" ? groups : groups.filter((g) => g.code === activeFilter);
+
   return (
     <div style={{ maxWidth: 1040, margin: "0 auto", padding: "40px 24px 96px" }}>
       <div className="fade-up" style={{ marginBottom: 30 }}>
@@ -144,7 +180,25 @@ export default function HomePage() {
       {docs.length > 0 && (
         <div style={{ marginBottom: 30 }}>
           <p className="label" style={{ marginBottom: 12 }}>In progress · {docs.length}</p>
-          {groupByLocale(docs).map((group) => (
+          {/* Language filter — each team jumps straight to its target language
+              instead of scrolling past the others. Only shown when >1 language is
+              in the queue; the choice persists across visits (localStorage). */}
+          {groups.length > 1 && (
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 18 }}>
+              {[{ code: "all", label: "All languages", n: docs.length }, ...groups.map((g) => ({ code: g.code, label: g.label, n: g.docs.length }))].map((t) => {
+                const on = activeFilter === t.code;
+                return (
+                  <button key={t.code} onClick={() => pickFilter(t.code)} aria-pressed={on}
+                    style={{ padding: "5px 13px", fontSize: 13, borderRadius: 999, cursor: "pointer",
+                      background: on ? "var(--ink)" : "transparent", color: on ? "var(--paper)" : "var(--ink-soft)",
+                      border: `1px solid ${on ? "var(--ink)" : "var(--line)"}` }}>
+                    {t.label} · {t.n}
+                  </button>
+                );
+              })}
+            </div>
+          )}
+          {shownGroups.map((group) => (
             <div key={group.code} style={{ marginBottom: 20 }}>
               <p className="label" style={{ marginBottom: 10, color: "var(--ink-soft)" }}>{group.label} · {group.docs.length}</p>
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 12 }}>
@@ -184,6 +238,11 @@ export default function HomePage() {
                           <span className="dot" style={{ background: STATUS_COLOR[d.status] }} /> {d.status.replace("_", " ")}
                         </span>
                         <span className="ui-base mono" title="Clear = segments with no outstanding machine check (validator, critic flag, or low QE) or already accepted. This is not the same as 'reviewed' — open the document and Accept each segment to review it." style={{ color: "var(--ink-faint)" }}>{pct}% clear · {d.needs_review_count} to resolve · {d.edits_per_1k} edits/1k</span>
+                        {/* Who touched it, and when — so an admin can audit today's work
+                            at a glance (the full trail is in each doc's edit log). */}
+                        <span className="ui-base" style={{ color: "var(--ink-faint)" }} title={`Last updated ${new Date(d.updated_at).toLocaleString()}`}>
+                          {d.updated_by ? `edited by ${d.updated_by} · ` : ""}updated {relTime(d.updated_at)}
+                        </span>
                       </div>
                     </div>
                   );
