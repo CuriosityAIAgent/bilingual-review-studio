@@ -72,7 +72,10 @@ export const api = {
     req<{ rule: NeutralizationRule }>("/api/rules", { method: "POST", body: JSON.stringify(body) }),
   governRule: (id: string, action: "approve" | "deprecate") =>
     req<{ rule: NeutralizationRule }>(`/api/rules/${id}`, { method: "POST", body: JSON.stringify({ action }) }),
-  memory: () => req<{ rules: NeutralizationRule[]; glossary: GlossaryEntry[]; tm: TmEntry[] }>("/api/memory"),
+  memory: (locale?: string) =>
+    req<{ rules: NeutralizationRule[]; glossary: GlossaryEntry[]; tm: TmEntry[] }>(
+      `/api/memory${locale ? `?locale=${encodeURIComponent(locale)}` : ""}`,
+    ),
   metrics: (locale?: string) =>
     req<{
       curve: { doc_id: string; title: string; created_at: string; edits_per_1k: number }[];

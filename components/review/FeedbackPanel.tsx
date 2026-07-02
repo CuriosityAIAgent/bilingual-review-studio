@@ -53,7 +53,10 @@ export function FeedbackPanel({ doc, canApproveRules, onGovern, refreshKey, onJu
   const [metrics, setMetrics] = useState<Metrics | null>(null);
 
   useEffect(() => {
-    api.memory().then((r) => { setRules(r.rules); setGlossary(r.glossary); }).catch(() => {});
+    // Fetch only THIS document's target-language memory (the client-side filter
+    // below is now belt-and-suspenders, but keeps the component correct even if
+    // called against an unfiltered endpoint).
+    api.memory(doc.target_locale).then((r) => { setRules(r.rules); setGlossary(r.glossary); }).catch(() => {});
     // Scope the learning-curve / totals card to THIS document's target language.
     api.metrics(doc.target_locale).then(setMetrics).catch(() => {});
   }, [refreshKey, doc.target_locale]);
