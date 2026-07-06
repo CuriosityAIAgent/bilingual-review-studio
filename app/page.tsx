@@ -190,7 +190,7 @@ export default function HomePage() {
                 return (
                   <button key={t.code} onClick={() => pickFilter(t.code)} aria-pressed={on}
                     style={{ padding: "5px 13px", fontSize: 13, borderRadius: 999, cursor: "pointer",
-                      background: on ? "var(--ink)" : "transparent", color: on ? "var(--paper)" : "var(--ink-soft)",
+                      background: on ? "var(--ink)" : "transparent", color: on ? "var(--surface)" : "var(--ink-soft)",
                       border: `1px solid ${on ? "var(--ink)" : "var(--line)"}` }}>
                     {t.label} · {t.n}
                   </button>
