@@ -47,9 +47,11 @@ The full loop runs through the real API with real role separation (see
   no GPU. Weights pre-cached to `.models/` at build (`npm run warm-qe`). A
   CometKiwi/xCOMET sidecar can drop in via `QE_SERVICE_URL` (same interface). QE
   is a routing signal only; validators + humans decide.
-- **10 deterministic validators** — number integrity incl. the **billón trap**
+- **12 deterministic validators** — number integrity incl. the **billón trap**
   (English *billion* = 10⁹ = "mil millones", never "billón"), currency, date,
-  ticker, ISIN check-digit, DNT, glossary, regionalism, disclaimer, English leakage.
+  ticker, ISIN check-digit, DNT, glossary, regionalism, disclaimer, English
+  leakage, and script consistency (Chinese: no Simplified glyph in a Traditional
+  target, and vice-versa).
 - **The learning flywheel:** flag a regionalism → propose a neutralization rule →
   approver activates it → re-translate auto-neutralizes it everywhere → the
   "edits per 1,000 words" curve falls. Governed lifecycle: only **active/approved**
@@ -185,3 +187,17 @@ full governed workflow. (Production swaps the mock seat for SSO; the RBAC stays.
   approval signal.
 
 See `docs/decisions/` (ADRs) and `CLAUDE.md` for the full contract.
+
+---
+
+## Documentation (for engineers)
+
+Full technical docs live in [`docs/`](docs/README.md):
+
+- **[Architecture](docs/ARCHITECTURE.md)** — system shape, pipeline, document model, governed memory, storage, security. The engineer's map.
+- **[API Reference](docs/reference-api.md)** — every HTTP endpoint, with auth, params, and responses.
+- **[How to develop locally](docs/howto-local-development.md)** — run, test, and make the common kinds of change.
+- **[Deployment](docs/DEPLOYMENT.md)** — Railway + Postgres/Supabase, the access gate, env matrix.
+- **[ADRs](docs/decisions/)** — the 14 decision records (the "why").
+- **[`CLAUDE.md`](CLAUDE.md)** — the full design contract (non-negotiable rules).
+- **[`CHANGELOG.md`](CHANGELOG.md)** — what shipped, by release.
