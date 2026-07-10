@@ -41,6 +41,7 @@ The "why" behind the design lives in [`decisions/`](decisions/):
 
 ## Other artifacts
 
+- [`CHANGELOG.md`](../CHANGELOG.md) — what shipped, by release.
 - [`DEPLOYMENT.md`](DEPLOYMENT.md) — operational deploy guide.
 - [`training-report.md`](training-report.md) — a memory-training run report.
 - `translation-studio-overview.html` — a rendered product overview.
