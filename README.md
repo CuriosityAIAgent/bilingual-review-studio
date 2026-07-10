@@ -185,3 +185,16 @@ full governed workflow. (Production swaps the mock seat for SSO; the RBAC stays.
   approval signal.
 
 See `docs/decisions/` (ADRs) and `CLAUDE.md` for the full contract.
+
+---
+
+## Documentation (for engineers)
+
+Full technical docs live in [`docs/`](docs/README.md):
+
+- **[Architecture](docs/ARCHITECTURE.md)** — system shape, pipeline, document model, governed memory, storage, security. The engineer's map.
+- **[API Reference](docs/reference-api.md)** — every HTTP endpoint, with auth, params, and responses.
+- **[How to develop locally](docs/howto-local-development.md)** — run, test, and make the common kinds of change.
+- **[Deployment](docs/DEPLOYMENT.md)** — Railway + Postgres/Supabase, the access gate, env matrix.
+- **[ADRs](docs/decisions/)** — the 14 decision records (the "why").
+- **[`CLAUDE.md`](CLAUDE.md)** — the full design contract (non-negotiable rules).
