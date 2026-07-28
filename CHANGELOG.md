@@ -9,6 +9,8 @@ pull request that shipped it.
 ## [Unreleased]
 
 ### Added
+- **Security policy.** `SECURITY.md` — trust boundaries, controls, and the known
+  limitations (mock auth, no rate cap) to read before external exposure.
 - **Multi-target languages.** Target locale is now first-class: **neutral Spanish
   (es-419)**, **Traditional Chinese (zh-Hant)**, and **Simplified Chinese
   (zh-Hans)**, each with its own governed memory, locale config
@@ -35,9 +37,16 @@ pull request that shipped it.
 - **Cleaner, uniform "Current work" cards.** (#32)
 
 ### Fixed
+- **Intermittent "unreadable response" on long documents.** The translator sent
+  the whole document in one call capped at 4096 output tokens; long / Chinese docs
+  truncated mid-JSON and failed loud. Now chunks long docs, detects truncation via
+  `stop_reason`, retries transient provider errors, and raises the cap to 8192. (#40)
+- **Card attribution showed the demo seat's name** ("Ana Reyes") on a shared
+  instance; now attributes by role ("Investment Strategist"). (#41)
 - **Active filter pill was unreadable** — it referenced an undefined CSS variable
   and rendered as a black blob with no label; now uses a defined theme token. (#38)
 - **Role-aware review guidance** and a clearer "awaiting approver" state. (#25)
+- **Docs:** `GET /api/documents/[id]` returns `{ doc }`, not `{ document }` (API reference corrected).
 
 ## [0.1.0]
 
