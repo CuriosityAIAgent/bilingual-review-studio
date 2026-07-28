@@ -238,10 +238,11 @@ export default function HomePage() {
                           <span className="dot" style={{ background: STATUS_COLOR[d.status] }} /> {d.status.replace("_", " ")}
                         </span>
                         <span className="ui-base mono" title="Clear = segments with no outstanding machine check (validator, critic flag, or low QE) or already accepted. This is not the same as 'reviewed' — open the document and Accept each segment to review it." style={{ color: "var(--ink-faint)" }}>{pct}% clear · {d.needs_review_count} to resolve · {d.edits_per_1k} edits/1k</span>
-                        {/* Who touched it, and when — so an admin can audit today's work
-                            at a glance (the full trail is in each doc's edit log). */}
+                        {/* Which ROLE last touched it, and when — never a personal
+                            name (login is a shared mock seat). Full trail is in the
+                            doc's edit log. */}
                         <span className="ui-base" style={{ color: "var(--ink-faint)" }} title={`Last updated ${new Date(d.updated_at).toLocaleString()}`}>
-                          {d.updated_by ? `edited by ${d.updated_by} · ` : ""}updated {relTime(d.updated_at)}
+                          {d.updated_by ? `edited by ${roleLabel(d.updated_by)} · ` : ""}updated {relTime(d.updated_at)}
                         </span>
                       </div>
                     </div>
