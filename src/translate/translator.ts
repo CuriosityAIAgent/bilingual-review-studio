@@ -273,7 +273,7 @@ async function translateBatch(
   // it; a single dropped segment is a real gap and fails loud.
   const missing = batch.filter((s) => !out[s.id]?.trim());
   if (missing.length) {
-    if (missing.length < batch.length) return void (await translateBatch(missing, ctx, models, out));
+    if (missing.length < batch.length) return void (await translateBatch(missing, ctx, models, out, docMemory));
     if (batch.length > 1) return splitAndRetry(batch);
     console.error(`[translate] Incomplete response: 1/1 segment missing (model=${models.translator.model})`);
     throw new Error(
