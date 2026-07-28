@@ -35,7 +35,8 @@ export interface DocSummary {
   owner_team: string;
   created_at: string;
   updated_at: string;
-  /** Who last edited a segment (last human edit_log actor), for the Home cards.
+  /** ROLE of the last human editor (e.g. "author"), for the Home cards — rendered
+   * via roleLabel, never the person's name (login is a shared mock seat switcher).
    * null when no human edit has been recorded yet (machine-only draft). */
   updated_by: string | null;
   /** Soft-delete tombstone (null = active). Drives the Library "Deleted" tab. */
@@ -105,7 +106,13 @@ export function summarize(doc: DocModel): DocSummary {
   const lastHumanEdit = [...doc.edit_log]
     .reverse()
     .find((e) => (e.action === "edit" || e.action === "neutralize") && e.actor?.role !== "system");
-  const updated_by = lastHumanEdit ? (lastHumanEdit.actor.display_name ?? lastHumanEdit.actor.user_id) : null;
+  // Attribute by ROLE, not the person's name. Login is a shared mock seat switcher
+  // (production swaps in SSO), so a demo seat's personal name ("Ana Reyes") is
+  // meaningless and misleading on a shared instance — everyone editing as the
+  // author seat would read as one person. The role ("author" → "Investment
+  // Strategist" via roleLabel) is the meaningful, name-free unit. null = no human
+  // edit yet (card shows only the update time).
+  const updated_by = lastHumanEdit ? lastHumanEdit.actor.role : null;
   return {
     doc_id: doc.doc_id,
     title: doc.title,
