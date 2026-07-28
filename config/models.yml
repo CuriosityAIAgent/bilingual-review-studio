@@ -14,7 +14,10 @@ translator:
   model: claude-sonnet-4-6     # chosen for register/tone consistency over long docs
   prompt_version: translator-neutral-es-v2   # v2: explicit repeated-structure consistency
   temperature: 0.2
-  max_tokens: 4096
+  max_tokens: 8192             # output cap. Long/Chinese docs overflowed 4096 and
+                               # truncated mid-JSON → "unreadable response" (ADR 0013).
+                               # The translator also now chunks long docs so a single
+                               # call's output stays under this cap regardless.
   fallback: fixture            # used when ANTHROPIC_API_KEY is absent
 
 critic:

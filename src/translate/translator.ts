@@ -10,7 +10,7 @@
 import { type LocaleConfig, getModels } from "@/src/lib/config";
 import type { GlossaryEntry, Locale, NeutralizationRule, TmEntry } from "@/src/lib/doc-model";
 import { isApplicable } from "@/src/memory/apply";
-import { anthropicAvailable, anthropicComplete, parseJsonLoose, stripDelims } from "@/src/providers/clients";
+import { anthropicAvailable, anthropicCompleteWithMeta, parseJsonLoose, stripDelims } from "@/src/providers/clients";
 import { fixtureTranslateSegment } from "./fixtures";
 import { type TmExample, retrieveTmExamples } from "./retrieval";
 
@@ -162,43 +162,11 @@ export async function translateSegments(
   // Fixtures are ONLY the no-key (demo/offline) path.
   if (anthropicAvailable()) {
     const models = getModels();
-    let raw: string;
-    try {
-      raw = await anthropicComplete({
-        model: models.translator.model,
-        temperature: models.translator.temperature,
-        maxTokens: models.translator.max_tokens,
-        system: buildSystemPrompt(ctx),
-        user: buildUserPayload(toTranslate, ctx),
-      });
-    } catch (e) {
-      // Log the REAL reason so we stop guessing (rate limit? credit? timeout?
-      // network?). Surfaces in Railway logs with this prefix.
-      console.error(`[translate] Anthropic call failed (model=${models.translator.model}, segments=${toTranslate.length}): ${(e as Error).message}`);
-      throw new Error(
-        `Translation service is temporarily unavailable (${(e as Error).message || "provider error"}). ` +
-          "No draft was saved — please try again in a moment.",
-      );
-    }
-    const parsed = parseJsonLoose<Array<{ id: string; es: string }>>(raw);
-    if (!parsed) {
-      // Not an API failure — the model replied but we couldn't parse JSON
-      // (e.g. truncated by max_tokens, a refusal, or prose). Log a snippet so we
-      // can tell truncation from refusal next time.
-      console.error(`[translate] Unparseable model response (model=${models.translator.model}, segments=${toTranslate.length}, len=${raw.length}): ${raw.slice(0, 200).replace(/\s+/g, " ")}`);
-      throw new Error("The translation service returned an unreadable response. No draft was saved — please try again.");
-    }
-    for (const item of parsed) if (item?.id) out[item.id] = item.es ?? "";
-    // Any segment the model dropped or returned empty is a real gap. In live
-    // mode we refuse to paper over it with fixture text — fail and let the user
-    // retry, rather than ship a partially-garbled document.
-    const missing = toTranslate.filter((s) => !out[s.id]?.trim());
-    if (missing.length) {
-      console.error(`[translate] Incomplete response: ${missing.length}/${toTranslate.length} segments missing (model=${models.translator.model})`);
-      throw new Error(
-        `Translation came back incomplete (${missing.length} of ${toTranslate.length} segments missing). ` +
-          "No draft was saved — please try again.",
-      );
+    // Translate the document in batches sized to keep each call's OUTPUT under the
+    // model's max_tokens. A whole long (or Chinese) document in one call overflowed
+    // the cap and truncated mid-JSON, surfacing as "unreadable response" (ADR 0013).
+    for (const batch of batchSegments(toTranslate)) {
+      await translateBatch(batch, ctx, models, out);
     }
     return out;
   }
@@ -206,4 +174,93 @@ export async function translateSegments(
   // No key configured → deterministic offline fixtures (demo mode only).
   for (const s of toTranslate) out[s.id] = fixtureTranslateSegment(s.source_text, ctx.locale.locale);
   return out;
+}
+
+// Bound how much SOURCE text goes into one translator call so the model's JSON
+// OUTPUT stays under max_tokens. Conservative on purpose (output can be ~2x the
+// source for Chinese, plus JSON overhead); a batch that still truncates is split
+// again by translateBatch, so this is the fast path, not the only safety net.
+const BATCH_MAX_CHARS = 3000;
+const BATCH_MAX_SEGMENTS = 20;
+
+export function batchSegments(segs: TranslateSegment[]): TranslateSegment[][] {
+  const batches: TranslateSegment[][] = [];
+  let cur: TranslateSegment[] = [];
+  let curChars = 0;
+  for (const s of segs) {
+    const len = s.source_text.length;
+    // A single oversized segment still gets its own batch (can't split a segment).
+    if (cur.length && (curChars + len > BATCH_MAX_CHARS || cur.length >= BATCH_MAX_SEGMENTS)) {
+      batches.push(cur);
+      cur = [];
+      curChars = 0;
+    }
+    cur.push(s);
+    curChars += len;
+  }
+  if (cur.length) batches.push(cur);
+  return batches;
+}
+
+// Translate one batch, writing results into `out`. On truncation (stop_reason =
+// max_tokens), an unparseable reply, or missing segments, the batch is split in
+// half and each half retried — recursively down to a single segment, which fails
+// loud rather than persisting a garbled draft. Every recursive call is strictly
+// smaller than its parent, so this always terminates.
+async function translateBatch(
+  batch: TranslateSegment[],
+  ctx: TranslateContext,
+  models: ReturnType<typeof getModels>,
+  out: Record<string, string>,
+): Promise<void> {
+  const splitAndRetry = async (segs: TranslateSegment[]) => {
+    const mid = Math.ceil(segs.length / 2);
+    await translateBatch(segs.slice(0, mid), ctx, models, out);
+    await translateBatch(segs.slice(mid), ctx, models, out);
+  };
+
+  let text: string;
+  let stopReason: string | null;
+  try {
+    ({ text, stopReason } = await anthropicCompleteWithMeta({
+      model: models.translator.model,
+      temperature: models.translator.temperature,
+      maxTokens: models.translator.max_tokens,
+      system: buildSystemPrompt(ctx),
+      user: buildUserPayload(batch, ctx),
+    }));
+  } catch (e) {
+    // A real provider failure (after retries): rate limit / credit / timeout /
+    // network / bad config. Surfaces in Railway logs with this prefix.
+    console.error(`[translate] Anthropic call failed (model=${models.translator.model}, segments=${batch.length}): ${(e as Error).message}`);
+    throw new Error(
+      `Translation service is temporarily unavailable (${(e as Error).message || "provider error"}). ` +
+        "No draft was saved — please try again in a moment.",
+    );
+  }
+
+  // A max_tokens stop means the JSON was cut off — do not trust it even if it
+  // happens to parse. Split and retry; only give up on a single segment.
+  const truncated = stopReason === "max_tokens";
+  const parsed = truncated ? null : parseJsonLoose<Array<{ id: string; es: string }>>(text);
+  if (!parsed) {
+    if (batch.length > 1) return splitAndRetry(batch);
+    console.error(`[translate] ${truncated ? "Truncated (max_tokens)" : "Unparseable"} response for one segment (model=${models.translator.model}, len=${text.length}): ${text.slice(0, 200).replace(/\s+/g, " ")}`);
+    throw new Error("The translation service returned an unreadable response. No draft was saved — please try again.");
+  }
+
+  for (const item of parsed) if (item?.id) out[item.id] = item.es ?? "";
+
+  // Segments the model dropped or emptied. Retry just those if some succeeded
+  // (smaller set → fits); if none progressed but the batch is splittable, halve
+  // it; a single dropped segment is a real gap and fails loud.
+  const missing = batch.filter((s) => !out[s.id]?.trim());
+  if (missing.length) {
+    if (missing.length < batch.length) return void (await translateBatch(missing, ctx, models, out));
+    if (batch.length > 1) return splitAndRetry(batch);
+    console.error(`[translate] Incomplete response: 1/1 segment missing (model=${models.translator.model})`);
+    throw new Error(
+      "Translation came back incomplete (1 segment missing). No draft was saved — please try again.",
+    );
+  }
 }
