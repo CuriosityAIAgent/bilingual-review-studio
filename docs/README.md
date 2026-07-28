@@ -10,7 +10,8 @@ Start here to understand and work on Bilingual Review Studio. Docs follow the
 3. **[API Reference](reference-api.md)** — every HTTP endpoint, with auth, params, and responses.
 4. **[How to develop locally](howto-local-development.md)** — run, test, and make the common changes.
 5. **[Deployment](DEPLOYMENT.md)** — GitHub → Railway → Postgres/Supabase, the access gate, env matrix.
-6. **[`CLAUDE.md`](../CLAUDE.md)** (repo root) — the full design contract (the non-negotiable rules).
+6. **[Security](../SECURITY.md)** — trust boundaries, controls, and known limitations (read before external exposure).
+7. **[`CLAUDE.md`](../CLAUDE.md)** (repo root) — the full design contract (the non-negotiable rules).
 
 ## By type (Diataxis)
 

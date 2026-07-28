@@ -48,7 +48,7 @@ Create + translate a document. Two shapes:
 - Permission: `upload_translate` (author/admin).
 
 ### `GET /api/documents/[id]`
-Fetch the full `DocModel`. `200 { "document": DocModel }` · `404` if unknown.
+Fetch the full `DocModel`. `200 { "doc": DocModel }` · `404` if unknown.
 
 ### `DELETE /api/documents/[id]`
 Soft-delete (tombstone) — recoverable via restore. Permission: author/admin.

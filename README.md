@@ -198,6 +198,7 @@ Full technical docs live in [`docs/`](docs/README.md):
 - **[API Reference](docs/reference-api.md)** — every HTTP endpoint, with auth, params, and responses.
 - **[How to develop locally](docs/howto-local-development.md)** — run, test, and make the common kinds of change.
 - **[Deployment](docs/DEPLOYMENT.md)** — Railway + Postgres/Supabase, the access gate, env matrix.
+- **[Security](SECURITY.md)** — trust boundaries, controls, and known limitations.
 - **[ADRs](docs/decisions/)** — the 14 decision records (the "why").
 - **[`CLAUDE.md`](CLAUDE.md)** — the full design contract (non-negotiable rules).
 - **[`CHANGELOG.md`](CHANGELOG.md)** — what shipped, by release.
