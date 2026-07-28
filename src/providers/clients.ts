@@ -90,18 +90,60 @@ export interface CompleteOpts {
   maxTokens?: number;
 }
 
+export interface CompleteResult {
+  text: string;
+  /** Anthropic stop_reason. "max_tokens" means the reply was TRUNCATED — the
+   *  caller must not treat the (incomplete) text as a valid response. */
+  stopReason: string | null;
+}
+
+const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+// Transient provider states worth a retry: rate limits (429), overload (529),
+// and 5xx. A 4xx like 400/401/403/404 (bad request, auth, unknown model) is
+// permanent — fail fast so a misconfiguration surfaces immediately. An error
+// with no HTTP status is a network/timeout blip → retry.
+const RETRYABLE_STATUS = new Set([408, 409, 429, 500, 502, 503, 504, 529]);
+function isRetryable(e: unknown): boolean {
+  const status = (e as { status?: number } | null)?.status;
+  return typeof status === "number" ? RETRYABLE_STATUS.has(status) : true;
+}
+
+/** Anthropic completion with transient-error retry and stop_reason exposed.
+ *  Retries 429/5xx/529/network up to 3 attempts with exponential backoff;
+ *  permanent errors fail fast. Exposing stop_reason lets the translator detect a
+ *  max_tokens truncation instead of mis-reading a cut-off reply as "unreadable". */
+export async function anthropicCompleteWithMeta(o: CompleteOpts): Promise<CompleteResult> {
+  const maxAttempts = 3;
+  let lastErr: unknown;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      const res = await anthropic().messages.create({
+        model: o.model,
+        max_tokens: o.maxTokens ?? 4096,
+        temperature: o.temperature ?? 0.2,
+        system: o.system,
+        messages: [{ role: "user", content: o.user }],
+      });
+      const text = res.content
+        .map((c) => (c.type === "text" ? c.text : ""))
+        .join("")
+        .trim();
+      return { text, stopReason: res.stop_reason ?? null };
+    } catch (e) {
+      lastErr = e;
+      if (attempt < maxAttempts && isRetryable(e)) {
+        await sleep(400 * 2 ** (attempt - 1)); // 400ms, then 800ms
+        continue;
+      }
+      throw e;
+    }
+  }
+  throw lastErr; // unreachable, but keeps the type checker happy
+}
+
 export async function anthropicComplete(o: CompleteOpts): Promise<string> {
-  const res = await anthropic().messages.create({
-    model: o.model,
-    max_tokens: o.maxTokens ?? 4096,
-    temperature: o.temperature ?? 0.2,
-    system: o.system,
-    messages: [{ role: "user", content: o.user }],
-  });
-  return res.content
-    .map((c) => (c.type === "text" ? c.text : ""))
-    .join("")
-    .trim();
+  return (await anthropicCompleteWithMeta(o)).text;
 }
 
 export async function openaiComplete(o: CompleteOpts): Promise<string> {
