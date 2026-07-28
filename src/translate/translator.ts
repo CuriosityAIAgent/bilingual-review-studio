@@ -116,12 +116,20 @@ export function selectDocMemory(segments: TranslateSegment[], tm: TmEntry[], loc
   return byId;
 }
 
-function buildUserPayload(segments: TranslateSegment[], ctx: TranslateContext): string {
+function buildUserPayload(
+  segments: TranslateSegment[],
+  ctx: TranslateContext,
+  // Precomputed whole-document memory map. Passed in when a document is split into
+  // batches, so the per-document TM budget (TM_EXAMPLES_PER_DOC) is awarded ONCE
+  // across the whole doc, not re-awarded per batch (which would multiply the
+  // prompt size on long docs — the very thing batching is meant to shrink).
+  docMemory?: Map<string, TmExample[]>,
+): string {
   // All source-derived text (segment text AND the section heading) goes INSIDE
   // the JSON data block, delimiter-stripped — never into the instruction lines.
   // Retrieved memory examples are likewise stripped: approved text is trusted,
   // but it still flows through the same injection-hardening as any other content.
-  const memBySeg = selectDocMemory(segments, ctx.tm ?? [], ctx.locale.locale as Locale);
+  const memBySeg = docMemory ?? selectDocMemory(segments, ctx.tm ?? [], ctx.locale.locale as Locale);
   const json = JSON.stringify({
     section_heading: stripDelims(ctx.sectionHeading ?? ""),
     segments: segments.map((s) => {
@@ -162,11 +170,14 @@ export async function translateSegments(
   // Fixtures are ONLY the no-key (demo/offline) path.
   if (anthropicAvailable()) {
     const models = getModels();
+    // Award the per-document TM budget ONCE over the whole document, then reuse it
+    // across batches (batching must not multiply the memory attached to the prompt).
+    const docMemory = selectDocMemory(toTranslate, ctx.tm ?? [], ctx.locale.locale as Locale);
     // Translate the document in batches sized to keep each call's OUTPUT under the
     // model's max_tokens. A whole long (or Chinese) document in one call overflowed
     // the cap and truncated mid-JSON, surfacing as "unreadable response" (ADR 0013).
     for (const batch of batchSegments(toTranslate)) {
-      await translateBatch(batch, ctx, models, out);
+      await translateBatch(batch, ctx, models, out, docMemory);
     }
     return out;
   }
@@ -212,11 +223,12 @@ async function translateBatch(
   ctx: TranslateContext,
   models: ReturnType<typeof getModels>,
   out: Record<string, string>,
+  docMemory: Map<string, TmExample[]>,
 ): Promise<void> {
   const splitAndRetry = async (segs: TranslateSegment[]) => {
     const mid = Math.ceil(segs.length / 2);
-    await translateBatch(segs.slice(0, mid), ctx, models, out);
-    await translateBatch(segs.slice(mid), ctx, models, out);
+    await translateBatch(segs.slice(0, mid), ctx, models, out, docMemory);
+    await translateBatch(segs.slice(mid), ctx, models, out, docMemory);
   };
 
   let text: string;
@@ -227,7 +239,7 @@ async function translateBatch(
       temperature: models.translator.temperature,
       maxTokens: models.translator.max_tokens,
       system: buildSystemPrompt(ctx),
-      user: buildUserPayload(batch, ctx),
+      user: buildUserPayload(batch, ctx, docMemory),
     }));
   } catch (e) {
     // A real provider failure (after retries): rate limit / credit / timeout /
@@ -249,7 +261,12 @@ async function translateBatch(
     throw new Error("The translation service returned an unreadable response. No draft was saved — please try again.");
   }
 
-  for (const item of parsed) if (item?.id) out[item.id] = item.es ?? "";
+  // Only accept ids that belong to THIS batch. `out` is shared across all recursive
+  // calls, so a hallucinated id from another batch must never land in it — else a
+  // later batch that genuinely drops that segment would see it "already done" and
+  // silently accept the wrong translation.
+  const batchIds = new Set(batch.map((s) => s.id));
+  for (const item of parsed) if (item?.id && batchIds.has(item.id)) out[item.id] = item.es ?? "";
 
   // Segments the model dropped or emptied. Retry just those if some succeeded
   // (smaller set → fits); if none progressed but the batch is splittable, halve

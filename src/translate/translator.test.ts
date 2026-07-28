@@ -81,6 +81,18 @@ describe("translateSegments (live path)", () => {
     expect(out).toEqual({ a: "T:a", b: "T:b", c: "T:c" });
   });
 
+  it("ignores ids the model returns that don't belong to the batch", async () => {
+    process.env.ANTHROPIC_API_KEY = "test";
+    complete.mockImplementation((o: { user: string }) => {
+      const items = idsInCall(o.user).map((id) => ({ id, es: `T:${id}` }));
+      items.push({ id: "ghost", es: "hallucinated" }); // stray id in no batch
+      return { text: JSON.stringify(items), stopReason: "end_turn" };
+    });
+    const out = await translateSegments([seg("a", "one"), seg("b", "two")], ctx());
+    expect(out).toEqual({ a: "T:a", b: "T:b" });
+    expect(out).not.toHaveProperty("ghost");
+  });
+
   it("fails loud when a single segment is still unreadable", async () => {
     process.env.ANTHROPIC_API_KEY = "test";
     complete.mockResolvedValue({ text: "not json at all", stopReason: "max_tokens" });
