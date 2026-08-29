@@ -26,6 +26,14 @@ function idsInCall(payload: string): string[] {
   if (!m) return [];
   return (JSON.parse(m[1]).segments as { id: string }[]).map((s) => s.id);
 }
+// The longest source segment (`en`) a call carries — proxies output size so a
+// stub can simulate "this call's output would overflow max_tokens".
+function maxSourceLen(payload: string): number {
+  const m = payload.match(/<DATA>([\s\S]*)<\/DATA>/);
+  if (!m) return 0;
+  const segs = JSON.parse(m[1]).segments as { en: string }[];
+  return segs.reduce((n, s) => Math.max(n, s.en.length), 0);
+}
 // A well-formed translator reply for whatever ids the call carried.
 const reply = (o: { user: string }) => ({
   text: JSON.stringify(idsInCall(o.user).map((id) => ({ id, es: `T:${id}` }))),
@@ -93,9 +101,35 @@ describe("translateSegments (live path)", () => {
     expect(out).not.toHaveProperty("ghost");
   });
 
-  it("fails loud when a single segment is still unreadable", async () => {
+  it("sub-splits and stitches a single oversized segment that truncates", async () => {
     process.env.ANTHROPIC_API_KEY = "test";
+    // The whole-segment call overflows the cap (source > 80 chars); once the source
+    // is split down to individual sentences each call fits and succeeds.
+    complete.mockImplementation((o: { user: string }) => {
+      if (maxSourceLen(o.user) > 80) return { text: '[{"id":"a","es":"cut', stopReason: "max_tokens" };
+      return reply(o);
+    });
+    const long =
+      "The first clause explains the strategy in detail. The second clause outlines the risks and the mitigations. The third clause states the disclaimer and the effective date.";
+    const out = await translateSegments([seg("a", long)], ctx());
+    // Stitched under the ORIGINAL id; synthetic sub-segment ids never leak.
+    expect(Object.keys(out)).toEqual(["a"]);
+    expect(out.a).toBe("T:a::s0 T:a::s1 T:a::s2");
+  });
+
+  it("fails loud when a single unsplittable segment is still unreadable", async () => {
+    process.env.ANTHROPIC_API_KEY = "test";
+    // One sentence with no boundary to sub-split on → still fails loud.
     complete.mockResolvedValue({ text: "not json at all", stopReason: "max_tokens" });
+    await expect(translateSegments([seg("a", "one")], ctx())).rejects.toThrow(/unreadable response/);
+  });
+
+  it("treats a non-array reply (bare object) as unreadable, not a crash", async () => {
+    process.env.ANTHROPIC_API_KEY = "test";
+    // Model returns an object instead of the instructed array (not truncated). The
+    // Array.isArray guard routes it to the unreadable message rather than letting
+    // the id loop throw an uncaught "not iterable".
+    complete.mockResolvedValue({ text: '{"id":"a","es":"x"}', stopReason: "end_turn" });
     await expect(translateSegments([seg("a", "one")], ctx())).rejects.toThrow(/unreadable response/);
   });
 
