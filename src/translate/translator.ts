@@ -10,6 +10,7 @@
 import { type LocaleConfig, getModels } from "@/src/lib/config";
 import type { GlossaryEntry, Locale, NeutralizationRule, TmEntry } from "@/src/lib/doc-model";
 import { isApplicable } from "@/src/memory/apply";
+import { toSentences } from "@/src/memory/sentences";
 import { anthropicAvailable, anthropicCompleteWithMeta, parseJsonLoose, stripDelims } from "@/src/providers/clients";
 import { fixtureTranslateSegment } from "./fixtures";
 import { type TmExample, retrieveTmExamples } from "./retrieval";
@@ -252,12 +253,26 @@ async function translateBatch(
   }
 
   // A max_tokens stop means the JSON was cut off — do not trust it even if it
-  // happens to parse. Split and retry; only give up on a single segment.
+  // happens to parse. The reply must also be a JSON ARRAY of {id,es}; a stray
+  // non-array (e.g. the model returned a bare object) is "unreadable" too, and
+  // guarding here keeps the id loop below from throwing on a non-iterable.
   const truncated = stopReason === "max_tokens";
   const parsed = truncated ? null : parseJsonLoose<Array<{ id: string; es: string }>>(text);
-  if (!parsed) {
+  const items = Array.isArray(parsed) ? parsed : null;
+  if (!items) {
     if (batch.length > 1) return splitAndRetry(batch);
-    console.error(`[translate] ${truncated ? "Truncated (max_tokens)" : "Unparseable"} response for one segment (model=${models.translator.model}, len=${text.length}): ${text.slice(0, 200).replace(/\s+/g, " ")}`);
+    // One segment whose own OUTPUT overflowed max_tokens: the batcher can't help
+    // (a segment is indivisible at the batch level), but we can split the segment's
+    // SOURCE on sentence boundaries, translate the pieces, and stitch them back into
+    // one block. Only a single unsplittable sentence still fails loud.
+    if (truncated) {
+      const stitched = await translateOversizedSegment(batch[0], ctx, models);
+      if (stitched !== null) {
+        out[batch[0].id] = stitched;
+        return;
+      }
+    }
+    console.error(`[translate] ${truncated ? "Truncated (max_tokens), unsplittable" : "Unparseable"} response for one segment (model=${models.translator.model}, len=${text.length}): ${text.slice(0, 200).replace(/\s+/g, " ")}`);
     throw new Error("The translation service returned an unreadable response. No draft was saved — please try again.");
   }
 
@@ -266,7 +281,7 @@ async function translateBatch(
   // later batch that genuinely drops that segment would see it "already done" and
   // silently accept the wrong translation.
   const batchIds = new Set(batch.map((s) => s.id));
-  for (const item of parsed) if (item?.id && batchIds.has(item.id)) out[item.id] = item.es ?? "";
+  for (const item of items) if (item?.id && batchIds.has(item.id)) out[item.id] = item.es ?? "";
 
   // Segments the model dropped or emptied. Retry just those if some succeeded
   // (smaller set → fits); if none progressed but the batch is splittable, halve
@@ -280,4 +295,47 @@ async function translateBatch(
       "Translation came back incomplete (1 segment missing). No draft was saved — please try again.",
     );
   }
+}
+
+// A single segment whose translated OUTPUT overflows max_tokens cannot be split by
+// the batcher — batchSegments isolates it in its own batch but never divides it, so
+// #40's recursive split bottoms out here (the residual "unreadable response" gap for
+// one giant unbroken block). Split the segment's SOURCE on sentence boundaries into
+// sub-segments, translate them through the same batching machinery, then concatenate
+// the pieces back into one block — preserving the one-block-per-source-unit doc-model
+// contract. Returns the stitched translation, or null if the segment is a single
+// unsplittable sentence (the caller then fails loud, as before).
+async function translateOversizedSegment(
+  seg: TranslateSegment,
+  ctx: TranslateContext,
+  models: ReturnType<typeof getModels>,
+): Promise<string | null> {
+  const sentences = toSentences(seg.source_text);
+  // A lone sentence can't be sub-split any further — let the caller fail loud.
+  if (sentences.length < 2) return null;
+  console.error(`[translate] Segment ${seg.id} overflowed max_tokens; sub-splitting into ${sentences.length} sentences (model=${models.translator.model}).`);
+  const subSegments: TranslateSegment[] = sentences.map((source_text, i) => ({
+    id: `${seg.id}::s${i}`,
+    source_text,
+    dnt: false,
+  }));
+  // Re-retrieve TM few-shot examples for the sub-segments. The doc-level docMemory is
+  // keyed by the ORIGINAL segment id, which the synthetic sub-ids don't match, so
+  // recompute per-sentence matches from the same approved TM — otherwise the recovery
+  // path would translate without the house terminology/consistency guidance the whole
+  // segment had.
+  const subMemory = selectDocMemory(subSegments, ctx.tm ?? [], ctx.locale.locale as Locale);
+  // Translate into a LOCAL map so synthetic sub-segment ids never leak into the
+  // shared `out`. Re-batch so adjacent short sentences share a call (keeping local
+  // context); an oversized lone sentence recurses into this same path and fails
+  // loud. translateBatch fills every id or throws, so on return each is present.
+  const subOut: Record<string, string> = {};
+  for (const b of batchSegments(subSegments)) {
+    await translateBatch(b, ctx, models, subOut, subMemory);
+  }
+  // Space-join for space-delimited targets (es-419). CJK targets (zh-*) don't
+  // separate sentences with ASCII spaces — each piece already carries its own
+  // full-width punctuation — so join with no separator to avoid spurious gaps.
+  const joiner = /^(zh|ja|ko)(-|$)/i.test(ctx.locale.locale) ? "" : " ";
+  return subSegments.map((s) => subOut[s.id] ?? "").join(joiner);
 }
