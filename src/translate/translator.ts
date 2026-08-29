@@ -266,7 +266,7 @@ async function translateBatch(
     // SOURCE on sentence boundaries, translate the pieces, and stitch them back into
     // one block. Only a single unsplittable sentence still fails loud.
     if (truncated) {
-      const stitched = await translateOversizedSegment(batch[0], ctx, models, docMemory);
+      const stitched = await translateOversizedSegment(batch[0], ctx, models);
       if (stitched !== null) {
         out[batch[0].id] = stitched;
         return;
@@ -309,7 +309,6 @@ async function translateOversizedSegment(
   seg: TranslateSegment,
   ctx: TranslateContext,
   models: ReturnType<typeof getModels>,
-  docMemory: Map<string, TmExample[]>,
 ): Promise<string | null> {
   const sentences = toSentences(seg.source_text);
   // A lone sentence can't be sub-split any further — let the caller fail loud.
@@ -320,13 +319,23 @@ async function translateOversizedSegment(
     source_text,
     dnt: false,
   }));
+  // Re-retrieve TM few-shot examples for the sub-segments. The doc-level docMemory is
+  // keyed by the ORIGINAL segment id, which the synthetic sub-ids don't match, so
+  // recompute per-sentence matches from the same approved TM — otherwise the recovery
+  // path would translate without the house terminology/consistency guidance the whole
+  // segment had.
+  const subMemory = selectDocMemory(subSegments, ctx.tm ?? [], ctx.locale.locale as Locale);
   // Translate into a LOCAL map so synthetic sub-segment ids never leak into the
   // shared `out`. Re-batch so adjacent short sentences share a call (keeping local
   // context); an oversized lone sentence recurses into this same path and fails
   // loud. translateBatch fills every id or throws, so on return each is present.
   const subOut: Record<string, string> = {};
   for (const b of batchSegments(subSegments)) {
-    await translateBatch(b, ctx, models, subOut, docMemory);
+    await translateBatch(b, ctx, models, subOut, subMemory);
   }
-  return subSegments.map((s) => subOut[s.id] ?? "").join(" ");
+  // Space-join for space-delimited targets (es-419). CJK targets (zh-*) don't
+  // separate sentences with ASCII spaces — each piece already carries its own
+  // full-width punctuation — so join with no separator to avoid spurious gaps.
+  const joiner = /^(zh|ja|ko)(-|$)/i.test(ctx.locale.locale) ? "" : " ";
+  return subSegments.map((s) => subOut[s.id] ?? "").join(joiner);
 }

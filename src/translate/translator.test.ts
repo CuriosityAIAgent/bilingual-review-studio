@@ -117,6 +117,22 @@ describe("translateSegments (live path)", () => {
     expect(out.a).toBe("T:a::s0 T:a::s1 T:a::s2");
   });
 
+  it("stitches CJK sub-segments without inserting ASCII spaces", async () => {
+    process.env.ANTHROPIC_API_KEY = "test";
+    complete.mockImplementation((o: { user: string }) => {
+      if (maxSourceLen(o.user) > 80) return { text: '[{"id":"a","es":"cut', stopReason: "max_tokens" };
+      return reply(o);
+    });
+    // zh-* targets don't separate sentences with ASCII spaces — stitch with no gap.
+    const zhCtx = (): TranslateContext => ({ glossary: [], rules: [], locale: getLocale("zh-Hans"), tm: [] });
+    const long =
+      "The first clause explains the strategy in detail. The second clause outlines the risks and the mitigations. The third clause states the disclaimer and the effective date.";
+    const out = await translateSegments([seg("a", long)], zhCtx());
+    expect(Object.keys(out)).toEqual(["a"]);
+    expect(out.a).toBe("T:a::s0T:a::s1T:a::s2");
+    expect(out.a).not.toContain(" ");
+  });
+
   it("fails loud when a single unsplittable segment is still unreadable", async () => {
     process.env.ANTHROPIC_API_KEY = "test";
     // One sentence with no boundary to sub-split on → still fails loud.
