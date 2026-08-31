@@ -173,6 +173,22 @@ describe("translateSegments (live path)", () => {
     await expect(translateSegments([seg("a", "one")], ctx())).rejects.toThrow(/unreadable response/);
   });
 
+  it("sub-splits when the retry of a single oversized segment truncates", async () => {
+    process.env.ANTHROPIC_API_KEY = "test";
+    let n = 0;
+    const long =
+      "The first clause explains the strategy in detail. The second clause outlines the risks and the mitigations. The third clause states the disclaimer and the effective date.";
+    complete.mockImplementation((o: { user: string }) => {
+      n++;
+      if (n === 1) return { text: "prose, not json", stopReason: "end_turn" }; // first attempt unparseable
+      if (n === 2) return { text: '[{"id":"a","es":"cut', stopReason: "max_tokens" }; // retry truncates
+      return reply(o); // sub-segment sentence calls succeed
+    });
+    const out = await translateSegments([seg("a", long)], ctx());
+    expect(Object.keys(out)).toEqual(["a"]);
+    expect(out.a).toBe("T:a::s0 T:a::s1 T:a::s2"); // recovered via sentence sub-split
+  });
+
   it("surfaces a provider error on the retry as temporarily unavailable, not unreadable", async () => {
     process.env.ANTHROPIC_API_KEY = "test";
     let n = 0;

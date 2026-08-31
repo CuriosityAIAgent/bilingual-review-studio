@@ -386,9 +386,11 @@ async function retryTranslateSegment(
         "No draft was saved — please try again in a moment.",
     );
   }
-  // A parse/truncation/drop on the retry is genuine unreadable output → null lets
-  // the caller fail loud with the "unreadable response" message.
-  if (stopReason === "max_tokens") return null;
+  // A truncated retry means this one segment's own output is too big for a single
+  // call — recover via sentence sub-splitting, exactly as a truncated first attempt
+  // would (returns the stitched translation, or null for a single unsplittable
+  // sentence, which then fails loud).
+  if (stopReason === "max_tokens") return translateOversizedSegment(seg, ctx, models);
   const parsed = parseJsonLoose<Array<{ id: string; es: string }>>(text);
   const items = Array.isArray(parsed) ? parsed : null;
   const es = items?.find((it) => it?.id === seg.id)?.es?.trim();
