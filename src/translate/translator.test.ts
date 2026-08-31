@@ -166,6 +166,16 @@ describe("translateSegments (live path)", () => {
     expect(out).toEqual({ a: "recovered" });
   });
 
+  it("strips wrapper quotes/code fences from a plain-text retry", async () => {
+    process.env.ANTHROPIC_API_KEY = "test";
+    complete.mockImplementation((o: { user: string }) => {
+      if (isPlainCall(o.user)) return { text: '```\n"hola"\n```', stopReason: "end_turn" };
+      return { text: "nope, not json", stopReason: "end_turn" };
+    });
+    const out = await translateSegments([seg("a", "one")], ctx());
+    expect(out).toEqual({ a: "hola" }); // fence + surrounding quotes removed
+  });
+
   it("fails loud when a single segment stays unreadable even after the plain-text retry", async () => {
     process.env.ANTHROPIC_API_KEY = "test";
     complete.mockImplementation((o: { user: string }) => {

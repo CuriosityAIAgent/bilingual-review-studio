@@ -372,18 +372,24 @@ function buildPlainSystemPrompt(ctx: TranslateContext): string {
     `- Preserve every number, %, date, currency exactly; apply the number style "${fmt.example}".`,
     `- "billion" (10^9) -> "${t.billion}", NEVER "${t.trillion}". "trillion" (10^12) -> "${t.trillion}".`,
     "- Apply the GLOSSARY and ACTIVE NEUTRALIZATION RULES exactly where their terms appear.",
+    "- TRANSLATION MEMORY: if a `memory` array of approved past translations ({en, target}) is",
+    "  provided, follow its terminology and phrasing closely; reuse a target when its English",
+    "  essentially matches the segment.",
     "- Faithful: nothing added or dropped. Keep DNT tokens verbatim.",
     "",
     "Return ONLY the translated text — no JSON, no quotes, no id, no prose, no code fences.",
   ].join("\n");
 }
 
-function buildPlainUserPayload(seg: TranslateSegment, ctx: TranslateContext): string {
-  // Same injection-hardening as the JSON path: the source goes INSIDE the <DATA>
-  // block, delimiter-stripped, and is treated strictly as data.
+function buildPlainUserPayload(seg: TranslateSegment, ctx: TranslateContext, memory?: TmExample[]): string {
+  // Same injection-hardening as the JSON path: the source (and its memory examples)
+  // go INSIDE the <DATA> block, delimiter-stripped, treated strictly as data.
   const json = JSON.stringify({
     section_heading: stripDelims(ctx.sectionHeading ?? ""),
     text: stripDelims(seg.source_text),
+    ...(memory?.length
+      ? { memory: memory.map((e) => ({ en: clip(stripDelims(e.en)), target: clip(stripDelims(e.target)) })) }
+      : {}),
   });
   return [
     `GLOSSARY: ${glossaryLine(ctx.glossary)}`,
@@ -393,9 +399,24 @@ function buildPlainUserPayload(seg: TranslateSegment, ctx: TranslateContext): st
   ].join("\n");
 }
 
+// The plain-text path has no JSON envelope, so if the model still wraps the reply in
+// a code fence or a matching pair of straight quotes those characters would land in
+// the saved draft. Strip one fence and one surrounding ASCII-quote pair (CJK uses
+// full-width quotes, so this only removes true artifacts).
+function unwrapPlainText(raw: string): string {
+  let t = raw.trim();
+  const fence = t.match(/^```(?:\w+)?\s*([\s\S]*?)\s*```$/);
+  if (fence) t = fence[1].trim();
+  const last = t[t.length - 1];
+  if (t.length >= 2 && ((t[0] === '"' && last === '"') || (t[0] === "'" && last === "'"))) {
+    t = t.slice(1, -1).trim();
+  }
+  return t;
+}
+
 // Last-resort recovery for a single segment whose JSON reply won't parse (and did
 // NOT truncate). Ask for the translation as plain text and take it verbatim. Returns
-// the trimmed translation, or null if the retry also truncates, comes back empty, or
+// the cleaned translation, or null if the retry also truncates, comes back empty, or
 // the provider errors — in which case the caller fails loud (never garbles).
 async function translateSegmentPlainText(
   seg: TranslateSegment,
@@ -403,15 +424,19 @@ async function translateSegmentPlainText(
   models: ReturnType<typeof getModels>,
 ): Promise<string | null> {
   try {
+    // Keep the same TM guidance the JSON path would have attached, so recovery
+    // doesn't regress house terminology (matched by source text, so it works for a
+    // whole segment or a sub-segment sentence alike).
+    const memory = selectDocMemory([seg], ctx.tm ?? [], ctx.locale.locale as Locale).get(seg.id);
     const { text, stopReason } = await anthropicCompleteWithMeta({
       model: models.translator.model,
       temperature: models.translator.temperature,
       maxTokens: models.translator.max_tokens,
       system: buildPlainSystemPrompt(ctx),
-      user: buildPlainUserPayload(seg, ctx),
+      user: buildPlainUserPayload(seg, ctx, memory),
     });
     if (stopReason === "max_tokens") return null; // truncated even alone — give up
-    const cleaned = text.trim();
+    const cleaned = unwrapPlainText(text);
     return cleaned.length ? cleaned : null;
   } catch (e) {
     console.error(`[translate] Plain-text retry failed for ${seg.id} (model=${models.translator.model}): ${(e as Error).message}`);
