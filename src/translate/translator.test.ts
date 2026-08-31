@@ -176,6 +176,29 @@ describe("translateSegments (live path)", () => {
     expect(out).toEqual({ a: "hola" }); // fence + surrounding quotes removed
   });
 
+  it("json-decodes a quoted plain-text retry so escapes aren't saved literally", async () => {
+    process.env.ANTHROPIC_API_KEY = "test";
+    // A JSON-string-literal reply with an escaped newline must decode to a real
+    // newline, not the literal characters backslash-n.
+    complete.mockImplementation((o: { user: string }) => {
+      if (isPlainCall(o.user)) return { text: '"第一行\\n第二行"', stopReason: "end_turn" };
+      return { text: "nope", stopReason: "end_turn" };
+    });
+    const out = await translateSegments([seg("a", "one")], ctx());
+    expect(out).toEqual({ a: "第一行\n第二行" });
+  });
+
+  it("leaves a legitimately quoted translation untouched on the plain-text retry", async () => {
+    process.env.ANTHROPIC_API_KEY = "test";
+    // Starts/ends with quotes but is NOT a single JSON string → must not be sliced.
+    complete.mockImplementation((o: { user: string }) => {
+      if (isPlainCall(o.user)) return { text: '"uno" y "dos"', stopReason: "end_turn" };
+      return { text: "nope", stopReason: "end_turn" };
+    });
+    const out = await translateSegments([seg("a", "one")], ctx());
+    expect(out).toEqual({ a: '"uno" y "dos"' });
+  });
+
   it("fails loud when a single segment stays unreadable even after the plain-text retry", async () => {
     process.env.ANTHROPIC_API_KEY = "test";
     complete.mockImplementation((o: { user: string }) => {

@@ -400,16 +400,23 @@ function buildPlainUserPayload(seg: TranslateSegment, ctx: TranslateContext, mem
 }
 
 // The plain-text path has no JSON envelope, so if the model still wraps the reply in
-// a code fence or a matching pair of straight quotes those characters would land in
-// the saved draft. Strip one fence and one surrounding ASCII-quote pair (CJK uses
-// full-width quotes, so this only removes true artifacts).
+// a code fence or JSON-string quotes those characters would land in the saved draft.
+// Strip one fence; then, only when the WHOLE reply is a single JSON string literal,
+// JSON.parse it so escapes decode to real characters (e.g. "第一行\n第二行" → a real
+// newline) instead of being sliced to literal backslashes. Anything that isn't a
+// clean JSON string is left untouched, so a translation that legitimately contains
+// or is surrounded by quotes is never corrupted.
 function unwrapPlainText(raw: string): string {
   let t = raw.trim();
   const fence = t.match(/^```(?:\w+)?\s*([\s\S]*?)\s*```$/);
   if (fence) t = fence[1].trim();
-  const last = t[t.length - 1];
-  if (t.length >= 2 && ((t[0] === '"' && last === '"') || (t[0] === "'" && last === "'"))) {
-    t = t.slice(1, -1).trim();
+  if (t.startsWith('"') && t.endsWith('"')) {
+    try {
+      const decoded = JSON.parse(t);
+      if (typeof decoded === "string") t = decoded.trim();
+    } catch {
+      /* not a single JSON string literal — leave the reply as-is */
+    }
   }
   return t;
 }
