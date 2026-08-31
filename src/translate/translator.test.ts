@@ -34,10 +34,6 @@ function maxSourceLen(payload: string): number {
   const segs = JSON.parse(m[1]).segments as { en: string }[];
   return segs.reduce((n, s) => Math.max(n, s.en.length), 0);
 }
-// The plain-text recovery retry carries a single `text` field (not `segments`).
-function isPlainCall(payload: string): boolean {
-  return /"text":/.test(payload) && !/"segments":/.test(payload);
-}
 // A well-formed translator reply for whatever ids the call carried.
 const reply = (o: { user: string }) => ({
   text: JSON.stringify(idsInCall(o.user).map((id) => ({ id, es: `T:${id}` }))),
@@ -144,67 +140,36 @@ describe("translateSegments (live path)", () => {
     await expect(translateSegments([seg("a", "one")], ctx())).rejects.toThrow(/unreadable response/);
   });
 
-  it("recovers a single unparseable (prose-wrapped) reply via a plain-text retry", async () => {
+  it("retries a single unparseable segment once and recovers", async () => {
     process.env.ANTHROPIC_API_KEY = "test";
+    let n = 0;
     complete.mockImplementation((o: { user: string }) => {
-      if (isPlainCall(o.user)) return { text: "  el texto traducido  ", stopReason: "end_turn" };
-      return { text: "Sure, here is the translation (no valid json here)", stopReason: "end_turn" };
+      n++;
+      if (n === 1) return { text: "Sure, here is the translation (no json)", stopReason: "end_turn" };
+      return reply(o); // second attempt returns valid JSON
     });
     const out = await translateSegments([seg("a", "one")], ctx());
-    expect(out).toEqual({ a: "el texto traducido" }); // trimmed plain-text accepted
+    expect(out).toEqual({ a: "T:a" });
+    expect(complete).toHaveBeenCalledTimes(2);
   });
 
-  it("does not crash on a bare-object reply; recovers via plain-text retry", async () => {
+  it("does not crash on a bare-object reply; the guard routes it to a retry", async () => {
     process.env.ANTHROPIC_API_KEY = "test";
-    // Object instead of the instructed array (not truncated). Array.isArray guard
-    // avoids the "not iterable" crash; the plain-text retry then recovers.
+    // Object instead of the instructed array (not truncated). The Array.isArray guard
+    // avoids the "not iterable" crash and routes to the structured retry, which recovers.
+    let n = 0;
     complete.mockImplementation((o: { user: string }) => {
-      if (isPlainCall(o.user)) return { text: "recovered", stopReason: "end_turn" };
-      return { text: '{"id":"a","es":"x"}', stopReason: "end_turn" };
+      n++;
+      if (n === 1) return { text: '{"id":"a","es":"x"}', stopReason: "end_turn" };
+      return reply(o);
     });
     const out = await translateSegments([seg("a", "one")], ctx());
-    expect(out).toEqual({ a: "recovered" });
+    expect(out).toEqual({ a: "T:a" });
   });
 
-  it("strips wrapper quotes/code fences from a plain-text retry", async () => {
+  it("fails loud when the retry is also unparseable", async () => {
     process.env.ANTHROPIC_API_KEY = "test";
-    complete.mockImplementation((o: { user: string }) => {
-      if (isPlainCall(o.user)) return { text: '```\n"hola"\n```', stopReason: "end_turn" };
-      return { text: "nope, not json", stopReason: "end_turn" };
-    });
-    const out = await translateSegments([seg("a", "one")], ctx());
-    expect(out).toEqual({ a: "hola" }); // fence + surrounding quotes removed
-  });
-
-  it("json-decodes a quoted plain-text retry so escapes aren't saved literally", async () => {
-    process.env.ANTHROPIC_API_KEY = "test";
-    // A JSON-string-literal reply with an escaped newline must decode to a real
-    // newline, not the literal characters backslash-n.
-    complete.mockImplementation((o: { user: string }) => {
-      if (isPlainCall(o.user)) return { text: '"第一行\\n第二行"', stopReason: "end_turn" };
-      return { text: "nope", stopReason: "end_turn" };
-    });
-    const out = await translateSegments([seg("a", "one")], ctx());
-    expect(out).toEqual({ a: "第一行\n第二行" });
-  });
-
-  it("leaves a legitimately quoted translation untouched on the plain-text retry", async () => {
-    process.env.ANTHROPIC_API_KEY = "test";
-    // Starts/ends with quotes but is NOT a single JSON string → must not be sliced.
-    complete.mockImplementation((o: { user: string }) => {
-      if (isPlainCall(o.user)) return { text: '"uno" y "dos"', stopReason: "end_turn" };
-      return { text: "nope", stopReason: "end_turn" };
-    });
-    const out = await translateSegments([seg("a", "one")], ctx());
-    expect(out).toEqual({ a: '"uno" y "dos"' });
-  });
-
-  it("fails loud when a single segment stays unreadable even after the plain-text retry", async () => {
-    process.env.ANTHROPIC_API_KEY = "test";
-    complete.mockImplementation((o: { user: string }) => {
-      if (isPlainCall(o.user)) return { text: "   ", stopReason: "end_turn" }; // empty-ish retry
-      return { text: "not json at all", stopReason: "end_turn" };
-    });
+    complete.mockResolvedValue({ text: "not json at all", stopReason: "end_turn" });
     await expect(translateSegments([seg("a", "one")], ctx())).rejects.toThrow(/unreadable response/);
   });
 

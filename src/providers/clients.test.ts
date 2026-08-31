@@ -22,6 +22,12 @@ describe("parseJsonLoose", () => {
     expect(parseJsonLoose(raw)).toEqual([{ id: "b1", es: "a\tb\rc" }]);
   });
 
+  it("extracts a JSON array embedded in surrounding prose", () => {
+    expect(parseJsonLoose('Here is the translation: [{"id":"b1","es":"hola"}] hope it helps')).toEqual([
+      { id: "b1", es: "hola" },
+    ]);
+  });
+
   it("returns null for genuinely unparseable text", () => {
     expect(parseJsonLoose("Sorry, I cannot do that.")).toBeNull();
   });
