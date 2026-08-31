@@ -173,7 +173,47 @@ export function stripDelims(s: string): string {
   return s.replace(/<\/?\s*(?:SEGMENTS|SOURCE|TRANSLATION|DATA)\s*>/gi, " ");
 }
 
-/** Parse a JSON array/object from a model response, tolerating code fences. */
+// JSON forbids raw control characters (newline, tab, CR, …) INSIDE string values,
+// but models routinely emit them — e.g. a Chinese translation that keeps its own
+// paragraph line breaks — which makes JSON.parse throw even though the reply is
+// otherwise complete and correct. Walk the text and \-escape control chars that
+// sit inside a string literal (leaving structural whitespace between tokens alone),
+// so a reply that is valid-except-for-raw-control-chars can be recovered.
+function escapeControlCharsInStrings(s: string): string {
+  let out = "";
+  let inString = false;
+  let escaped = false;
+  for (let i = 0; i < s.length; i++) {
+    const ch = s[i];
+    if (escaped) {
+      out += ch;
+      escaped = false;
+      continue;
+    }
+    if (ch === "\\") {
+      out += ch;
+      escaped = true;
+      continue;
+    }
+    if (ch === '"') {
+      inString = !inString;
+      out += ch;
+      continue;
+    }
+    if (inString) {
+      if (ch === "\n") { out += "\\n"; continue; }
+      if (ch === "\r") { out += "\\r"; continue; }
+      if (ch === "\t") { out += "\\t"; continue; }
+      const code = ch.charCodeAt(0);
+      if (code < 0x20) { out += `\\u${code.toString(16).padStart(4, "0")}`; continue; }
+    }
+    out += ch;
+  }
+  return out;
+}
+
+/** Parse a JSON array/object from a model response, tolerating code fences and
+ *  raw control characters inside string values. */
 export function parseJsonLoose<T>(raw: string): T | null {
   let s = raw.trim();
   // strip ```json ... ``` fences
@@ -192,6 +232,12 @@ export function parseJsonLoose<T>(raw: string): T | null {
   try {
     return JSON.parse(s) as T;
   } catch {
-    return null;
+    // Most common recoverable failure: raw control chars inside a string value.
+    // Only attempt the repair on failure, so valid JSON is never touched.
+    try {
+      return JSON.parse(escapeControlCharsInStrings(s)) as T;
+    } catch {
+      return null;
+    }
   }
 }
