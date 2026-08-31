@@ -366,21 +366,31 @@ async function retryTranslateSegment(
   models: ReturnType<typeof getModels>,
   docMemory: Map<string, TmExample[]>,
 ): Promise<string | null> {
+  let text: string;
+  let stopReason: string | null;
   try {
-    const { text, stopReason } = await anthropicCompleteWithMeta({
+    ({ text, stopReason } = await anthropicCompleteWithMeta({
       model: models.translator.model,
       temperature: models.translator.temperature,
       maxTokens: models.translator.max_tokens,
       system: buildSystemPrompt(ctx),
       user: buildUserPayload([seg], ctx, docMemory),
-    });
-    if (stopReason === "max_tokens") return null;
-    const parsed = parseJsonLoose<Array<{ id: string; es: string }>>(text);
-    const items = Array.isArray(parsed) ? parsed : null;
-    const es = items?.find((it) => it?.id === seg.id)?.es?.trim();
-    return es ? es : null;
+    }));
   } catch (e) {
-    console.error(`[translate] Retry failed for ${seg.id} (model=${models.translator.model}): ${(e as Error).message}`);
-    return null;
+    // A real provider failure on the retry is an OUTAGE, not bad model output —
+    // surface it exactly as the first attempt would (temporarily unavailable), so
+    // users get "try again" and logs read as a provider issue, not "unreadable".
+    console.error(`[translate] Retry provider call failed for ${seg.id} (model=${models.translator.model}): ${(e as Error).message}`);
+    throw new Error(
+      `Translation service is temporarily unavailable (${(e as Error).message || "provider error"}). ` +
+        "No draft was saved — please try again in a moment.",
+    );
   }
+  // A parse/truncation/drop on the retry is genuine unreadable output → null lets
+  // the caller fail loud with the "unreadable response" message.
+  if (stopReason === "max_tokens") return null;
+  const parsed = parseJsonLoose<Array<{ id: string; es: string }>>(text);
+  const items = Array.isArray(parsed) ? parsed : null;
+  const es = items?.find((it) => it?.id === seg.id)?.es?.trim();
+  return es ? es : null;
 }

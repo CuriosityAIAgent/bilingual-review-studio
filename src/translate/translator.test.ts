@@ -173,6 +173,17 @@ describe("translateSegments (live path)", () => {
     await expect(translateSegments([seg("a", "one")], ctx())).rejects.toThrow(/unreadable response/);
   });
 
+  it("surfaces a provider error on the retry as temporarily unavailable, not unreadable", async () => {
+    process.env.ANTHROPIC_API_KEY = "test";
+    let n = 0;
+    complete.mockImplementation((o: { user: string }) => {
+      n++;
+      if (n === 1) return { text: "not json", stopReason: "end_turn" }; // first attempt unparseable
+      throw new Error("503 upstream"); // retry hits a real provider outage
+    });
+    await expect(translateSegments([seg("a", "one")], ctx())).rejects.toThrow(/temporarily unavailable/);
+  });
+
   it("surfaces a provider error as temporarily unavailable", async () => {
     process.env.ANTHROPIC_API_KEY = "test";
     complete.mockRejectedValue(new Error("429 rate limited"));
