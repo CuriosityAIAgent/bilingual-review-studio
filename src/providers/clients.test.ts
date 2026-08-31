@@ -1,6 +1,37 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { buildModelRun, getModels } from "@/src/lib/config";
-import { criticProviderLiveCached, markCriticUnavailable } from "./clients";
+import { criticProviderLiveCached, markCriticUnavailable, parseJsonLoose } from "./clients";
+
+describe("parseJsonLoose", () => {
+  it("parses a clean JSON array", () => {
+    expect(parseJsonLoose('[{"id":"b1","es":"hola"}]')).toEqual([{ id: "b1", es: "hola" }]);
+  });
+
+  it("recovers JSON wrapped in a ```json fence", () => {
+    expect(parseJsonLoose('```json\n[{"id":"b1","es":"hola"}]\n```')).toEqual([{ id: "b1", es: "hola" }]);
+  });
+
+  it("repairs a raw newline inside a string value (common for CJK replies)", () => {
+    // A literal newline inside the value is invalid JSON; without repair this returns null.
+    const raw = '[{"id":"b1","es":"第一行\n第二行"}]';
+    expect(parseJsonLoose(raw)).toEqual([{ id: "b1", es: "第一行\n第二行" }]);
+  });
+
+  it("repairs raw tabs/CR inside a value without touching structural whitespace", () => {
+    const raw = '[\n  {"id":"b1","es":"a\tb\rc"}\n]';
+    expect(parseJsonLoose(raw)).toEqual([{ id: "b1", es: "a\tb\rc" }]);
+  });
+
+  it("extracts a JSON array embedded in surrounding prose", () => {
+    expect(parseJsonLoose('Here is the translation: [{"id":"b1","es":"hola"}] hope it helps')).toEqual([
+      { id: "b1", es: "hola" },
+    ]);
+  });
+
+  it("returns null for genuinely unparseable text", () => {
+    expect(parseJsonLoose("Sorry, I cannot do that.")).toBeNull();
+  });
+});
 
 /**
  * Provenance honesty (ADR 0014): when a critic call that was probed healthy

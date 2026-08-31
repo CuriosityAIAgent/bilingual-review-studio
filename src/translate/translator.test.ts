@@ -140,13 +140,64 @@ describe("translateSegments (live path)", () => {
     await expect(translateSegments([seg("a", "one")], ctx())).rejects.toThrow(/unreadable response/);
   });
 
-  it("treats a non-array reply (bare object) as unreadable, not a crash", async () => {
+  it("retries a single unparseable segment once and recovers", async () => {
     process.env.ANTHROPIC_API_KEY = "test";
-    // Model returns an object instead of the instructed array (not truncated). The
-    // Array.isArray guard routes it to the unreadable message rather than letting
-    // the id loop throw an uncaught "not iterable".
-    complete.mockResolvedValue({ text: '{"id":"a","es":"x"}', stopReason: "end_turn" });
+    let n = 0;
+    complete.mockImplementation((o: { user: string }) => {
+      n++;
+      if (n === 1) return { text: "Sure, here is the translation (no json)", stopReason: "end_turn" };
+      return reply(o); // second attempt returns valid JSON
+    });
+    const out = await translateSegments([seg("a", "one")], ctx());
+    expect(out).toEqual({ a: "T:a" });
+    expect(complete).toHaveBeenCalledTimes(2);
+  });
+
+  it("does not crash on a bare-object reply; the guard routes it to a retry", async () => {
+    process.env.ANTHROPIC_API_KEY = "test";
+    // Object instead of the instructed array (not truncated). The Array.isArray guard
+    // avoids the "not iterable" crash and routes to the structured retry, which recovers.
+    let n = 0;
+    complete.mockImplementation((o: { user: string }) => {
+      n++;
+      if (n === 1) return { text: '{"id":"a","es":"x"}', stopReason: "end_turn" };
+      return reply(o);
+    });
+    const out = await translateSegments([seg("a", "one")], ctx());
+    expect(out).toEqual({ a: "T:a" });
+  });
+
+  it("fails loud when the retry is also unparseable", async () => {
+    process.env.ANTHROPIC_API_KEY = "test";
+    complete.mockResolvedValue({ text: "not json at all", stopReason: "end_turn" });
     await expect(translateSegments([seg("a", "one")], ctx())).rejects.toThrow(/unreadable response/);
+  });
+
+  it("sub-splits when the retry of a single oversized segment truncates", async () => {
+    process.env.ANTHROPIC_API_KEY = "test";
+    let n = 0;
+    const long =
+      "The first clause explains the strategy in detail. The second clause outlines the risks and the mitigations. The third clause states the disclaimer and the effective date.";
+    complete.mockImplementation((o: { user: string }) => {
+      n++;
+      if (n === 1) return { text: "prose, not json", stopReason: "end_turn" }; // first attempt unparseable
+      if (n === 2) return { text: '[{"id":"a","es":"cut', stopReason: "max_tokens" }; // retry truncates
+      return reply(o); // sub-segment sentence calls succeed
+    });
+    const out = await translateSegments([seg("a", long)], ctx());
+    expect(Object.keys(out)).toEqual(["a"]);
+    expect(out.a).toBe("T:a::s0 T:a::s1 T:a::s2"); // recovered via sentence sub-split
+  });
+
+  it("surfaces a provider error on the retry as temporarily unavailable, not unreadable", async () => {
+    process.env.ANTHROPIC_API_KEY = "test";
+    let n = 0;
+    complete.mockImplementation((o: { user: string }) => {
+      n++;
+      if (n === 1) return { text: "not json", stopReason: "end_turn" }; // first attempt unparseable
+      throw new Error("503 upstream"); // retry hits a real provider outage
+    });
+    await expect(translateSegments([seg("a", "one")], ctx())).rejects.toThrow(/temporarily unavailable/);
   });
 
   it("surfaces a provider error as temporarily unavailable", async () => {

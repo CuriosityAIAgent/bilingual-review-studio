@@ -271,8 +271,20 @@ async function translateBatch(
         out[batch[0].id] = stitched;
         return;
       }
+    } else {
+      // Not truncated, but the reply won't parse as the {id,es} array. parseJsonLoose
+      // already strips fences/prose and repairs raw control chars (the common CJK slip
+      // — a newline inside the value — that made ~800-word Chinese docs fail), so a
+      // remaining single-segment parse failure is usually a transient fluke. Retry the
+      // SAME structured request once before failing loud; staying on the JSON contract
+      // means we never persist prose or a refusal as the translation.
+      const retried = await retryTranslateSegment(batch[0], ctx, models, docMemory);
+      if (retried !== null) {
+        out[batch[0].id] = retried;
+        return;
+      }
     }
-    console.error(`[translate] ${truncated ? "Truncated (max_tokens), unsplittable" : "Unparseable"} response for one segment (model=${models.translator.model}, len=${text.length}): ${text.slice(0, 200).replace(/\s+/g, " ")}`);
+    console.error(`[translate] ${truncated ? "Truncated (max_tokens), unsplittable" : "Unparseable, retry failed"} response for one segment (model=${models.translator.model}, len=${text.length}): ${text.slice(0, 200).replace(/\s+/g, " ")}`);
     throw new Error("The translation service returned an unreadable response. No draft was saved — please try again.");
   }
 
@@ -338,4 +350,49 @@ async function translateOversizedSegment(
   // full-width punctuation — so join with no separator to avoid spurious gaps.
   const joiner = /^(zh|ja|ko)(-|$)/i.test(ctx.locale.locale) ? "" : " ";
   return subSegments.map((s) => subOut[s.id] ?? "").join(joiner);
+}
+
+// One more attempt at a single segment whose reply would not parse (and did NOT
+// truncate). Re-issues the SAME structured JSON request for just this segment —
+// parseJsonLoose already handles fences/prose/raw-control-chars, so this recovers a
+// transient formatting fluke while keeping the {id,es} contract (we never persist
+// prose or a refusal as the translation). Reusing docMemory keeps the same TM
+// guidance the first attempt had (works for a whole segment or a sub-segment alike).
+// Returns the segment's translation, or null (caller fails loud) if the retry
+// truncates, still won't parse, or drops the segment.
+async function retryTranslateSegment(
+  seg: TranslateSegment,
+  ctx: TranslateContext,
+  models: ReturnType<typeof getModels>,
+  docMemory: Map<string, TmExample[]>,
+): Promise<string | null> {
+  let text: string;
+  let stopReason: string | null;
+  try {
+    ({ text, stopReason } = await anthropicCompleteWithMeta({
+      model: models.translator.model,
+      temperature: models.translator.temperature,
+      maxTokens: models.translator.max_tokens,
+      system: buildSystemPrompt(ctx),
+      user: buildUserPayload([seg], ctx, docMemory),
+    }));
+  } catch (e) {
+    // A real provider failure on the retry is an OUTAGE, not bad model output —
+    // surface it exactly as the first attempt would (temporarily unavailable), so
+    // users get "try again" and logs read as a provider issue, not "unreadable".
+    console.error(`[translate] Retry provider call failed for ${seg.id} (model=${models.translator.model}): ${(e as Error).message}`);
+    throw new Error(
+      `Translation service is temporarily unavailable (${(e as Error).message || "provider error"}). ` +
+        "No draft was saved — please try again in a moment.",
+    );
+  }
+  // A truncated retry means this one segment's own output is too big for a single
+  // call — recover via sentence sub-splitting, exactly as a truncated first attempt
+  // would (returns the stitched translation, or null for a single unsplittable
+  // sentence, which then fails loud).
+  if (stopReason === "max_tokens") return translateOversizedSegment(seg, ctx, models);
+  const parsed = parseJsonLoose<Array<{ id: string; es: string }>>(text);
+  const items = Array.isArray(parsed) ? parsed : null;
+  const es = items?.find((it) => it?.id === seg.id)?.es?.trim();
+  return es ? es : null;
 }
