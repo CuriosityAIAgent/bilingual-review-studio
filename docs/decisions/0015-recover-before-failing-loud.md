@@ -17,12 +17,12 @@ Fail-loud is correct as a floor. Failing loud on a *recoverable* reply is not.
 
 Keep fail-loud, but **recover first wherever it is safe**. The translator tries these layers in order and throws only when a single, indivisible segment still cannot be read:
 
-1. **Chunk long documents** so no single call's output can overflow `max_tokens` (`batchSegments`); split-and-retry any batch that truncates. `max_tokens` raised 4096 → 8192. (#40)
+1. **Chunk long documents** so each call's output stays well under `max_tokens` (`batchSegments` sizes batches by source length, a conservative heuristic); a batch that still truncates is split in half and retried. `max_tokens` raised 4096 → 8192. (#40)
 2. **Sub-split an oversized single block.** A lone paragraph too large for even a one-segment call is split on sentence boundaries, translated in pieces, and stitched back into one block (`translateOversizedSegment`) — joined with a space for space-delimited targets, and with **no separator for CJK**. (#43)
 3. **Repair a malformed reply.** `parseJsonLoose` escapes stray control characters (raw newline / tab / CR) that sit *inside* JSON string values, then re-parses — recovering the common CJK case on the first pass. The repair runs only after a first parse fails, so valid JSON is never touched. (#44)
 4. **Retry one unparseable segment.** If a single-segment reply still will not parse (and did not truncate), retry it once on the **same `{id, es}` JSON contract** (`retryTranslateSegment`). A truncated retry falls back to sub-splitting (layer 2); a genuine provider error on the retry surfaces as *"temporarily unavailable,"* not *"unreadable."* (#44)
 
-Only after all of these does an indivisible, still-unreadable segment throw. The `[translate]` logs name which layer fired.
+Only after all of these does an indivisible, still-unreadable segment throw. The `[translate]` logs record when the sub-split path fires and, when recovery ultimately fails, name the cause (truncated-and-unsplittable, unparseable, or provider error); the control-character repair and the batch split-and-retry are silent.
 
 ## Consequences
 

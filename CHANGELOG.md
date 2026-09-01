@@ -41,11 +41,12 @@ pull request that shipped it.
   the whole document in one call capped at 4096 output tokens; long / Chinese docs
   truncated mid-JSON and failed loud. Now chunks long docs, detects truncation via
   `stop_reason`, retries transient provider errors, and raises the cap to 8192. (#40)
-- **A single giant paragraph no longer fails with "unreadable response".** #40
+- **A single giant paragraph is now translated in pieces instead of failing.** #40
   chunked by grouping whole segments, but it could not split *within* one segment,
   so an unbroken block (~4,000+ words) whose translation overflowed the output cap
-  still failed loud. The translator now sentence-splits an oversized block,
-  translates the pieces, and stitches them back into one block. (#43)
+  still failed with "unreadable response". The translator now sentence-splits an
+  oversized block, translates the pieces, and stitches them back (a block with no
+  sentence boundary at all still fails loud, by design). (#43)
 - **Short Chinese documents no longer fail with "unreadable response".** That error
   has a second, length-independent cause: a *complete* reply that isn't valid JSON —
   most often a raw line break inside a Chinese translation. The JSON parser now

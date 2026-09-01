@@ -100,8 +100,9 @@ offline demo — it must never stand in for a failed live call.
 **Recover before failing loud (ADR 0015).** Fail-loud is the floor, not the first
 response. The translator recovers wherever it can do so safely, and throws only
 when a single, indivisible segment still cannot be read:
-- **Long documents are chunked** so no single call's output overflows the model's
-  cap (`batchSegments`), and a batch that truncates is split and retried (#40).
+- **Long documents are chunked** to keep each call's output well under the model's
+  cap (`batchSegments`, a conservative source-length heuristic); a batch that still
+  truncates is split in half and retried (#40).
 - **An oversized single block** — one unbroken paragraph too large for even a
   one-segment call — is sentence-split, translated in pieces, and stitched back
   into one block (`translateOversizedSegment`), joined with no separator for CJK
