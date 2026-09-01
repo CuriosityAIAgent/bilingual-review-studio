@@ -23,11 +23,12 @@ The full loop runs through the real API with real role separation (see
 - **Paste English or upload** `.txt` / `.docx` → segmented document model. Paste a
   note, a memo, an email — anything; PDF deferred. A **"Train"** page also ingests
   a finished English+Spanish pair to seed memory directly.
-- **Translate** to neutral es-419 (Claude when a key is set; deterministic
-  fixtures only when NO key, for the offline demo). When a key IS configured and
-  the provider fails / returns an unparseable or incomplete response, the request
-  **fails loudly and saves no draft** — it never silently emits garbled
-  word-substitution that looks like a broken translation (ADR 0013).
+- **Translate** to neutral es-419 or Chinese (Claude when a key is set; deterministic
+  fixtures only when NO key, for the offline demo). It recovers where it safely can
+  first — chunking long documents, sentence-splitting an oversized paragraph, and
+  repairing a malformed reply (#40, #43, #44). Only when a single segment is still
+  unreadable does the request **fail loudly and save no draft** — it never silently
+  emits garbled word-substitution that looks like a broken translation (ADR 0013).
 - **Cross-model critique** (a decorrelated model family) + a **gated refine loop**
   that fixes only objectively-failing segments and reverts on no gain. The live
   GPT-5 critic runs only when its provider can actually respond (a cached
