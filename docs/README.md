@@ -39,6 +39,7 @@ The "why" behind the design lives in [`decisions/`](decisions/):
 | [0012](decisions/0012-reviewer-edit-to-memory-proposal.md) | Reviewer edit → memory proposal |
 | [0013](decisions/0013-fail-loud-not-silent-fixture.md) | Fail loud, not silent fixture garble |
 | [0014](decisions/0014-honest-provider-provenance.md) | Honest provider provenance |
+| [0015](decisions/0015-recover-before-failing-loud.md) | Recover before failing loud |
 
 ## Other artifacts
 

@@ -97,6 +97,21 @@ provider error / unparseable / incomplete response **throws** (the request 422s,
 no draft saved). The fixture word-substitution translator is ONLY for the no-key
 offline demo — it must never stand in for a failed live call.
 
+**Recover before failing loud (ADR 0015).** Fail-loud is the floor, not the first
+response. The translator recovers wherever it can do so safely, and throws only
+when a single, indivisible segment still cannot be read:
+- **Long documents are chunked** so no single call's output overflows the model's
+  cap (`batchSegments`), and a batch that truncates is split and retried (#40).
+- **An oversized single block** — one unbroken paragraph too large for even a
+  one-segment call — is sentence-split, translated in pieces, and stitched back
+  into one block (`translateOversizedSegment`), joined with no separator for CJK
+  targets (#43).
+- **A complete-but-unparseable reply** is recovered by repairing stray control
+  characters inside JSON string values (`parseJsonLoose`, the common CJK case: a
+  raw newline in the translation), then, if it still won't parse, retrying that one
+  segment once on the same `{id, es}` contract (`retryTranslateSegment`) — never on
+  a plain-text path that could persist prose or a refusal (#44).
+
 ---
 
 ## 4. The document model
@@ -268,5 +283,5 @@ enforce append-only at the database layer.
 - [`reference-api.md`](reference-api.md) — every HTTP endpoint.
 - [`howto-local-development.md`](howto-local-development.md) — run, test, and extend it.
 - [`DEPLOYMENT.md`](DEPLOYMENT.md) — Railway + Postgres/Supabase deploy.
-- [`decisions/`](decisions/) — the 14 ADRs (the "why").
+- [`decisions/`](decisions/) — the 15 ADRs (the "why").
 - `CLAUDE.md` (repo root) — the full design contract.
