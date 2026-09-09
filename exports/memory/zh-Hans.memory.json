@@ -1,0 +1,904 @@
+{
+  "meta": {
+    "locale": "zh-Hans",
+    "locale_name": "Chinese — Simplified (zh-Hans)",
+    "doc_model_schema_version": "1.0",
+    "purpose": "Governed institutional translation memory for zh-Hans. This is the curated, auditable asset (Translation Memory + neutral glossary + neutralization rules) plus the applied locale config that drives high-quality, neutral output. It is NOT machine-translation output and NOT the offline demo fixtures.",
+    "generated_at": "2026-09-09T08:47:37.460Z",
+    "source_repo": "CuriosityAIAgent/bilingual-review-studio",
+    "source_commit": "2d001c51c38344daea65351f64cc2b8f2237b251",
+    "generator": "scripts/export-memory.mjs",
+    "source_files": [
+      "tm/zh-Hans.json",
+      "glossaries/neutral-zh-Hans.json",
+      "glossaries/neutralization-rules-zh-Hans.json",
+      "config/locales/zh-Hans.yml"
+    ],
+    "config_versions_global": {
+      "glossary_version": "neutral-es-2026.1",
+      "rules_version": "neutralization-2026.1"
+    },
+    "counts": {
+      "translation_memory": 13,
+      "translation_memory_by_kind": {
+        "disclaimer": 13
+      },
+      "glossary_applied": 52,
+      "glossary_governance_queue": 0,
+      "neutralization_rules_applied": 0,
+      "neutralization_rules_governance_queue": 0
+    },
+    "lifecycle_legend": {
+      "active": "Approved and in force — APPLIED by the pipeline.",
+      "approved": "Approved — APPLIED by the pipeline (treated equivalently to active).",
+      "proposed": "Submitted to the governance queue, awaiting approver/admin decision — NOT applied.",
+      "candidate": "Auto-suggested, not yet reviewed — NOT applied.",
+      "deprecated": "Retired by an admin — NOT applied (kept for audit history)."
+    },
+    "governance_contract": "Only entries with state 'active' or 'approved' are applied by the pipeline (src/memory/apply.ts). Entries under any `governance_queue` are NOT applied; do not fold them into a live system without approver/admin sign-off (ADR 0008). Logs are append-only; corrections are compensating events, never mutations.",
+    "field_dictionary": {
+      "translation_memory": {
+        "id": "Stable TM segment id.",
+        "source_text": "Source-language segment (English).",
+        "target_text": "Approved target-language segment — this is the reusable asset.",
+        "locale": "Target locale this pair belongs to.",
+        "kind": "Segment class. 'disclaimer' = compliance boilerplate, routed separately and EXCLUDED from RAG few-shot retrieval.",
+        "version": "Monotonic version; superseded versions are replaced by a higher version (none superseded in this export).",
+        "approved_by": "User id of the approver/admin who signed this pair off.",
+        "approved_at": "ISO timestamp of approval.",
+        "created_at": "ISO timestamp the pair was created."
+      },
+      "glossary": {
+        "id": "Stable glossary entry id.",
+        "source": "Source term (English).",
+        "approved_target": "The single approved target rendering.",
+        "forbidden_terms": "Renderings that must NOT be used for this term (validator-enforced).",
+        "locale": "Target locale.",
+        "domain": "Subject domain (e.g. fixed-income, asset-class).",
+        "state": "Lifecycle state — see lifecycle_legend.",
+        "approved_by": "Approver id.",
+        "approved_at": "ISO approval timestamp.",
+        "notes": "Reviewer guidance for applying the term."
+      },
+      "neutralization_rules": {
+        "id": "Stable rule id.",
+        "regional_form": "Regionalism to neutralize away.",
+        "neutral_form": "Neutral replacement.",
+        "variant": "Source variant the regional_form belongs to (e.g. es-ES, es-MX).",
+        "reason": "Editorial justification for the rule.",
+        "locale": "Target locale.",
+        "state": "Lifecycle state — see lifecycle_legend.",
+        "proposed_by": "{user_id, team_id} who proposed the rule.",
+        "decided_by": "{user_id, team_id} who decided on it.",
+        "approved_by": "Approver id.",
+        "created_at": "ISO creation timestamp.",
+        "updated_at": "ISO last-update timestamp.",
+        "hits": "Count of times the rule has fired across processed documents."
+      }
+    },
+    "gaps": [
+      "No neutralization rules are in force for zh-Hans (the rules file is empty or has no active/approved entries). Any reviewer-flagged neutralization knowledge that has not been approved is NOT captured here — it must pass through the governed propose→approve lifecycle (/api/memory/proposals) before it becomes applicable. Do not hand-edit rules into a live system; route them through governance.",
+      "All TM entries are kind=disclaimer (compliance boilerplate). Disclaimers are routed separately and are EXCLUDED from RAG few-shot retrieval, so this bundle contributes reusable disclaimer text but no few-shot translation examples yet. Few-shot pairs grow via the Train page / 'Send to memory' governance flows."
+    ]
+  },
+  "translation_memory": {
+    "description": "Approved source→target segment pairs replayed on future documents. kind=disclaimer is compliance boilerplate routed separately and excluded from few-shot retrieval.",
+    "by_kind": {
+      "disclaimer": 13
+    },
+    "entries": [
+      {
+        "id": "tm-cn-001",
+        "source_text": "INVESTMENT PRODUCTS: NOT FDIC INSURED, NO BANK GUARANTEE, MAY LOSE VALUE",
+        "target_text": "投资产品： 不受联邦存款保险公司保障 非银行担保 可能损失本金",
+        "locale": "zh-Hans",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "created_at": "2026-06-01T00:00:00Z"
+      },
+      {
+        "id": "tm-cn-002",
+        "source_text": "This material should not be regarded as research or a J.P. Morgan research report.",
+        "target_text": "本文件不应视为研究报告或摩根大通研究报告看待。",
+        "locale": "zh-Hans",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "created_at": "2026-06-01T00:00:00Z"
+      },
+      {
+        "id": "tm-cn-003",
+        "source_text": "Outlooks and past performance are not reliable indicators of future results.",
+        "target_text": "前景展望和过往表现并非未来表现的可靠指标。",
+        "locale": "zh-Hans",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "created_at": "2026-06-01T00:00:00Z"
+      },
+      {
+        "id": "tm-cn-004",
+        "source_text": "Please read all Important Information at the end of this material for additional regulatory status, disclosures, disclaimers, risks and other important information.",
+        "target_text": "请参阅本文件末尾所载的其他监管状况、披露规定、免责声明、风险和其他重要信息。",
+        "locale": "zh-Hans",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "created_at": "2026-06-01T00:00:00Z"
+      },
+      {
+        "id": "tm-cn-005",
+        "source_text": "This material is not intended for any specific investor and may not be suitable for all investors. Investors should speak with their financial representative before investing.",
+        "target_text": "本文件并非针对特定投资者而编制，且不一定适合所有投资者。投资于任何投资产品或策略之前，投资者务必与其财务代表讨论和联系。",
+        "locale": "zh-Hans",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "created_at": "2026-06-01T00:00:00Z"
+      },
+      {
+        "id": "tm-cn-006",
+        "source_text": "Past performance is not a guarantee of future results. It is not possible to invest directly in an index.",
+        "target_text": "前景展望和过往表现不保证未来业绩。不可直接投资于指数。",
+        "locale": "zh-Hans",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "created_at": "2026-06-01T00:00:00Z"
+      },
+      {
+        "id": "tm-cn-007",
+        "source_text": "Investors may lose money. Past performance is not a reliable indicator of future results. Asset allocation and diversification do not guarantee a profit or protect against loss.",
+        "target_text": "投资者可能损失本金，过往表现并非未来表现的可靠指标。资产配置／多元化不保证录得盈利或免招损失。",
+        "locale": "zh-Hans",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "created_at": "2026-06-01T00:00:00Z"
+      },
+      {
+        "id": "tm-cn-008",
+        "source_text": "J.P. Morgan and its affiliates and employees do not provide tax, legal or accounting advice. You should consult your own independent tax, legal and accounting advisors before engaging in any financial transaction.",
+        "target_text": "摩根大通及其关联公司或雇员不提供税务、法律或会计意见。您应在作出任何财务交易前咨询您的独立税务、法律或会计顾问。",
+        "locale": "zh-Hans",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "created_at": "2026-06-01T00:00:00Z"
+      },
+      {
+        "id": "tm-cn-009",
+        "source_text": "We believe the information contained in this material to be reliable; however, J.P. Morgan does not warrant its accuracy, reliability or completeness, and accepts no liability for any loss or damage arising out of the use of all or any part of this material.",
+        "target_text": "本公司相信，本文件载列的资料均属可靠；然而，摩根大通不会就本文件的准确性、可靠性或完整性作出保证，或者就使用本文件的全部或部分内容引致的任何损失和损害（无论直接或间接）承担任何责任。",
+        "locale": "zh-Hans",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "created_at": "2026-06-01T00:00:00Z"
+      },
+      {
+        "id": "tm-cn-010",
+        "source_text": "In Hong Kong, this material is distributed by JPMorgan Chase Bank, N.A., Hong Kong branch. JPMorgan Chase Bank, N.A., Hong Kong branch is regulated by the Hong Kong Monetary Authority and the Securities and Futures Commission of Hong Kong.",
+        "target_text": "在香港，本文件由摩根大通银行香港分行分派。摩根大通银行香港分行受香港金融管理局及香港证监会监管。",
+        "locale": "zh-Hans",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "created_at": "2026-06-01T00:00:00Z"
+      },
+      {
+        "id": "tm-cn-011",
+        "source_text": "In Singapore, this material is distributed by JPMorgan Chase Bank, N.A., Singapore branch. JPMorgan Chase Bank, N.A., Singapore branch is regulated by the Monetary Authority of Singapore. This advertisement has not been reviewed by the Monetary Authority of Singapore.",
+        "target_text": "在新加坡，本文件由摩根大通银行新加坡分行分派。摩根大通银行新加坡分行受新加坡金融管理局监管。本营销广告未经新加坡金融管理局审阅。",
+        "locale": "zh-Hans",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "created_at": "2026-06-01T00:00:00Z"
+      },
+      {
+        "id": "tm-cn-012",
+        "source_text": "In the event of any inconsistency between the English version and a translated version, the English version shall prevail.",
+        "target_text": "若英文版本及翻译版本有任何歧义，包括但不限于释义、含意或诠释，概以英文版本为准。",
+        "locale": "zh-Hans",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "created_at": "2026-06-01T00:00:00Z"
+      },
+      {
+        "id": "tm-cn-013",
+        "source_text": "© 2026 JPMorgan Chase & Co. All rights reserved.",
+        "target_text": "© 2026年。摩根大通。版权所有。",
+        "locale": "zh-Hans",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "created_at": "2026-06-01T00:00:00Z"
+      }
+    ]
+  },
+  "glossary": {
+    "description": "Approved term mappings (source→approved_target) with forbidden_terms. Applied when state is active|approved.",
+    "applied": [
+      {
+        "id": "gl-cn-001",
+        "source": "yield curve",
+        "approved_target": "收益率曲线",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "fixed-income",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-002",
+        "source": "equities",
+        "approved_target": "股票",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "equities",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-003",
+        "source": "inflation",
+        "approved_target": "通胀",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-004",
+        "source": "central bank",
+        "approved_target": "央行",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-005",
+        "source": "semiconductor",
+        "approved_target": "半导体",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-006",
+        "source": "data center",
+        "approved_target": "数据中心",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-007",
+        "source": "supply chain",
+        "approved_target": "供应链",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-008",
+        "source": "artificial intelligence",
+        "approved_target": "人工智能",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": "Keep Latin abbreviation in half-width parens: 人工智能(AI)."
+      },
+      {
+        "id": "gl-cn-009",
+        "source": "emerging markets",
+        "approved_target": "新兴市场",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "equities",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-010",
+        "source": "developed markets",
+        "approved_target": "发达市场",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "equities",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-011",
+        "source": "diversification",
+        "approved_target": "多元化",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-012",
+        "source": "investment portfolio",
+        "approved_target": "投资组合",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-013",
+        "source": "asset allocation",
+        "approved_target": "资产配置",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-014",
+        "source": "real assets",
+        "approved_target": "实物资产",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-015",
+        "source": "alternative investments",
+        "approved_target": "另类投资",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-016",
+        "source": "hedge fund",
+        "approved_target": "对冲基金",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-017",
+        "source": "private markets",
+        "approved_target": "私募市场",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "equities",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-018",
+        "source": "private equity",
+        "approved_target": "私募股权",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "equities",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-019",
+        "source": "private credit",
+        "approved_target": "私募信贷",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "fixed-income",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-020",
+        "source": "fixed income",
+        "approved_target": "固定收益",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "fixed-income",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-021",
+        "source": "bonds",
+        "approved_target": "债券",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "fixed-income",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-022",
+        "source": "high yield",
+        "approved_target": "高收益",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "fixed-income",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-023",
+        "source": "investment grade",
+        "approved_target": "投资级",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "fixed-income",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-024",
+        "source": "municipal bonds",
+        "approved_target": "市政债券",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "fixed-income",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-025",
+        "source": "preferred securities",
+        "approved_target": "优先证券",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "fixed-income",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-026",
+        "source": "commodities",
+        "approved_target": "大宗商品",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-027",
+        "source": "gold",
+        "approved_target": "黄金",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-028",
+        "source": "crude oil",
+        "approved_target": "原油",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-029",
+        "source": "valuation",
+        "approved_target": "估值",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "equities",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-030",
+        "source": "earnings",
+        "approved_target": "盈利",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "equities",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-031",
+        "source": "volatility",
+        "approved_target": "波动性",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-032",
+        "source": "risk premium",
+        "approved_target": "风险溢价",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-033",
+        "source": "recession",
+        "approved_target": "经济衰退",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-034",
+        "source": "core inflation",
+        "approved_target": "核心通胀",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-035",
+        "source": "federal funds rate",
+        "approved_target": "联邦基金利率",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-036",
+        "source": "rate cuts",
+        "approved_target": "降息",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-037",
+        "source": "purchasing power",
+        "approved_target": "购买力",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-038",
+        "source": "productivity",
+        "approved_target": "生产率",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-039",
+        "source": "tariffs",
+        "approved_target": "关税",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-040",
+        "source": "geopolitical fragmentation",
+        "approved_target": "地缘分化",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-041",
+        "source": "industrial policy",
+        "approved_target": "产业政策",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-042",
+        "source": "fiscal policy",
+        "approved_target": "财政政策",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-043",
+        "source": "defense spending",
+        "approved_target": "国防开支",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-044",
+        "source": "initial public offering",
+        "approved_target": "首次公开募股",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "equities",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": "Keep Latin abbreviation in half-width parens: 首次公开募股(IPO)."
+      },
+      {
+        "id": "gl-cn-045",
+        "source": "capital expenditure",
+        "approved_target": "资本支出",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-046",
+        "source": "default rate",
+        "approved_target": "违约率",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "fixed-income",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-047",
+        "source": "leverage",
+        "approved_target": "杠杆",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-048",
+        "source": "stress test",
+        "approved_target": "压力测试",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-049",
+        "source": "exchange-rate risk",
+        "approved_target": "汇率风险",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-050",
+        "source": "small-cap stocks",
+        "approved_target": "中小盘股票",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "equities",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-051",
+        "source": "Sharpe ratio",
+        "approved_target": "夏普比率",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "general",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      },
+      {
+        "id": "gl-cn-052",
+        "source": "sovereign deficit",
+        "approved_target": "主权赤字",
+        "forbidden_terms": [],
+        "locale": "zh-Hans",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "system",
+        "approved_at": "2026-06-01T00:00:00Z",
+        "notes": ""
+      }
+    ],
+    "governance_queue": []
+  },
+  "neutralization_rules": {
+    "description": "Regional-form→neutral-form rewrite rules. Applied ONLY when state is active|approved; everything else is in the governance queue and must not be auto-applied.",
+    "applied": [],
+    "governance_queue": []
+  },
+  "locale_config": {
+    "description": "Applied locale configuration from config/locales/<locale>.yml. This is CONFIG, not lifecycle-governed memory, but it materially drives quality: scale_terms (the billion=10^9 'mil millones' / 十亿 / 十億 trap), number format, register, regional_flags (validator input), morphology, and the language-specific prompt clauses.",
+    "config": {
+      "locale": "zh-Hans",
+      "name": "简体中文（中国大陆）",
+      "description": "Simplified-character business Chinese for Mainland distribution. Formal written register, polite 您. Entirely Simplified script — never mix in Traditional characters.\n",
+      "number_format": {
+        "thousands_separator": ",",
+        "decimal_separator": ".",
+        "example": "1,234.56"
+      },
+      "scale_terms": {
+        "billion": "十亿",
+        "trillion": "万亿",
+        "basis_points": "基点"
+      },
+      "morphology": {
+        "plural_suffix": false
+      },
+      "script": "simplified",
+      "style": {
+        "second_person": "您",
+        "register": "formal",
+        "percent_placement": "after",
+        "currency_symbol_placement": "after"
+      },
+      "regional_flags": {},
+      "prompts": {
+        "translator_target": "Simplified Chinese (简体中文, zh-Hans) for Mainland China distribution. Formal written register,\npolite second person 您. Use full-width CJK punctuation 。，、；：？（）; keep Latin abbreviations\nin half-width parentheses, e.g. 人工智能(AI), 数据中心. The output must be ENTIRELY Simplified\ncharacters — never use a Traditional character.",
+        "critic_target": "简体中文 (zh-Hans)",
+        "critic_checks": "the Chinese number trap (English \"billion\" = 10^9 = 十亿 expressed via 亿, NEVER 万亿 = 10^12 = trillion),\nSCRIPT PURITY (flag ANY Traditional character — the translation must be wholly Simplified), full-width\nCJK punctuation, and Mainland business register"
+      }
+    }
+  }
+}

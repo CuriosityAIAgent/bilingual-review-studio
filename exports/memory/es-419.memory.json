@@ -1,0 +1,723 @@
+{
+  "meta": {
+    "locale": "es-419",
+    "locale_name": "Spanish — neutral Latin American (es-419)",
+    "doc_model_schema_version": "1.0",
+    "purpose": "Governed institutional translation memory for es-419. This is the curated, auditable asset (Translation Memory + neutral glossary + neutralization rules) plus the applied locale config that drives high-quality, neutral output. It is NOT machine-translation output and NOT the offline demo fixtures.",
+    "generated_at": "2026-09-09T08:47:37.460Z",
+    "source_repo": "CuriosityAIAgent/bilingual-review-studio",
+    "source_commit": "2d001c51c38344daea65351f64cc2b8f2237b251",
+    "generator": "scripts/export-memory.mjs",
+    "source_files": [
+      "tm/es-419.json",
+      "glossaries/neutral-es-419.json",
+      "glossaries/neutralization-rules-es-419.json",
+      "config/locales/es-419.yml"
+    ],
+    "config_versions_global": {
+      "glossary_version": "neutral-es-2026.1",
+      "rules_version": "neutralization-2026.1"
+    },
+    "counts": {
+      "translation_memory": 6,
+      "translation_memory_by_kind": {
+        "disclaimer": 6
+      },
+      "glossary_applied": 22,
+      "glossary_governance_queue": 0,
+      "neutralization_rules_applied": 6,
+      "neutralization_rules_governance_queue": 3
+    },
+    "lifecycle_legend": {
+      "active": "Approved and in force — APPLIED by the pipeline.",
+      "approved": "Approved — APPLIED by the pipeline (treated equivalently to active).",
+      "proposed": "Submitted to the governance queue, awaiting approver/admin decision — NOT applied.",
+      "candidate": "Auto-suggested, not yet reviewed — NOT applied.",
+      "deprecated": "Retired by an admin — NOT applied (kept for audit history)."
+    },
+    "governance_contract": "Only entries with state 'active' or 'approved' are applied by the pipeline (src/memory/apply.ts). Entries under any `governance_queue` are NOT applied; do not fold them into a live system without approver/admin sign-off (ADR 0008). Logs are append-only; corrections are compensating events, never mutations.",
+    "field_dictionary": {
+      "translation_memory": {
+        "id": "Stable TM segment id.",
+        "source_text": "Source-language segment (English).",
+        "target_text": "Approved target-language segment — this is the reusable asset.",
+        "locale": "Target locale this pair belongs to.",
+        "kind": "Segment class. 'disclaimer' = compliance boilerplate, routed separately and EXCLUDED from RAG few-shot retrieval.",
+        "version": "Monotonic version; superseded versions are replaced by a higher version (none superseded in this export).",
+        "approved_by": "User id of the approver/admin who signed this pair off.",
+        "approved_at": "ISO timestamp of approval.",
+        "created_at": "ISO timestamp the pair was created."
+      },
+      "glossary": {
+        "id": "Stable glossary entry id.",
+        "source": "Source term (English).",
+        "approved_target": "The single approved target rendering.",
+        "forbidden_terms": "Renderings that must NOT be used for this term (validator-enforced).",
+        "locale": "Target locale.",
+        "domain": "Subject domain (e.g. fixed-income, asset-class).",
+        "state": "Lifecycle state — see lifecycle_legend.",
+        "approved_by": "Approver id.",
+        "approved_at": "ISO approval timestamp.",
+        "notes": "Reviewer guidance for applying the term."
+      },
+      "neutralization_rules": {
+        "id": "Stable rule id.",
+        "regional_form": "Regionalism to neutralize away.",
+        "neutral_form": "Neutral replacement.",
+        "variant": "Source variant the regional_form belongs to (e.g. es-ES, es-MX).",
+        "reason": "Editorial justification for the rule.",
+        "locale": "Target locale.",
+        "state": "Lifecycle state — see lifecycle_legend.",
+        "proposed_by": "{user_id, team_id} who proposed the rule.",
+        "decided_by": "{user_id, team_id} who decided on it.",
+        "approved_by": "Approver id.",
+        "created_at": "ISO creation timestamp.",
+        "updated_at": "ISO last-update timestamp.",
+        "hits": "Count of times the rule has fired across processed documents."
+      }
+    },
+    "gaps": [
+      "3 neutralization rule(s) are in the governance queue (not applied): nr-007 (proposed), nr-008 (proposed), nr-009 (proposed). They are included under neutralization_rules.governance_queue for visibility only.",
+      "All TM entries are kind=disclaimer (compliance boilerplate). Disclaimers are routed separately and are EXCLUDED from RAG few-shot retrieval, so this bundle contributes reusable disclaimer text but no few-shot translation examples yet. Few-shot pairs grow via the Train page / 'Send to memory' governance flows."
+    ]
+  },
+  "translation_memory": {
+    "description": "Approved source→target segment pairs replayed on future documents. kind=disclaimer is compliance boilerplate routed separately and excluded from few-shot retrieval.",
+    "by_kind": {
+      "disclaimer": 6
+    },
+    "entries": [
+      {
+        "id": "tm-001",
+        "source_text": "Past performance is not indicative of future results. The value of investments and the income from them can fall as well as rise, and investors may not recover the amount originally invested.",
+        "target_text": "El rendimiento pasado no es indicativo de resultados futuros. El valor de las inversiones y los ingresos que generan pueden tanto disminuir como aumentar, y los inversionistas podrían no recuperar el monto invertido originalmente.",
+        "locale": "es-419",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "created_at": "2026-05-01T00:00:00Z"
+      },
+      {
+        "id": "tm-002",
+        "source_text": "This document is for informational purposes only and does not constitute investment advice, an offer, or a solicitation to buy or sell any financial instrument.",
+        "target_text": "Este documento tiene únicamente fines informativos y no constituye asesoramiento de inversión, una oferta ni una invitación para comprar o vender ningún instrumento financiero.",
+        "locale": "es-419",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "created_at": "2026-05-01T00:00:00Z"
+      },
+      {
+        "id": "tm-003",
+        "source_text": "Investments are subject to market risk, including the possible loss of principal. Diversification does not guarantee a profit or protect against loss in a declining market.",
+        "target_text": "Las inversiones están sujetas a riesgo de mercado, incluida la posible pérdida del capital. La diversificación no garantiza una ganancia ni protege contra pérdidas en un mercado a la baja.",
+        "locale": "es-419",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "created_at": "2026-05-01T00:00:00Z"
+      },
+      {
+        "id": "tm-004",
+        "source_text": "The views expressed herein are those of the author as of the date of publication and are subject to change without notice. They do not necessarily reflect the views of the bank.",
+        "target_text": "Las opiniones aquí expresadas son las del autor a la fecha de publicación y están sujetas a cambios sin previo aviso. No reflejan necesariamente las opiniones del banco.",
+        "locale": "es-419",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "created_at": "2026-05-01T00:00:00Z"
+      },
+      {
+        "id": "tm-005",
+        "source_text": "Forecasts are not a reliable indicator of future performance and are based on assumptions that may not materialize. Currency movements may increase or decrease returns for investors.",
+        "target_text": "Las proyecciones no son un indicador confiable del rendimiento futuro y se basan en supuestos que podrían no materializarse. Los movimientos cambiarios pueden aumentar o disminuir los retornos para los inversionistas.",
+        "locale": "es-419",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "created_at": "2026-05-01T00:00:00Z"
+      },
+      {
+        "id": "tm-006",
+        "source_text": "This material is for information purposes only and may inform you of certain products and services offered by private banking businesses, part of JPMorgan Chase & Co. Any views, strategies or products discussed may not be appropriate for all individuals and are subject to risks. Investors may get back less than they invested, and past performance is not a reliable indicator of future results. This material should not be regarded as a research report.",
+        "target_text": "Este material tiene únicamente fines informativos y puede informarle sobre ciertos productos y servicios ofrecidos por los negocios de banca privada, parte de JPMorgan Chase & Co. Las opiniones, estrategias o productos analizados pueden no ser apropiados para todas las personas y están sujetos a riesgos. Los inversionistas podrían recuperar menos de lo que invirtieron, y el rendimiento pasado no es un indicador confiable de los resultados futuros. Este material no debe considerarse un informe de análisis.",
+        "locale": "es-419",
+        "kind": "disclaimer",
+        "version": 1,
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "created_at": "2026-05-01T00:00:00Z"
+      }
+    ]
+  },
+  "glossary": {
+    "description": "Approved term mappings (source→approved_target) with forbidden_terms. Applied when state is active|approved.",
+    "applied": [
+      {
+        "id": "gl-001",
+        "source": "yield curve",
+        "approved_target": "curva de rendimientos",
+        "forbidden_terms": [
+          "curva de rendimiento",
+          "curva de tipos"
+        ],
+        "locale": "es-419",
+        "domain": "fixed-income",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "Use plural 'rendimientos'. Avoid Peninsular 'curva de tipos'."
+      },
+      {
+        "id": "gl-002",
+        "source": "equities",
+        "approved_target": "renta variable",
+        "forbidden_terms": [
+          "acciones equitativas",
+          "equidades"
+        ],
+        "locale": "es-419",
+        "domain": "asset-class",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "As an asset class, 'renta variable'. 'acciones' is acceptable for individual shares but not the asset class."
+      },
+      {
+        "id": "gl-003",
+        "source": "fixed income",
+        "approved_target": "renta fija",
+        "forbidden_terms": [
+          "ingreso fijo",
+          "ingresos fijos"
+        ],
+        "locale": "es-419",
+        "domain": "asset-class",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "Never calque as 'ingreso fijo'."
+      },
+      {
+        "id": "gl-004",
+        "source": "hedge fund",
+        "approved_target": "fondo de cobertura",
+        "forbidden_terms": [
+          "fondo de cobertizo",
+          "fondo hedge",
+          "fondo de alto riesgo"
+        ],
+        "locale": "es-419",
+        "domain": "alternatives",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "'fondo de cobertura' is the institutional standard for LatAm."
+      },
+      {
+        "id": "gl-005",
+        "source": "drawdown",
+        "approved_target": "caída máxima",
+        "forbidden_terms": [
+          "reducción",
+          "retiro",
+          "desembolso"
+        ],
+        "locale": "es-419",
+        "domain": "risk",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "In a risk context, 'caída máxima'. Avoid 'retiro' (that is a withdrawal)."
+      },
+      {
+        "id": "gl-006",
+        "source": "asset allocation",
+        "approved_target": "asignación de activos",
+        "forbidden_terms": [
+          "distribución de bienes",
+          "alocación de activos",
+          "ubicación de activos"
+        ],
+        "locale": "es-419",
+        "domain": "portfolio",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "'alocación' is an anglicism; use 'asignación'."
+      },
+      {
+        "id": "gl-007",
+        "source": "basis points",
+        "approved_target": "puntos básicos",
+        "forbidden_terms": [
+          "puntos base",
+          "puntos de base"
+        ],
+        "locale": "es-419",
+        "domain": "rates",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "Standard rendering 'puntos básicos'."
+      },
+      {
+        "id": "gl-008",
+        "source": "equity",
+        "approved_target": "capital",
+        "forbidden_terms": [
+          "equidad"
+        ],
+        "locale": "es-419",
+        "domain": "corporate-finance",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "In capital-structure context, 'capital' or 'patrimonio'. Never 'equidad' (fairness)."
+      },
+      {
+        "id": "gl-009",
+        "source": "leverage",
+        "approved_target": "apalancamiento",
+        "forbidden_terms": [
+          "palanca",
+          "endeudamiento forzado"
+        ],
+        "locale": "es-419",
+        "domain": "risk",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "Financial leverage is 'apalancamiento'."
+      },
+      {
+        "id": "gl-010",
+        "source": "duration",
+        "approved_target": "duración",
+        "forbidden_terms": [
+          "durabilidad",
+          "plazo"
+        ],
+        "locale": "es-419",
+        "domain": "fixed-income",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "Bond duration is 'duración'. Do not confuse with 'plazo' (term/maturity)."
+      },
+      {
+        "id": "gl-011",
+        "source": "spread",
+        "approved_target": "diferencial",
+        "forbidden_terms": [
+          "margen amplio",
+          "esparcimiento"
+        ],
+        "locale": "es-419",
+        "domain": "fixed-income",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "Credit/yield spread is 'diferencial'."
+      },
+      {
+        "id": "gl-012",
+        "source": "benchmark",
+        "approved_target": "índice de referencia",
+        "forbidden_terms": [
+          "punto de referencia",
+          "marca de banco"
+        ],
+        "locale": "es-419",
+        "domain": "portfolio",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "For an index, 'índice de referencia'."
+      },
+      {
+        "id": "gl-013",
+        "source": "volatility",
+        "approved_target": "volatilidad",
+        "forbidden_terms": [
+          "variabilidad nerviosa"
+        ],
+        "locale": "es-419",
+        "domain": "risk",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "Direct term 'volatilidad'."
+      },
+      {
+        "id": "gl-014",
+        "source": "investment grade",
+        "approved_target": "grado de inversión",
+        "forbidden_terms": [
+          "grado inversionista",
+          "calidad de inversión"
+        ],
+        "locale": "es-419",
+        "domain": "credit",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "Credit quality 'grado de inversión'."
+      },
+      {
+        "id": "gl-015",
+        "source": "high yield",
+        "approved_target": "alto rendimiento",
+        "forbidden_terms": [
+          "alta cosecha",
+          "alto ingreso"
+        ],
+        "locale": "es-419",
+        "domain": "credit",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "Sub-investment-grade debt 'alto rendimiento'."
+      },
+      {
+        "id": "gl-016",
+        "source": "emerging markets",
+        "approved_target": "mercados emergentes",
+        "forbidden_terms": [
+          "mercados emergiendo",
+          "mercados nacientes"
+        ],
+        "locale": "es-419",
+        "domain": "regions",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "Standard 'mercados emergentes'."
+      },
+      {
+        "id": "gl-017",
+        "source": "central bank",
+        "approved_target": "banco central",
+        "forbidden_terms": [
+          "banco centralizado"
+        ],
+        "locale": "es-419",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "Direct term 'banco central'."
+      },
+      {
+        "id": "gl-018",
+        "source": "interest rate",
+        "approved_target": "tasa de interés",
+        "forbidden_terms": [
+          "tipo de interés",
+          "tipo de cambio"
+        ],
+        "locale": "es-419",
+        "domain": "rates",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "LatAm standard 'tasa de interés'. Peninsular 'tipo de interés' is forbidden."
+      },
+      {
+        "id": "gl-019",
+        "source": "earnings",
+        "approved_target": "ganancias",
+        "forbidden_terms": [
+          "ingresos brutos",
+          "facturación"
+        ],
+        "locale": "es-419",
+        "domain": "corporate-finance",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "Corporate earnings 'ganancias' or 'utilidades'."
+      },
+      {
+        "id": "gl-020",
+        "source": "portfolio",
+        "approved_target": "portafolio",
+        "forbidden_terms": [
+          "cartera de cuero",
+          "carpeta"
+        ],
+        "locale": "es-419",
+        "domain": "portfolio",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "LatAm prefers 'portafolio'; 'cartera' acceptable, 'carpeta' forbidden."
+      },
+      {
+        "id": "gl-021",
+        "source": "money market",
+        "approved_target": "mercado monetario",
+        "forbidden_terms": [
+          "mercado de dinero efectivo",
+          "mercado del dinero"
+        ],
+        "locale": "es-419",
+        "domain": "asset-class",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "Standard 'mercado monetario'."
+      },
+      {
+        "id": "gl-022",
+        "source": "rate cut",
+        "approved_target": "recorte de tasas",
+        "forbidden_terms": [
+          "corte de tipos",
+          "bajada de tipos",
+          "recorte de tipos"
+        ],
+        "locale": "es-419",
+        "domain": "macro",
+        "state": "active",
+        "approved_by": "carmen",
+        "approved_at": "2026-05-01T00:00:00Z",
+        "notes": "'recorte de tasas'. Peninsular 'bajada de tipos' forbidden."
+      }
+    ],
+    "governance_queue": []
+  },
+  "neutralization_rules": {
+    "description": "Regional-form→neutral-form rewrite rules. Applied ONLY when state is active|approved; everything else is in the governance queue and must not be auto-applied.",
+    "applied": [
+      {
+        "id": "nr-001",
+        "regional_form": "tipo de interés",
+        "neutral_form": "tasa de interés",
+        "variant": "es-ES",
+        "reason": "Peninsular 'tipo de interés' is rendered 'tasa de interés' across Latin America.",
+        "locale": "es-419",
+        "state": "active",
+        "proposed_by": {
+          "user_id": "ana",
+          "team_id": "latam-strategy"
+        },
+        "decided_by": {
+          "user_id": "diego",
+          "team_id": "iberia-marketing"
+        },
+        "approved_by": "carmen",
+        "created_at": "2026-05-01T00:00:00Z",
+        "updated_at": "2026-05-01T00:00:00Z",
+        "hits": 0
+      },
+      {
+        "id": "nr-002",
+        "regional_form": "beneficios",
+        "neutral_form": "utilidades",
+        "variant": "es-ES",
+        "reason": "In a corporate-profit sense the Peninsular 'beneficios' reads as employee benefits in LatAm; use 'utilidades'.",
+        "locale": "es-419",
+        "state": "active",
+        "proposed_by": {
+          "user_id": "ana",
+          "team_id": "latam-strategy"
+        },
+        "decided_by": {
+          "user_id": "diego",
+          "team_id": "iberia-marketing"
+        },
+        "approved_by": "carmen",
+        "created_at": "2026-05-01T00:00:00Z",
+        "updated_at": "2026-05-01T00:00:00Z",
+        "hits": 0
+      },
+      {
+        "id": "nr-003",
+        "regional_form": "cuota de mercado",
+        "neutral_form": "participación de mercado",
+        "variant": "es-ES",
+        "reason": "Peninsular 'cuota de mercado' is 'participación de mercado' in neutral LatAm usage.",
+        "locale": "es-419",
+        "state": "active",
+        "proposed_by": {
+          "user_id": "ana",
+          "team_id": "latam-strategy"
+        },
+        "decided_by": {
+          "user_id": "diego",
+          "team_id": "iberia-marketing"
+        },
+        "approved_by": "carmen",
+        "created_at": "2026-05-01T00:00:00Z",
+        "updated_at": "2026-05-01T00:00:00Z",
+        "hits": 0
+      },
+      {
+        "id": "nr-004",
+        "regional_form": "móvil",
+        "neutral_form": "teléfono celular",
+        "variant": "es-ES",
+        "reason": "Peninsular 'móvil' for a mobile phone is 'teléfono celular' (or 'celular') in LatAm.",
+        "locale": "es-419",
+        "state": "active",
+        "proposed_by": {
+          "user_id": "ana",
+          "team_id": "latam-strategy"
+        },
+        "decided_by": {
+          "user_id": "diego",
+          "team_id": "iberia-marketing"
+        },
+        "approved_by": "carmen",
+        "created_at": "2026-05-01T00:00:00Z",
+        "updated_at": "2026-05-01T00:00:00Z",
+        "hits": 0
+      },
+      {
+        "id": "nr-005",
+        "regional_form": "bajada de tipos",
+        "neutral_form": "recorte de tasas",
+        "variant": "es-ES",
+        "reason": "Peninsular 'bajada de tipos' for a rate cut is 'recorte de tasas' in neutral LatAm.",
+        "locale": "es-419",
+        "state": "active",
+        "proposed_by": {
+          "user_id": "ana",
+          "team_id": "latam-strategy"
+        },
+        "decided_by": {
+          "user_id": "diego",
+          "team_id": "iberia-marketing"
+        },
+        "approved_by": "carmen",
+        "created_at": "2026-05-01T00:00:00Z",
+        "updated_at": "2026-05-01T00:00:00Z",
+        "hits": 0
+      },
+      {
+        "id": "nr-006",
+        "regional_form": "depósito a plazo fijo",
+        "neutral_form": "depósito a plazo",
+        "variant": "es-ES",
+        "reason": "Trim the redundant 'fijo'; neutral institutional usage is 'depósito a plazo'.",
+        "locale": "es-419",
+        "state": "active",
+        "proposed_by": {
+          "user_id": "ana",
+          "team_id": "latam-strategy"
+        },
+        "decided_by": {
+          "user_id": "diego",
+          "team_id": "iberia-marketing"
+        },
+        "approved_by": "carmen",
+        "created_at": "2026-05-01T00:00:00Z",
+        "updated_at": "2026-05-01T00:00:00Z",
+        "hits": 0
+      }
+    ],
+    "governance_queue": [
+      {
+        "id": "nr-007",
+        "regional_form": "ordenador",
+        "neutral_form": "computadora",
+        "variant": "es-ES",
+        "reason": "Peninsular 'ordenador' for a computer is 'computadora' across Latin America.",
+        "locale": "es-419",
+        "state": "proposed",
+        "proposed_by": {
+          "user_id": "ana",
+          "team_id": "latam-strategy"
+        },
+        "created_at": "2026-05-01T00:00:00Z",
+        "updated_at": "2026-05-01T00:00:00Z",
+        "hits": 0
+      },
+      {
+        "id": "nr-008",
+        "regional_form": "coche",
+        "neutral_form": "automóvil",
+        "variant": "es-ES",
+        "reason": "Peninsular 'coche' for a car is 'automóvil' (or 'carro/auto') in neutral LatAm; 'automóvil' is the pan-regional choice.",
+        "locale": "es-419",
+        "state": "proposed",
+        "proposed_by": {
+          "user_id": "ana",
+          "team_id": "latam-strategy"
+        },
+        "created_at": "2026-05-01T00:00:00Z",
+        "updated_at": "2026-05-01T00:00:00Z",
+        "hits": 0
+      },
+      {
+        "id": "nr-009",
+        "regional_form": "facturación",
+        "neutral_form": "ingresos por ventas",
+        "variant": "es-ES",
+        "reason": "Peninsular 'facturación' as top-line revenue is clearer as 'ingresos por ventas' for a pan-regional audience.",
+        "locale": "es-419",
+        "state": "proposed",
+        "proposed_by": {
+          "user_id": "ana",
+          "team_id": "latam-strategy"
+        },
+        "created_at": "2026-05-01T00:00:00Z",
+        "updated_at": "2026-05-01T00:00:00Z",
+        "hits": 0
+      }
+    ]
+  },
+  "locale_config": {
+    "description": "Applied locale configuration from config/locales/<locale>.yml. This is CONFIG, not lifecycle-governed memory, but it materially drives quality: scale_terms (the billion=10^9 'mil millones' / 十亿 / 十億 trap), number format, register, regional_flags (validator input), morphology, and the language-specific prompt clauses.",
+    "config": {
+      "locale": "es-419",
+      "name": "Español neutro (Latinoamérica)",
+      "description": "Pan-regional Spanish for cross-market distribution. No country-specific lexicon, no vosotros (use ustedes), formal institutional register. One deliverable, not N regional variants (spec §2).\n",
+      "number_format": {
+        "thousands_separator": ",",
+        "decimal_separator": ".",
+        "example": "1,234.56"
+      },
+      "scale_terms": {
+        "billion": "mil millones",
+        "trillion": "billón",
+        "basis_points": "puntos básicos"
+      },
+      "style": {
+        "second_person": "ustedes",
+        "register": "formal",
+        "percent_placement": "after",
+        "currency_symbol_placement": "before"
+      },
+      "morphology": {
+        "plural_suffix": true
+      },
+      "prompts": {
+        "translator_target": "NEUTRAL Latin-American Spanish (español neutro, es-419): pan-regional, no\ncountry-specific lexicon, no vosotros (use ustedes). Formal, native, institutional register.",
+        "critic_target": "español-neutro (es-419)",
+        "critic_checks": "billón rule (English \"billion\" = 10^9 = \"mil millones\", NEVER \"billón\"), neutrality (flag Peninsular-only\nOR Mexican-only lexicon and give the neutral alternative)"
+      },
+      "regional_flags": {
+        "peninsular": [
+          "vosotros",
+          "coche",
+          "ordenador",
+          "móvil",
+          "zumo",
+          "cotización (as quote)"
+        ],
+        "mexican": [
+          "platicar",
+          "checar",
+          "ahorita"
+        ]
+      }
+    }
+  }
+}
