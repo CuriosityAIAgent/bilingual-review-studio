@@ -1,0 +1,57 @@
+{
+  "generated_at": "2026-09-09T08:47:37.460Z",
+  "source_repo": "CuriosityAIAgent/bilingual-review-studio",
+  "source_commit": "2d001c51c38344daea65351f64cc2b8f2237b251",
+  "generator": "scripts/export-memory.mjs",
+  "doc_model_schema_version": "1.0",
+  "bundles": [
+    {
+      "locale": "es-419",
+      "file": "es-419.memory.json",
+      "counts": {
+        "translation_memory": 6,
+        "translation_memory_by_kind": {
+          "disclaimer": 6
+        },
+        "glossary_applied": 22,
+        "glossary_governance_queue": 0,
+        "neutralization_rules_applied": 6,
+        "neutralization_rules_governance_queue": 3
+      },
+      "gaps": 2,
+      "content_hash": "962747f6f6916068"
+    },
+    {
+      "locale": "zh-Hans",
+      "file": "zh-Hans.memory.json",
+      "counts": {
+        "translation_memory": 13,
+        "translation_memory_by_kind": {
+          "disclaimer": 13
+        },
+        "glossary_applied": 52,
+        "glossary_governance_queue": 0,
+        "neutralization_rules_applied": 0,
+        "neutralization_rules_governance_queue": 0
+      },
+      "gaps": 2,
+      "content_hash": "aab1aada16a9312c"
+    },
+    {
+      "locale": "zh-Hant",
+      "file": "zh-Hant.memory.json",
+      "counts": {
+        "translation_memory": 18,
+        "translation_memory_by_kind": {
+          "disclaimer": 18
+        },
+        "glossary_applied": 50,
+        "glossary_governance_queue": 0,
+        "neutralization_rules_applied": 0,
+        "neutralization_rules_governance_queue": 0
+      },
+      "gaps": 2,
+      "content_hash": "6f9ed2997a938d06"
+    }
+  ]
+}
