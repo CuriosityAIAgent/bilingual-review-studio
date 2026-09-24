@@ -1,0 +1,1305 @@
+{
+  "rev": 0,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "surprising-weakness",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "令人意外的疲软",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.68,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "令人意外的疲软",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Surprising weakness",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：上周美国股票上涨（标普500指数 +0.7%，纳斯达克指数 +0.8%），人工智能(AI)相关主题（如内存，DRAM +13.3%）出现反弹。美国国债收益率表现分化，短端利率下行，长端利率上行（2年期 -3个基点至4.17%，10年期 +5个基点至4.69%，30年期 +6个基点至5.26%），30年期收益率升至2007年以来最高水平。美元指数上涨+0.1%，黄金上涨+0.9%至$4,378美元，布伦特原油大涨6%至约89美元。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 53,
+          "char_start": 50
+        },
+        {
+          "kind": "percent",
+          "norm": "0.7%",
+          "text": "0.7%",
+          "char_end": 59,
+          "char_start": 55
+        },
+        {
+          "kind": "percent",
+          "norm": "0.8%",
+          "text": "0.8%",
+          "char_end": 73,
+          "char_start": 69
+        },
+        {
+          "kind": "percent",
+          "norm": "13.3%",
+          "text": "13.3%",
+          "char_end": 138,
+          "char_start": 133
+        },
+        {
+          "kind": "number",
+          "norm": "3000000000bps",
+          "text": "3bps",
+          "char_end": 240,
+          "char_start": 236
+        },
+        {
+          "kind": "percent",
+          "norm": "4.17%",
+          "text": "4.17%",
+          "char_end": 249,
+          "char_start": 244
+        },
+        {
+          "kind": "number",
+          "norm": "5000000000bps",
+          "text": "5bps",
+          "char_end": 260,
+          "char_start": 256
+        },
+        {
+          "kind": "percent",
+          "norm": "4.69%",
+          "text": "4.69%",
+          "char_end": 269,
+          "char_start": 264
+        },
+        {
+          "kind": "number",
+          "norm": "6000000000bps",
+          "text": "6bps",
+          "char_end": 280,
+          "char_start": 276
+        },
+        {
+          "kind": "percent",
+          "norm": "5.26%",
+          "text": "5.26%",
+          "char_end": 289,
+          "char_start": 284
+        },
+        {
+          "kind": "date",
+          "norm": "2007",
+          "text": "2007",
+          "char_end": 343,
+          "char_start": 339
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 374,
+          "char_start": 370
+        },
+        {
+          "kind": "percent",
+          "norm": "0.9%",
+          "text": "0.9%",
+          "char_end": 391,
+          "char_start": 387
+        },
+        {
+          "kind": "currency",
+          "norm": "4378000000000",
+          "text": "$4,378, B",
+          "char_end": 404,
+          "char_start": 395
+        },
+        {
+          "kind": "percent",
+          "norm": "6%",
+          "text": "6%",
+          "char_end": 418,
+          "char_start": 416
+        },
+        {
+          "kind": "currency",
+          "norm": "89",
+          "text": "$89.",
+          "char_end": 427,
+          "char_start": 423
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 53,
+          "char_start": 46
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 67,
+          "char_start": 61
+        }
+      ],
+      "qe_score": 0.981,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：上周美国股票上涨（标普500指数 +0.7%，纳斯达克指数 +0.8%），人工智能(AI)相关主题（如内存，DRAM +13.3%）出现反弹。美国国债收益率表现分化，短端利率下行，长端利率上行（2年期 -3个基点至4.17%，10年期 +5个基点至4.69%，30年期 +6个基点至5.26%），30年期收益率升至2007年以来最高水平。美元指数上涨+0.1%，黄金上涨+0.9%至$4,378美元，布伦特原油大涨6%至约89美元。",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "U.S. markets: U.S. equities gained last week (S&P 500 +0.7%, Nasdaq +0.8%) with a rebound in AI-related themes such as memory (DRAM +13.3%). Treasury yields were mixed with rates falling on the short-end but rising on the long-end (2Y -3bps to 4.17%, 10Y +5bps to 4.69%, 30Y +6bps to 5.26%), with the 30Y moving to its highest level since 2007. The dollar index gained +0.1%, gold rose +0.9% to $4,378, Brent jumped 6% to ~$89.",
+      "critic_flags": [
+        {
+          "span": "3bps",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "3"
+        },
+        {
+          "span": "$89.",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "89."
+        },
+        {
+          "span": "$",
+          "category": "number",
+          "severity": "major",
+          "suggestion": "2× $"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "3bps",
+              "message": "Numeric value \"3bps\" (mantissa 3) not preserved in translation",
+              "expected": "3"
+            },
+            {
+              "span": "$89.",
+              "message": "Numeric value \"$89.\" (mantissa 89.) not preserved in translation",
+              "expected": "89."
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [
+            {
+              "span": "$",
+              "found": "1× $",
+              "message": "Currency unit \"$\" dropped (2 → 1)",
+              "expected": "2× $"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国宏观：7月零售销售数据令人意外地偏弱，整体数据环比下降-0.6%，而市场共识预期为+0.1%，6月数据为+0.2%。此次读数为2025年5月以来最低。剔除汽车的零售销售环比-0.3%，市场共识预期为+0.2%，6月数据为-0.2%，连续第二个月下滑，为2025年1月以来最低读数。核心控制组销售额环比下降-0.4%，市场共识预期为+0.4%，6月数据为+0.4%。8月密歇根大学消费者信心指数初值为51.0，市场共识预期为54.5，7月数据为55.2。1年期通胀预期从7月的4.2%升至4.3%，而伊朗冲突前为3.4%；长期通胀预期连续第三个月稳定在3.3%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-0.6%",
+          "text": "-0.6%",
+          "char_end": 84,
+          "char_start": 79
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 107,
+          "char_start": 103
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 124,
+          "char_start": 120
+        },
+        {
+          "kind": "number",
+          "norm": "25",
+          "text": "25",
+          "char_end": 162,
+          "char_start": 160
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.3%",
+          "text": "-0.3%",
+          "char_end": 191,
+          "char_start": 186
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 214,
+          "char_start": 210
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.2%",
+          "text": "-0.2%",
+          "char_end": 231,
+          "char_start": 226
+        },
+        {
+          "kind": "number",
+          "norm": "25",
+          "text": "25",
+          "char_end": 300,
+          "char_start": 298
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.4%",
+          "text": "-0.4%",
+          "char_end": 332,
+          "char_start": 327
+        },
+        {
+          "kind": "percent",
+          "norm": "0.4%",
+          "text": "0.4%",
+          "char_end": 355,
+          "char_start": 351
+        },
+        {
+          "kind": "percent",
+          "norm": "0.4%",
+          "text": "0.4%",
+          "char_end": 372,
+          "char_start": 368
+        },
+        {
+          "kind": "number",
+          "norm": "51",
+          "text": "51.0",
+          "char_end": 421,
+          "char_start": 417
+        },
+        {
+          "kind": "number",
+          "norm": "54.5",
+          "text": "54.5",
+          "char_end": 439,
+          "char_start": 435
+        },
+        {
+          "kind": "number",
+          "norm": "55.2",
+          "text": "55.2",
+          "char_end": 455,
+          "char_start": 451
+        },
+        {
+          "kind": "percent",
+          "norm": "4.3%",
+          "text": "4.3%",
+          "char_end": 495,
+          "char_start": 491
+        },
+        {
+          "kind": "percent",
+          "norm": "4.2%",
+          "text": "4.2%",
+          "char_end": 505,
+          "char_start": 501
+        },
+        {
+          "kind": "percent",
+          "norm": "3.4%",
+          "text": "3.4%",
+          "char_end": 522,
+          "char_start": 518
+        },
+        {
+          "kind": "percent",
+          "norm": "3.3%",
+          "text": "3.3%",
+          "char_end": 585,
+          "char_start": 581
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国宏观：7月零售销售数据令人意外地偏弱，整体数据环比下降-0.6%，而市场共识预期为+0.1%，6月数据为+0.2%。此次读数为2025年5月以来最低。剔除汽车的零售销售环比-0.3%，市场共识预期为+0.2%，6月数据为-0.2%，连续第二个月下滑，为2025年1月以来最低读数。核心控制组销售额环比下降-0.4%，市场共识预期为+0.4%，6月数据为+0.4%。8月密歇根大学消费者信心指数初值为51.0，市场共识预期为54.5，7月数据为55.2。1年期通胀预期从7月的4.2%升至4.3%，而伊朗冲突前为3.4%；长期通胀预期连续第三个月稳定在3.3%。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "U.S. macro: July retail sales surprised negatively with the headline declining -0.6% m/m vs consensus +0.1% and June's +0.2%. This read is the lowest since May-25. Retail sales ex-autos -0.3% m/m vs consensus +0.2% and June's -0.2%; the second straight monthly decline and lowest reading since Jan-25. Control group sales fell -0.4% m/m vs consensus +0.4% and June's +0.4%. Prelim. August UMich consumer sentiment at 51.0 vs consensus 54.5 and July’s 55.2. 1Y inflation expectations rose to 4.3% from 4.2% in July, vs 3.4% before the Iran conflict; long-run expectations steady at 3.3% for the 3rd straight month.",
+      "critic_flags": [
+        {
+          "span": "25",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "25"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "25",
+              "message": "Numeric value \"25\" (mantissa 25) not preserved in translation",
+              "expected": "25"
+            },
+            {
+              "span": "25",
+              "message": "Numeric value \"25\" (mantissa 25) not preserved in translation",
+              "expected": "25"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：上周欧洲股票小幅上涨（斯托克50指数 +0.2%），企业盈利季表现强劲，但伊朗局势及能源价格的不确定性持续存在。瑞士第二季度GDP超出预期，季度增速达1.5%，为五年来最高。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 67,
+          "char_start": 65
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 73,
+          "char_start": 69
+        },
+        {
+          "kind": "percent",
+          "norm": "1.5%",
+          "text": "1.5%",
+          "char_end": 259,
+          "char_start": 255
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：上周欧洲股票小幅上涨（斯托克50指数 +0.2%），企业盈利季表现强劲，但伊朗局势及能源价格的不确定性持续存在。瑞士第二季度GDP超出预期，季度增速达1.5%，为五年来最高。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Europe markets: European equities rose slightly last week (Stoxx 50 +0.2%) amid a strong corporate earnings season while uncertainties linger over Iran and energy prices. Swiss Q2 GDP beat forecasts with the highest quarterly growth rate in five years at 1.5%.",
+      "critic_flags": [
+        {
+          "span": "Q2",
+          "category": "accuracy",
+          "severity": "major",
+          "suggestion": "Q2"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "盈利"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [
+            {
+              "span": "Q2",
+              "message": "Quarter Q2 not clearly preserved (wrong or missing quarter)",
+              "expected": "Q2"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：上周日本股票上涨（日经指数 +4.7%，东证指数 +3.0%）。随着美元涨幅收窄，日元维持在159低位区间。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "4.7%",
+          "text": "4.7%",
+          "char_end": 63,
+          "char_start": 59
+        },
+        {
+          "kind": "percent",
+          "norm": "3%",
+          "text": "3.0%",
+          "char_end": 76,
+          "char_start": 72
+        },
+        {
+          "kind": "number",
+          "norm": "159",
+          "text": "159",
+          "char_end": 106,
+          "char_start": 103
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：上周日本股票上涨（日经指数 +4.7%，东证指数 +3.0%）。随着美元涨幅收窄，日元维持在159低位区间。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Japan markets: Japanese equities gained last week (Nikkei +4.7%, Topix +3.0%). The yen held in the low-159 range as the dollar pared gains.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-006",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：上周中国股票下跌（恒生指数 -2.1%，沪深300指数 -0.5%），科技板块周五出现下跌。中国人民银行(PBOC)开展了$51.7B的隔夜逆回购操作，这是首次在月中进行此类操作，向金融体系净注入人民币3,480亿元的流动性。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-2.1%",
+          "text": "-2.1%",
+          "char_end": 67,
+          "char_start": 62
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 76,
+          "char_start": 73
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.5%",
+          "text": "-0.5%",
+          "char_end": 82,
+          "char_start": 77
+        },
+        {
+          "kind": "ticker",
+          "norm": "(PBOC)",
+          "text": "(PBOC)",
+          "char_end": 148,
+          "char_start": 142
+        },
+        {
+          "kind": "currency",
+          "norm": "51700000000",
+          "text": "$51.7B",
+          "char_end": 165,
+          "char_start": 159
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：上周中国股票下跌（恒生指数 -2.1%，沪深300指数 -0.5%），科技板块周五出现下跌。中国人民银行(PBOC)开展了$51.7B的隔夜逆回购操作，这是首次在月中进行此类操作，向金融体系净注入人民币3,480亿元的流动性。",
+      "iterations": 2,
+      "seg_status": "machine",
+      "source_text": "China markets: Chinese equities declined last week (Hang Seng -2.1%, CSI 300 -0.5%) with losses in tech on Friday. The People’s Bank of China (PBOC) conducted $51.7B of overnight reverse repos, the first such action made mid-month, resulting in a net injection of RMB348B of liquidity into the financial system.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "liquidity",
+          "applied": false,
+          "approved_target": "流动性"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-007",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "我们的观点：零售销售数据走软，与近期通胀压力趋缓的背景相符，但即便以实际值衡量，核心零售支出增长依然疲弱。我们此前已预期消费者前景将有所走弱，尤其是考虑到今年上半年若干异常因素对消费增长的提振效应，以及这些因素在下半年将逐步消退。这些因素包括：退税刺激效应、世界杯对消费的拉动，以及亚马逊将Prime Day从往常的Q3提前至今年Q2。展望后市，驱动消费者支出的将主要是基本面收入因素——而这些驱动因素目前仍然疲软。美国消费者仍面临工资增长滞后于通胀压力的困境。通胀冲击正在侵蚀实际收入，并将储蓄率压低至2.8%（为2000年代中期以来的最低水平）。美国经济增长温和，且集中于人工智能(AI)相关板块，目前尚未出现明显的生产率提升效果。美联储加息已提上日程，这也对宏观背景构成挑战。上周消费者价格指数(CPI)及生产者价格指数(PPI)数据符合预期或略低于预期，叠加零售销售数据走软，已将美联储在9月联邦公开市场委员会(FOMC)会议上加息的概率降至约30%。总体而言，我们认为宏观前景面临的下行风险大于上行空间。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "2.8%",
+          "text": "2.8%",
+          "char_end": 822,
+          "char_start": 818
+        },
+        {
+          "kind": "percent",
+          "norm": "30%",
+          "text": "30%",
+          "char_end": 1205,
+          "char_start": 1202
+        }
+      ],
+      "qe_score": 0.25,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "我们的观点：零售销售数据走软，与近期通胀压力趋缓的背景相符，但即便以实际值衡量，核心零售支出增长依然疲弱。我们此前已预期消费者前景将有所走弱，尤其是考虑到今年上半年若干异常因素对消费增长的提振效应，以及这些因素在下半年将逐步消退。这些因素包括：退税刺激效应、世界杯对消费的拉动，以及亚马逊将Prime Day从往常的Q3提前至今年Q2。展望后市，驱动消费者支出的将主要是基本面收入因素——而这些驱动因素目前仍然疲软。美国消费者仍面临工资增长滞后于通胀压力的困境。通胀冲击正在侵蚀实际收入，并将储蓄率压低至2.8%（为2000年代中期以来的最低水平）。美国经济增长温和，且集中于人工智能(AI)相关板块，目前尚未出现明显的生产率提升效果。美联储加息已提上日程，这也对宏观背景构成挑战。上周消费者价格指数(CPI)及生产者价格指数(PPI)数据符合预期或略低于预期，叠加零售销售数据走软，已将美联储在9月联邦公开市场委员会(FOMC)会议上加息的概率降至约30%。总体而言，我们认为宏观前景面临的下行风险大于上行空间。",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "What we think The softer retail sales data makes sense in the context of lower near-term inflationary pressures, but even in real terms, core retail spending growth has been weak. We have been expecting a weaker consumer picture, especially due to the unusual factors boosting consumer growth in the first half of this year and how these factors would fade in the second half. Those factors are: the tax refund stimulus, the World Cup boost to consumption, and Amazon shifting Prime Day from the usual Q3 to Q2 this year. From here, it is mainly fundamental income drivers that would power consumer spending going forward—and these drivers remain soft. The U.S. consumer is still dealing with wage growth that has lagged inflationary pressures. Inflation shocks are eroding real incomes and pushing the saving rate to 2.8% (lowest since the mid-2000s). U.S. growth is moderate but concentrated in AI-related sectors, with no evident productivity payoff yet. Fed hikes are now in play, which also challenges the macro backdrop. The in-line to softer CPI and PPI prints last week, coupled with soft retail sales data, have reduced the probabilities for a Fed hike at the September FOMC meeting to around 30%. Overall, we see more downside than upside risks to our macro outlook.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "productivity",
+          "applied": false,
+          "approved_target": "生产率"
+        },
+        {
+          "source": "Federal Reserve",
+          "applied": false,
+          "approved_target": "美联储"
+        },
+        {
+          "source": "Consumer Price Index",
+          "applied": false,
+          "approved_target": "消费者价格指数"
+        },
+        {
+          "source": "Producer Price Index",
+          "applied": false,
+          "approved_target": "生产者价格指数"
+        },
+        {
+          "source": "upside",
+          "applied": false,
+          "approved_target": "上行空间"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-008",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "近期宏观数据持续低于预期，与我们对美国宏观前景相对温和的判断相符——Bloomberg经济意外指数",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "entity",
+          "norm": "Bloomberg",
+          "text": "Bloomberg",
+          "char_end": 122,
+          "char_start": 113
+        }
+      ],
+      "qe_score": 0.891,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "近期宏观数据持续低于预期，与我们对美国宏观前景相对温和的判断相符——Bloomberg经济意外指数",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Recent macro data points have surprised to the downside, in-line with our relatively moderate U.S. macro outlook Bloomberg Economic Surprise Index",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_92ccb58a-9c7",
+  "source": {
+    "type": "txt",
+    "filename": "surprising-weakness.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 0.25,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "3f9c45f6111fdd7d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-08-15T15:50:00.526Z",
+  "deleted_at": null,
+  "updated_at": "2026-08-15T15:50:00.526Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

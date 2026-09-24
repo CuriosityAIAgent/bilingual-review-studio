@@ -1,0 +1,178 @@
+{
+  "rev": 1,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "cyclical-sectors-like-financials-consumer-discre",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "金融、非必需消费品、必需消费品及房地产投资信托基金(REITs)等周期性板块表现依然相对低迷。霍尔木兹海峡若重新开放，原油价格及债券收益率随之下滑，或将在短期内推动资金流向上述板块，同时重置此前全面押注人工智能(AI)交易的资本流向。轮动行情由此开启。",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.94,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "金融、非必需消费品、必需消费品和REITS等周期性板块表现仍然相对平淡。霍尔木兹海峡的重新开放，及随之而来的油价与债券收益率双双下跌，资金流向或将在短期内转向这些板块，同时重新调整此前全线押注于人工智能交易的资金流向，轮动就此拉开序幕。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Cyclical sectors like financials, consumer discretionary, consumer staples and REITS remain relatively muted. A re-opening of the Strait of Hormuz and ensuing decline in both the oil price and bond yields could shift flows towards these segments, at least in the short term, while resetting capital flows that have been all in on the AI trade. Cue the rotation.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "bonds",
+          "applied": false,
+          "approved_target": "债券"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_f53e1c3d-ee8",
+  "source": {
+    "type": "txt",
+    "filename": "cyclical-sectors-like-financials-consumer-discre.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 16.67,
+    "hter_by_category": {
+      "accuracy": 0.475
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_1e14929d-851",
+      "ts": "2026-06-26T11:28:16.602Z",
+      "hter": 0.475,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "金融、非必需消费品、必需消费品和REITS等周期性板块表现仍然相对平淡。霍尔木兹海峡的重新开放，及随之而来的油价与债券收益率双双下跌，资金流向或将在短期内转向这些板块，同时重新调整此前全线押注于人工智能交易的资金流向，轮动就此拉开序幕。",
+      "action": "edit",
+      "before": "金融、非必需消费品、必需消费品及房地产投资信托基金(REITs)等周期性板块表现依然相对低迷。霍尔木兹海峡若重新开放，原油价格及债券收益率随之下滑，或将在短期内推动资金流向上述板块，同时重置此前全面押注人工智能(AI)交易的资本流向。轮动行情由此开启。",
+      "segment_id": "b-001",
+      "char_edit_distance": 56,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-26T11:26:34.937Z",
+  "deleted_at": null,
+  "updated_at": "2026-06-26T11:28:16.602Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

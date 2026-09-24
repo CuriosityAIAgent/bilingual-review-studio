@@ -1,0 +1,832 @@
+{
+  "rev": 5,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "u-s-markets-u-s-markets-rose-s-p-500-1-2-nasdaq-",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：美国市场上涨（S&P 500 +1.2%，Nasdaq +2.1%），大型科技股在上周下跌后大多出现反弹。美国国债收益率基本持平（2年期上涨2个基点至4.10%，10年期持平于4.37%，30年期持平于4.86%）。美元下跌-0.3%，黄金下跌-1.4%，布伦特原油下跌-0.1%，收盘价约为73美元。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 40,
+          "char_start": 37
+        },
+        {
+          "kind": "percent",
+          "norm": "1.2%",
+          "text": "1.2%",
+          "char_end": 46,
+          "char_start": 42
+        },
+        {
+          "kind": "percent",
+          "norm": "2.1%",
+          "text": "2.1%",
+          "char_end": 60,
+          "char_start": 56
+        },
+        {
+          "kind": "number",
+          "norm": "2000000000bps",
+          "text": "2bps",
+          "char_end": 165,
+          "char_start": 161
+        },
+        {
+          "kind": "percent",
+          "norm": "4.1%",
+          "text": "4.10%",
+          "char_end": 174,
+          "char_start": 169
+        },
+        {
+          "kind": "percent",
+          "norm": "4.37%",
+          "text": "4.37%",
+          "char_end": 193,
+          "char_start": 188
+        },
+        {
+          "kind": "percent",
+          "norm": "4.86%",
+          "text": "4.86%",
+          "char_end": 209,
+          "char_start": 204
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.3%",
+          "text": "-0.3%",
+          "char_end": 233,
+          "char_start": 228
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.4%",
+          "text": "-1.4%",
+          "char_end": 250,
+          "char_start": 245
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.1%",
+          "text": "-0.1%",
+          "char_end": 281,
+          "char_start": 276
+        },
+        {
+          "kind": "currency",
+          "norm": "73",
+          "text": "$73.",
+          "char_end": 303,
+          "char_start": 299
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 40,
+          "char_start": 33
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 54,
+          "char_start": 48
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：美国市场上涨（标普500 +1.2%，纳斯达克+2.1%），大型科技股在上周下跌后大多出现反弹。美国国债收益率基本持平（2年期上涨2个基点至4.10%，10年期持平于4.37%，30年期持平于4.86%）。美元下跌-0.3%，黄金下跌-1.4%，布伦特原油下跌-0.1%，收盘价约为$73。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "U.S. markets: U.S. markets rose (S&P 500 +1.2%, Nasdaq +2.1%) with big tech mostly bouncing higher after declines last week. Treasury yields were unchanged (2Y +2bps to 4.10%, 10Y flat to 4.37%, 30Y flat 4.86%). The dollar fell -0.3%, gold fell -1.4% and Brent crude declined -0.1% to settle around $73.",
+      "critic_flags": [
+        {
+          "span": "$73.",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "73."
+        },
+        {
+          "span": "$",
+          "category": "number",
+          "severity": "major",
+          "suggestion": "1× $"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "$73.",
+              "message": "Numeric value \"$73.\" (mantissa 73.) not preserved in translation",
+              "expected": "73."
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [
+            {
+              "span": "$",
+              "found": "0× $",
+              "message": "Currency unit \"$\" dropped (1 → 0)",
+              "expected": "1× $"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中东局势：在周末发生一系列袭击事件后，美国与伊朗表示，双方计划在周二下一轮技术性会谈前暂停军事打击行动。",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中东局势：在周末发生一系列袭击事件后，美国与伊朗表示，双方计划在周二下一轮技术性会谈前暂停军事行动。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Middle East: After a spate of attacks over the weekend, the U.S. and Iran said they plan to halt military attacks ahead of a next round of technical talks on Tuesday.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：欧洲股票小幅上涨（斯托克50指数 +0.2%），市场消化了中东局势的最新进展。英国议员安迪·伯纳姆（Andy Burnham）正在竞选工党领袖，自宣布有意角逐首相一职以来，他发表了首次重要政策演讲，重点阐述了全国权力下放及福利改革议题。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 57,
+          "char_start": 55
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 63,
+          "char_start": 59
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：欧洲股票小幅上涨（斯托克50指数 +0.2%），市场消化了中东局势的最新进展。英国议员安迪·伯纳姆（Andy Burnham）正在竞选工党领袖，自宣布有意角逐首相一职以来，他发表了首次政策演讲，重点阐述了在全国分散政治权力及福利改革议题。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Europe markets: European equities rose slightly (Stoxx 50 +0.2%) as markets digested the latest Middle East developments. UK Member of Parliament Andy Burnham, who is running to be the leader of the Labour Party, made his first major policy speech since he announced his intention to make a bit to become Prime Minister, focusing on decentralization of power across the country and welfare reform.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：日本股票在区间震荡行情中小幅上涨（日经指数 +0.2%，东证指数 +0.5%）。日元兑美元触及162.20的40年低点。5月零售销售同比增长+5.3%，高于市场预期的+3.2%及前值+2.8%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 51,
+          "char_start": 47
+        },
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 64,
+          "char_start": 60
+        },
+        {
+          "kind": "number",
+          "norm": "40",
+          "text": "40",
+          "char_end": 109,
+          "char_start": 107
+        },
+        {
+          "kind": "number",
+          "norm": "162.2",
+          "text": "162.20",
+          "char_end": 147,
+          "char_start": 141
+        },
+        {
+          "kind": "percent",
+          "norm": "5.3%",
+          "text": "5.3%",
+          "char_end": 171,
+          "char_start": 167
+        },
+        {
+          "kind": "percent",
+          "norm": "3.2%",
+          "text": "3.2%",
+          "char_end": 194,
+          "char_start": 190
+        },
+        {
+          "kind": "percent",
+          "norm": "2.8%",
+          "text": "2.8%",
+          "char_end": 204,
+          "char_start": 200
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：日本股票在区间震荡行情中小幅上涨（日经指数 +0.2%，东证指数 +0.5%）。日元兑美元触及162.20的40年低点。5月零售销售同比增长+5.3%，高于市场预期的+3.2%及前值+2.8%。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Japan markets: Japanese equities rose (Nikkei +0.2%, Topix +0.5%) in rangebound trading. The yen touched a 40-year low against the dollar at 162.20. May retail sales +5.3% y/y vs consensus +3.2% and +2.8% prior.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：中国股票出现反弹（恒生指数 +1.6%，沪深300指数 +1.2%），科技股引领市场上行（恒生科技指数 +3.2%）。商务部宣布对20家日本企业实施出口管制，要求双用途物项出口商获取额外审批许可。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "1.6%",
+          "text": "1.6%",
+          "char_end": 56,
+          "char_start": 52
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 65,
+          "char_start": 62
+        },
+        {
+          "kind": "percent",
+          "norm": "1.2%",
+          "text": "1.2%",
+          "char_end": 71,
+          "char_start": 67
+        },
+        {
+          "kind": "percent",
+          "norm": "3.2%",
+          "text": "3.2%",
+          "char_end": 130,
+          "char_start": 126
+        },
+        {
+          "kind": "number",
+          "norm": "20",
+          "text": "20",
+          "char_end": 189,
+          "char_start": 187
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：中国股票出现反弹（恒生指数 +1.6%，沪深300指数 +1.2%），科技股引领市场上行（恒生科技指数 +3.2%）。商务部宣布对20家日本企业实施出口管制，要求双用途物项出口商获取额外审批许可。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "China markets: Chinese equities bounced (Hang Seng +1.6%, CSI 300 +1.2%) with tech leading the market higher (Hang Seng Tech +3.2%). The Ministry of Commerce announced export controls on 20 Japanese companies, which requires exporters of dual-use items to obtain additional approvals.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_571cc52f-43d",
+  "source": {
+    "type": "txt",
+    "filename": "u-s-markets-u-s-markets-rose-s-p-500-1-2-nasdaq-.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 24.39,
+    "hter_by_category": {
+      "accuracy": 0.041
+    },
+    "number_fail_rate": 0.2,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_3aed6504-e57",
+      "ts": "2026-06-30T01:22:38.301Z",
+      "hter": 0.019,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国市场：美国市场上涨（S&P 500 +1.2%，Nasdaq +2.1%），大型科技股在上周下跌后大多出现反弹。美国国债收益率基本持平（2年期上涨2个基点至4.10%，10年期持平于4.37%，30年期持平于4.86%）。美元下跌-0.3%，黄金下跌-1.4%，布伦特原油下跌-0.1%，收盘价约为$73。",
+      "action": "edit",
+      "before": "美国市场：美国市场上涨（S&P 500 +1.2%，Nasdaq +2.1%），大型科技股在上周下跌后大多出现反弹。美国国债收益率基本持平（2年期上涨2个基点至4.10%，10年期持平于4.37%，30年期持平于4.86%）。美元下跌-0.3%，黄金下跌-1.4%，布伦特原油下跌-0.1%，收盘价约为73美元。",
+      "segment_id": "b-001",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_bc777e18-f53",
+      "ts": "2026-06-30T01:23:21.154Z",
+      "hter": 0.073,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国市场：美国市场上涨（标普500 +1.2%，纳斯达克+2.1%），大型科技股在上周下跌后大多出现反弹。美国国债收益率基本持平（2年期上涨2个基点至4.10%，10年期持平于4.37%，30年期持平于4.86%）。美元下跌-0.3%，黄金下跌-1.4%，布伦特原油下跌-0.1%，收盘价约为$73。",
+      "action": "edit",
+      "before": "美国市场：美国市场上涨（S&P 500 +1.2%，Nasdaq +2.1%），大型科技股在上周下跌后大多出现反弹。美国国债收益率基本持平（2年期上涨2个基点至4.10%，10年期持平于4.37%，30年期持平于4.86%）。美元下跌-0.3%，黄金下跌-1.4%，布伦特原油下跌-0.1%，收盘价约为$73。",
+      "segment_id": "b-001",
+      "char_edit_distance": 11,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_40a4d8f6-b7b",
+      "ts": "2026-06-30T01:23:59.529Z",
+      "hter": 0.04,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "中东局势：在周末发生一系列袭击事件后，美国与伊朗表示，双方计划在周二下一轮技术性会谈前暂停军事行动。",
+      "action": "edit",
+      "before": "中东局势：在周末发生一系列袭击事件后，美国与伊朗表示，双方计划在周二下一轮技术性会谈前暂停军事打击行动。",
+      "segment_id": "b-002",
+      "char_edit_distance": 2,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_de7cabb5-c16",
+      "ts": "2026-06-30T01:25:03.086Z",
+      "hter": 0.017,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "欧洲市场：欧洲股票小幅上涨（斯托克50指数 +0.2%），市场消化了中东局势的最新进展。英国议员安迪·伯纳姆（Andy Burnham）正在竞选工党领袖，自宣布有意角逐首相一职以来，他发表了首次政策演讲，重点阐述了全国权力下放及福利改革议题。",
+      "action": "edit",
+      "before": "欧洲市场：欧洲股票小幅上涨（斯托克50指数 +0.2%），市场消化了中东局势的最新进展。英国议员安迪·伯纳姆（Andy Burnham）正在竞选工党领袖，自宣布有意角逐首相一职以来，他发表了首次重要政策演讲，重点阐述了全国权力下放及福利改革议题。",
+      "segment_id": "b-003",
+      "char_edit_distance": 2,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_9ac01112-038",
+      "ts": "2026-06-30T01:26:16.205Z",
+      "hter": 0.056,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "欧洲市场：欧洲股票小幅上涨（斯托克50指数 +0.2%），市场消化了中东局势的最新进展。英国议员安迪·伯纳姆（Andy Burnham）正在竞选工党领袖，自宣布有意角逐首相一职以来，他发表了首次政策演讲，重点阐述了在全国分散政治权力及福利改革议题。",
+      "action": "edit",
+      "before": "欧洲市场：欧洲股票小幅上涨（斯托克50指数 +0.2%），市场消化了中东局势的最新进展。英国议员安迪·伯纳姆（Andy Burnham）正在竞选工党领袖，自宣布有意角逐首相一职以来，他发表了首次政策演讲，重点阐述了全国权力下放及福利改革议题。",
+      "segment_id": "b-003",
+      "char_edit_distance": 7,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-30T01:21:36.479Z",
+  "deleted_at": null,
+  "updated_at": "2026-06-30T01:26:16.206Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

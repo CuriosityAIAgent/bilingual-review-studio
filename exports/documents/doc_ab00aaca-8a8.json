@@ -1,0 +1,299 @@
+{
+  "rev": 3,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "rising-energy-prices-raise-the-odds-of-a-fed-hik",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "能源价格上涨提高了美联储加息的概率（市场预计9月前将完成25个基点的加息）。我们的基准情景是，能源价格下跌将放缓通胀，从而避免加息的必要性，6月消费者价格指数(CPI)数据偏软即印证了这一判断。然而，原油价格的大幅反弹意味着美联储今年是否加息将是一个难以判断的问题。尽管如此，我们认为7月加息的可能性不大，并且认为若美联储因能源价格上涨而加息，此举很可能是幅度为25至50个基点的小幅行动，而非一轮大规模的加息周期。市场目前定价未来一年将累计加息60个基点。30年期美国国债收益率正逼近5.20%（接近近20年来的最高水平），2年期收益率也正逼近2024年以来的高点。近期收益率的急剧攀升或许预示着短期顶部即将到来，因为收益率已接近我们短期交易区间的上限（10年期为4.75%），且正逼近今年曾促使特朗普总统考虑降级紧张态势的市场波动性水平。从历史经验来看，由原油价格驱动的收益率急升往往也是短暂的。尽管我们此前对短久期固定收益持建设性看法，但拉长久期目前开始显现出更大的吸引力。然而，鉴于冲突升级可能导致收益率进一步上行，且债券市场的技术指标尚未显示收益率上升趋势已经终结，我们目前建议仅小幅增加久期敞口。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "25000000000bps",
+          "text": "25bps",
+          "char_end": 75,
+          "char_start": 70
+        },
+        {
+          "kind": "number",
+          "norm": "25",
+          "text": "25",
+          "char_end": 466,
+          "char_start": 464
+        },
+        {
+          "kind": "number",
+          "norm": "50000000000bps",
+          "text": "50bps",
+          "char_end": 472,
+          "char_start": 467
+        },
+        {
+          "kind": "number",
+          "norm": "60000000000bps",
+          "text": "60bps",
+          "char_end": 537,
+          "char_start": 532
+        },
+        {
+          "kind": "percent",
+          "norm": "5.2%",
+          "text": "5.20%",
+          "char_end": 608,
+          "char_start": 603
+        },
+        {
+          "kind": "number",
+          "norm": "20",
+          "text": "20",
+          "char_end": 640,
+          "char_start": 638
+        },
+        {
+          "kind": "date",
+          "norm": "2024",
+          "text": "2024",
+          "char_end": 695,
+          "char_start": 691
+        },
+        {
+          "kind": "percent",
+          "norm": "4.75%",
+          "text": "4.75%",
+          "char_end": 830,
+          "char_start": 825
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "能源价格上涨提高了美联储加息的概率（市场预计9月前将完成25个基点的加息）。我们到此前的基准情景是，能源价格下跌将放缓通胀，从而避免加息的必要性，6月消费者价格指数(CPI)数据偏软即印证了这一判断。然而，原油价格的大幅反弹意味着美联储今年是否加息将是一个难以判断的问题。尽管如此，我们认为7月加息的可能性不大，并且认为若美联储因能源价格上涨而加息，此举很可能是幅度为25至50个基点的小幅行动，而非一轮大规模的加息周期。市场目前定价未来一年将累计加息近60个基点。30年期国债收益率正逼近5.20%（接近20年来的最高水平），2年期收益率也正逼近2024年以来的高点。近期收益率的急剧攀升或许预示着短期顶部即将到来，因为收益率已接近我们预期短期交易区间的上限（10年期为4.75%），且正逼近曾促使特朗普总统考虑降级紧张态势的市场波动性水平。从历史经验来看，由原油价格驱动的收益率急升往往也是短暂的。尽管我们此前对短久期固定收益持乐观看法，但拉长久期目前开始显现出稍微更大的吸引力。然而，鉴于冲突升级可能导致收益率进一步上行，且债券市场的技术指标尚未显示收益率上升趋势已经终结，我们目前建议仅小幅增加久期敞口。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Rising energy prices raise the odds of a Fed hike (markets see a full 25bps hike by September). Our base case has been that falling energy prices would slow inflation avoid the need to hike, as illustrated by soft June CPI data. But the sharp rebound in oil means it is a close call whether the Fed hikes this year. That said, we think a hike in July is unlikely, and believe that if the Fed hikes due to higher energy prices, it is likely to be a shallow move of 25–50bps rather than an extensive hiking cycle. Markets are pricing 60bps of hikes over the next year. 30Y Treasury yields are approaching 5.20% (the highest level in nearly 20 years), and 2Y yields are approaching highs since 2024. The recent surge may suggest a near-term top is coming soon, as yields are near the upper end of our short-term trading ranges (4.75% for 10Y), and we are getting close to the levels of market volatility this year that have led President Trump to consider de-escalation. Historically, oil-driven yield spikes also tend to be short-lived. While we have been constructive on short-duration fixed income, duration is starting to look more appealing. However, we suggest only a small move into extending duration for now as an escalating conflict could result yields rising further and technical indicators in bond markets do not suggest the uptrend in yields is over yet.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "fixed income",
+          "applied": false,
+          "approved_target": "固定收益"
+        },
+        {
+          "source": "bonds",
+          "applied": false,
+          "approved_target": "债券"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        },
+        {
+          "source": "volatility",
+          "applied": false,
+          "approved_target": "波动性"
+        },
+        {
+          "source": "Federal Reserve",
+          "applied": false,
+          "approved_target": "美联储"
+        },
+        {
+          "source": "Consumer Price Index",
+          "applied": false,
+          "approved_target": "消费者价格指数"
+        },
+        {
+          "source": "magnitude",
+          "applied": false,
+          "approved_target": "幅度"
+        },
+        {
+          "source": "scale",
+          "applied": false,
+          "approved_target": "规模"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_ab00aaca-8a8",
+  "source": {
+    "type": "txt",
+    "filename": "rising-energy-prices-raise-the-odds-of-a-fed-hik.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 12.5,
+    "hter_by_category": {
+      "accuracy": 0.011
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_65b63e87-7f6",
+      "ts": "2026-07-25T08:46:02.337Z",
+      "hter": 0.006,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "能源价格上涨提高了美联储加息的概率（市场预计9月前将完成25个基点的加息）。我们到此前的基准情景是，能源价格下跌将放缓通胀，从而避免加息的必要性，6月消费者价格指数(CPI)数据偏软即印证了这一判断。然而，原油价格的大幅反弹意味着美联储今年是否加息将是一个难以判断的问题。尽管如此，我们认为7月加息的可能性不大，并且认为若美联储因能源价格上涨而加息，此举很可能是幅度为25至50个基点的小幅行动，而非一轮大规模的加息周期。市场目前定价未来一年将累计加息60个基点。30年期美国国债收益率正逼近5.20%（接近近20年来的最高水平），2年期收益率也正逼近2024年以来的高点。近期收益率的急剧攀升或许预示着短期顶部即将到来，因为收益率已接近我们短期交易区间的上限（10年期为4.75%），且正逼近今年曾促使特朗普总统考虑降级紧张态势的市场波动性水平。从历史经验来看，由原油价格驱动的收益率急升往往也是短暂的。尽管我们此前对短久期固定收益持建设性看法，但拉长久期目前开始显现出更大的吸引力。然而，鉴于冲突升级可能导致收益率进一步上行，且债券市场的技术指标尚未显示收益率上升趋势已经终结，我们目前建议仅小幅增加久期敞口。",
+      "action": "edit",
+      "before": "能源价格上涨提高了美联储加息的概率（市场预计9月前将完成25个基点的加息）。我们的基准情景是，能源价格下跌将放缓通胀，从而避免加息的必要性，6月消费者价格指数(CPI)数据偏软即印证了这一判断。然而，原油价格的大幅反弹意味着美联储今年是否加息将是一个难以判断的问题。尽管如此，我们认为7月加息的可能性不大，并且认为若美联储因能源价格上涨而加息，此举很可能是幅度为25至50个基点的小幅行动，而非一轮大规模的加息周期。市场目前定价未来一年将累计加息60个基点。30年期美国国债收益率正逼近5.20%（接近近20年来的最高水平），2年期收益率也正逼近2024年以来的高点。近期收益率的急剧攀升或许预示着短期顶部即将到来，因为收益率已接近我们短期交易区间的上限（10年期为4.75%），且正逼近今年曾促使特朗普总统考虑降级紧张态势的市场波动性水平。从历史经验来看，由原油价格驱动的收益率急升往往也是短暂的。尽管我们此前对短久期固定收益持建设性看法，但拉长久期目前开始显现出更大的吸引力。然而，鉴于冲突升级可能导致收益率进一步上行，且债券市场的技术指标尚未显示收益率上升趋势已经终结，我们目前建议仅小幅增加久期敞口。",
+      "segment_id": "b-001",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_5fa29da9-7f0",
+      "ts": "2026-07-25T08:47:24.058Z",
+      "hter": 0.012,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "能源价格上涨提高了美联储加息的概率（市场预计9月前将完成25个基点的加息）。我们到此前的基准情景是，能源价格下跌将放缓通胀，从而避免加息的必要性，6月消费者价格指数(CPI)数据偏软即印证了这一判断。然而，原油价格的大幅反弹意味着美联储今年是否加息将是一个难以判断的问题。尽管如此，我们认为7月加息的可能性不大，并且认为若美联储因能源价格上涨而加息，此举很可能是幅度为25至50个基点的小幅行动，而非一轮大规模的加息周期。市场目前定价未来一年将累计加息近60个基点。30年期国债收益率正逼近5.20%（接近20年来的最高水平），2年期收益率也正逼近2024年以来的高点。近期收益率的急剧攀升或许预示着短期顶部即将到来，因为收益率已接近我们预期短期交易区间的上限（10年期为4.75%），且正逼近今年曾促使特朗普总统考虑降级紧张态势的市场波动性水平。从历史经验来看，由原油价格驱动的收益率急升往往也是短暂的。尽管我们此前对短久期固定收益持建设性看法，但拉长久期目前开始显现出更大的吸引力。然而，鉴于冲突升级可能导致收益率进一步上行，且债券市场的技术指标尚未显示收益率上升趋势已经终结，我们目前建议仅小幅增加久期敞口。",
+      "action": "edit",
+      "before": "能源价格上涨提高了美联储加息的概率（市场预计9月前将完成25个基点的加息）。我们到此前的基准情景是，能源价格下跌将放缓通胀，从而避免加息的必要性，6月消费者价格指数(CPI)数据偏软即印证了这一判断。然而，原油价格的大幅反弹意味着美联储今年是否加息将是一个难以判断的问题。尽管如此，我们认为7月加息的可能性不大，并且认为若美联储因能源价格上涨而加息，此举很可能是幅度为25至50个基点的小幅行动，而非一轮大规模的加息周期。市场目前定价未来一年将累计加息60个基点。30年期美国国债收益率正逼近5.20%（接近近20年来的最高水平），2年期收益率也正逼近2024年以来的高点。近期收益率的急剧攀升或许预示着短期顶部即将到来，因为收益率已接近我们短期交易区间的上限（10年期为4.75%），且正逼近今年曾促使特朗普总统考虑降级紧张态势的市场波动性水平。从历史经验来看，由原油价格驱动的收益率急升往往也是短暂的。尽管我们此前对短久期固定收益持建设性看法，但拉长久期目前开始显现出更大的吸引力。然而，鉴于冲突升级可能导致收益率进一步上行，且债券市场的技术指标尚未显示收益率上升趋势已经终结，我们目前建议仅小幅增加久期敞口。",
+      "segment_id": "b-001",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_32985b4f-54b",
+      "ts": "2026-07-25T08:48:47.331Z",
+      "hter": 0.014,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "能源价格上涨提高了美联储加息的概率（市场预计9月前将完成25个基点的加息）。我们到此前的基准情景是，能源价格下跌将放缓通胀，从而避免加息的必要性，6月消费者价格指数(CPI)数据偏软即印证了这一判断。然而，原油价格的大幅反弹意味着美联储今年是否加息将是一个难以判断的问题。尽管如此，我们认为7月加息的可能性不大，并且认为若美联储因能源价格上涨而加息，此举很可能是幅度为25至50个基点的小幅行动，而非一轮大规模的加息周期。市场目前定价未来一年将累计加息近60个基点。30年期国债收益率正逼近5.20%（接近20年来的最高水平），2年期收益率也正逼近2024年以来的高点。近期收益率的急剧攀升或许预示着短期顶部即将到来，因为收益率已接近我们预期短期交易区间的上限（10年期为4.75%），且正逼近曾促使特朗普总统考虑降级紧张态势的市场波动性水平。从历史经验来看，由原油价格驱动的收益率急升往往也是短暂的。尽管我们此前对短久期固定收益持乐观看法，但拉长久期目前开始显现出稍微更大的吸引力。然而，鉴于冲突升级可能导致收益率进一步上行，且债券市场的技术指标尚未显示收益率上升趋势已经终结，我们目前建议仅小幅增加久期敞口。",
+      "action": "edit",
+      "before": "能源价格上涨提高了美联储加息的概率（市场预计9月前将完成25个基点的加息）。我们到此前的基准情景是，能源价格下跌将放缓通胀，从而避免加息的必要性，6月消费者价格指数(CPI)数据偏软即印证了这一判断。然而，原油价格的大幅反弹意味着美联储今年是否加息将是一个难以判断的问题。尽管如此，我们认为7月加息的可能性不大，并且认为若美联储因能源价格上涨而加息，此举很可能是幅度为25至50个基点的小幅行动，而非一轮大规模的加息周期。市场目前定价未来一年将累计加息近60个基点。30年期国债收益率正逼近5.20%（接近20年来的最高水平），2年期收益率也正逼近2024年以来的高点。近期收益率的急剧攀升或许预示着短期顶部即将到来，因为收益率已接近我们预期短期交易区间的上限（10年期为4.75%），且正逼近今年曾促使特朗普总统考虑降级紧张态势的市场波动性水平。从历史经验来看，由原油价格驱动的收益率急升往往也是短暂的。尽管我们此前对短久期固定收益持建设性看法，但拉长久期目前开始显现出更大的吸引力。然而，鉴于冲突升级可能导致收益率进一步上行，且债券市场的技术指标尚未显示收益率上升趋势已经终结，我们目前建议仅小幅增加久期敞口。",
+      "segment_id": "b-001",
+      "char_edit_distance": 7,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-25T08:44:39.353Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-25T08:48:47.331Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

@@ -1,0 +1,213 @@
+{
+  "rev": 2,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "equity-markets-are-volatile-partly-due-to-concer",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "股票市场波动性较高，部分原因在于市场对超大规模云计算企业大规模资本支出的担忧——超大规模云计算企业及半导体公司未来12个月远期自由现金流（1× $bn）",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "12",
+          "text": "12",
+          "char_end": 114,
+          "char_start": 112
+        }
+      ],
+      "qe_score": 0.862,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "股票市场波动性较高，部分原因在于市场对超大规模云计算企业大规模资本支出的担忧——超大规模云计算企业及半导体公司未来12个月远期自由现金流（十亿美元）",
+      "iterations": 2,
+      "seg_status": "edited",
+      "source_text": "Equity markets are volatile partly due to concerns over extensive capital expenditures by hyperscaler companies 12 month forward free cash flow of hyperscalers and semiconductor companies ($ bn)",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        },
+        {
+          "source": "volatility",
+          "applied": false,
+          "approved_target": "波动性"
+        },
+        {
+          "source": "capital expenditure",
+          "applied": false,
+          "approved_target": "资本支出"
+        },
+        {
+          "source": "scale",
+          "applied": false,
+          "approved_target": "规模"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_769df1d0-d8a",
+  "source": {
+    "type": "txt",
+    "filename": "equity-markets-are-volatile-partly-due-to-concer.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 76.92,
+    "hter_by_category": {
+      "accuracy": 0.07
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_9564c7f6-ee9",
+      "ts": "2026-07-28T01:16:42.810Z",
+      "hter": 0.086,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "股票市场波动性较高，部分原因在于市场对超大规模云计算企业大规模资本支出的担忧——超大规模云计算企业及半导体公司未来12个月远期自由现金流（）",
+      "action": "edit",
+      "before": "股票市场波动性较高，部分原因在于市场对超大规模云计算企业大规模资本支出的担忧——超大规模云计算企业及半导体公司未来12个月远期自由现金流（1× $bn）",
+      "segment_id": "b-001",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_3b4d318f-6ee",
+      "ts": "2026-07-28T01:17:09.148Z",
+      "hter": 0.054,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "股票市场波动性较高，部分原因在于市场对超大规模云计算企业大规模资本支出的担忧——超大规模云计算企业及半导体公司未来12个月远期自由现金流（十亿美元）",
+      "action": "edit",
+      "before": "股票市场波动性较高，部分原因在于市场对超大规模云计算企业大规模资本支出的担忧——超大规模云计算企业及半导体公司未来12个月远期自由现金流（）",
+      "segment_id": "b-001",
+      "char_edit_distance": 4,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-28T01:15:51.483Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-28T01:17:09.148Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

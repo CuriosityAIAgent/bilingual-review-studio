@@ -1,0 +1,343 @@
+{
+  "rev": 1,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "u-s-markets-u-s-markets-fell-s-p-500-0-2-nasdaq-",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：美国市场下跌（S&P 500 -0.2%，Nasdaq +0.7%），但市场广度表现积极，等权重S&P 500上涨+0.2%，并创历史新高。科技股及半导体股整体走弱。美国国债收益率上行（2年期+2个基点至4.17%，10年期+4个基点至4.48%，30年期+4个基点至4.97%）。美元指数上涨+0.2%，黄金上涨+1.1%，布伦特原油下跌-1.9%，收于约71美元。美联储主席沃什在一场会议上的讲话未提供太多增量信息，但他表示通胀压力已有所减弱。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 40,
+          "char_start": 37
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.2%",
+          "text": "-0.2%",
+          "char_end": 46,
+          "char_start": 41
+        },
+        {
+          "kind": "percent",
+          "norm": "0.7%",
+          "text": "0.7%",
+          "char_end": 60,
+          "char_start": 56
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 124,
+          "char_start": 121
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 137,
+          "char_start": 133
+        },
+        {
+          "kind": "number",
+          "norm": "2000000000bps",
+          "text": "2bps",
+          "char_end": 246,
+          "char_start": 242
+        },
+        {
+          "kind": "percent",
+          "norm": "4.17%",
+          "text": "4.17%",
+          "char_end": 255,
+          "char_start": 250
+        },
+        {
+          "kind": "number",
+          "norm": "4000000000bps",
+          "text": "4bps",
+          "char_end": 266,
+          "char_start": 262
+        },
+        {
+          "kind": "percent",
+          "norm": "4.48%",
+          "text": "4.48%",
+          "char_end": 275,
+          "char_start": 270
+        },
+        {
+          "kind": "number",
+          "norm": "4000000000bps",
+          "text": "4bps",
+          "char_end": 286,
+          "char_start": 282
+        },
+        {
+          "kind": "percent",
+          "norm": "4.97%",
+          "text": "4.97%",
+          "char_end": 295,
+          "char_start": 290
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 327,
+          "char_start": 323
+        },
+        {
+          "kind": "percent",
+          "norm": "1.1%",
+          "text": "1.1%",
+          "char_end": 344,
+          "char_start": 340
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.9%",
+          "text": "-1.9%",
+          "char_end": 380,
+          "char_start": 375
+        },
+        {
+          "kind": "currency",
+          "norm": "71",
+          "text": "$71.",
+          "char_end": 390,
+          "char_start": 385
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 40,
+          "char_start": 33
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 124,
+          "char_start": 117
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 54,
+          "char_start": 48
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：美国市场下跌（标普500 -0.2%，纳斯达克+0.7%），但市场广度表现积极，等权重标普500上涨+0.2%，并创历史新高。科技股及半导体股整体走弱。美国国债收益率上行（2年期+2个基点至4.17%，10年期+4个基点至4.48%，30年期+4个基点至4.97%）。美元指数上涨+0.2%，黄金上涨+1.1%，布伦特原油下跌-1.9%，收于约71美元。美联储主席沃什在一场会议上的讲话未提供太多增量信息，但他表示通胀压力已有所减弱。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "U.S. markets: U.S. markets fell (S&P 500 -0.2%, Nasdaq +0.7%) though market breadth was positive as the equal-weight S&P 500 gained +0.2% and ended at a new all-time high. Tech and semis were largely weaker. Treasury yields moved higher (2Y +2bps to 4.17%, 10Y +4bps to 4.48%, 30Y +4bps to 4.97%). The dollar index gained +0.2%, gold rose +1.1%, Brent crude settled lower by -1.9% to ~$71. Fed Chair Warsh’s comments at a conference did not add much incremental information, though he said inflationary pressures have diminished.",
+      "critic_flags": [
+        {
+          "span": "$71.",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "71."
+        },
+        {
+          "span": "$",
+          "category": "number",
+          "severity": "major",
+          "suggestion": "1× $"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        },
+        {
+          "source": "Federal Reserve",
+          "applied": false,
+          "approved_target": "美联储"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "$71.",
+              "message": "Numeric value \"$71.\" (mantissa 71.) not preserved in translation",
+              "expected": "71."
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [
+            {
+              "span": "$",
+              "found": "0× $",
+              "message": "Currency unit \"$\" dropped (1 → 0)",
+              "expected": "1× $"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_c3b76b59-15f",
+  "source": {
+    "type": "txt",
+    "filename": "u-s-markets-u-s-markets-fell-s-p-500-0-2-nasdaq-.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 12.2,
+    "hter_by_category": {
+      "accuracy": 0.068
+    },
+    "number_fail_rate": 1,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_61da8a6a-bfd",
+      "ts": "2026-07-02T01:34:39.528Z",
+      "hter": 0.068,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国市场：美国市场下跌（标普500 -0.2%，纳斯达克+0.7%），但市场广度表现积极，等权重标普500上涨+0.2%，并创历史新高。科技股及半导体股整体走弱。美国国债收益率上行（2年期+2个基点至4.17%，10年期+4个基点至4.48%，30年期+4个基点至4.97%）。美元指数上涨+0.2%，黄金上涨+1.1%，布伦特原油下跌-1.9%，收于约71美元。美联储主席沃什在一场会议上的讲话未提供太多增量信息，但他表示通胀压力已有所减弱。",
+      "action": "edit",
+      "before": "美国市场：美国市场下跌（S&P 500 -0.2%，Nasdaq +0.7%），但市场广度表现积极，等权重S&P 500上涨+0.2%，并创历史新高。科技股及半导体股整体走弱。美国国债收益率上行（2年期+2个基点至4.17%，10年期+4个基点至4.48%，30年期+4个基点至4.97%）。美元指数上涨+0.2%，黄金上涨+1.1%，布伦特原油下跌-1.9%，收于约71美元。美联储主席沃什在一场会议上的讲话未提供太多增量信息，但他表示通胀压力已有所减弱。",
+      "segment_id": "b-001",
+      "char_edit_distance": 15,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-02T01:30:27.984Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-02T01:34:39.528Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

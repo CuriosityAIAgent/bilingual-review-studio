@@ -1,0 +1,894 @@
+{
+  "rev": 2,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "u-s-markets-u-s-equities-declined-for-the-second",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：美国股票连续第二周下跌（标普500指数 -0.6%，纳斯达克指数 -2.1%），尽管半导体（SOX +1.2%）和内存（DRAM +0.9%）企稳。大型科技股明显下跌（TSLA -17.8%，SPCX -7.2%，GOOGL -7.8%）。美国国债收益率上升（2年期 +15个基点至4.33%，10年期 +13个基点至4.68%，30年期 +9个基点至5.18%）。美元指数 +0.7%，黄金 +1.3%，而布伦特原油因中东冲突持续升级大涨 +9.9%，接近每桶1× $100美元。特朗普政府依据《301条款》以防止供应链中强迫劳动为由，对约60个经济体实施10%至-12.5的关税。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 74,
+          "char_start": 71
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.6%",
+          "text": "-0.6%",
+          "char_end": 80,
+          "char_start": 75
+        },
+        {
+          "kind": "percent",
+          "norm": "-2.1%",
+          "text": "-2.1%",
+          "char_end": 94,
+          "char_start": 89
+        },
+        {
+          "kind": "percent",
+          "norm": "1.2%",
+          "text": "1.2%",
+          "char_end": 129,
+          "char_start": 125
+        },
+        {
+          "kind": "percent",
+          "norm": "0.9%",
+          "text": "0.9%",
+          "char_end": 153,
+          "char_start": 149
+        },
+        {
+          "kind": "percent",
+          "norm": "-17.8%",
+          "text": "-17.8%",
+          "char_end": 203,
+          "char_start": 197
+        },
+        {
+          "kind": "percent",
+          "norm": "-7.2%",
+          "text": "-7.2%",
+          "char_end": 215,
+          "char_start": 210
+        },
+        {
+          "kind": "percent",
+          "norm": "-7.8%",
+          "text": "-7.8%",
+          "char_end": 228,
+          "char_start": 223
+        },
+        {
+          "kind": "number",
+          "norm": "15000000000bps",
+          "text": "15bps",
+          "char_end": 262,
+          "char_start": 257
+        },
+        {
+          "kind": "percent",
+          "norm": "4.33%",
+          "text": "4.33%",
+          "char_end": 271,
+          "char_start": 266
+        },
+        {
+          "kind": "number",
+          "norm": "13000000000bps",
+          "text": "13bps",
+          "char_end": 283,
+          "char_start": 278
+        },
+        {
+          "kind": "percent",
+          "norm": "4.68%",
+          "text": "4.68%",
+          "char_end": 292,
+          "char_start": 287
+        },
+        {
+          "kind": "number",
+          "norm": "9000000000bps",
+          "text": "9bps",
+          "char_end": 303,
+          "char_start": 299
+        },
+        {
+          "kind": "percent",
+          "norm": "5.18%",
+          "text": "5.18%",
+          "char_end": 312,
+          "char_start": 307
+        },
+        {
+          "kind": "percent",
+          "norm": "0.7%",
+          "text": "0.7%",
+          "char_end": 337,
+          "char_start": 333
+        },
+        {
+          "kind": "percent",
+          "norm": "1.3%",
+          "text": "1.3%",
+          "char_end": 349,
+          "char_start": 345
+        },
+        {
+          "kind": "percent",
+          "norm": "9.9%",
+          "text": "9.9%",
+          "char_end": 375,
+          "char_start": 371
+        },
+        {
+          "kind": "currency",
+          "norm": "100",
+          "text": "$100",
+          "char_end": 391,
+          "char_start": 386
+        },
+        {
+          "kind": "number",
+          "norm": "10",
+          "text": "10",
+          "char_end": 494,
+          "char_start": 492
+        },
+        {
+          "kind": "percent",
+          "norm": "-12.5%",
+          "text": "-12.5%",
+          "char_end": 500,
+          "char_start": 494
+        },
+        {
+          "kind": "number",
+          "norm": "60",
+          "text": "60",
+          "char_end": 507,
+          "char_start": 505
+        },
+        {
+          "kind": "number",
+          "norm": "301",
+          "text": "301",
+          "char_end": 587,
+          "char_start": 584
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 74,
+          "char_start": 67
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 88,
+          "char_start": 82
+        }
+      ],
+      "qe_score": 0.25,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：美国股票连续第二周下跌（标普500指数 -0.6%，纳斯达克指数 -2.1%），尽管半导体（SOX +1.2%）和内存（DRAM +0.9%）企稳。大型科技股明显下跌（TSLA -17.8%，SPCX -7.2%，GOOGL -7.8%）。美国国债收益率上升（2年期 +15个基点至4.33%，10年期 +13个基点至4.68%，30年期 +9个基点至5.18%）。美元指数 +0.7%，黄金 +1.3%，而布伦特原油因中东冲突持续升级大涨 +9.9%，接近每桶 $100美元。特朗普政府依据《301条款》以防止供应链中强迫劳动为由，对约60个经济体实施10%至-12.5的关税。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "U.S. markets: U.S. equities declined for the second straight week (S&P 500 -0.6%, Nasdaq -2.1%) even as semiconductors (SOX +1.2%) and memory (DRAM +0.9%) steadied. Big tech notably declined (TSLA -17.8%, SPCX -7.2%, GOOGL -7.8%). Treasury yields rose (2Y +15bps to 4.33%, 10Y +13bps to 4.68%, 30Y +9bps to 5.18%). The dollar index +0.7%, gold +1.3%, while Brent surged +9.9% to nearly $100 with the latest ramp-up in the Middle East conflict. The Trump administration implemented tariffs of 10-12.5% on ~60 economies, citing prevention of forced labor in supply chains under Section 301.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        },
+        {
+          "source": "supply chain",
+          "applied": false,
+          "approved_target": "供应链"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        },
+        {
+          "source": "tariffs",
+          "applied": false,
+          "approved_target": "关税"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国宏观：7月制造业采购经理人指数(PMI)初值降至四个月低点53.8，低于市场预期的54.3及6月的53.0。服务业PMI初值升至八个月高点53.6，高于市场预期的51.3及6月的51.2。报告指出，受中东冲突影响，供应商交货延误恶化至近四年来最严峻水平之一。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "53.8",
+          "text": "53.8",
+          "char_end": 69,
+          "char_start": 65
+        },
+        {
+          "kind": "number",
+          "norm": "54.3",
+          "text": "54.3",
+          "char_end": 87,
+          "char_start": 83
+        },
+        {
+          "kind": "number",
+          "norm": "53",
+          "text": "53.0",
+          "char_end": 103,
+          "char_start": 99
+        },
+        {
+          "kind": "number",
+          "norm": "53.6",
+          "text": "53.6",
+          "char_end": 159,
+          "char_start": 155
+        },
+        {
+          "kind": "number",
+          "norm": "51.3",
+          "text": "51.3",
+          "char_end": 177,
+          "char_start": 173
+        },
+        {
+          "kind": "number",
+          "norm": "51.2",
+          "text": "51.2",
+          "char_end": 193,
+          "char_start": 189
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国宏观：7月制造业采购经理人指数(PMI)初值降至四个月低点53.8，低于市场预期的54.3及6月的53.0。服务业PMI初值升至八个月高点53.6，高于市场预期的51.3及6月的51.2。报告指出，受中东冲突影响，供应商交货延误恶化至近四年来最严峻水平之一。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "U.S. macro: July flash manufacturing PMI hit a four-month low at 53.8 vs consensus 54.3 and June’s 53.0. Flash services PMI reached an eight-month high at 53.6 vs consensus 51.3 and June’s 51.2. The report noted that supplier delays worsened to some of their most severe levels in nearly four years amid the Middle East conflict.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：尽管地缘政治紧张局势再度升温，欧洲股票上周仍录得上涨（斯托克50指数 +0.8%），企业盈利受利润率韧性及成本管控驱动超出预期。7月欧元区综合PMI初值强劲，综合指数为51.9，高于市场预期的50.3及前值50.0。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 60,
+          "char_start": 58
+        },
+        {
+          "kind": "percent",
+          "norm": "0.8%",
+          "text": "0.8%",
+          "char_end": 66,
+          "char_start": 62
+        },
+        {
+          "kind": "number",
+          "norm": "51.9",
+          "text": "51.9",
+          "char_end": 265,
+          "char_start": 261
+        },
+        {
+          "kind": "number",
+          "norm": "50.3",
+          "text": "50.3",
+          "char_end": 283,
+          "char_start": 279
+        },
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50.0",
+          "char_end": 298,
+          "char_start": 294
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：尽管地缘政治紧张局势再度升温，欧洲股票上周仍录得上涨（斯托克50指数 +0.8%），企业盈利受利润率韧性及成本管控驱动而超出预期。7月欧元区综合PMI初值强劲，综合指数为51.9，高于市场预期的50.3及前值50.0。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Europe markets: European equities gained last week (Stoxx 50 +0.8%) despite a resurgence of geopolitical tensions, as corporate earnings beat expectations driven by margin resilience and cost discipline. July Eurozone flash PMI was strong with the composite at 51.9 vs consensus 50.3 and prior 50.0.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "盈利"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "亚洲市场：日本股票上周上涨（日经指数 +0.7%，东证指数 +2.4%）。通胀数据符合预期：6月核心消费者价格指数(CPI)同比 +1.6%，与市场预期 +1.6%一致，前值为 +1.4%；剔除生鲜食品及能源的CPI同比 +1.7%，市场预期为 +1.8%，前值为 +1.8%。7月PMI初值基本持平：制造业为54.7，前值为54.8；服务业为51.9，前值为52.2。美元兑日元（USDJPY）突破163.80。中国股票上周上涨（恒生指数 +1.6%，沪深300指数 +2.7%），尽管长鑫存储科技(CXMT)的首次公开募股(IPO)对投资者情绪造成一定压制。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.7%",
+          "text": "0.7%",
+          "char_end": 62,
+          "char_start": 58
+        },
+        {
+          "kind": "percent",
+          "norm": "2.4%",
+          "text": "2.4%",
+          "char_end": 75,
+          "char_start": 71
+        },
+        {
+          "kind": "percent",
+          "norm": "1.6%",
+          "text": "1.6%",
+          "char_end": 120,
+          "char_start": 116
+        },
+        {
+          "kind": "percent",
+          "norm": "1.6%",
+          "text": "1.6%",
+          "char_end": 143,
+          "char_start": 139
+        },
+        {
+          "kind": "percent",
+          "norm": "1.4%",
+          "text": "1.4%",
+          "char_end": 159,
+          "char_start": 155
+        },
+        {
+          "kind": "percent",
+          "norm": "1.7%",
+          "text": "1.7%",
+          "char_end": 194,
+          "char_start": 190
+        },
+        {
+          "kind": "percent",
+          "norm": "1.8%",
+          "text": "1.8%",
+          "char_end": 217,
+          "char_start": 213
+        },
+        {
+          "kind": "percent",
+          "norm": "1.8%",
+          "text": "1.8%",
+          "char_end": 233,
+          "char_start": 229
+        },
+        {
+          "kind": "number",
+          "norm": "54.7",
+          "text": "54.7",
+          "char_end": 283,
+          "char_start": 279
+        },
+        {
+          "kind": "number",
+          "norm": "54.8",
+          "text": "54.8",
+          "char_end": 297,
+          "char_start": 293
+        },
+        {
+          "kind": "number",
+          "norm": "51.9",
+          "text": "51.9",
+          "char_end": 315,
+          "char_start": 311
+        },
+        {
+          "kind": "number",
+          "norm": "52.2",
+          "text": "52.2",
+          "char_end": 329,
+          "char_start": 325
+        },
+        {
+          "kind": "number",
+          "norm": "163.8",
+          "text": "163.80",
+          "char_end": 350,
+          "char_start": 344
+        },
+        {
+          "kind": "percent",
+          "norm": "1.6%",
+          "text": "1.6%",
+          "char_end": 402,
+          "char_start": 398
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 411,
+          "char_start": 408
+        },
+        {
+          "kind": "percent",
+          "norm": "2.7%",
+          "text": "2.7%",
+          "char_end": 417,
+          "char_start": 413
+        }
+      ],
+      "qe_score": 0.25,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "亚洲市场：日本股票上周上涨（日经指数 +0.7%，东证指数 +2.4%）。通胀数据符合预期：6月核心消费者价格指数(CPI)同比 +1.6%，与市场预期 +1.6%一致，前值为 +1.4%；剔除生鲜食品及能源的CPI同比 +1.7%，市场预期为 +1.8%，前值为 +1.8%。7月PMI初值基本持平：制造业为54.7，前值为54.8；服务业为51.9，前值为52.2。美元兑日元（USDJPY）突破163.80。中国股票上周上涨（恒生指数 +1.6%，沪深300指数 +2.7%），尽管长鑫存储科技(CXMT)的首次公开募股(IPO)对投资者情绪造成一定压制。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Asia markets: Japanese equities gained last week (Nikkei +0.7%, Topix +2.4%). Inflation was in-line: June core CPI +1.6% y/y vs consensus +1.6% and prior +1.4%; CPI ex. fresh food & energy +1.7% y/y vs consensus +1.8% and prior +1.8%. July flash PMIs were flat: manufacturing at 54.7 vs prior 54.8; services at 51.9 vs prior 52.2. USDJPY broke 163.80. Chinese equities gained last week (Hang Seng +1.6%, CSI 300 +2.7%) even as markets struggled with CXMT’s IPO weighing on investor sentiment.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "initial public offering",
+          "applied": false,
+          "approved_target": "首次公开募股"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        },
+        {
+          "source": "Consumer Price Index",
+          "applied": false,
+          "approved_target": "消费者价格指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_3f091fb2-da6",
+  "source": {
+    "type": "txt",
+    "filename": "u-s-markets-u-s-equities-declined-for-the-second.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 8.26,
+    "hter_by_category": {
+      "accuracy": 0.009
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_6f04ca6c-3fc",
+      "ts": "2026-07-25T08:41:48.077Z",
+      "hter": 0.01,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国市场：美国股票连续第二周下跌（标普500指数 -0.6%，纳斯达克指数 -2.1%），尽管半导体（SOX +1.2%）和内存（DRAM +0.9%）企稳。大型科技股明显下跌（TSLA -17.8%，SPCX -7.2%，GOOGL -7.8%）。美国国债收益率上升（2年期 +15个基点至4.33%，10年期 +13个基点至4.68%，30年期 +9个基点至5.18%）。美元指数 +0.7%，黄金 +1.3%，而布伦特原油因中东冲突持续升级大涨 +9.9%，接近每桶 $100美元。特朗普政府依据《301条款》以防止供应链中强迫劳动为由，对约60个经济体实施10%至-12.5的关税。",
+      "action": "edit",
+      "before": "美国市场：美国股票连续第二周下跌（标普500指数 -0.6%，纳斯达克指数 -2.1%），尽管半导体（SOX +1.2%）和内存（DRAM +0.9%）企稳。大型科技股明显下跌（TSLA -17.8%，SPCX -7.2%，GOOGL -7.8%）。美国国债收益率上升（2年期 +15个基点至4.33%，10年期 +13个基点至4.68%，30年期 +9个基点至5.18%）。美元指数 +0.7%，黄金 +1.3%，而布伦特原油因中东冲突持续升级大涨 +9.9%，接近每桶1× $100美元。特朗普政府依据《301条款》以防止供应链中强迫劳动为由，对约60个经济体实施10%至-12.5的关税。",
+      "segment_id": "b-001",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_34b6ee5f-45c",
+      "ts": "2026-07-25T08:42:49.868Z",
+      "hter": 0.009,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "欧洲市场：尽管地缘政治紧张局势再度升温，欧洲股票上周仍录得上涨（斯托克50指数 +0.8%），企业盈利受利润率韧性及成本管控驱动而超出预期。7月欧元区综合PMI初值强劲，综合指数为51.9，高于市场预期的50.3及前值50.0。",
+      "action": "edit",
+      "before": "欧洲市场：尽管地缘政治紧张局势再度升温，欧洲股票上周仍录得上涨（斯托克50指数 +0.8%），企业盈利受利润率韧性及成本管控驱动超出预期。7月欧元区综合PMI初值强劲，综合指数为51.9，高于市场预期的50.3及前值50.0。",
+      "segment_id": "b-003",
+      "char_edit_distance": 1,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-25T08:41:04.903Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-25T08:42:49.868Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

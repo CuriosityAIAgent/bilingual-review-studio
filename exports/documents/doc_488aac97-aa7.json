@@ -1,0 +1,1222 @@
+{
+  "rev": 3,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "neighborly-spat",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "邻里纷争",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.822,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "邻里纷争",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Neighborly spat",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：美国股票上涨（标普500指数 +0.3%，纳斯达克指数 +0.7%），人工智能(AI)相关板块出现反弹。受投资者斯坦利·德鲁肯米勒(Stanley Druckenmiller)发表文章批评财政部回购计划的影响，市场关注度集中于此，国债收益率沿收益率曲线全线下行（2年期 -5至4.18%，10年期 -8至4.63%，30年期 -7至5.16%）。美元指数下跌 -0.1%，黄金上涨0.1%，布伦特原油下跌 -2.7%。在美国对价值200亿美元的加拿大商品实施关税后，加拿大宣布对数百种美国产品征收最高50%的报复性关税，涉及金额达200亿美元，约占加拿大自美进口商品的6%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 41,
+          "char_start": 38
+        },
+        {
+          "kind": "percent",
+          "norm": "0.3%",
+          "text": "0.3%",
+          "char_end": 47,
+          "char_start": 43
+        },
+        {
+          "kind": "percent",
+          "norm": "0.7%",
+          "text": "0.7%",
+          "char_end": 61,
+          "char_start": 57
+        },
+        {
+          "kind": "number",
+          "norm": "5000000000bps",
+          "text": "5bps",
+          "char_end": 147,
+          "char_start": 143
+        },
+        {
+          "kind": "percent",
+          "norm": "4.18%",
+          "text": "4.18%",
+          "char_end": 156,
+          "char_start": 151
+        },
+        {
+          "kind": "number",
+          "norm": "8000000000bps",
+          "text": "8bps",
+          "char_end": 167,
+          "char_start": 163
+        },
+        {
+          "kind": "percent",
+          "norm": "4.63%",
+          "text": "4.63%",
+          "char_end": 176,
+          "char_start": 171
+        },
+        {
+          "kind": "number",
+          "norm": "7000000000bps",
+          "text": "7bps",
+          "char_end": 187,
+          "char_start": 183
+        },
+        {
+          "kind": "percent",
+          "norm": "5.16%",
+          "text": "5.16%",
+          "char_end": 196,
+          "char_start": 191
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.1%",
+          "text": "-0.1%",
+          "char_end": 333,
+          "char_start": 328
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 351,
+          "char_start": 347
+        },
+        {
+          "kind": "percent",
+          "norm": "-2.7%",
+          "text": "-2.7%",
+          "char_end": 375,
+          "char_start": 370
+        },
+        {
+          "kind": "currency",
+          "norm": "20000000000",
+          "text": "$20B",
+          "char_end": 417,
+          "char_start": 413
+        },
+        {
+          "kind": "percent",
+          "norm": "50%",
+          "text": "50%",
+          "char_end": 463,
+          "char_start": 460
+        },
+        {
+          "kind": "currency",
+          "norm": "20000000000",
+          "text": "$20B",
+          "char_end": 518,
+          "char_start": 514
+        },
+        {
+          "kind": "percent",
+          "norm": "6%",
+          "text": "6%",
+          "char_end": 537,
+          "char_start": 535
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 41,
+          "char_start": 34
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 55,
+          "char_start": 49
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：美国股票上涨（标普500指数 +0.3%，纳斯达克指数 +0.7%），人工智能(AI)相关板块出现反弹。投资者斯坦利·德鲁肯米勒(Stanley Druckenmiller)发表文章批评财政部回购计划。市场关注度集中于此，国债收益率沿收益率曲线全线下行（2年期 -5至4.18%，10年期 -8至4.63%，30年期 -7至5.16%）。美元指数下跌 -0.1%，黄金上涨0.1%，布伦特原油下跌 -2.7%。在美国对价值200亿美元的加拿大商品实施关税后，加拿大宣布对数百种美国产品征收最高50%的报复性关税，涉及金额达200亿美元，约占加拿大自美进口商品的6%。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "U.S. markets: US equities gained (S&P 500 +0.3%, Nasdaq +0.7%) with a bounce in AI-related sectors. Treasury yields fell across the curve (2Y -5bps to 4.18%, 10Y -8bps to 4.63%, 30Y -7bps to 5.16%) as markets focused on a paper from investor Stanley Druckenmiller criticizing the Treasury’s buyback plans. The dollar index fell -0.1%, gold gained 0.1%, Brent crude fell -2.7%. Following US tariffs implemented on $20B of Canadian goods, Canada announced up to 50% of retaliatory tariffs on hundreds of US products $20B, covering about 6% of Canada’s goods imports from the US.",
+      "critic_flags": [
+        {
+          "span": "5bps",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "5"
+        },
+        {
+          "span": "8bps",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "8"
+        },
+        {
+          "span": "7bps",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "7"
+        },
+        {
+          "span": "$20B",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "20"
+        },
+        {
+          "span": "$",
+          "category": "number",
+          "severity": "major",
+          "suggestion": "2× $"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "yield curve",
+          "applied": false,
+          "approved_target": "收益率曲线"
+        },
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        },
+        {
+          "source": "tariffs",
+          "applied": false,
+          "approved_target": "关税"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "5bps",
+              "message": "Numeric value \"5bps\" (mantissa 5) not preserved in translation",
+              "expected": "5"
+            },
+            {
+              "span": "8bps",
+              "message": "Numeric value \"8bps\" (mantissa 8) not preserved in translation",
+              "expected": "8"
+            },
+            {
+              "span": "7bps",
+              "message": "Numeric value \"7bps\" (mantissa 7) not preserved in translation",
+              "expected": "7"
+            },
+            {
+              "span": "$20B",
+              "message": "Numeric value \"$20B\" (mantissa 20) not preserved in translation",
+              "expected": "20"
+            },
+            {
+              "span": "$20B",
+              "message": "Numeric value \"$20B\" (mantissa 20) not preserved in translation",
+              "expected": "20"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [
+            {
+              "span": "$",
+              "found": "0× $",
+              "message": "Currency unit \"$\" dropped (2 → 0)",
+              "expected": "2× $"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：欧洲股票小幅上涨（斯托克50指数 +0.1%），市场情绪因宽松预期而略有改善。德国Q2国内生产总值(GDP)上修，商业信心亦同步改善。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 59,
+          "char_start": 57
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 65,
+          "char_start": 61
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：欧洲股票小幅上涨（斯托克50指数 +0.1%），市场情绪因宽松预期而略有改善。德国Q2国内生产总值(GDP)上修，商业信心亦同步改善。",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "Europe markets: European equities gained slightly (Stoxx 50 +0.1%) with sentiment improving slightly on easing. Germany’s Q2 GDP Was revised higher alongside an improvement in business confidence.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：日本股票上涨（日经指数 +0.5%，东证指数 +0.5%），与此同时日元走弱，美元兑日元(USDJPY)汇率重返159中段区间。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 53,
+          "char_start": 49
+        },
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 66,
+          "char_start": 62
+        },
+        {
+          "kind": "number",
+          "norm": "159",
+          "text": "159",
+          "char_end": 133,
+          "char_start": 130
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：日本股票上涨（日经指数 +0.5%，东证指数 +0.5%），与此同时日元走弱，美元兑日元汇率重返159中段区间。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Japan markets: Japanese equities gained (Nikkei +0.5%, Topix +0.5%) while the yen weakened with the USDJPY moving back to the mid-159 range.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：中国股票走势分化（恒生指数持平，沪深300指数 -0.2%）。宇树科技(688836 CH)股价持续下跌，目前较首次公开募股(IPO)峰值已累计下跌约45%。据报道，美国拟在原定于9月24日举行的特朗普-习近平峰会前，以中国制造业产能过剩为由，对中国加征7.5%的关税。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 67,
+          "char_start": 64
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.2%",
+          "text": "-0.2%",
+          "char_end": 73,
+          "char_start": 68
+        },
+        {
+          "kind": "number",
+          "norm": "688836",
+          "text": "688836",
+          "char_end": 100,
+          "char_start": 94
+        },
+        {
+          "kind": "percent",
+          "norm": "45%",
+          "text": "45%",
+          "char_end": 150,
+          "char_start": 147
+        },
+        {
+          "kind": "percent",
+          "norm": "7.5%",
+          "text": "7.5%",
+          "char_end": 211,
+          "char_start": 207
+        },
+        {
+          "kind": "number",
+          "norm": "24",
+          "text": "24",
+          "char_end": 319,
+          "char_start": 317
+        }
+      ],
+      "qe_score": 0.89,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：中国股票走势分化（恒生指数持平，沪深300指数 -0.2%）。宇树科技(688836 CH)股价持续下跌，目前较首次公开募股(IPO)峰值已累计下跌约45%。据报道，美国拟在原定于9月24日举行的特朗普-习近平峰会前，以中国制造业产能过剩为由，对中国加征7.5%的关税。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "China markets: Chinese equities were mixed (Hang Seng flat, CSI 300 -0.2%). Unitree Robotics (688836 CH) continued to fall, and is now down around 45% from its IPO peak. The US is reportedly set to impose a 7.5% tariff on China over allegations of excess manufacturing capacity before the Trump-Xi summit planned for 24-Sep.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "tariffs",
+          "applied": false,
+          "approved_target": "关税"
+        },
+        {
+          "source": "initial public offering",
+          "applied": false,
+          "approved_target": "首次公开募股"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-006",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "我们的看法：美加贸易谈判上周破裂，美国随即依据第338条款对约200亿的加拿大出口商品征收50%关税（旨在应对针对美国企业的歧视性做法），涉及金额约占加拿大对美出口总额的5.5%。相较于美国每年约3.5万亿的商品进口总额，该规模微乎其微，因此目前对美国通胀和经济增长的冲击可能微不足道。然而，有两条潜在的升级路径可能改变这一局面。其一，美国汽车关税构成风险——特朗普威胁将于明年1月起对加拿大汽车及相关零部件征收50%关税。汽车贸易流量远大于当前受影响商品，且两国产业高度融合，一旦付诸实施，将对边境两侧的供应链和价格产生实质性影响。其二，加拿大可能通过石油和能源实施报复。加拿大是美国原油进口的最大来源国，2025年日均供应约3.9百万桶，约占美国原油进口总量（约6.2百万桶/日）的63%。加拿大若采取任何限制或切断原油出口的举措，都将造成重大冲击——届时一场局部贸易纷争可能演变为影响美国能源价格的宏观事件。美国能源形势已因伊朗冲突而承压，库存持续消耗，炼油产能利用率亦已接近上限。总体而言，现行关税措施伤及加拿大地区制造业，而非美国经济。但汽车关税与加拿大石油是两个可能迅速打破这一温和局面的传导渠道。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "50%",
+          "text": "50%",
+          "char_end": 93,
+          "char_start": 90
+        },
+        {
+          "kind": "number",
+          "norm": "338",
+          "text": "338",
+          "char_end": 105,
+          "char_start": 102
+        },
+        {
+          "kind": "currency",
+          "norm": "20000000000",
+          "text": "$20bn",
+          "char_end": 201,
+          "char_start": 196
+        },
+        {
+          "kind": "percent",
+          "norm": "5.5%",
+          "text": "5.5%",
+          "char_end": 242,
+          "char_start": 238
+        },
+        {
+          "kind": "currency",
+          "norm": "3.5",
+          "text": "$3.5",
+          "char_end": 314,
+          "char_start": 310
+        },
+        {
+          "kind": "percent",
+          "norm": "50%",
+          "text": "50%",
+          "char_end": 558,
+          "char_start": 555
+        },
+        {
+          "kind": "number",
+          "norm": "3900000",
+          "text": "3.9 million",
+          "char_end": 961,
+          "char_start": 950
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 985,
+          "char_start": 981
+        },
+        {
+          "kind": "percent",
+          "norm": "63%",
+          "text": "63%",
+          "char_end": 999,
+          "char_start": 996
+        },
+        {
+          "kind": "number",
+          "norm": "6200000",
+          "text": "6.2 million",
+          "char_end": 1042,
+          "char_start": 1031
+        }
+      ],
+      "qe_score": 0.991,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "我们的看法：美加贸易谈判上周破裂，美国随即依据第338条款对约200亿的加拿大出口商品征收50%关税（旨在应对针对美国企业的歧视性做法），涉及金额约占加拿大对美出口总额的5.5%。相较于美国每年约3.5万亿的商品进口总额，该规模微乎其微，因此目前对美国通胀和经济增长的冲击可能微不足道。然而，有两条潜在的升级路径可能改变这一局面。其一，美国汽车关税构成风险——特朗普威胁将于明年1月起对加拿大汽车及相关零部件征收50%关税。汽车贸易流量远大于当前受影响商品，且两国产业高度融合，一旦付诸实施，将对边境两侧的供应链和价格产生实质性影响。其二，加拿大可能通过石油和能源实施报复。加拿大是美国原油进口的最大来源国，2025年日均供应约3.9百万桶，约占美国原油进口总量（约6.2百万桶/日）的63%。加拿大若采取任何限制或切断原油出口的举措，都将造成重大冲击——届时一场局部贸易纷争可能演变为影响美国能源价格的宏观事件。美国能源形势已因伊朗冲突而承压，库存持续消耗，炼油产能利用率亦已接近上限。总体而言，现行关税措施伤及加拿大地区制造业，而非美国经济。但汽车关税与加拿大石油是两个可能迅速打破这相对温和的局面的因素。",
+      "iterations": 2,
+      "seg_status": "edited",
+      "source_text": "What we think US-Canada trade talks fell through last week and the US followed through on 50% Section 338 tariffs (meant to address discriminatory practices against US companies) covering roughly $20bn of Canadian exports, covering about 5.5% of Canada's exports to the US. That amount is minimal relative to ~$3.5T in annual US goods imports, so the hit to US inflation and growth is likely to be negligible for now. However, there are two potential paths of escalation which can move the needle. First, US auto tariffs is a risk with Trump's threatened 50% tariff on Canadian autos and related components set to begin in January. Autos are a materially larger and more integrated trade flow than the currently impacted goods, and a move here would have real supply-chain and price consequences on both sides of the border. The second risk is Canadian retaliation via oil and energy. Canada is the largest source of US crude oil imports, supplying ~3.9 million barrels per day in 2025 — roughly 63% of total US crude imports (of ~6.2 million barrels per day). Any Canadian move to curb or cut off crude exports would be a shock, and this is where a contained trade spat could turn into a macro event for US energy prices. The US energy situation is already stressed from the conflict in Iran, which has driven inventory depletion and maxed out refinery utilization. In all, the tariffs as they stand hurt Canadian regional manufacturing and not the US economy. But auto tariffs and Canadian oil are two channels that could change this benign picture quickly.",
+      "critic_flags": [
+        {
+          "span": "$20bn",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "20"
+        },
+        {
+          "span": "$",
+          "category": "number",
+          "severity": "major",
+          "suggestion": "2× $"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "supply chain",
+          "applied": false,
+          "approved_target": "供应链"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        },
+        {
+          "source": "tariffs",
+          "applied": false,
+          "approved_target": "关税"
+        },
+        {
+          "source": "scale",
+          "applied": false,
+          "approved_target": "规模"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "$20bn",
+              "message": "Numeric value \"$20bn\" (mantissa 20) not preserved in translation",
+              "expected": "20"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [
+            {
+              "span": "$",
+              "found": "0× $",
+              "message": "Currency unit \"$\" dropped (2 → 0)",
+              "expected": "2× $"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-007",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "加拿大的实际关税税率目前已升至约8%，与欧盟和英国相近，但远低于中国和日本等其他主要贸易伙伴。按贸易伙伴划分的进口加权法定关税税率，%",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "8%",
+          "text": "8%",
+          "char_end": 53,
+          "char_start": 51
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "加拿大的实际关税税率目前已升至约8%，与欧盟和英国相近，但远低于中国和日本等其他主要贸易伙伴。按贸易伙伴划分的进口加权法定关税税率，%",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Canada’s effective tariff rate is now up to around 8%, close to the EU and the UK but much lower than other major trade partners such as China and Japan Import-weighted statutory tariff rate by trading partner, %",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "tariffs",
+          "applied": false,
+          "approved_target": "关税"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_488aac97-aa7",
+  "source": {
+    "type": "txt",
+    "filename": "neighborly-spat.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 6.19,
+    "hter_by_category": {
+      "accuracy": 0.054
+    },
+    "number_fail_rate": 0.286,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_8288603c-1ca",
+      "ts": "2026-08-26T02:04:57.470Z",
+      "hter": 0.017,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国市场：美国股票上涨（标普500指数 +0.3%，纳斯达克指数 +0.7%），人工智能(AI)相关板块出现反弹。投资者斯坦利·德鲁肯米勒(Stanley Druckenmiller)发表文章批评财政部回购计划。市场关注度集中于此，国债收益率沿收益率曲线全线下行（2年期 -5至4.18%，10年期 -8至4.63%，30年期 -7至5.16%）。美元指数下跌 -0.1%，黄金上涨0.1%，布伦特原油下跌 -2.7%。在美国对价值200亿美元的加拿大商品实施关税后，加拿大宣布对数百种美国产品征收最高50%的报复性关税，涉及金额达200亿美元，约占加拿大自美进口商品的6%。",
+      "action": "edit",
+      "before": "美国市场：美国股票上涨（标普500指数 +0.3%，纳斯达克指数 +0.7%），人工智能(AI)相关板块出现反弹。受投资者斯坦利·德鲁肯米勒(Stanley Druckenmiller)发表文章批评财政部回购计划的影响，市场关注度集中于此，国债收益率沿收益率曲线全线下行（2年期 -5至4.18%，10年期 -8至4.63%，30年期 -7至5.16%）。美元指数下跌 -0.1%，黄金上涨0.1%，布伦特原油下跌 -2.7%。在美国对价值200亿美元的加拿大商品实施关税后，加拿大宣布对数百种美国产品征收最高50%的报复性关税，涉及金额达200亿美元，约占加拿大自美进口商品的6%。",
+      "segment_id": "b-002",
+      "char_edit_distance": 5,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_c2a3ad2b-eaa",
+      "ts": "2026-08-26T02:05:30.295Z",
+      "hter": 0.131,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "日本市场：日本股票上涨（日经指数 +0.5%，东证指数 +0.5%），与此同时日元走弱，美元兑日元汇率重返159中段区间。",
+      "action": "edit",
+      "before": "日本市场：日本股票上涨（日经指数 +0.5%，东证指数 +0.5%），与此同时日元走弱，美元兑日元(USDJPY)汇率重返159中段区间。",
+      "segment_id": "b-004",
+      "char_edit_distance": 8,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_d8207903-bb7",
+      "ts": "2026-08-26T02:40:50.715Z",
+      "hter": 0.014,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "我们的看法：美加贸易谈判上周破裂，美国随即依据第338条款对约200亿的加拿大出口商品征收50%关税（旨在应对针对美国企业的歧视性做法），涉及金额约占加拿大对美出口总额的5.5%。相较于美国每年约3.5万亿的商品进口总额，该规模微乎其微，因此目前对美国通胀和经济增长的冲击可能微不足道。然而，有两条潜在的升级路径可能改变这一局面。其一，美国汽车关税构成风险——特朗普威胁将于明年1月起对加拿大汽车及相关零部件征收50%关税。汽车贸易流量远大于当前受影响商品，且两国产业高度融合，一旦付诸实施，将对边境两侧的供应链和价格产生实质性影响。其二，加拿大可能通过石油和能源实施报复。加拿大是美国原油进口的最大来源国，2025年日均供应约3.9百万桶，约占美国原油进口总量（约6.2百万桶/日）的63%。加拿大若采取任何限制或切断原油出口的举措，都将造成重大冲击——届时一场局部贸易纷争可能演变为影响美国能源价格的宏观事件。美国能源形势已因伊朗冲突而承压，库存持续消耗，炼油产能利用率亦已接近上限。总体而言，现行关税措施伤及加拿大地区制造业，而非美国经济。但汽车关税与加拿大石油是两个可能迅速打破这相对温和的局面的因素。",
+      "action": "edit",
+      "before": "我们的看法：美加贸易谈判上周破裂，美国随即依据第338条款对约200亿的加拿大出口商品征收50%关税（旨在应对针对美国企业的歧视性做法），涉及金额约占加拿大对美出口总额的5.5%。相较于美国每年约3.5万亿的商品进口总额，该规模微乎其微，因此目前对美国通胀和经济增长的冲击可能微不足道。然而，有两条潜在的升级路径可能改变这一局面。其一，美国汽车关税构成风险——特朗普威胁将于明年1月起对加拿大汽车及相关零部件征收50%关税。汽车贸易流量远大于当前受影响商品，且两国产业高度融合，一旦付诸实施，将对边境两侧的供应链和价格产生实质性影响。其二，加拿大可能通过石油和能源实施报复。加拿大是美国原油进口的最大来源国，2025年日均供应约3.9百万桶，约占美国原油进口总量（约6.2百万桶/日）的63%。加拿大若采取任何限制或切断原油出口的举措，都将造成重大冲击——届时一场局部贸易纷争可能演变为影响美国能源价格的宏观事件。美国能源形势已因伊朗冲突而承压，库存持续消耗，炼油产能利用率亦已接近上限。总体而言，现行关税措施伤及加拿大地区制造业，而非美国经济。但汽车关税与加拿大石油是两个可能迅速打破这一温和局面的传导渠道。",
+      "segment_id": "b-006",
+      "char_edit_distance": 7,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "3f9c45f6111fdd7d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-08-26T01:50:19.017Z",
+  "deleted_at": null,
+  "updated_at": "2026-08-26T02:40:50.715Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

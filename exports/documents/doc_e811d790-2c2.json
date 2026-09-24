@@ -1,0 +1,752 @@
+{
+  "rev": 1,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "u-s-macro-july-core-cpi-0-2-m-m-vs-consensus-0-2",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国宏观：7月核心消费者价格指数(CPI)环比+0.2%（市场预期+0.2%，前值持平）；年化核心通胀+2.5%（市场预期+2.5%，前值+2.6%）。整体消费者价格指数(CPI)环比+0.1%（市场预期+0.1%，前值-0.4%）；年化整体通胀+3.4%（市场预期+3.4%，前值+3.5%）。月度整体涨幅中约三分之二归因于住房分项+0.1%的上涨，部分被能源指数-1.5%的下跌所抵消（延续6月5.7%的跌势）。核心商品环比+0.2%，此前6月为-0.1%；核心服务环比+0.2%，此前6月持平。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 31,
+          "char_start": 27
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 55,
+          "char_start": 51
+        },
+        {
+          "kind": "percent",
+          "norm": "2.5%",
+          "text": "2.5%",
+          "char_end": 91,
+          "char_start": 87
+        },
+        {
+          "kind": "percent",
+          "norm": "2.5%",
+          "text": "2.5%",
+          "char_end": 111,
+          "char_start": 107
+        },
+        {
+          "kind": "percent",
+          "norm": "2.6%",
+          "text": "2.6%",
+          "char_end": 124,
+          "char_start": 120
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 145,
+          "char_start": 141
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 169,
+          "char_start": 165
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.4%",
+          "text": "-0.4%",
+          "char_end": 182,
+          "char_start": 177
+        },
+        {
+          "kind": "percent",
+          "norm": "3.4%",
+          "text": "3.4%",
+          "char_end": 210,
+          "char_start": 206
+        },
+        {
+          "kind": "percent",
+          "norm": "3.4%",
+          "text": "3.4%",
+          "char_end": 230,
+          "char_start": 226
+        },
+        {
+          "kind": "percent",
+          "norm": "3.5%",
+          "text": "3.5%",
+          "char_end": 243,
+          "char_start": 239
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 325,
+          "char_start": 321
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.5%",
+          "text": "-1.5%",
+          "char_end": 370,
+          "char_start": 365
+        },
+        {
+          "kind": "percent",
+          "norm": "5.7%",
+          "text": "5.7%",
+          "char_end": 417,
+          "char_start": 413
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 444,
+          "char_start": 440
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.1%",
+          "text": "-0.1%",
+          "char_end": 467,
+          "char_start": 462
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 488,
+          "char_start": 484
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国宏观：7月核心消费者价格指数(CPI)环比+0.2%（市场预期+0.2%，前值持平）；年化核心通胀+2.5%（市场预期+2.5%，前值+2.6%）。整体消费者价格指数环比+0.1%（市场预期+0.1%，前值-0.4%）；年化整体通胀+3.4%（市场预期+3.4%，前值+3.5%）。月度整体涨幅中约三分之二归因于住房分项+0.1%的上涨，部分被能源-1.5%的下跌所抵消（延续6月5.7%的跌势）。核心商品环比+0.2%，此前6月为-0.1%；核心服务环比+0.2%，此前6月持平。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "U.S. macro: July core CPI +0.2% m/m (vs consensus +0.2%, prior flat); annualized core +2.5% (vs consensus +2.5%, prior +2.6%). Headline CPI +0.1% m/m (vs consensus +0.1%, prior -0.4%); annualized headline +3.4% (vs consensus +3.4%, prior +3.5%). Roughly two-thirds of the monthly headline increase was attributed to the +0.1% rise in shelter, partially offset by a -1.5% decline in energy index (extending June's 5.7% decline). Core goods +0.2% following June's -0.1%; core services +0.2% following June's flat print.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "core inflation",
+          "applied": false,
+          "approved_target": "核心通胀"
+        },
+        {
+          "source": "Consumer Price Index",
+          "applied": false,
+          "approved_target": "消费者价格指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：欧洲股票下跌（斯托克50指数-0.3%）。由于美国与伊朗在各自诉求上陷入对峙，中东局势缓和前景不明，加之胡塞武装持续袭击红海商业船只，市场情绪维持谨慎。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 48,
+          "char_start": 46
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.3%",
+          "text": "-0.3%",
+          "char_end": 54,
+          "char_start": 49
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：欧洲股票下跌（斯托克50指数-0.3%）。由于美国与伊朗在各自诉求上陷入对峙，中东局势缓和前景不明，加之胡塞武装持续袭击红海商业船只，市场情绪维持谨慎。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Europe markets: European equities fell (Stoxx 50 -0.3%). Markets remained cautious over prospects for a Middle East de-escalation with the U.S. and Iran in a standoff over their respective demands while the Houthis struck commercial vessels in the Red Sea.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：日本股票上涨（日经指数+0.8%，东证指数+0.9%），日元走势分化，徘徊于159关口附近。市场目前定价显示，9月加息概率约为80%，年底前加息两次的概率约为75%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.8%",
+          "text": "0.8%",
+          "char_end": 53,
+          "char_start": 49
+        },
+        {
+          "kind": "percent",
+          "norm": "0.9%",
+          "text": "0.9%",
+          "char_end": 66,
+          "char_start": 62
+        },
+        {
+          "kind": "number",
+          "norm": "159",
+          "text": "159",
+          "char_end": 106,
+          "char_start": 103
+        },
+        {
+          "kind": "percent",
+          "norm": "80%",
+          "text": "80%",
+          "char_end": 148,
+          "char_start": 145
+        },
+        {
+          "kind": "percent",
+          "norm": "75%",
+          "text": "75%",
+          "char_end": 197,
+          "char_start": 194
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：日本股票上涨（日经指数+0.8%，东证指数+0.9%），日元走势分化，徘徊于159关口附近。市场目前定价显示，9月加息概率约为80%，年底前加息两次的概率约为75%。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Japan markets: Japanese equities gained (Nikkei +0.8%, Topix +0.9%) while the yen was mixed around the 159 mark. The market is now pricing in a ~80% probability of a rate hike in September and ~75% chance of two hikes by year-end.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：中国股票走势分化（恒生指数-0.8%，沪深300指数+0.6%）。腾讯（700 HK）公布2026财年第二季度业绩，整体表现基本符合预期，营收同比增长+11%（高于预期1.0%），息税前利润(EBIT)同比增长+9%（与市场预期一致）。中国乘用车市场信息联席会 (CPCA) 数据显示，7月中国汽车出口量同比大幅跳升+88%至918万辆，国内生产车辆中有41%出口海外，而一年前这一比例仅为21%。与此形成对比的是，国内乘用车零售销量同比下滑-21%至1.46万辆，其中燃油车销量降幅达-41%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-0.8%",
+          "text": "-0.8%",
+          "char_end": 59,
+          "char_start": 54
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 68,
+          "char_start": 65
+        },
+        {
+          "kind": "percent",
+          "norm": "0.6%",
+          "text": "0.6%",
+          "char_end": 74,
+          "char_start": 70
+        },
+        {
+          "kind": "number",
+          "norm": "700",
+          "text": "700",
+          "char_end": 89,
+          "char_start": 86
+        },
+        {
+          "kind": "percent",
+          "norm": "11%",
+          "text": "11%",
+          "char_end": 166,
+          "char_start": 163
+        },
+        {
+          "kind": "percent",
+          "norm": "1%",
+          "text": "1.0%",
+          "char_end": 176,
+          "char_start": 172
+        },
+        {
+          "kind": "percent",
+          "norm": "9%",
+          "text": "9%",
+          "char_end": 214,
+          "char_start": 212
+        },
+        {
+          "kind": "ticker",
+          "norm": "(CPCA)",
+          "text": "(CPCA)",
+          "char_end": 283,
+          "char_start": 277
+        },
+        {
+          "kind": "percent",
+          "norm": "88%",
+          "text": "88%",
+          "char_end": 341,
+          "char_start": 338
+        },
+        {
+          "kind": "number",
+          "norm": "918000",
+          "text": "918k",
+          "char_end": 361,
+          "char_start": 357
+        },
+        {
+          "kind": "percent",
+          "norm": "41%",
+          "text": "41%",
+          "char_end": 383,
+          "char_start": 380
+        },
+        {
+          "kind": "percent",
+          "norm": "21%",
+          "text": "21%",
+          "char_end": 461,
+          "char_start": 458
+        },
+        {
+          "kind": "percent",
+          "norm": "-21%",
+          "text": "-21%",
+          "char_end": 507,
+          "char_start": 503
+        },
+        {
+          "kind": "number",
+          "norm": "1460000",
+          "text": "1.46M",
+          "char_end": 568,
+          "char_start": 563
+        },
+        {
+          "kind": "percent",
+          "norm": "-41%",
+          "text": "-41%",
+          "char_end": 589,
+          "char_start": 585
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：中国股票走势分化（恒生指数-0.8%，沪深300指数+0.6%）。腾讯（700 HK）公布2026财年第二季度业绩，整体表现基本符合预期，营收同比增长+11%（高于预期1.0%），息税前利润(EBIT)同比增长+9%（与市场预期一致）。中国乘用车市场信息联席会 (CPCA) 数据显示，7月中国汽车出口量同比大幅跳升+88%至918万辆，国内生产车辆中有41%出口海外，而一年前这一比例仅为21%。与此形成对比的是，国内乘用车零售销量同比下滑-21%至1.46万辆，其中燃油车销量降幅达-41%。",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "China markets: Chinese equities were mixed (Hang Seng -0.8%, CSI 300 +0.6%). Tencent (700 HK) reported 2Q26 results that were mostly in line with revenue growing +11% YoY (1.0% above estimates) and EBIT growing +9% YoY (in-line with consensus). China Passenger Car Association (CPCA) data noted China's outbound shipments of cars jumped +88% y/y in July to 918k units, indicating 41% of vehicles manufactured in the country were sent overseas, compared with 21% a year ago. This is in contrast with the -21% y/y drop in domestic passenger vehicle retail sales to 1.46M units, led by a -41% decline in sales of internal combustion engine cars.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_e811d790-2c2",
+  "source": {
+    "type": "txt",
+    "filename": "u-s-macro-july-core-cpi-0-2-m-m-vs-consensus-0-2.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 4.12,
+    "hter_by_category": {
+      "accuracy": 0.029
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_a50279e1-d7c",
+      "ts": "2026-08-12T19:44:59.785Z",
+      "hter": 0.029,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国宏观：7月核心消费者价格指数(CPI)环比+0.2%（市场预期+0.2%，前值持平）；年化核心通胀+2.5%（市场预期+2.5%，前值+2.6%）。整体消费者价格指数环比+0.1%（市场预期+0.1%，前值-0.4%）；年化整体通胀+3.4%（市场预期+3.4%，前值+3.5%）。月度整体涨幅中约三分之二归因于住房分项+0.1%的上涨，部分被能源-1.5%的下跌所抵消（延续6月5.7%的跌势）。核心商品环比+0.2%，此前6月为-0.1%；核心服务环比+0.2%，此前6月持平。",
+      "action": "edit",
+      "before": "美国宏观：7月核心消费者价格指数(CPI)环比+0.2%（市场预期+0.2%，前值持平）；年化核心通胀+2.5%（市场预期+2.5%，前值+2.6%）。整体消费者价格指数(CPI)环比+0.1%（市场预期+0.1%，前值-0.4%）；年化整体通胀+3.4%（市场预期+3.4%，前值+3.5%）。月度整体涨幅中约三分之二归因于住房分项+0.1%的上涨，部分被能源指数-1.5%的下跌所抵消（延续6月5.7%的跌势）。核心商品环比+0.2%，此前6月为-0.1%；核心服务环比+0.2%，此前6月持平。",
+      "segment_id": "b-001",
+      "char_edit_distance": 7,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "3f9c45f6111fdd7d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-08-12T19:34:08.880Z",
+  "deleted_at": null,
+  "updated_at": "2026-08-12T19:44:59.785Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

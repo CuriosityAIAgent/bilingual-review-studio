@@ -1,0 +1,953 @@
+{
+  "rev": 3,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "u-s-markets-u-s-equities-gained-for-the-second-s",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：美国股票连续第二周上涨（标普500指数 +1.1%，纳斯达克指数 +1.6%），尽管半导体板块表现疲软（DRAM -5.3%，SOX -4.3%）。大型科技股表现分化，但软件股跑赢大盘（MSFT +21.8%，AMZN +17%，AAPL -7.2%，META -6.5%）。美国国债收益率走势分化，收益率曲线趋于陡峭（2年期 -4至4.29%，10年期 +6个基点至4.73%，30年期 +12个基点至5.27%）。30年期国债收益率触及2007年以来的阶段性高位。7月联邦公开市场委员会会议维持利率于3.50%-3.75%不变，3位委员持异议，支持加息25个基点。美元指数下跌 -1.5%，黄金上涨 +0.9%，布伦特原油下跌 -8.9%至约1× $90，尽管中东局势再度紧张。美国Q2 GDP增速（年化）为 +1.5%，低于市场预期的 +2.1%及Q1的 +2.1%。核心PCE弱于预期，年化增速为 +1.6%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 72,
+          "char_start": 69
+        },
+        {
+          "kind": "percent",
+          "norm": "1.1%",
+          "text": "1.1%",
+          "char_end": 78,
+          "char_start": 74
+        },
+        {
+          "kind": "percent",
+          "norm": "1.6%",
+          "text": "1.6%",
+          "char_end": 92,
+          "char_start": 88
+        },
+        {
+          "kind": "percent",
+          "norm": "-5.3%",
+          "text": "-5.3%",
+          "char_end": 140,
+          "char_start": 135
+        },
+        {
+          "kind": "percent",
+          "norm": "-4.3%",
+          "text": "-4.3%",
+          "char_end": 151,
+          "char_start": 146
+        },
+        {
+          "kind": "percent",
+          "norm": "21.8%",
+          "text": "21.8%",
+          "char_end": 214,
+          "char_start": 209
+        },
+        {
+          "kind": "percent",
+          "norm": "17%",
+          "text": "17%",
+          "char_end": 225,
+          "char_start": 222
+        },
+        {
+          "kind": "percent",
+          "norm": "-7.2%",
+          "text": "-7.2%",
+          "char_end": 237,
+          "char_start": 232
+        },
+        {
+          "kind": "percent",
+          "norm": "-6.5%",
+          "text": "-6.5%",
+          "char_end": 249,
+          "char_start": 244
+        },
+        {
+          "kind": "number",
+          "norm": "4000000000bps",
+          "text": "4bps",
+          "char_end": 310,
+          "char_start": 306
+        },
+        {
+          "kind": "percent",
+          "norm": "4.29%",
+          "text": "4.29%",
+          "char_end": 319,
+          "char_start": 314
+        },
+        {
+          "kind": "number",
+          "norm": "6000000000bps",
+          "text": "6bps",
+          "char_end": 330,
+          "char_start": 326
+        },
+        {
+          "kind": "percent",
+          "norm": "4.73%",
+          "text": "4.73%",
+          "char_end": 339,
+          "char_start": 334
+        },
+        {
+          "kind": "number",
+          "norm": "12000000000bps",
+          "text": "12bps",
+          "char_end": 351,
+          "char_start": 346
+        },
+        {
+          "kind": "percent",
+          "norm": "5.27%",
+          "text": "5.27%",
+          "char_end": 360,
+          "char_start": 355
+        },
+        {
+          "kind": "date",
+          "norm": "2007",
+          "text": "2007",
+          "char_end": 416,
+          "char_start": 412
+        },
+        {
+          "kind": "number",
+          "norm": "3.5",
+          "text": "3.50",
+          "char_end": 441,
+          "char_start": 437
+        },
+        {
+          "kind": "percent",
+          "norm": "-3.75%",
+          "text": "-3.75%",
+          "char_end": 447,
+          "char_start": 441
+        },
+        {
+          "kind": "number",
+          "norm": "25000000000bps",
+          "text": "25bps",
+          "char_end": 485,
+          "char_start": 480
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.5%",
+          "text": "-1.5%",
+          "char_end": 544,
+          "char_start": 539
+        },
+        {
+          "kind": "percent",
+          "norm": "0.9%",
+          "text": "0.9%",
+          "char_end": 563,
+          "char_start": 559
+        },
+        {
+          "kind": "percent",
+          "norm": "-8.9%",
+          "text": "-8.9%",
+          "char_end": 587,
+          "char_start": 582
+        },
+        {
+          "kind": "currency",
+          "norm": "90",
+          "text": "$90",
+          "char_end": 596,
+          "char_start": 592
+        },
+        {
+          "kind": "percent",
+          "norm": "1.5%",
+          "text": "1.5%",
+          "char_end": 676,
+          "char_start": 672
+        },
+        {
+          "kind": "percent",
+          "norm": "2.1%",
+          "text": "2.1%",
+          "char_end": 717,
+          "char_start": 713
+        },
+        {
+          "kind": "percent",
+          "norm": "2.1%",
+          "text": "2.1%",
+          "char_end": 732,
+          "char_start": 728
+        },
+        {
+          "kind": "percent",
+          "norm": "1.6%",
+          "text": "1.6%",
+          "char_end": 776,
+          "char_start": 772
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 72,
+          "char_start": 65
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 86,
+          "char_start": 80
+        }
+      ],
+      "qe_score": 0.25,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：美国股票连续第二周上涨（标普500指数 +1.1%，纳斯达克指数 +1.6%），尽管半导体板块表现疲软（DRAM -5.3%，SOX -4.3%）。大型科技股表现分化，但软件股跑赢大盘（MSFT +21.8%，AMZN +17%，AAPL -7.2%，META -6.5%）。美国国债收益率走势分化，收益率曲线趋于陡峭（2年期 -4个基点至4.29%，10年期 +6个基点至4.73%，30年期 +12个基点至5.27%）。30年期国债收益率触及2007年以来的高位。7月联邦公开市场委员会会议维持利率于3.50%-3.75%不变，3位委员持异议，支持加息25个基点。美元指数下跌 -1.5%，黄金上涨 +0.9%，布伦特原油下跌 -8.9%至约$90，尽管中东局势再度紧张。美国Q2 GDP年化增速为 +1.5%，低于市场预期的 +2.1%及Q1的 +2.1%。核心PCE弱于预期，年化增速为 +1.6%。",
+      "iterations": 2,
+      "seg_status": "edited",
+      "source_text": "U.S. markets: U.S. equities gained for the second straight week (S&P 500 +1.1%, Nasdaq +1.6%) despite weakness in semiconductors (DRAM -5.3%, SOX -4.3%). Big tech was mixed though software outperformed (MSFT +21.8%, AMZN +17%, AAPL -7.2%, META -6.5%). Treasury yields were mixed with curve steepening (2Y -4bps to 4.29%, 10Y +6bps to 4.73%, 30Y +12bps to 5.27%). The 30Y reached some of its highest levels since 2007. Rates were held at 3.50-3.75% with 3 dissenters in favor of a 25bps hike at the July FOMC meeting. The dollar index fell -1.5%, gold gained +0.9%, Brent crude fell -8.9% to ~$90 even as hostilities resumed in the Middle East. U.S. Q2 GDP growth printed +1.5% annualized, below expectations for +2.1% and Q1’s +2.1%. Core PCE was weaker than expected at +1.6% annualized.",
+      "critic_flags": [
+        {
+          "span": "4bps",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "4"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "yield curve",
+          "applied": false,
+          "approved_target": "收益率曲线"
+        },
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "4bps",
+              "message": "Numeric value \"4bps\" (mantissa 4) not preserved in translation",
+              "expected": "4"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：上周欧洲股票上涨（斯托克50指数 +1.2%），盈利表现稳健（同比增速约20%）。欧元区Q2 GDP超预期（环比 +0.4%，市场共识为 +0.2%），受人工智能(AI)投资及政府支出提振。通胀有所升温，7月消费者价格指数同比 +2.9%，与市场共识一致（前值为 +2.8%），主要由能源价格驱动。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 58,
+          "char_start": 56
+        },
+        {
+          "kind": "percent",
+          "norm": "1.2%",
+          "text": "1.2%",
+          "char_end": 64,
+          "char_start": 60
+        },
+        {
+          "kind": "percent",
+          "norm": "20%",
+          "text": "20%",
+          "char_end": 105,
+          "char_start": 102
+        },
+        {
+          "kind": "percent",
+          "norm": "0.4%",
+          "text": "0.4%",
+          "char_end": 155,
+          "char_start": 151
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 168,
+          "char_start": 164
+        },
+        {
+          "kind": "percent",
+          "norm": "2.9%",
+          "text": "2.9%",
+          "char_end": 271,
+          "char_start": 267
+        },
+        {
+          "kind": "percent",
+          "norm": "2.8%",
+          "text": "2.8%",
+          "char_end": 308,
+          "char_start": 304
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：上周欧洲股票上涨（斯托克50指数 +1.2%），盈利表现稳健（同比增速约20%）。欧元区Q2 GDP超预期（环比 +0.4%，市场共识为 +0.2%），受人工智能(AI)投资及政府支出提振。通胀有所升温，7月消费者价格指数同比 +2.9%，与市场共识一致（前值为 +2.8%），主要由能源价格驱动。",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "Europe markets: European equities rose last week (Stoxx 50 +1.2%) as earnings were solid (growing at ~20% y/y). Eurozone Q2 GDP surprised positively (+0.4% q/q vs +0.2% consensus), supported by AI investment and government spending. Inflation was hotter as July CPI +2.9% y/y in line with consensus (vs +2.8% prior), driven by energy.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "盈利"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        },
+        {
+          "source": "Consumer Price Index",
+          "applied": false,
+          "approved_target": "消费者价格指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：上周日本股票小幅下跌（日经指数 +0.4%，东证指数 +0.2%）。日本央行如期维持政策利率于1%不变，但行长植田和男的表态偏鹰派——释放信号称，在经济增长风险总体均衡、但通胀存在上行空间风险的背景下，日本央行有意继续加息。美元兑日元汇率急跌至近157，此前美日两国当局协同干预外汇市场，进行汇率检查并买入日元，干预规模约达1× $53十亿美元。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.4%",
+          "text": "0.4%",
+          "char_end": 70,
+          "char_start": 66
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 83,
+          "char_start": 79
+        },
+        {
+          "kind": "percent",
+          "norm": "1%",
+          "text": "1%",
+          "char_end": 140,
+          "char_start": 138
+        },
+        {
+          "kind": "number",
+          "norm": "157",
+          "text": "157",
+          "char_end": 366,
+          "char_start": 363
+        },
+        {
+          "kind": "currency",
+          "norm": "53000000000",
+          "text": "$53 billion",
+          "char_end": 506,
+          "char_start": 495
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：上周日本股票小幅下跌（日经指数 -0.4%，东证指数 -0.2%）。日本央行如期维持政策利率于1%不变，但行长植田和男的表态偏鹰派——释放信号称，在经济增长风险总体均衡、但通胀存在上行空间风险的背景下，日本央行有意继续加息。美元兑日元汇率急跌至近157，此前美日两国当局协同干预外汇市场，进行汇率检查并买入日元，干预规模约达$530亿美元。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "Japan markets: Japanese equities fell slightly last week (Nikkei +0.4%, Topix +0.2%). The Bank of Japan held its policy rate unchanged at 1% as expected, though the messaging from Governor Ueda was hawkish – signaling that the BoJ intends to keep raising rates against a backdrop of balanced growth risks but upside inflation risks. USDJPY fell sharply to nearly 157 as U.S. and Japanese authorities cooperated to intervene in the FX market, conducting rate checks and buying yen to the tune of $53 billion.",
+      "critic_flags": [
+        {
+          "span": "billion",
+          "category": "number",
+          "severity": "major",
+          "suggestion": "十亿"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "central bank",
+          "applied": false,
+          "approved_target": "央行"
+        },
+        {
+          "source": "scale",
+          "applied": false,
+          "approved_target": "规模"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "billion",
+              "message": "\"billion\" (10^9) must render as \"十亿\" — scale not preserved.",
+              "expected": "十亿"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：上周中国股票走势分化（恒生指数 +3.7%，沪深300指数 -1.3%），互联网及人工智能(AI)股票出现反弹。7月官方制造业PMI为49.2，低于市场共识的50.0及前值50.3；非制造业PMI为49.0，低于市场共识的50.0及前值50.2。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "3.7%",
+          "text": "3.7%",
+          "char_end": 69,
+          "char_start": 65
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 78,
+          "char_start": 75
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.3%",
+          "text": "-1.3%",
+          "char_end": 84,
+          "char_start": 79
+        },
+        {
+          "kind": "number",
+          "norm": "49.2",
+          "text": "49.2",
+          "char_end": 159,
+          "char_start": 155
+        },
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50.0",
+          "char_end": 177,
+          "char_start": 173
+        },
+        {
+          "kind": "number",
+          "norm": "50.3",
+          "text": "50.3",
+          "char_end": 192,
+          "char_start": 188
+        },
+        {
+          "kind": "number",
+          "norm": "49",
+          "text": "49.0",
+          "char_end": 216,
+          "char_start": 212
+        },
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50.0",
+          "char_end": 234,
+          "char_start": 230
+        },
+        {
+          "kind": "number",
+          "norm": "50.2",
+          "text": "50.2",
+          "char_end": 249,
+          "char_start": 245
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：上周中国股票走势分化（恒生指数 +3.7%，沪深300指数 -1.3%），互联网及人工智能(AI)股票出现反弹。7月官方制造业PMI为49.2，低于市场共识的50.0及前值50.3；非制造业PMI为49.0，低于市场共识的50.0及前值50.2。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "China markets: Chinese equities were mixed last week (Hang Seng +3.7%, CSI 300 -1.3%) as internet and AI stocks rebounded. July official manufacturing PMI 49.2 vs consensus 50.0 and prior 50.3; non-manufacturing 49.0 vs consensus 50.0 and prior 50.2.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_711afea0-468",
+  "source": {
+    "type": "txt",
+    "filename": "u-s-markets-u-s-equities-gained-for-the-second-s.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 11.03,
+    "hter_by_category": {
+      "accuracy": 0.023
+    },
+    "number_fail_rate": 0.5,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_0ab1b6b0-885",
+      "ts": "2026-08-02T10:11:41.954Z",
+      "hter": 0.007,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国市场：美国股票连续第二周上涨（标普500指数 +1.1%，纳斯达克指数 +1.6%），尽管半导体板块表现疲软（DRAM -5.3%，SOX -4.3%）。大型科技股表现分化，但软件股跑赢大盘（MSFT +21.8%，AMZN +17%，AAPL -7.2%，META -6.5%）。美国国债收益率走势分化，收益率曲线趋于陡峭（2年期 -4个基点至4.29%，10年期 +6个基点至4.73%，30年期 +12个基点至5.27%）。30年期国债收益率触及2007年以来的阶段性高位。7月联邦公开市场委员会会议维持利率于3.50%-3.75%不变，3位委员持异议，支持加息25个基点。美元指数下跌 -1.5%，黄金上涨 +0.9%，布伦特原油下跌 -8.9%至约1× $90，尽管中东局势再度紧张。美国Q2 GDP增速（年化）为 +1.5%，低于市场预期的 +2.1%及Q1的 +2.1%。核心PCE弱于预期，年化增速为 +1.6%。",
+      "action": "edit",
+      "before": "美国市场：美国股票连续第二周上涨（标普500指数 +1.1%，纳斯达克指数 +1.6%），尽管半导体板块表现疲软（DRAM -5.3%，SOX -4.3%）。大型科技股表现分化，但软件股跑赢大盘（MSFT +21.8%，AMZN +17%，AAPL -7.2%，META -6.5%）。美国国债收益率走势分化，收益率曲线趋于陡峭（2年期 -4至4.29%，10年期 +6个基点至4.73%，30年期 +12个基点至5.27%）。30年期国债收益率触及2007年以来的阶段性高位。7月联邦公开市场委员会会议维持利率于3.50%-3.75%不变，3位委员持异议，支持加息25个基点。美元指数下跌 -1.5%，黄金上涨 +0.9%，布伦特原油下跌 -8.9%至约1× $90，尽管中东局势再度紧张。美国Q2 GDP增速（年化）为 +1.5%，低于市场预期的 +2.1%及Q1的 +2.1%。核心PCE弱于预期，年化增速为 +1.6%。",
+      "segment_id": "b-001",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_ed8cb873-556",
+      "ts": "2026-08-02T10:12:29.322Z",
+      "hter": 0.027,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国市场：美国股票连续第二周上涨（标普500指数 +1.1%，纳斯达克指数 +1.6%），尽管半导体板块表现疲软（DRAM -5.3%，SOX -4.3%）。大型科技股表现分化，但软件股跑赢大盘（MSFT +21.8%，AMZN +17%，AAPL -7.2%，META -6.5%）。美国国债收益率走势分化，收益率曲线趋于陡峭（2年期 -4个基点至4.29%，10年期 +6个基点至4.73%，30年期 +12个基点至5.27%）。30年期国债收益率触及2007年以来的高位。7月联邦公开市场委员会会议维持利率于3.50%-3.75%不变，3位委员持异议，支持加息25个基点。美元指数下跌 -1.5%，黄金上涨 +0.9%，布伦特原油下跌 -8.9%至约$90，尽管中东局势再度紧张。美国Q2 GDP年化增速为 +1.5%，低于市场预期的 +2.1%及Q1的 +2.1%。核心PCE弱于预期，年化增速为 +1.6%。",
+      "action": "edit",
+      "before": "美国市场：美国股票连续第二周上涨（标普500指数 +1.1%，纳斯达克指数 +1.6%），尽管半导体板块表现疲软（DRAM -5.3%，SOX -4.3%）。大型科技股表现分化，但软件股跑赢大盘（MSFT +21.8%，AMZN +17%，AAPL -7.2%，META -6.5%）。美国国债收益率走势分化，收益率曲线趋于陡峭（2年期 -4个基点至4.29%，10年期 +6个基点至4.73%，30年期 +12个基点至5.27%）。30年期国债收益率触及2007年以来的阶段性高位。7月联邦公开市场委员会会议维持利率于3.50%-3.75%不变，3位委员持异议，支持加息25个基点。美元指数下跌 -1.5%，黄金上涨 +0.9%，布伦特原油下跌 -8.9%至约1× $90，尽管中东局势再度紧张。美国Q2 GDP增速（年化）为 +1.5%，低于市场预期的 +2.1%及Q1的 +2.1%。核心PCE弱于预期，年化增速为 +1.6%。",
+      "segment_id": "b-001",
+      "char_edit_distance": 11,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_1d65cfe6-01a",
+      "ts": "2026-08-02T10:15:36.970Z",
+      "hter": 0.034,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "日本市场：上周日本股票小幅下跌（日经指数 -0.4%，东证指数 -0.2%）。日本央行如期维持政策利率于1%不变，但行长植田和男的表态偏鹰派——释放信号称，在经济增长风险总体均衡、但通胀存在上行空间风险的背景下，日本央行有意继续加息。美元兑日元汇率急跌至近157，此前美日两国当局协同干预外汇市场，进行汇率检查并买入日元，干预规模约达$530亿美元。",
+      "action": "edit",
+      "before": "日本市场：上周日本股票小幅下跌（日经指数 +0.4%，东证指数 +0.2%）。日本央行如期维持政策利率于1%不变，但行长植田和男的表态偏鹰派——释放信号称，在经济增长风险总体均衡、但通胀存在上行空间风险的背景下，日本央行有意继续加息。美元兑日元汇率急跌至近157，此前美日两国当局协同干预外汇市场，进行汇率检查并买入日元，干预规模约达1× $53十亿美元。",
+      "segment_id": "b-003",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "3f9c45f6111fdd7d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-08-02T10:10:47.981Z",
+  "deleted_at": null,
+  "updated_at": "2026-08-02T10:15:36.970Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

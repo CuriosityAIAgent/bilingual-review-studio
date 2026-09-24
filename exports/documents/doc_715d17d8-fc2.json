@@ -1,0 +1,163 @@
+{
+  "rev": 1,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "financial-services-industry-risk-factors-financi",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "金融服务行业风险因素。金融服务机构的资产与负债结构本质上具有货币属性，直接受到多种因素影响，包括国内外经济与政治环境、商业与金融领域的宏观趋势、影响国内外商业及金融界的立法与监管动态、货币政策与财政政策、利率、通胀、货币价值、市场状况、短期或长期融资与资本的可得性及成本、客户与交易对手的信用能力或市场认可的信用状况，以及交易市场的波动性。金融服务机构在高度监管的环境中运营，须遵守广泛的法律法规限制与约束，并接受监管机构的监督、检查与执法。若未能遵守上述任何法律、规则或法规（其中部分条款存在解释空间且可能随时发生变化），可能导致一系列不利后果，包括民事处罚、罚款、暂停或取消资格，以及存款保险资格的终止，从而对相关方产生重大不利影响。",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.971,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "金融服务行业风险因素。金融服务机构的资产与负债结构本质上具有货币属性，直接受到多种因素影响，包括国内外经济与政治环境、商业与金融领域的宏观趋势、影响国内外商业及金融界的立法与监管动态、货币政策与财政政策、利率、通胀、货币价值、市场状况、短期或长期融资与资本的可得性及成本、客户与交易对手的信用能力或市场认可的信用状况，以及交易市场的波动性。金融服务机构在高度监管的环境中运营，须遵守广泛的法律法规限制与约束，并接受监管机构的监督、检查与执法。若未能遵守上述任何法律、规则或法规（其中部分条款存在解释空间且可能随时发生变化），可能导致一系列不利后果，包括民事处罚、罚款、暂停或取消资格，以及存款保险资格的终止，从而对相关方产生重大不利影响。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Financial services industry risk factors. Financial services institutions have asset and liability structures that are essentially monetary in nature and are directly affected by many factors, including domestic and international economic and political conditions, broad trends in business and finance, legislation and regulation affecting the national and international business and financial communities, monetary and fiscal policies, interest rates, inflation, currency values, market conditions, the availability and cost of short-term or long-term funding and capital, the credit capacity or perceived creditworthiness of customers and counterparties, and the volatility of trading markets. Financial services institutions operate in a highly regulated environment and are subject to extensive legal and regulatory restrictions and limitations and to supervision, examination and enforcement by regulatory authorities. Failure to comply with any of these laws, rules or regulations, some of which are subject to interpretation and may be subject to change, could result in a variety of adverse consequences, including civil penalties, fines, suspension or expulsion, and termination of deposit insurance, which may have material adverse effects.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "volatility",
+          "applied": false,
+          "approved_target": "波动性"
+        },
+        {
+          "source": "fiscal policy",
+          "applied": false,
+          "approved_target": "财政政策"
+        },
+        {
+          "source": "monetary policy",
+          "applied": false,
+          "approved_target": "货币政策"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_715d17d8-fc2",
+  "source": {
+    "type": "txt",
+    "filename": "financial-services-industry-risk-factors-financi.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-30T02:51:33.572Z",
+  "deleted_at": null,
+  "updated_at": "2026-06-30T09:43:21.272Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

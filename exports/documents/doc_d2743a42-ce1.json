@@ -1,0 +1,3038 @@
+{
+  "rev": 0,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "The market's inflation fears are running ahead of reality",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "title",
+      "style": {
+        "level": 1
+      },
+      "mt_text": "Los temores inflacionarios del mercado se adelantan a la realidad",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los temores inflacionarios del mercado se adelantan a la realidad",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The market's inflation fears are running ahead of reality",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Al mirar hacia lo que resta de 2026 y las dinámicas que dan forma al mundo en la Perspectiva de Mitad de Año, resulta evidente que la inteligencia artificial, la fragmentación global y la inflación seguirán permeando las economías y los mercados.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 41,
+          "char_start": 37
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Al mirar hacia lo que resta de 2026 y las dinámicas que dan forma al mundo en la Perspectiva de Mitad de Año, resulta evidente que la inteligencia artificial, la fragmentación global y la inflación seguirán permeando las economías y los mercados.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "As we look ahead to the remainder of 2026 and the dynamics shaping the world in the Mid-Year Outlook, it's clear that artificial intelligence, global fragmentation and inflation will continue to permeate economies and the markets.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La inflación, en particular, tiene cada vez más probabilidades de estabilizarse en una zona más persistente, potencialmente durante años. Los precios de la energía probablemente exigirán una prima de riesgo geopolítico más permanente, mientras que las cadenas de suministro serán reencaminadas para garantizar la seguridad energética nacional, y no necesariamente al menor costo posible. Incluso si la inflación no representa actualmente un riesgo desproporcionado, se está convirtiendo en un factor de mayor peso.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La inflación, en particular, tiene cada vez más probabilidades de estabilizarse en una zona más persistente, potencialmente durante años. Los precios de la energía probablemente exigirán una prima de riesgo geopolítico más permanente, mientras que las cadenas de suministro serán reencaminadas para garantizar la seguridad energética nacional, y no necesariamente al menor costo posible. Incluso si la inflación no representa actualmente un riesgo desproporcionado, se está convirtiendo en un factor de mayor peso.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Inflation, in particular, is all the more likely to re-settle at a stickier zone, potentially for years to come. Energy prices will likely command a more permanent geopolitical risk premium, while supply chains will be re-routed to guarantee national energy security—and not necessarily at the lowest possible cost. Even if inflation isn't currently an outsized risk—it is becoming more of a factor.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "supply chains",
+          "applied": false,
+          "approved_target": "cadenas de suministro"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "El equilibrio precario de Estados Unidos",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.671,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "El equilibrio precario de Estados Unidos",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "America's tightrope walk",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Existe una nueva prima por acercar las cadenas de suministro al consumidor final, por desarrollar y adoptar nuevas tecnologías, y por asegurarlas en su totalidad. Ya sean países y gobiernos, o corporaciones y ciudadanos comunes, existe disposición a pagar más en previsión de un choque económico, algo que se ha vuelto cada vez más frecuente. Esa demanda intrínseca a nivel mundial implica que la inflación probablemente se incline más hacia los cambios de precios en bienes físicos, en lugar de salarios y mano de obra.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Existe una nueva prima por acercar las cadenas de suministro al consumidor final, por desarrollar y adoptar nuevas tecnologías, y por asegurarlas en su totalidad. Ya sean países y gobiernos, o corporaciones y ciudadanos comunes, existe disposición a pagar más en previsión de un choque económico, algo que se ha vuelto cada vez más frecuente. Esa demanda intrínseca a nivel mundial implica que la inflación probablemente se incline más hacia los cambios de precios en bienes físicos, en lugar de salarios y mano de obra.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "There is a renewed premium on bringing supply chains closer to the end consumer, building and adopting new technology, and securing it all. Whether it's countries and governments or corporations and ordinary citizens, there is a willingness to pay more in preparation of an economic shock, something that has become more and more common. That inherent demand worldwide means inflation is likely to become more tilted to price changes in physical goods, rather than wages and labor.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "supply chains",
+          "applied": false,
+          "approved_target": "cadenas de suministro"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-006",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "A esto se suma el impacto del conflicto en Irán y el Estrecho de Ormuz. La memoria reciente sugeriría que precios de energía más elevados llevarían a los bancos centrales a incrementar las tasas de interés en respuesta. Al menos, eso es lo que el mercado está descontando. Los inversionistas iniciaron 2026 esperando que la Reserva Federal recortara las tasas en medio punto porcentual. Esas apuestas se han desvanecido. Y los rendimientos de los bonos estadounidenses a 30 años han superado el 5% nuevamente. Sin embargo, es poco probable que se materialice un cambio en la comunicación de la Fed hacia un nuevo ciclo de alzas.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 250,
+          "char_start": 246
+        },
+        {
+          "kind": "number",
+          "norm": "30",
+          "text": "30",
+          "char_end": 356,
+          "char_start": 354
+        },
+        {
+          "kind": "percent",
+          "norm": "5%",
+          "text": "5%",
+          "char_end": 395,
+          "char_start": 393
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "A esto se suma el impacto del conflicto en Irán y el Estrecho de Ormuz. La memoria reciente sugeriría que precios de energía más elevados llevarían a los bancos centrales a incrementar las tasas de interés en respuesta. Al menos, eso es lo que el mercado está descontando. Los inversionistas iniciaron 2026 esperando que la Reserva Federal recortara las tasas en medio punto porcentual. Esas apuestas se han desvanecido. Y los rendimientos de los bonos estadounidenses a 30 años han superado el 5% nuevamente. Sin embargo, es poco probable que se materialice un cambio en la comunicación de la Fed hacia un nuevo ciclo de alzas.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Now, add on the impact of the conflict in Iran and the Strait of Hormuz. Recent memory would suggest higher energy prices would push central banks to hike interest rates in response. At least, that's what the market is pricing. Investors started 2026 expecting the Federal Reserve to cut rates by half a percentage point. Those bets have evaporated. And 30-year U.S. bond yields have breached 5% again. But a shift in messaging from the Fed toward a renewed hiking cycle is unlikely to materialize.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "investors",
+          "applied": false,
+          "approved_target": "inversionistas"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-007",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La historia muestra —con las excepciones de la década de 1970 y 2022— que la Fed tiene más probabilidades de flexibilizar las tasas ante choques petroleros, por temor a la destrucción de la demanda derivada de precios de energía elevados de manera prolongada.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2022",
+          "text": "2022",
+          "char_end": 55,
+          "char_start": 51
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La historia muestra —con las excepciones de la década de 1970 y 2022— que la Fed tiene más probabilidades de flexibilizar las tasas ante choques petroleros, por temor a la destrucción de la demanda derivada de precios de energía elevados de manera prolongada.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "History shows—with the exceptions of the 1970s and 2022—the Fed is more likely to ease rates into oil shocks for fear of demand destruction from prolonged higher energy prices.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-008",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Sin embargo, ante la continuidad de datos económicos sólidos y una inflación general actualmente en 3.3% interanual, es más probable que la Fed se mantenga en pausa. A pesar de no recortar las tasas, esto podría resultar igualmente estimulante para los activos de riesgo, en la medida en que las tasas de interés ajustadas por inflación disminuyan.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "3.3%",
+          "text": "3.3%",
+          "char_end": 106,
+          "char_start": 102
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Sin embargo, ante la continuidad de datos económicos sólidos y una inflación general actualmente en 3.3% interanual, es más probable que la Fed se mantenga en pausa. A pesar de no recortar las tasas, esto podría resultar igualmente estimulante para los activos de riesgo, en la medida en que las tasas de interés ajustadas por inflación disminuyan.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "But in the face of continued robust economic data, and higher headline inflation currently running at 3.3% year-over-year, the Fed is more likely to be on hold. Despite not cutting rates, this could still end up being stimulative to risk assets as inflation adjusted rates fall.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-009",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "La señal de alerta temprana",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La señal de alerta temprana",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Canary in the coal mine",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-010",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "¿Cómo se sabe cuándo es momento de subir las tasas? La señal temprana podría encontrarse en América Latina.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.828,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "¿Cómo se sabe cuándo es momento de subir las tasas? La señal temprana podría encontrarse en América Latina.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "How do you know when it's time to hike? The early signal might lie in Latin America.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-011",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Debido a la exposición de la región a las fluctuaciones de las materias primas, la política monetaria ha sido más reactiva al riesgo inflacionario. En las últimas décadas, y de manera decisiva desde la pandemia de COVID-19, los principales bancos centrales latinoamericanos han pasado de ser seguidores de política a líderes del ciclo, encabezando tanto las fases de endurecimiento como las de flexibilización.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "19",
+          "text": "19",
+          "char_end": 177,
+          "char_start": 175
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Debido a la exposición de la región a las fluctuaciones de las materias primas, la política monetaria ha sido más reactiva al riesgo inflacionario. En las últimas décadas, y de manera decisiva desde la pandemia de COVID-19, los principales bancos centrales latinoamericanos han pasado de ser seguidores de política a líderes del ciclo, encabezando tanto las fases de endurecimiento como las de flexibilización.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Due to the region's exposure to commodity fluctuations, monetary policy has been more reactive to inflationary risk. Over the past few decades, and decisively since the COVID-19 pandemic, core Latin American central banks have shifted from policy takers to cycle leaders, leading both tightening and easing phases.",
+      "critic_flags": [
+        {
+          "span": "19",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "19"
+        }
+      ],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "19",
+              "message": "Numeric value \"19\" (mantissa 19) not preserved in translation",
+              "expected": "19"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-012",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Antes del cambio de siglo, eran en gran medida seguidores de política, limitados por una débil credibilidad antiinflacionaria, vulnerabilidades cambiarias y la necesidad de seguir de cerca a la Fed.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Antes del cambio de siglo, eran en gran medida seguidores de política, limitados por una débil credibilidad antiinflacionaria, vulnerabilidades cambiarias y la necesidad de seguir de cerca a la Fed.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Before the turn of the century, they were largely policy takers constrained by weak inflation credibility, currency vulnerabilities and the need to shadow the Fed.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-013",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Tras una serie de cambios institucionales orientados a marcos de metas de inflación, independencia operativa y tipos de cambio flotantes, los bancos centrales latinoamericanos ganaron mayor credibilidad. Para la época de la crisis financiera, desarrollaron la capacidad de flexibilizar la política de manera contracíclica sin desestabilizar su moneda, un equilibrio delicado.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Tras una serie de cambios institucionales orientados a marcos de metas de inflación, independencia operativa y tipos de cambio flotantes, los bancos centrales latinoamericanos ganaron mayor credibilidad. Para la época de la crisis financiera, desarrollaron la capacidad de flexibilizar la política de manera contracíclica sin desestabilizar su moneda, un equilibrio delicado.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "After a series of institutional changes targeted inflation frameworks, operational independence and floating exchange rates, Latin American central banks became more credible. By the financial crisis, they developed the ability to ease counter-cyclically without destabilizing their currency—a delicate balance.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-014",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Sin embargo, tras la pandemia de COVID-19, un período que estuvo marcado por una demanda desbordante después de la reapertura económica, los bancos centrales latinoamericanos fueron los primeros en iniciar lo que más tarde se conocería como uno de los ciclos de endurecimiento más pronunciados de la historia.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "19",
+          "text": "19",
+          "char_end": 23,
+          "char_start": 21
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Sin embargo, tras la pandemia de COVID-19, un período que estuvo marcado por una demanda desbordante después de la reapertura económica, los bancos centrales latinoamericanos fueron los primeros en iniciar lo que más tarde se conocería como uno de los ciclos de endurecimiento más pronunciados de la historia.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "But, after the COVID-19 pandemic, a period which saw roaring demand after the economy reopened, Latin American central banks were the first to kick off what would later be known as one of the sharpest tightening cycles in history.",
+      "critic_flags": [
+        {
+          "span": "19",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "19"
+        }
+      ],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "19",
+              "message": "Numeric value \"19\" (mantissa 19) not preserved in translation",
+              "expected": "19"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-015",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "El Banco de Brasil comenzó a elevar las tasas en marzo de 2021. El Banco de México lo siguió en junio del mismo año. Seis meses después, el Banco de Inglaterra —conocido por ser más reactivo entre los bancos centrales del G-10— también incrementó las tasas, seguido por la Fed y, finalmente, por el Banco Central Europeo.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2021",
+          "text": "2021",
+          "char_end": 57,
+          "char_start": 53
+        },
+        {
+          "kind": "number",
+          "norm": "10",
+          "text": "10",
+          "char_end": 193,
+          "char_start": 191
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "El Banco de Brasil comenzó a elevar las tasas en marzo de 2021. El Banco de México lo siguió en junio del mismo año. Seis meses después, el Banco de Inglaterra —conocido por ser más reactivo entre los bancos centrales del G-10— también incrementó las tasas, seguido por la Fed y, finalmente, por el Banco Central Europeo.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The Bank of Brazil started raising rates in March of 2021. The Bank of Mexico followed in June of the same year. Six months later, the Bank of England—known for being more responsive among G-10 central banks—also hiked rates, followed by the Fed and eventually the European Central Bank.",
+      "critic_flags": [
+        {
+          "span": "10",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "10"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "central bank",
+          "applied": false,
+          "approved_target": "banco central"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "10",
+              "message": "Numeric value \"10\" (mantissa 10) not preserved in translation",
+              "expected": "10"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-016",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "El proceso se repitió al normalizarse las tasas. Las dos economías latinoamericanas más grandes comenzaron a recortar las tasas primero, marcando un nuevo tono y pasando de seguidores de política a líderes del ciclo en ambas direcciones.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "El proceso se repitió al normalizarse las tasas. Las dos economías latinoamericanas más grandes comenzaron a recortar las tasas primero, marcando un nuevo tono y pasando de seguidores de política a líderes del ciclo en ambas direcciones.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "It happened again as rates normalized. The two largest Latin American economies started cutting rates first, setting a new tone and going from policy takers to cycle leaders in both directions.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-017",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "Los bancos centrales de América Latina se han adelantado a la curva",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.779,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los bancos centrales de América Latina se han adelantado a la curva",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "LatAm central banks have been ahead of the curve",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-018",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Tasa objetivo del banco central, %. Este gráfico de líneas muestra las tasas de interés objetivo establecidas por seis bancos centrales desde 2020 hasta principios de 2026, e ilustra cómo los bancos centrales de mercados emergentes elevaron las tasas con mucha mayor anticipación y de forma más agresiva que sus contrapartes de mercados desarrollados. Los dos bancos centrales de mercados emergentes —Brasil y México— comenzaron a subir las tasas a principios de 2021, mucho antes de que los bancos de mercados desarrollados se movieran. La tasa de Brasil escaló desde aproximadamente 2% a principios de 2021 hasta cerca de 13.5% a mediados de 2022, y volvió a subir hasta un máximo cercano al 15% a finales de 2025. La tasa de México aumentó desde alrededor del 4% a mediados de 2021 hasta aproximadamente 11% a principios de 2023, y desde entonces ha descendido a cerca del 7% a principios de 2026. La Reserva Federal pasó de cerca de cero a aproximadamente 5.5% a mediados de 2023, y desde entonces ha recortado hasta cerca del 4.5%. El Banco de Japón apenas se movió, manteniéndose cerca de cero o ligeramente por debajo hasta un pequeño incremento de aproximadamente 0.5–1% a finales de 2025 y en 2026.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2020",
+          "text": "2020",
+          "char_end": 114,
+          "char_start": 110
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 133,
+          "char_start": 129
+        },
+        {
+          "kind": "date",
+          "norm": "2021",
+          "text": "2021",
+          "char_end": 360,
+          "char_start": 356
+        },
+        {
+          "kind": "percent",
+          "norm": "2%",
+          "text": "2%",
+          "char_end": 444,
+          "char_start": 442
+        },
+        {
+          "kind": "date",
+          "norm": "2021",
+          "text": "2021",
+          "char_end": 458,
+          "char_start": 454
+        },
+        {
+          "kind": "percent",
+          "norm": "13.5%",
+          "text": "13.5%",
+          "char_end": 478,
+          "char_start": 473
+        },
+        {
+          "kind": "date",
+          "norm": "2022",
+          "text": "2022",
+          "char_end": 490,
+          "char_start": 486
+        },
+        {
+          "kind": "percent",
+          "norm": "15%",
+          "text": "15%",
+          "char_end": 526,
+          "char_start": 523
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 539,
+          "char_start": 535
+        },
+        {
+          "kind": "percent",
+          "norm": "4%",
+          "text": "4%",
+          "char_end": 573,
+          "char_start": 571
+        },
+        {
+          "kind": "date",
+          "norm": "2021",
+          "text": "2021",
+          "char_end": 585,
+          "char_start": 581
+        },
+        {
+          "kind": "percent",
+          "norm": "11%",
+          "text": "11%",
+          "char_end": 599,
+          "char_start": 596
+        },
+        {
+          "kind": "date",
+          "norm": "2023",
+          "text": "2023",
+          "char_end": 613,
+          "char_start": 609
+        },
+        {
+          "kind": "percent",
+          "norm": "7%",
+          "text": "7%",
+          "char_end": 658,
+          "char_start": 656
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 672,
+          "char_start": 668
+        },
+        {
+          "kind": "percent",
+          "norm": "5.5%",
+          "text": "5.5%",
+          "char_end": 727,
+          "char_start": 723
+        },
+        {
+          "kind": "date",
+          "norm": "2023",
+          "text": "2023",
+          "char_end": 739,
+          "char_start": 735
+        },
+        {
+          "kind": "percent",
+          "norm": "4.5%",
+          "text": "4.5%",
+          "char_end": 779,
+          "char_start": 775
+        },
+        {
+          "kind": "number",
+          "norm": "0.5",
+          "text": "0.5",
+          "char_end": 881,
+          "char_start": 878
+        },
+        {
+          "kind": "percent",
+          "norm": "1%",
+          "text": "1%",
+          "char_end": 884,
+          "char_start": 882
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 897,
+          "char_start": 893
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 907,
+          "char_start": 903
+        }
+      ],
+      "qe_score": 0.815,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Tasa objetivo del banco central, %. Este gráfico de líneas muestra las tasas de interés objetivo establecidas por seis bancos centrales desde 2020 hasta principios de 2026, e ilustra cómo los bancos centrales de mercados emergentes elevaron las tasas con mucha mayor anticipación y de forma más agresiva que sus contrapartes de mercados desarrollados. Los dos bancos centrales de mercados emergentes —Brasil y México— comenzaron a subir las tasas a principios de 2021, mucho antes de que los bancos de mercados desarrollados se movieran. La tasa de Brasil escaló desde aproximadamente 2% a principios de 2021 hasta cerca de 13.5% a mediados de 2022, y volvió a subir hasta un máximo cercano al 15% a finales de 2025. La tasa de México aumentó desde alrededor del 4% a mediados de 2021 hasta aproximadamente 11% a principios de 2023, y desde entonces ha descendido a cerca del 7% a principios de 2026. La Reserva Federal pasó de cerca de cero a aproximadamente 5.5% a mediados de 2023, y desde entonces ha recortado hasta cerca del 4.5%. El Banco de Japón apenas se movió, manteniéndose cerca de cero o ligeramente por debajo hasta un pequeño incremento de aproximadamente 0.5–1% a finales de 2025 y en 2026.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Central bank target rate, %. This line chart displays the target interest rates set by six central banks from 2020 through early 2026, illustrating how emerging market central banks raised rates much earlier and more aggressively than their developed-market counterparts. The two emerging market central banks—Brazil and Mexico—began hiking rates in early 2021, well before the developed-market banks moved. Brazil's rate climbed from around 2% in early 2021 up to roughly 13.5% by mid-2022, then rose again to a peak near 15% in late 2025. Mexico's rate rose from about 4% in mid-2021 to around 11% by early 2023, and has since come down to approximately 7% by early 2026. The Federal Reserve went from near zero to about 5.5% by mid-2023, and has since cut back to roughly 4.5%. The Bank of Japan barely moved, staying near or just below zero until a small step up to roughly 0.5–1% in late 2025 into 2026.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "emerging markets",
+          "applied": false,
+          "approved_target": "mercados emergentes"
+        },
+        {
+          "source": "central bank",
+          "applied": false,
+          "approved_target": "banco central"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-019",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Fuente: Bloomberg Finance L.P. Datos al mes de abril de 2026. Nota: LatAm = América Latina.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 52,
+          "char_start": 48
+        },
+        {
+          "kind": "entity",
+          "norm": "Bloomberg",
+          "text": "Bloomberg",
+          "char_end": 17,
+          "char_start": 8
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Fuente: Bloomberg Finance L.P. Datos al mes de abril de 2026. Nota: LatAm = América Latina.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Source: Bloomberg Finance L.P. Data as of April 2026. Note: LatAm = Latin America.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-020",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La implicación es estructural: América Latina ya no importa los ciclos monetarios globales en el grado en que lo ha hecho históricamente. En cambio, proporciona cada vez más señales sobre la credibilidad antiinflacionaria, los puntos de inflexión de las tasas reales y la normalización de la política monetaria, especialmente cuando los precios de las materias primas impulsan el ciclo.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La implicación es estructural: América Latina ya no importa los ciclos monetarios globales en el grado en que lo ha hecho históricamente. En cambio, proporciona cada vez más señales sobre la credibilidad antiinflacionaria, los puntos de inflexión de las tasas reales y la normalización de la política monetaria, especialmente cuando los precios de las materias primas impulsan el ciclo.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The implication is structural: Latin America no longer imports global monetary cycles to the degree it has historically. Instead, it increasingly provides signals on inflation credibility, real-rate turning points, and policy normalization—especially as commodity prices drive the impulse.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-021",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Y en este momento, la inflación se encuentra dentro de las bandas de tolerancia en la mayoría de las principales economías latinoamericanas. Al utilizar la política monetaria latinoamericana como guía de posibles cambios en las tasas globales, el mensaje es claro: aún no hemos llegado a ese punto.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Y en este momento, la inflación se encuentra dentro de las bandas de tolerancia en la mayoría de las principales economías latinoamericanas. Al utilizar la política monetaria latinoamericana como guía de posibles cambios en las tasas globales, el mensaje es claro: aún no hemos llegado a ese punto.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "And right now, inflation is within the bands of tolerance across most major Latin American economies. In using Latin American monetary policy as a guiding light of potential changes in global rates, the message is clear: We're not there yet.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-022",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "Punto de presión",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Punto de presión",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Pressure point",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-023",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Las economías que ya enfrentan perspectivas de crecimiento más moderadas y que ahora se ven afectadas por un choque en los términos de intercambio derivado de precios de energía más elevados —como el Reino Unido y la Eurozona— han visto cómo los mercados descuentan hasta tres alzas de tasas este año por parte de sus respectivos bancos centrales.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Las economías que ya enfrentan perspectivas de crecimiento más moderadas y que ahora se ven afectadas por un choque en los términos de intercambio derivado de precios de energía más elevados —como el Reino Unido y la Eurozona— han visto cómo los mercados descuentan hasta tres alzas de tasas este año por parte de sus respectivos bancos centrales.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Already facing a more subdued growth outlook, economies facing a terms of trade shock on the back of higher energy prices—like the United Kingdom and the Eurozone—have seen markets pricing in as many as three rate hikes this year from their respective central banks.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-024",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La revaluación de las tasas de política monetaria ha empujado los rendimientos de los bonos de mayor duración a nuevos máximos en el Reino Unido. Si bien en otras partes del mundo existen más factores a considerar, el movimiento de 70 puntos básicos en los rendimientos de los gilts a 10 años está vinculado en gran medida al impacto inflacionario de la guerra. Por quinto año consecutivo, la inflación se sitúa muy por encima del objetivo del 2% del Banco de Inglaterra.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "70",
+          "text": "70",
+          "char_end": 175,
+          "char_start": 173
+        },
+        {
+          "kind": "number",
+          "norm": "10",
+          "text": "10",
+          "char_end": 198,
+          "char_start": 196
+        },
+        {
+          "kind": "percent",
+          "norm": "2%",
+          "text": "2%",
+          "char_end": 351,
+          "char_start": 349
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La revaluación de las tasas de política monetaria ha empujado los rendimientos de los bonos de mayor duración a nuevos máximos en el Reino Unido. Si bien en otras partes del mundo existen más factores a considerar, el movimiento de 70 puntos básicos en los rendimientos de los gilts a 10 años está vinculado en gran medida al impacto inflacionario de la guerra. Por quinto año consecutivo, la inflación se sitúa muy por encima del objetivo del 2% del Banco de Inglaterra.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The policy-rate repricing has pushed longer dated bond yields to new highs in the United Kingdom. While in other parts of the world, there are more factors to consider, the 70 basis point move in 10-year gilt yields is largely linked to the inflationary impact of the war. For the fifth year running, inflation sits well above the Bank of England's 2% target.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "basis points",
+          "applied": false,
+          "approved_target": "puntos básicos"
+        },
+        {
+          "source": "duration",
+          "applied": true,
+          "approved_target": "duración"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-025",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Una resolución rápida de la guerra y la consiguiente caída en los precios de las materias primas podría provocar un descenso pronunciado de los rendimientos en el Reino Unido y la Eurozona, a medida que se deshagan las expectativas del mercado sobre alzas de tasas. Si bien un conflicto prolongado podría ejercer mayor presión alcista sobre los rendimientos, también conlleva riesgos a la baja para el crecimiento, lo que actúa como un techo para el alza de los rendimientos de los bonos.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.968,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Una resolución rápida de la guerra y la consiguiente caída en los precios de las materias primas podría provocar un descenso pronunciado de los rendimientos en el Reino Unido y la Eurozona, a medida que se deshagan las expectativas del mercado sobre alzas de tasas. Si bien un conflicto prolongado podría ejercer mayor presión alcista sobre los rendimientos, también conlleva riesgos a la baja para el crecimiento, lo que actúa como un techo para el alza de los rendimientos de los bonos.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "A quick resolution to the war and subsequent fall in commodity prices could see yields fall sharply in the United Kingdom and the Eurozone as market expectations for rate hikes unwind. While a prolonged conflict may exert further upward pressure on yields, it also comes with downside risks to growth, serving as a cap to surging bond yields.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-026",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "La excepción: una nota sobre China",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La excepción: una nota sobre China",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The exception: a note on China",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-027",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "China se distingue: no enfrenta riesgo inflacionario, sino que exporta presión deflacionaria. Dado el tamaño de China y su papel como el mayor fabricante del mundo, esto tiene relevancia a escala global.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "China se distingue: no enfrenta riesgo inflacionario, sino que exporta presión deflacionaria. Dado el tamaño de China y su papel como el mayor fabricante del mundo, esto tiene relevancia a escala global.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "China stands apart: It does not face inflation risk, but instead exports deflationary pressure. Given China's scale and role as the largest manufacturer in the world, that matters globally.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-028",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La inflación al consumidor en el país se mantiene contenida, mientras que los precios al productor continúan reflejando exceso de capacidad y escaso poder de fijación de precios. Sumado a una contracción del mercado inmobiliario y a la caída de los precios de exportación, esta dinámica tiende a trasladarse a los mercados globales si persiste, ejerciendo presión a la baja sobre la inflación global de bienes a través de la manufactura, las exportaciones y las cadenas de suministro.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La inflación al consumidor en el país se mantiene contenida, mientras que los precios al productor continúan reflejando exceso de capacidad y escaso poder de fijación de precios. Sumado a una contracción del mercado inmobiliario y a la caída de los precios de exportación, esta dinámica tiende a trasladarse a los mercados globales si persiste, ejerciendo presión a la baja sobre la inflación global de bienes a través de la manufactura, las exportaciones y las cadenas de suministro.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Consumer inflation in the country remains subdued while producer prices continue to reflect excess capacity and weak pricing power. Marry that with a housing slump and declining export prices, and the dynamic has a tendency to spill over into global markets if persistent—exerting downward pressure on global goods inflation through manufacturing, exports and supply chains.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "supply chains",
+          "applied": false,
+          "approved_target": "cadenas de suministro"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-029",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Las medidas de inflación de China se encuentran cerca de cero, variación porcentual interanual. Este gráfico de líneas registra dos medidas de variación de precios en China en términos interanuales, desde aproximadamente mediados de 2022 hasta principios de 2026. El índice de precios al productor comenzó en torno al 6% a mediados de 2022 y cayó rápidamente, cruzando por debajo de cero a finales de 2022 y tocando fondo cerca del negativo 5% alrededor de junio de 2023, antes de recuperarse hasta el 0.5% al final del gráfico. El índice de precios al consumidor comenzó alrededor del 2.5% a mediados de 2022 y fue descendiendo gradualmente, manteniéndose en su mayor parte entre cero y 1% desde mediados de 2023 en adelante, cerrando el gráfico en 1.0%. Ambas medidas se encuentran ahora apenas por encima de la línea de cero, situándose muy próximas entre sí por primera vez desde el inicio del gráfico.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2022",
+          "text": "2022",
+          "char_end": 177,
+          "char_start": 173
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 196,
+          "char_start": 192
+        },
+        {
+          "kind": "percent",
+          "norm": "6%",
+          "text": "6%",
+          "char_end": 242,
+          "char_start": 240
+        },
+        {
+          "kind": "date",
+          "norm": "2022",
+          "text": "2022",
+          "char_end": 254,
+          "char_start": 250
+        },
+        {
+          "kind": "date",
+          "norm": "2022",
+          "text": "2022",
+          "char_end": 305,
+          "char_start": 301
+        },
+        {
+          "kind": "percent",
+          "norm": "5%",
+          "text": "5%",
+          "char_end": 340,
+          "char_start": 338
+        },
+        {
+          "kind": "date",
+          "norm": "2023",
+          "text": "2023",
+          "char_end": 357,
+          "char_start": 353
+        },
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 387,
+          "char_start": 383
+        },
+        {
+          "kind": "percent",
+          "norm": "2.5%",
+          "text": "2.5%",
+          "char_end": 457,
+          "char_start": 453
+        },
+        {
+          "kind": "date",
+          "norm": "2022",
+          "text": "2022",
+          "char_end": 469,
+          "char_start": 465
+        },
+        {
+          "kind": "percent",
+          "norm": "1%",
+          "text": "1%",
+          "char_end": 524,
+          "char_start": 522
+        },
+        {
+          "kind": "date",
+          "norm": "2023",
+          "text": "2023",
+          "char_end": 538,
+          "char_start": 534
+        },
+        {
+          "kind": "percent",
+          "norm": "1%",
+          "text": "1.0%",
+          "char_end": 571,
+          "char_start": 567
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Las medidas de inflación de China se encuentran cerca de cero, variación porcentual interanual. Este gráfico de líneas registra dos medidas de variación de precios en China en términos interanuales, desde aproximadamente mediados de 2022 hasta principios de 2026. El índice de precios al productor comenzó en torno al 6% a mediados de 2022 y cayó rápidamente, cruzando por debajo de cero a finales de 2022 y tocando fondo cerca del negativo 5% alrededor de junio de 2023, antes de recuperarse hasta el 0.5% al final del gráfico. El índice de precios al consumidor comenzó alrededor del 2.5% a mediados de 2022 y fue descendiendo gradualmente, manteniéndose en su mayor parte entre cero y 1% desde mediados de 2023 en adelante, cerrando el gráfico en 1.0%. Ambas medidas se encuentran ahora apenas por encima de la línea de cero, situándose muy próximas entre sí por primera vez desde el inicio del gráfico.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "China's inflation measures are near zero, year-over-year % change. This line chart tracks two measures of price changes in China on a year-over-year basis, from roughly mid-2022 through early 2026. The producer price index started at about 6% in mid-2022 and fell rapidly, crossing below zero by late 2022 and bottoming out near negative 5% around June 2023, before climbing back to 0.5% by the end of the chart. The consumer price index started around 2.5% in mid-2022 and drifted lower, hovering mostly between zero and 1% from mid-2023 onward, ending the chart at 1.0%. Both measures are now barely above the zero line, sitting close together for the first time since the chart began.",
+      "critic_flags": [
+        {
+          "span": "%",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "7 '%'"
+        }
+      ],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "%",
+              "message": "Percent sign dropped (7 → 6)",
+              "expected": "7 '%'"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-030",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Fuente: Bloomberg Finance L.P. Datos al mes de marzo de 2026.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 52,
+          "char_start": 48
+        },
+        {
+          "kind": "entity",
+          "norm": "Bloomberg",
+          "text": "Bloomberg",
+          "char_end": 17,
+          "char_start": 8
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Fuente: Bloomberg Finance L.P. Datos al mes de marzo de 2026.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Source: Bloomberg Finance L.P. Data as of March 2026.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-031",
+      "dnt": false,
+      "type": "disclaimer",
+      "mt_text": "Este material tiene únicamente fines informativos y puede informarle sobre ciertos productos y servicios ofrecidos por los negocios de banca privada, parte de JPMorgan Chase & Co. Las opiniones, estrategias o productos analizados pueden no ser apropiados para todas las personas y están sujetos a riesgos. Los inversionistas podrían recuperar menos de lo que invirtieron, y el rendimiento pasado no es un indicador confiable de los resultados futuros. Este material no debe considerarse un informe de análisis.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 1,
+        "tm_id": "tm-006",
+        "source": "TM"
+      },
+      "final_text": "Este material tiene únicamente fines informativos y puede informarle sobre ciertos productos y servicios ofrecidos por los negocios de banca privada, parte de JPMorgan Chase & Co. Las opiniones, estrategias o productos analizados pueden no ser apropiados para todas las personas y están sujetos a riesgos. Los inversionistas podrían recuperar menos de lo que invirtieron, y el rendimiento pasado no es un indicador confiable de los resultados futuros. Este material no debe considerarse un informe de análisis.",
+      "iterations": 0,
+      "seg_status": "locked",
+      "source_text": "This material is for information purposes only and may inform you of certain products and services offered by private banking businesses, part of JPMorgan Chase & Co. Any views, strategies or products discussed may not be appropriate for all individuals and are subject to risks. Investors may get back less than they invested, and past performance is not a reliable indicator of future results. This material should not be regarded as a research report.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_d2743a42-ce1",
+  "source": {
+    "type": "txt",
+    "filename": "jpm-04-inflation-fears.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 0.129,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "7598090256a281d8",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-05T07:06:00.675Z",
+  "deleted_at": null,
+  "updated_at": "2026-06-05T07:06:00.675Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "es-419",
+  "schema_version": "1.0"
+}

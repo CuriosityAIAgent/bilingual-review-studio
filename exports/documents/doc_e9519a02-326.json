@@ -1,0 +1,3159 @@
+{
+  "rev": 30,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "The U.S.–China relationship: A new equilibrium",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "title",
+      "style": {
+        "level": 1
+      },
+      "mt_text": "La relación EE. UU.–China: un nuevo equilibrio",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La relación EE. UU.–China: un nuevo equilibrio",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The U.S.–China relationship: A new equilibrium",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La cumbre EE. UU.–China no tiene como objetivo un reinicio. Se trata de determinar si las dos economías más grandes del mundo pueden hacer más manejable una relación frágil. El diálogo a nivel de líderes de esta naturaleza ha sido poco frecuente —la última visita presidencial estadounidense a China fue en 2017— y desde entonces la relación ha estado marcada por confrontaciones intermitentes, presiones de desacoplamiento y la búsqueda de apalancamiento económico.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2017",
+          "text": "2017",
+          "char_end": 251,
+          "char_start": 247
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La cumbre EE. UU.–China no tiene como objetivo un reinicio. Se trata de determinar si las dos economías más grandes del mundo pueden hacer más manejable una relación frágil. El diálogo a nivel de líderes de esta naturaleza ha sido poco frecuente —la última visita presidencial estadounidense a China fue en 2017— y desde entonces la relación ha estado marcada por confrontaciones intermitentes, presiones de  desvinculación  y la búsqueda de apalancamiento económico.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "The U.S.–China summit is not about a reset. It is about whether the world's two largest economies can make a fragile relationship more manageable. Leader-level engagement of this kind has been rare—the last U.S. presidential visit to China was in 2017—and since then the relationship has been marked by on-and-off confrontation, decoupling pressure and the pursuit of economic leverage.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "leverage",
+          "applied": false,
+          "approved_target": "apalancamiento"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "A medida que los flujos comerciales han disminuido y las cadenas de suministro se han reconfigurado, ambas partes se han mostrado más dispuestas a poner a prueba las vulnerabilidades del otro. Sin embargo, los vínculos siguen siendo lo suficientemente significativos como para que una escalada no gestionada tenga consecuencias para el crecimiento, la inflación, las cadenas de suministro y los mercados.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "A medida que los flujos comerciales han disminuido y las cadenas de suministro se han reconfigurado, ambas partes se han mostrado más dispuestas a poner a prueba las vulnerabilidades del otro. Sin embargo, los vínculos siguen siendo lo suficientemente significativos como para que una  intensificación descontrolada del conflicto  tenga consecuencias para el crecimiento, la inflación, las cadenas de suministro y los mercados.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "As trade flows have declined and supply chains have shifted, both sides have become more willing to test each other's vulnerabilities. But the links remain large enough that unmanaged escalation would still matter for growth, inflation, supply chains and markets.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "supply chains",
+          "applied": false,
+          "approved_target": "cadenas de suministro"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La pregunta clave es cómo será el nuevo equilibrio entre EE. UU. y China. El diálogo por el simple hecho de dialogar aporta pocos utilidades. Incluso durante la Guerra Fría, los rivales cooperaban cuando el costo de no hacerlo era demasiado elevado. Para los mercados, una menor incertidumbre en materia de políticas sería una señal constructiva, especialmente para el comercio mundial, China y los mercados emergentes en general.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La pregunta clave es cómo será el nuevo equilibrio entre EE. UU. y China.  Mantener el diálogo solo por mantenerlo aporta pocos beneficios concretos.  Incluso durante la Guerra Fría, los rivales cooperaban cuando el costo de no hacerlo era demasiado elevado. Para los mercados, despejar parte de la incertidumbre en torno a la política económica sería una señal positiva, en especial para el comercio global, China y los mercados emergentes en general.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "The key question is what a new U.S.–China equilibrium looks like. Engagement for the sake of engagement brings few benefits. Even during the Cold War, rivals cooperated when the cost of no cooperation was too high. For markets, less policy uncertainty would be a constructive signal—especially for global trade, China and broader emerging markets.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "emerging markets",
+          "applied": false,
+          "approved_target": "mercados emergentes"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": [
+        {
+          "applied": true,
+          "rule_id": "nr-002",
+          "neutral_form": "utilidades",
+          "regional_form": "beneficios"
+        }
+      ]
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "A continuación presentamos cinco fuerzas que, en nuestra opinión, darán forma a ese equilibrio.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "A continuación presentamos cinco fuerzas que, en nuestra opinión, darán forma a ese equilibrio.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Here are five forces we think will shape that equilibrium.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-006",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "1. La relación ha sido dañada, pero no reemplazada",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "1. La relación ha sido dañada, pero no reemplazada",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "1. The relationship has been damaged, but not replaced",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-007",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "El vínculo comercial entre EE. UU. y China se ha debilitado, pero no ha desaparecido. Las exportaciones de bienes estadounidenses a China cayeron un 25.8% en 2025, mientras que las importaciones de bienes estadounidenses provenientes de China disminuyeron un 29.7%. Aun así, el comercio bilateral de bienes totalizó $414.7 mil millones el año pasado, incluidos $308.4 mil millones en importaciones estadounidenses desde China y $106.3 mil millones en exportaciones estadounidenses hacia China.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "25.8%",
+          "text": "25.8%",
+          "char_end": 106,
+          "char_start": 101
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 114,
+          "char_start": 110
+        },
+        {
+          "kind": "percent",
+          "norm": "29.7%",
+          "text": "29.7%",
+          "char_end": 162,
+          "char_start": 157
+        },
+        {
+          "kind": "currency",
+          "norm": "414700000000",
+          "text": "$414.7 billion",
+          "char_end": 223,
+          "char_start": 209
+        },
+        {
+          "kind": "currency",
+          "norm": "308400000000",
+          "text": "$308.4 billion",
+          "char_end": 259,
+          "char_start": 245
+        },
+        {
+          "kind": "currency",
+          "norm": "106300000000",
+          "text": "$106.3 billion",
+          "char_end": 305,
+          "char_start": 291
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "El vínculo comercial entre EE. UU. y China se ha debilitado, pero no ha desaparecido. Las exportaciones de bienes estadounidenses a China cayeron un 25.8% en 2025, mientras que las importaciones de bienes estadounidenses provenientes de China disminuyeron un 29.7%. Aun así, el comercio bilateral de bienes totalizó $414.7 mil millones el año pasado, incluidos $308.4 mil millones en importaciones estadounidenses desde China y $106.3 mil millones en exportaciones estadounidenses hacia China.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The U.S.–China trade link has weakened, but it has not disappeared. U.S. goods exports to China fell 25.8% in 2025, while U.S. goods imports from China fell 29.7%. Even so, bilateral goods trade still totaled $414.7 billion last year, including $308.4 billion of U.S. imports from China and $106.3 billion of U.S. exports to China.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "billion",
+          "applied": false,
+          "approved_target": "mil millones"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-008",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "China depende del comercio tanto como siempre, solo que ya no del de EE. UU. Este gráfico utiliza dos medidas superpuestas para mostrar cómo la relación comercial de China con el mundo —y con EE. UU. en particular— se ha transformado drásticamente en la última década. Las barras azul claro representan la balanza comercial global de China en millones de dólares estadounidenses, mientras que una línea azul oscuro muestra las importaciones estadounidenses provenientes de China como proporción del total de importaciones de EE. UU. Los datos abarcan desde 2014 hasta marzo de 2026. Las barras de la balanza comercial de China muestran una clara tendencia al alza a lo largo del tiempo, alcanzando regularmente niveles de $80,000–$100,000 millones o más hacia 2025–2026. Mientras tanto, la participación de las importaciones estadounidenses provenientes de China cayó abruptamente durante la primera guerra comercial en 2018–2019, descendió aún más durante el COVID en 2020, y retomó una pronunciada caída a partir de 2023, alcanzando su punto más bajo en el gráfico a principios de 2026.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2014",
+          "text": "2014",
+          "char_end": 428,
+          "char_start": 424
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 447,
+          "char_start": 443
+        },
+        {
+          "kind": "currency",
+          "norm": "80000",
+          "text": "$80,000",
+          "char_end": 539,
+          "char_start": 532
+        },
+        {
+          "kind": "currency",
+          "norm": "100000000000",
+          "text": "$100,000 million",
+          "char_end": 556,
+          "char_start": 540
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 574,
+          "char_start": 570
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 579,
+          "char_start": 575
+        },
+        {
+          "kind": "date",
+          "norm": "2018",
+          "text": "2018",
+          "char_end": 686,
+          "char_start": 682
+        },
+        {
+          "kind": "date",
+          "norm": "2019",
+          "text": "2019",
+          "char_end": 691,
+          "char_start": 687
+        },
+        {
+          "kind": "date",
+          "norm": "2020",
+          "text": "2020",
+          "char_end": 726,
+          "char_start": 722
+        },
+        {
+          "kind": "date",
+          "norm": "2023",
+          "text": "2023",
+          "char_end": 765,
+          "char_start": 761
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 826,
+          "char_start": 822
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "China depende del comercio como siempre, solo que ya no del de EE. UU. Este gráfico utiliza dos medidas superpuestas para mostrar cómo la relación comercial de China con el mundo —y con EE. UU. en particular— se ha transformado drásticamente en la última década. Las barras azul claro representan la balanza comercial global de China en millones de dólares estadounidenses, mientras que una línea azul oscuro muestra las importaciones estadounidenses provenientes de China como proporción del total de importaciones de EE. UU. Los datos abarcan desde 2014 hasta marzo de 2026. Las barras de la balanza comercial de China muestran una clara tendencia al alza a lo largo del tiempo, alcanzando regularmente niveles de $80,000–$100,000 millones o más hacia 2025–2026. Mientras tanto, la participación de las importaciones estadounidenses provenientes de China cayó abruptamente durante la primera guerra comercial en 2018–2019, descendió aún más durante el COVID en 2020, y retomó una pronunciada caída a partir de 2023, alcanzando su punto más bajo en el gráfico a principios de 2026.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "China is as trade dependent as ever, just not on the U.S. This chart uses two overlapping measures to show how China's trade relationship with the world—and with the U.S. specifically—has shifted dramatically over the past decade. Light blue bars represent China's overall trade balance in millions of U.S. dollars, while a dark blue line tracks U.S. imports from China as a share of total U.S. imports. The data spans from 2014 through March 2026. China's trade balance bars show a clear upward trend over time, regularly reaching $80,000–$100,000 million or higher by 2025–2026. Meanwhile, the share of U.S. imports coming from China dropped sharply during the first trade war in 2018–2019, fell further during COVID in 2020, and resumed a steep decline from 2023 onward, reaching its lowest point on the chart by early 2026.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-009",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Fuentes: Haver Analytics, Oficina del Censo de EE. UU., Administración General de Aduanas de la República Popular China. Datos a marzo de 2026.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 129,
+          "char_start": 125
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Fuentes: Haver Analytics, Oficina del Censo de EE. UU., Administración General de Aduanas de la República Popular China. Datos a marzo de 2026.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Sources: Haver Analytics, U.S. Census Bureau, People's Republic of China General Administration of Customs. Data as of March 2026.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-010",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "China sigue siendo dependiente del comercio, solo que menos dependiente de EE. UU. Las importaciones estadounidenses provenientes de China han disminuido como proporción del total de importaciones, pero la balanza comercial global de China se mantiene en niveles históricamente elevados. El desacoplamiento está ocurriendo, aunque es probable que exista un redireccionamiento significativo del comercio a través de otros mercados.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "China sigue siendo dependiente del comercio, solo que menos dependiente de EE. UU. Las importaciones estadounidenses provenientes de China han disminuido como proporción del total de importaciones, pero la balanza comercial global de China se mantiene en niveles históricamente elevados. La  desvinculación  comercial está ocurriendo, aunque es probable que  se esté redirigiendo a través de mercados intermedios.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "China is still trade-dependent—just less U.S.-dependent. U.S. imports from China have fallen as a share of total imports, but China's overall trade balance remains historically large. Decoupling is occurring, but there is likely significant trade rerouting through other markets.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-011",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "2. Los puntos de estrangulamiento ahora operan en ambas direcciones",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.882,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "2. Los puntos de presión  ahora operan en ambas direcciones",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "2. The chokepoints now run both ways",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-012",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Los aranceles son el punto de presión más visible. Los aranceles efectivos promedio de EE. UU. sobre las exportaciones chinas han aumentado hasta aproximadamente el 24%, mientras que los aranceles efectivos promedio de China sobre las exportaciones estadounidenses se sitúan en torno al 32%. Ambos cubren ahora prácticamente la totalidad del comercio bilateral de bienes.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "24%",
+          "text": "24%",
+          "char_end": 113,
+          "char_start": 110
+        },
+        {
+          "kind": "percent",
+          "norm": "32%",
+          "text": "32%",
+          "char_end": 184,
+          "char_start": 181
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los aranceles son el punto de presión más visible.  El arancel efectivo promedio aplicado por EE. UU. a las exportaciones chinas ha subido hasta cerca del 24%, mientras que el arancel efectivo promedio aplicado por China a las exportaciones estadounidenses se sitúa en torno al 32%.   Ambos cubren prácticamente la totalidad del comercio bilateral de bienes.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Tariffs are the most visible pressure point. Average U.S. effective tariffs on Chinese exports have risen to ~24%, while China's average effective tariffs on U.S. exports stand at ~32%. Both now cover essentially all bilateral goods trade.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "tariffs",
+          "applied": false,
+          "approved_target": "aranceles"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-013",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Sin embargo, los aranceles son solo una parte del mapa de apalancamiento. Estados Unidos puede presionar a China a través del sistema financiero basado en el dólar, los controles a la exportación de semiconductores y las restricciones a la inversión. China cuenta con sus propios puntos de presión: tierras raras, cadenas de suministro manufactureras, acceso a mercados y compras de bienes estadounidenses.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Sin embargo, los aranceles son solo una parte del mapa de palancas de negociación. Estados Unidos puede presionar a China a través del sistema financiero basado en el dólar, los controles de exportación de semiconductores y las restricciones a la inversión. China cuenta con sus propias fuentes de influencia: tierras raras, cadenas de suministro manufactureras, acceso a mercados y compras de bienes estadounidenses.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "But tariffs are only one part of the leverage map. The United States can pressure China through the dollar-based financial system, semiconductor export controls and investment restrictions. China has its own pressure points: rare earths, manufacturing supply chains, market access and purchases of U.S. goods.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "leverage",
+          "applied": false,
+          "approved_target": "apalancamiento"
+        },
+        {
+          "source": "supply chains",
+          "applied": false,
+          "approved_target": "cadenas de suministro"
+        },
+        {
+          "source": "tariffs",
+          "applied": false,
+          "approved_target": "aranceles"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-014",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La cadena de suministro de tierras raras es especialmente relevante. Según el Centro de Estudios Estratégicos e Internacionales, China representa aproximadamente el 70% de la minería de tierras raras, el 90% de la separación y el procesamiento, y el 93% de la fabricación de imanes. En lo que respecta específicamente a los imanes de tierras raras, la Agencia Internacional de Energía señala que China exportó en 2024 suficientes imanes de tierras raras para abastecer componentes de millones de automóviles, motores industriales o aeronaves, o bien miles de sistemas militares estratégicos, centros de datos o turbinas eólicas. Esa concentración convierte a los minerales críticos en un tema macroeconómico, no en una simple nota al margen de las cadenas de suministro.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "70%",
+          "text": "70%",
+          "char_end": 83,
+          "char_start": 80
+        },
+        {
+          "kind": "percent",
+          "norm": "90%",
+          "text": "90%",
+          "char_end": 109,
+          "char_start": 106
+        },
+        {
+          "kind": "percent",
+          "norm": "93%",
+          "text": "93%",
+          "char_end": 147,
+          "char_start": 144
+        },
+        {
+          "kind": "date",
+          "norm": "2024",
+          "text": "2024",
+          "char_end": 366,
+          "char_start": 362
+        }
+      ],
+      "qe_score": 0.824,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La cadena de suministro de tierras raras es especialmente relevante. Según el Centro de Estudios Estratégicos e Internacionales, China representa aproximadamente el 70% de la minería de tierras raras, el 90% de la separación y el procesamiento, y el 93% de la fabricación de imanes. En lo que respecta específicamente a los imanes de tierras raras, la Agencia Internacional de Energía señala que China exportó en 2024 suficientes imanes de tierras raras para abastecer componentes de millones de automóviles, motores industriales o aeronaves, o bien miles de sistemas militares estratégicos, centros de datos o turbinas eólicas. Esa concentración convierte a los minerales críticos en un asunto macroeconómico relevante, y no en un detalle mas de las cadenas de suministro.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "The rare-earth supply chain is especially important. China accounts for roughly 70% of rare-earth mining, 90% of separation and processing, and 93% of magnet manufacturing, according to the Center for Strategic and International Studies. For magnet rare earths specifically, the International Energy Agency notes that China exported enough rare-earth magnets in 2024 to support components for millions of cars, industrial motors or aircraft—or thousands of strategic military systems, data centers or wind turbines. That concentration turns critical minerals into a macro issue, not just a supply-chain footnote.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "supply chains",
+          "applied": false,
+          "approved_target": "cadenas de suministro"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-015",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Ambas partes conocen ahora los puntos de presión. El objetivo es gestionarlos antes de que se conviertan en perturbaciones.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Ambas partes ya conocen los principales puntos de presión. El objetivo ahora es gestionarlos antes de que se conviertan en disrupciones económicas.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Both sides now know the pressure points. The goal is to manage them before they become shocks.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-016",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "3. El tema de Taiwán sigue siendo central en la relación",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "3. \nLa cuestión de Taiwán continúa siendo parte del eje central de la relación",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "3. The Taiwan issue remains central to the relationship",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-017",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Taiwán continúa siendo el punto de conflicto estructural en las relaciones EE. UU.–China, especialmente porque se encuentra en la intersección de la seguridad, la tecnología y las cadenas de suministro de semiconductores. El tema sigue siendo un foco central para China —no sorprende que la reunión haya comenzado con una declaración enérgica del líder chino—. Las apuestas económicas son elevadas para ambas partes: una estimación sugiere que un bloqueo de Taiwán podría reducir el PIB de EE. UU. en un 5% y el PIB de China en un 9%. Esto subraya por qué ninguna de las partes se beneficia de una crisis no gestionada.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "5%",
+          "text": "5%",
+          "char_end": 414,
+          "char_start": 412
+        },
+        {
+          "kind": "percent",
+          "norm": "9%",
+          "text": "9%",
+          "char_end": 436,
+          "char_start": 434
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Taiwan sigue siendo el punto de fricción estructural en las relaciones entre Estados Unidos y China, especialmente porque se encuentra en la intersección de la seguridad, la tecnología y las cadenas de suministro de semiconductores. El tema sigue siendo una preocupación central para China—no sorprende que la reunión comenzara con una declaración firme del líder chino. Las apuestas económicas son grandes en ambos lados: una estimación sugiere que un bloqueo de Taiwan podría reducir el PIB de Estados Unidos en un 5% y el de China en un 9%. Lo que explica por qué ninguno de los dos lados se beneficia de una crisis descontrolada.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Taiwan remains the structural flashpoint in U.S.–China relations, especially because it sits at the intersection of security, technology and semiconductor supply chains. The issue remains a central focus for China—it's no surprise the meeting kicked off with a stern statement from the Chinese leader. The economic stakes are large on both sides: One estimate suggests a Taiwan blockade could reduce U.S. GDP by 5% and China's GDP by 9%. That underscores why neither side benefits from an unmanaged crisis.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "supply chains",
+          "applied": false,
+          "approved_target": "cadenas de suministro"
+        },
+        {
+          "source": "GDP",
+          "applied": false,
+          "approved_target": "PIB"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-018",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Irán es la complicación de corto duración. Según datos de Kpler, China compra más del 80% del petróleo exportado por Irán. En otras palabras, Irán representa un tema de seguridad energética para China y un riesgo inflacionario para los mercados globales; en Estados Unidos, los precios de la gasolina se dispararon un 20% durante el mes de marzo.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "80%",
+          "text": "80%",
+          "char_end": 60,
+          "char_start": 57
+        },
+        {
+          "kind": "percent",
+          "norm": "20%",
+          "text": "20%",
+          "char_end": 258,
+          "char_start": 255
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Irán es la complicación inmediata. Según datos de Kpler, China compra más del 80% del petróleo exportado por Irán. En otras palabras, Irán representa un tema de seguridad energética para China y un riesgo inflacionario para los mercados globales; en Estados Unidos, los precios de la gasolina se dispararon un 20% durante el mes de marzo.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Iran is the near-term complication. China buys more than 80% of Iran's shipped oil, according to Kpler data. In other words, Iran is an energy-security issue for China and an inflation-risk issue for global markets—in the United States, gas prices spiked 20% in the month of March.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "duration",
+          "applied": true,
+          "approved_target": "duración"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-019",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La estabilización económica puede ocurrir incluso cuando los problemas geopolíticos permanecen sin resolverse.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La estabilización económica puede ocurrir incluso cuando los problemas geopolíticos permanecen sin resolverse.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Economic stabilization can still occur even when geopolitical issues remain unresolved.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-020",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "4. La relación es global, no solo bilateral",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "4. La relación es global, no solo bilateral",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "4. The relationship is global, not just bilateral",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-021",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Las tensiones entre EE. UU. y China ya no se limitan al canal comercial bilateral. La Iniciativa de la Franja y la Ruta de China abarca aproximadamente 150 países, lo que otorga a Pekín una amplia plataforma de comercio, infraestructura e influencia en los mercados emergentes. La actividad reciente subraya la magnitud de este alcance: el compromiso chino en los países de la Franja y la Ruta alcanzó niveles récord en 2025, con $128.4 mil millones en contratos de construcción y $85.2 mil millones en inversión.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "150",
+          "text": "150",
+          "char_end": 117,
+          "char_start": 114
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 344,
+          "char_start": 340
+        },
+        {
+          "kind": "currency",
+          "norm": "128400000000",
+          "text": "$128.4 billion",
+          "char_end": 370,
+          "char_start": 356
+        },
+        {
+          "kind": "currency",
+          "norm": "85200000000",
+          "text": "$85.2 billion",
+          "char_end": 414,
+          "char_start": 401
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Las tensiones entre EE. UU. y China ya no se limitan al canal comercial bilateral. La Iniciativa de la Franja y la Ruta de China abarca aproximadamente 150 países, lo que otorga a Pekín una amplia plataforma de comercio, infraestructura e influencia en los mercados emergentes. Hechos recientes explican la magnitud de este alcance: el compromiso chino en los países de la Franja y la Ruta alcanzó niveles récord en 2025, con $128.4 mil millones en contratos de construcción y $85.2 mil millones en inversión.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "U.S.–China tensions no longer stop at the bilateral trade channel. China's Belt and Road Initiative spans roughly 150 countries, giving Beijing a broad platform for trade, infrastructure and influence across emerging markets. Recent activity underscores the scale: Chinese engagement across Belt and Road countries reached record levels in 2025, including $128.4 billion in construction contracts and $85.2 billion in investment.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "emerging markets",
+          "applied": false,
+          "approved_target": "mercados emergentes"
+        },
+        {
+          "source": "billion",
+          "applied": false,
+          "approved_target": "mil millones"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-022",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Estados Unidos está respondiendo desde su propia perspectiva estratégica. La competencia gira cada vez más en torno a infraestructura, cadenas de suministro, materias primas, estándares tecnológicos y alineamiento estratégico. Para muchos países, el desafío no consiste en elegir un bando en cada tema, sino en gestionar los costos de operar en un sistema global más fragmentado, donde las relaciones de inversión, acceso comercial y seguridad están cada vez más interconectadas.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Estados Unidos está respondiendo desde su propia perspectiva estratégica. La competencia gira cada vez más en torno a infraestructura, cadenas de suministro, materias primas, estándares tecnológicos y alineamiento estratégico. Para muchos países, el desafío no consiste en elegir un bando en cada tema, sino en gestionar los costos de operar en un sistema global más fragmentado, donde las relaciones de inversión, acceso comercial y seguridad están cada vez más interconectadas.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The United States is responding through its own strategic lens. The competition is increasingly about infrastructure, supply chains, commodities, technology standards and strategic alignment. For many countries, the challenge is not choosing one side on every issue. It is managing the costs of operating in a more fragmented global system, where investment, trade access and security relationships are increasingly linked.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "supply chains",
+          "applied": false,
+          "approved_target": "cadenas de suministro"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-023",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "El equilibrio entre EE. UU. y China se hará sentir mucho más allá de ambos países.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "El equilibrio entre EE. UU. y China se hará sentir mucho más allá de ambos países.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The U.S.–China equilibrium will be felt well beyond the United States and China.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-024",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "5. Un diálogo podría señalar estabilización",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "5. Un diálogo podría señalar estabilización",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "5. A dialogue could signal stabilization",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-025",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Esta no será la última vez que los presidentes de EE. UU. y China puedan reunirse. Existen varios posibles puntos de contacto que podrían tener lugar durante el próximo año. Eso convierte a la última cumbre en algo menos excepcional y más en un preludio a una distensión prolongada. Lo relevante no es tanto el diálogo en sí, sino si el compromiso futuro genera mecanismos que ayuden a gestionar las disputas en áreas como los canales de comercio e inversión, los compromisos de compra, la inteligencia artificial, el lenguaje arancelario o los foros de trabajo técnico.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Esta no será la última vez que los presidentes de EE. UU. y China puedan reunirse. Existen varios posibles puntos de contacto que podrían tener lugar durante el próximo año. Eso convierte a la última cumbre en algo menos excepcional y más en un preludio a una distensión prolongada. Lo relevante no es tanto el diálogo en sí, sino si el compromiso futuro genera mecanismos que ayuden a gestionar las disputas en áreas como los canales de comercio e inversión, los compromisos de compra, la inteligencia artificial, el lenguaje arancelario o los foros de trabajo técnico.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "This is not the last time the presidents of the United States and China could meet. There are several potential touchpoints that could take place over the next year. That makes the latest summit less of a one-off and more of a prelude to prolonged détente. It's less about the dialogue, and more about whether future engagement produces mechanisms to help manage disputes over things like trade and investment channels, purchase commitments, artificial intelligence, tariff language or working-level forums.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-026",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Esa es la clave para reducir el riesgo de que las fricciones económicas se conviertan en perturbaciones de mayor alcance.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Esa es la clave para reducir el riesgo de que las fricciones económicas se conviertan en  disrupciones más amplias.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "That's the key to reducing the risk of economic frictions becoming broader disruptions.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-027",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Para los mercados, la señal constructiva es una menor incertidumbre. Una menor probabilidad de perturbaciones abruptas en las políticas podría apuntalar el sentimiento hacia el comercio mundial, China y los mercados emergentes en general, especialmente en un contexto en que la fragmentación y la inteligencia artificial siguen siendo impulsores clave del panorama de inversión más amplio. El diálogo no implica un reinicio, sino más bien una prueba de si las dos economías más grandes del mundo pueden hacer más predecible una relación frágil.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Para los mercados, la señal constructiva es una menor incertidumbre. Menos posibilidades de volatilidad política abrupta podrían favorecer la confianza en el comercio global, China y los mercados emergentes—especialmente porque la fragmentación y la IA seguirán siendo factores clave en el contexto de inversión. El diálogo no representa un reinicio, sino más bien una prueba de si las dos mayores economías del mundo pueden volver más predecible una relación frágil.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "For markets, the constructive signal is lower uncertainty. Fewer chances of abrupt policy shocks could support sentiment toward global trade, China and broader emerging markets—especially as fragmentation and AI remain key drivers of the broader investment landscape. Dialogue does not mean a reset, but rather a test of whether the world's two largest economies can make a fragile relationship more predictable.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "emerging markets",
+          "applied": false,
+          "approved_target": "mercados emergentes"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-028",
+      "dnt": false,
+      "type": "disclaimer",
+      "mt_text": "Este material tiene únicamente fines informativos y puede informarle sobre ciertos productos y servicios ofrecidos por los negocios de banca privada, parte de JPMorgan Chase & Co. Las opiniones, estrategias o productos analizados pueden no ser apropiados para todas las personas y están sujetos a riesgos. Los inversionistas podrían recuperar menos de lo que invirtieron, y el rendimiento pasado no es un indicador confiable de los resultados futuros. Este material no debe considerarse un informe de análisis.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 1,
+        "tm_id": "tm-006",
+        "source": "TM"
+      },
+      "final_text": "Este material tiene únicamente fines informativos y puede informarle sobre ciertos productos y servicios ofrecidos por los negocios de banca privada, parte de JPMorgan Chase & Co. Las opiniones, estrategias o productos analizados pueden no ser apropiados para todas las personas y están sujetos a riesgos. Los inversionistas podrían recuperar menos de lo que invirtieron, y el rendimiento pasado no es un indicador confiable de los resultados futuros. Este material no debe considerarse un informe de análisis.",
+      "iterations": 0,
+      "seg_status": "locked",
+      "source_text": "This material is for information purposes only and may inform you of certain products and services offered by private banking businesses, part of JPMorgan Chase & Co. Any views, strategies or products discussed may not be appropriate for all individuals and are subject to risks. Investors may get back less than they invested, and past performance is not a reliable indicator of future results. This material should not be regarded as a research report.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_e9519a02-326",
+  "source": {
+    "type": "txt",
+    "filename": "jpm-03-us-china.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 25.51,
+    "hter_by_category": {
+      "accuracy": 0.099
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_2fad0e31-4ef",
+      "ts": "2026-06-02T16:03:49.900Z",
+      "hter": 0.024,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "La cumbre EE. UU.–China no tiene como objetivo un reinicio. Se trata de determinar si las dos economías más grandes del mundo pueden hacer más manejable una relación frágil. El diálogo a nivel de líderes de esta naturaleza ha sido poco frecuente —la última visita presidencial estadounidense a China fue en 2017— y desde entonces la relación ha estado marcada por confrontaciones intermitentes, presiones de  desvinculación   y la búsqueda de apalancamiento económico.",
+      "action": "edit",
+      "before": "La cumbre EE. UU.–China no tiene como objetivo un reinicio. Se trata de determinar si las dos economías más grandes del mundo pueden hacer más manejable una relación frágil. El diálogo a nivel de líderes de esta naturaleza ha sido poco frecuente —la última visita presidencial estadounidense a China fue en 2017— y desde entonces la relación ha estado marcada por confrontaciones intermitentes, presiones de desacoplamiento y la búsqueda de apalancamiento económico.",
+      "segment_id": "b-002",
+      "char_edit_distance": 11,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_ab8ef9fe-f4a",
+      "ts": "2026-06-02T16:04:18.540Z",
+      "hter": 0.004,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "La cumbre EE. UU.–China no tiene como objetivo un reinicio. Se trata de determinar si las dos economías más grandes del mundo pueden hacer más manejable una relación frágil. El diálogo a nivel de líderes de esta naturaleza ha sido poco frecuente —la última visita presidencial estadounidense a China fue en 2017— y desde entonces la relación ha estado marcada por confrontaciones intermitentes, presiones de  desvinculación  y la búsqueda de apalancamiento económico.",
+      "action": "edit",
+      "before": "La cumbre EE. UU.–China no tiene como objetivo un reinicio. Se trata de determinar si las dos economías más grandes del mundo pueden hacer más manejable una relación frágil. El diálogo a nivel de líderes de esta naturaleza ha sido poco frecuente —la última visita presidencial estadounidense a China fue en 2017— y desde entonces la relación ha estado marcada por confrontaciones intermitentes, presiones de  desvinculación   y la búsqueda de apalancamiento económico.",
+      "segment_id": "b-002",
+      "char_edit_distance": 2,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_519e5558-c65",
+      "ts": "2026-06-02T16:08:12.563Z",
+      "hter": 0.08,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "A medida que los flujos comerciales han disminuido y las cadenas de suministro se han reconfigurado, ambas partes se han mostrado más dispuestas a poner a prueba las vulnerabilidades del otro. Sin embargo, los vínculos siguen siendo lo suficientemente significativos como para que una  intensificación descontrolada del conflicto  tenga consecuencias para el crecimiento, la inflación, las cadenas de suministro y los mercados.",
+      "action": "edit",
+      "before": "A medida que los flujos comerciales han disminuido y las cadenas de suministro se han reconfigurado, ambas partes se han mostrado más dispuestas a poner a prueba las vulnerabilidades del otro. Sin embargo, los vínculos siguen siendo lo suficientemente significativos como para que una escalada no gestionada tenga consecuencias para el crecimiento, la inflación, las cadenas de suministro y los mercados.",
+      "segment_id": "b-003",
+      "char_edit_distance": 34,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_232115ab-539",
+      "ts": "2026-06-02T16:36:44.179Z",
+      "hter": 0.125,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "La pregunta clave es cómo será el nuevo equilibrio entre EE. UU. y China.  Mantener el diálogo solo por mantenerlo aporta pocos beneficios concretos.    Incluso durante la Guerra Fría, los rivales cooperaban cuando el costo de no hacerlo era demasiado elevado. Para los mercados, una menor incertidumbre en materia de políticas sería una señal constructiva, especialmente para el comercio mundial, China y los mercados emergentes en general.",
+      "action": "edit",
+      "before": "La pregunta clave es cómo será el nuevo equilibrio entre EE. UU. y China. El diálogo por el simple hecho de dialogar aporta pocos utilidades. Incluso durante la Guerra Fría, los rivales cooperaban cuando el costo de no hacerlo era demasiado elevado. Para los mercados, una menor incertidumbre en materia de políticas sería una señal constructiva, especialmente para el comercio mundial, China y los mercados emergentes en general.",
+      "segment_id": "b-004",
+      "char_edit_distance": 55,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_b3fcd8d7-eaa",
+      "ts": "2026-06-02T16:37:12.213Z",
+      "hter": 0.007,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "La pregunta clave es cómo será el nuevo equilibrio entre EE. UU. y China.  Mantener el diálogo solo por mantenerlo aporta pocos beneficios concretos.  Incluso durante la Guerra Fría, los rivales cooperaban cuando el costo de no hacerlo era demasiado elevado. Para los mercados, una menor incertidumbre en materia de políticas sería una señal constructiva, especialmente para el comercio mundial, China y los mercados emergentes en general.",
+      "action": "edit",
+      "before": "La pregunta clave es cómo será el nuevo equilibrio entre EE. UU. y China.  Mantener el diálogo solo por mantenerlo aporta pocos beneficios concretos.    Incluso durante la Guerra Fría, los rivales cooperaban cuando el costo de no hacerlo era demasiado elevado. Para los mercados, una menor incertidumbre en materia de políticas sería una señal constructiva, especialmente para el comercio mundial, China y los mercados emergentes en general.",
+      "segment_id": "b-004",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_96611b19-a75",
+      "ts": "2026-06-02T16:38:57.567Z",
+      "hter": 0.133,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "La pregunta clave es cómo será el nuevo equilibrio entre EE. UU. y China.  Mantener el diálogo solo por mantenerlo aporta pocos beneficios concretos.  Incluso durante la Guerra Fría, los rivales cooperaban cuando el costo de no hacerlo era demasiado elevado. Para los mercados, una   reducción de la incertidumbre en materia de política económica representaría una señal alentadora, en particular para el comercio global  , China y los mercados emergentes en general.",
+      "action": "edit",
+      "before": "La pregunta clave es cómo será el nuevo equilibrio entre EE. UU. y China.  Mantener el diálogo solo por mantenerlo aporta pocos beneficios concretos.  Incluso durante la Guerra Fría, los rivales cooperaban cuando el costo de no hacerlo era demasiado elevado. Para los mercados, una menor incertidumbre en materia de políticas sería una señal constructiva, especialmente para el comercio mundial, China y los mercados emergentes en general.",
+      "segment_id": "b-004",
+      "char_edit_distance": 62,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_ef7adfa0-de8",
+      "ts": "2026-06-02T16:40:36.616Z",
+      "hter": 0.113,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "La pregunta clave es cómo será el nuevo equilibrio entre EE. UU. y China.  Mantener el diálogo solo por mantenerlo aporta pocos beneficios concretos.  Incluso durante la Guerra Fría, los rivales cooperaban cuando el costo de no hacerlo era demasiado elevado. Para los mercados, despejar parte de la incertidumbre en torno a la política económica sería una señal positiva, en especial para el comercio global, China y los mercados emergentes en general.",
+      "action": "edit",
+      "before": "La pregunta clave es cómo será el nuevo equilibrio entre EE. UU. y China.  Mantener el diálogo solo por mantenerlo aporta pocos beneficios concretos.  Incluso durante la Guerra Fría, los rivales cooperaban cuando el costo de no hacerlo era demasiado elevado. Para los mercados, una   reducción de la incertidumbre en materia de política económica representaría una señal alentadora, en particular para el comercio global  , China y los mercados emergentes en general.",
+      "segment_id": "b-004",
+      "char_edit_distance": 51,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_780a69de-472",
+      "ts": "2026-06-02T16:50:41.045Z",
+      "hter": 0.006,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "China depende del comercio como siempre, solo que ya no del de EE. UU. Este gráfico utiliza dos medidas superpuestas para mostrar cómo la relación comercial de China con el mundo —y con EE. UU. en particular— se ha transformado drásticamente en la última década. Las barras azul claro representan la balanza comercial global de China en millones de dólares estadounidenses, mientras que una línea azul oscuro muestra las importaciones estadounidenses provenientes de China como proporción del total de importaciones de EE. UU. Los datos abarcan desde 2014 hasta marzo de 2026. Las barras de la balanza comercial de China muestran una clara tendencia al alza a lo largo del tiempo, alcanzando regularmente niveles de $80,000–$100,000 millones o más hacia 2025–2026. Mientras tanto, la participación de las importaciones estadounidenses provenientes de China cayó abruptamente durante la primera guerra comercial en 2018–2019, descendió aún más durante el COVID en 2020, y retomó una pronunciada caída a partir de 2023, alcanzando su punto más bajo en el gráfico a principios de 2026.",
+      "action": "edit",
+      "before": "China depende del comercio tanto como siempre, solo que ya no del de EE. UU. Este gráfico utiliza dos medidas superpuestas para mostrar cómo la relación comercial de China con el mundo —y con EE. UU. en particular— se ha transformado drásticamente en la última década. Las barras azul claro representan la balanza comercial global de China en millones de dólares estadounidenses, mientras que una línea azul oscuro muestra las importaciones estadounidenses provenientes de China como proporción del total de importaciones de EE. UU. Los datos abarcan desde 2014 hasta marzo de 2026. Las barras de la balanza comercial de China muestran una clara tendencia al alza a lo largo del tiempo, alcanzando regularmente niveles de $80,000–$100,000 millones o más hacia 2025–2026. Mientras tanto, la participación de las importaciones estadounidenses provenientes de China cayó abruptamente durante la primera guerra comercial en 2018–2019, descendió aún más durante el COVID en 2020, y retomó una pronunciada caída a partir de 2023, alcanzando su punto más bajo en el gráfico a principios de 2026.",
+      "segment_id": "b-008",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_bed25d55-e1c",
+      "ts": "2026-06-02T16:58:14.279Z",
+      "hter": 0.048,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "China sigue siendo dependiente del comercio, solo que menos dependiente de EE. UU. Las importaciones estadounidenses provenientes de China han disminuido como proporción del total de importaciones, pero la balanza comercial global de China se mantiene en niveles históricamente elevados. La  desvinculación  comercial está ocurriendo, aunque es probable que exista un redireccionamiento significativo del comercio a través de otros mercados.",
+      "action": "edit",
+      "before": "China sigue siendo dependiente del comercio, solo que menos dependiente de EE. UU. Las importaciones estadounidenses provenientes de China han disminuido como proporción del total de importaciones, pero la balanza comercial global de China se mantiene en niveles históricamente elevados. El desacoplamiento está ocurriendo, aunque es probable que exista un redireccionamiento significativo del comercio a través de otros mercados.",
+      "segment_id": "b-010",
+      "char_edit_distance": 21,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_46d2a2e4-2ca",
+      "ts": "2026-06-02T16:58:34.864Z",
+      "hter": 0.128,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "China sigue siendo dependiente del comercio, solo que menos dependiente de EE. UU. Las importaciones estadounidenses provenientes de China han disminuido como proporción del total de importaciones, pero la balanza comercial global de China se mantiene en niveles históricamente elevados. La  desvinculación  comercial está ocurriendo, aunque es probable que  se esté redirigiendo a través de mercados intermedios.",
+      "action": "edit",
+      "before": "China sigue siendo dependiente del comercio, solo que menos dependiente de EE. UU. Las importaciones estadounidenses provenientes de China han disminuido como proporción del total de importaciones, pero la balanza comercial global de China se mantiene en niveles históricamente elevados. La  desvinculación  comercial está ocurriendo, aunque es probable que exista un redireccionamiento significativo del comercio a través de otros mercados.",
+      "segment_id": "b-010",
+      "char_edit_distance": 53,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_4106532e-18e",
+      "ts": "2026-06-02T16:59:14.270Z",
+      "hter": 0.25,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "2. Los puntos de \npresión \nahora operan en ambas direcciones",
+      "action": "edit",
+      "before": "2. Los puntos de estrangulamiento ahora operan en ambas direcciones",
+      "segment_id": "b-011",
+      "char_edit_distance": 15,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_ba6b59a9-54f",
+      "ts": "2026-06-02T17:00:14.404Z",
+      "hter": 0.051,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "2. Los puntos de presión  ahora operan en ambas direcciones",
+      "action": "edit",
+      "before": "2. Los puntos de \npresión \nahora operan en ambas direcciones",
+      "segment_id": "b-011",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_3434aa01-f1e",
+      "ts": "2026-06-02T17:02:14.654Z",
+      "hter": 0.195,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Los aranceles son el punto de presión más visible.  El arancel efectivo promedio aplicado por EE. UU. a las exportaciones chinas ha subido hasta cerca del 24%, mientras que el arancel efectivo promedio aplicado por China a las exportaciones estadounidenses se sitúa en torno al 32%.    Ambos cubren ahora prácticamente la totalidad del comercio bilateral de bienes.",
+      "action": "edit",
+      "before": "Los aranceles son el punto de presión más visible. Los aranceles efectivos promedio de EE. UU. sobre las exportaciones chinas han aumentado hasta aproximadamente el 24%, mientras que los aranceles efectivos promedio de China sobre las exportaciones estadounidenses se sitúan en torno al 32%. Ambos cubren ahora prácticamente la totalidad del comercio bilateral de bienes.",
+      "segment_id": "b-012",
+      "char_edit_distance": 71,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_2d664851-26c",
+      "ts": "2026-06-02T17:02:49.526Z",
+      "hter": 0.022,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Los aranceles son el punto de presión más visible.  El arancel efectivo promedio aplicado por EE. UU. a las exportaciones chinas ha subido hasta cerca del 24%, mientras que el arancel efectivo promedio aplicado por China a las exportaciones estadounidenses se sitúa en torno al 32%.   Ambos cubren prácticamente la totalidad del comercio bilateral de bienes.",
+      "action": "edit",
+      "before": "Los aranceles son el punto de presión más visible.  El arancel efectivo promedio aplicado por EE. UU. a las exportaciones chinas ha subido hasta cerca del 24%, mientras que el arancel efectivo promedio aplicado por China a las exportaciones estadounidenses se sitúa en torno al 32%.    Ambos cubren ahora prácticamente la totalidad del comercio bilateral de bienes.",
+      "segment_id": "b-012",
+      "char_edit_distance": 8,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_0908bb92-dcd",
+      "ts": "2026-06-02T17:09:48.056Z",
+      "hter": 0.05,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Sin embargo, los aranceles son solo un componente del mapa de palancas de negociació. Estados Unidos puede presionar a China a través del sistema financiero basado en el dólar, los controles a la exportación de semiconductores y las restricciones a la inversión. China cuenta con sus propios puntos de presión: tierras raras, cadenas de suministro manufactureras, acceso a mercados y compras de bienes estadounidenses.",
+      "action": "edit",
+      "before": "Sin embargo, los aranceles son solo una parte del mapa de apalancamiento. Estados Unidos puede presionar a China a través del sistema financiero basado en el dólar, los controles a la exportación de semiconductores y las restricciones a la inversión. China cuenta con sus propios puntos de presión: tierras raras, cadenas de suministro manufactureras, acceso a mercados y compras de bienes estadounidenses.",
+      "segment_id": "b-013",
+      "char_edit_distance": 21,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_03e9c51b-6f6",
+      "ts": "2026-06-02T17:11:07.241Z",
+      "hter": 0.002,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Sin embargo, los aranceles son solo un componente del mapa de palancas de negociación. Estados Unidos puede presionar a China a través del sistema financiero basado en el dólar, los controles a la exportación de semiconductores y las restricciones a la inversión. China cuenta con sus propios puntos de presión: tierras raras, cadenas de suministro manufactureras, acceso a mercados y compras de bienes estadounidenses.",
+      "action": "edit",
+      "before": "Sin embargo, los aranceles son solo un componente del mapa de palancas de negociació. Estados Unidos puede presionar a China a través del sistema financiero basado en el dólar, los controles a la exportación de semiconductores y las restricciones a la inversión. China cuenta con sus propios puntos de presión: tierras raras, cadenas de suministro manufactureras, acceso a mercados y compras de bienes estadounidenses.",
+      "segment_id": "b-013",
+      "char_edit_distance": 1,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_496f1839-01a",
+      "ts": "2026-06-02T17:14:03.447Z",
+      "hter": 0.04,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Sin embargo, los aranceles son solo un componente del mapa de palancas de negociación. Estados Unidos puede presionar a China a través del sistema financiero basado en el dólar, los controles de exportación de semiconductores y las restricciones a la inversión. China cuenta con sus propias fuentes de influencia: tierras raras, cadenas de suministro manufactureras, acceso a mercados y compras de bienes estadounidenses.",
+      "action": "edit",
+      "before": "Sin embargo, los aranceles son solo un componente del mapa de palancas de negociación. Estados Unidos puede presionar a China a través del sistema financiero basado en el dólar, los controles a la exportación de semiconductores y las restricciones a la inversión. China cuenta con sus propios puntos de presión: tierras raras, cadenas de suministro manufactureras, acceso a mercados y compras de bienes estadounidenses.",
+      "segment_id": "b-013",
+      "char_edit_distance": 17,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_43d9f4f3-7c8",
+      "ts": "2026-06-02T17:19:32.895Z",
+      "hter": 0.043,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "La cadena de suministro de tierras raras es especialmente relevante. Según el Centro de Estudios Estratégicos e Internacionales, China representa aproximadamente el 70% de la minería de tierras raras, el 90% de la separación y el procesamiento, y el 93% de la fabricación de imanes. En lo que respecta específicamente a los imanes de tierras raras, la Agencia Internacional de Energía señala que China exportó en 2024 suficientes imanes de tierras raras para abastecer componentes de millones de automóviles, motores industriales o aeronaves, o bien miles de sistemas militares estratégicos, centros de datos o turbinas eólicas. Esa concentración convierte a los minerales críticos en un asunto macroeconómico relevante, y no en un detalle mas de las cadenas de suministro.",
+      "action": "edit",
+      "before": "La cadena de suministro de tierras raras es especialmente relevante. Según el Centro de Estudios Estratégicos e Internacionales, China representa aproximadamente el 70% de la minería de tierras raras, el 90% de la separación y el procesamiento, y el 93% de la fabricación de imanes. En lo que respecta específicamente a los imanes de tierras raras, la Agencia Internacional de Energía señala que China exportó en 2024 suficientes imanes de tierras raras para abastecer componentes de millones de automóviles, motores industriales o aeronaves, o bien miles de sistemas militares estratégicos, centros de datos o turbinas eólicas. Esa concentración convierte a los minerales críticos en un tema macroeconómico, no en una simple nota al margen de las cadenas de suministro.",
+      "segment_id": "b-014",
+      "char_edit_distance": 33,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_1c2155cc-a37",
+      "ts": "2026-06-02T17:22:50.816Z",
+      "hter": 0.265,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Ambas partes ya conocen los principales puntos de presión. El objetivo ahora es gestionarlos antes de que se conviertan en disrupciones económicas.",
+      "action": "edit",
+      "before": "Ambas partes conocen ahora los puntos de presión. El objetivo es gestionarlos antes de que se conviertan en perturbaciones.",
+      "segment_id": "b-015",
+      "char_edit_distance": 39,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_6144ae5f-2ad",
+      "ts": "2026-06-02T17:23:11.742Z",
+      "hter": 0.436,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "3. \nLa cuestión de Taiwán continúa siendo parte del eje central de la relación",
+      "action": "edit",
+      "before": "3. El tema de Taiwán sigue siendo central en la relación",
+      "segment_id": "b-016",
+      "char_edit_distance": 34,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_2c2dc36a-d11",
+      "ts": "2026-06-02T17:26:07.762Z",
+      "hter": 0.042,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Taiwán sigue siendo el principal punto de fricción estructural en las relaciones EE. UU.–China, especialmente porque se encuentra en la intersección de la seguridad, la tecnología y las cadenas de suministro de semiconductores. El tema sigue siendo un foco central para China —no sorprende que la reunión haya comenzado con una declaración enérgica del líder chino—. Las apuestas económicas son elevadas para ambas partes: una estimación sugiere que un bloqueo de Taiwán podría reducir el PIB de EE. UU. en un 5% y el PIB de China en un 9%. Esto subraya por qué ninguna de las partes se beneficia de una crisis no gestionada.",
+      "action": "edit",
+      "before": "Taiwán continúa siendo el punto de conflicto estructural en las relaciones EE. UU.–China, especialmente porque se encuentra en la intersección de la seguridad, la tecnología y las cadenas de suministro de semiconductores. El tema sigue siendo un foco central para China —no sorprende que la reunión haya comenzado con una declaración enérgica del líder chino—. Las apuestas económicas son elevadas para ambas partes: una estimación sugiere que un bloqueo de Taiwán podría reducir el PIB de EE. UU. en un 5% y el PIB de China en un 9%. Esto subraya por qué ninguna de las partes se beneficia de una crisis no gestionada.",
+      "segment_id": "b-017",
+      "char_edit_distance": 26,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_151eed5b-767",
+      "ts": "2026-06-02T18:19:39.753Z",
+      "hter": 0.014,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Taiwán sigue siendo el principal punto de fricción estructural en las relaciones EE. UU.–China, especialmente porque se encuentra en la intersección de seguridad, tecnología y de las cadenas de suministro de semiconductores. El tema sigue siendo un foco central para China —no sorprende que la reunión haya comenzado con una declaración enérgica del líder chino—. Las apuestas económicas son elevadas para ambas partes: una estimación sugiere que un bloqueo de Taiwán podría reducir el PIB de EE. UU. en un 5% y el PIB de China en un 9%. Esto subraya por qué ninguna de las partes se beneficia de una crisis no gestionada.",
+      "action": "edit",
+      "before": "Taiwán sigue siendo el principal punto de fricción estructural en las relaciones EE. UU.–China, especialmente porque se encuentra en la intersección de la seguridad, la tecnología y las cadenas de suministro de semiconductores. El tema sigue siendo un foco central para China —no sorprende que la reunión haya comenzado con una declaración enérgica del líder chino—. Las apuestas económicas son elevadas para ambas partes: una estimación sugiere que un bloqueo de Taiwán podría reducir el PIB de EE. UU. en un 5% y el PIB de China en un 9%. Esto subraya por qué ninguna de las partes se beneficia de una crisis no gestionada.",
+      "segment_id": "b-017",
+      "char_edit_distance": 9,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_52977f2a-da0",
+      "ts": "2026-06-02T18:36:01.013Z",
+      "hter": 0.01,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Taiwán sigue siendo el principal punto de fricción estructural en las relaciones EE. UU.–China, especialmente porque se encuentra en la intersección de la seguridad, la tecnología y de las cadenas de suministro de semiconductores. El tema sigue siendo un foco central para China —no sorprende que la reunión haya comenzado con una declaración enérgica del líder chino—. Las apuestas económicas son elevadas para ambas partes: una estimación sugiere que un bloqueo de Taiwán podría reducir el PIB de EE. UU. en un 5% y el PIB de China en un 9%. Esto subraya por qué ninguna de las partes se beneficia de una crisis no gestionada.",
+      "action": "edit",
+      "before": "Taiwán sigue siendo el principal punto de fricción estructural en las relaciones EE. UU.–China, especialmente porque se encuentra en la intersección de seguridad, tecnología y de las cadenas de suministro de semiconductores. El tema sigue siendo un foco central para China —no sorprende que la reunión haya comenzado con una declaración enérgica del líder chino—. Las apuestas económicas son elevadas para ambas partes: una estimación sugiere que un bloqueo de Taiwán podría reducir el PIB de EE. UU. en un 5% y el PIB de China en un 9%. Esto subraya por qué ninguna de las partes se beneficia de una crisis no gestionada.",
+      "segment_id": "b-017",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_deda8afb-df4",
+      "ts": "2026-06-02T18:36:07.464Z",
+      "hter": 0.176,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Taiwan sigue siendo el punto de fricción estructural en las relaciones entre Estados Unidos y China, especialmente porque se encuentra en la intersección de la seguridad, la tecnología y las cadenas de suministro de semiconductores. El tema sigue siendo una preocupación central para China—no sorprende que la reunión comenzara con una declaración firme del líder chino. Las apuestas económicas son grandes en ambos lados: una estimación sugiere que un bloqueo de Taiwan podría reducir el PIB de Estados Unidos en un 5% y el de China en un 9%. Esto subraya por qué ninguno de los dos lados se beneficia de una crisis descontrolada.",
+      "action": "edit",
+      "before": "Taiwán sigue siendo el principal punto de fricción estructural en las relaciones EE. UU.–China, especialmente porque se encuentra en la intersección de la seguridad, la tecnología y de las cadenas de suministro de semiconductores. El tema sigue siendo un foco central para China —no sorprende que la reunión haya comenzado con una declaración enérgica del líder chino—. Las apuestas económicas son elevadas para ambas partes: una estimación sugiere que un bloqueo de Taiwán podría reducir el PIB de EE. UU. en un 5% y el PIB de China en un 9%. Esto subraya por qué ninguna de las partes se beneficia de una crisis no gestionada.",
+      "segment_id": "b-017",
+      "char_edit_distance": 111,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_4279c132-3a6",
+      "ts": "2026-06-02T18:37:00.320Z",
+      "hter": 0.019,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Taiwan sigue siendo el punto de fricción estructural en las relaciones entre Estados Unidos y China, especialmente porque se encuentra en la intersección de la seguridad, la tecnología y las cadenas de suministro de semiconductores. El tema sigue siendo una preocupación central para China—no sorprende que la reunión comenzara con una declaración firme del líder chino. Las apuestas económicas son grandes en ambos lados: una estimación sugiere que un bloqueo de Taiwan podría reducir el PIB de Estados Unidos en un 5% y el de China en un 9%. Lo que explica por qué ninguno de los dos lados se beneficia de una crisis descontrolada.",
+      "action": "edit",
+      "before": "Taiwan sigue siendo el punto de fricción estructural en las relaciones entre Estados Unidos y China, especialmente porque se encuentra en la intersección de la seguridad, la tecnología y las cadenas de suministro de semiconductores. El tema sigue siendo una preocupación central para China—no sorprende que la reunión comenzara con una declaración firme del líder chino. Las apuestas económicas son grandes en ambos lados: una estimación sugiere que un bloqueo de Taiwan podría reducir el PIB de Estados Unidos en un 5% y el de China en un 9%. Esto subraya por qué ninguno de los dos lados se beneficia de una crisis descontrolada.",
+      "segment_id": "b-017",
+      "char_edit_distance": 12,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_f65a6fca-874",
+      "ts": "2026-06-02T18:38:03.237Z",
+      "hter": 0.047,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Irán es la complicación inmediata. Según datos de Kpler, China compra más del 80% del petróleo exportado por Irán. En otras palabras, Irán representa un tema de seguridad energética para China y un riesgo inflacionario para los mercados globales; en Estados Unidos, los precios de la gasolina se dispararon un 20% durante el mes de marzo.",
+      "action": "edit",
+      "before": "Irán es la complicación de corto duración. Según datos de Kpler, China compra más del 80% del petróleo exportado por Irán. En otras palabras, Irán representa un tema de seguridad energética para China y un riesgo inflacionario para los mercados globales; en Estados Unidos, los precios de la gasolina se dispararon un 20% durante el mes de marzo.",
+      "segment_id": "b-018",
+      "char_edit_distance": 16,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_0556352f-f3e",
+      "ts": "2026-06-02T18:39:51.941Z",
+      "hter": 0.037,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Las tensiones entre EE. UU. y China ya no se limitan al canal comercial bilateral. La Iniciativa de la Franja y la Ruta de China abarca aproximadamente 150 países, lo que otorga a Pekín una amplia plataforma de comercio, infraestructura e influencia en los mercados emergentes. Hechos recientes explican la magnitud de este alcance: el compromiso chino en los países de la Franja y la Ruta alcanzó niveles récord en 2025, con $128.4 mil millones en contratos de construcción y $85.2 mil millones en inversión.",
+      "action": "edit",
+      "before": "Las tensiones entre EE. UU. y China ya no se limitan al canal comercial bilateral. La Iniciativa de la Franja y la Ruta de China abarca aproximadamente 150 países, lo que otorga a Pekín una amplia plataforma de comercio, infraestructura e influencia en los mercados emergentes. La actividad reciente subraya la magnitud de este alcance: el compromiso chino en los países de la Franja y la Ruta alcanzó niveles récord en 2025, con $128.4 mil millones en contratos de construcción y $85.2 mil millones en inversión.",
+      "segment_id": "b-021",
+      "char_edit_distance": 19,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_5141cf05-7f5",
+      "ts": "2026-06-02T18:41:39.425Z",
+      "hter": 0.183,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Esa es la clave para reducir el riesgo de que las fricciones económicas se conviertan en  disrupciones más amplias.",
+      "action": "edit",
+      "before": "Esa es la clave para reducir el riesgo de que las fricciones económicas se conviertan en perturbaciones de mayor alcance.",
+      "segment_id": "b-026",
+      "char_edit_distance": 21,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_2cefdf27-d23",
+      "ts": "2026-06-02T18:44:20.009Z",
+      "hter": 0.398,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Para los mercados, la señal constructiva es una menor incertidumbre. Menos posibilidades de volatilidad política abrupta podrían favorecer la confianza en el comercio global, China y los mercados emergentes—especialmente porque la fragmentación y la IA seguirán siendo factores clave en el contexto de inversión. El diálogo no representa un reinicio, sino más bien una prueba de si las dos mayores economías del mundo pueden volver más predecible una relación frágil.",
+      "action": "edit",
+      "before": "Para los mercados, la señal constructiva es una menor incertidumbre. Una menor probabilidad de perturbaciones abruptas en las políticas podría apuntalar el sentimiento hacia el comercio mundial, China y los mercados emergentes en general, especialmente en un contexto en que la fragmentación y la inteligencia artificial siguen siendo impulsores clave del panorama de inversión más amplio. El diálogo no implica un reinicio, sino más bien una prueba de si las dos economías más grandes del mundo pueden hacer más predecible una relación frágil.",
+      "segment_id": "b-027",
+      "char_edit_distance": 186,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_cce165a4-7d8",
+      "ts": "2026-06-02T19:09:32.987Z",
+      "hter": 0.019,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Sin embargo, los aranceles son solo una parte del mapa de palancas de negociación. Estados Unidos puede presionar a China a través del sistema financiero basado en el dólar, los controles de exportación de semiconductores y las restricciones a la inversión. China cuenta con sus propias fuentes de influencia: tierras raras, cadenas de suministro manufactureras, acceso a mercados y compras de bienes estadounidenses.",
+      "action": "edit",
+      "before": "Sin embargo, los aranceles son solo un componente del mapa de palancas de negociación. Estados Unidos puede presionar a China a través del sistema financiero basado en el dólar, los controles de exportación de semiconductores y las restricciones a la inversión. China cuenta con sus propias fuentes de influencia: tierras raras, cadenas de suministro manufactureras, acceso a mercados y compras de bienes estadounidenses.",
+      "segment_id": "b-013",
+      "char_edit_distance": 8,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "9a47e790ba8e8c81",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v1 | critic-mqm-regionalism-v1",
+    "critic_model_id": "gpt-5",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-02T14:14:30.675Z",
+  "updated_at": "2026-06-02T19:09:32.987Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "es-419",
+  "schema_version": "1.0"
+}

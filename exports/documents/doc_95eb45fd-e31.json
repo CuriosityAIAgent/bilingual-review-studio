@@ -1,0 +1,1042 @@
+{
+  "rev": 0,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "jackson-hawk",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Jackson Hawk",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Jackson Hawk",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Jackson Hawk",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：上周美国股票上涨（标普500指数 +0.5%，纳斯达克指数 +0.9%），软件板块表现突出（IGV +5.9%），大型科技股亦表现强劲（MSFT +6.3%，META +5.1%）。美联储主席沃什在杰克逊霍尔会议上发表讲话后，美国国债收益率走势分化，短端上行而长端下行（2年期 +11个基点至4.34%，10年期 -2个基点至4.72%，30年期 -7个基点至5.21%）。美元上涨 +0.9%，创6月以来最强单周表现；黄金在连续五周上涨后下跌 -3.2%；布伦特原油因霍尔木兹海峡流量增加的报道下跌 -4.6%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 51,
+          "char_start": 48
+        },
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 57,
+          "char_start": 53
+        },
+        {
+          "kind": "percent",
+          "norm": "0.9%",
+          "text": "0.9%",
+          "char_end": 71,
+          "char_start": 67
+        },
+        {
+          "kind": "percent",
+          "norm": "5.9%",
+          "text": "5.9%",
+          "char_end": 111,
+          "char_start": 107
+        },
+        {
+          "kind": "percent",
+          "norm": "6.3%",
+          "text": "6.3%",
+          "char_end": 143,
+          "char_start": 139
+        },
+        {
+          "kind": "percent",
+          "norm": "5.1%",
+          "text": "5.1%",
+          "char_end": 155,
+          "char_start": 151
+        },
+        {
+          "kind": "number",
+          "norm": "11000000000bps",
+          "text": "11bps",
+          "char_end": 245,
+          "char_start": 240
+        },
+        {
+          "kind": "percent",
+          "norm": "4.34%",
+          "text": "4.34%",
+          "char_end": 254,
+          "char_start": 249
+        },
+        {
+          "kind": "number",
+          "norm": "2000000000bps",
+          "text": "2bps",
+          "char_end": 265,
+          "char_start": 261
+        },
+        {
+          "kind": "percent",
+          "norm": "4.72%",
+          "text": "4.72%",
+          "char_end": 274,
+          "char_start": 269
+        },
+        {
+          "kind": "number",
+          "norm": "7000000000bps",
+          "text": "7bps",
+          "char_end": 285,
+          "char_start": 281
+        },
+        {
+          "kind": "percent",
+          "norm": "5.21%",
+          "text": "5.21%",
+          "char_end": 294,
+          "char_start": 289
+        },
+        {
+          "kind": "percent",
+          "norm": "0.9%",
+          "text": "0.9%",
+          "char_end": 382,
+          "char_start": 378
+        },
+        {
+          "kind": "percent",
+          "norm": "-3.2%",
+          "text": "-3.2%",
+          "char_end": 436,
+          "char_start": 431
+        },
+        {
+          "kind": "percent",
+          "norm": "-4.6%",
+          "text": "-4.6%",
+          "char_end": 499,
+          "char_start": 494
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 51,
+          "char_start": 44
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 65,
+          "char_start": 59
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：上周美国股票上涨（标普500指数 +0.5%，纳斯达克指数 +0.9%），软件板块表现突出（IGV +5.9%），大型科技股亦表现强劲（MSFT +6.3%，META +5.1%）。美联储主席沃什在杰克逊霍尔会议上发表讲话后，美国国债收益率走势分化，短端上行而长端下行（2年期 +11个基点至4.34%，10年期 -2个基点至4.72%，30年期 -7个基点至5.21%）。美元上涨 +0.9%，创6月以来最强单周表现；黄金在连续五周上涨后下跌 -3.2%；布伦特原油因霍尔木兹海峡流量增加的报道下跌 -4.6%。",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "U.S. markets: US equities gained last week (S&P 500 +0.5%, Nasdaq +0.9%) with software outperforming (IGV +5.9%) alongside big tech (MSFT +6.3%, META +5.1%). Treasury yields were mixed as the short-end rose while the long-end declined (2Y +11bps to 4.34%, 10Y -2bps to 4.72%, 30Y -7bps to 5.21%) after Fed Chair Warsh’s speech at the Jackson Hole conference. The dollar gained +0.9% in its strongest week since June, gold declined -3.2% after five straight weeks of gains, and Brent crude fell -4.6% on reports of increasing Hormuz flows.",
+      "critic_flags": [
+        {
+          "span": "7bps",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "7"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        },
+        {
+          "source": "Federal Reserve",
+          "applied": false,
+          "approved_target": "美联储"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "7bps",
+              "message": "Numeric value \"7bps\" (mantissa 7) not preserved in translation",
+              "expected": "7"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：上周欧洲股票上涨（斯托克50指数 +0.4%）。能源通胀持续受到关注，部分通胀数据显示具有黏性，叠加政治风险，欧洲债券收益率升至新高。市场已完全消化欧洲央行9月加息的预期。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 60,
+          "char_start": 58
+        },
+        {
+          "kind": "percent",
+          "norm": "0.4%",
+          "text": "0.4%",
+          "char_end": 66,
+          "char_start": 62
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：上周欧洲股票上涨（斯托克50指数 +0.4%）。能源通胀持续受到关注，部分通胀数据显示具有黏性，叠加政治风险，欧洲债券收益率升至新高。市场已完全消化欧洲央行9月加息的预期。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Europe markets: European equities gained last week (Stoxx 50 +0.4%). Energy inflation remained in focus with some sticky inflation data, which alongside political risks resulted in European yields reaching fresh highs. Markets are fully pricing in a September ECB hike.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "central bank",
+          "applied": false,
+          "approved_target": "央行"
+        },
+        {
+          "source": "bonds",
+          "applied": false,
+          "approved_target": "债券"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：上周日本股票上涨（日经指数 +0.6%，东证指数 +2.0%），科技板块表现较强。日元兑美元汇率回落至159附近的高位区间。8月东京核心消费者价格指数同比 +1.8%，与市场预期 +1.8%持平，前值为 +1.7%；剔除生鲜食品及能源的消费者价格指数同比 +2.0%，与市场预期 +2.0%持平，前值为 +1.8%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.6%",
+          "text": "0.6%",
+          "char_end": 63,
+          "char_start": 59
+        },
+        {
+          "kind": "percent",
+          "norm": "2%",
+          "text": "2.0%",
+          "char_end": 76,
+          "char_start": 72
+        },
+        {
+          "kind": "number",
+          "norm": "159",
+          "text": "159",
+          "char_end": 147,
+          "char_start": 144
+        },
+        {
+          "kind": "percent",
+          "norm": "1.8%",
+          "text": "1.8%",
+          "char_end": 201,
+          "char_start": 197
+        },
+        {
+          "kind": "percent",
+          "norm": "1.8%",
+          "text": "1.8%",
+          "char_end": 224,
+          "char_start": 220
+        },
+        {
+          "kind": "percent",
+          "norm": "1.7%",
+          "text": "1.7%",
+          "char_end": 240,
+          "char_start": 236
+        },
+        {
+          "kind": "percent",
+          "norm": "2%",
+          "text": "2.0%",
+          "char_end": 274,
+          "char_start": 270
+        },
+        {
+          "kind": "percent",
+          "norm": "2%",
+          "text": "2.0%",
+          "char_end": 297,
+          "char_start": 293
+        },
+        {
+          "kind": "percent",
+          "norm": "1.8%",
+          "text": "1.8%",
+          "char_end": 313,
+          "char_start": 309
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：上周日本股票上涨（日经指数 +0.6%，东证指数 +2.0%），科技板块表现较强。日元兑美元汇率回落至159附近的高位区间。8月东京核心消费者价格指数同比 +1.8%，与市场预期 +1.8%持平，前值为 +1.7%；剔除生鲜食品及能源的消费者价格指数同比 +2.0%，与市场预期 +2.0%持平，前值为 +1.8%。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Japan markets: Japanese equities gained last week (Nikkei +0.6%, Topix +2.0%) amid stronger tech performance. The yen weakened back to the high 159 range against the dollar. August Tokyo core CPI +1.8% y/y vs consensus +1.8% and prior +1.7% CPI ex. fresh food & energy +2.0% y/y vs consensus +2.0% and prior +1.8%.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "Consumer Price Index",
+          "applied": false,
+          "approved_target": "消费者价格指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：上周中国股票下跌（恒生指数 -1.6%，沪深300指数 -0.2%），原因是人工智能(AI)相关股票因获利回吐出现回调。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-1.6%",
+          "text": "-1.6%",
+          "char_end": 63,
+          "char_start": 58
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 72,
+          "char_start": 69
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.2%",
+          "text": "-0.2%",
+          "char_end": 78,
+          "char_start": 73
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：上周中国股票下跌（恒生指数 -1.6%，沪深300指数 -0.2%），原因是人工智能(AI)相关股票因获利回吐出现回调。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "China markets: Chinese equities fell last week (Hang Seng -1.6%, CSI 300 -0.2%) after a pullback in AI-related stocks amid profit taking.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-006",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美联储主席沃什在杰克逊霍尔的讲话总体符合我们的预期。讲话澄清了7月联邦公开市场委员会会议所引发的部分困惑，阐明了政策原则，并回避了对9月会议的明确信号。市场反应偏鹰派，主要原因在于：尽管近期数据较为乐观，沃什仍提及令人担忧的潜在通胀问题，并明确承诺若通胀未能以足够快的速度向美联储目标靠拢，将采取相应行动。上述要点有助于市场抑制收益率曲线长端的上行压力。沃什直接回应了7月联邦公开市场委员会会议后出现的若干核心关切，明确重申美联储致力于实现2%的PCE通胀目标，并表明必要时将加息以达成该目标。沃什还重申了其对纯粹市场信号的重视，这或许是对美联储独立性的一种隐晦提示。我们认为此次讲话有以下几点启示。第一，讲话支撑长端债券，与我们近期认为长端相对短端已开始呈现吸引力的观点一致。第二，9月加息仍在考量之中（市场定价其概率为50%），但需要下一份非农就业报告及消费者价格指数数据出现上行空间。在宏观数据走软之后，我们注意到美联储加息可能推迟且不确定性有所上升，但我们维持今年加息一次的展望。第三，讲话进一步强化了以下判断：尽管货币贬值仍是一个值得关注的战略主题，但与该主题关联最为密切的资产——包括黄金、美元（及加密货币）——在短期内存在暂停上涨或部分回调的空间，尽管中期逻辑依然成立。此次讲话对更广泛风险资产的影响相对有限。讲话略偏鹰派，但同时有助于强化政策公信力、锚定长期通胀预期，从而抑制长期收益率的上行压力。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "2%",
+          "text": "2%",
+          "char_end": 684,
+          "char_start": 682
+        },
+        {
+          "kind": "percent",
+          "norm": "50%",
+          "text": "50%",
+          "char_end": 1131,
+          "char_start": 1128
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美联储主席沃什在杰克逊霍尔的讲话总体符合我们的预期。讲话澄清了7月联邦公开市场委员会会议所引发的部分困惑，阐明了政策原则，并回避了对9月会议的明确信号。市场反应偏鹰派，主要原因在于：尽管近期数据较为乐观，沃什仍提及令人担忧的潜在通胀问题，并明确承诺若通胀未能以足够快的速度向美联储目标靠拢，将采取相应行动。上述要点有助于市场抑制收益率曲线长端的上行压力。沃什直接回应了7月联邦公开市场委员会会议后出现的若干核心关切，明确重申美联储致力于实现2%的PCE通胀目标，并表明必要时将加息以达成该目标。沃什还重申了其对纯粹市场信号的重视，这或许是对美联储独立性的一种隐晦提示。我们认为此次讲话有以下几点启示。第一，讲话支撑长端债券，与我们近期认为长端相对短端已开始呈现吸引力的观点一致。第二，9月加息仍在考量之中（市场定价其概率为50%），但需要下一份非农就业报告及消费者价格指数数据出现上行空间。在宏观数据走软之后，我们注意到美联储加息可能推迟且不确定性有所上升，但我们维持今年加息一次的展望。第三，讲话进一步强化了以下判断：尽管货币贬值仍是一个值得关注的战略主题，但与该主题关联最为密切的资产——包括黄金、美元（及加密货币）——在短期内存在暂停上涨或部分回调的空间，尽管中期逻辑依然成立。此次讲话对更广泛风险资产的影响相对有限。讲话略偏鹰派，但同时有助于强化政策公信力、锚定长期通胀预期，从而抑制长期收益率的上行压力。",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "Fed Chair Warsh's Jackson Hole speech was broadly in line with our expectations. It clarified some confusion created at the July FOMC, laid out policy principles, and avoided explicit signals on the September meeting. The market response was hawkish mainly because Warsh referred to concerning underlying inflation despite more encouraging recent readings, and offered a clear commitment to act if inflation does not move towards the Fed’s target with sufficient speed. The takeaways are helpful for markets in containing the long end of the yield curve. Warsh directly addressed some key concerns that emerged from the July FOMC, explicitly reaffirming the Fed's commitment to the 2% PCE inflation target, making clear that rates would be raised if necessary to achieve it. Warsh also reiterated his desire for pure market signals which could be a subtle reminder of Fed independence. We see a few implications here. First, the speech supports long-end bonds, in line with our recent view that they have started to look attractive relative to the front-end. Second, a September hike remains on the table (markets are pricing a 50% chance), but would require an upside surprise in the next payrolls report and CPI release. Following soft macro data, we noted that a Fed hike could be delayed and is more uncertain but retain our outlook of one hike this year. Third, the speech reinforces that while debasement remains a relevant strategic theme, there is room for a near-term pause or partial retracement in assets most closely associated with the theme, including gold, the dollar (and crypto), even though the medium-term case remains sound. The implications of the speech are less significant for broader risk assets. It was modestly hawkish, but it also helps reinforce policy credibility and anchor longer-term inflation expectations, which could contain upward pressure on long-term yields.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "yield curve",
+          "applied": false,
+          "approved_target": "收益率曲线"
+        },
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "bonds",
+          "applied": false,
+          "approved_target": "债券"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "Federal Reserve",
+          "applied": false,
+          "approved_target": "美联储"
+        },
+        {
+          "source": "Consumer Price Index",
+          "applied": false,
+          "approved_target": "消费者价格指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-007",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "沃什主席在杰克逊霍尔发表讲话后，短端收益率上升，长端收益率下降　美国国债收益率，%",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.809,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "沃什主席在杰克逊霍尔发表讲话后，短端收益率上升，长端收益率下降　美国国债收益率，%",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "SHORT END YIELDS ROSE WHILE LONG-END YIELDS DECLINED AFTER Fed Chair Warsh’s speech at Jackson Hole U.S. Treasury yields, %",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_95eb45fd-e31",
+  "source": {
+    "type": "txt",
+    "filename": "jackson-hawk.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 0.143,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "3f9c45f6111fdd7d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-08-30T17:48:28.366Z",
+  "deleted_at": null,
+  "updated_at": "2026-08-30T17:48:28.366Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

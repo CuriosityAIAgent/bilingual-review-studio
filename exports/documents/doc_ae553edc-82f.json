@@ -1,0 +1,1505 @@
+{
+  "rev": 10,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "hot-jobs-summer",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "炎夏劲就业",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "炎夏劲就业",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Hot jobs summer",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：上周美国股票小幅收涨（标普500指数 +0.1%，纳斯达克指数 +0.4%），尽管周五因劳动力市场数据偏鹰派而有所回落。由于市场开始定价本周联邦公开市场委员会(FOMC)加息的可能性上升，国债收益率沿收益率曲线普遍走高（2年期 +2个基点至4.37%，10年期 +6个基点至4.78%，30年期 +4个基点至5.24%）。尽管日元走强，美元指数仍上涨 +0.6%。黄金下跌 -1.2%至每盎司2× $4,431美元。受中东局势紧张加剧的报道影响，布伦特原油上涨 +7.8%至约96美元。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 58,
+          "char_start": 55
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 64,
+          "char_start": 60
+        },
+        {
+          "kind": "percent",
+          "norm": "0.4%",
+          "text": "0.4%",
+          "char_end": 78,
+          "char_start": 74
+        },
+        {
+          "kind": "number",
+          "norm": "2000000000bps",
+          "text": "2bps",
+          "char_end": 205,
+          "char_start": 201
+        },
+        {
+          "kind": "percent",
+          "norm": "4.37%",
+          "text": "4.37%",
+          "char_end": 214,
+          "char_start": 209
+        },
+        {
+          "kind": "number",
+          "norm": "6000000000bps",
+          "text": "6bps",
+          "char_end": 225,
+          "char_start": 221
+        },
+        {
+          "kind": "percent",
+          "norm": "4.78%",
+          "text": "4.78%",
+          "char_end": 234,
+          "char_start": 229
+        },
+        {
+          "kind": "number",
+          "norm": "4000000000bps",
+          "text": "4bps",
+          "char_end": 245,
+          "char_start": 241
+        },
+        {
+          "kind": "percent",
+          "norm": "5.24%",
+          "text": "5.24%",
+          "char_end": 254,
+          "char_start": 249
+        },
+        {
+          "kind": "percent",
+          "norm": "0.6%",
+          "text": "0.6%",
+          "char_end": 368,
+          "char_start": 364
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.2%",
+          "text": "-1.2%",
+          "char_end": 406,
+          "char_start": 401
+        },
+        {
+          "kind": "currency",
+          "norm": "4431",
+          "text": "$4,431",
+          "char_end": 416,
+          "char_start": 410
+        },
+        {
+          "kind": "percent",
+          "norm": "7.8%",
+          "text": "7.8%",
+          "char_end": 445,
+          "char_start": 441
+        },
+        {
+          "kind": "currency",
+          "norm": "96",
+          "text": "$96",
+          "char_end": 454,
+          "char_start": 450
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 58,
+          "char_start": 51
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 72,
+          "char_start": 66
+        }
+      ],
+      "qe_score": 0.991,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：上周美国股票小幅收涨（标普500指数 +0.1%，纳斯达克指数 +0.4%），尽管周五因劳动力市场数据偏鹰派而有所回落。由于市场开始定价本周联邦公开市场委员会(FOMC)加息的可能性上升，国债收益率沿收益率曲线普遍走高（2年期 +2个基点至4.37%，10年期 +6个基点至4.78%，30年期 +4个基点至5.24%）。尽管日元走强，美元指数仍上涨 +0.6%。黄金下跌 -1.2%至每盎司$4,431美元。受中东局势紧张加剧的报道影响，布伦特原油上涨 +7.8%至约96美元。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "US markets: US equities eked out a gain last week (S&P 500 +0.1%, Nasdaq +0.4%) despite declining on Friday after a hawkish labor market print. Treasury yields were mostly higher across the curve (2Y +2bps to 4.37%, 10Y +6bps to 4.78%, 30Y +4bps to 5.24%) as markets moved to price in a higher likelihood of a rate hike at this week’s FOMC. The dollar index rose +0.6% despite yen strength. Gold fell -1.2% to $4,431/oz. Brent crude gained +7.8% to ~$96 with reports of a pickup in hostilities in the Middle East.",
+      "critic_flags": [
+        {
+          "span": "每盎司2× $4,431美元",
+          "category": "accuracy",
+          "severity": "critical",
+          "suggestion": "每盎司$1,831美元"
+        },
+        {
+          "span": "$",
+          "category": "number",
+          "severity": "major",
+          "suggestion": "2× $"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "yield curve",
+          "applied": false,
+          "approved_target": "收益率曲线"
+        },
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [
+            {
+              "span": "$",
+              "found": "1× $",
+              "message": "Currency unit \"$\" dropped (2 → 1)",
+              "expected": "2× $"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国宏观：8月非农就业人数远超预期，新增162人，而市场共识预期为新增55人，7月数据亦上调至新增21人（此前为减少23人）。这使得3个月平均增速从此前的 +38人升至 +71人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "162000",
+          "text": "162K",
+          "char_end": 74,
+          "char_start": 70
+        },
+        {
+          "kind": "number",
+          "norm": "55000",
+          "text": "55K",
+          "char_end": 82,
+          "char_start": 79
+        },
+        {
+          "kind": "number",
+          "norm": "21000",
+          "text": "21K",
+          "char_end": 125,
+          "char_start": 122
+        },
+        {
+          "kind": "number",
+          "norm": "-23000",
+          "text": "-23K",
+          "char_end": 135,
+          "char_start": 131
+        },
+        {
+          "kind": "number",
+          "norm": "71000",
+          "text": "71K",
+          "char_end": 194,
+          "char_start": 191
+        },
+        {
+          "kind": "number",
+          "norm": "38000",
+          "text": "38K",
+          "char_end": 204,
+          "char_start": 201
+        },
+        {
+          "kind": "percent",
+          "norm": "4.1%",
+          "text": "4.1%",
+          "char_end": 251,
+          "char_start": 247
+        },
+        {
+          "kind": "percent",
+          "norm": "0.3%",
+          "text": "0.3%",
+          "char_end": 308,
+          "char_start": 304
+        },
+        {
+          "kind": "percent",
+          "norm": "3.1%",
+          "text": "3.1%",
+          "char_end": 322,
+          "char_start": 318
+        }
+      ],
+      "qe_score": 0.957,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国宏观：8月非农就业人数远超预期，新增162,000人，而市场共识预期为新增55,000人，7月数据亦上调至新增21,000人（此前为减少23,000人）。这使得3个月平均增速从此前的 +38,000人升至 +71,000人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "US macro: August nonfarm payrolls was much stronger than expected at +162K vs +55K consensus and July’s upwardly revised +21K (was -23K). This has brought the 3-month average growth rate to +71K from +38K previously. The unemployment rate held at 4.1% as expected. The average hourly earnings rate grew +0.3% m/m and +3.1% y/y.",
+      "critic_flags": [
+        {
+          "span": "新增162人",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "新增162,000人"
+        },
+        {
+          "span": "新增55人",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "新增55,000人"
+        },
+        {
+          "span": "新增21人",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "新增21,000人"
+        },
+        {
+          "span": "减少23人",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "减少23,000人"
+        },
+        {
+          "span": "+38人",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "+38,000人"
+        },
+        {
+          "span": "+71人",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "+71,000人"
+        },
+        {
+          "span": "平均小时盈利",
+          "category": "terminology",
+          "severity": "minor",
+          "suggestion": "平均小时收入"
+        },
+        {
+          "span": "-23K",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "-23"
+        }
+      ],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "-23K",
+              "message": "Numeric value \"-23K\" (mantissa -23) not preserved in translation",
+              "expected": "-23"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：上周欧洲股票下跌（斯托克50指数 -1.4%），尽管科技和汽车板块表现强劲。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 58,
+          "char_start": 56
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.4%",
+          "text": "-1.4%",
+          "char_end": 64,
+          "char_start": 59
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：上周欧洲股票下跌（斯托克50指数 -1.4%），尽管科技和汽车板块表现强劲。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Europe markets: European equities fell last week (Stoxx 50 -1.4%) despite strength in tech and autos.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：上周日本股票下跌（日经指数 -2.1%，东证指数 -1.1%）。美元兑日元（USDJPY）大幅波动至155，但随后日元升势消退，未见干预迹象。市场预期日本央行本月将加息25个基点。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-2.1%",
+          "text": "-2.1%",
+          "char_end": 65,
+          "char_start": 60
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.1%",
+          "text": "-1.1%",
+          "char_end": 78,
+          "char_start": 73
+        },
+        {
+          "kind": "number",
+          "norm": "155",
+          "text": "155",
+          "char_end": 108,
+          "char_start": 105
+        },
+        {
+          "kind": "number",
+          "norm": "25000000000bps",
+          "text": "25bps",
+          "char_end": 198,
+          "char_start": 193
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：上周日本股票下跌（日经指数 -2.1%，东证指数 -1.1%）。美元兑日元（USDJPY）大幅波动至155，但随后日元升势消退，而市场未见干预迹象。市场预期日本央行本月将加息25个基点。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Japan markets: Japanese equities declined last week (Nikkei -2.1%, Topix -1.1%). USDJPY moved sharply to 155, though yen strength later faded with no evidence of intervention. Markets expect a 25bps rate hike from the BoJ this month.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "central bank",
+          "applied": false,
+          "approved_target": "央行"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-006",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：上周中国股票涨跌互现（恒生指数 +0.3%，沪深300指数 -1.3%），科技及人工智能(AI)板块出现抛售。人民币兑美元一度升破6.706，为2023年1月以来最强水平。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.3%",
+          "text": "0.3%",
+          "char_end": 69,
+          "char_start": 65
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 78,
+          "char_start": 75
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.3%",
+          "text": "-1.3%",
+          "char_end": 84,
+          "char_start": 79
+        },
+        {
+          "kind": "number",
+          "norm": "6.706",
+          "text": "6.706",
+          "char_end": 158,
+          "char_start": 153
+        },
+        {
+          "kind": "date",
+          "norm": "2023",
+          "text": "2023",
+          "char_end": 230,
+          "char_start": 226
+        }
+      ],
+      "qe_score": 0.991,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：上周中国股票涨跌互现（恒生指数 +0.3%，沪深300指数 -1.3%），科技及人工智能(AI)板块出现抛售。人民币兑美元一度升破6.706，为2023年1月以来最强水平。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "China markets: Chinese equities were mixed last week (Hang Seng +0.3%, CSI 300 -1.3%) with a selloff in tech and AI names. The RMB strengthened to below 6.706 against the dollar at one point, its strongest level since January 2023.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-007",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "我们的观点　7月就业报告疲软之后，8月就业增长出现反弹。近期数据似乎受到两个波动性因素的影响：1）世界杯赛事，推动了休闲与酒店业的波动性；2）地方政府教育领域的季节性扭曲。8月，休闲与酒店业新增就业岗位超出常规，达+62,000个，而地方政府教育新增+42,000个——均为7月数据偏弱后的回补。剔除上述两项因素，就业增长将为+58,000个，而非+162,000个。尽管如此，8月报告仍有若干积极亮点，尤其是更广泛的U6失业率（涵盖边缘附着劳动者、灰心丧气者及因经济原因从事兼职工作者）下降0.2个百分点至7.7%，创2025年6月以来最低水平。薪资增长目前处于本轮周期的较低水平，接近疫情前的节奏，这意味着劳动力市场并非过度通胀压力的来源，尤其是在当前高通胀主要由供给侧因素驱动的背景下。报告的另一积极之处在于制造业（+16,000个）和建筑业（+22,000个）的就业数据，均高于近期趋势，显示出商品生产部门有所企稳。市场将此次就业报告解读为偏鹰派，收益率和美元走高，而股票则小幅下跌。市场对美联储9月加息的定价已升至约60%。尽管如此，本周的消费者价格指数和生产者价格指数数据对美联储9月决策的影响，很可能远大于就业报告本身。美联储官员可能会淡化就业数据的波动性，而更加关注近期通胀信号。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "62000",
+          "text": "62k",
+          "char_end": 324,
+          "char_start": 321
+        },
+        {
+          "kind": "number",
+          "norm": "42000",
+          "text": "42k",
+          "char_end": 374,
+          "char_start": 371
+        },
+        {
+          "kind": "number",
+          "norm": "58000",
+          "text": "58k",
+          "char_end": 467,
+          "char_start": 464
+        },
+        {
+          "kind": "number",
+          "norm": "162000",
+          "text": "162k",
+          "char_end": 485,
+          "char_start": 481
+        },
+        {
+          "kind": "percent",
+          "norm": "7.7%",
+          "text": "7.7%",
+          "char_end": 715,
+          "char_start": 711
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 749,
+          "char_start": 745
+        },
+        {
+          "kind": "number",
+          "norm": "16000",
+          "text": "16K",
+          "char_end": 1096,
+          "char_start": 1093
+        },
+        {
+          "kind": "number",
+          "norm": "22000",
+          "text": "22K",
+          "char_end": 1120,
+          "char_start": 1117
+        },
+        {
+          "kind": "percent",
+          "norm": "60%",
+          "text": "60%",
+          "char_end": 1401,
+          "char_start": 1398
+        }
+      ],
+      "qe_score": 0.951,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "我们的观点　7月就业报告疲软之后，8月就业增长出现反弹。近期数据似乎受到两个波动性因素的影响：1）世界杯赛事，推动了休闲与酒店业的波动性；2）地方政府教育领域的季节性扭曲。8月，休闲与酒店业新增就业岗位超出常规，达+62,000个，而地方政府教育新增+42,000个——均为7月数据偏弱后的回补。剔除上述两项因素，就业增长将为+58,000，而非+162,000。尽管如此，8月报告仍有若干积极亮点，尤其是更广泛的U6失业率（涵盖边缘附着劳动者、灰心丧气者及因经济原因从事兼职工作者）下降0.2个百分点至7.7%，创2025年6月以来最低水平。薪资增长目前处于本轮周期的较低水平，接近疫情前的节奏，这意味着劳动力市场并非是过度通胀压力的来源，尤其是在当前高通胀主要由供应因素驱动的背景下。报告的另一积极之处在于制造业（+16,000）和建筑业（+22,000）的就业数据，均高于近期趋势，显示出商品生产部门有所企稳。市场将此次就业报告解读为偏鹰派，收益率和美元走高，而股票则小幅下跌。市场对美联储9月加息的定价已升至约60%。尽管如此，本周的消费者价格指数和生产者价格指数数据对美联储9月决策的影响，很可能大于就业报告本身。美联储官员可能会淡化就业数据的波动性，而更加关注近期通胀信号。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "What we think After a weak report in July, jobs growth rebounded in August. Recent data appears to be influenced by two volatile factors: 1) the World Cup, which has driven volatility in leisure & hospitality, and 2) seasonal distortions in local government education. In August, leisure & hospitality added an outsized +62k jobs, while local government education added +42k – both paybacks from weak July prints. Excluding these two, jobs growth would have been +58k rather than +162k. Still, there are some positive features in the August report, especially the -0.2pp drop in the broader U6 unemployment rate (including workers who are marginally attached, discouraged and part-time for economic reasons) to 7.7%, its lowest level since June 2025. Wage growth is now at some of the lowest levels of the cycle and close to the pre-pandemic pace, meaning the labor market is not a source of excess inflationary pressure, especially in a context where elevated inflation is driven mostly by supply-side factors. Another positive part of the report was the numbers for both the manufacturing (+16K) and construction (+22K) sectors. These prints are above recent trends and illustrate some firming in goods producing sectors. Markets interpreted the jobs report as hawkish with yields and the dollar up while equities sold off modestly. Market pricing of a September Fed hike has now risen to around 60%. That said, this week's CPI and PPI data likely matter far more for the September Fed decision than the jobs report. Fed officials will likely discount the jobs volatility and place more emphasis on near-term inflation signals.",
+      "critic_flags": [
+        {
+          "span": "62k",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "62"
+        },
+        {
+          "span": "42k",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "42"
+        },
+        {
+          "span": "58k",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "58"
+        },
+        {
+          "span": "162k",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "162"
+        },
+        {
+          "span": "16K",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "16"
+        },
+        {
+          "span": "22K",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "22"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "volatility",
+          "applied": false,
+          "approved_target": "波动性"
+        },
+        {
+          "source": "Federal Reserve",
+          "applied": false,
+          "approved_target": "美联储"
+        },
+        {
+          "source": "Consumer Price Index",
+          "applied": false,
+          "approved_target": "消费者价格指数"
+        },
+        {
+          "source": "Producer Price Index",
+          "applied": false,
+          "approved_target": "生产者价格指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "62k",
+              "message": "Numeric value \"62k\" (mantissa 62) not preserved in translation",
+              "expected": "62"
+            },
+            {
+              "span": "42k",
+              "message": "Numeric value \"42k\" (mantissa 42) not preserved in translation",
+              "expected": "42"
+            },
+            {
+              "span": "58k",
+              "message": "Numeric value \"58k\" (mantissa 58) not preserved in translation",
+              "expected": "58"
+            },
+            {
+              "span": "162k",
+              "message": "Numeric value \"162k\" (mantissa 162) not preserved in translation",
+              "expected": "162"
+            },
+            {
+              "span": "16K",
+              "message": "Numeric value \"16K\" (mantissa 16) not preserved in translation",
+              "expected": "16"
+            },
+            {
+              "span": "22K",
+              "message": "Numeric value \"22K\" (mantissa 22) not preserved in translation",
+              "expected": "22"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-008",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国劳动力市场保持韧性，8月非农就业数据表现强劲　非农就业人数",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国劳动力市场保持韧性，8月非农就业数据表现强劲　非农就业人数",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The US labor market has remained resilient with a strong August print Nonfarm payrolls",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_ae553edc-82f",
+  "source": {
+    "type": "txt",
+    "filename": "hot-jobs-summer.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 20.08,
+    "hter_by_category": {
+      "accuracy": 0.022
+    },
+    "number_fail_rate": 0.25,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_6bc0656f-a2f",
+      "ts": "2026-09-05T16:08:22.103Z",
+      "hter": 0.012,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国市场：上周美国股票小幅收涨（标普500指数 +0.1%，纳斯达克指数 +0.4%），尽管周五因劳动力市场数据偏鹰派而有所回落。由于市场开始定价本周联邦公开市场委员会(FOMC)加息的可能性上升，国债收益率沿收益率曲线普遍走高（2年期 +2个基点至4.37%，10年期 +6个基点至4.78%，30年期 +4个基点至5.24%）。尽管日元走强，美元指数仍上涨 +0.6%。黄金下跌 -1.2%至每盎司$4,431美元。受中东局势紧张加剧的报道影响，布伦特原油上涨 +7.8%至约96美元。",
+      "action": "edit",
+      "before": "美国市场：上周美国股票小幅收涨（标普500指数 +0.1%，纳斯达克指数 +0.4%），尽管周五因劳动力市场数据偏鹰派而有所回落。由于市场开始定价本周联邦公开市场委员会(FOMC)加息的可能性上升，国债收益率沿收益率曲线普遍走高（2年期 +2个基点至4.37%，10年期 +6个基点至4.78%，30年期 +4个基点至5.24%）。尽管日元走强，美元指数仍上涨 +0.6%。黄金下跌 -1.2%至每盎司2× $4,431美元。受中东局势紧张加剧的报道影响，布伦特原油上涨 +7.8%至约96美元。",
+      "segment_id": "b-002",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_1cfda58f-ac0",
+      "ts": "2026-09-05T16:09:22.887Z",
+      "hter": 0.029,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国宏观：8月非农就业人数远超预期，新增162,000人，而市场共识预期为新增55人，7月数据亦上调至新增21人（此前为减少23人）。这使得3个月平均增速从此前的 +38人升至 +71人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "action": "edit",
+      "before": "美国宏观：8月非农就业人数远超预期，新增162人，而市场共识预期为新增55人，7月数据亦上调至新增21人（此前为减少23人）。这使得3个月平均增速从此前的 +38人升至 +71人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "segment_id": "b-003",
+      "char_edit_distance": 4,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_8244f801-3f7",
+      "ts": "2026-09-05T16:09:37.026Z",
+      "hter": 0.029,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国宏观：8月非农就业人数远超预期，新增162,000人，而市场共识预期为新增55,000人，7月数据亦上调至新增21人（此前为减少23人）。这使得3个月平均增速从此前的 +38人升至 +71人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "action": "edit",
+      "before": "美国宏观：8月非农就业人数远超预期，新增162,000人，而市场共识预期为新增55人，7月数据亦上调至新增21人（此前为减少23人）。这使得3个月平均增速从此前的 +38人升至 +71人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "segment_id": "b-003",
+      "char_edit_distance": 4,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_b6c05ba5-23a",
+      "ts": "2026-09-05T16:09:42.592Z",
+      "hter": 0.028,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国宏观：8月非农就业人数远超预期，新增162,000人，而市场共识预期为新增55,000人，7月数据亦上调至新增21,000人（此前为减少23人）。这使得3个月平均增速从此前的 +38人升至 +71人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "action": "edit",
+      "before": "美国宏观：8月非农就业人数远超预期，新增162,000人，而市场共识预期为新增55,000人，7月数据亦上调至新增21人（此前为减少23人）。这使得3个月平均增速从此前的 +38人升至 +71人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "segment_id": "b-003",
+      "char_edit_distance": 4,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_75bfb32a-4f0",
+      "ts": "2026-09-05T16:09:48.263Z",
+      "hter": 0.027,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国宏观：8月非农就业人数远超预期，新增162,000人，而市场共识预期为新增55,000人，7月数据亦上调至新增21,000人（此前为减少23,000人）。这使得3个月平均增速从此前的 +38人升至 +71人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "action": "edit",
+      "before": "美国宏观：8月非农就业人数远超预期，新增162,000人，而市场共识预期为新增55,000人，7月数据亦上调至新增21,000人（此前为减少23人）。这使得3个月平均增速从此前的 +38人升至 +71人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "segment_id": "b-003",
+      "char_edit_distance": 4,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_172ad134-31d",
+      "ts": "2026-09-05T16:09:52.594Z",
+      "hter": 0.026,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国宏观：8月非农就业人数远超预期，新增162,000人，而市场共识预期为新增55,000人，7月数据亦上调至新增21,000人（此前为减少23,000人）。这使得3个月平均增速从此前的 +38,000人升至 +71人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "action": "edit",
+      "before": "美国宏观：8月非农就业人数远超预期，新增162,000人，而市场共识预期为新增55,000人，7月数据亦上调至新增21,000人（此前为减少23,000人）。这使得3个月平均增速从此前的 +38人升至 +71人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "segment_id": "b-003",
+      "char_edit_distance": 4,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_a2f6965f-b7e",
+      "ts": "2026-09-05T16:09:59.159Z",
+      "hter": 0.026,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国宏观：8月非农就业人数远超预期，新增162,000人，而市场共识预期为新增55,000人，7月数据亦上调至新增21,000人（此前为减少23,000人）。这使得3个月平均增速从此前的 +38,000人升至 +71,000人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "action": "edit",
+      "before": "美国宏观：8月非农就业人数远超预期，新增162,000人，而市场共识预期为新增55,000人，7月数据亦上调至新增21,000人（此前为减少23,000人）。这使得3个月平均增速从此前的 +38,000人升至 +71人。失业率如预期维持在4.1%。平均小时盈利环比增长 +0.3%，同比增长 +3.1%。",
+      "segment_id": "b-003",
+      "char_edit_distance": 4,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_ebf140dd-eb0",
+      "ts": "2026-09-05T16:13:32.249Z",
+      "hter": 0.031,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "日本市场：上周日本股票下跌（日经指数 -2.1%，东证指数 -1.1%）。美元兑日元（USDJPY）大幅波动至155，但随后日元升势消退，而市场未见干预迹象。市场预期日本央行本月将加息25个基点。",
+      "action": "edit",
+      "before": "日本市场：上周日本股票下跌（日经指数 -2.1%，东证指数 -1.1%）。美元兑日元（USDJPY）大幅波动至155，但随后日元升势消退，未见干预迹象。市场预期日本央行本月将加息25个基点。",
+      "segment_id": "b-005",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_0a2559e0-41c",
+      "ts": "2026-09-05T16:18:17.362Z",
+      "hter": 0.004,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "我们的观点　7月就业报告疲软之后，8月就业增长出现反弹。近期数据似乎受到两个波动性因素的影响：1）世界杯赛事，推动了休闲与酒店业的波动性；2）地方政府教育领域的季节性扭曲。8月，休闲与酒店业新增就业岗位超出常规，达+62,000个，而地方政府教育新增+42,000个——均为7月数据偏弱后的回补。剔除上述两项因素，就业增长将为+58,000，而非+162,000。尽管如此，8月报告仍有若干积极亮点，尤其是更广泛的U6失业率（涵盖边缘附着劳动者、灰心丧气者及因经济原因从事兼职工作者）下降0.2个百分点至7.7%，创2025年6月以来最低水平。薪资增长目前处于本轮周期的较低水平，接近疫情前的节奏，这意味着劳动力市场并非过度通胀压力的来源，尤其是在当前高通胀主要由供给侧因素驱动的背景下。报告的另一积极之处在于制造业（+16,000个）和建筑业（+22,000个）的就业数据，均高于近期趋势，显示出商品生产部门有所企稳。市场将此次就业报告解读为偏鹰派，收益率和美元走高，而股票则小幅下跌。市场对美联储9月加息的定价已升至约60%。尽管如此，本周的消费者价格指数和生产者价格指数数据对美联储9月决策的影响，很可能远大于就业报告本身。美联储官员可能会淡化就业数据的波动性，而更加关注近期通胀信号。",
+      "action": "edit",
+      "before": "我们的观点　7月就业报告疲软之后，8月就业增长出现反弹。近期数据似乎受到两个波动性因素的影响：1）世界杯赛事，推动了休闲与酒店业的波动性；2）地方政府教育领域的季节性扭曲。8月，休闲与酒店业新增就业岗位超出常规，达+62,000个，而地方政府教育新增+42,000个——均为7月数据偏弱后的回补。剔除上述两项因素，就业增长将为+58,000个，而非+162,000个。尽管如此，8月报告仍有若干积极亮点，尤其是更广泛的U6失业率（涵盖边缘附着劳动者、灰心丧气者及因经济原因从事兼职工作者）下降0.2个百分点至7.7%，创2025年6月以来最低水平。薪资增长目前处于本轮周期的较低水平，接近疫情前的节奏，这意味着劳动力市场并非过度通胀压力的来源，尤其是在当前高通胀主要由供给侧因素驱动的背景下。报告的另一积极之处在于制造业（+16,000个）和建筑业（+22,000个）的就业数据，均高于近期趋势，显示出商品生产部门有所企稳。市场将此次就业报告解读为偏鹰派，收益率和美元走高，而股票则小幅下跌。市场对美联储9月加息的定价已升至约60%。尽管如此，本周的消费者价格指数和生产者价格指数数据对美联储9月决策的影响，很可能远大于就业报告本身。美联储官员可能会淡化就业数据的波动性，而更加关注近期通胀信号。",
+      "segment_id": "b-007",
+      "char_edit_distance": 2,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_0ff0c070-dd9",
+      "ts": "2026-09-05T16:21:35.551Z",
+      "hter": 0.011,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "我们的观点　7月就业报告疲软之后，8月就业增长出现反弹。近期数据似乎受到两个波动性因素的影响：1）世界杯赛事，推动了休闲与酒店业的波动性；2）地方政府教育领域的季节性扭曲。8月，休闲与酒店业新增就业岗位超出常规，达+62,000个，而地方政府教育新增+42,000个——均为7月数据偏弱后的回补。剔除上述两项因素，就业增长将为+58,000，而非+162,000。尽管如此，8月报告仍有若干积极亮点，尤其是更广泛的U6失业率（涵盖边缘附着劳动者、灰心丧气者及因经济原因从事兼职工作者）下降0.2个百分点至7.7%，创2025年6月以来最低水平。薪资增长目前处于本轮周期的较低水平，接近疫情前的节奏，这意味着劳动力市场并非是过度通胀压力的来源，尤其是在当前高通胀主要由供应因素驱动的背景下。报告的另一积极之处在于制造业（+16,000）和建筑业（+22,000）的就业数据，均高于近期趋势，显示出商品生产部门有所企稳。市场将此次就业报告解读为偏鹰派，收益率和美元走高，而股票则小幅下跌。市场对美联储9月加息的定价已升至约60%。尽管如此，本周的消费者价格指数和生产者价格指数数据对美联储9月决策的影响，很可能大于就业报告本身。美联储官员可能会淡化就业数据的波动性，而更加关注近期通胀信号。",
+      "action": "edit",
+      "before": "我们的观点　7月就业报告疲软之后，8月就业增长出现反弹。近期数据似乎受到两个波动性因素的影响：1）世界杯赛事，推动了休闲与酒店业的波动性；2）地方政府教育领域的季节性扭曲。8月，休闲与酒店业新增就业岗位超出常规，达+62,000个，而地方政府教育新增+42,000个——均为7月数据偏弱后的回补。剔除上述两项因素，就业增长将为+58,000，而非+162,000。尽管如此，8月报告仍有若干积极亮点，尤其是更广泛的U6失业率（涵盖边缘附着劳动者、灰心丧气者及因经济原因从事兼职工作者）下降0.2个百分点至7.7%，创2025年6月以来最低水平。薪资增长目前处于本轮周期的较低水平，接近疫情前的节奏，这意味着劳动力市场并非过度通胀压力的来源，尤其是在当前高通胀主要由供给侧因素驱动的背景下。报告的另一积极之处在于制造业（+16,000个）和建筑业（+22,000个）的就业数据，均高于近期趋势，显示出商品生产部门有所企稳。市场将此次就业报告解读为偏鹰派，收益率和美元走高，而股票则小幅下跌。市场对美联储9月加息的定价已升至约60%。尽管如此，本周的消费者价格指数和生产者价格指数数据对美联储9月决策的影响，很可能远大于就业报告本身。美联储官员可能会淡化就业数据的波动性，而更加关注近期通胀信号。",
+      "segment_id": "b-007",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "3f9c45f6111fdd7d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-09-05T16:00:49.984Z",
+  "deleted_at": null,
+  "updated_at": "2026-09-05T16:21:35.551Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

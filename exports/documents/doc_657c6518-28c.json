@@ -1,0 +1,3044 @@
+{
+  "rev": 1,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "If the shock doesn't stick: Mapping out de-escalation",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "title",
+      "style": {
+        "level": 1
+      },
+      "mt_text": "Si el impacto no persiste: Trazando un escenario de distensión",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.611,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Si el impacto no persiste: Trazando un escenario de distensión",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "If the shock doesn't stick: Mapping out de-escalation",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Los mercados parecen posicionados para un cierre prolongado del Estrecho de Ormuz. Eso se refleja claramente en los precios de la energía, las tasas y en la concentración del liderazgo en renta variable. Pero si el panorama cambia —aunque sea marginalmente— hacia la distensión, el ajuste podría ser rápido y subestimado. Un precio del petróleo más bajo incide directamente en la caída de los rendimientos y en condiciones financieras más favorables, y podría desencadenar una rotación de corto duración hacia segmentos del mercado que los inversionistas han ignorado en gran medida.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.857,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los mercados parecen posicionados para un cierre del Estrecho de Ormuz. Eso se refleja claramente en los precios de la energía, las tasas y en la concentración del liderazgo en renta variable. Pero si el panorama cambia —aunque sea marginalmente— hacia la distensión, el ajuste podría ser rápido y subestimado. Un precio del petróleo más bajo incide directamente en la caída de los rendimientos y en condiciones financieras más favorables, y podría desencadenar una rotación de corto duración hacia segmentos del mercado que los inversionistas han ignorado en gran medida.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Markets seem positioned for a prolonged closure of the Strait of Hormuz. That's clear in energy prices, rates and in the concentration of equity leadership. But if the path shifts—even marginally—toward de-escalation, the adjustment could be swift and underappreciated. A lower oil price directly feeds into falling yields and easier financial conditions, and could trigger a short-term rotation into parts of the market that investors have largely ignored.",
+      "critic_flags": [
+        {
+          "span": "equity",
+          "category": "terminology",
+          "severity": "major",
+          "suggestion": "capital"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "renta variable"
+        },
+        {
+          "source": "duration",
+          "applied": true,
+          "approved_target": "duración"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [
+            {
+              "span": "equity",
+              "message": "Source term \"equity\" should render as \"capital\"",
+              "expected": "capital"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "La señal de que todo está despejado",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.782,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La señal de que todo está despejado",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The all-clear signal",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Se ha convertido en un patrón familiar: un titular relacionado con Irán cruza los cables informativos. Los precios del petróleo se disparan. Los temores inflacionarios resurgen. Las tasas de interés suben gradualmente. Y los inversionistas se concentran en las mismas operaciones: energía, activos defensivos y acciones de crecimiento de gran capitalización. Parte de la demanda se fundamenta en variables fundamentales, pero una porción creciente responde al impulso del momentum, y es entonces cuando la narrativa comienza a estirarse.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Se ha convertido en un patrón familiar: un titular relacionado con Irán cruza los cables informativos. Los precios del petróleo se disparan. Los temores inflacionarios resurgen. Las tasas de interés suben gradualmente. Y los inversionistas se concentran en las mismas operaciones: energía, activos defensivos y acciones de crecimiento de gran capitalización. Parte de la demanda se fundamenta en variables fundamentales, pero una porción creciente responde al impulso del momentum, y es entonces cuando la narrativa comienza a estirarse.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "It's become a familiar pattern: An Iran-related headline crosses the wire. Oil prices spike. Inflation fears resurface. Interest rates drift higher. And investors crowd into the same trades: energy, defensive assets and mega-cap growth stocks. Part of the bid is grounded in fundamentals, but some of it is increasingly momentum-driven—and that's when the narrative starts to stretch.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Los inversionistas están descontando persistencia. Riesgo geopolítico persistente. Presión inflacionaria persistente. Concentración persistente en el liderazgo del capital. Esa visión descansa en un supuesto clave: que el impacto actual se prolonga. ¿Qué ocurre si no es así?",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los inversionistas están descontando persistencia. Riesgo geopolítico persistente. Presión inflacionaria persistente. Concentración persistente en el liderazgo del capital. Esa visión descansa en un supuesto clave: que el impacto actual se prolonga. ¿Qué ocurre si no es así?",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "Investors are pricing in persistence. Persistent geopolitical risk. Persistent inflation pressure. Persistent concentration in equity leadership. That view rests on one key assumption: that the current shock lasts. What if it doesn't?",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "renta variable"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-006",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "¿Y cómo luce una señal de que todo está despejado en un mundo que se prepara para nuevos golpes?",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.806,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "¿Y cómo luce una señal de que todo está despejado en un mundo que se prepara para nuevos golpes?",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "And what does an all-clear sign look like in a world that's bracing for further impact?",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-007",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Las esperanzas de un acuerdo de paz continúan creciendo a medida que más funcionarios de Washington y sus socios internacionales asumen un papel más activo en los esfuerzos de negociación y mediación. En apariencia, parece estar generando cierto avance. Si bien el acuerdo sobre temas clave como el enriquecimiento nuclear sigue siendo lejano, esto podría no importar para los inversionistas que intentan descontar una resolución. La luz verde está vinculada al número de embarcaciones que transitan por el Estrecho de Ormuz y al restablecimiento de los flujos del comercio global.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Las esperanzas de un acuerdo de paz continúan creciendo a medida que más funcionarios de Washington y sus socios internacionales asumen un papel más activo en los esfuerzos de negociación y mediación. En apariencia, parece estar generando cierto avance. Si bien el acuerdo sobre temas clave como el enriquecimiento nuclear sigue siendo lejano, esto podría no importar para los inversionistas que intentan descontar una resolución. La luz verde está vinculada al número de embarcaciones que transitan por el Estrecho de Ormuz y al restablecimiento de los flujos del comercio global.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Hopes of a peace deal continue to grow as more Washington officials and their international partners take a more active role in negotiation and mediation efforts. On the surface, it seems to be yielding some progress. While agreement on key issues like nuclear enrichment remain distant, it may not matter for investors trying to price a resolution. The green light is tied to the number of ships making their way through the Strait of Hormuz and restoring global trade flows.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-008",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Un escenario plausible a corto duración podría implicar una extensión temporal de las condiciones del alto al fuego junto con una reanudación gradual del tránsito. Eso tendría un efecto inmediato. Más de 100 millones de barriles permanecen efectivamente atrapados en la región, los cuales podrían reincorporarse a los mercados globales en poco tiempo. Las expectativas de esa eventualidad ya se están filtrando en mercados de nicho.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "100000000",
+          "text": "100 million",
+          "char_end": 173,
+          "char_start": 162
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Un escenario plausible a corto duración podría implicar una extensión temporal de las condiciones del alto al fuego junto con una reanudación gradual del tránsito. Eso tendría un efecto inmediato. Más de 100 millones de barriles permanecen efectivamente atrapados en la región, los cuales podrían reincorporarse a los mercados globales en poco tiempo. Las expectativas de esa eventualidad ya se están filtrando en mercados de nicho.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "A plausible near-term path could involve a temporary extension of ceasefire conditions alongside a gradual resumption of transit. That would matter quickly. Over 100 million barrels remain effectively trapped in the region, which could re-enter global markets in short order. Expectations of that eventuality are already seeping into niche markets.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "duration",
+          "applied": true,
+          "approved_target": "duración"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-009",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "Los costos de flete del Golfo de Oriente Medio a China se revierten",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.96,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los costos de flete del Golfo de Oriente Medio a China se revierten",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Shipping costs from the Middle East Gulf to China unwind",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-010",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Fletes, dólares estadounidenses por tonelada métrica. Este gráfico de líneas muestra el costo de transportar mercancías desde Oriente Medio hasta China, medido en dólares estadounidenses por tonelada métrica, desde octubre de 2025 hasta mayo de 2026. Los precios comenzaron cerca de $20 por tonelada a finales de 2025, cayeron brevemente por debajo de $10 en diciembre, luego escalaron de forma sostenida y pronunciada, alcanzando un máximo superior a $90 en marzo de 2026. Posteriormente, los costos retrocedieron, situándose en $65 por tonelada al cierre del período.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 180,
+          "char_start": 176
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 197,
+          "char_start": 193
+        },
+        {
+          "kind": "currency",
+          "norm": "20",
+          "text": "$20",
+          "char_end": 223,
+          "char_start": 219
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 245,
+          "char_start": 241
+        },
+        {
+          "kind": "currency",
+          "norm": "10",
+          "text": "$10",
+          "char_end": 272,
+          "char_start": 268
+        },
+        {
+          "kind": "currency",
+          "norm": "90",
+          "text": "$90",
+          "char_end": 338,
+          "char_start": 334
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 351,
+          "char_start": 347
+        },
+        {
+          "kind": "currency",
+          "norm": "65",
+          "text": "$65",
+          "char_end": 397,
+          "char_start": 393
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Fletes, dólares estadounidenses por tonelada métrica. Este gráfico de líneas muestra el costo de transportar mercancías desde Oriente Medio hasta China, medido en dólares estadounidenses por tonelada métrica, desde octubre de 2025 hasta mayo de 2026. Los precios comenzaron cerca de $20 por tonelada a finales de 2025, cayeron brevemente por debajo de $10 en diciembre, luego escalaron de forma sostenida y pronunciada, alcanzando un máximo superior a $90 en marzo de 2026. Posteriormente, los costos retrocedieron, situándose en $65 por tonelada al cierre del período.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Freight rates, U.S. dollars per metric ton. This line chart shows the cost to ship goods from the Middle East to China, measured in U.S. dollars per metric tonne, from October 2025 through May 2026. Prices started near $20 per tonne in late 2025, dipped briefly below $10 in December, then climbed steadily and sharply, peaking above $90 in March 2026. After that, costs fell back, landing at $65 per tonne by the end of the period.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-011",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Fuentes: Bloomberg Finance L.P., Bloomberg Fair Value. Datos al 28 de mayo de 2026.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "28",
+          "text": "28",
+          "char_end": 72,
+          "char_start": 70
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 78,
+          "char_start": 74
+        },
+        {
+          "kind": "entity",
+          "norm": "Bloomberg",
+          "text": "Bloomberg",
+          "char_end": 18,
+          "char_start": 9
+        },
+        {
+          "kind": "entity",
+          "norm": "Bloomberg",
+          "text": "Bloomberg",
+          "char_end": 42,
+          "char_start": 33
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Fuentes: Bloomberg Finance L.P., Bloomberg Fair Value. Datos al 28 de mayo de 2026.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Sources: Bloomberg Finance L.P., Bloomberg Fair Value. Data as of May 28, 2026.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-012",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "El ciclo de retroalimentación",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "El ciclo de retroalimentación",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The feedback loop",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-013",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Una reapertura gradual de las rutas de tránsito podría reducir los precios del petróleo. Pero también podría ir más allá, comprimiendo la prima geopolítica incorporada en los mercados financieros, aliviando las escaseces físicas y modificando la narrativa macroeconómica de una manera para la que los inversionistas quizás aún no estén posicionados.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Una reapertura gradual de las rutas de tránsito podría reducir los precios del petróleo. Pero también podría ir más allá, comprimiendo la prima geopolítica incorporada en los mercados financieros, aliviando las escaseces físicas y modificando la narrativa macroeconómica de una manera para la que los inversionistas quizás aún no estén posicionados.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "A gradual reopening of transit routes could lower oil prices. But it could also go further than that, and compress the geopolitical premium embedded across financial markets, ease physical shortages and shift the macro narrative in a way that investors may not yet be positioned for.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-014",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Una quinta parte del suministro mundial de petróleo transita por el Estrecho de Ormuz. Cuando los flujos se interrumpen, los mercados energéticos reaccionan de inmediato. Pero cuando el suministro se reanuda, los precios pueden normalizarse con igual rapidez. Y eso tiene efectos en cadena, particularmente en el mercado de bonos. El mecanismo de transmisión es directo: los precios de la energía inciden en la inflación, las expectativas de inflación inciden en las probabilidades de política monetaria, y las expectativas de política afectan los rendimientos de los bonos.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.673,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Una quinta parte del suministro mundial de petróleo transita por el Estrecho de Ormuz. Cuando los flujos se interrumpen, los mercados energéticos reaccionan de inmediato. Pero cuando el suministro se reanuda, los precios pueden normalizarse con igual rapidez. Y eso tiene efectos en cadena, particularmente en el mercado de bonos. El mecanismo de transmisión es directo: los precios de la energía inciden en la inflación, las expectativas de inflación inciden en las probabilidades de política monetaria, y las expectativas de política afectan los rendimientos de los bonos.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "One-fifth of global oil supply moves through the Strait of Hormuz. When flows are disrupted, energy markets react immediately. But when supply resumes, prices can normalize just as quickly. And that has ripple effects, namely in the bond market. The transmission mechanism is straightforward: Energy prices feed into inflation, inflation expectations feed into policy odds, and policy expectations affect bond yields.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-015",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "El repunte de la inflación ha sido impulsado por los precios de la energía",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "El repunte de la inflación ha sido impulsado por los precios de la energía",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The inflation uptick has been driven by energy prices",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-016",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Componentes del Índice de Precios al Consumidor, variación porcentual interanual. Este gráfico muestra la variación porcentual interanual del Índice de Precios al Consumidor desglosada en cuatro componentes: bienes básicos, servicios básicos, alimentos y energía, desde 2018 hasta 2026. Los precios de la energía se dispararon bruscamente en 2021 y 2022, alcanzando un máximo superior al 10%, y han sido el principal factor detrás de los incrementos recientes en la inflación.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2018",
+          "text": "2018",
+          "char_end": 225,
+          "char_start": 221
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 233,
+          "char_start": 229
+        },
+        {
+          "kind": "date",
+          "norm": "2021",
+          "text": "2021",
+          "char_end": 271,
+          "char_start": 267
+        },
+        {
+          "kind": "date",
+          "norm": "2022",
+          "text": "2022",
+          "char_end": 280,
+          "char_start": 276
+        },
+        {
+          "kind": "percent",
+          "norm": "10%",
+          "text": "10%",
+          "char_end": 299,
+          "char_start": 296
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Componentes del Índice de Precios al Consumidor, variación porcentual interanual. Este gráfico muestra la variación porcentual interanual del Índice de Precios al Consumidor desglosada en cuatro componentes: bienes básicos, servicios básicos, alimentos y energía, desde 2018 hasta 2026. Los precios de la energía se dispararon bruscamente en 2021 y 2022, alcanzando un máximo superior al 10%, y han sido el principal factor detrás de los incrementos recientes en la inflación.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Consumer Price Index components, year-over-year % change. This chart shows the year-over-year percentage change in the Consumer Price Index broken down by four components: core goods, core services, food and energy, from 2018 to 2026. Energy prices spiked sharply in 2021 and 2022, peaking above 10%, and have been the main driver behind recent increases in inflation.",
+      "critic_flags": [
+        {
+          "span": "%",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "2 '%'"
+        }
+      ],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "%",
+              "message": "Percent sign dropped (2 → 1)",
+              "expected": "2 '%'"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-017",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Fuente: FactSet. Datos a marzo de 2026.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 38,
+          "char_start": 34
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Fuente: FactSet. Datos a marzo de 2026.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Source: FactSet. Data as of March 2026.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-018",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Una reversión en el precio del petróleo puede empujar los rendimientos de los bonos a la baja a nivel global, a medida que los inversionistas reevalúan la necesidad de incrementos en la tasa de interés. Podría aliviar la presión sobre las cadenas de suministro —un problema cada vez más agudo— y reducir los costos de insumos en las industrias con mayor intensidad energética. Esto podría, a su vez, catalizar una rotación de regreso hacia algunos de los segmentos rezagados del mercado de capital, provocando un cambio repentino en el liderazgo bursátil, al menos de manera temporal.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.946,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Una reversión en el precio del petróleo puede empujar los rendimientos de los bonos a la baja a nivel global, a medida que los inversionistas reevalúan la necesidad de incrementos en la tasa de interés. Podría aliviar la presión sobre las cadenas de suministro —un problema cada vez más agudo— y reducir los costos de insumos en las industrias con mayor intensidad energética. Esto podría, a su vez, catalizar una rotación de regreso hacia algunos de los segmentos rezagados del mercado de capital, provocando un cambio repentino en el liderazgo bursátil, al menos de manera temporal.",
+      "iterations": 2,
+      "seg_status": "machine",
+      "source_text": "An unwind in the oil price can push bond yields lower globally as investors reevaluate the need for interest rate hikes. It could alleviate pressure on supply chains—an increasingly acute problem—and decrease input costs on the most energy-intensive industries. This could, in turn, catalyze a rotation back into some of the lagging corners of the equity market, prompting a sudden shift in stock market leadership—at least temporarily.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "renta variable"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-019",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Esto no es inédito. Los mercados suelen sobrepasar en ambas direcciones: primero descontando los peores escenarios y luego revirtiéndolos una vez que la realidad resulta más estable de lo temido.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Esto no es inédito. Los mercados suelen sobrepasar en ambas direcciones: primero descontando los peores escenarios y luego revirtiéndolos una vez que la realidad resulta más estable de lo temido.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "This isn't unprecedented. Markets often overshoot on both sides—pricing worst-case scenarios first, then unwinding them once reality proves more stable than feared.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-020",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "Preparándose para la rotación",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.836,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Preparándose para la rotación",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Bracing for rotation",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-021",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Mientras el vertiginoso repunte del S&P 500 continúa, bajo la superficie las ganancias siguen concentradas en operaciones vinculadas a la inteligencia artificial (AI). Las acciones de semiconductores, memoria y computadoras continúan impulsando los retornos, con algunos segmentos del mercado cotizando a niveles cercanos al doble de donde se encontraban a principios de año, lo que genera una amplia dispersión en el desempeño dentro del mercado accionario.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 41,
+          "char_start": 38
+        },
+        {
+          "kind": "ticker",
+          "norm": "(AI)",
+          "text": "(AI)",
+          "char_end": 130,
+          "char_start": 126
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 41,
+          "char_start": 34
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Mientras el vertiginoso repunte del S&P 500 continúa, bajo la superficie las ganancias siguen concentradas en operaciones vinculadas a la inteligencia artificial (AI). Las acciones de semiconductores, memoria y computadoras continúan impulsando los retornos, con algunos segmentos del mercado cotizando a niveles cercanos al doble de donde se encontraban a principios de año, lo que genera una amplia dispersión en el desempeño dentro del mercado accionario.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "While the blistering rally in the S&P 500 continues, under the hood, the gains remain concentrated in artificial intelligence (AI)-related trades. Semiconductor, memory and computer stocks continue to drive returns, with some parts of the market trading at levels near double where they were at the start of the year, creating a wide dispersion in performance within the stock market.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "ganancias"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-022",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "Los beneficiarios de los centros de datos superan en rendimiento a las acciones no vinculadas a la (AI)",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los beneficiarios de los centros de datos superan en rendimiento a las acciones no vinculadas a la (AI)",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Data center beneficiaries are outperforming non-AI stocks",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-023",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Retorno de precio acumulado en el año, %. Este gráfico muestra los retornos de precio acumulados en el año para dos grupos: los beneficiarios de centros de datos de (AI) y el S&P 500 excluyendo acciones de (AI). A finales de mayo, los beneficiarios de centros de datos de (AI) han subido un 40%, mientras que el S&P 500 ex-(AI) ha ganado apenas un 4%.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 134,
+          "char_start": 131
+        },
+        {
+          "kind": "percent",
+          "norm": "40%",
+          "text": "40%",
+          "char_end": 212,
+          "char_start": 209
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 231,
+          "char_start": 228
+        },
+        {
+          "kind": "percent",
+          "norm": "4%",
+          "text": "4%",
+          "char_end": 256,
+          "char_start": 254
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 134,
+          "char_start": 127
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 231,
+          "char_start": 224
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Retorno de precio acumulado en el año, %. Este gráfico muestra los retornos de precio acumulados en el año para dos grupos: los beneficiarios de centros de datos de (AI) y el S&P 500 excluyendo acciones de (AI). A finales de mayo, los beneficiarios de centros de datos de (AI) han subido un 40%, mientras que el S&P 500 ex-(AI) ha ganado apenas un 4%.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Year-to-date price return, %. This chart shows year-to-date price returns for two groups: AI data center beneficiaries and the S&P 500 excluding AI stocks. By late May, AI data center beneficiaries have risen 40%, while the S&P 500 ex-AI has gained just 4%.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-024",
+      "dnt": false,
+      "type": "disclaimer",
+      "mt_text": "El desempeño pasado no es garantía de resultados futuros. No es posible invertir directamente en un índice. Fuente: Bloomberg Finance L.P. Datos al 28 de mayo de 2026.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "28",
+          "text": "28",
+          "char_end": 154,
+          "char_start": 152
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 160,
+          "char_start": 156
+        },
+        {
+          "kind": "entity",
+          "norm": "Bloomberg",
+          "text": "Bloomberg",
+          "char_end": 123,
+          "char_start": 114
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0.42021276595744683,
+        "source": "TM"
+      },
+      "final_text": "El desempeño pasado no es garantía de resultados futuros. No es posible invertir directamente en un índice. Fuente: Bloomberg Finance L.P. Datos al 28 de mayo de 2026.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Past performance is not a guarantee of future results. It is not possible to invest directly in an index. Source: Bloomberg Finance L.P. Data as of May 28, 2026.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [
+            {
+              "span": "Past performance is not a guarantee of future results. It is",
+              "message": "Unknown disclaimer — publish blocked until approved Spanish wording is added to the TM."
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-025",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "En gran parte del desarrollo de la (AI), la demanda continúa superando a la oferta. Basta con observar el crecimiento de las ganancias. Las estimaciones de ganancias del S&P 500 en el primer trimestre se situaban en aproximadamente un 13% en términos trimestrales al inicio de la temporada de reportes. No solo las ganancias corporativas superaron esas estimaciones, sino que saltaron a más del 28%. Excluyendo ganancias extraordinarias, la cifra es de casi el 20%. Incluso el software —el sector que quizás ha experimentado la mayor disrupción— no registró revisiones negativas. De hecho, fue revisado al alza a pesar de la volatilidad del primer trimestre.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 111,
+          "char_start": 108
+        },
+        {
+          "kind": "percent",
+          "norm": "13%",
+          "text": "13%",
+          "char_end": 165,
+          "char_start": 162
+        },
+        {
+          "kind": "percent",
+          "norm": "28%",
+          "text": "28%",
+          "char_end": 297,
+          "char_start": 294
+        },
+        {
+          "kind": "percent",
+          "norm": "20%",
+          "text": "20%",
+          "char_end": 349,
+          "char_start": 346
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 111,
+          "char_start": 104
+        }
+      ],
+      "qe_score": 0.848,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "En gran parte del desarrollo de la (AI), la demanda continúa superando a la oferta. Basta con observar el crecimiento de las ganancias. Las estimaciones de ganancias del S&P 500 en el primer trimestre se situaban en aproximadamente un 13% en términos trimestrales al inicio de la temporada de reportes. No solo las ganancias corporativas superaron esas estimaciones, sino que saltaron a más del 28%. Excluyendo ganancias extraordinarias, la cifra es de casi el 20%. Incluso el software —el sector que quizás ha experimentado la mayor disrupción— no registró revisiones negativas. De hecho, fue revisado al alza a pesar de la volatilidad del primer trimestre.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "In many parts of the AI build-out, demand continues to outstrip supply. Take a look at earnings growth. S&P 500 earnings estimates in the first quarter stood at ~13% on a quarterly basis at the start of reporting season. Not only did corporate earnings beat those estimates, but jumped to over 28%. Excluding one-time gains, the figure is nearly 20%. Even software—the sector that's perhaps seen the most disruption—didn't post any negative revisions. In fact, it was revised higher despite the first-quarter volatility.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "volatility",
+          "applied": false,
+          "approved_target": "volatilidad"
+        },
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "ganancias"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-026",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Diferenciándose del auge tecnológico de principios de siglo, esto no es la década de los noventa tardía: las ganancias son reales y se están acelerando de manera pronunciada.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Diferenciándose del auge tecnológico de principios de siglo, esto no es la década de los noventa tardía: las ganancias son reales y se están acelerando de manera pronunciada.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Setting itself apart from the technological boom at the start of the century, this is not the late 1990s—earnings are real, and they're accelerating sharply.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "ganancias"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-027",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Pero con el desempeño superior de los sectores de momentum, que registran algunos de los repuntes más poderosos observados en los últimos 15 años, surgen operaciones saturadas.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "15",
+          "text": "15",
+          "char_end": 122,
+          "char_start": 120
+        }
+      ],
+      "qe_score": 0.906,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Pero con el desempeño superior de los sectores de momentum, que registran algunos de los repuntes más poderosos observados en los últimos 15 años, surgen operaciones saturadas.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "But with the outperformance of momentum sectors, which are posting some of the most powerful rallies seen over the last 15 years, comes crowded trades.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-028",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "¿Qué es lo que no tiene demanda?",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.308,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "¿Qué es lo que no tiene demanda?",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "What's unloved?",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-029",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Los sectores cíclicos como el financiero, el consumo discrecional, los bienes de consumo básico y los REITS permanecen relativamente rezagados. Una reapertura del Estrecho de Ormuz y la consiguiente caída tanto en el precio del petróleo como en los rendimientos de los bonos podría redirigir los flujos hacia estos segmentos, al menos en el corto duración, al tiempo que reencauza los flujos de capital que han apostado todo a la operación de (AI). Que comience la rotación.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.945,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los sectores cíclicos como el financiero, el consumo discrecional, los bienes de consumo básico y los REITS permanecen relativamente rezagados. Una reapertura del Estrecho de Ormuz y la consiguiente caída tanto en el precio del petróleo como en los rendimientos de los bonos podría redirigir los flujos hacia estos segmentos, al menos en el corto duración, al tiempo que reencauza los flujos de capital que han apostado todo a la operación de (AI). Que comience la rotación.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Cyclical sectors like financials, consumer discretionary, consumer staples and REITS remain relatively muted. A re-opening of the Strait of Hormuz and ensuing decline in both the oil price and bond yields could shift flows towards these segments, at least in the short term, while resetting capital flows that have been all in on the AI trade. Cue the rotation.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equity",
+          "applied": false,
+          "approved_target": "capital"
+        },
+        {
+          "source": "duration",
+          "applied": true,
+          "approved_target": "duración"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-030",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "El panorama es similar a nivel internacional. La renta variable europea ha tenido un desempeño inferior mientras experimenta el mayor impacto en sus términos de intercambio, y está en posición de beneficiarse de una rotación de corto duración, especialmente en los sectores más expuestos a la disrupción energética, como las aerolíneas y el comercio minorista. El cambio podría incluso beneficiar a los bancos y a las mineras en el corto duración.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "El panorama es similar a nivel internacional. La renta variable europea ha tenido un desempeño inferior mientras experimenta el mayor impacto en sus términos de intercambio, y está en posición de beneficiarse de una rotación de corto duración, especialmente en los sectores más expuestos a la disrupción energética, como las aerolíneas y el comercio minorista. El cambio podría incluso beneficiar a los bancos y a las mineras en el corto duración.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "It's a similar picture internationally. European equities have underperformed while experiencing the greatest term of trade shock, and stand to benefit from a short-term rotation—especially in sectors most exposed to the energy disruption, like airlines and retail. The change could even benefit banks and miners in the short term.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "renta variable"
+        },
+        {
+          "source": "duration",
+          "applied": true,
+          "approved_target": "duración"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-031",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Los inversionistas se preparan para más de lo mismo. Pero la operación de distensión es, en última instancia, una apuesta por la rotación. Si el impacto se disipa, la reversión podría ser tan rápida como el descuento inicial del riesgo, antes de que los mercados retomen sus tendencias de largo duración.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los inversionistas se preparan para más de lo mismo. Pero la operación de distensión es, en última instancia, una apuesta por la rotación. Si el impacto se disipa, la reversión podría ser tan rápida como el descuento inicial del riesgo, antes de que los mercados retomen sus tendencias de largo duración.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Investors are bracing for more of the same. But the de-escalation trade is ultimately about rotation. If the shock fades, the unwind could be as swift as the initial pricing of risk—before markets settle back into their longer-term trends.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "duration",
+          "applied": true,
+          "approved_target": "duración"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-032",
+      "dnt": false,
+      "type": "disclaimer",
+      "mt_text": "Este material tiene únicamente fines informativos y puede informarle sobre ciertos productos y servicios ofrecidos por los negocios de banca privada, parte de JPMorgan Chase & Co. Las opiniones, estrategias o productos analizados pueden no ser apropiados para todas las personas y están sujetos a riesgos. Los inversionistas podrían recuperar menos de lo que invirtieron, y el rendimiento pasado no es un indicador confiable de los resultados futuros. Este material no debe considerarse un informe de análisis.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 1,
+        "tm_id": "tm-006",
+        "source": "TM"
+      },
+      "final_text": "Este material tiene únicamente fines informativos y puede informarle sobre ciertos productos y servicios ofrecidos por los negocios de banca privada, parte de JPMorgan Chase & Co. Las opiniones, estrategias o productos analizados pueden no ser apropiados para todas las personas y están sujetos a riesgos. Los inversionistas podrían recuperar menos de lo que invirtieron, y el rendimiento pasado no es un indicador confiable de los resultados futuros. Este material no debe considerarse un informe de análisis.",
+      "iterations": 0,
+      "seg_status": "locked",
+      "source_text": "This material is for information purposes only and may inform you of certain products and services offered by private banking businesses, part of JPMorgan Chase & Co. Any views, strategies or products discussed may not be appropriate for all individuals and are subject to risks. Investors may get back less than they invested, and past performance is not a reliable indicator of future results. This material should not be regarded as a research report.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_657c6518-28c",
+  "source": {
+    "type": "txt",
+    "filename": "jpm-01-de-escalation.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0.82,
+    "hter_by_category": {
+      "accuracy": 0.019
+    },
+    "number_fail_rate": 0.031,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0.031
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_60681a80-0c5",
+      "ts": "2026-06-01T16:13:15.149Z",
+      "hter": 0.019,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Los mercados parecen posicionados para un cierre del Estrecho de Ormuz. Eso se refleja claramente en los precios de la energía, las tasas y en la concentración del liderazgo en renta variable. Pero si el panorama cambia —aunque sea marginalmente— hacia la distensión, el ajuste podría ser rápido y subestimado. Un precio del petróleo más bajo incide directamente en la caída de los rendimientos y en condiciones financieras más favorables, y podría desencadenar una rotación de corto duración hacia segmentos del mercado que los inversionistas han ignorado en gran medida.",
+      "action": "edit",
+      "before": "Los mercados parecen posicionados para un cierre prolongado del Estrecho de Ormuz. Eso se refleja claramente en los precios de la energía, las tasas y en la concentración del liderazgo en renta variable. Pero si el panorama cambia —aunque sea marginalmente— hacia la distensión, el ajuste podría ser rápido y subestimado. Un precio del petróleo más bajo incide directamente en la caída de los rendimientos y en condiciones financieras más favorables, y podría desencadenar una rotación de corto duración hacia segmentos del mercado que los inversionistas han ignorado en gran medida.",
+      "segment_id": "b-002",
+      "char_edit_distance": 11,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "dc0ba31342d6cb0d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v1 | critic-mqm-regionalism-v1",
+    "critic_model_id": "gpt-5",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-01T05:05:26.173Z",
+  "updated_at": "2026-06-01T16:13:15.149Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "es-419",
+  "schema_version": "1.0"
+}

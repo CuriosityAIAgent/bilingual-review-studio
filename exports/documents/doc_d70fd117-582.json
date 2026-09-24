@@ -1,0 +1,3233 @@
+{
+  "rev": 12,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "How to get to 9,000 on the S&P 500",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "title",
+      "style": {
+        "level": 1
+      },
+      "mt_text": "Cómo llegar a 9,000 en el S&P 500",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "9000",
+          "text": "9,000",
+          "char_end": 19,
+          "char_start": 14
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 34,
+          "char_start": 31
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 34,
+          "char_start": 27
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Cómo llegar a 9,000 en el S&P 500",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "How to get to 9,000 on the S&P 500",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Cerca de máximos históricos y con una recuperación de aproximadamente 16% desde la corrección de marzo, el S&P 500 ha protagonizado un repunte histórico impulsado por un superciclo de ganancias y la incorporación en precios de una revolución de inteligencia artificial (AI). Para los inversionistas que han disfrutado de estos rendimientos, es natural preguntarse: ¿cuánto más pueden mejorar los retornos del mercado accionario desde aquí, especialmente con un mercado de bonos en turbulencia?",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "16%",
+          "text": "16%",
+          "char_end": 30,
+          "char_start": 27
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 73,
+          "char_start": 70
+        },
+        {
+          "kind": "ticker",
+          "norm": "(AI)",
+          "text": "(AI)",
+          "char_end": 181,
+          "char_start": 177
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 73,
+          "char_start": 66
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Cerca de máximos históricos y con una recuperación de aproximadamente 16% desde la corrección de marzo, el S&P 500 ha protagonizado un repunte histórico impulsado por un superciclo de ganancias y la incorporación en precios de una revolución de inteligencia artificial (AI). Para los inversionistas que han disfrutado de estos rendimientos, es natural preguntarse: ¿cuánto más pueden mejorar los retornos del mercado accionario desde aquí, especialmente con un mercado de bonos en turbulencia?",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Near all-time highs and a ~16% rally from the March pullback, the S&P 500 has staged a historic rally driven by an earnings supercycle and pricing in an artificial intelligence (AI) revolution. For investors who've enjoyed the returns, it's natural to wonder: How much better can stock market returns get from here, especially with a bond market in tumult?",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "ganancias"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Si bien no es el escenario base, el S&P 500 podría alcanzar hasta 9,000 a mediados de 2027. Una ganancia de aproximadamente 22% desde los niveles actuales puede parecer optimista, pero sigue siendo completamente plausible. A continuación, explicamos cómo.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 36,
+          "char_start": 33
+        },
+        {
+          "kind": "number",
+          "norm": "9000",
+          "text": "9,000",
+          "char_end": 65,
+          "char_start": 60
+        },
+        {
+          "kind": "date",
+          "norm": "2027",
+          "text": "2027",
+          "char_end": 77,
+          "char_start": 73
+        },
+        {
+          "kind": "percent",
+          "norm": "22%",
+          "text": "22%",
+          "char_end": 85,
+          "char_start": 82
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 36,
+          "char_start": 29
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Si bien no es el escenario base, el S&P 500 podría alcanzar hasta 9,000 puntos a mediados de 2027. Una ganancia de aproximadamente 22% desde los niveles actuales puede parecer optimista, pero sigue siendo completamente plausible. A continuación, explicamos cómo.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "While not the base case, the S&P 500 could reach as high as 9,000 by mid-2027. A ~22% gain from current levels may seem optimistic, but remains entirely plausible. Here's how.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "Un superciclo de (AI) más amplio y robusto",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Un superciclo de (AI) más amplio y robusto",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "A bigger, broader AI supercycle",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La revolución de la inteligencia artificial (AI) ya está impulsando el crecimiento de las ganancias —y, por extensión, el mercado accionario— a un ritmo récord. No se había registrado una racha de seis trimestres consecutivos de crecimiento de ganancias de dos dígitos desde las secuelas de la crisis financiera global (GFC).",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "ticker",
+          "norm": "(GFC)",
+          "text": "(GFC)",
+          "char_end": 248,
+          "char_start": 243
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La revolución de la inteligencia artificial (AI) ya está impulsando el crecimiento de utilidades —y, por extensión, el mercado accionario— a un ritmo récord. No se había registrado una racha de seis trimestres consecutivos de crecimiento de ganancias de dos dígitos desde las secuelas de la crisis financiera global (GFC).",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "The AI revolution is already driving earnings growth—and by extension the stock market—at a record clip. There hasn't been a streak of six consecutive quarters of double-digit earnings growth since the aftermath of the global financial crisis (GFC).",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "ganancias"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-006",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "El crecimiento global de las ganancias está en auge, acelerándose de 15.3% interanual en el cuarto trimestre a 22.6% en el primer trimestre de este año. Ese es el nivel más alto en más de cuatro años. Ya de por sí es un resultado impresionante, pero resulta aún más extraordinario dado que no se trata de un rebote tras una desaceleración cíclica, como ocurrió después de la (GFC), sino de una aceleración desde una base ya elevada.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "15.3%",
+          "text": "15.3%",
+          "char_end": 58,
+          "char_start": 53
+        },
+        {
+          "kind": "percent",
+          "norm": "22.6%",
+          "text": "22.6%",
+          "char_end": 104,
+          "char_start": 99
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "El crecimiento global de utilidades está en auge, acelerándose de 15.3% interanual en el cuarto trimestre a 22.6% en el primer trimestre de este año. Ese es el nivel más alto en más de cuatro años. Ya de por sí es un resultado impresionante, pero resulta aún más extraordinario dado que no se trata de un rebote tras una desaceleración cíclica, como ocurrió después de la (GFC), sino de una aceleración desde una base ya elevada.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Global earnings growth is booming, accelerating from 15.3% year-over-year in the fourth quarter to 22.6% in the first quarter of this year. That's the highest in over four years. This is already an impressive showing, but even more extraordinary given it's not a rebound from a cyclical downturn, like after the GFC, but rather an acceleration from an already high base.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "ganancias"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-007",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Por ahora, está siendo impulsado por el sector tecnológico. Eso representa tanto un riesgo de concentración como una oportunidad. El camino hacia 9,000 va más allá del sector tecnológico. Depende de una adopción más amplia de la (AI) en distintos sectores que incremente la productividad y refuerce los márgenes en general.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "9000",
+          "text": "9,000",
+          "char_end": 117,
+          "char_start": 112
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Por ahora, esto está siendo impulsado por el sector tecnológico. Eso representa tanto un riesgo de concentración como una oportunidad. El camino hacia 9,000 puntos va más allá del sector tecnológico: depende de una adopción más amplia de la inteligencia artificial en distintos sectores que incremente la productividad y refuerce los márgenes en general.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "For now, it's being driven by the tech sector. That's both a concentration risk and an opportunity. The path to 9,000 extends beyond the tech sector. It relies on broader AI adoption across sectors that increases productivity and bolsters margins across the board.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-008",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "No es ningún secreto que la narrativa macroeconómica en Estados Unidos gira en torno a la (AI). Sin embargo, el mercado está transitando su enfoque desde la infraestructura hacia la adopción. Si bien la capa de hardware continúa generando utilidades extraordinarias, la historia secular de las ganancias se está desplazando hacia segmentos más cercanos al usuario final.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "No es ningún secreto que la narrativa macroeconómica en Estados Unidos gira en torno a la inteligencia artificial. Sin embargo, el mercado está transitando su enfoque desde la infraestructura fisica y digital hacia la adopción. Si bien la capa de hardware continúa generando utilidades extraordinarias, la historia secular de utilidades se está desplazando hacia segmentos más cercanos al usuario final.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "It's no secret that the macro narrative in the United States centers on AI. But the market is now transitioning its focus from infrastructure to adoption. While the hardware layer continues to print extraordinary profits, the secular earnings story is moving downstream.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "ganancias"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-009",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Los mayores gigantes de la nube están destinando más de $800 mil millones en gasto de capital en (AI) anualmente, con proyecciones de escalar a un estimado de $1.16 billones para 2027. Esto actúa como un estímulo fiscal masivo para el sector privado, fluyendo directamente hacia semiconductores, hardware especializado, sistemas avanzados de enfriamiento, redes eléctricas y construcción comercial, entre otras áreas adyacentes.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "currency",
+          "norm": "800000000000",
+          "text": "$800 billion",
+          "char_end": 56,
+          "char_start": 44
+        },
+        {
+          "kind": "currency",
+          "norm": "1160000000000",
+          "text": "$1.16 trillion",
+          "char_end": 128,
+          "char_start": 114
+        },
+        {
+          "kind": "date",
+          "norm": "2027",
+          "text": "2027",
+          "char_end": 136,
+          "char_start": 132
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los mayores gigantes de la nube están destinando más de $800 mil millones en gasto de capital en (AI) anualmente, con proyecciones de escalar a un estimado de $1.16 billones para 2027. Esto actúa como un estímulo fiscal masivo para el sector privado, fluyendo directamente hacia semiconductores, hardware especializado, sistemas avanzados de enfriamiento, redes eléctricas y construcción comercial, entre otras áreas adyacentes.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The largest cloud giants are deploying over $800 billion in AI capital spending annually, scaling to an estimated $1.16 trillion by 2027. This acts as a massive fiscal stimulus for the private sector, flowing directly into semiconductors, specialized hardware, advanced cooling, power grids and commercial construction, among other adjacent areas.",
+      "critic_flags": [
+        {
+          "span": "billones",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "mil millones"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equity",
+          "applied": false,
+          "approved_target": "capital"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "billones",
+              "found": "billones",
+              "message": "English \"billion\" (10^9) mistranslated as \"billones\" (10^12 in Spanish). Use \"mil millones\".",
+              "expected": "mil millones"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-010",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Para que las empresas sostengan un crecimiento de ganancias de mediados de la adolescencia porcentual sin generar inflación, la productividad necesita acelerarse. Ya lo hemos visto antes. La productividad se disparó a finales de la década de 1990, con una tasa anualizada de aproximadamente 2.8%. Mientras tanto, el índice registró cinco años consecutivos de retornos superiores a 20% entre 1995 y 2000. Puede volver a ocurrir.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "2.8%",
+          "text": "2.8%",
+          "char_end": 191,
+          "char_start": 187
+        },
+        {
+          "kind": "percent",
+          "norm": "20%",
+          "text": "20%",
+          "char_end": 258,
+          "char_start": 255
+        },
+        {
+          "kind": "date",
+          "norm": "1995",
+          "text": "1995",
+          "char_end": 279,
+          "char_start": 275
+        },
+        {
+          "kind": "date",
+          "norm": "2000",
+          "text": "2000",
+          "char_end": 288,
+          "char_start": 284
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Para que las empresas sostengan un crecimiento de utilidades alreadedor de 15% sin generar inflación, la productividad necesita acelerarse. Ya lo hemos visto antes. La productividad se disparó a finales de la década de 1990, con una tasa anualizada de aproximadamente 2.8%. Mientras tanto, el índice registró cinco años consecutivos de retornos superiores a 20% entre 1995 y 2000. Puede volver a ocurrir.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "For companies to sustain mid-teens earnings growth without igniting inflation, productivity needs to accelerate. We've seen it before. Productivity boomed in the late 1990s, annualizing ~2.8%. Meanwhile, the index delivered five consecutive years of over 20% returns between 1995 and 2000. It can happen again.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "ganancias"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-011",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "Asimilando una venta masiva en el mercado de bonos",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Asimilando una venta masiva en el mercado de bonos",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Digesting a bond market sell-off",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-012",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "¿Qué obstaculiza el camino? La narrativa parece imparable, pero en cualquier escenario alcista es prudente considerar los riesgos, especialmente los que provienen de otras clases de activos. Si bien es muy probable que la Reserva Federal adopte una postura de espera ante los incrementos de la inflación general impulsados por la energía, el mercado de bonos no siempre tiene la misma paciencia.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "¿Qué obstaculiza el camino? La narrativa parece imparable, pero en cualquier escenario alcista es prudente considerar los riesgos, especialmente los que provienen de otras clases de activos. Si bien es muy probable que la Reserva Federal adopte una postura de espera ante los incrementos de la inflación general impulsados por la energía, el mercado de bonos no siempre tiene la misma paciencia.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "What gets in the way? The narrative feels unstoppable, but in any bull case, it's prudent to entertain the risks—especially ones that come from other asset classes. While the Federal Reserve is most likely to take a wait-and-see approach to energy-led increases in headline inflation, the bond market isn't always as patient.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-013",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Los rendimientos de los bonos del Tesoro de EE. UU. a 10 años aumentaron más de 40 puntos básicos en las últimas cuatro semanas. Al otro lado del Atlántico, los gilts del Reino Unido, los bunds alemanes y los bonos del gobierno japonés (JGBs) experimentaron movimientos similares en períodos comparables, impulsados por una revaluación de las expectativas de política del banco central.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "10",
+          "text": "10",
+          "char_end": 7,
+          "char_start": 5
+        },
+        {
+          "kind": "number",
+          "norm": "40000000000bps",
+          "text": "40 basis points",
+          "char_end": 48,
+          "char_start": 33
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los rendimientos de los bonos del Tesoro de EE. UU. a 10 años aumentaron más de 40 puntos básicos en las últimas cuatro semanas. Al otro lado del Atlántico, los gilts del Reino Unido, los bunds alemanes y los bonos del gobierno japonés (JGBs) experimentaron movimientos similares en períodos comparables, impulsados por una revaluación de las expectativas de política del banco central.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "U.S. 10-year yields rose by over 40 basis points over the last four weeks. Across the Atlantic, U.K. gilt yields, German bunds and Japanese government bonds (JGBs) experienced similar moves around the same timeframes driven by a repricing of central bank policy expectations.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "basis points",
+          "applied": false,
+          "approved_target": "puntos básicos"
+        },
+        {
+          "source": "central bank",
+          "applied": false,
+          "approved_target": "banco central"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-014",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Naturalmente, esto ha inquietado a los mercados de capital. Los inversionistas se plantean una pregunta clave: ¿puede un mercado accionario cerca de máximos históricos asimilar un nivel de tasas que, en algunos tramos de la curva de rendimientoses, no se veía desde 2007?",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2007",
+          "text": "2007",
+          "char_end": 203,
+          "char_start": 199
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Naturalmente, esto ha inquietado a los mercados de capital. Los inversionistas se plantean una pregunta clave: ¿puede un mercado accionario cerca de máximos históricos asimilar un nivel de tasas que, en algunos tramos de la curva de rendimientos, no se veía desde 2007?",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "Naturally, it has spooked equity markets. Investors are asking one key question: Can a stock market near all-time highs digest a level of rates that in some parts of the yield curve was last seen in 2007?",
+      "critic_flags": [
+        {
+          "span": "yield curve",
+          "category": "terminology",
+          "severity": "major",
+          "suggestion": "curva de rendimientos"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "yield curve",
+          "applied": true,
+          "approved_target": "curva de rendimientos"
+        },
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "renta variable"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [
+            {
+              "span": "yield curve",
+              "message": "Source term \"yield curve\" should render as \"curva de rendimientos\"",
+              "expected": "curva de rendimientos"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-015",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "No se trata tanto del nivel de las tasas en sí, sino de la magnitud del movimiento, que es lo que más importa. Un movimiento de más de 40 puntos básicos en los rendimientos de los bonos del Tesoro a 10 años no es inusual. Movimientos similares de esta magnitud han ocurrido seis veces en los últimos cinco años, notablemente tras el Día de la Liberación y después de las elecciones presidenciales de EE. UU. de 2024. Sin embargo, esta venta masiva generalizada en tasas no había ocurrido en más de un año. Quizás por eso el movimiento se percibe tan agudo esta vez en la renta variable.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "40",
+          "text": "40",
+          "char_end": 108,
+          "char_start": 106
+        },
+        {
+          "kind": "number",
+          "norm": "10",
+          "text": "10",
+          "char_end": 131,
+          "char_start": 129
+        },
+        {
+          "kind": "date",
+          "norm": "2024",
+          "text": "2024",
+          "char_end": 302,
+          "char_start": 298
+        }
+      ],
+      "qe_score": 0.995,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "No se trata tanto del nivel de las tasas en sí, sino de la magnitud del movimiento, que es lo que más importa. Un movimiento de más de 40 puntos básicos en los rendimientos de los bonos del Tesoro a 10 años no es inusual. Movimientos similares de esta magnitud han ocurrido seis veces en los últimos cinco años, notablemente tras el Día de la Liberación y después de las elecciones presidenciales de EE. UU. de 2024. Sin embargo, esta venta masiva generalizada en tasas no había ocurrido en más de un año. Quizás por eso el movimiento se percibe tan agudo esta vez en la renta variable.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "It's not about the level of rates itself, but rather the magnitude of the move that matters more. An over 40 basis point move in 10-year Treasury yields isn't uncommon. Similar moves of this margin have happened six times in the last five years, notably in the wake of Liberation Day and after the 2024 U.S. presidential election. But this broad-based sell-off in rates hasn't happened in over a year. Perhaps that's why the move feels so acute this time around in equities.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "renta variable"
+        },
+        {
+          "source": "basis points",
+          "applied": false,
+          "approved_target": "puntos básicos"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-016",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "Las acciones tienden a caer cuando las tasas se mueven más de lo habitual",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Las acciones tienden a caer cuando las tasas se mueven más de lo habitual",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Stocks tend to fall when rates move more than average",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-017",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Retorno a 1 mes del S&P 500 en función de la variación en los rendimientos de los bonos del Tesoro de EE. UU. en comparación con el movimiento típico. Este gráfico de barras muestra el retorno promedio a 1 mes del S&P 500 agrupado según cuánto variaron los rendimientos de los bonos del Tesoro de EE. UU. en relación con su oscilación típica. Cuando los cambios en las tasas son pequeños o típicos (puntuaciones z entre -2 y +1), los retornos accionarios suelen ser positivos, oscilando entre aproximadamente 0% y poco más de 1%. Cuando los cambios en las tasas son inusualmente grandes (puntuación z superior a 2), tanto los rendimientos nominales como los reales a 10 años se asocian con retornos accionarios marcadamente negativos: aproximadamente -1.5% para los rendimientos nominales y casi -5% para los rendimientos reales.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 7,
+          "char_start": 4
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 116,
+          "char_start": 113
+        },
+        {
+          "kind": "percent",
+          "norm": "0%",
+          "text": "0%",
+          "char_end": 348,
+          "char_start": 346
+        },
+        {
+          "kind": "percent",
+          "norm": "1%",
+          "text": "1%",
+          "char_end": 364,
+          "char_start": 362
+        },
+        {
+          "kind": "number",
+          "norm": "10",
+          "text": "10",
+          "char_end": 447,
+          "char_start": 445
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.5%",
+          "text": "-1.5%",
+          "char_end": 523,
+          "char_start": 518
+        },
+        {
+          "kind": "percent",
+          "norm": "-5%",
+          "text": "-5%",
+          "char_end": 557,
+          "char_start": 554
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 7,
+          "char_start": 0
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 116,
+          "char_start": 109
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Retorno a 1 mes del S&P 500 en función de la variación en los rendimientos de los bonos del Tesoro de EE. UU. en comparación con el movimiento típico. Este gráfico de barras muestra el retorno promedio a 1 mes del S&P 500 agrupado según cuánto variaron los rendimientos de los bonos del Tesoro de EE. UU. en relación con su oscilación típica. Cuando los cambios en las tasas son pequeños o típicos (z-score entre -2 y +1), los retornos accionarios suelen ser positivos, oscilando entre aproximadamente 0% y poco más de 1%. Cuando los cambios en las tasas son inusualmente grandes (z-score superior a 2), tanto los rendimientos nominales como los reales a 10 años se asocian con retornos accionarios marcadamente negativos: aproximadamente -1.5% para los rendimientos nominales y casi -5% para los rendimientos reales.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "S&P 500 1-month return based on U.S. Treasury yield swing compared to typical move. This bar chart shows the S&P 500's average 1-month return grouped by how much U.S. Treasury yields moved compared to their typical swing. When rate changes are small or typical (z scores between -2 and +1), stock returns are usually positive, ranging from about 0% to just over 1%. When rate changes are unusually large (z score above 2), both nominal and real 10-year yields are associated with sharply negative stock returns: about -1.5% for nominal yields and nearly -5% for real yields.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-018",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Fuente: Bloomberg Finance L.P. Datos al 1 de mayo de 2026.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 53,
+          "char_start": 49
+        },
+        {
+          "kind": "entity",
+          "norm": "Bloomberg",
+          "text": "Bloomberg",
+          "char_end": 17,
+          "char_start": 8
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Fuente: Bloomberg Finance L.P. Datos al 1 de mayo de 2026.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Source: Bloomberg Finance L.P. Data as of May 1, 2026.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-019",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Los activos de riesgo no siempre suben en línea recta. La actual corrección en acciones de impulso como los semiconductores y otras operaciones en cuellos de botella de la (AI), en reacción al alza en los rendimientos de los bonos, es completamente saludable. Sienta las bases para el siguiente tramo alcista, con un posicionamiento de los inversionistas más limpio.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los activos de riesgo no siempre suben en línea recta. La actual corrección en acciones de impulso como los semiconductores y otras operaciones en cuellos de botella de la inteligencia artificial, en reacción al alza en los rendimientos de los bonos, es completamente saludable, pues sienta las bases para el siguiente tramo alcista con un posicionamiento más limpio por parte de los inversionistas.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Risk assets do not always go up in a straight line. The current unwind in momentum stocks like semiconductors and other AI bottleneck trades in reaction to higher bond yields is entirely healthy. It sets the stage for the next leg up, with cleaner investor positioning.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-020",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La renta variable puede asimilar rendimientos más altos si el movimiento está impulsado por mayores expectativas de crecimiento nominal. Tomemos Japón como ejemplo. El repunte actual en las acciones japonesas se está produciendo a pesar de una importante venta masiva en los JGBs. Por otro lado, una mayor volatilidad en los bonos y una revaluación rápida sustentada en preocupaciones inflacionarias podría ser más preocupante. Y esa es la línea que el mercado estadounidense está tratando de definir mientras el cronograma en torno a una resolución del conflicto en Irán continúa cambiando.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.93,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La renta variable puede asimilar rendimientos más altos si el movimiento está impulsado por mayores expectativas de crecimiento nominal. Tomemos Japón como ejemplo. El repunte actual en las acciones japonesas se está produciendo a pesar de una importante venta masiva en los JGBs. Por otro lado, una mayor volatilidad en los bonos y una revaluación rápida sustentada en preocupaciones inflacionarias podría ser más preocupante. Y esa es la línea que el mercado estadounidense está tratando de definir mientras el cronograma en torno a una resolución del conflicto en Irán continúa cambiando.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Equities can digest higher yields if the move is driven by higher nominal growth expectations. Take Japan as an example. The current rally in Japanese stocks is taking place despite a major sell-off in JGBs. On the other hand, higher bond volatility and a rapid repricing predicated on inflationary concerns could be more troubling. And that line is what the U.S. market is grappling with as the timeline shifts around a resolution to the conflict in Iran.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "renta variable"
+        },
+        {
+          "source": "volatility",
+          "applied": false,
+          "approved_target": "volatilidad"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-021",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "La resaca de Ormuz",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.062,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La resaca de Ormuz",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Hormuz hangover",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-022",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "A casi la mitad del año, los factores impulsores del capital global lucen muy distintos en comparación con el inicio del año. 2026 comenzó con inversionistas volcándose hacia los mercados internacionales. Las acciones estadounidenses, aunque en alza, tenían un desempeño inferior al de sus contrapartes globales.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 116,
+          "char_start": 112
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "A casi la mitad del año, los factores impulsores del mercado accionario lucen muy distintos en comparación con el inicio del año. 2026 comenzó con inversionistas volcándose hacia los mercados internacionales. Las acciones estadounidenses, aunque en alza, tenían un desempeño inferior al de sus contrapartes globales.",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "Nearly halfway through the year, global equity drivers look vastly different compared to when the year started. 2026 began with investors flocking to international markets. U.S. stocks, although rallying, were underperforming their global counterparts.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "renta variable"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-023",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Señales positivas de crecimiento global, incluyendo sólidos datos económicos de EE. UU., el temor a valuaciones elevadas en las mega-capitalizaciones tecnológicas estadounidenses, una serie de disrupciones relacionadas con la (AI) y múltiples eventos geopolíticos, desde Venezuela hasta Groenlandia, alimentaron esta dinámica. Sin embargo, el conflicto en Irán rompió con la tendencia.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Señales positivas de crecimiento global, incluyendo sólidos datos económicos de EE. UU., el temor a valuaciones elevadas en las grandes empresas tecnológicas estadounidenses, una serie de disrupciones relacionadas con la inteligencia artificial y múltiples eventos geopolíticos, desde Venezuela hasta Groenlandia, alimentaron esta dinámica. Sin embargo, el conflicto en Irán rompió con la tendencia.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Positive global growth signals including strong U.S. economic data, fears of lofty mega-cap tech valuations in the United States, a series of AI-related disruptions and multiple geopolitical events, from Venezuela to Greenland, fed the dynamic. But the conflict in Iran bucked the trend.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-024",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "De repente, el mundo se vio inundado de incertidumbre y un choque energético que, para algunas regiones del mundo, rivalizó con el experimentado en 2022 tras el inicio de la guerra en Ucrania. Y las acciones estadounidenses volvieron a tomar la delantera, especialmente a medida que se extiende la duración del conflicto y el bloqueo en el Estrecho de Ormuz.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2022",
+          "text": "2022",
+          "char_end": 128,
+          "char_start": 124
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "De repente, el mundo se vio inundado de incertidumbre y un choque energético que, para algunas regiones del mundo, rivalizó con el experimentado en 2022 tras el inicio de la guerra en Ucrania. Y las acciones estadounidenses volvieron a tomar la delantera, especialmente a medida que se extiende la duración del conflicto y el bloqueo en el Estrecho de Ormuz.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Suddenly, the world was awash with uncertainty and an energy shock that for some parts of the world rivaled the one seen in 2022, after the war in Ukraine began. And American stocks were back in the driver's seat, especially as the length of the conflict and blockade in the Strait of Hormuz extends.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "duration",
+          "applied": false,
+          "approved_target": "duración"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-025",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Un retorno a la normalidad en el Estrecho de Ormuz, que devolvería más de 14 millones de barriles de petróleo por día a la economía global, podría revertir el efecto, al menos temporalmente. En otras palabras, en el corto duración, las regiones que más han sufrido por los mayores costos energéticos y un choque negativo en los términos de intercambio, como Europa o Japón —donde la revaluación de las tasas ha sido más agresiva— podrían recibir un impulso.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "14000000",
+          "text": "14 million",
+          "char_end": 82,
+          "char_start": 72
+        }
+      ],
+      "qe_score": 0.901,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Un retorno a la normalidad en el Estrecho de Ormuz, que devolvería más de 14 millones de barriles de petróleo por día a la economía global, podría revertir el efecto, al menos temporalmente. En otras palabras, en el corto plazo, las regiones que más han sufrido por los mayores costos energéticos y un choque negativo en los términos de intercambio, como Europa o Japón —donde la revaluación de las tasas ha sido más agresiva— podrían verse beneficiadas",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "A return to normal around the Strait of Hormuz, which would return over 14 million barrels of oil per day to the global economy, could reverse the effect, at least temporarily. In other words, in the short term, the regions that have suffered most from higher energy costs and a negative terms of trade shock, like Europe or Japan—where the rates repricing has been the most aggressive—could see a boost.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "duration",
+          "applied": true,
+          "approved_target": "duración"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-026",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "La superioridad de rendimiento de la renta variable internacional se ha revertido",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.441,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La superioridad de rendimiento de la renta variable internacional se ha revertido",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "International equities' outperformance has unwound",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "renta variable"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-027",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Índice MSCI internacional ex-EE. UU. en relación con el índice MSCI EE. UU. 1 de septiembre de 2025 = 100. Este gráfico de líneas muestra el índice MSCI internacional ex-EE. UU. en relación con el índice MSCI EE. UU., partiendo de una base de 100 el 1 de septiembre de 2025. La razón cayó por debajo de 100 hacia finales de 2025, lo que indica que las acciones internacionales tuvieron un desempeño inferior al de las acciones estadounidenses. Desde principios de 2026, la línea subió de forma pronunciada, alcanzando un máximo por encima de 110 en marzo, lo que significa que las acciones internacionales superaron a las estadounidenses. Después de marzo, la razón cayó de vuelta hacia 98 en mayo de 2026, mostrando que la superioridad de rendimiento se revirtió y las acciones estadounidenses recuperaron terreno.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 81,
+          "char_start": 77
+        },
+        {
+          "kind": "number",
+          "norm": "100",
+          "text": "100",
+          "char_end": 87,
+          "char_start": 84
+        },
+        {
+          "kind": "number",
+          "norm": "100",
+          "text": "100",
+          "char_end": 210,
+          "char_start": 207
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 231,
+          "char_start": 227
+        },
+        {
+          "kind": "number",
+          "norm": "100",
+          "text": "100",
+          "char_end": 259,
+          "char_start": 256
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 277,
+          "char_start": 273
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 353,
+          "char_start": 349
+        },
+        {
+          "kind": "number",
+          "norm": "110",
+          "text": "110",
+          "char_end": 398,
+          "char_start": 395
+        },
+        {
+          "kind": "number",
+          "norm": "98",
+          "text": "98",
+          "char_end": 509,
+          "char_start": 507
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 521,
+          "char_start": 517
+        },
+        {
+          "kind": "entity",
+          "norm": "MSCI",
+          "text": "MSCI",
+          "char_end": 4,
+          "char_start": 0
+        },
+        {
+          "kind": "entity",
+          "norm": "MSCI",
+          "text": "MSCI",
+          "char_end": 49,
+          "char_start": 45
+        },
+        {
+          "kind": "entity",
+          "norm": "MSCI",
+          "text": "MSCI",
+          "char_end": 119,
+          "char_start": 115
+        },
+        {
+          "kind": "entity",
+          "norm": "MSCI",
+          "text": "MSCI",
+          "char_end": 168,
+          "char_start": 164
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Índice MSCI internacional ex-EE. UU. en relación con el índice MSCI EE. UU. 1 de septiembre de 2025 = 100. Este gráfico de líneas muestra el índice MSCI internacional ex-EE. UU. en relación con el índice MSCI EE. UU., partiendo de una base de 100 el 1 de septiembre de 2025. La razón cayó por debajo de 100 hacia finales de 2025, lo que indica que las acciones internacionales tuvieron un desempeño inferior al de las acciones estadounidenses. Desde principios de 2026, la línea subió de forma pronunciada, alcanzando un máximo por encima de 110 en marzo, lo que significa que las acciones internacionales superaron a las estadounidenses. Después de marzo, la razón cayó de vuelta hacia 98 en mayo de 2026, mostrando que la superioridad de rendimiento se revirtió y las acciones estadounidenses recuperaron terreno.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "MSCI international ex-U.S. index relative to MSCI U.S. index. September 1st, 2025 = 100. This line chart shows the MSCI international ex-U.S. index relative to the MSCI U.S. index, starting at a baseline of 100 on September 1, 2025. The ratio dipped below 100 through late 2025, indicating international stocks lagged behind U.S. stocks. From early 2026, the line climbed sharply, peaking above 110 in March, meaning international stocks outperformed U.S. stocks. After March, the ratio dropped back toward 98 by May 2026, showing the outperformance reversed and U.S. stocks regained ground.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-028",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Fuente: Bloomberg Finance L.P. Datos al 19 de mayo de 2026.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "19",
+          "text": "19",
+          "char_end": 48,
+          "char_start": 46
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 54,
+          "char_start": 50
+        },
+        {
+          "kind": "entity",
+          "norm": "Bloomberg",
+          "text": "Bloomberg",
+          "char_end": 17,
+          "char_start": 8
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Fuente: Bloomberg Finance L.P. Datos al 19 de mayo de 2026.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Source: Bloomberg Finance L.P. Data as of May 19, 2026.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-029",
+      "dnt": false,
+      "type": "disclaimer",
+      "mt_text": "El contenido de esta página web tiene fines informativos y educativos únicamente, y puede informarles sobre productos y servicios ofrecidos por negocios de banca privada, parte de JPMorgan Chase & Co. Cualquier opinión o estrategia aquí expuesta puede no ser adecuada para todos los inversionistas y conlleva riesgos. Es posible que recuperen menos de lo invertido; el desempeño pasado no es un indicador confiable de resultados futuros. Este contenido no debe ser tratado como un informe de investigación.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0.7286995515695067,
+        "source": "TM"
+      },
+      "final_text": "El contenido de esta página web tiene fines informativos y educativos únicamente, y puede informarles sobre productos y servicios ofrecidos por negocios de banca privada, parte de JPMorgan Chase & Co. Cualquier opinión o estrategia aquí expuesta puede no ser adecuada para todos los inversionistas y conlleva riesgos. Es posible que recuperen menos de lo invertido; el desempeño pasado no es un indicador confiable de resultados futuros. Este contenido no debe ser tratado como un informe de investigación.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "This webpage content is for information and educational purposes only and may inform you of products and services offered by private banking businesses, part of JPMorgan Chase & Co. Any views or strategies discussed may not be suitable for all investors and carry risk. You may get back less than you invested; past performance does not reliably indicate future results. This content should not be treated as a research report.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [
+            {
+              "span": "This webpage content is for information and educational purp",
+              "message": "Unknown disclaimer — publish blocked until approved Spanish wording is added to the TM."
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_d70fd117-582",
+  "source": {
+    "type": "txt",
+    "filename": "jpm-02-sp500-9000.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 9.72,
+    "hter_by_category": {
+      "accuracy": 0.067
+    },
+    "number_fail_rate": 0.034,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0.034
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_ceb4657f-f28",
+      "ts": "2026-06-01T21:20:32.665Z",
+      "hter": 0.027,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Si bien no es el escenario base, el S&P 500 podría alcanzar hasta 9,000 puntos a mediados de 2027. Una ganancia de aproximadamente 22% desde los niveles actuales puede parecer optimista, pero sigue siendo completamente plausible. A continuación, explicamos cómo.",
+      "action": "edit",
+      "before": "Si bien no es el escenario base, el S&P 500 podría alcanzar hasta 9,000 a mediados de 2027. Una ganancia de aproximadamente 22% desde los niveles actuales puede parecer optimista, pero sigue siendo completamente plausible. A continuación, explicamos cómo.",
+      "segment_id": "b-003",
+      "char_edit_distance": 7,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_d0635ac7-af8",
+      "ts": "2026-06-01T21:21:04.438Z",
+      "hter": 0.034,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "La revolución de la inteligencia artificial (AI) ya está impulsando el crecimiento de utilidades —y, por extensión, el mercado accionario— a un ritmo récord. No se había registrado una racha de seis trimestres consecutivos de crecimiento de ganancias de dos dígitos desde las secuelas de la crisis financiera global (GFC).",
+      "action": "edit",
+      "before": "La revolución de la inteligencia artificial (AI) ya está impulsando el crecimiento de las ganancias —y, por extensión, el mercado accionario— a un ritmo récord. No se había registrado una racha de seis trimestres consecutivos de crecimiento de ganancias de dos dígitos desde las secuelas de la crisis financiera global (GFC).",
+      "segment_id": "b-005",
+      "char_edit_distance": 11,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_26b28f14-17d",
+      "ts": "2026-06-01T21:21:36.621Z",
+      "hter": 0.026,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "El crecimiento global de utilidades está en auge, acelerándose de 15.3% interanual en el cuarto trimestre a 22.6% en el primer trimestre de este año. Ese es el nivel más alto en más de cuatro años. Ya de por sí es un resultado impresionante, pero resulta aún más extraordinario dado que no se trata de un rebote tras una desaceleración cíclica, como ocurrió después de la (GFC), sino de una aceleración desde una base ya elevada.",
+      "action": "edit",
+      "before": "El crecimiento global de las ganancias está en auge, acelerándose de 15.3% interanual en el cuarto trimestre a 22.6% en el primer trimestre de este año. Ese es el nivel más alto en más de cuatro años. Ya de por sí es un resultado impresionante, pero resulta aún más extraordinario dado que no se trata de un rebote tras una desaceleración cíclica, como ocurrió después de la (GFC), sino de una aceleración desde una base ya elevada.",
+      "segment_id": "b-006",
+      "char_edit_distance": 11,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_b01be439-224",
+      "ts": "2026-06-01T21:22:05.310Z",
+      "hter": 0.105,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Por ahora, esto está siendo impulsado por el sector tecnológico. Eso representa tanto un riesgo de concentración como una oportunidad. El camino hacia 9,000 puntos va más allá del sector tecnológico: depende de una adopción más amplia de la inteligencia artificial en distintos sectores que incremente la productividad y refuerce los márgenes en general.",
+      "action": "edit",
+      "before": "Por ahora, está siendo impulsado por el sector tecnológico. Eso representa tanto un riesgo de concentración como una oportunidad. El camino hacia 9,000 va más allá del sector tecnológico. Depende de una adopción más amplia de la (AI) en distintos sectores que incremente la productividad y refuerce los márgenes en general.",
+      "segment_id": "b-007",
+      "char_edit_distance": 37,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_53d1bf01-b36",
+      "ts": "2026-06-01T21:22:43.747Z",
+      "hter": 0.127,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "No es ningún secreto que la narrativa macroeconómica en Estados Unidos gira en torno a la inteligencia artificial. Sin embargo, el mercado está transitando su enfoque desde la infraestructura fisica y digital hacia la adopción. Si bien la capa de hardware continúa generando utilidades extraordinarias, la historia secular de utilidades se está desplazando hacia segmentos más cercanos al usuario final.",
+      "action": "edit",
+      "before": "No es ningún secreto que la narrativa macroeconómica en Estados Unidos gira en torno a la (AI). Sin embargo, el mercado está transitando su enfoque desde la infraestructura hacia la adopción. Si bien la capa de hardware continúa generando utilidades extraordinarias, la historia secular de las ganancias se está desplazando hacia segmentos más cercanos al usuario final.",
+      "segment_id": "b-008",
+      "char_edit_distance": 51,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_e4defa3a-fe7",
+      "ts": "2026-06-01T21:24:09.997Z",
+      "hter": 0.097,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Para que las empresas sostengan un crecimiento de utilidades alreadedor de 15% sin generar inflación, la productividad necesita acelerarse. Ya lo hemos visto antes. La productividad se disparó a finales de la década de 1990, con una tasa anualizada de aproximadamente 2.8%. Mientras tanto, el índice registró cinco años consecutivos de retornos superiores a 20% entre 1995 y 2000. Puede volver a ocurrir.",
+      "action": "edit",
+      "before": "Para que las empresas sostengan un crecimiento de ganancias de mediados de la adolescencia porcentual sin generar inflación, la productividad necesita acelerarse. Ya lo hemos visto antes. La productividad se disparó a finales de la década de 1990, con una tasa anualizada de aproximadamente 2.8%. Mientras tanto, el índice registró cinco años consecutivos de retornos superiores a 20% entre 1995 y 2000. Puede volver a ocurrir.",
+      "segment_id": "b-010",
+      "char_edit_distance": 39,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_8f1d47de-bea",
+      "ts": "2026-06-01T21:25:03.825Z",
+      "hter": 0.007,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Naturalmente, esto ha inquietado a los mercados de capital. Los inversionistas se plantean una pregunta clave: ¿puede un mercado accionario cerca de máximos históricos asimilar un nivel de tasas que, en algunos tramos de la curva de rendimientos, no se veía desde 2007?",
+      "action": "edit",
+      "before": "Naturalmente, esto ha inquietado a los mercados de capital. Los inversionistas se plantean una pregunta clave: ¿puede un mercado accionario cerca de máximos históricos asimilar un nivel de tasas que, en algunos tramos de la curva de rendimientoses, no se veía desde 2007?",
+      "segment_id": "b-014",
+      "char_edit_distance": 2,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_711588ad-232",
+      "ts": "2026-06-01T21:25:41.145Z",
+      "hter": 0.027,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Retorno a 1 mes del S&P 500 en función de la variación en los rendimientos de los bonos del Tesoro de EE. UU. en comparación con el movimiento típico. Este gráfico de barras muestra el retorno promedio a 1 mes del S&P 500 agrupado según cuánto variaron los rendimientos de los bonos del Tesoro de EE. UU. en relación con su oscilación típica. Cuando los cambios en las tasas son pequeños o típicos (z-score entre -2 y +1), los retornos accionarios suelen ser positivos, oscilando entre aproximadamente 0% y poco más de 1%. Cuando los cambios en las tasas son inusualmente grandes (z-score superior a 2), tanto los rendimientos nominales como los reales a 10 años se asocian con retornos accionarios marcadamente negativos: aproximadamente -1.5% para los rendimientos nominales y casi -5% para los rendimientos reales.",
+      "action": "edit",
+      "before": "Retorno a 1 mes del S&P 500 en función de la variación en los rendimientos de los bonos del Tesoro de EE. UU. en comparación con el movimiento típico. Este gráfico de barras muestra el retorno promedio a 1 mes del S&P 500 agrupado según cuánto variaron los rendimientos de los bonos del Tesoro de EE. UU. en relación con su oscilación típica. Cuando los cambios en las tasas son pequeños o típicos (puntuaciones z entre -2 y +1), los retornos accionarios suelen ser positivos, oscilando entre aproximadamente 0% y poco más de 1%. Cuando los cambios en las tasas son inusualmente grandes (puntuación z superior a 2), tanto los rendimientos nominales como los reales a 10 años se asocian con retornos accionarios marcadamente negativos: aproximadamente -1.5% para los rendimientos nominales y casi -5% para los rendimientos reales.",
+      "segment_id": "b-017",
+      "char_edit_distance": 22,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_6decbd50-945",
+      "ts": "2026-06-01T21:27:08.017Z",
+      "hter": 0.158,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Los activos de riesgo no siempre suben en línea recta. La actual corrección en acciones de impulso como los semiconductores y otras operaciones en cuellos de botella de la inteligencia artificial, en reacción al alza en los rendimientos de los bonos, es completamente saludable, pues sienta las bases para el siguiente tramo alcista con un posicionamiento más limpio por parte de los inversionistas.",
+      "action": "edit",
+      "before": "Los activos de riesgo no siempre suben en línea recta. La actual corrección en acciones de impulso como los semiconductores y otras operaciones en cuellos de botella de la (AI), en reacción al alza en los rendimientos de los bonos, es completamente saludable. Sienta las bases para el siguiente tramo alcista, con un posicionamiento de los inversionistas más limpio.",
+      "segment_id": "b-019",
+      "char_edit_distance": 63,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_a3eeb863-327",
+      "ts": "2026-06-01T21:27:28.474Z",
+      "hter": 0.044,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "A casi la mitad del año, los factores impulsores del mercado accionario lucen muy distintos en comparación con el inicio del año. 2026 comenzó con inversionistas volcándose hacia los mercados internacionales. Las acciones estadounidenses, aunque en alza, tenían un desempeño inferior al de sus contrapartes globales.",
+      "action": "edit",
+      "before": "A casi la mitad del año, los factores impulsores del capital global lucen muy distintos en comparación con el inicio del año. 2026 comenzó con inversionistas volcándose hacia los mercados internacionales. Las acciones estadounidenses, aunque en alza, tenían un desempeño inferior al de sus contrapartes globales.",
+      "segment_id": "b-022",
+      "char_edit_distance": 14,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_b76584ec-e9c",
+      "ts": "2026-06-01T21:28:10.430Z",
+      "hter": 0.103,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Señales positivas de crecimiento global, incluyendo sólidos datos económicos de EE. UU., el temor a valuaciones elevadas en las grandes empresas tecnológicas estadounidenses, una serie de disrupciones relacionadas con la inteligencia artificial y múltiples eventos geopolíticos, desde Venezuela hasta Groenlandia, alimentaron esta dinámica. Sin embargo, el conflicto en Irán rompió con la tendencia.",
+      "action": "edit",
+      "before": "Señales positivas de crecimiento global, incluyendo sólidos datos económicos de EE. UU., el temor a valuaciones elevadas en las mega-capitalizaciones tecnológicas estadounidenses, una serie de disrupciones relacionadas con la (AI) y múltiples eventos geopolíticos, desde Venezuela hasta Groenlandia, alimentaron esta dinámica. Sin embargo, el conflicto en Irán rompió con la tendencia.",
+      "segment_id": "b-023",
+      "char_edit_distance": 41,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_4f3ad898-e1e",
+      "ts": "2026-06-01T21:28:49.747Z",
+      "hter": 0.053,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Un retorno a la normalidad en el Estrecho de Ormuz, que devolvería más de 14 millones de barriles de petróleo por día a la economía global, podría revertir el efecto, al menos temporalmente. En otras palabras, en el corto plazo, las regiones que más han sufrido por los mayores costos energéticos y un choque negativo en los términos de intercambio, como Europa o Japón —donde la revaluación de las tasas ha sido más agresiva— podrían verse beneficiadas",
+      "action": "edit",
+      "before": "Un retorno a la normalidad en el Estrecho de Ormuz, que devolvería más de 14 millones de barriles de petróleo por día a la economía global, podría revertir el efecto, al menos temporalmente. En otras palabras, en el corto duración, las regiones que más han sufrido por los mayores costos energéticos y un choque negativo en los términos de intercambio, como Europa o Japón —donde la revaluación de las tasas ha sido más agresiva— podrían recibir un impulso.",
+      "segment_id": "b-025",
+      "char_edit_distance": 24,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "dc0ba31342d6cb0d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v1 | critic-mqm-regionalism-v1",
+    "critic_model_id": "gpt-5",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-01T20:46:46.308Z",
+  "updated_at": "2026-06-01T21:28:49.747Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "es-419",
+  "schema_version": "1.0"
+}

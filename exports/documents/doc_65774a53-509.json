@@ -1,0 +1,784 @@
+{
+  "rev": 1,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "u-s-markets-u-s-equities-gained-s-p-500-0-4-nasd",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：美国股票上涨（标普500指数 +0.4%，纳斯达克指数 +0.9%），半导体板块出现反弹，大型科技股整体走高。受消费者价格指数(CPI)数据低于预期影响，美国国债收益率下行（2年期 -8个基点至4.19%，10年期 -3个基点至4.59%，30年期持平于5.10%）。美元指数下跌 -0.3%，黄金上涨 +1.6%，布伦特原油上涨 +1.7%至近每桶1× $85美元。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 43,
+          "char_start": 40
+        },
+        {
+          "kind": "percent",
+          "norm": "0.4%",
+          "text": "0.4%",
+          "char_end": 49,
+          "char_start": 45
+        },
+        {
+          "kind": "percent",
+          "norm": "0.9%",
+          "text": "0.9%",
+          "char_end": 63,
+          "char_start": 59
+        },
+        {
+          "kind": "number",
+          "norm": "8000000000bps",
+          "text": "8bps",
+          "char_end": 161,
+          "char_start": 157
+        },
+        {
+          "kind": "percent",
+          "norm": "4.19%",
+          "text": "4.19%",
+          "char_end": 170,
+          "char_start": 165
+        },
+        {
+          "kind": "number",
+          "norm": "3000000000bps",
+          "text": "3bps",
+          "char_end": 181,
+          "char_start": 177
+        },
+        {
+          "kind": "percent",
+          "norm": "4.59%",
+          "text": "4.59%",
+          "char_end": 190,
+          "char_start": 185
+        },
+        {
+          "kind": "percent",
+          "norm": "5.1%",
+          "text": "5.10%",
+          "char_end": 209,
+          "char_start": 204
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.3%",
+          "text": "-0.3%",
+          "char_end": 275,
+          "char_start": 270
+        },
+        {
+          "kind": "percent",
+          "norm": "1.6%",
+          "text": "1.6%",
+          "char_end": 294,
+          "char_start": 290
+        },
+        {
+          "kind": "percent",
+          "norm": "1.7%",
+          "text": "1.7%",
+          "char_end": 320,
+          "char_start": 316
+        },
+        {
+          "kind": "currency",
+          "norm": "85",
+          "text": "$85",
+          "char_end": 335,
+          "char_start": 331
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 43,
+          "char_start": 36
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 57,
+          "char_start": 51
+        }
+      ],
+      "qe_score": 0.939,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：美国股票上涨（标普500指数 +0.4%，纳斯达克指数 +0.9%），半导体板块出现反弹，大型科技股整体走高。受消费者价格指数(CPI)数据低于预期影响，美国国债收益率下行（2年期 -8个基点至4.19%，10年期 -3个基点至4.59%，30年期持平于5.10%）。美元指数下跌 -0.3%，黄金上涨 +1.6%，布伦特原油上涨 +1.7%至近每桶85美元。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "U.S. markets: U.S. equities gained (S&P 500 +0.4%, Nasdaq +0.9%) with a rebound in semiconductors, and big tech was mostly higher. Treasury yields fell (2Y -8bps to 4.19%, 10Y -3bps to 4.59%, 30Y flat at 5.10%) on the back of the softer CPI print. The dollar index fell -0.3%, gold gained +1.6%, Brent crude gained +1.7% to nearly $85 per barrel.",
+      "critic_flags": [
+        {
+          "span": "8bps",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "8"
+        },
+        {
+          "span": "3bps",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "3"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        },
+        {
+          "source": "Consumer Price Index",
+          "applied": false,
+          "approved_target": "消费者价格指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "8bps",
+              "message": "Numeric value \"8bps\" (mantissa 8) not preserved in translation",
+              "expected": "8"
+            },
+            {
+              "span": "3bps",
+              "message": "Numeric value \"3bps\" (mantissa 3) not preserved in translation",
+              "expected": "3"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国宏观：6月消费者价格指数(CPI)数据明显低于预期，核心CPI环比持平，而市场预期为 +0.2%；整体CPI环比下降 -0.4%，而市场预期为 -0.1%。核心通胀年化率降至 +2.6%，整体通胀率回落至 +3.5%，两者均已触及2026年以来的较低水平。欧洲市场：尽管美伊紧张局势再度升级、霍尔木兹海峡关闭导致早盘承压，欧洲股票仍录得上涨（斯托克50指数 +0.2%）。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 100,
+          "char_start": 96
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.4%",
+          "text": "-0.4%",
+          "char_end": 128,
+          "char_start": 123
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.1%",
+          "text": "-0.1%",
+          "char_end": 151,
+          "char_start": 146
+        },
+        {
+          "kind": "percent",
+          "norm": "2.6%",
+          "text": "2.6%",
+          "char_end": 182,
+          "char_start": 178
+        },
+        {
+          "kind": "percent",
+          "norm": "3.5%",
+          "text": "3.5%",
+          "char_end": 210,
+          "char_start": 206
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 283,
+          "char_start": 279
+        },
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 335,
+          "char_start": 333
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 341,
+          "char_start": 337
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国宏观：6月消费者价格指数(CPI)数据明显低于预期，核心CPI环比持平，而市场预期为 +0.2%；整体CPI环比下降 -0.4%，而市场预期为 -0.1%。核心通胀年化率降至 +2.6%，整体通胀率回落至 +3.5%，两者均已触及2026年以来的较低水平。欧洲市场：尽管美伊紧张局势再度升级、霍尔木兹海峡关闭导致早盘承压，欧洲股票仍录得上涨（斯托克50指数 +0.2%）。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "U.S. macro: June CPI came in notably softer than expected, with core CPI flat m/m vs consensus +0.2% and headline CPI down -0.4% m/m vs consensus -0.1%. Annualized core fell to +2.6% and headline eased to +3.5%, both now reaching some of the lowest levels since the start of the 2026. Europe markets: European equities gained (Stoxx 50 +0.2%) despite earlier losses amid a re-escalation of U.S.-Iran tensions and a closure of the Strait of Hormuz.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "core inflation",
+          "applied": false,
+          "approved_target": "核心通胀"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        },
+        {
+          "source": "Consumer Price Index",
+          "applied": false,
+          "approved_target": "消费者价格指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：日本股票上涨（日经指数 +0.7%，东证指数 +0.8%），各板块整体走强，此前半导体板块初期表现疲弱。日元兑美元汇率维持稳定，约为162。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.7%",
+          "text": "0.7%",
+          "char_end": 53,
+          "char_start": 49
+        },
+        {
+          "kind": "percent",
+          "norm": "0.8%",
+          "text": "0.8%",
+          "char_end": 66,
+          "char_start": 62
+        },
+        {
+          "kind": "number",
+          "norm": "162",
+          "text": "162",
+          "char_end": 191,
+          "char_start": 188
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：日本股票上涨（日经指数 +0.7%，东证指数 +0.8%），各板块整体走强，此前半导体板块初期表现疲弱。日元兑美元汇率维持稳定，约为162。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Japan markets: Japanese equities gained (Nikkei +0.7%, Topix +0.8%) with strength across sectors after initial weakness in semiconductors. The yen held steady against the dollar at around 162.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：中国股票上涨（恒生指数 +0.5%，沪深300指数 +2.2%）。中国6月贸易数据大幅超出预期，出口与进口均高于市场一致预期。出口同比 +27.0%，市场预期为 +18.2%，前值为 +19.4%；进口同比 +36.0%，市场预期为 +24.0%，前值为 +27.4%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 55,
+          "char_start": 51
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 64,
+          "char_start": 61
+        },
+        {
+          "kind": "percent",
+          "norm": "2.2%",
+          "text": "2.2%",
+          "char_end": 70,
+          "char_start": 66
+        },
+        {
+          "kind": "percent",
+          "norm": "27%",
+          "text": "27.0%",
+          "char_end": 180,
+          "char_start": 175
+        },
+        {
+          "kind": "percent",
+          "norm": "18.2%",
+          "text": "18.2%",
+          "char_end": 204,
+          "char_start": 199
+        },
+        {
+          "kind": "percent",
+          "norm": "19.4%",
+          "text": "19.4%",
+          "char_end": 215,
+          "char_start": 210
+        },
+        {
+          "kind": "percent",
+          "norm": "36%",
+          "text": "36.0%",
+          "char_end": 237,
+          "char_start": 232
+        },
+        {
+          "kind": "percent",
+          "norm": "24%",
+          "text": "24.0%",
+          "char_end": 261,
+          "char_start": 256
+        },
+        {
+          "kind": "percent",
+          "norm": "27.4%",
+          "text": "27.4%",
+          "char_end": 272,
+          "char_start": 267
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：中国股票上涨（恒生指数 +0.5%，沪深300指数 +2.2%）。中国6月贸易数据大幅超出预期，出口与进口均高于市场一致预期。出口同比 +27.0%，市场预期为 +18.2%，前值为 +19.4%；进口同比 +36.0%，市场预期为 +24.0%，前值为 +27.4%。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "China markets: Chinese equities gained (Hang Seng +0.5%, CSI 300 +2.2%). China’s trade surged in June with both exports and imports exceeding consensus expectations. Exports +27.0% y/y vs consensus +18.2% and +19.4% prior; imports +36.0% y/y vs consensus +24.0% and +27.4% prior.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_65774a53-509",
+  "source": {
+    "type": "txt",
+    "filename": "u-s-markets-u-s-equities-gained-s-p-500-0-4-nasd.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 5.29,
+    "hter_by_category": {
+      "accuracy": 0.022
+    },
+    "number_fail_rate": 0.25,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_30865638-e52",
+      "ts": "2026-07-15T01:32:12.865Z",
+      "hter": 0.022,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国市场：美国股票上涨（标普500指数 +0.4%，纳斯达克指数 +0.9%），半导体板块出现反弹，大型科技股整体走高。受消费者价格指数(CPI)数据低于预期影响，美国国债收益率下行（2年期 -8个基点至4.19%，10年期 -3个基点至4.59%，30年期持平于5.10%）。美元指数下跌 -0.3%，黄金上涨 +1.6%，布伦特原油上涨 +1.7%至近每桶85美元。",
+      "action": "edit",
+      "before": "美国市场：美国股票上涨（标普500指数 +0.4%，纳斯达克指数 +0.9%），半导体板块出现反弹，大型科技股整体走高。受消费者价格指数(CPI)数据低于预期影响，美国国债收益率下行（2年期 -8个基点至4.19%，10年期 -3个基点至4.59%，30年期持平于5.10%）。美元指数下跌 -0.3%，黄金上涨 +1.6%，布伦特原油上涨 +1.7%至近每桶1× $85美元。",
+      "segment_id": "b-001",
+      "char_edit_distance": 4,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-15T01:22:48.964Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-15T01:32:12.865Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

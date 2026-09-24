@@ -1,0 +1,191 @@
+{
+  "rev": 0,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "bloomberg-finance-l-p-j-p-morgan-private-bank-da",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Bloomberg Finance L.P.，摩根资产管理。数据截至2026年7月。2023年10月29日为2022年后10年期、20年期及30年期收益率的峰值日期。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 70,
+          "char_start": 66
+        },
+        {
+          "kind": "number",
+          "norm": "10",
+          "text": "10",
+          "char_end": 74,
+          "char_start": 72
+        },
+        {
+          "kind": "number",
+          "norm": "29",
+          "text": "29",
+          "char_end": 77,
+          "char_start": 75
+        },
+        {
+          "kind": "date",
+          "norm": "2023",
+          "text": "2023",
+          "char_end": 82,
+          "char_start": 78
+        },
+        {
+          "kind": "date",
+          "norm": "2022",
+          "text": "2022",
+          "char_end": 139,
+          "char_start": 135
+        },
+        {
+          "kind": "entity",
+          "norm": "Bloomberg",
+          "text": "Bloomberg",
+          "char_end": 9,
+          "char_start": 0
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Bloomberg Finance L.P.，摩根资产管理。数据截至2026年7月。2023年10月29日为2022年后10年期、20年期及30年期收益率的峰值日期。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Bloomberg Finance L.P., J.P. Morgan Private Bank. Data as of July 2026. 10/29/2023 is the day when 10Y, 20Y and 30Y yields peaked post 2022.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "J.P. Morgan Asset Management",
+          "applied": false,
+          "approved_target": "摩根资产管理"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_5e127791-9ba",
+  "source": {
+    "type": "txt",
+    "filename": "bloomberg-finance-l-p-j-p-morgan-private-bank-da.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-25T09:00:49.498Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-25T09:00:49.498Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

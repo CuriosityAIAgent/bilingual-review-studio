@@ -1,0 +1,188 @@
+{
+  "rev": 1,
+  "owner": {
+    "team_id": "platform",
+    "user_id": "ops"
+  },
+  "title": "retrieval-test",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "摩根资产管理认为，能源安全与网络安全是核心主题，美联储的货币政策及市场流动性对多元化投资组合的资产净值具有重要影响。金融及日常消费品等周期性板块在本期内表现相对平稳。",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "摩根资产管理认为，能源安全与网络安全是核心主题，美联储的货币政策及市场流动性对多元化投资组合的资产净值具有重要影响。金融及日常消费品等周期性板块在本期内表现相对平稳。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "J.P. Morgan Asset Management views energy security and cybersecurity as central themes, with the Federal Reserve's monetary policy and market liquidity shaping the net asset value of diversified portfolios. Cyclical sectors such as financials and consumer staples remained relatively flat this period.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "diversification",
+          "applied": false,
+          "approved_target": "多元化"
+        },
+        {
+          "source": "investment portfolio",
+          "applied": false,
+          "approved_target": "投资组合"
+        },
+        {
+          "source": "energy security",
+          "applied": false,
+          "approved_target": "能源安全"
+        },
+        {
+          "source": "cybersecurity",
+          "applied": false,
+          "approved_target": "网络安全"
+        },
+        {
+          "source": "net asset value",
+          "applied": false,
+          "approved_target": "资产净值"
+        },
+        {
+          "source": "J.P. Morgan Asset Management",
+          "applied": false,
+          "approved_target": "摩根资产管理"
+        },
+        {
+          "source": "monetary policy",
+          "applied": false,
+          "approved_target": "货币政策"
+        },
+        {
+          "source": "Federal Reserve",
+          "applied": false,
+          "approved_target": "美联储"
+        },
+        {
+          "source": "liquidity",
+          "applied": false,
+          "approved_target": "流动性"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_42799daf-847",
+  "source": {
+    "type": "txt",
+    "filename": "retrieval-test.txt",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-30T10:26:43.256Z",
+  "deleted_at": "2026-06-30T10:27:29.159Z",
+  "updated_at": "2026-06-30T10:27:29.160Z",
+  "assigned_to": {
+    "team_id": "platform",
+    "user_id": "ops"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

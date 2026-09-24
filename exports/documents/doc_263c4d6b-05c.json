@@ -1,0 +1,296 @@
+{
+  "rev": 3,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "july-saw-a-reversal-of-momentum-trades-such-as-s",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "7月，半导体（-21%）和内存（-32%）等动量交易出现逆转，导致新兴市场表现疲软（-3%），标普500指数则基本持平。等权重标普500指数表现优于市场，表明投资者在等待大规模人工智能(AI)支出能够带来投资回报（如生产率提升或业务成果）的证据之际，持续向更广泛的市场轮动。目前，我们尚未看到经济生产率改善的数据（Q2追踪增速约为+1.0%），并继续预期美国经济增长前景相对脆弱。然而，随着采用率持续上升，部分企业或已借助生产率提升实现利润率扩张。在中东冲突再度升级的背景下，国防股表现亮眼。年初至今表现最为落后的中国市场，于7月从低估值水平展开反弹，原因在于投资者重新评估了该市场的人工智能(AI)及科技机遇。我们认为，在此次回调中，半导体及更广泛的HALO（重资产低淘汰率）标的存在加仓机会。金融板块仍是我们最看好的板块之一，同时我们也看到了在信用利差延伸领域的机会，并可能在收益率因油价上涨及美联储政策不确定性而急升之际适度拉长久期。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-21%",
+          "text": "-21%",
+          "char_end": 67,
+          "char_start": 63
+        },
+        {
+          "kind": "percent",
+          "norm": "-32%",
+          "text": "-32%",
+          "char_end": 85,
+          "char_start": 81
+        },
+        {
+          "kind": "percent",
+          "norm": "-3%",
+          "text": "-3%",
+          "char_end": 127,
+          "char_start": 124
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 147,
+          "char_start": 144
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 173,
+          "char_start": 170
+        },
+        {
+          "kind": "percent",
+          "norm": "1%",
+          "text": "1.0%",
+          "char_end": 489,
+          "char_start": 485
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 147,
+          "char_start": 140
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 173,
+          "char_start": 166
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "7月，半导体（-21%）和存储（-32%）等动量交易出现逆转，导致新兴市场表现疲软（-3%），标普500指数则基本持平。等权重标普500指数表现优于市场，表明投资者在等待大规模AI支出能够带来投资回报（如生产率提升或业务成果）的证据之际，持续向更广泛的市场轮动。目前，我们尚未看到经济生产率改善的数据（Q2追踪增速约为+1.0%），并继续预期美国经济增长前景相对脆弱。然而，随着采用率持续上升，部分企业或已借助生产率提升实现利润率扩张。在中东冲突再度升级的背景下，国防股表现亮眼。年初至今其中表现最为落后的中国市场，于7月从低估值水平展开反弹，原因在于投资者重新评估了该市场的人工智能(AI)及科技机遇。我们认为，在此次回调中，半导体及更广泛的HALO（重资产低淘汰率）标的存在加仓机会。金融板块仍是我们最看好的板块之一，同时我们也看到了在风险信贷领域中的机会，并可能在收益率因油价上涨及美联储政策不确定性而急升之际适度拉长久期。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "July saw a reversal of momentum trades such as semiconductors (-21%) and memory (-32%), resulting in weaker EM performance (-3%) and a flat S&P 500. The equal-weight S&P 500 outperformed, showing investors have continued rotating into the broader market while awaiting evidence that massive AI spending can deliver a return on investment such as productivity gains or business outcomes. For now, we have yet to see data showing improvements in economic productivity (tracking roughly +1.0% for Q2), and we continue to anticipate a relatively fragile U.S. growth outlook. However, some companies may be seeing productivity-driven margin expansion as adoption continues to rise. Defense stocks performed against a backdrop of a re-escalating Middle-East conflict. The main YTD laggard, China, staged a rebound in July from low valuations as investors reassessed the AI and tech opportunity in the market with . We see opportunities to add to semiconductors and broader HALO (Heavy Asset Low Obsolescence) names amid this pullback. Financials continue to be one of our top sectors, while we see opportunities in extended credit and potentially increasing duration as yields surge amid higher oil prices and Fed uncertainty.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "emerging markets",
+          "applied": false,
+          "approved_target": "新兴市场"
+        },
+        {
+          "source": "valuation",
+          "applied": false,
+          "approved_target": "估值"
+        },
+        {
+          "source": "productivity",
+          "applied": false,
+          "approved_target": "生产率"
+        },
+        {
+          "source": "Federal Reserve",
+          "applied": false,
+          "approved_target": "美联储"
+        },
+        {
+          "source": "scale",
+          "applied": false,
+          "approved_target": "规模"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_263c4d6b-05c",
+  "source": {
+    "type": "txt",
+    "filename": "july-saw-a-reversal-of-momentum-trades-such-as-s.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 16.04,
+    "hter_by_category": {
+      "accuracy": 0.014
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_f90cd267-fe6",
+      "ts": "2026-08-02T10:30:00.871Z",
+      "hter": 0.031,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "7月，半导体（-21%）和存储（-32%）等动量交易出现逆转，导致新兴市场表现疲软（-3%），标普500指数则基本持平。等权重标普500指数表现优于市场，表明投资者在等待大规模AI支出能够带来投资回报（如生产率提升或业务成果）的证据之际，持续向更广泛的市场轮动。目前，我们尚未看到经济生产率改善的数据（Q2追踪增速约为+1.0%），并继续预期美国经济增长前景相对脆弱。然而，随着采用率持续上升，部分企业或已借助生产率提升实现利润率扩张。在中东冲突再度升级的背景下，国防股表现亮眼。年初至今其中表现最为落后的中国市场，于7月从低估值水平展开反弹，原因在于投资者重新评估了该市场的人工智能(AI)及科技机遇。我们认为，在此次回调中，半导体及更广泛的HALO（重资产低淘汰率）标的存在加仓机会。金融板块仍是我们最看好的板块之一，同时我们也看到了在信贷延伸领域的机会，并可能在收益率因油价上涨及美联储政策不确定性而急升之际适度拉长久期。",
+      "action": "edit",
+      "before": "7月，半导体（-21%）和内存（-32%）等动量交易出现逆转，导致新兴市场表现疲软（-3%），标普500指数则基本持平。等权重标普500指数表现优于市场，表明投资者在等待大规模人工智能(AI)支出能够带来投资回报（如生产率提升或业务成果）的证据之际，持续向更广泛的市场轮动。目前，我们尚未看到经济生产率改善的数据（Q2追踪增速约为+1.0%），并继续预期美国经济增长前景相对脆弱。然而，随着采用率持续上升，部分企业或已借助生产率提升实现利润率扩张。在中东冲突再度升级的背景下，国防股表现亮眼。年初至今表现最为落后的中国市场，于7月从低估值水平展开反弹，原因在于投资者重新评估了该市场的人工智能(AI)及科技机遇。我们认为，在此次回调中，半导体及更广泛的HALO（重资产低淘汰率）标的存在加仓机会。金融板块仍是我们最看好的板块之一，同时我们也看到了在信用利差延伸领域的机会，并可能在收益率因油价上涨及美联储政策不确定性而急升之际适度拉长久期。",
+      "segment_id": "b-001",
+      "char_edit_distance": 13,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_39389df3-477",
+      "ts": "2026-08-02T10:30:41.466Z",
+      "hter": 0.01,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "7月，半导体（-21%）和存储（-32%）等动量交易出现逆转，导致新兴市场表现疲软（-3%），标普500指数则基本持平。等权重标普500指数表现优于市场，表明投资者在等待大规模AI支出能够带来投资回报（如生产率提升或业务成果）的证据之际，持续向更广泛的市场轮动。目前，我们尚未看到经济生产率改善的数据（Q2追踪增速约为+1.0%），并继续预期美国经济增长前景相对脆弱。然而，随着采用率持续上升，部分企业或已借助生产率提升实现利润率扩张。在中东冲突再度升级的背景下，国防股表现亮眼。年初至今其中表现最为落后的中国市场，于7月从低估值水平展开反弹，原因在于投资者重新评估了该市场的人工智能(AI)及科技机遇。我们认为，在此次回调中，半导体及更广泛的HALO（重资产低淘汰率）标的存在加仓机会。金融板块仍是我们最看好的板块之一，同时我们也看到了在风险信贷领域的机会，并可能在收益率因油价上涨及美联储政策不确定性而急升之际适度拉长久期。",
+      "action": "edit",
+      "before": "7月，半导体（-21%）和存储（-32%）等动量交易出现逆转，导致新兴市场表现疲软（-3%），标普500指数则基本持平。等权重标普500指数表现优于市场，表明投资者在等待大规模AI支出能够带来投资回报（如生产率提升或业务成果）的证据之际，持续向更广泛的市场轮动。目前，我们尚未看到经济生产率改善的数据（Q2追踪增速约为+1.0%），并继续预期美国经济增长前景相对脆弱。然而，随着采用率持续上升，部分企业或已借助生产率提升实现利润率扩张。在中东冲突再度升级的背景下，国防股表现亮眼。年初至今其中表现最为落后的中国市场，于7月从低估值水平展开反弹，原因在于投资者重新评估了该市场的人工智能(AI)及科技机遇。我们认为，在此次回调中，半导体及更广泛的HALO（重资产低淘汰率）标的存在加仓机会。金融板块仍是我们最看好的板块之一，同时我们也看到了在信贷延伸领域的机会，并可能在收益率因油价上涨及美联储政策不确定性而急升之际适度拉长久期。",
+      "segment_id": "b-001",
+      "char_edit_distance": 4,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_6a9eb4c0-8e4",
+      "ts": "2026-08-02T10:31:36.200Z",
+      "hter": 0.002,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "7月，半导体（-21%）和存储（-32%）等动量交易出现逆转，导致新兴市场表现疲软（-3%），标普500指数则基本持平。等权重标普500指数表现优于市场，表明投资者在等待大规模AI支出能够带来投资回报（如生产率提升或业务成果）的证据之际，持续向更广泛的市场轮动。目前，我们尚未看到经济生产率改善的数据（Q2追踪增速约为+1.0%），并继续预期美国经济增长前景相对脆弱。然而，随着采用率持续上升，部分企业或已借助生产率提升实现利润率扩张。在中东冲突再度升级的背景下，国防股表现亮眼。年初至今其中表现最为落后的中国市场，于7月从低估值水平展开反弹，原因在于投资者重新评估了该市场的人工智能(AI)及科技机遇。我们认为，在此次回调中，半导体及更广泛的HALO（重资产低淘汰率）标的存在加仓机会。金融板块仍是我们最看好的板块之一，同时我们也看到了在风险信贷领域中的机会，并可能在收益率因油价上涨及美联储政策不确定性而急升之际适度拉长久期。",
+      "action": "edit",
+      "before": "7月，半导体（-21%）和存储（-32%）等动量交易出现逆转，导致新兴市场表现疲软（-3%），标普500指数则基本持平。等权重标普500指数表现优于市场，表明投资者在等待大规模AI支出能够带来投资回报（如生产率提升或业务成果）的证据之际，持续向更广泛的市场轮动。目前，我们尚未看到经济生产率改善的数据（Q2追踪增速约为+1.0%），并继续预期美国经济增长前景相对脆弱。然而，随着采用率持续上升，部分企业或已借助生产率提升实现利润率扩张。在中东冲突再度升级的背景下，国防股表现亮眼。年初至今其中表现最为落后的中国市场，于7月从低估值水平展开反弹，原因在于投资者重新评估了该市场的人工智能(AI)及科技机遇。我们认为，在此次回调中，半导体及更广泛的HALO（重资产低淘汰率）标的存在加仓机会。金融板块仍是我们最看好的板块之一，同时我们也看到了在风险信贷领域的机会，并可能在收益率因油价上涨及美联储政策不确定性而急升之际适度拉长久期。",
+      "segment_id": "b-001",
+      "char_edit_distance": 1,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "3f9c45f6111fdd7d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-08-02T10:18:08.973Z",
+  "deleted_at": null,
+  "updated_at": "2026-08-02T10:31:36.200Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

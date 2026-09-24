@@ -1,0 +1,232 @@
+{
+  "rev": 1,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "bureau-of-economic-analysis-s-p-global-data-as-o",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国经济分析局、S&P Global。数据截至2025年。注：不含2008年、2009年、2021年及2022年数据。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 56,
+          "char_start": 52
+        },
+        {
+          "kind": "number",
+          "norm": "8",
+          "text": "08",
+          "char_end": 85,
+          "char_start": 83
+        },
+        {
+          "kind": "number",
+          "norm": "9",
+          "text": "09",
+          "char_end": 90,
+          "char_start": 88
+        },
+        {
+          "kind": "number",
+          "norm": "21",
+          "text": "21",
+          "char_end": 95,
+          "char_start": 93
+        },
+        {
+          "kind": "number",
+          "norm": "22",
+          "text": "22",
+          "char_end": 100,
+          "char_start": 98
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P",
+          "text": "S&P",
+          "char_end": 32,
+          "char_start": 29
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国经济分析局、S&P Global。数据截至2025年。注：不含2008年、2009年、2021年及2022年数据。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Bureau of Economic Analysis, S&P Global. Data as of 2025. Note: Excludes data for ’08, ’09, ’21, ’22.",
+      "critic_flags": [
+        {
+          "span": "08",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "08"
+        },
+        {
+          "span": "09",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "09"
+        },
+        {
+          "span": "21",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "21"
+        },
+        {
+          "span": "22",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "22"
+        }
+      ],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "08",
+              "message": "Numeric value \"08\" (mantissa 08) not preserved in translation",
+              "expected": "08"
+            },
+            {
+              "span": "09",
+              "message": "Numeric value \"09\" (mantissa 09) not preserved in translation",
+              "expected": "09"
+            },
+            {
+              "span": "21",
+              "message": "Numeric value \"21\" (mantissa 21) not preserved in translation",
+              "expected": "21"
+            },
+            {
+              "span": "22",
+              "message": "Numeric value \"22\" (mantissa 22) not preserved in translation",
+              "expected": "22"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_2cff1f58-e6f",
+  "source": {
+    "type": "txt",
+    "filename": "bureau-of-economic-analysis-s-p-global-data-as-o.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 1,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-18T08:50:52.880Z",
+  "deleted_at": "2026-07-21T02:01:34.773Z",
+  "updated_at": "2026-07-21T02:01:34.773Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

@@ -1,0 +1,1277 @@
+{
+  "rev": 5,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "risks-back-up",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "风险回升",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "风险回升",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Risks back up",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：美国股票下跌（标普500指数 -0.5%，纳斯达克指数 -0.6%），大型科技股普遍走低，但META因发布其Muse人工智能(AI)智能体而录得上涨。国债收益率沿收益率曲线全线上行（2年期 +3个基点至4.43%，10年期 +5个基点至4.84%，30年期 +5个基点至5.29%）。此前，美国财政部宣布回购最多60亿美元的10年期至20年期未偿债券，但上述走势仍未受到提振。此次回购公告是在财政部长贝森特于8月19日宣布将至少把20亿美元回购规模扩大一倍之后作出的。尽管市场普遍预期昨日公告的回购规模将超过40亿美元，但部分估计预期更高。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 37,
+          "char_start": 34
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.5%",
+          "text": "-0.5%",
+          "char_end": 43,
+          "char_start": 38
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.6%",
+          "text": "-0.6%",
+          "char_end": 57,
+          "char_start": 52
+        },
+        {
+          "kind": "number",
+          "norm": "3000000000bps",
+          "text": "3bps",
+          "char_end": 188,
+          "char_start": 184
+        },
+        {
+          "kind": "percent",
+          "norm": "4.43%",
+          "text": "4.43%",
+          "char_end": 197,
+          "char_start": 192
+        },
+        {
+          "kind": "number",
+          "norm": "5000000000bps",
+          "text": "5bps",
+          "char_end": 208,
+          "char_start": 204
+        },
+        {
+          "kind": "percent",
+          "norm": "4.84%",
+          "text": "4.84%",
+          "char_end": 217,
+          "char_start": 212
+        },
+        {
+          "kind": "number",
+          "norm": "5000000000bps",
+          "text": "5bps",
+          "char_end": 228,
+          "char_start": 224
+        },
+        {
+          "kind": "percent",
+          "norm": "5.29%",
+          "text": "5.29%",
+          "char_end": 237,
+          "char_start": 232
+        },
+        {
+          "kind": "currency",
+          "norm": "6000000000",
+          "text": "$6B",
+          "char_end": 322,
+          "char_start": 319
+        },
+        {
+          "kind": "number",
+          "norm": "10",
+          "text": "10",
+          "char_end": 340,
+          "char_start": 338
+        },
+        {
+          "kind": "number",
+          "norm": "20",
+          "text": "20",
+          "char_end": 351,
+          "char_start": 349
+        },
+        {
+          "kind": "number",
+          "norm": "19",
+          "text": "19",
+          "char_end": 413,
+          "char_start": 411
+        },
+        {
+          "kind": "currency",
+          "norm": "2000000000",
+          "text": "$2B",
+          "char_end": 478,
+          "char_start": 475
+        },
+        {
+          "kind": "currency",
+          "norm": "4000000000",
+          "text": "$4B",
+          "char_end": 555,
+          "char_start": 552
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 37,
+          "char_start": 30
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 51,
+          "char_start": 45
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：美国股票下跌（标普500指数 -0.5%，纳斯达克指数 -0.6%），大型科技股普遍走低，但META因发布其Muse人工智能(AI)智能体而录得上涨。国债收益率沿收益率曲线全线上行（2年期 +3个基点至4.43%，10年期 +5个基点至4.84%，30年期 +5个基点至5.29%）。然而，美国财政部宣布回购最多60亿美元的10年期至20年期未偿债券。此次回购公告是在财政部长贝森特于8月19日宣布将至少把20亿美元回购规模扩大一倍之后作出的。尽管市场普遍预期昨日公告的回购规模将超过40亿美元，但部分估计预期更高。",
+      "iterations": 2,
+      "seg_status": "edited",
+      "source_text": "US markets: US equities fell (S&P 500 -0.5%, Nasdaq -0.6%) with big tech declining though META gained upon its release of its Muse AI agent. Treasury yields rose across the curve (2Y +3bps to 4.43%, 10Y +5bps to 4.84%, 30Y +5bps to 5.29%). This comes despite an announcement from the Treasury for a repurchase of up to $6B of outstanding 10-year to 20-year securities. This follows Treasury Secretary Bessent’s 19-Aug announcement that the Treasury would at least double the $2B buyback sizes. While yesterday’s announcement was widely expected to top $4B, some estimates expected more.",
+      "critic_flags": [
+        {
+          "span": "$6B",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "6"
+        },
+        {
+          "span": "$4B",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "4"
+        },
+        {
+          "span": "$",
+          "category": "number",
+          "severity": "major",
+          "suggestion": "3× $"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "yield curve",
+          "applied": false,
+          "approved_target": "收益率曲线"
+        },
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "bonds",
+          "applied": false,
+          "approved_target": "债券"
+        },
+        {
+          "source": "scale",
+          "applied": false,
+          "approved_target": "规模"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "$6B",
+              "message": "Numeric value \"$6B\" (mantissa 6) not preserved in translation",
+              "expected": "6"
+            },
+            {
+              "span": "$4B",
+              "message": "Numeric value \"$4B\" (mantissa 4) not preserved in translation",
+              "expected": "4"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [
+            {
+              "span": "$",
+              "found": "0× $",
+              "message": "Currency unit \"$\" dropped (3 → 0)",
+              "expected": "3× $"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中东局势：中东冲突持续升级。据报道，美军在波斯湾摧毁了更多伊朗船只，此前伊朗曾试图袭击一艘美国军舰。据报道，伊朗随后向约旦一处空军基地发射弹道导弹，并对更多美国军舰发动打击。",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中东局势：中东冲突持续升级。据报道，美军在波斯湾摧毁了更多伊朗船只，此前伊朗曾试图袭击一艘美国军舰。据报道，伊朗随后向约旦一处空军基地发射弹道导弹，并对更多美国军舰发动打击。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Middle East: The Middle East conflict continued to escalate with reports that the US military destroyed more Iranian vessels in the Persian Gulf after an attempted attack on an American warship. Iran reportedly retaliated by firing ballistic missiles at an air base in Jordan and targeting additional US warships.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：受中东冲突持续升级影响，欧洲股票下跌（斯托克50指数 -1.6%），布伦特原油价格重返1× $100上方，触及5月以来的部分高位。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 48,
+          "char_start": 46
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.6%",
+          "text": "-1.6%",
+          "char_end": 54,
+          "char_start": 49
+        },
+        {
+          "kind": "currency",
+          "norm": "100",
+          "text": "$100",
+          "char_end": 132,
+          "char_start": 127
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：受中东冲突持续升级影响，欧洲股票下跌（斯托克50指数 -1.6%），布伦特原油价格重返 $100以上，触及5月以来的高位。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "Europe markets: European equities fell (Stoxx 50 -1.6%) amid the escalating Middle East conflict which pushed Brent back above $100 to some of its highest levels since May.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：日本股票下跌（日经指数 -0.2%，东证指数 -0.1%），日元持续走强，进入153低位区间。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-0.2%",
+          "text": "-0.2%",
+          "char_end": 51,
+          "char_start": 46
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.1%",
+          "text": "-0.1%",
+          "char_end": 64,
+          "char_start": 59
+        },
+        {
+          "kind": "number",
+          "norm": "153",
+          "text": "153",
+          "char_end": 115,
+          "char_start": 112
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：日本股票下跌（日经指数 -0.2%，东证指数 -0.1%），日元持续走强，进入153低位区间。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Japan markets: Japanese equities fell (Nikkei -0.2%, Topix -0.1%). The yen continued to strengthen into the low 153 range.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-006",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：中国股票走势分化（恒生指数 -0.2%，沪深300指数 +0.3%），科技板块表现疲弱。8月通胀数据超出上行空间预期，消费者价格指数(CPI)同比 +0.8%，与市场一致预期 +0.8%持平，前值为 +0.5%；生产者价格指数(PPI)同比 +3.8%，高于市场一致预期 +3.6%，前值为 +3.5%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-0.2%",
+          "text": "-0.2%",
+          "char_end": 59,
+          "char_start": 54
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 68,
+          "char_start": 65
+        },
+        {
+          "kind": "percent",
+          "norm": "0.3%",
+          "text": "0.3%",
+          "char_end": 74,
+          "char_start": 70
+        },
+        {
+          "kind": "percent",
+          "norm": "0.8%",
+          "text": "0.8%",
+          "char_end": 154,
+          "char_start": 150
+        },
+        {
+          "kind": "percent",
+          "norm": "0.8%",
+          "text": "0.8%",
+          "char_end": 177,
+          "char_start": 173
+        },
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 193,
+          "char_start": 189
+        },
+        {
+          "kind": "percent",
+          "norm": "3.8%",
+          "text": "3.8%",
+          "char_end": 204,
+          "char_start": 200
+        },
+        {
+          "kind": "percent",
+          "norm": "3.6%",
+          "text": "3.6%",
+          "char_end": 227,
+          "char_start": 223
+        },
+        {
+          "kind": "percent",
+          "norm": "3.5%",
+          "text": "3.5%",
+          "char_end": 243,
+          "char_start": 239
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：中国股票走势分化（恒生指数 -0.2%，沪深300指数 +0.3%），科技板块表现疲弱。8月通胀数据超出上行空间预期，消费者价格指数(CPI)同比 +0.8%，与市场一致预期 +0.8%持平，前值为 +0.5%；生产者价格指数(PPI)同比 +3.8%，高于市场一致预期 +3.6%，前值为 +3.5%。",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "China markets: Chinese equities were mixed (Hang Seng -0.2%, CSI 300 +0.3%) amid weakness in tech. August inflation surprised to the upside with CPI +0.8% y/y vs consensus +0.8% and prior +0.5%; PPI +3.8% y/y vs consensus +3.6% and prior +3.5%.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        },
+        {
+          "source": "Consumer Price Index",
+          "applied": false,
+          "approved_target": "消费者价格指数"
+        },
+        {
+          "source": "Producer Price Index",
+          "applied": false,
+          "approved_target": "生产者价格指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-007",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "我们的观点：随着油价和收益率上升，市场对经济所受冲击的担忧情绪正在升温。例如，航空燃油价格大幅上涨已直接推高了机票成本，导致以美国运输安全管理局(TSA)安检通道数据衡量的出行量同比下降4.5%。今年早些时候，美国消费者支出曾受到退税刺激的提振，但该效应现已消退，全球能源冲击开始在柴油和航空燃油价格上显现。需求萎缩的初步迹象已在数据中有所体现，我们认为伊朗冲突仍是我们对美国宏观经济相对温和展望的主要尾部风险。至于较高利率是否正在影响经济，我们认为利率已在一段时间内处于限制性水平。对利率敏感的行业（如住房、耐用品及建筑投资）自2022年底至2023年以来一直处于收缩区间。劳动力市场亦呈现类似态势，求职成功率持续偏低。那么，为何经济扩张在限制性利率环境下仍得以延续？这主要是因为当前推动增长的核心动力在很大程度上对利率不敏感，包括人工智能(AI)、国防开支增加以及库存重建。政府在这两方面均发挥了重要主导作用，这也是其对利率敏感度较低的部分原因。确实存在某一利率水平可能阻碍人工智能(AI)资本支出建设，但鉴于大型科技公司从更高人工智能(AI)资本支出中所感知到的投资回报，该水平很可能远高于当前利率水平。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-4.5%",
+          "text": "-4.5%",
+          "char_end": 216,
+          "char_start": 211
+        },
+        {
+          "kind": "date",
+          "norm": "2022",
+          "text": "2022",
+          "char_end": 928,
+          "char_start": 924
+        },
+        {
+          "kind": "date",
+          "norm": "2023",
+          "text": "2023",
+          "char_end": 937,
+          "char_start": 933
+        }
+      ],
+      "qe_score": 0.946,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "我们的观点：随着油价和收益率上升，市场对经济所受冲击的担忧情绪正在升温。例如，航空燃油价格大幅上涨已直接推高了机票价格，导致以美国运输安全管理局(TSA)安检通道数据衡量的出行量同比下降4.5%。今年早些时候，美国消费者支出曾受到退税刺激的提振，但该效应现已消退，全球能源冲击开始在柴油和航空燃油价格上显现。需求萎缩的初步迹象已在数据中有所体现。我们认为伊朗冲突仍是我们对美国宏观经济相对温和展望的主要尾部风险。至于较高利率是否正在影响经济，我们认为利率已有一段时间处于限制性水平。对利率敏感的行业（如住房、耐用品及建筑投资）自2022年底至2023年以来一直处于收缩区间。劳动力市场亦呈现类似态势，求职成功率持续偏低。那么，为何经济扩张在限制性利率环境下仍得以延续？这主要是因为当前推动增长的核心动力在很大程度上对利率不敏感，包括人工智能(AI)、国防开支增加以及库存重建。政府在这两方面均发挥了重要主导作用，这也是其对利率敏感度较低的部分原因。确实存在某一利率水平可能阻碍人工智能(AI)资本支出建设，但鉴于大型科技公司从更高人工智能(AI)资本支出中所感知到的投资回报，该水平很可能远高于当前利率水平。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "What we think With the rise in oil prices and yields, concerns over the impact on the economy are picking up. For example, much higher jet fuel prices have directly impacted the cost of air travel, leading to a -4.5% y/y fall in travel volume as measured by TSA (Transportation Security Administration) checkpoint data. Earlier in the year, US consumer spending was boosted by tax refund stimulus, but now that has run its course, and the global energy shock is starting to show up in diesel and jet fuel. Emerging signs of demand destruction is showing in the data, and we think the Iran conflict remains a key tail risk to our relatively moderate US macroeconomic outlook. As to whether higher rates are impacting the economy, we think they have been restrictive for some time already. Interest rate-sensitive sectors (such as housing, durables, and structures investment) have been in contractionary territory since late 2022 and 2023. The labor market tells a similar story with a low job finding rate. So why has the economic expansion continued despite restrictive rates? This is mainly because the key drivers of growth that have emerged are largely rate-insensitive: AI and greater defense spending and inventory rebuilding. The government has had a heavy hand in both, which is part of why they're less sensitive to rates. There is some level of rates that would derail the AI capex buildout — but it is likely far above where rates sit today, given the return on investment that large tech firms are perceiving from greater AI capex.",
+      "critic_flags": [
+        {
+          "span": "-4.5%",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "-4.5"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "defense spending",
+          "applied": false,
+          "approved_target": "国防开支"
+        },
+        {
+          "source": "capital expenditure",
+          "applied": false,
+          "approved_target": "资本支出"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "-4.5%",
+              "message": "Numeric value \"-4.5%\" (mantissa -4.5) not preserved in translation",
+              "expected": "-4.5"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-008",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "收益率随油价同步上升，可能对美国经济造成压力 布伦特原油，美元/桶 \t\t\t\t\t\t\t10年期美国国债收益率，%",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.859,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "收益率随油价同步上升，可能对美国经济造成压力 布伦特原油，美元/桶 10年期美国国债收益率，%",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Yields have risen alongside oil prices, potentially creating pressures on the US economy Brent crude, $ per barrel \t\t\t\t\t\t\t10Y US Treasury yield, %",
+      "critic_flags": [
+        {
+          "span": "$",
+          "category": "number",
+          "severity": "major",
+          "suggestion": "1× $"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [
+            {
+              "span": "$",
+              "found": "0× $",
+              "message": "Currency unit \"$\" dropped (1 → 0)",
+              "expected": "1× $"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_df2684d0-ee8",
+  "source": {
+    "type": "txt",
+    "filename": "risks-back-up.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 10,
+    "hter_by_category": {
+      "accuracy": 0.063
+    },
+    "number_fail_rate": 0.25,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_b482eb05-b7b",
+      "ts": "2026-09-10T02:01:24.421Z",
+      "hter": 0.053,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国市场：美国股票下跌（标普500指数 -0.5%，纳斯达克指数 -0.6%），大型科技股普遍走低，但META因发布其Muse人工智能(AI)智能体而录得上涨。国债收益率沿收益率曲线全线上行（2年期 +3个基点至4.43%，10年期 +5个基点至4.84%，30年期 +5个基点至5.29%）。然而，美国财政部宣布回购最多60亿美元的10年期至20年期未偿债券。此次回购公告是在财政部长贝森特于8月19日宣布将至少把20亿美元回购规模扩大一倍之后作出的。尽管市场普遍预期昨日公告的回购规模将超过40亿美元，但部分估计预期更高。",
+      "action": "edit",
+      "before": "美国市场：美国股票下跌（标普500指数 -0.5%，纳斯达克指数 -0.6%），大型科技股普遍走低，但META因发布其Muse人工智能(AI)智能体而录得上涨。国债收益率沿收益率曲线全线上行（2年期 +3个基点至4.43%，10年期 +5个基点至4.84%，30年期 +5个基点至5.29%）。此前，美国财政部宣布回购最多60亿美元的10年期至20年期未偿债券，但上述走势仍未受到提振。此次回购公告是在财政部长贝森特于8月19日宣布将至少把20亿美元回购规模扩大一倍之后作出的。尽管市场普遍预期昨日公告的回购规模将超过40亿美元，但部分估计预期更高。",
+      "segment_id": "b-002",
+      "char_edit_distance": 14,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_b19b2244-858",
+      "ts": "2026-09-10T02:02:28.607Z",
+      "hter": 0.074,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "欧洲市场：受中东冲突持续升级影响，欧洲股票下跌（斯托克50指数 -1.6%），布伦特原油价格重返 $100以上，触及5月以来的部分高位。",
+      "action": "edit",
+      "before": "欧洲市场：受中东冲突持续升级影响，欧洲股票下跌（斯托克50指数 -1.6%），布伦特原油价格重返1× $100上方，触及5月以来的部分高位。",
+      "segment_id": "b-004",
+      "char_edit_distance": 5,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_cf0e1f19-fd6",
+      "ts": "2026-09-10T02:02:34.217Z",
+      "hter": 0.03,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "欧洲市场：受中东冲突持续升级影响，欧洲股票下跌（斯托克50指数 -1.6%），布伦特原油价格重返 $100以上，触及5月以来的高位。",
+      "action": "edit",
+      "before": "欧洲市场：受中东冲突持续升级影响，欧洲股票下跌（斯托克50指数 -1.6%），布伦特原油价格重返 $100以上，触及5月以来的部分高位。",
+      "segment_id": "b-004",
+      "char_edit_distance": 2,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_cb2704f9-cf9",
+      "ts": "2026-09-10T02:05:16.033Z",
+      "hter": 0.01,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "我们的观点：随着油价和收益率上升，市场对经济所受冲击的担忧情绪正在升温。例如，航空燃油价格大幅上涨已直接推高了机票价格，导致以美国运输安全管理局(TSA)安检通道数据衡量的出行量同比下降4.5%。今年早些时候，美国消费者支出曾受到退税刺激的提振，但该效应现已消退，全球能源冲击开始在柴油和航空燃油价格上显现。需求萎缩的初步迹象已在数据中有所体现。我们认为伊朗冲突仍是我们对美国宏观经济相对温和展望的主要尾部风险。至于较高利率是否正在影响经济，我们认为利率已有一段时间处于限制性水平。对利率敏感的行业（如住房、耐用品及建筑投资）自2022年底至2023年以来一直处于收缩区间。劳动力市场亦呈现类似态势，求职成功率持续偏低。那么，为何经济扩张在限制性利率环境下仍得以延续？这主要是因为当前推动增长的核心动力在很大程度上对利率不敏感，包括人工智能(AI)、国防开支增加以及库存重建。政府在这两方面均发挥了重要主导作用，这也是其对利率敏感度较低的部分原因。确实存在某一利率水平可能阻碍人工智能(AI)资本支出建设，但鉴于大型科技公司从更高人工智能(AI)资本支出中所感知到的投资回报，该水平很可能远高于当前利率水平。",
+      "action": "edit",
+      "before": "我们的观点：随着油价和收益率上升，市场对经济所受冲击的担忧情绪正在升温。例如，航空燃油价格大幅上涨已直接推高了机票成本，导致以美国运输安全管理局(TSA)安检通道数据衡量的出行量同比下降4.5%。今年早些时候，美国消费者支出曾受到退税刺激的提振，但该效应现已消退，全球能源冲击开始在柴油和航空燃油价格上显现。需求萎缩的初步迹象已在数据中有所体现，我们认为伊朗冲突仍是我们对美国宏观经济相对温和展望的主要尾部风险。至于较高利率是否正在影响经济，我们认为利率已在一段时间内处于限制性水平。对利率敏感的行业（如住房、耐用品及建筑投资）自2022年底至2023年以来一直处于收缩区间。劳动力市场亦呈现类似态势，求职成功率持续偏低。那么，为何经济扩张在限制性利率环境下仍得以延续？这主要是因为当前推动增长的核心动力在很大程度上对利率不敏感，包括人工智能(AI)、国防开支增加以及库存重建。政府在这两方面均发挥了重要主导作用，这也是其对利率敏感度较低的部分原因。确实存在某一利率水平可能阻碍人工智能(AI)资本支出建设，但鉴于大型科技公司从更高人工智能(AI)资本支出中所感知到的投资回报，该水平很可能远高于当前利率水平。",
+      "segment_id": "b-007",
+      "char_edit_distance": 5,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_cc6f43da-5f6",
+      "ts": "2026-09-10T02:05:34.167Z",
+      "hter": 0.149,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "收益率随油价同步上升，可能对美国经济造成压力 布伦特原油，美元/桶 10年期美国国债收益率，%",
+      "action": "edit",
+      "before": "收益率随油价同步上升，可能对美国经济造成压力 布伦特原油，美元/桶 \t\t\t\t\t\t\t10年期美国国债收益率，%",
+      "segment_id": "b-008",
+      "char_edit_distance": 7,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "3f9c45f6111fdd7d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-09-10T01:50:10.163Z",
+  "deleted_at": null,
+  "updated_at": "2026-09-10T02:05:34.168Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

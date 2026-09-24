@@ -1,0 +1,142 @@
+{
+  "rev": 0,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "inflation-in-particular-is-all-the-more-likely-t",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La inflación, en particular, tiene cada vez más probabilidades de estabilizarse en una zona más persistente, potencialmente durante años. Los precios de la energía probablemente incorporarán una prima de riesgo geopolítico de carácter más permanente, mientras que las cadenas de suministro serán reconfiguradas para garantizar la seguridad energética nacional, y no necesariamente al menor costo posible. Incluso si la inflación no representa actualmente un riesgo desproporcionado, se está convirtiendo en un factor cada vez más relevante.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La inflación, en particular, tiene cada vez más probabilidades de estabilizarse en una zona más persistente, potencialmente durante años. Los precios de la energía probablemente incorporarán una prima de riesgo geopolítico de carácter más permanente, mientras que las cadenas de suministro serán reconfiguradas para garantizar la seguridad energética nacional, y no necesariamente al menor costo posible. Incluso si la inflación no representa actualmente un riesgo desproporcionado, se está convirtiendo en un factor cada vez más relevante.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Inflation, in particular, is all the more likely to re-settle at a stickier zone, potentially for years to come. Energy prices will likely command a more permanent geopolitical risk premium, while supply chains will be re-routed to guarantee national energy security—and not necessarily at the lowest possible cost. Even if inflation isn't currently an outsized risk—it is becoming more of a factor.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "supply chains",
+          "applied": false,
+          "approved_target": "cadenas de suministro"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_5088376e-337",
+  "source": {
+    "type": "txt",
+    "filename": "inflation-in-particular-is-all-the-more-likely-t.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "7598090256a281d8",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-08T14:46:09.833Z",
+  "deleted_at": null,
+  "updated_at": "2026-06-08T14:46:09.833Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "es-419",
+  "schema_version": "1.0"
+}

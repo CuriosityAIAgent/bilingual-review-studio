@@ -1,0 +1,925 @@
+{
+  "rev": 8,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "us-markets-us-equities-were-mixed-s-p-500-flat-n",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：美国股票表现分化（标普500指数持平，纳斯达克指数上涨0.5%），半导体及存储板块走强，大型科技股表现参差。尽管美联储官员发表鹰派言论，美国国债收益率整体基本持平（2年期下行1个基点至4.74%，10年期上行1个基点至4.96%，30年期上行1个基点至5.30%）。美元指数上涨0.1%，黄金下跌-0.2%。布伦特原油收盘价略低于每桶1× $100美元，据报道伊朗表示，若美国采取初步措施缓和在中东的军事压力，伊方愿意在七天内开放霍尔木兹海峡。美国总统特朗普表示，他已与政府官员就可能临时禁止柴油出口一事进行讨论。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 43,
+          "char_start": 40
+        },
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 62,
+          "char_start": 58
+        },
+        {
+          "kind": "number",
+          "norm": "1000000000bps",
+          "text": "1bps",
+          "char_end": 171,
+          "char_start": 167
+        },
+        {
+          "kind": "percent",
+          "norm": "4.74%",
+          "text": "4.74%",
+          "char_end": 180,
+          "char_start": 175
+        },
+        {
+          "kind": "number",
+          "norm": "1000000000bps",
+          "text": "1bps",
+          "char_end": 191,
+          "char_start": 187
+        },
+        {
+          "kind": "percent",
+          "norm": "4.96%",
+          "text": "4.96%",
+          "char_end": 200,
+          "char_start": 195
+        },
+        {
+          "kind": "number",
+          "norm": "1000000000bps",
+          "text": "1bps",
+          "char_end": 211,
+          "char_start": 207
+        },
+        {
+          "kind": "percent",
+          "norm": "5.3%",
+          "text": "5.30%",
+          "char_end": 220,
+          "char_start": 215
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 297,
+          "char_start": 293
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.2%",
+          "text": "-0.2%",
+          "char_end": 314,
+          "char_start": 309
+        },
+        {
+          "kind": "currency",
+          "norm": "100",
+          "text": "$100",
+          "char_end": 346,
+          "char_start": 341
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 43,
+          "char_start": 36
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 56,
+          "char_start": 50
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：美国股票表现分化（标普500指数持平，纳斯达克指数上涨0.5%），半导体及存储板块走强，大型科技股表现参差。尽管美联储官员发表鹰派言论，美国国债收益率整体基本持平（2年期下行1个基点至4.74%，10年期上行1个基点至4.96%，30年期上行1个基点至5.30%）。美元指数上涨0.1%，黄金下跌-0.2%。布伦特原油收盘价略低于每桶 $100美元，据报道伊朗表示，若美国采取初步措施缓和在中东的军事压力，伊方愿意在七天内开放霍尔木兹海峡。美国总统特朗普表示，他已与政府官员就可能临时禁止柴油出口一事进行讨论。",
+      "iterations": 2,
+      "seg_status": "edited",
+      "source_text": "US markets: US equities were mixed (S&P 500 flat, Nasdaq +0.5%) with semiconductor and memory stronger while big tech was mixed. Treasury yields were mostly flat (2Y -1bps to 4.74%, 10Y +1bps to 4.96%, 30Y +1bps to 5.30%) despite hawkish commentary from Fed speakers. The dollar index gained +0.1%, gold fell -0.2%. Brent settled just below $100 as Iran reportedly offered to open the Strait of Hormuz within seven days if the US takes initial steps to reduce military pressure in the Middle East. US President Trump said he has discussed a potential temporary ban on diesel exports with his administration.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        },
+        {
+          "source": "Federal Reserve",
+          "applied": false,
+          "approved_target": "美联储"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：欧洲股票小幅上涨（斯托克50指数上涨0.1%），受霍尔木兹海峡石油及天然气流量恢复的积极消息提振。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 59,
+          "char_start": 57
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 65,
+          "char_start": 61
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：欧洲股票小幅上涨（斯托克50指数上涨0.1%），受霍尔木兹海峡石油及天然气流量恢复的积极消息提振。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Europe markets: European equities gained slightly (Stoxx 50 +0.1%) amid positive takeaways of a recovery in oil and natural gas flows through the Strait of Hormuz.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：日本市场因公众假期休市。据报道，高市首相计划在纽约访问美国总统特朗普期间，重点强调日本对美投资1× $550的承诺，此举旨在回应外界对美国可能提出新的国防开支相关要求的担忧。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "currency",
+          "norm": "550000000000",
+          "text": "$550B",
+          "char_end": 132,
+          "char_start": 127
+        }
+      ],
+      "qe_score": 0.995,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：日本市场因公众假期休市。据报道，高市首相计划在纽约访问美国总统特朗普期间，重点强调日本对美投资 5500亿美元的承诺，此举旨在回应美国可能提出新的国防开支相关要求的担忧。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "Japan markets: Japanese markets were closed for a holiday. Prime Minister Takaichi is reportedly planning to highlight Japan’s $550B commitment to US investments in her visit to US President Trump in New York amid concerns that the US could present new demands related to defense-related spending.",
+      "critic_flags": [
+        {
+          "span": "1× $550",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "5500亿美元"
+        },
+        {
+          "span": "1× $550的承诺",
+          "category": "fluency",
+          "severity": "major",
+          "suggestion": "5500亿美元的承诺"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "defense spending",
+          "applied": false,
+          "approved_target": "国防开支"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：中国股票表现分化（恒生指数上涨0.2%，沪深300指数上涨0.1%），科技板块小幅走高，腾讯（推出新图像生成人工智能(AI)模型）及阿里巴巴（推出新人工智能(AI)芯片）表现较强，而纯人工智能(AI)概念股则大幅下跌。市场关注周四举行的特朗普与习近平峰会，但鉴于美国贸易代表格里尔表示中美贸易休战延续的可能性较高，市场预期相对审慎。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 59,
+          "char_start": 55
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 68,
+          "char_start": 65
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 74,
+          "char_start": 70
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：中国股票表现分化（恒生指数上涨0.2%，沪深300指数下跌0.4%），科技板块小幅走高，腾讯（推出新图像生成AI模型）及阿里巴巴（推出新AI芯片）表现较强，而纯AI概念股则大幅下跌。市场关注周四举行的特朗普与习近平峰会，但鉴于美国贸易代表格里尔表示中美贸易休战延续的可能性较高，市场预期相对审慎。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "China markets: Chinese equities were mixed (Hang Seng +0.2%, CSI 300 +0.1%) with tech slightly higher on strength in Tencent (new image-generation AI model) and Alibaba (new AI chip) while pure-play AI names fell sharply. Attention is on the Trump-Xi summit on Thursday, though expectations are measured amid a high likelihood of an extension of the trade truce between the US and China as expressed by US Trade Representative Greer.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "我们的观点：随着地缘政治重新成为市场焦点，我们在宏观与市场展望中将全球地缘分化列为重塑投资格局的三大核心力量之一，另外两大力量分别为人工智能(AI)与通胀。短期来看，这一趋势由中东及东欧地缘冲突所驱动；从更深层的结构性角度而言，则源于供应链重组，以及从成本效率向安全性与韧性的决定性转变。这一格局正在催生更大的财政赤字、更高的通胀波动性以及更显著的外汇分化——但与此同时，也带来了清晰且可付诸实践的投资机遇。在投资组合中表达地缘分化主题的方式，我们倾向于布局安全驱动型行业，如国防及各国龙头企业，并辅以战略性大宗商品和黄金敞口，以此作为对抗通胀与货币波动性的多元化工具。我们同样认为，地缘分化进一步强化了有选择性地布局新兴市场的逻辑——在关键供应链中，基本面、估值及结构性定位仍具吸引力，同时亦可把握人工智能(AI)基础设施建设带来的机遇。在公开市场之外，我们认为私募市场与实物资产提供了深度参与地缘分化主题的切入点，涵盖战略性制造业、基础设施乃至新一代国防领域。总体而言，我们将全球地缘分化视为结构性趋势而非周期性现象，并建议将市场回调作为契机，逐步建立对上述长期主题的敞口，纳入多元化投资组合之中。",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "我们的观点：随着地缘政治重新成为市场焦点，我们在宏观与市场展望中将全球地缘分化列为重塑投资格局的三大核心力量之一，另外两大力量分别为AI与通胀。短期来看，这一趋势由中东及东欧地缘冲突所驱动；从更深层的结构性角度而言，则源于供应链重组，以及从成本效率向安全性与韧性的决定性转变。这一格局正在催生更大的财政赤字、更高的通胀波动性以及更显著的外汇分化——但与此同时，也带来了清晰且可付诸实践的投资机遇。在投资组合中表达地缘分化主题的方式，我们倾向于布局安全驱动型行业，如国防及各国龙头企业，并辅以战略性大宗商品和黄金敞口，以此作为对抗通胀与货币波动性的多元化工具。我们同样认为，地缘分化进一步强化了有选择性布局新兴市场的逻辑——在关键供应链中，基本面、估值及结构性定位仍具吸引力，同时亦可把握AI基础设施建设带来的机遇。在公开市场之外，我们认为私募市场与实物资产提供了深度参与地缘分化主题的切入点，涵盖战略性制造业、基础设施乃至新一代国防领域。总体而言，我们将全球地缘分化视为结构性趋势而非周期性现象，并建议将市场回调作为契机，逐步建立对上述长期主题的敞口，纳入多元化投资组合之中。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "What we think With the renewed focus on geopolitics, we would highlight global fragmentation as one of the three defining forces – alongside AI and inflation – reshaping the investment landscape in our macro and market outlook. This is driven in the near-term by geopolitical conflicts in the Middle East and Eastern Europe, but more structurally by supply-chain reordering and a decisive shift from cost-efficiency toward security and resilience. This regime is producing wider fiscal deficits, higher inflation volatility, and greater FX dispersion – but it is also generating a clear, actionable investment opportunity set. Some of our preferred ways to express the fragmentation theme in portfolios is to lean into security-driven sectors such as defense and national champions, complemented by exposure to strategic commodities and gold as diversifiers against inflation and currency volatility. We also see fragmentation reinforcing the case for selective emerging market exposure, where fundamentals, valuations, and structural positioning in critical supply chains remain attractive, alongside exposure to the AI buildout. Beyond public markets, we believe private markets and real assets offer deep access points to fragmentation themes – from strategic manufacturing and infrastructure to next-generation defense. Overall, we see global fragmentation as a structural trend rather than a cyclical phenomenon, and we would use market corrections as opportunities to build exposure to these long-term themes as part of a diversified portfolio.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "supply chain",
+          "applied": false,
+          "approved_target": "供应链"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "emerging markets",
+          "applied": false,
+          "approved_target": "新兴市场"
+        },
+        {
+          "source": "diversification",
+          "applied": false,
+          "approved_target": "多元化"
+        },
+        {
+          "source": "investment portfolio",
+          "applied": false,
+          "approved_target": "投资组合"
+        },
+        {
+          "source": "real assets",
+          "applied": false,
+          "approved_target": "实物资产"
+        },
+        {
+          "source": "private markets",
+          "applied": false,
+          "approved_target": "私募市场"
+        },
+        {
+          "source": "commodities",
+          "applied": false,
+          "approved_target": "大宗商品"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "valuation",
+          "applied": false,
+          "approved_target": "估值"
+        },
+        {
+          "source": "volatility",
+          "applied": false,
+          "approved_target": "波动性"
+        },
+        {
+          "source": "geopolitical fragmentation",
+          "applied": false,
+          "approved_target": "地缘分化"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_daad4c4f-3a2",
+  "source": {
+    "type": "txt",
+    "filename": "us-markets-us-equities-were-mixed-s-p-500-flat-n.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 17.28,
+    "hter_by_category": {
+      "accuracy": 0.036
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_0cced48b-30e",
+      "ts": "2026-09-23T02:19:01.259Z",
+      "hter": 0.012,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国市场：美国股票表现分化（标普500指数持平，纳斯达克指数上涨0.5%），半导体及存储板块走强，大型科技股表现参差。尽管美联储官员发表鹰派言论，美国国债收益率整体基本持平（2年期下行1个基点至4.74%，10年期上行1个基点至4.96%，30年期上行1个基点至5.30%）。美元指数上涨0.1%，黄金下跌-0.2%。布伦特原油收盘价略低于每桶 $100美元，据报道伊朗表示，若美国采取初步措施缓和在中东的军事压力，伊方愿意在七天内开放霍尔木兹海峡。美国总统特朗普表示，他已与政府官员就可能临时禁止柴油出口一事进行讨论。",
+      "action": "edit",
+      "before": "美国市场：美国股票表现分化（标普500指数持平，纳斯达克指数上涨0.5%），半导体及存储板块走强，大型科技股表现参差。尽管美联储官员发表鹰派言论，美国国债收益率整体基本持平（2年期下行1个基点至4.74%，10年期上行1个基点至4.96%，30年期上行1个基点至5.30%）。美元指数上涨0.1%，黄金下跌-0.2%。布伦特原油收盘价略低于每桶1× $100美元，据报道伊朗表示，若美国采取初步措施缓和在中东的军事压力，伊方愿意在七天内开放霍尔木兹海峡。美国总统特朗普表示，他已与政府官员就可能临时禁止柴油出口一事进行讨论。",
+      "segment_id": "b-001",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_92dfb4f8-86d",
+      "ts": "2026-09-23T02:21:03.664Z",
+      "hter": 0.011,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "日本市场：日本市场因公众假期休市。据报道，高市首相计划在纽约访问美国总统特朗普期间，重点强调日本对美投资1×$550的承诺，此举旨在回应外界对美国可能提出新的国防开支相关要求的担忧。",
+      "action": "edit",
+      "before": "日本市场：日本市场因公众假期休市。据报道，高市首相计划在纽约访问美国总统特朗普期间，重点强调日本对美投资1× $550的承诺，此举旨在回应外界对美国可能提出新的国防开支相关要求的担忧。",
+      "segment_id": "b-003",
+      "char_edit_distance": 1,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_c01912d5-6f9",
+      "ts": "2026-09-23T02:21:13.447Z",
+      "hter": 0.075,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "日本市场：日本市场因公众假期休市。据报道，高市首相计划在纽约访问美国总统特朗普期间，重点强调日本对美投资 5500亿美元的承诺，此举旨在回应外界对美国可能提出新的国防开支相关要求的担忧。",
+      "action": "edit",
+      "before": "日本市场：日本市场因公众假期休市。据报道，高市首相计划在纽约访问美国总统特朗普期间，重点强调日本对美投资1×$550的承诺，此举旨在回应外界对美国可能提出新的国防开支相关要求的担忧。",
+      "segment_id": "b-003",
+      "char_edit_distance": 7,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_48cb298e-e13",
+      "ts": "2026-09-23T02:21:41.197Z",
+      "hter": 0.033,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "日本市场：日本市场因公众假期休市。据报道，高市首相计划在纽约访问美国总统特朗普期间，重点强调日本对美投资 5500亿美元的承诺，此举旨在回应美国可能提出新的国防开支相关要求的担忧。",
+      "action": "edit",
+      "before": "日本市场：日本市场因公众假期休市。据报道，高市首相计划在纽约访问美国总统特朗普期间，重点强调日本对美投资 5500亿美元的承诺，此举旨在回应外界对美国可能提出新的国防开支相关要求的担忧。",
+      "segment_id": "b-003",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_145ba8ee-e3f",
+      "ts": "2026-09-23T02:22:54.651Z",
+      "hter": 0.018,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "中国市场：中国股票表现分化（恒生指数上涨0.2%，沪深300指数下跌0.4%），科技板块小幅走高，腾讯（推出新图像生成人工智能(AI)模型）及阿里巴巴（推出新人工智能(AI)芯片）表现较强，而纯人工智能(AI)概念股则大幅下跌。市场关注周四举行的特朗普与习近平峰会，但鉴于美国贸易代表格里尔表示中美贸易休战延续的可能性较高，市场预期相对审慎。",
+      "action": "edit",
+      "before": "中国市场：中国股票表现分化（恒生指数上涨0.2%，沪深300指数上涨0.1%），科技板块小幅走高，腾讯（推出新图像生成人工智能(AI)模型）及阿里巴巴（推出新人工智能(AI)芯片）表现较强，而纯人工智能(AI)概念股则大幅下跌。市场关注周四举行的特朗普与习近平峰会，但鉴于美国贸易代表格里尔表示中美贸易休战延续的可能性较高，市场预期相对审慎。",
+      "segment_id": "b-004",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_437e9c85-eb2",
+      "ts": "2026-09-23T02:23:24.085Z",
+      "hter": 0.075,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "中国市场：中国股票表现分化（恒生指数上涨0.2%，沪深300指数下跌0.4%），科技板块小幅走高，腾讯（推出新图像生成AI模型）及阿里巴巴（推出新AI芯片）表现较强，而纯人工智能(AI)概念股则大幅下跌。市场关注周四举行的特朗普与习近平峰会，但鉴于美国贸易代表格里尔表示中美贸易休战延续的可能性较高，市场预期相对审慎。",
+      "action": "edit",
+      "before": "中国市场：中国股票表现分化（恒生指数上涨0.2%，沪深300指数下跌0.4%），科技板块小幅走高，腾讯（推出新图像生成人工智能(AI)模型）及阿里巴巴（推出新人工智能(AI)芯片）表现较强，而纯人工智能(AI)概念股则大幅下跌。市场关注周四举行的特朗普与习近平峰会，但鉴于美国贸易代表格里尔表示中美贸易休战延续的可能性较高，市场预期相对审慎。",
+      "segment_id": "b-004",
+      "char_edit_distance": 12,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_7a4b03c7-1e9",
+      "ts": "2026-09-23T02:23:40.984Z",
+      "hter": 0.039,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "中国市场：中国股票表现分化（恒生指数上涨0.2%，沪深300指数下跌0.4%），科技板块小幅走高，腾讯（推出新图像生成AI模型）及阿里巴巴（推出新AI芯片）表现较强，而纯AI概念股则大幅下跌。市场关注周四举行的特朗普与习近平峰会，但鉴于美国贸易代表格里尔表示中美贸易休战延续的可能性较高，市场预期相对审慎。",
+      "action": "edit",
+      "before": "中国市场：中国股票表现分化（恒生指数上涨0.2%，沪深300指数下跌0.4%），科技板块小幅走高，腾讯（推出新图像生成AI模型）及阿里巴巴（推出新AI芯片）表现较强，而纯人工智能(AI)概念股则大幅下跌。市场关注周四举行的特朗普与习近平峰会，但鉴于美国贸易代表格里尔表示中美贸易休战延续的可能性较高，市场预期相对审慎。",
+      "segment_id": "b-004",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_edcd5edc-ab8",
+      "ts": "2026-09-23T02:26:45.471Z",
+      "hter": 0.027,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "我们的观点：随着地缘政治重新成为市场焦点，我们在宏观与市场展望中将全球地缘分化列为重塑投资格局的三大核心力量之一，另外两大力量分别为AI与通胀。短期来看，这一趋势由中东及东欧地缘冲突所驱动；从更深层的结构性角度而言，则源于供应链重组，以及从成本效率向安全性与韧性的决定性转变。这一格局正在催生更大的财政赤字、更高的通胀波动性以及更显著的外汇分化——但与此同时，也带来了清晰且可付诸实践的投资机遇。在投资组合中表达地缘分化主题的方式，我们倾向于布局安全驱动型行业，如国防及各国龙头企业，并辅以战略性大宗商品和黄金敞口，以此作为对抗通胀与货币波动性的多元化工具。我们同样认为，地缘分化进一步强化了有选择性布局新兴市场的逻辑——在关键供应链中，基本面、估值及结构性定位仍具吸引力，同时亦可把握AI基础设施建设带来的机遇。在公开市场之外，我们认为私募市场与实物资产提供了深度参与地缘分化主题的切入点，涵盖战略性制造业、基础设施乃至新一代国防领域。总体而言，我们将全球地缘分化视为结构性趋势而非周期性现象，并建议将市场回调作为契机，逐步建立对上述长期主题的敞口，纳入多元化投资组合之中。",
+      "action": "edit",
+      "before": "我们的观点：随着地缘政治重新成为市场焦点，我们在宏观与市场展望中将全球地缘分化列为重塑投资格局的三大核心力量之一，另外两大力量分别为人工智能(AI)与通胀。短期来看，这一趋势由中东及东欧地缘冲突所驱动；从更深层的结构性角度而言，则源于供应链重组，以及从成本效率向安全性与韧性的决定性转变。这一格局正在催生更大的财政赤字、更高的通胀波动性以及更显著的外汇分化——但与此同时，也带来了清晰且可付诸实践的投资机遇。在投资组合中表达地缘分化主题的方式，我们倾向于布局安全驱动型行业，如国防及各国龙头企业，并辅以战略性大宗商品和黄金敞口，以此作为对抗通胀与货币波动性的多元化工具。我们同样认为，地缘分化进一步强化了有选择性地布局新兴市场的逻辑——在关键供应链中，基本面、估值及结构性定位仍具吸引力，同时亦可把握人工智能(AI)基础设施建设带来的机遇。在公开市场之外，我们认为私募市场与实物资产提供了深度参与地缘分化主题的切入点，涵盖战略性制造业、基础设施乃至新一代国防领域。总体而言，我们将全球地缘分化视为结构性趋势而非周期性现象，并建议将市场回调作为契机，逐步建立对上述长期主题的敞口，纳入多元化投资组合之中。",
+      "segment_id": "b-005",
+      "char_edit_distance": 13,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "3f9c45f6111fdd7d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-09-23T02:16:13.211Z",
+  "deleted_at": null,
+  "updated_at": "2026-09-23T02:26:45.471Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

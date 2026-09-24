@@ -1,0 +1,295 @@
+{
+  "rev": 3,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "the-latest-cpi-data-fits-with-our-view-on-inflat",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "最新消费者价格指数(CPI)数据与我们对通胀的判断相符：当前通胀冲击与2021/2022年的冲击明显不同，且更集中于能源领域。能源价格（环比-5.7%）是6月报告数据低于预期的关键因素，此前3月至5月的读数均处于较高水平。除能源外，数据还受到低于预期的住房分项读数影响，该分项环比仅录得+0.1%，为2021年1月以来的最低水平。我们一直认为，基于前瞻性指标，住房通胀在短期内不太可能出现明显加速。其他方面，机票通胀读数同样弱于预期，在此前三个月连续录得2.5%以上之后，6月仅上涨+0.21%；医疗服务价格亦表现疲弱，录得-0.12%。核心商品价格继续下跌，继5月的-0.11%之后，6月录得-0.09%；这两个月连续出现的通缩数据进一步印证，2025年以来因关税因素推高该分项通胀读数的压力很可能已基本消退。总体而言，这是一份令人欣慰的通胀报告。鉴于近期通胀数据的重要性日益凸显——正如美联储理事沃勒所强调的——6月数据意味着美联储在7月加息的可能性不大。值得关注的是，中东局势近期再度升温，油价随之上涨。这一风险仍意味着，到9月份，美联储加息的条件或将具备。然而，这仍属于风险情景，并非我们的基准预期。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2021",
+          "text": "2021",
+          "char_end": 165,
+          "char_start": 161
+        },
+        {
+          "kind": "date",
+          "norm": "2022",
+          "text": "2022",
+          "char_end": 170,
+          "char_start": 166
+        },
+        {
+          "kind": "percent",
+          "norm": "-5.7%",
+          "text": "-5.7%",
+          "char_end": 185,
+          "char_start": 180
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 412,
+          "char_start": 408
+        },
+        {
+          "kind": "date",
+          "norm": "2021",
+          "text": "2021",
+          "char_end": 461,
+          "char_start": 457
+        },
+        {
+          "kind": "percent",
+          "norm": "0.21%",
+          "text": "0.21%",
+          "char_end": 689,
+          "char_start": 684
+        },
+        {
+          "kind": "percent",
+          "norm": "2.5%",
+          "text": "2.5%",
+          "char_end": 727,
+          "char_start": 723
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.12%",
+          "text": "-0.12%",
+          "char_end": 814,
+          "char_start": 808
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.09%",
+          "text": "-0.09%",
+          "char_end": 872,
+          "char_start": 866
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.11%",
+          "text": "-0.11%",
+          "char_end": 893,
+          "char_start": 887
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 1038,
+          "char_start": 1034
+        }
+      ],
+      "qe_score": 0.99,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "最新消费者价格指数(CPI)数据与我们对通胀的判断相符：当前通胀冲击与2021/2022年的冲击明显不同，且更集中于能源领域。能源价格（环比-5.7%）是6月报告数据低于预期的关键因素，此前3月至5月的数据均处于较高水平。除能源外，数据还受到低于预期的住房通胀影响，该分项环比仅录得+0.1%，为2021年1月以来的最低水平。我们一直认为，基于前瞻性指标，住房通胀在短期内不太可能出现明显加速。其他方面，机票通胀同样弱于预期，在此前三个月连续录得2.5%以上之后，6月仅上涨+0.21%；医疗服务价格亦表现疲弱，录得-0.12%。核心商品价格继续下跌，继5月的-0.11%之后，6月录得-0.09%；这两个月连续出现的通缩数据进一步印证，2025年以来因关税因素推高该分项通胀的压力很可能已基本消退。总体而言，这是一份令人欣慰的通胀报告。鉴于近期通胀数据的重要性日益凸显——正如美联储理事沃勒所强调的——6月数据意味着美联储在7月加息的可能性不大。值得关注的是，中东局势近期再度升温，油价随之上涨。这一风险仍意味着，到9月份，美联储或将具备加息的条件。然而，这仍属于风险情景，并非我们的基准预期。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "The latest CPI data fits with our view on inflation: the current inflation shock appears very different from, and more concentrated in energy than, the shock of 2021/2022. Energy (-5.7% m/m) was a key factor which led to the downside in the June report, following elevated readings from March to May. Looking beyond energy, the data was influenced by a lower-than-expected shelter reading, which came in at +0.1%, the lowest for this category since January 2021. Our view has been that shelter inflation, based on forward-looking indicators, is unlikely to meaningfully accelerate anytime soon. Elsewhere, weaker-than-expected readings appeared in airfare inflation, which rose only +0.21% after a string of readings above 2.5% for the prior three months, and in medical care services, which came in weak at -0.12%. Core goods prices continued to fall, coming in at -0.09% in June after -0.11% in May; these back-to-back deflationary prints provide further evidence that the elevated inflation readings in this category that began in 2025 related to tariffs are likely finally behind us. Overall, this is a welcome inflation report. Given the heightened importance of near-term inflation data – as emphasized by Fed Governor Waller – the June data likely implies that a July hike from the Fed is unlikely. It is worth flagging that the conflict in the Middle East has been flaring up again along with oil prices. This risk still implies that, by September, the conditions could be in place for the Fed to hike its policy rate. However, that remains a risk scenario and not our base case.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "tariffs",
+          "applied": false,
+          "approved_target": "关税"
+        },
+        {
+          "source": "Federal Reserve",
+          "applied": false,
+          "approved_target": "美联储"
+        },
+        {
+          "source": "Consumer Price Index",
+          "applied": false,
+          "approved_target": "消费者价格指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_6dd42a59-b77",
+  "source": {
+    "type": "txt",
+    "filename": "the-latest-cpi-data-fits-with-our-view-on-inflat.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 11.67,
+    "hter_by_category": {
+      "accuracy": 0.013
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_e85f8490-d74",
+      "ts": "2026-07-15T01:38:54.098Z",
+      "hter": 0.008,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "最新消费者价格指数(CPI)数据与我们对通胀的判断相符：当前通胀冲击与2021/2022年的冲击明显不同，且更集中于能源领域。能源价格（环比-5.7%）是6月报告数据低于预期的关键因素，此前3月至5月的数据均处于较高水平。除能源外，数据还受到低于预期的住房分项数据影响，该分项环比仅录得+0.1%，为2021年1月以来的最低水平。我们一直认为，基于前瞻性指标，住房通胀在短期内不太可能出现明显加速。其他方面，机票通胀读数同样弱于预期，在此前三个月连续录得2.5%以上之后，6月仅上涨+0.21%；医疗服务价格亦表现疲弱，录得-0.12%。核心商品价格继续下跌，继5月的-0.11%之后，6月录得-0.09%；这两个月连续出现的通缩数据进一步印证，2025年以来因关税因素推高该分项通胀读数的压力很可能已基本消退。总体而言，这是一份令人欣慰的通胀报告。鉴于近期通胀数据的重要性日益凸显——正如美联储理事沃勒所强调的——6月数据意味着美联储在7月加息的可能性不大。值得关注的是，中东局势近期再度升温，油价随之上涨。这一风险仍意味着，到9月份，美联储加息的条件或将具备。然而，这仍属于风险情景，并非我们的基准预期。",
+      "action": "edit",
+      "before": "最新消费者价格指数(CPI)数据与我们对通胀的判断相符：当前通胀冲击与2021/2022年的冲击明显不同，且更集中于能源领域。能源价格（环比-5.7%）是6月报告数据低于预期的关键因素，此前3月至5月的读数均处于较高水平。除能源外，数据还受到低于预期的住房分项读数影响，该分项环比仅录得+0.1%，为2021年1月以来的最低水平。我们一直认为，基于前瞻性指标，住房通胀在短期内不太可能出现明显加速。其他方面，机票通胀读数同样弱于预期，在此前三个月连续录得2.5%以上之后，6月仅上涨+0.21%；医疗服务价格亦表现疲弱，录得-0.12%。核心商品价格继续下跌，继5月的-0.11%之后，6月录得-0.09%；这两个月连续出现的通缩数据进一步印证，2025年以来因关税因素推高该分项通胀读数的压力很可能已基本消退。总体而言，这是一份令人欣慰的通胀报告。鉴于近期通胀数据的重要性日益凸显——正如美联储理事沃勒所强调的——6月数据意味着美联储在7月加息的可能性不大。值得关注的是，中东局势近期再度升温，油价随之上涨。这一风险仍意味着，到9月份，美联储加息的条件或将具备。然而，这仍属于风险情景，并非我们的基准预期。",
+      "segment_id": "b-001",
+      "char_edit_distance": 4,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_3553cc4c-fab",
+      "ts": "2026-07-15T01:42:48.008Z",
+      "hter": 0.028,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "最新消费者价格指数(CPI)数据与我们对通胀的判断相符：当前通胀冲击与2021/2022年的冲击明显不同，且更集中于能源领域。能源价格（环比-5.7%）是6月报告数据低于预期的关键因素，此前3月至5月的数据均处于较高水平。除能源外，数据还受到低于预期的住房通胀影响，该分项环比仅录得+0.1%，为2021年1月以来的最低水平。我们一直认为，基于前瞻性指标，住房通胀在短期内不太可能出现明显加速。其他方面，机票通胀同样弱于预期，在此前三个月连续录得2.5%以上之后，6月仅上涨+0.21%；医疗服务价格亦表现疲弱，录得-0.12%。核心商品价格继续下跌，继5月的-0.11%之后，6月录得-0.09%；这两个月连续出现的通缩数据进一步印证，2025年以来因关税因素推高该分项通胀读数的压力很可能已基本消退。总体而言，这是一份令人欣慰的通胀报告。鉴于近期通胀数据的重要性日益凸显——正如美联储理事沃勒所强调的——6月数据意味着美联储在7月加息的可能性不大。值得关注的是，中东局势近期再度升温，油价随之上涨。这一风险仍意味着，到9月份，美联储或将具备加息的条件。然而，这仍属于风险情景，并非我们的基准预期。",
+      "action": "edit",
+      "before": "最新消费者价格指数(CPI)数据与我们对通胀的判断相符：当前通胀冲击与2021/2022年的冲击明显不同，且更集中于能源领域。能源价格（环比-5.7%）是6月报告数据低于预期的关键因素，此前3月至5月的数据均处于较高水平。除能源外，数据还受到低于预期的住房分项数据影响，该分项环比仅录得+0.1%，为2021年1月以来的最低水平。我们一直认为，基于前瞻性指标，住房通胀在短期内不太可能出现明显加速。其他方面，机票通胀读数同样弱于预期，在此前三个月连续录得2.5%以上之后，6月仅上涨+0.21%；医疗服务价格亦表现疲弱，录得-0.12%。核心商品价格继续下跌，继5月的-0.11%之后，6月录得-0.09%；这两个月连续出现的通缩数据进一步印证，2025年以来因关税因素推高该分项通胀读数的压力很可能已基本消退。总体而言，这是一份令人欣慰的通胀报告。鉴于近期通胀数据的重要性日益凸显——正如美联储理事沃勒所强调的——6月数据意味着美联储在7月加息的可能性不大。值得关注的是，中东局势近期再度升温，油价随之上涨。这一风险仍意味着，到9月份，美联储加息的条件或将具备。然而，这仍属于风险情景，并非我们的基准预期。",
+      "segment_id": "b-001",
+      "char_edit_distance": 14,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_b14a181f-2b8",
+      "ts": "2026-07-15T01:43:20.683Z",
+      "hter": 0.004,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "最新消费者价格指数(CPI)数据与我们对通胀的判断相符：当前通胀冲击与2021/2022年的冲击明显不同，且更集中于能源领域。能源价格（环比-5.7%）是6月报告数据低于预期的关键因素，此前3月至5月的数据均处于较高水平。除能源外，数据还受到低于预期的住房通胀影响，该分项环比仅录得+0.1%，为2021年1月以来的最低水平。我们一直认为，基于前瞻性指标，住房通胀在短期内不太可能出现明显加速。其他方面，机票通胀同样弱于预期，在此前三个月连续录得2.5%以上之后，6月仅上涨+0.21%；医疗服务价格亦表现疲弱，录得-0.12%。核心商品价格继续下跌，继5月的-0.11%之后，6月录得-0.09%；这两个月连续出现的通缩数据进一步印证，2025年以来因关税因素推高该分项通胀的压力很可能已基本消退。总体而言，这是一份令人欣慰的通胀报告。鉴于近期通胀数据的重要性日益凸显——正如美联储理事沃勒所强调的——6月数据意味着美联储在7月加息的可能性不大。值得关注的是，中东局势近期再度升温，油价随之上涨。这一风险仍意味着，到9月份，美联储或将具备加息的条件。然而，这仍属于风险情景，并非我们的基准预期。",
+      "action": "edit",
+      "before": "最新消费者价格指数(CPI)数据与我们对通胀的判断相符：当前通胀冲击与2021/2022年的冲击明显不同，且更集中于能源领域。能源价格（环比-5.7%）是6月报告数据低于预期的关键因素，此前3月至5月的数据均处于较高水平。除能源外，数据还受到低于预期的住房通胀影响，该分项环比仅录得+0.1%，为2021年1月以来的最低水平。我们一直认为，基于前瞻性指标，住房通胀在短期内不太可能出现明显加速。其他方面，机票通胀同样弱于预期，在此前三个月连续录得2.5%以上之后，6月仅上涨+0.21%；医疗服务价格亦表现疲弱，录得-0.12%。核心商品价格继续下跌，继5月的-0.11%之后，6月录得-0.09%；这两个月连续出现的通缩数据进一步印证，2025年以来因关税因素推高该分项通胀读数的压力很可能已基本消退。总体而言，这是一份令人欣慰的通胀报告。鉴于近期通胀数据的重要性日益凸显——正如美联储理事沃勒所强调的——6月数据意味着美联储在7月加息的可能性不大。值得关注的是，中东局势近期再度升温，油价随之上涨。这一风险仍意味着，到9月份，美联储或将具备加息的条件。然而，这仍属于风险情景，并非我们的基准预期。",
+      "segment_id": "b-001",
+      "char_edit_distance": 2,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-15T01:35:23.054Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-15T01:43:20.683Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

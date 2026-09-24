@@ -1,0 +1,217 @@
+{
+  "rev": 3,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "inflation-expectations-have-moderated-in-recent-",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "近期，受能源价格下降及美联储政策信号共同影响，通胀预期有所回落。随着霍尔木兹海峡油流部分恢复，此前高企的油价已逐步回落，现货及期货价格均回归冲突前水平，美国汽油价格亦从每加仑约2× $4.50美元的峰值降至2× $4.00美元以下。新任美联储主席沃什(Warsh)履新后，联邦公开市场委员会(FOMC)的政策基调与方式随之转变：他精简了政策声明，取消了前瞻性指引，删除了带有宽松倾向的表述。经济预测摘要亦上调了通胀及利率预测。上述举措均彰显了维护价格稳定的坚定承诺。展望未来，在油价走低与美联储鹰派立场的背景下，我们维持此前判断，认为政策制定者在近期内大概率将维持利率不变，劳动力市场数据仍是关键观察指标。我们认为，在经济持续稳健增长、劳动力市场保持强劲的背景下，尤其是随着油价趋于温和，加息的门槛依然较高。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "currency",
+          "norm": "4.5",
+          "text": "$4.50",
+          "char_end": 365,
+          "char_start": 359
+        },
+        {
+          "kind": "currency",
+          "norm": "4",
+          "text": "$4.00",
+          "char_end": 390,
+          "char_start": 385
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "近期，受能源价格下降及美联储政策信号共同影响，通胀预期有所回落。随着霍尔木兹海峡油流部分恢复，此前高企的油价已逐步回落，现货及期货价格均回归冲突前水平，美国汽油价格从每加仑约$4.50美元的峰值降至$4.00美元以下。新任美联储主席沃什履新后，联邦公开市场委员会的政策基调与沟通方式随之转变：他精简了政策声明，取消了前瞻性指引，删除了带有宽松倾向的表述。经济预测摘要亦上调了通胀及利率预测。上述举措均彰显了维护价格稳定的坚定承诺。展望未来，在油价走低与美联储鹰派立场的背景下，我们维持此前判断，认为美联储在近期内大概率将维持利率不变，劳动力市场数据仍是关键观察指标。我们认为，在经济持续稳健增长、劳动力市场保持强劲的背景下，尤其是随着油价趋于温和，加息的门槛依然较高。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "Inflation expectations have moderated in recent days due to a combination of lower energy prices and Federal Reserve takeaways. Elevated oil prices have unwound following a partial revival of flows through the Strait of Hormuz, with spot and futures prices falling back to pre-conflict levels alongside a decline in U.S. gasoline prices from a peak of around $4.50 per gallon to below $4.00. The debut of new Fed Chair Warsh ushered in a change in the FOMC’s tone and approach. He shortened the policy statement and eliminated forward guidance, removing language with an easing bias. The Summary of Economic Projections also showed upward revisions to inflation and rates. All of this showed a commitment to delivering price stability. Looking ahead, with lower oil prices and a hawkish Fed, we remain of the view that policymakers will likely hold interest rates for the near-future, with labor market data remaining key. We think the bar to hike remains high amid a backdrop of consistent economic growth and a firm labor market, especially as oil prices moderate.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_5f205429-1b4",
+  "source": {
+    "type": "txt",
+    "filename": "inflation-expectations-have-moderated-in-recent-.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 17.05,
+    "hter_by_category": {
+      "accuracy": 0.027
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_5ad5de3f-220",
+      "ts": "2026-06-30T01:30:51.885Z",
+      "hter": 0.041,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "近期，受能源价格下降及美联储政策信号共同影响，通胀预期有所回落。随着霍尔木兹海峡油流部分恢复，此前高企的油价已逐步回落，现货及期货价格均回归冲突前水平，美国汽油价格从每加仑约$4.50美元的峰值降至$4.00美元以下。新任美联储主席沃什履新后，联邦公开市场委员会(FOMC)的政策基调与方式随之转变：他精简了政策声明，取消了前瞻性指引，删除了带有宽松倾向的表述。经济预测摘要亦上调了通胀及利率预测。上述举措均彰显了维护价格稳定的坚定承诺。展望未来，在油价走低与美联储鹰派立场的背景下，我们维持此前判断，认为政策制定者在近期内大概率将维持利率不变，劳动力市场数据仍是关键观察指标。我们认为，在经济持续稳健增长、劳动力市场保持强劲的背景下，尤其是随着油价趋于温和，加息的门槛依然较高。",
+      "action": "edit",
+      "before": "近期，受能源价格下降及美联储政策信号共同影响，通胀预期有所回落。随着霍尔木兹海峡油流部分恢复，此前高企的油价已逐步回落，现货及期货价格均回归冲突前水平，美国汽油价格亦从每加仑约2× $4.50美元的峰值降至2× $4.00美元以下。新任美联储主席沃什(Warsh)履新后，联邦公开市场委员会(FOMC)的政策基调与方式随之转变：他精简了政策声明，取消了前瞻性指引，删除了带有宽松倾向的表述。经济预测摘要亦上调了通胀及利率预测。上述举措均彰显了维护价格稳定的坚定承诺。展望未来，在油价走低与美联储鹰派立场的背景下，我们维持此前判断，认为政策制定者在近期内大概率将维持利率不变，劳动力市场数据仍是关键观察指标。我们认为，在经济持续稳健增长、劳动力市场保持强劲的背景下，尤其是随着油价趋于温和，加息的门槛依然较高。",
+      "segment_id": "b-001",
+      "char_edit_distance": 14,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_59a74b7a-90b",
+      "ts": "2026-06-30T01:32:05.155Z",
+      "hter": 0.018,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "近期，受能源价格下降及美联储政策信号共同影响，通胀预期有所回落。随着霍尔木兹海峡油流部分恢复，此前高企的油价已逐步回落，现货及期货价格均回归冲突前水平，美国汽油价格从每加仑约$4.50美元的峰值降至$4.00美元以下。新任美联储主席沃什履新后，联邦公开市场委员会的政策基调与方式随之转变：他精简了政策声明，取消了前瞻性指引，删除了带有宽松倾向的表述。经济预测摘要亦上调了通胀及利率预测。上述举措均彰显了维护价格稳定的坚定承诺。展望未来，在油价走低与美联储鹰派立场的背景下，我们维持此前判断，认为政策制定者在近期内大概率将维持利率不变，劳动力市场数据仍是关键观察指标。我们认为，在经济持续稳健增长、劳动力市场保持强劲的背景下，尤其是随着油价趋于温和，加息的门槛依然较高。",
+      "action": "edit",
+      "before": "近期，受能源价格下降及美联储政策信号共同影响，通胀预期有所回落。随着霍尔木兹海峡油流部分恢复，此前高企的油价已逐步回落，现货及期货价格均回归冲突前水平，美国汽油价格从每加仑约$4.50美元的峰值降至$4.00美元以下。新任美联储主席沃什履新后，联邦公开市场委员会(FOMC)的政策基调与方式随之转变：他精简了政策声明，取消了前瞻性指引，删除了带有宽松倾向的表述。经济预测摘要亦上调了通胀及利率预测。上述举措均彰显了维护价格稳定的坚定承诺。展望未来，在油价走低与美联储鹰派立场的背景下，我们维持此前判断，认为政策制定者在近期内大概率将维持利率不变，劳动力市场数据仍是关键观察指标。我们认为，在经济持续稳健增长、劳动力市场保持强劲的背景下，尤其是随着油价趋于温和，加息的门槛依然较高。",
+      "segment_id": "b-001",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_a80f41d5-795",
+      "ts": "2026-06-30T01:34:08.750Z",
+      "hter": 0.021,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "近期，受能源价格下降及美联储政策信号共同影响，通胀预期有所回落。随着霍尔木兹海峡油流部分恢复，此前高企的油价已逐步回落，现货及期货价格均回归冲突前水平，美国汽油价格从每加仑约$4.50美元的峰值降至$4.00美元以下。新任美联储主席沃什履新后，联邦公开市场委员会的政策基调与沟通方式随之转变：他精简了政策声明，取消了前瞻性指引，删除了带有宽松倾向的表述。经济预测摘要亦上调了通胀及利率预测。上述举措均彰显了维护价格稳定的坚定承诺。展望未来，在油价走低与美联储鹰派立场的背景下，我们维持此前判断，认为美联储在近期内大概率将维持利率不变，劳动力市场数据仍是关键观察指标。我们认为，在经济持续稳健增长、劳动力市场保持强劲的背景下，尤其是随着油价趋于温和，加息的门槛依然较高。",
+      "action": "edit",
+      "before": "近期，受能源价格下降及美联储政策信号共同影响，通胀预期有所回落。随着霍尔木兹海峡油流部分恢复，此前高企的油价已逐步回落，现货及期货价格均回归冲突前水平，美国汽油价格从每加仑约$4.50美元的峰值降至$4.00美元以下。新任美联储主席沃什履新后，联邦公开市场委员会的政策基调与方式随之转变：他精简了政策声明，取消了前瞻性指引，删除了带有宽松倾向的表述。经济预测摘要亦上调了通胀及利率预测。上述举措均彰显了维护价格稳定的坚定承诺。展望未来，在油价走低与美联储鹰派立场的背景下，我们维持此前判断，认为政策制定者在近期内大概率将维持利率不变，劳动力市场数据仍是关键观察指标。我们认为，在经济持续稳健增长、劳动力市场保持强劲的背景下，尤其是随着油价趋于温和，加息的门槛依然较高。",
+      "segment_id": "b-001",
+      "char_edit_distance": 7,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-30T01:29:10.100Z",
+  "deleted_at": null,
+  "updated_at": "2026-06-30T01:34:08.750Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

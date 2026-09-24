@@ -1,0 +1,1233 @@
+{
+  "rev": 7,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "why-is-the-yield-curve-steepening",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "为何收益率曲线趋于陡峭化？",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.89,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "收益率曲线为何趋于陡峭？",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Why is the yield curve steepening?",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "yield curve",
+          "applied": false,
+          "approved_target": "收益率曲线"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：美国股票下跌（标普500指数 -0.5%，纳斯达克指数 -0.3%），大型科技股普遍走低。美国国债收益率整体上行，曲线进一步陡峭化（2年期+1个基点至4.18%，10年期+4个基点至4.73%，30年期+6个基点至5.31%），长端收益率急剧攀升至十年高位。美元指数下跌-0.1%，黄金上涨+0.8%，布伦特原油维持在1× $91.附近。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 41,
+          "char_start": 38
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.5%",
+          "text": "-0.5%",
+          "char_end": 47,
+          "char_start": 42
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.3%",
+          "text": "-0.3%",
+          "char_end": 61,
+          "char_start": 56
+        },
+        {
+          "kind": "number",
+          "norm": "1000000000bps",
+          "text": "1bps",
+          "char_end": 157,
+          "char_start": 153
+        },
+        {
+          "kind": "percent",
+          "norm": "4.18%",
+          "text": "4.18%",
+          "char_end": 166,
+          "char_start": 161
+        },
+        {
+          "kind": "number",
+          "norm": "4000000000bps",
+          "text": "4bps",
+          "char_end": 177,
+          "char_start": 173
+        },
+        {
+          "kind": "percent",
+          "norm": "4.73%",
+          "text": "4.73%",
+          "char_end": 186,
+          "char_start": 181
+        },
+        {
+          "kind": "number",
+          "norm": "6000000000bps",
+          "text": "6bps",
+          "char_end": 197,
+          "char_start": 193
+        },
+        {
+          "kind": "percent",
+          "norm": "5.31%",
+          "text": "5.31%",
+          "char_end": 206,
+          "char_start": 201
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.1%",
+          "text": "-0.1%",
+          "char_end": 294,
+          "char_start": 289
+        },
+        {
+          "kind": "percent",
+          "norm": "0.8%",
+          "text": "0.8%",
+          "char_end": 311,
+          "char_start": 307
+        },
+        {
+          "kind": "currency",
+          "norm": "91",
+          "text": "$91.",
+          "char_end": 348,
+          "char_start": 344
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 41,
+          "char_start": 34
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 55,
+          "char_start": 49
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：美国股票下跌（标普500指数 -0.5%，纳斯达克指数 -0.3%），大型科技股普遍走低。美国国债收益率整体上行，曲线进一步陡峭化（2年期+1个基点至4.18%，10年期+4个基点至4.73%，30年期+6个基点至5.31%），长端收益率急剧攀升至十多年高位。美元指数下跌-0.1%，黄金上涨+0.8%，布伦特原油维持在$91左右。",
+      "iterations": 2,
+      "seg_status": "edited",
+      "source_text": "U.S. markets: U.S. equities fell (S&P 500 -0.5%, Nasdaq -0.3%) big tech mostly lower. Treasury yields were mostly higher with more curve steepening (2Y +1bps to 4.18%, 10Y +4bps to 4.73%, 30Y +6bps to 5.31%), with a sharp move higher in the long-end to decade highs. The dollar index fell -0.1%, gold rose +0.8%, and Brent crude held steady at $91.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：欧洲股票基本持平（斯托克50指数持平），中东局势紧张推升能源价格上行风险，而企业盈利总体保持稳定。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 53,
+          "char_start": 51
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：欧洲股票基本持平（斯托克50指数持平），中东局势紧张推升能源价格上行风险，而企业盈利总体保持稳定。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Europe markets: European equities were flat (Stoxx 50 flat) with Middle East tensions driving the risk of higher energy prices while corporate earnings have been steady.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "盈利"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：日本股票表现分化（日经指数+0.7%，东证指数-0.3%），尽管存储芯片板块出现反弹，其中铠侠控股(Kioxia Holdings)上涨+15%。Q2 GDP数据大幅弱于预期，折年率环比增长+1.1%，而市场共识预期为+2.0%，上一季度为+1.8%（环比+0.3%，市场共识预期为+0.5%，上一季度为+0.5%）。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.7%",
+          "text": "0.7%",
+          "char_end": 57,
+          "char_start": 53
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.3%",
+          "text": "-0.3%",
+          "char_end": 70,
+          "char_start": 65
+        },
+        {
+          "kind": "percent",
+          "norm": "15%",
+          "text": "15%",
+          "char_end": 129,
+          "char_start": 126
+        },
+        {
+          "kind": "percent",
+          "norm": "1.1%",
+          "text": "1.1%",
+          "char_end": 193,
+          "char_start": 189
+        },
+        {
+          "kind": "percent",
+          "norm": "2%",
+          "text": "2.0%",
+          "char_end": 228,
+          "char_start": 224
+        },
+        {
+          "kind": "percent",
+          "norm": "1.8%",
+          "text": "1.8%",
+          "char_end": 254,
+          "char_start": 250
+        },
+        {
+          "kind": "percent",
+          "norm": "0.3%",
+          "text": "0.3%",
+          "char_end": 261,
+          "char_start": 257
+        },
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 285,
+          "char_start": 281
+        },
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 311,
+          "char_start": 307
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：日本股票表现分化（日经指数+0.7%，东证指数-0.3%），尽管存储芯片板块出现反弹，其中铠侠控股(Kioxia Holdings)上涨+15%。Q2 GDP数据大幅弱于预期，环比年化增长率+1.1%，而市场共识预期为+2.0%，上一季度为+1.8%（季度环比+0.3%，市场共识预期为+0.5%，上一季度为+0.5%）。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "Japan markets: Japanese equities were mixed (Nikkei +0.7%, Topix -0.3%) despite a rally in memory including Kioxia Holdings (+15%). Q2 GDP data was much weaker than expected, coming in at +1.1% q/q annualized vs. consensus +2.0% and prior quarter’s +1.8% (+0.3% q/q vs. consensus +0.5% and prior quarter’s +0.5%).",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：中国股票上涨（恒生指数+1.3%，沪深300指数+1.6%），科技板块表现强劲。人民币兑美元升至2023年1月以来的较强水平，美元兑离岸人民币(USDCNH)一度触及6.738。7月经济活动数据总体显示经济全面走弱：工业生产同比+4.5%，市场共识预期为+4.9%，前值为+5.3%；零售销售同比+0.6%，市场共识预期为+1.5%，前值为+1.0%；固定资产投资(YTD)同比-6.7%，市场共识预期为-6.2%，前值为-5.7%；新建住宅价格环比-0.1%，前值为-0.1%；房价同比-3.2%，前值为-3.3%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "1.3%",
+          "text": "1.3%",
+          "char_end": 55,
+          "char_start": 51
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 64,
+          "char_start": 61
+        },
+        {
+          "kind": "percent",
+          "norm": "1.6%",
+          "text": "1.6%",
+          "char_end": 70,
+          "char_start": 66
+        },
+        {
+          "kind": "date",
+          "norm": "2023",
+          "text": "2023",
+          "char_end": 173,
+          "char_start": 169
+        },
+        {
+          "kind": "number",
+          "norm": "6.738",
+          "text": "6.738",
+          "char_end": 201,
+          "char_start": 196
+        },
+        {
+          "kind": "percent",
+          "norm": "4.5%",
+          "text": "4.5%",
+          "char_end": 311,
+          "char_start": 307
+        },
+        {
+          "kind": "percent",
+          "norm": "4.9%",
+          "text": "4.9%",
+          "char_end": 334,
+          "char_start": 330
+        },
+        {
+          "kind": "percent",
+          "norm": "5.3%",
+          "text": "5.3%",
+          "char_end": 350,
+          "char_start": 346
+        },
+        {
+          "kind": "percent",
+          "norm": "0.6%",
+          "text": "0.6%",
+          "char_end": 370,
+          "char_start": 366
+        },
+        {
+          "kind": "percent",
+          "norm": "1.5%",
+          "text": "1.5%",
+          "char_end": 393,
+          "char_start": 389
+        },
+        {
+          "kind": "percent",
+          "norm": "1%",
+          "text": "1.0%",
+          "char_end": 409,
+          "char_start": 405
+        },
+        {
+          "kind": "ticker",
+          "norm": "(YTD)",
+          "text": "(YTD)",
+          "char_end": 440,
+          "char_start": 435
+        },
+        {
+          "kind": "percent",
+          "norm": "-6.7%",
+          "text": "-6.7%",
+          "char_end": 446,
+          "char_start": 441
+        },
+        {
+          "kind": "percent",
+          "norm": "-6.2%",
+          "text": "-6.2%",
+          "char_end": 469,
+          "char_start": 464
+        },
+        {
+          "kind": "percent",
+          "norm": "-5.7%",
+          "text": "-5.7%",
+          "char_end": 485,
+          "char_start": 480
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.1%",
+          "text": "-0.1%",
+          "char_end": 509,
+          "char_start": 504
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.1%",
+          "text": "-0.1%",
+          "char_end": 528,
+          "char_start": 523
+        },
+        {
+          "kind": "percent",
+          "norm": "-3.2%",
+          "text": "-3.2%",
+          "char_end": 548,
+          "char_start": 543
+        },
+        {
+          "kind": "percent",
+          "norm": "-3.3%",
+          "text": "-3.3%",
+          "char_end": 561,
+          "char_start": 556
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：中国股票上涨（恒生指数+1.3%，沪深300指数+1.6%），科技板块表现强劲。人民币兑美元升至2023年1月以来的较强水平，美元兑离岸人民币(USDCNH)一度触及6.738。7月经济活动数据总体显示经济全面走弱：工业生产同比+4.5%，市场共识预期为+4.9%，前值为+5.3%；零售销售同比+0.6%，市场共识预期为+1.5%，前值为+1.0%；固定资产投资（年初至今）同比-6.7%，市场共识预期为-6.2%，前值为-5.7%；新建住宅价格环比-0.1%，前值为-0.1%；房价同比-3.2%，前值为-3.3%。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "China markets: Chinese equities gained (Hang Seng +1.3%, CSI 300 +1.6%) with strength in tech. The RMB rose to some of its strongest levels against the dollar since Jan-2023, with USDCNH reaching 6.738 at one point. July activity data generally indicated weakness across the economy: industrial production +4.5% y/y vs consensus +4.9% and prior +5.3%; retail sales +0.6% y/y vs consensus +1.5% and prior +1.0% ; fixed asset investment (YTD) -6.7% y/y vs consensus -6.2% and prior -5.7%; new house prices -0.1% m/m vs prior -0.1%; house prices -3.2% y/y vs -3.3% prior.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-006",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "我们的观点：投资者目前聚焦于长端收益率急剧上行的原因。短端收益率（约5年期以内）通常主要受经济数据、美联储预期及周期性背景等基本面因素驱动，而5年期以上（尤其是接近30年期）的收益率则受期限溢价及与近期美联储定价关联不紧密的力量所主导。这些因素包括供需动态、财政预测、政治与地缘政治风险，以及全球久期溢出效应。地缘政治不确定性、大规模人工智能(AI)相关债务发行，以及日本长端压力，是当前导致长端收益率居高不下或波动加剧的典型因素。叠加财政赤字持续扩大，我们认为期限溢价在短期内不会出现明显下行趋势。另一个理解长端压力的视角是买方结构的变化——随着主要买家由对价格不敏感的境外机构转向对价格敏感的私人投资者，投资者要求更高的收益率。尽管如此，若出现全面经济衰退，整条收益率曲线可能均会下行。尽管近期经济疲软态势或将延续，但全面经济衰退并非我们的基准情景。对于风险偏好较低的投资者而言，5年期以上的长期美国国债可作为应对下行尾部风险的对冲工具——我们认为未来12至18个月内发生全面经济衰退的概率约为25%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "25%",
+          "text": "25%",
+          "char_end": 1377,
+          "char_start": 1374
+        },
+        {
+          "kind": "number",
+          "norm": "12",
+          "text": "12",
+          "char_end": 1419,
+          "char_start": 1417
+        },
+        {
+          "kind": "number",
+          "norm": "18",
+          "text": "18",
+          "char_end": 1422,
+          "char_start": 1420
+        }
+      ],
+      "qe_score": 0.965,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "我们的观点：投资者目前聚焦于长端收益率急剧上行的原因。短端收益率（约5年期以内）通常主要受经济数据、美联储预期及周期性背景等基本面因素驱动，而5年期以上（尤其是接近30年期）的收益率则受期限溢价及与近期美联储定价关联不紧密的力量所主导。这些因素包括供需动态、财政预测、政治与地缘政治风险，以及全球久期溢出效应。地缘政治不确定性、大规模人工智能(AI)相关债务发行，以及日本长端利率产生的压力，是当前导致长端收益率居高不下或波动加剧的因素。叠加财政赤字持续扩大，我们认为期限溢价在短期内不会出现明显下行趋势。另一个理解长端压力的视角是买方结构的变化——随着主要买家由对价格不敏感的境外机构转向对价格敏感的私人投资者，投资者要求更高的收益率。尽管如此，若出现全面经济衰退，整条收益率曲线可能均会下行。尽管近期经济疲软态势或将延续，但全面经济衰退不是我们的基准情景。对于风险偏好较低的投资者而言，5年期以上的长期美国国债可作为应对下行尾部风险的对冲工具——我们认为未来12至18个月内发生全面经济衰退的概率约为25%。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "What we think Investors have focused on why yields on the long-end moving sharply higher. While the short end (up to ~5Y) tends to be dominated by fundamentals such as economic data, Fed expectations, and the cyclical backdrop, yields beyond 5Y (and especially close to 30Y) are driven by term premium and forces that don’t map cleanly to near-term Fed pricing. These include factors such as supply-demand dynamics, fiscal projections, political and geopolitical risk, and global duration spillovers. Geopolitical uncertainty, heavy AI-related debt issuance, and Japan’s long-end pressures are current examples of forces that can keep the long end elevated or volatile. Combined with expanding fiscal deficits, we don’t see term premium trending meaningfully downward anytime soon. Another way to think about the pressures on the long-end is the changing composition of buyers – as the primary buyer shifts towards price-sensitive private investors (instead of price insensitive foreign institutions), investors are demanding a higher yield. That being said, a full-on recessionary scenario would likely pull down the entire curve. While the recent stretch of economic softness may continue, a full recession is not our base case. For the more risk-averse investor, longer-dated Treasuries beyond 5Y can make sense as a hedge to that downside tail risk – we assign roughly ~25% odds of a full recession over the next 12–18 months.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "yield curve",
+          "applied": false,
+          "approved_target": "收益率曲线"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "recession",
+          "applied": false,
+          "approved_target": "经济衰退"
+        },
+        {
+          "source": "Federal Reserve",
+          "applied": false,
+          "approved_target": "美联储"
+        },
+        {
+          "source": "scale",
+          "applied": false,
+          "approved_target": "规模"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-007",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "受地缘政治不确定性、大规模人工智能(AI)相关债务发行以及全球利率溢出效应等多重因素影响，美国国债收益率曲线近期明显趋陡",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.919,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "受地缘政治不确定性、大规模人工智能(AI)相关债务发行以及全球利率溢出效应等多重因素影响，美国国债收益率曲线近期明显趋陡",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "THE U.S. TREASURY YIELD CURVE HAS STEEPENED RECENTLY DUE TO A MIX OF GEOPOLITICAL UNCERTAINTY, HEAVY AI-RELATED DEBT ISSUANCE AND SPILLOVER FROM GLOBAL RATES",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "yield curve",
+          "applied": false,
+          "approved_target": "收益率曲线"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "scale",
+          "applied": false,
+          "approved_target": "规模"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_ebe71cad-3d5",
+  "source": {
+    "type": "txt",
+    "filename": "why-is-the-yield-curve-steepening.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 14.99,
+    "hter_by_category": {
+      "accuracy": 0.078
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_fd54da11-fa0",
+      "ts": "2026-08-18T01:26:36.049Z",
+      "hter": 0.417,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "收益率曲线为何趋于陡峭？",
+      "action": "edit",
+      "before": "为何收益率曲线趋于陡峭化？",
+      "segment_id": "b-001",
+      "char_edit_distance": 5,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_d804de63-3dd",
+      "ts": "2026-08-18T01:27:24.773Z",
+      "hter": 0.041,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国市场：美国股票下跌（标普500指数 -0.5%，纳斯达克指数 -0.3%），大型科技股普遍走低。美国国债收益率整体上行，曲线进一步陡峭化（2年期+1个基点至4.18%，10年期+4个基点至4.73%，30年期+6个基点至5.31%），长端收益率急剧攀升至十多年高位。美元指数下跌-0.1%，黄金上涨+0.8%，布伦特原油维持在$91左右。",
+      "action": "edit",
+      "before": "美国市场：美国股票下跌（标普500指数 -0.5%，纳斯达克指数 -0.3%），大型科技股普遍走低。美国国债收益率整体上行，曲线进一步陡峭化（2年期+1个基点至4.18%，10年期+4个基点至4.73%，30年期+6个基点至5.31%），长端收益率急剧攀升至十年高位。美元指数下跌-0.1%，黄金上涨+0.8%，布伦特原油维持在1× $91.附近。",
+      "segment_id": "b-002",
+      "char_edit_distance": 7,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_cae182eb-ea6",
+      "ts": "2026-08-18T01:29:40.459Z",
+      "hter": 0.048,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "日本市场：日本股票表现分化（日经指数+0.7%，东证指数-0.3%），尽管存储芯片板块出现反弹，其中铠侠控股(Kioxia Holdings)上涨+15%。Q2 GDP数据大幅弱于预期，环比年化增长率+1.1%，而市场共识预期为+2.0%，上一季度为+1.8%（季度环比+0.3%，市场共识预期为+0.5%，上一季度为+0.5%）。",
+      "action": "edit",
+      "before": "日本市场：日本股票表现分化（日经指数+0.7%，东证指数-0.3%），尽管存储芯片板块出现反弹，其中铠侠控股(Kioxia Holdings)上涨+15%。Q2 GDP数据大幅弱于预期，折年率环比增长+1.1%，而市场共识预期为+2.0%，上一季度为+1.8%（环比+0.3%，市场共识预期为+0.5%，上一季度为+0.5%）。",
+      "segment_id": "b-004",
+      "char_edit_distance": 8,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_0faec6b4-81e",
+      "ts": "2026-08-18T01:31:27.924Z",
+      "hter": 0.023,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "中国市场：中国股票上涨（恒生指数+1.3%，沪深300指数+1.6%），科技板块表现强劲。人民币兑美元升至2023年1月以来的较强水平，美元兑离岸人民币(USDCNH)一度触及6.738。7月经济活动数据总体显示经济全面走弱：工业生产同比+4.5%，市场共识预期为+4.9%，前值为+5.3%；零售销售同比+0.6%，市场共识预期为+1.5%，前值为+1.0%；固定资产投资（年初至今）同比-6.7%，市场共识预期为-6.2%，前值为-5.7%；新建住宅价格环比-0.1%，前值为-0.1%；房价同比-3.2%，前值为-3.3%。",
+      "action": "edit",
+      "before": "中国市场：中国股票上涨（恒生指数+1.3%，沪深300指数+1.6%），科技板块表现强劲。人民币兑美元升至2023年1月以来的较强水平，美元兑离岸人民币(USDCNH)一度触及6.738。7月经济活动数据总体显示经济全面走弱：工业生产同比+4.5%，市场共识预期为+4.9%，前值为+5.3%；零售销售同比+0.6%，市场共识预期为+1.5%，前值为+1.0%；固定资产投资(YTD)同比-6.7%，市场共识预期为-6.2%，前值为-5.7%；新建住宅价格环比-0.1%，前值为-0.1%；房价同比-3.2%，前值为-3.3%。",
+      "segment_id": "b-005",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_845ad15c-86c",
+      "ts": "2026-08-18T01:39:58.619Z",
+      "hter": 0.011,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "我们的观点：投资者目前聚焦于长端收益率急剧上行的原因。短端收益率（约5年期以内）通常主要受经济数据、美联储预期及周期性背景等基本面因素驱动，而5年期以上（尤其是接近30年期）的收益率则受期限溢价及与近期美联储定价关联不紧密的力量所主导。这些因素包括供需动态、财政预测、政治与地缘政治风险，以及全球久期溢出效应。地缘政治不确定性、大规模人工智能(AI)相关债务发行，以及日本长端利率产生的压力，是当前导致长端收益率居高不下或波动加剧的典型因素。叠加财政赤字持续扩大，我们认为期限溢价在短期内不会出现明显下行趋势。另一个理解长端压力的视角是买方结构的变化——随着主要买家由对价格不敏感的境外机构转向对价格敏感的私人投资者，投资者要求更高的收益率。尽管如此，若出现全面经济衰退，整条收益率曲线可能均会下行。尽管近期经济疲软态势或将延续，但全面经济衰退并非我们的基准情景。对于风险偏好较低的投资者而言，5年期以上的长期美国国债可作为应对下行尾部风险的对冲工具——我们认为未来12至18个月内发生全面经济衰退的概率约为25%。",
+      "action": "edit",
+      "before": "我们的观点：投资者目前聚焦于长端收益率急剧上行的原因。短端收益率（约5年期以内）通常主要受经济数据、美联储预期及周期性背景等基本面因素驱动，而5年期以上（尤其是接近30年期）的收益率则受期限溢价及与近期美联储定价关联不紧密的力量所主导。这些因素包括供需动态、财政预测、政治与地缘政治风险，以及全球久期溢出效应。地缘政治不确定性、大规模人工智能(AI)相关债务发行，以及日本长端压力，是当前导致长端收益率居高不下或波动加剧的典型因素。叠加财政赤字持续扩大，我们认为期限溢价在短期内不会出现明显下行趋势。另一个理解长端压力的视角是买方结构的变化——随着主要买家由对价格不敏感的境外机构转向对价格敏感的私人投资者，投资者要求更高的收益率。尽管如此，若出现全面经济衰退，整条收益率曲线可能均会下行。尽管近期经济疲软态势或将延续，但全面经济衰退并非我们的基准情景。对于风险偏好较低的投资者而言，5年期以上的长期美国国债可作为应对下行尾部风险的对冲工具——我们认为未来12至18个月内发生全面经济衰退的概率约为25%。",
+      "segment_id": "b-006",
+      "char_edit_distance": 5,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_e29a2537-7c6",
+      "ts": "2026-08-18T01:44:07.133Z",
+      "hter": 0.004,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "我们的观点：投资者目前聚焦于长端收益率急剧上行的原因。短端收益率（约5年期以内）通常主要受经济数据、美联储预期及周期性背景等基本面因素驱动，而5年期以上（尤其是接近30年期）的收益率则受期限溢价及与近期美联储定价关联不紧密的力量所主导。这些因素包括供需动态、财政预测、政治与地缘政治风险，以及全球久期溢出效应。地缘政治不确定性、大规模人工智能(AI)相关债务发行，以及日本长端利率产生的压力，是当前导致长端收益率居高不下或波动加剧的因素。叠加财政赤字持续扩大，我们认为期限溢价在短期内不会出现明显下行趋势。另一个理解长端压力的视角是买方结构的变化——随着主要买家由对价格不敏感的境外机构转向对价格敏感的私人投资者，投资者要求更高的收益率。尽管如此，若出现全面经济衰退，整条收益率曲线可能均会下行。尽管近期经济疲软态势或将延续，但全面经济衰退并非我们的基准情景。对于风险偏好较低的投资者而言，5年期以上的长期美国国债可作为应对下行尾部风险的对冲工具——我们认为未来12至18个月内发生全面经济衰退的概率约为25%。",
+      "action": "edit",
+      "before": "我们的观点：投资者目前聚焦于长端收益率急剧上行的原因。短端收益率（约5年期以内）通常主要受经济数据、美联储预期及周期性背景等基本面因素驱动，而5年期以上（尤其是接近30年期）的收益率则受期限溢价及与近期美联储定价关联不紧密的力量所主导。这些因素包括供需动态、财政预测、政治与地缘政治风险，以及全球久期溢出效应。地缘政治不确定性、大规模人工智能(AI)相关债务发行，以及日本长端利率产生的压力，是当前导致长端收益率居高不下或波动加剧的典型因素。叠加财政赤字持续扩大，我们认为期限溢价在短期内不会出现明显下行趋势。另一个理解长端压力的视角是买方结构的变化——随着主要买家由对价格不敏感的境外机构转向对价格敏感的私人投资者，投资者要求更高的收益率。尽管如此，若出现全面经济衰退，整条收益率曲线可能均会下行。尽管近期经济疲软态势或将延续，但全面经济衰退并非我们的基准情景。对于风险偏好较低的投资者而言，5年期以上的长期美国国债可作为应对下行尾部风险的对冲工具——我们认为未来12至18个月内发生全面经济衰退的概率约为25%。",
+      "segment_id": "b-006",
+      "char_edit_distance": 2,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_9e27baf3-eda",
+      "ts": "2026-08-18T01:56:12.982Z",
+      "hter": 0.004,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "我们的观点：投资者目前聚焦于长端收益率急剧上行的原因。短端收益率（约5年期以内）通常主要受经济数据、美联储预期及周期性背景等基本面因素驱动，而5年期以上（尤其是接近30年期）的收益率则受期限溢价及与近期美联储定价关联不紧密的力量所主导。这些因素包括供需动态、财政预测、政治与地缘政治风险，以及全球久期溢出效应。地缘政治不确定性、大规模人工智能(AI)相关债务发行，以及日本长端利率产生的压力，是当前导致长端收益率居高不下或波动加剧的因素。叠加财政赤字持续扩大，我们认为期限溢价在短期内不会出现明显下行趋势。另一个理解长端压力的视角是买方结构的变化——随着主要买家由对价格不敏感的境外机构转向对价格敏感的私人投资者，投资者要求更高的收益率。尽管如此，若出现全面经济衰退，整条收益率曲线可能均会下行。尽管近期经济疲软态势或将延续，但全面经济衰退不是我们的基准情景。对于风险偏好较低的投资者而言，5年期以上的长期美国国债可作为应对下行尾部风险的对冲工具——我们认为未来12至18个月内发生全面经济衰退的概率约为25%。",
+      "action": "edit",
+      "before": "我们的观点：投资者目前聚焦于长端收益率急剧上行的原因。短端收益率（约5年期以内）通常主要受经济数据、美联储预期及周期性背景等基本面因素驱动，而5年期以上（尤其是接近30年期）的收益率则受期限溢价及与近期美联储定价关联不紧密的力量所主导。这些因素包括供需动态、财政预测、政治与地缘政治风险，以及全球久期溢出效应。地缘政治不确定性、大规模人工智能(AI)相关债务发行，以及日本长端利率产生的压力，是当前导致长端收益率居高不下或波动加剧的因素。叠加财政赤字持续扩大，我们认为期限溢价在短期内不会出现明显下行趋势。另一个理解长端压力的视角是买方结构的变化——随着主要买家由对价格不敏感的境外机构转向对价格敏感的私人投资者，投资者要求更高的收益率。尽管如此，若出现全面经济衰退，整条收益率曲线可能均会下行。尽管近期经济疲软态势或将延续，但全面经济衰退并非我们的基准情景。对于风险偏好较低的投资者而言，5年期以上的长期美国国债可作为应对下行尾部风险的对冲工具——我们认为未来12至18个月内发生全面经济衰退的概率约为25%。",
+      "segment_id": "b-006",
+      "char_edit_distance": 2,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "3f9c45f6111fdd7d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-08-18T01:25:06.734Z",
+  "deleted_at": null,
+  "updated_at": "2026-08-18T01:56:12.982Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

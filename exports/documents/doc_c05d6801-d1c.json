@@ -1,0 +1,389 @@
+{
+  "rev": 0,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "no-one-knows-how-the-ai-story-will-end-clearly-t",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Nadie sabe cómo terminará la historia de la (AI). Sin embargo, está claro que la inteligencia artificial (AI) es un tema macroeconómico y de mercado fundamental —quizás el más fundamental— que los inversionistas deben comprender, evaluar y considerar en su posicionamiento.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "ticker",
+          "norm": "(AI)",
+          "text": "(AI)",
+          "char_end": 85,
+          "char_start": 81
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Nadie sabe cómo terminará la historia de la (AI). Sin embargo, está claro que la inteligencia artificial (AI) es un tema macroeconómico y de mercado fundamental —quizás el más fundamental— que los inversionistas deben comprender, evaluar y considerar en su posicionamiento.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "No one knows how the AI story will end. Clearly, though, artificial intelligence (AI) is a critical, perhaps the most critical, macroeconomic and market theme for investors to understand, assess and position for.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "El otoño pasado, el escenario bajista del mercado en torno a la (AI) planteaba una sola pregunta: ¿Es la (AI) una burbuja? Varios meses después, el discurso predominante giró abruptamente hacia los posibles peligros de la (AI). Las voces dominantes (a quienes denominamos maximalistas de la (AI)) sostienen que la tecnología de (AI) está avanzando con tanta rapidez que los mercados laborales no tendrán tiempo de adaptarse.1 En el escenario más distópico, la adopción de la (AI) conduce a un desempleo masivo y al equivalente de una Gran Depresión para la era de la (AI).",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "El otoño pasado, el escenario bajista del mercado en torno a la (AI) planteaba una sola pregunta: ¿Es la (AI) una burbuja? Varios meses después, el discurso predominante giró abruptamente hacia los posibles peligros de la (AI). Las voces dominantes (a quienes denominamos maximalistas de la (AI)) sostienen que la tecnología de (AI) está avanzando con tanta rapidez que los mercados laborales no tendrán tiempo de adaptarse.1 En el escenario más distópico, la adopción de la (AI) conduce a un desempleo masivo y al equivalente de una Gran Depresión para la era de la (AI).",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Last fall, the market’s AI bear case posed a single question: Is AI a bubble? Several months later, the narrative shifted sharply to focus on the potential peril of AI. The dominant voices (we call them AI maximalists) argue that AI technology is improving so rapidly that labor markets will not have time to adjust.1 In the most dystopian scenario, adoption of AI leads to mass unemployment and the equivalent of a Great Depression for the AI era.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La inteligencia artificial transformará la economía y los mercados laborales, sin duda. Es cierto que la tecnología avanza rápidamente. Sin embargo, consideramos que tres factores limitantes permitirán una transición manejable de un paradigma antiguo a uno nuevo (en orden de menor a mayor restricción):",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La inteligencia artificial transformará la economía y los mercados laborales, sin duda. Es cierto que la tecnología avanza rápidamente. Sin embargo, consideramos que tres factores limitantes permitirán una transición manejable de un paradigma antiguo a uno nuevo (en orden de menor a mayor restricción):",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Artificial intelligence will transform the economy and labor markets, no doubt. Yes, technology is moving fast. But we believe that three limiting factors will enable a manageable transition from an old paradigm to a new (in order of least to most binding):",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Las limitaciones de capacidad de los modelos de (AI); las exigencias de la inversión en infraestructura física; y los desafíos derivados de la resistencia regulatoria, organizacional y sociopolítica. En nuestra opinión, la economía y la sociedad evitarán los escenarios más adversos.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Las limitaciones de capacidad de los modelos de (AI); las exigencias de la inversión en infraestructura física; y los desafíos derivados de la resistencia regulatoria, organizacional y sociopolítica. En nuestra opinión, la economía y la sociedad evitarán los escenarios más adversos.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The capability constraints of AI models The demands of physical infrastructure investment The challenges of regulatory, organizational and social-political resistance The economy and society, in our view, will avoid the worst-case scenarios.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_c05d6801-d1c",
+  "source": {
+    "type": "txt",
+    "filename": "no-one-knows-how-the-ai-story-will-end-clearly-t.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "dc0ba31342d6cb0d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v1 | critic-mqm-regionalism-v1",
+    "critic_model_id": "gpt-5",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-01T04:19:10.340Z",
+  "updated_at": "2026-06-01T04:19:10.340Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "es-419",
+  "schema_version": "1.0"
+}

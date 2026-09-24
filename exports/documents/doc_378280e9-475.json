@@ -1,0 +1,1131 @@
+{
+  "rev": 3,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "hawks-land-in-japan",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "鹰派降临日本",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.877,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "鹰派降临日本",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Hawks land in Japan",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：美国股票上涨（标普500指数 +1.1%，纳斯达克指数 +1.4%），大型科技股及其他板块表现普遍向好。美国国债收益率小幅下行（2年期 -3至4.34%，10年期 -1至4.77%，30年期 -1至5.25%）。美元指数因日元走强下跌 -0.6%。黄金上涨 +2.8%，突破每盎司1× $4,500美元。7月ISM服务业指数录得55.4，高于市场预期的54.3及7月前值54.1。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 41,
+          "char_start": 38
+        },
+        {
+          "kind": "percent",
+          "norm": "1.1%",
+          "text": "1.1%",
+          "char_end": 47,
+          "char_start": 43
+        },
+        {
+          "kind": "percent",
+          "norm": "1.4%",
+          "text": "1.4%",
+          "char_end": 61,
+          "char_start": 57
+        },
+        {
+          "kind": "number",
+          "norm": "3000000000bps",
+          "text": "3bps",
+          "char_end": 164,
+          "char_start": 160
+        },
+        {
+          "kind": "percent",
+          "norm": "4.34%",
+          "text": "4.34%",
+          "char_end": 173,
+          "char_start": 168
+        },
+        {
+          "kind": "number",
+          "norm": "1000000000bps",
+          "text": "1bps",
+          "char_end": 184,
+          "char_start": 180
+        },
+        {
+          "kind": "percent",
+          "norm": "4.77%",
+          "text": "4.77%",
+          "char_end": 193,
+          "char_start": 188
+        },
+        {
+          "kind": "number",
+          "norm": "1000000000bps",
+          "text": "1bps",
+          "char_end": 204,
+          "char_start": 200
+        },
+        {
+          "kind": "percent",
+          "norm": "5.25%",
+          "text": "5.25%",
+          "char_end": 213,
+          "char_start": 208
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.6%",
+          "text": "-0.6%",
+          "char_end": 243,
+          "char_start": 238
+        },
+        {
+          "kind": "percent",
+          "norm": "2.8%",
+          "text": "2.8%",
+          "char_end": 280,
+          "char_start": 276
+        },
+        {
+          "kind": "currency",
+          "norm": "4500",
+          "text": "$4,500",
+          "char_end": 302,
+          "char_start": 296
+        },
+        {
+          "kind": "number",
+          "norm": "55.4",
+          "text": "55.4",
+          "char_end": 337,
+          "char_start": 333
+        },
+        {
+          "kind": "number",
+          "norm": "54.3",
+          "text": "54.3",
+          "char_end": 355,
+          "char_start": 351
+        },
+        {
+          "kind": "number",
+          "norm": "54.1",
+          "text": "54.1",
+          "char_end": 371,
+          "char_start": 367
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 41,
+          "char_start": 34
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 55,
+          "char_start": 49
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：美国股票上涨（标普500指数 +1.1%，纳斯达克指数 +1.4%），大型科技股及其他板块表现普遍向好。美国国债收益率小幅下行（2年期 -3至4.34%，10年期 -1至4.77%，30年期 -1至5.25%）。美元指数因日元走强下跌 -0.6%。黄金上涨 +2.8%，突破每盎司1× $4,500美元。7月ISM服务业指数录得55.4，高于市场预期的54.3及7月前值54.1。",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "U.S. markets: US equities gained (S&P 500 +1.1%, Nasdaq +1.4%) with broad performance across big tech and other sectors. Treasury yields declined slightly (2Y -3bps to 4.34%, 10Y -1bps to 4.77%, 30Y -1bps to 5.25%). The dollar index fell -0.6% amid yen strength. Gold gained +2.8% to reach above $4,500/oz. July ISM Services reached 55.4 vs consensus 54.3 and July’s 54.1.",
+      "critic_flags": [
+        {
+          "span": "3bps",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "3"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "3bps",
+              "message": "Numeric value \"3bps\" (mantissa 3) not preserved in translation",
+              "expected": "3"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：欧洲股票上涨（斯托克50指数 +0.3%），中东局势未带来显著催化因素。欧洲各经济体采购经理人指数(PMI)普遍走软。市场已几乎完全消化欧洲央行于9月加息的预期。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 50,
+          "char_start": 48
+        },
+        {
+          "kind": "percent",
+          "norm": "0.3%",
+          "text": "0.3%",
+          "char_end": 56,
+          "char_start": 52
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：欧洲股票上涨（斯托克50指数 +0.3%），中东局势未带来显著催化因素。欧洲各经济体采购经理人指数(PMI)普遍走软。市场已几乎完全消化欧洲央行于9月加息的预期。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Europe markets: European equities gained (Stoxx 50 +0.3%) without significant Middle East catalysts. PMIs are broadly softer across European economies. Markets are almost fully pricing an ECB rate hike in September.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "central bank",
+          "applied": false,
+          "approved_target": "央行"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：日本股票表现分化（日经指数 -0.2%，东证指数 +0.5%），受伯克希尔·哈撒韦首席执行官格雷格·阿贝尔发表乐观评论提振，贸易商板块领涨。日元兑1× USD大幅升值至155区间，市场盛传当局进行汇率干预。与此同时，加息预期升温，市场目前已完全消化9月加息预期，并预计至2027年3月将累计加息近3次。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-0.2%",
+          "text": "-0.2%",
+          "char_end": 57,
+          "char_start": 52
+        },
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 70,
+          "char_start": 66
+        },
+        {
+          "kind": "number",
+          "norm": "155",
+          "text": "155",
+          "char_end": 208,
+          "char_start": 205
+        },
+        {
+          "kind": "date",
+          "norm": "2027",
+          "text": "2027",
+          "char_end": 401,
+          "char_start": 397
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：日本股票表现分化（日经指数 -0.2%，东证指数 +0.5%），受伯克希尔·哈撒韦首席执行官格雷格·阿贝尔发表乐观评论提振，贸易商板块领涨。日元兑美元大幅升值至155区间，市场盛传当局进行汇率干预。与此同时，加息预期升温，市场目前已完全消化9月加息预期，并预计至2027年3月将累计加息近3次。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "Japan markets: Japanese equities were mixed (Nikkei -0.2%, Topix +0.5%) with leadership in trading houses on bullish commentary from Berkshire Hathaway CEO Greg Abel. The yen strengthened sharply into the 155 range against the USD amid speculation of currency intervention. Meanwhile, rate hike expectations picked up with markets now fully pricing in a September hike and nearly 3 hikes by March 2027.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：中国股票表现分化（恒生指数 -0.4%，沪深300指数 +0.1%），科技股走低。人民币兑USD升至2023年1月以来新高。据报道，Kimi K3模型背后的人工智能(AI)公司月之暗面(Moonshot)已秘密向香港提交首次公开募股(IPO)申请，目标募资$3B。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-0.4%",
+          "text": "-0.4%",
+          "char_end": 59,
+          "char_start": 54
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 68,
+          "char_start": 65
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 74,
+          "char_start": 70
+        },
+        {
+          "kind": "date",
+          "norm": "2023",
+          "text": "2023",
+          "char_end": 157,
+          "char_start": 153
+        },
+        {
+          "kind": "currency",
+          "norm": "3000000000",
+          "text": "$3B",
+          "char_end": 284,
+          "char_start": 281
+        }
+      ],
+      "qe_score": 0.25,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：中国股票表现分化（恒生指数 -0.4%，沪深300指数 +0.1%），科技股走低。人民币兑美元升至2023年1月以来新高。据报道，Kimi K3模型背后的人工智能(AI)公司月之暗面(Moonshot)已秘密向香港提交首次公开募股(IPO)申请，目标募资$3B。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "China markets: Chinese equities were mixed (Hang Seng -0.4%, CSI 300 +0.1%) as tech declined. The RMB reached a fresh high against the USD since January 2023. The AI company behind the Kimi K3 model – Moonshot – reportedly confidentially filed for a Hong Kong IPO, aiming to raise $3B.",
+      "critic_flags": [
+        {
+          "span": "USD",
+          "category": "terminology",
+          "severity": "minor",
+          "suggestion": "美元"
+        },
+        {
+          "span": "$3B",
+          "category": "number",
+          "severity": "major",
+          "suggestion": "30亿美元"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "initial public offering",
+          "applied": false,
+          "approved_target": "首次公开募股"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-006",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "我们的观点：日本政府债券(JGB)收益率已随全球收益率同步上升，日本经济面临类似挑战，通胀走势不确定，财政可持续性亦存疑问。近期数据显示，日本通胀看似相对温和，但部分原因在于能源补贴政策。为此所需的额外预算约为190亿美元，全部通过赤字融资债券筹集，使财政状况更趋复杂。在汇率方面，美元兑日元(USDJPY)一度跌至156关口，此前美日两国进行了史无前例的协调干预，但此次干预并未从根本上解决推动日元走弱的深层问题。日元走弱的根本原因在于深度负值的实际短期利率以及财政超支压力。伊朗冲突后政府推出的高成本能源补贴计划，加之雄心勃勃的财政举措——包括增加国防开支及即将实施的食品税削减——进一步加剧了外界对日本本已捉襟见肘的公共财政的担忧。尽管政策制定者将汇率稳定列为优先目标，但上述不利因素可能限制美元兑日元的持续下行空间。我们继续认为，日本央行(BoJ)的加息路径存在比市场当前定价更为鹰派的空间。若要稳定日元，最终可能需要在未来6至12个月内再加息3至4次，将政策利率推向2%。基于这一假设，我们对美元兑日元维持中性立场，预计该货币对将大体围绕160水平区间波动。从更宏观的角度来看，日元作为可靠避险货币的功能已有所减弱。日本对能源冲击的脆弱性上升，加之美元兑日元与利率差之间出现结构性脱钩，均削弱了日元传统的防御属性。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "ticker",
+          "norm": "(JGB)",
+          "text": "(JGB)",
+          "char_end": 44,
+          "char_start": 39
+        },
+        {
+          "kind": "currency",
+          "norm": "19000000000",
+          "text": "USD 19 billion",
+          "char_end": 375,
+          "char_start": 361
+        },
+        {
+          "kind": "number",
+          "norm": "156",
+          "text": "156",
+          "char_end": 522,
+          "char_start": 519
+        },
+        {
+          "kind": "number",
+          "norm": "12",
+          "text": "12",
+          "char_end": 1328,
+          "char_start": 1326
+        },
+        {
+          "kind": "percent",
+          "norm": "2%",
+          "text": "2%",
+          "char_end": 1365,
+          "char_start": 1363
+        },
+        {
+          "kind": "number",
+          "norm": "160",
+          "text": "160",
+          "char_end": 1469,
+          "char_start": 1466
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "我们的观点：日本政府债券(JGB)收益率已随全球收益率同步上升，日本经济面临类似挑战，通胀走势不确定，财政可持续性亦存疑问。近期数据显示，日本通胀看似相对温和，但部分原因在于能源补贴政策。为此所需的额外预算约为190亿美元，全部通过赤字融资债券筹集，使财政状况更趋复杂。在汇率方面，美元兑日元(USDJPY)一度跌至156关口，此前美日两国进行了史无前例的协调干预，但此次干预并未从根本上解决推动日元走弱的深层问题。日元走弱的根本原因在于深度负值的实际短期利率以及财政超支压力。伊朗冲突后政府推出的高成本能源补贴计划，加之财政举措——包括增加国防开支及即将实施的食品税削减——进一步加剧了外界对日本本已捉襟见肘的公共财政的担忧。尽管政策制定者将汇率稳定列为优先目标，但上述不利因素可能限制美元兑日元的持续下行空间。我们继续认为，日本央行(BoJ)的加息路径存在比市场当前定价更为鹰派的空间。若要稳定日元，最终可能需要在未来6至12个月内再加息3至4次，将政策利率推向2%。基于这一假设，我们对美元兑日元维持中性立场，预计该货币对将大体围绕160水平区间波动。从更宏观的角度来看，日元作为可靠避险货币的功能已有所减弱。日本对能源冲击的脆弱性上升，加之美元兑日元与利率差之间出现结构性脱钩，均削弱了日元传统的防御属性。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "What we think Japanese government bond (JGB) yields have been rising alongside global yields, and the economy faces similar challenges with uncertain inflation and questions over fiscal sustainability. Japan’s inflation has looked relatively moderate in recent prints, but a part of it is due to energy subsidies. The extra budget needed to fund them is around USD 19 billion and funded entirely through deficit-financing bonds, which complicates the fiscal picture. On the currency front, USDJPY briefly fell into the 156-handle following an unprecedented coordinated U.S.-Japan intervention, but this intervention does not fix the fundamental issues driving yen weakness. The root causes of yen weakness are deeply negative real short-term interest rates and fiscal overhang. The government's costly energy subsidy program following the Iran conflict, together with ambitious fiscal measures such as increased defense spending and upcoming food tax cuts, are adding to concerns over Japan's already stretched public finances. While policymakers are prioritizing FX stability, these headwinds are likely to limit sustained USDJPY downside. We continue to see scope for a more hawkish Bank of Japan (BoJ) path than currently priced by markets. Stabilizing the yen may ultimately require another 3-4 rate hikes over the next 6-12 months, taking the policy towards 2%. Under this assumption, we remain neutral on USDJPY and expect the pair to trade broadly around the 160 level. More broadly, the yen is no longer functioning as a reliable safe haven. Japan’s heightened vulnerability to energy shocks, alongside a structural decoupling between USDJPY and interest rate differentials, has weakened its traditional defensive characteristics.",
+      "critic_flags": [
+        {
+          "span": "USD 19 billion",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "19"
+        },
+        {
+          "span": "billion",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "十亿"
+        },
+        {
+          "span": "USD",
+          "category": "number",
+          "severity": "major",
+          "suggestion": "1× USD"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "central bank",
+          "applied": false,
+          "approved_target": "央行"
+        },
+        {
+          "source": "bonds",
+          "applied": false,
+          "approved_target": "债券"
+        },
+        {
+          "source": "defense spending",
+          "applied": false,
+          "approved_target": "国防开支"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "USD 19 billion",
+              "message": "Numeric value \"USD 19 billion\" (mantissa 19) not preserved in translation",
+              "expected": "19"
+            },
+            {
+              "span": "billion",
+              "message": "\"billion\" (10^9) must render as \"十亿\" — scale not preserved.",
+              "expected": "十亿"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [
+            {
+              "span": "USD",
+              "found": "0× USD",
+              "message": "Currency unit \"USD\" dropped (1 → 0)",
+              "expected": "1× USD"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-007",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "随着市场持续警惕潜在干预行动及更大幅度加息预期升温，日元再度走强。",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.741,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "随着市场持续警惕潜在干预行动及更大幅度加息预期升温，日元再度走强。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The yen has strengthened again as markets remained alert to Potential intervention and greater rate hike expectations",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "magnitude",
+          "applied": false,
+          "approved_target": "幅度"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_378280e9-475",
+  "source": {
+    "type": "txt",
+    "filename": "hawks-land-in-japan.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 6.47,
+    "hter_by_category": {
+      "accuracy": 0.023
+    },
+    "number_fail_rate": 0.286,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_3b739e66-b50",
+      "ts": "2026-09-04T03:06:09.214Z",
+      "hter": 0.039,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "日本市场：日本股票表现分化（日经指数 -0.2%，东证指数 +0.5%），受伯克希尔·哈撒韦首席执行官格雷格·阿贝尔发表乐观评论提振，贸易商板块领涨。日元兑美元大幅升值至155区间，市场盛传当局进行汇率干预。与此同时，加息预期升温，市场目前已完全消化9月加息预期，并预计至2027年3月将累计加息近3次。",
+      "action": "edit",
+      "before": "日本市场：日本股票表现分化（日经指数 -0.2%，东证指数 +0.5%），受伯克希尔·哈撒韦首席执行官格雷格·阿贝尔发表乐观评论提振，贸易商板块领涨。日元兑1× USD大幅升值至155区间，市场盛传当局进行汇率干预。与此同时，加息预期升温，市场目前已完全消化9月加息预期，并预计至2027年3月将累计加息近3次。",
+      "segment_id": "b-004",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_c52f1a55-ff0",
+      "ts": "2026-09-04T03:12:08.706Z",
+      "hter": 0.022,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "中国市场：中国股票表现分化（恒生指数 -0.4%，沪深300指数 +0.1%），科技股走低。人民币兑美元升至2023年1月以来新高。据报道，Kimi K3模型背后的人工智能(AI)公司月之暗面(Moonshot)已秘密向香港提交首次公开募股(IPO)申请，目标募资$3B。",
+      "action": "edit",
+      "before": "中国市场：中国股票表现分化（恒生指数 -0.4%，沪深300指数 +0.1%），科技股走低。人民币兑USD升至2023年1月以来新高。据报道，Kimi K3模型背后的人工智能(AI)公司月之暗面(Moonshot)已秘密向香港提交首次公开募股(IPO)申请，目标募资$3B。",
+      "segment_id": "b-005",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_f47515ce-bd1",
+      "ts": "2026-09-04T03:18:25.181Z",
+      "hter": 0.009,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "我们的观点：日本政府债券(JGB)收益率已随全球收益率同步上升，日本经济面临类似挑战，通胀走势不确定，财政可持续性亦存疑问。近期数据显示，日本通胀看似相对温和，但部分原因在于能源补贴政策。为此所需的额外预算约为190亿美元，全部通过赤字融资债券筹集，使财政状况更趋复杂。在汇率方面，美元兑日元(USDJPY)一度跌至156关口，此前美日两国进行了史无前例的协调干预，但此次干预并未从根本上解决推动日元走弱的深层问题。日元走弱的根本原因在于深度负值的实际短期利率以及财政超支压力。伊朗冲突后政府推出的高成本能源补贴计划，加之财政举措——包括增加国防开支及即将实施的食品税削减——进一步加剧了外界对日本本已捉襟见肘的公共财政的担忧。尽管政策制定者将汇率稳定列为优先目标，但上述不利因素可能限制美元兑日元的持续下行空间。我们继续认为，日本央行(BoJ)的加息路径存在比市场当前定价更为鹰派的空间。若要稳定日元，最终可能需要在未来6至12个月内再加息3至4次，将政策利率推向2%。基于这一假设，我们对美元兑日元维持中性立场，预计该货币对将大体围绕160水平区间波动。从更宏观的角度来看，日元作为可靠避险货币的功能已有所减弱。日本对能源冲击的脆弱性上升，加之美元兑日元与利率差之间出现结构性脱钩，均削弱了日元传统的防御属性。",
+      "action": "edit",
+      "before": "我们的观点：日本政府债券(JGB)收益率已随全球收益率同步上升，日本经济面临类似挑战，通胀走势不确定，财政可持续性亦存疑问。近期数据显示，日本通胀看似相对温和，但部分原因在于能源补贴政策。为此所需的额外预算约为190亿美元，全部通过赤字融资债券筹集，使财政状况更趋复杂。在汇率方面，美元兑日元(USDJPY)一度跌至156关口，此前美日两国进行了史无前例的协调干预，但此次干预并未从根本上解决推动日元走弱的深层问题。日元走弱的根本原因在于深度负值的实际短期利率以及财政超支压力。伊朗冲突后政府推出的高成本能源补贴计划，加之雄心勃勃的财政举措——包括增加国防开支及即将实施的食品税削减——进一步加剧了外界对日本本已捉襟见肘的公共财政的担忧。尽管政策制定者将汇率稳定列为优先目标，但上述不利因素可能限制美元兑日元的持续下行空间。我们继续认为，日本央行(BoJ)的加息路径存在比市场当前定价更为鹰派的空间。若要稳定日元，最终可能需要在未来6至12个月内再加息3至4次，将政策利率推向2%。基于这一假设，我们对美元兑日元维持中性立场，预计该货币对将大体围绕160水平区间波动。从更宏观的角度来看，日元作为可靠避险货币的功能已有所减弱。日本对能源冲击的脆弱性上升，加之美元兑日元与利率差之间出现结构性脱钩，均削弱了日元传统的防御属性。",
+      "segment_id": "b-006",
+      "char_edit_distance": 5,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "3f9c45f6111fdd7d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-09-04T02:50:36.339Z",
+  "deleted_at": null,
+  "updated_at": "2026-09-04T03:18:25.181Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

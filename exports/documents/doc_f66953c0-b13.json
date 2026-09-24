@@ -1,0 +1,228 @@
+{
+  "rev": 0,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "china-as-world-reserve-currency-is-a-frankly-pre",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "目前，人民币成为全球储备货币的想法坦率地说是异想天开。中国通过有史以来规模最大的货币扩张之一实现了其增长目标：中国国内银行资产规模高达60万亿美元，约占全球GDP的50%。若中国全面开放资本账户，可能引发的资本外流将重创人民币，并触发中国股票及房地产市场的崩盘。即便在文本框所示的管控措施下，据报道中国在2025年仍经历了创纪录的8,000亿至1万亿美元资本外流。我的同事Alex Wolf就这一议题进行了颇具洞见的分析。如下图所示，无论是观察固定汇率挂钩机制，还是墨西哥比索等浮动货币，外汇储备、央行资产与货币供应量通常保持同步变动；否则，汇率下跌或国际收支危机便可能随之而来。中国的情况则截然不同：其货币供应量急剧攀升，而外汇储备与央行资产的增速却远为迟缓，两者之间存在巨大背离。原因在于：货币创造在很大程度上已超出央行的掌控。这种安排或许只有在封闭且高度管制的资本账户条件下方能维系，而这与储备货币地位的要求完全背道而驰。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "currency",
+          "norm": "60000000000000",
+          "text": "$60 trillion",
+          "char_end": 196,
+          "char_start": 184
+        },
+        {
+          "kind": "percent",
+          "norm": "50%",
+          "text": "50%",
+          "char_end": 247,
+          "char_start": 244
+        },
+        {
+          "kind": "currency",
+          "norm": "800000000000",
+          "text": "$800 bn",
+          "char_end": 499,
+          "char_start": 492
+        },
+        {
+          "kind": "currency",
+          "norm": "1000000000000",
+          "text": "$1 trillion",
+          "char_end": 514,
+          "char_start": 503
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 542,
+          "char_start": 538
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "目前，人民币成为全球储备货币的想法坦率地说是异想天开。中国通过有史以来规模最大的货币扩张之一实现了其增长目标：中国国内银行资产规模高达60万亿美元，约占全球GDP的50%。若中国全面开放资本账户，可能引发的资本外流将重创人民币，并触发中国股票及房地产市场的崩盘。即便在文本框所示的管控措施下，据报道中国在2025年仍经历了创纪录的8,000亿至1万亿美元资本外流。我的同事Alex Wolf就这一议题进行了颇具洞见的分析。如下图所示，无论是观察固定汇率挂钩机制，还是墨西哥比索等浮动货币，外汇储备、央行资产与货币供应量通常保持同步变动；否则，汇率下跌或国际收支危机便可能随之而来。中国的情况则截然不同：其货币供应量急剧攀升，而外汇储备与央行资产的增速却远为迟缓，两者之间存在巨大背离。原因在于：货币创造在很大程度上已超出央行的掌控。这种安排或许只有在封闭且高度管制的资本账户条件下方能维系，而这与储备货币地位的要求完全背道而驰。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "China as world reserve currency is a frankly preposterous idea right now.  China has achieved its growth targets via one of the largest monetary expansions the world has ever seen: at $60 trillion, China’s domestic banking assets have reached ~50% of global GDP.  If China fully opened its capital account, possible outflows could crush the RMB and trigger a collapse in Chinese equity/real estate markets.  Even with the controls shown in the text box, China reportedly experienced a record $800 bn to $1 trillion in capital outflows in 2025 . My colleague Alex Wolf has done some insightful analysis on this topic.  As shown below, FX reserves, central bank assets and money supply usually move in sync, whether we’re looking at fixed currency pegs  or a floating currency like the Mexican Peso; otherwise there would likely be an adjustment through a decline in the exchange rate or a balance of payments crisis.  China is different: there’s a huge disconnect between its soaring money supply and much slower growth in FX reserves and central bank assets.  The reason: money creation is essentially out of the central bank’s control. This arrangement may only be sustainable when accompanied by a closed and highly regulated capital account, which is entirely inconsistent with reserve currency status.",
+      "critic_flags": [
+        {
+          "span": "$800 bn",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "800"
+        },
+        {
+          "span": "trillion",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "万亿"
+        },
+        {
+          "span": "$",
+          "category": "number",
+          "severity": "major",
+          "suggestion": "3× $"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "central bank",
+          "applied": false,
+          "approved_target": "央行"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "$800 bn",
+              "message": "Numeric value \"$800 bn\" (mantissa 800) not preserved in translation",
+              "expected": "800"
+            },
+            {
+              "span": "trillion",
+              "message": "\"trillion\" (10^12) must render as the house term \"万亿\" — scale not preserved.",
+              "expected": "万亿"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [
+            {
+              "span": "$",
+              "found": "0× $",
+              "message": "Currency unit \"$\" dropped (3 → 0)",
+              "expected": "3× $"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_f66953c0-b13",
+  "source": {
+    "type": "txt",
+    "filename": "china-as-world-reserve-currency-is-a-frankly-pre.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 1,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-30T09:48:10.399Z",
+  "deleted_at": null,
+  "updated_at": "2026-06-30T09:48:10.399Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

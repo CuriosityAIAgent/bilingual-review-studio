@@ -1,0 +1,2169 @@
+{
+  "rev": 1,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "latin-america-enters-mid-year-with-growth-holdin",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Latin America enters mid-year con crecimiento holding up better than expected, but politics is now el main story shaping el macro-perspectiva. El timing matters: Colombia is heading into a tight runoff, Peru is close a its second round, Brazil is dealing con a credibility shock ahead de its own elections, y Mexico just got a ratings warning that puts more pressure on el fiscal debate.  On top de eso, el energy shock is no longer just a short-term inflación riesgo- it has turned into a bigger debate about how sticky inflación really is y how cautiously central banks need a move desde here.  El real question is no longer just whether crecimiento slows, or inflación falls, but whether politics will support or weaken el policies meant a manage both. El range de possible outcomes has widened, con tail risks playing a bigger role en shaping el regional perspectiva. Hence, nosotros are changing el order de nuestro regular monthly update a reflect where el conversations around nuestra region lie nowadays. On politics: Political developments have become el most important source de macro uncertainty across Latin America, con election cycles increasingly shaping policy expectations y mercado outcomes. More broadly, el region is entering a period en which political outcomes are increasingly determining macro-outcomes.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Latin America enters mid-year con crecimiento holding up better than expected, but politics is now el main story shaping el macro-perspectiva. El timing matters: Colombia is heading into a tight runoff, Peru is close a its second round, Brazil is dealing con a credibility shock ahead de its own elections, y Mexico just got a ratings warning that puts more pressure on el fiscal debate.  On top de eso, el energy shock is no longer just a short-term inflación riesgo- it has turned into a bigger debate about how sticky inflación really is y how cautiously central banks need a move desde here.  El real question is no longer just whether crecimiento slows, or inflación falls, but whether politics will support or weaken el policies meant a manage both. El range de possible outcomes has widened, con tail risks playing a bigger role en shaping el regional perspectiva. Hence, nosotros are changing el order de nuestro regular monthly update a reflect where el conversations around nuestra region lie nowadays. On politics: Political developments have become el most important source de macro uncertainty across Latin America, con election cycles increasingly shaping policy expectations y mercado outcomes. More broadly, el region is entering a period en which political outcomes are increasingly determining macro-outcomes.",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "Latin America enters mid-year with growth holding up better than expected, but politics is now the main story shaping the macro-outlook. The timing matters: Colombia is heading into a tight runoff, Peru is close to its second round, Brazil is dealing with a credibility shock ahead of its own elections, and Mexico just got a ratings warning that puts more pressure on the fiscal debate.  On top of that, the energy shock is no longer just a short-term inflation risk- it has turned into a bigger debate about how sticky inflation really is and how cautiously central banks need to move from here.  The real question is no longer just whether growth slows, or inflation falls, but whether politics will support or weaken the policies meant to manage both. The range of possible outcomes has widened, with tail risks playing a bigger role in shaping the regional outlook. Hence, we are changing the order of our regular monthly update to reflect where the conversations around our region lie nowadays. On politics: Political developments have become the most important source of macro uncertainty across Latin America, with election cycles increasingly shaping policy expectations and market outcomes. More broadly, the region is entering a period in which political outcomes are increasingly determining macro-outcomes.",
+      "critic_flags": [
+        {
+          "span": "that",
+          "category": "fluency",
+          "severity": "minor",
+          "suggestion": "Residual English word \"that\" in the Spanish target"
+        }
+      ],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [
+            {
+              "span": "that",
+              "message": "Residual English word \"that\" in the Spanish target"
+            }
+          ],
+          "status": "fail",
+          "blocking": false,
+          "severity": "minor",
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "•\tColombia's first round produced a runoff between right-wing Abelardo De La Espriella y leftist Iván Cepeda, con De La Espriella leading 43.7% a 40.9% — a ~668k-vote margin on high turnout, signaling an electorate tilting toward change. De La Espriella enters as frontrunner, but el race permanece close. Paloma Valencia's weak showing (1.6m votes) suggests el Uribista right has already consolidated behind him, leaving el center vote decisive. Valencia y most de el March \"Gran Coalición\" have endorsed him, while Sergio Fajardo's ~1m voters y Claudia López (~200k) lean against him without backing Cepeda — y Petro's eroded coalition limits continuity's ability a rally moderates. President Petro has publicly challenged el count, alleging unverified irregularities — a narrative Cepeda echoes, while De La Espriella has called para U.S. y international monitoring, setting up a highly polarized runoff.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "43.7%",
+          "text": "43.7%",
+          "char_end": 146,
+          "char_start": 141
+        },
+        {
+          "kind": "percent",
+          "norm": "40.9%",
+          "text": "40.9%",
+          "char_end": 155,
+          "char_start": 150
+        },
+        {
+          "kind": "number",
+          "norm": "668000",
+          "text": "668k",
+          "char_end": 165,
+          "char_start": 161
+        },
+        {
+          "kind": "number",
+          "norm": "1600000",
+          "text": "1.6m",
+          "char_end": 345,
+          "char_start": 341
+        },
+        {
+          "kind": "number",
+          "norm": "1000000",
+          "text": "1m",
+          "char_end": 545,
+          "char_start": 543
+        },
+        {
+          "kind": "number",
+          "norm": "200000",
+          "text": "200k",
+          "char_end": 577,
+          "char_start": 573
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "•\tColombia's first round produced a runoff between right-wing Abelardo De La Espriella y leftist Iván Cepeda, con De La Espriella leading 43.7% a 40.9% — a ~668k-vote margin on high turnout, signaling an electorate tilting toward change. De La Espriella enters as frontrunner, but el race permanece close. Paloma Valencia's weak showing (1.6m votes) suggests el Uribista right has already consolidated behind him, leaving el center vote decisive. Valencia y most de el March \"Gran Coalición\" have endorsed him, while Sergio Fajardo's ~1m voters y Claudia López (~200k) lean against him without backing Cepeda — y Petro's eroded coalition limits continuity's ability a rally moderates. President Petro has publicly challenged el count, alleging unverified irregularities — a narrative Cepeda echoes, while De La Espriella has called para U.S. y international monitoring, setting up a highly polarized runoff.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "•\tColombia's first round produced a runoff between right-wing Abelardo De La Espriella and leftist Iván Cepeda, with De La Espriella leading 43.7% to 40.9% — a ~668k-vote margin on high turnout, signaling an electorate tilting toward change. De La Espriella enters as frontrunner, but the race remains close. Paloma Valencia's weak showing (1.6m votes) suggests the Uribista right has already consolidated behind him, leaving the center vote decisive. Valencia and most of the March \"Gran Coalición\" have endorsed him, while Sergio Fajardo's ~1m voters and Claudia López (~200k) lean against him without backing Cepeda — and Petro's eroded coalition limits continuity's ability to rally moderates. President Petro has publicly challenged the count, alleging unverified irregularities — a narrative Cepeda echoes, while De La Espriella has called for U.S. and international monitoring, setting up a highly polarized runoff.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "•\tPeru's runoff presents one de el starkest policy choices en el region. Mercados are weighing two fundamentally different economic visions, though el fragmented composition de el new Congress is likely a limit el scope para more radical policy changes regardless de el outcome. Recent polls show Keiko Fujimori moving into a modest ~4-point lead over leftist Roberto Sánchez, a clear shift from el near tie seen en late April. Con more than a trimestre de el electorate undecided or planning blank/null votes, el outcome permanece highly sensitive a late-campaign dynamics, including el final televised debates..",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "•\tPeru's runoff presents one de el starkest policy choices en el region. Mercados are weighing two fundamentally different economic visions, though el fragmented composition de el new Congress is likely a limit el scope para more radical policy changes regardless de el outcome. Recent polls show Keiko Fujimori moving into a modest ~4-point lead over leftist Roberto Sánchez, a clear shift from el near tie seen en late April. Con more than a trimestre de el electorate undecided or planning blank/null votes, el outcome permanece highly sensitive a late-campaign dynamics, including el final televised debates..",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "•\tPeru's runoff presents one of the starkest policy choices in the region. Markets are weighing two fundamentally different economic visions, though the fragmented composition of the new Congress is likely to limit the scope for more radical policy changes regardless of the outcome. Recent polls show Keiko Fujimori moving into a modest ~4-point lead over leftist Roberto Sánchez, a clear shift from the near tie seen in late April. With more than a quarter of the electorate undecided or planning blank/null votes, the outcome remains highly sensitive to late-campaign dynamics, including the final televised debates..",
+      "critic_flags": [
+        {
+          "span": "from",
+          "category": "fluency",
+          "severity": "minor",
+          "suggestion": "Residual English word \"from\" in the Spanish target"
+        }
+      ],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [
+            {
+              "span": "from",
+              "message": "Residual English word \"from\" in the Spanish target"
+            }
+          ],
+          "status": "fail",
+          "blocking": false,
+          "severity": "minor",
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "•\tBrazil's election año has not given President Lula a stable lead, even against a benign macro backdrop. A month ago, several polls showed him trailing Senator Flávio Bolsonaro (PL) en runoff simulations. El May 13 audio leak involving Flávio y recent administration policy measures have shifted el picture modestly, but a close race permanece el base case para October. El audio leak drew swift mercado y media reaction, yet polling shows el impact was contained. Flávio lost ground among moderates y swing voters en both first- y second-round simulations, but his core base held. Lula's support rose only marginally, rejection tasas stayed elevated, y centrists barely moved. Alternative opposition names — Zema (Novo), Caiado (União Brasil), Santos (MBL) — remain en low single digits, con no ready replacement a consolidate el anti-incumbent vote. Voters leaving Flávio are shifting within el opposition or opting para abstention, not migrating a Lula. El episode has also blunted Flávio's ability a anchor his campaign on corruption, a top voter concern. Where do nosotros stand on crecimiento? Crecimiento permanece uneven across el region. El common thread is a growing reliance on domestic demand y policy support rather than private inversión, leaving economies more exposed a inflación shocks, tighter financial conditions, y shifts en political sentiment.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "ticker",
+          "norm": "(PL)",
+          "text": "(PL)",
+          "char_end": 183,
+          "char_start": 179
+        },
+        {
+          "kind": "number",
+          "norm": "13",
+          "text": "13",
+          "char_end": 217,
+          "char_start": 215
+        },
+        {
+          "kind": "ticker",
+          "norm": "(MBL)",
+          "text": "(MBL)",
+          "char_end": 770,
+          "char_start": 765
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "•\tBrazil's election año has not given President Lula a stable lead, even against a benign macro backdrop. A month ago, several polls showed him trailing Senator Flávio Bolsonaro (PL) en runoff simulations. El May 13 audio leak involving Flávio y recent administration policy measures have shifted el picture modestly, but a close race permanece el base case para October. El audio leak drew swift mercado y media reaction, yet polling shows el impact was contained. Flávio lost ground among moderates y swing voters en both first- y second-round simulations, but his core base held. Lula's support rose only marginally, rejection tasas stayed elevated, y centrists barely moved. Alternative opposition names — Zema (Novo), Caiado (União Brasil), Santos (MBL) — remain en low single digits, con no ready replacement a consolidate el anti-incumbent vote. Voters leaving Flávio are shifting within el opposition or opting para abstention, not migrating a Lula. El episode has also blunted Flávio's ability a anchor his campaign on corruption, a top voter concern. Where do nosotros stand on crecimiento? Crecimiento permanece uneven across el region. El common thread is a growing reliance on domestic demand y policy support rather than private inversión, leaving economies more exposed a inflación shocks, tighter financial conditions, y shifts en political sentiment.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "•\tBrazil's election year has not given President Lula a stable lead, even against a benign macro backdrop. A month ago, several polls showed him trailing Senator Flávio Bolsonaro (PL) in runoff simulations. The May 13 audio leak involving Flávio and recent administration policy measures have shifted the picture modestly, but a close race remains the base case for October. The audio leak drew swift market and media reaction, yet polling shows the impact was contained. Flávio lost ground among moderates and swing voters in both first- and second-round simulations, but his core base held. Lula's support rose only marginally, rejection rates stayed elevated, and centrists barely moved. Alternative opposition names — Zema (Novo), Caiado (União Brasil), Santos (MBL) — remain in low single digits, with no ready replacement to consolidate the anti-incumbent vote. Voters leaving Flávio are shifting within the opposition or opting for abstention, not migrating to Lula. The episode has also blunted Flávio's ability to anchor his campaign on corruption, a top voter concern. Where do we stand on growth? Growth remains uneven across the region. The common thread is a growing reliance on domestic demand and policy support rather than private investment, leaving economies more exposed to inflation shocks, tighter financial conditions, and shifts in political sentiment.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "•\tPeru y Argentina are emerging as el clearest crecimiento outperformers. Peru's economy continues a benefit from strong domestic demand, a favorable terms-of-trade backdrop, y strong mining inversión, prompting nuestro IB a raise its 2026 crecimiento pronóstico a 3.0% y/y de 2.8% y/y. Argentina is also showing signs de a more durable recovery, con activity broadening across sectors y nuestro IB expecting crecimiento de 3.2% en 2026 as disinflation y improving confidence support el expansion.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 238,
+          "char_start": 234
+        },
+        {
+          "kind": "percent",
+          "norm": "3%",
+          "text": "3.0%",
+          "char_end": 262,
+          "char_start": 258
+        },
+        {
+          "kind": "percent",
+          "norm": "2.8%",
+          "text": "2.8%",
+          "char_end": 276,
+          "char_start": 272
+        },
+        {
+          "kind": "percent",
+          "norm": "3.2%",
+          "text": "3.2%",
+          "char_end": 417,
+          "char_start": 413
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 425,
+          "char_start": 421
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "•\tPeru y Argentina are emerging as el clearest crecimiento outperformers. Peru's economy continues a benefit from strong domestic demand, a favorable terms-of-trade backdrop, y strong mining inversión, prompting nuestro IB a raise its 2026 crecimiento pronóstico a 3.0% y/y de 2.8% y/y. Argentina is also showing signs de a more durable recovery, con activity broadening across sectors y nuestro IB expecting crecimiento de 3.2% en 2026 as disinflation y improving confidence support el expansion.",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "•\tPeru and Argentina are emerging as the clearest growth outperformers. Peru’s economy continues to benefit from strong domestic demand, a favorable terms-of-trade backdrop, and strong mining investment, prompting our IB to raise its 2026 growth forecast to 3.0% y/y from 2.8% y/y. Argentina is also showing signs of a more durable recovery, with activity broadening across sectors and our IB expecting growth of 3.2% in 2026 as disinflation and improving confidence support the expansion.",
+      "critic_flags": [
+        {
+          "span": "from",
+          "category": "fluency",
+          "severity": "minor",
+          "suggestion": "Residual English word \"from\" in the Spanish target"
+        },
+        {
+          "span": "of",
+          "category": "fluency",
+          "severity": "minor",
+          "suggestion": "Residual English word \"of\" in the Spanish target"
+        }
+      ],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [
+            {
+              "span": "from",
+              "message": "Residual English word \"from\" in the Spanish target"
+            },
+            {
+              "span": "of",
+              "message": "Residual English word \"of\" in the Spanish target"
+            }
+          ],
+          "status": "fail",
+          "blocking": false,
+          "severity": "minor",
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-006",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "•\tColombia permanece resilient, con crecimiento expected at 2.6% y/y en 2026, but el composition de that crecimiento permanece a concern. Household consumption continues a drive activity, supported by expansionary fiscal y income policies, while inversión permanece subdued y external demand is weighing on el economy. El result is a crecimiento profile that permanece supportive en el near term but increasingly vulnerable over el medium term.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "2.6%",
+          "text": "2.6%",
+          "char_end": 58,
+          "char_start": 54
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 70,
+          "char_start": 66
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "•\tColombia permanece resilient, con crecimiento expected at 2.6% y/y en 2026, but el composition de that crecimiento permanece a concern. Household consumption continues a drive activity, supported by expansionary fiscal y income policies, while inversión permanece subdued y external demand is weighing on el economy. El result is a crecimiento profile that permanece supportive en el near term but increasingly vulnerable over el medium term.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "•\tColombia remains resilient, with growth expected at 2.6% y/y in 2026, but the composition of that growth remains a concern. Household consumption continues to drive activity, supported by expansionary fiscal and income policies, while investment remains subdued and external demand is weighing on the economy. The result is a growth profile that remains supportive in the near term but increasingly vulnerable over the medium term.",
+      "critic_flags": [
+        {
+          "span": "that",
+          "category": "fluency",
+          "severity": "minor",
+          "suggestion": "Residual English word \"that\" in the Spanish target"
+        },
+        {
+          "span": "income",
+          "category": "fluency",
+          "severity": "minor",
+          "suggestion": "Residual English word \"income\" in the Spanish target"
+        }
+      ],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [
+            {
+              "span": "that",
+              "message": "Residual English word \"that\" in the Spanish target"
+            },
+            {
+              "span": "income",
+              "message": "Residual English word \"income\" in the Spanish target"
+            }
+          ],
+          "status": "fail",
+          "blocking": false,
+          "severity": "minor",
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-007",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "•\tBrazil is transitioning de strength toward moderation. Following a stronger-than-expected Q1, nuestro IB has revised its 2026 crecimiento pronóstico up a 1.8% y/y. Sin embargo, nuestro IB expects crecimiento a decelerate en 2H as tight monetary policy increasingly weighs on consumption through el debt-service channel — visible en el household savings tasa climbing above 9% de PIB. Sin embargo, risks a este perspectiva remain skewed a el upside as new debt relief program (Desenrola 2.0) could push crecimiento above este pronóstico, potentially adding up a 0.6%-pt a PIB.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 125,
+          "char_start": 121
+        },
+        {
+          "kind": "percent",
+          "norm": "1.8%",
+          "text": "1.8%",
+          "char_end": 152,
+          "char_start": 148
+        },
+        {
+          "kind": "percent",
+          "norm": "9%",
+          "text": "9%",
+          "char_end": 359,
+          "char_start": 357
+        },
+        {
+          "kind": "number",
+          "norm": "2",
+          "text": "2.0",
+          "char_end": 468,
+          "char_start": 465
+        },
+        {
+          "kind": "percent",
+          "norm": "0.6%",
+          "text": "0.6%",
+          "char_end": 538,
+          "char_start": 534
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "•\tBrazil is transitioning de strength toward moderation. Following a stronger-than-expected Q1, nuestro IB has revised its 2026 crecimiento pronóstico up a 1.8% y/y. Sin embargo, nuestro IB expects crecimiento a decelerate en 2H as tight monetary policy increasingly weighs on consumption through el debt-service channel — visible en el household savings tasa climbing above 9% de PIB. Sin embargo, risks a este perspectiva remain skewed a el upside as new debt relief program (Desenrola 2.0) could push crecimiento above este pronóstico, potentially adding up a 0.6%-pt a PIB.",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "•\tBrazil is transitioning from strength toward moderation. Following a stronger-than-expected Q1, our IB has revised its 2026 growth forecast up to 1.8% y/y. However, our IB expects growth to decelerate in 2H as tight monetary policy increasingly weighs on consumption through the debt-service channel — visible in the household savings rate climbing above 9% of GDP. However, risks to this outlook remain skewed to the upside as new debt relief program (Desenrola 2.0) could push growth above this forecast, potentially adding up to 0.6%-pt to GDP.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "GDP",
+          "applied": true,
+          "approved_target": "PIB"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-008",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "• Chile y Mexico remain el weakest performers en el region, though para different reasons. Chile's 1Q contraction was largely driven by temporary supply disruptions en mining, agriculture, y fishing, masking a somewhat firmer domestic demand backdrop. Even so, nuestro IB expects crecimiento de only 1.6% en 2026 as tighter fiscal policy y higher energy costs weigh on activity. Mexico continues a struggle con weak inversión, declining construction activity, y lingering uncertainty surrounding both domestic policy y el USMCA framework. Despite el upward revision a first-trimestre PIB, nuestro IB still expects crecimiento de only 1.0% en 2026. Where do nosotros stand on monetary policy? El key regional theme is a clear shift a a more cautious tone de central banks. El debate is no longer about how quickly central banks can cut tasas, but whether easing cycles are ending y, en some cases, whether el next move could be a hike. Inflación risks have become more persistent, y el bar para additional accommodation has risen significantly.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "1.6%",
+          "text": "1.6%",
+          "char_end": 300,
+          "char_start": 296
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 308,
+          "char_start": 304
+        },
+        {
+          "kind": "percent",
+          "norm": "1%",
+          "text": "1.0%",
+          "char_end": 635,
+          "char_start": 631
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 643,
+          "char_start": 639
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "• Chile y Mexico remain el weakest performers en el region, though para different reasons. Chile's 1Q contraction was largely driven by temporary supply disruptions en mining, agriculture, y fishing, masking a somewhat firmer domestic demand backdrop. Even so, nuestro IB expects crecimiento de only 1.6% en 2026 as tighter fiscal policy y higher energy costs weigh on activity. Mexico continues a struggle con weak inversión, declining construction activity, y lingering uncertainty surrounding both domestic policy y el USMCA framework. Despite el upward revision a first-trimestre PIB, nuestro IB still expects crecimiento de only 1.0% en 2026. Where do nosotros stand on monetary policy? El key regional theme is a clear shift a a more cautious tone de central banks. El debate is no longer about how quickly central banks can cut tasas, but whether easing cycles are ending y, en some cases, whether el next move could be a hike. Inflación risks have become more persistent, y el bar para additional accommodation has risen significantly.",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "•\tChile and Mexico remain the weakest performers in the region, though for different reasons. Chile’s 1Q contraction was largely driven by temporary supply disruptions in mining, agriculture, and fishing, masking a somewhat firmer domestic demand backdrop. Even so, our IB expects growth of only 1.6% in 2026 as tighter fiscal policy and higher energy costs weigh on activity. Mexico continues to struggle with weak investment, declining construction activity, and lingering uncertainty surrounding both domestic policy and the USMCA framework. Despite the upward revision to first-quarter GDP, our IB still expects growth of only 1.0% in 2026. Where do we stand on monetary policy? The key regional theme is a clear shift to a more cautious tone from central banks. The debate is no longer about how quickly central banks can cut rates, but whether easing cycles are ending and, in some cases, whether the next move could be a hike. Inflation risks have become more persistent, and the bar for additional accommodation has risen significantly.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "GDP",
+          "applied": true,
+          "approved_target": "PIB"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-009",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "• Mexico has effectively reached el end de its easing cycle. Banxico lowered el policy tasa a 6.50% y signaled que este level represents el terminal tasa. While inflación has moderated modestly, services inflación permanece persistent y el narrowing differential versus el Federal Reserve limits room para additional cuts. Nuestro IB expects tasas a remain unchanged through el end de 2027.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "6.5%",
+          "text": "6.50%",
+          "char_end": 102,
+          "char_start": 97
+        },
+        {
+          "kind": "date",
+          "norm": "2027",
+          "text": "2027",
+          "char_end": 395,
+          "char_start": 391
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "• Mexico has effectively reached el end de its easing cycle. Banxico lowered el policy tasa a 6.50% y signaled que este level represents el terminal tasa. While inflación has moderated modestly, services inflación permanece persistent y el narrowing differential versus el Federal Reserve limits room para additional cuts. Nuestro IB expects tasas a remain unchanged through el end de 2027.",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "•\tMexico has effectively reached the end of its easing cycle. Banxico lowered the policy rate to 6.50% and signaled that this level represents the terminal rate. While inflation has moderated modestly, services inflation remains persistent and the narrowing differential versus the Federal Reserve limits room for additional cuts. Our IB expects rates to remain unchanged through the end of 2027.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-010",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "• Brazil's BCB cut 25 bp a 14.50% en April. Sin embargo, los riesgos aumentan de que el BCB keeps a cautious pace—rather than accelerating—as el current environment y stronger fiscal/credit stimulus add upside inflación pressure. Nuestro IB now expects el Selic a end 2026 at 13.25%.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "25",
+          "text": "25",
+          "char_end": 21,
+          "char_start": 19
+        },
+        {
+          "kind": "percent",
+          "norm": "14.5%",
+          "text": "14.50%",
+          "char_end": 34,
+          "char_start": 28
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 265,
+          "char_start": 261
+        },
+        {
+          "kind": "percent",
+          "norm": "13.25%",
+          "text": "13.25%",
+          "char_end": 275,
+          "char_start": 269
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "• Brazil's BCB cut 25 bp a 14.50% en April. Sin embargo, los riesgos aumentan de que el BCB keeps a cautious pace—rather than accelerating—as el current environment y stronger fiscal/credit stimulus add upside inflación pressure. Nuestro IB now expects el Selic a end 2026 at 13.25%.",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "•\tBrazil’s BCB cut 25 bp to 14.50% in April. However, risks are rising that the BCB keeps a cautious pace—rather than accelerating—as the current environment and stronger fiscal/credit stimulus add upside inflation pressure. Our IB now expects the Selic to end 2026 at 13.25%.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-011",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "•\tChile y Peru have both moved closer a el tightening camp. Chile's banco central kept tasas unchanged at 4.50%, but el tone has become noticeably more hawkish as energy-related inflación pressures aumentan. While el base case permanece para an extended hold, nuestro IB now sees a greater-than-even probability que el next move is a hike, con tightening expected a begin en late 2026. Peru's case is even more striking. Inflación has moved above el banco central's target range, while core measures continue a accelerate alongside strong domestic demand. Although el BCRP kept tasas unchanged at 4.25%, nuestro IB now expects a tightening cycle a begin after el June runoff, con el policy tasa reaching 5.0% by year-end.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "4.5%",
+          "text": "4.50%",
+          "char_end": 114,
+          "char_start": 109
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 386,
+          "char_start": 382
+        },
+        {
+          "kind": "percent",
+          "norm": "4.25%",
+          "text": "4.25%",
+          "char_end": 606,
+          "char_start": 601
+        },
+        {
+          "kind": "percent",
+          "norm": "5%",
+          "text": "5.0%",
+          "char_end": 712,
+          "char_start": 708
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "•\tChile y Peru have both moved closer a el tightening camp. Chile's banco central kept tasas unchanged at 4.50%, but el tone has become noticeably more hawkish as energy-related inflación pressures aumentan. While el base case permanece para an extended hold, nuestro IB now sees a greater-than-even probability que el next move is a hike, con tightening expected a begin en late 2026. Peru's case is even more striking. Inflación has moved above el banco central's target range, while core measures continue a accelerate alongside strong domestic demand. Although el BCRP kept tasas unchanged at 4.25%, nuestro IB now expects a tightening cycle a begin after el June runoff, con el policy tasa reaching 5.0% by year-end.",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "•\tChile and Peru have both moved closer to the tightening camp. Chile’s central bank kept rates unchanged at 4.50%, but the tone has become noticeably more hawkish as energy-related inflation pressures increase. While the base case remains for an extended hold, our IB now sees a greater-than-even probability that the next move is a hike, with tightening expected to begin in late 2026. Peru’s case is even more striking. Inflation has moved above the central bank’s target range, while core measures continue to accelerate alongside strong domestic demand. Although the BCRP kept rates unchanged at 4.25%, our IB now expects a tightening cycle to begin after the June runoff, with the policy rate reaching 5.0% by year-end.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-012",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "• Colombia should hike, but is bound by politics. El banco central held tasas at 11.25%, but el decision reflected political compromise rather than improving inflación dynamics. Con inflación expectations rising y core inflación remaining elevated, nuestro IB continues a esperamos additional tightening toward a terminal tasa de 12%. What about fiscal policy? Fiscal policy is becoming el principal macro constraint across much de el region. Governments are increasingly forced a balance support para crecimiento against rising concerns around debt sustainability, ratings pressure, y widening deficits, leaving limited room a respond a future shocks y keeping fiscal credibility premiums elevated.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "11.25%",
+          "text": "11.25%",
+          "char_end": 87,
+          "char_start": 81
+        },
+        {
+          "kind": "percent",
+          "norm": "12%",
+          "text": "12%",
+          "char_end": 331,
+          "char_start": 328
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "• Colombia should hike, but is bound by politics. El banco central held tasas at 11.25%, but el decision reflected political compromise rather than improving inflación dynamics. Con inflación expectations rising y core inflación remaining elevated, nuestro IB continues a esperamos additional tightening toward a terminal tasa de 12%. What about fiscal policy? Fiscal policy is becoming el principal macro constraint across much de el region. Governments are increasingly forced a balance support para crecimiento against rising concerns around debt sustainability, ratings pressure, y widening deficits, leaving limited room a respond a future shocks y keeping fiscal credibility premiums elevated.",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "•\tColombia should hike, but is bound by politics. The central bank held rates at 11.25%, but the decision reflected political compromise rather than improving inflation dynamics. With inflation expectations rising and core inflation remaining elevated, our IB continues to expect additional tightening toward a terminal rate of 12%. What about fiscal policy? Fiscal policy is becoming the principal macro constraint across much of the region. Governments are increasingly forced to balance support for growth against rising concerns around debt sustainability, ratings pressure, and widening deficits, leaving limited room to respond to future shocks and keeping fiscal credibility premiums elevated.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-013",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "•\tMexico's fiscal policy is under scrutiny following Moody's downgrade a Baa3 y S&P's negative perspectiva revision, both citing weak crecimiento, persistent deficits, ongoing PEMEX support, y a narrow revenue base. Our IB forecasts el deficit at -4.8% de PIB en 2026, y while el downgrade could catalyze consolidation, el room a improve public finances without further weighing on crecimiento permanece limited.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-4.8%",
+          "text": "-4.8%",
+          "char_end": 249,
+          "char_start": 244
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 264,
+          "char_start": 260
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P",
+          "text": "S&P",
+          "char_end": 86,
+          "char_start": 83
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "•\tMexico's fiscal policy is under scrutiny following Moody's downgrade a Baa3 y S&P's negative perspectiva revision, both citing weak crecimiento, persistent deficits, ongoing PEMEX support, y a narrow revenue base. Our IB forecasts el deficit at -4.8% de PIB en 2026, y while el downgrade could catalyze consolidation, el room a improve public finances without further weighing on crecimiento permanece limited.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "•\tMexico's fiscal policy is under scrutiny following Moody's downgrade to Baa3 and S&P's negative outlook revision, both citing weak growth, persistent deficits, ongoing PEMEX support, and a narrow revenue base. Our IB forecasts the deficit at -4.8% of GDP in 2026, and while the downgrade could catalyze consolidation, the room to improve public finances without further weighing on growth remains limited.",
+      "critic_flags": [
+        {
+          "span": "our",
+          "category": "fluency",
+          "severity": "minor",
+          "suggestion": "Residual English word \"our\" in the Spanish target"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "GDP",
+          "applied": true,
+          "approved_target": "PIB"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [
+            {
+              "span": "our",
+              "message": "Residual English word \"our\" in the Spanish target"
+            }
+          ],
+          "status": "fail",
+          "blocking": false,
+          "severity": "minor",
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-014",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "• Chile inició 2026 desde una posición fiscal significativamente más débil que la proyectada en el prior administration's IFP 3Q24 — el baseline underpinned el 2025 Budget Law — con el 2025 structural deficit closing at 3.7% de PIB, 2.1%-pt above target, reflecting a multi-year erosion de fiscal space. El Kast administration has launched corrective measures de around 0.5% de PIB, but absent further consolidation, debt would drift toward unsustainable levels over el medium term. Nuestro IB forecasts a deficit de 2.6% de PIB en 2026.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 20,
+          "char_start": 16
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 159,
+          "char_start": 155
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 186,
+          "char_start": 182
+        },
+        {
+          "kind": "percent",
+          "norm": "3.7%",
+          "text": "3.7%",
+          "char_end": 221,
+          "char_start": 217
+        },
+        {
+          "kind": "percent",
+          "norm": "2.1%",
+          "text": "2.1%",
+          "char_end": 234,
+          "char_start": 230
+        },
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 372,
+          "char_start": 368
+        },
+        {
+          "kind": "percent",
+          "norm": "2.6%",
+          "text": "2.6%",
+          "char_end": 516,
+          "char_start": 512
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 531,
+          "char_start": 527
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "• Chile inició 2026 desde una posición fiscal significativamente más débil que la proyectada en el prior administration's IFP 3Q24 — el baseline underpinned el 2025 Budget Law — con el 2025 structural deficit closing at 3.7% de PIB, 2.1%-pt above target, reflecting a multi-year erosion de fiscal space. El Kast administration has launched corrective measures de around 0.5% de PIB, but absent further consolidation, debt would drift toward unsustainable levels over el medium term. Nuestro IB forecasts a deficit de 2.6% de PIB en 2026.",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "•\tChile started 2026 from a significantly weaker fiscal position than projected in the prior administration's IFP 3Q24 — the baseline that underpinned the 2025 Budget Law — with the 2025 structural deficit closing at 3.7% of GDP, 2.1%-pt above target, reflecting a multi-year erosion of fiscal space. The Kast administration has launched corrective measures of around 0.5% of GDP, but absent further consolidation, debt would drift toward unsustainable levels over the medium term. Our IB forecasts a deficit of 2.6% of GDP in 2026.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "GDP",
+          "applied": true,
+          "approved_target": "PIB"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-015",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "•\tBrazil’s fiscal perspectiva is becoming increasingly shaped by politics. April's primary surplus de R$24.6bn beat consensus y narrowed el 12-month primary deficit, helped by early oil-related revenue gains, but el 12-month nominal deficit permanece at 9.41% de PIB. Con precatórios front-loading, faster discretionary spending, y additional household support on el table, IB sees 2026 risks tilted a higher spending y a wider deficit, con deficit projected at -8.5% de PIB, keeping el fiscal credibility premium elevated into el election y worsening medium-term debt concerns.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "currency",
+          "norm": "24600000000",
+          "text": "$24.6bn",
+          "char_end": 106,
+          "char_start": 99
+        },
+        {
+          "kind": "number",
+          "norm": "12",
+          "text": "12",
+          "char_end": 141,
+          "char_start": 139
+        },
+        {
+          "kind": "number",
+          "norm": "12",
+          "text": "12",
+          "char_end": 218,
+          "char_start": 216
+        },
+        {
+          "kind": "percent",
+          "norm": "9.41%",
+          "text": "9.41%",
+          "char_end": 257,
+          "char_start": 252
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 388,
+          "char_start": 384
+        },
+        {
+          "kind": "percent",
+          "norm": "-8.5%",
+          "text": "-8.5%",
+          "char_end": 473,
+          "char_start": 468
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "•\tBrazil’s fiscal perspectiva is becoming increasingly shaped by politics. April's primary surplus de R$24.6bn beat consensus y narrowed el 12-month primary deficit, helped by early oil-related revenue gains, but el 12-month nominal deficit permanece at 9.41% de PIB. Con precatórios front-loading, faster discretionary spending, y additional household support on el table, IB sees 2026 risks tilted a higher spending y a wider deficit, con deficit projected at -8.5% de PIB, keeping el fiscal credibility premium elevated into el election y worsening medium-term debt concerns.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "•\tBrazil’s fiscal outlook is becoming increasingly shaped by politics. April's primary surplus of R$24.6bn beat consensus and narrowed the 12-month primary deficit, helped by early oil-related revenue gains, but the 12-month nominal deficit remains at 9.41% of GDP. With precatórios front-loading, faster discretionary spending, and additional household support on the table, IB sees 2026 risks tilted to higher spending and a wider deficit, with deficit projected at -8.5% of GDP, keeping the fiscal credibility premium elevated into the election and worsening medium-term debt concerns.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "GDP",
+          "applied": true,
+          "approved_target": "PIB"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-016",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "•\tColombia faces a similar challenge. While headline fiscal metrics have stabilized modestly, underlying spending pressures remain elevated, y financing requirements continue a grow. Our IB maintains a deficit pronóstico de -6.4% de PIB, con fiscal policy remaining a key source de macro vulnerability.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-6.4%",
+          "text": "-6.4%",
+          "char_end": 230,
+          "char_start": 225
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "•\tColombia faces a similar challenge. While headline fiscal metrics have stabilized modestly, underlying spending pressures remain elevated, y financing requirements continue a grow. Our IB maintains a deficit pronóstico de -6.4% de PIB, con fiscal policy remaining a key source de macro vulnerability.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "•\tColombia faces a similar challenge. While headline fiscal metrics have stabilized modestly, underlying spending pressures remain elevated, and financing requirements continue to grow. Our IB maintains a deficit forecast of -6.4% of GDP, with fiscal policy remaining a key source of macro vulnerability.",
+      "critic_flags": [
+        {
+          "span": "our",
+          "category": "fluency",
+          "severity": "minor",
+          "suggestion": "Residual English word \"our\" in the Spanish target"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "GDP",
+          "applied": true,
+          "approved_target": "PIB"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [
+            {
+              "span": "our",
+              "message": "Residual English word \"our\" in the Spanish target"
+            }
+          ],
+          "status": "fail",
+          "blocking": false,
+          "severity": "minor",
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-017",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "• Peru continues a benefit de one de el strongest fiscal positions en el region, supported by favorable commodity prices y stronger external balances. Sin embargo, el upcoming election will play an important role en determining how much fiscal flexibility permanece available over el medium term. Nuestro IB forecasts el deficit de -2.4% de PIB en 2026",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-2.4%",
+          "text": "-2.4%",
+          "char_end": 337,
+          "char_start": 332
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 352,
+          "char_start": 348
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "• Peru continues a benefit de one de el strongest fiscal positions en el region, supported by favorable commodity prices y stronger external balances. Sin embargo, el upcoming election will play an important role en determining how much fiscal flexibility permanece available over el medium term. Nuestro IB forecasts el deficit de -2.4% de PIB en 2026",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "•\tPeru continues to benefit from one of the strongest fiscal positions in the region, supported by favorable commodity prices and stronger external balances. However, the upcoming election will play an important role in determining how much fiscal flexibility remains available over the medium term. Our IB forecasts the deficit of -2.4% of GDP in 2026",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "GDP",
+          "applied": true,
+          "approved_target": "PIB"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-018",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Mercados En May, MSCI Latin America declined 4.7% m/m, while MSCI Emerging Mercados led globally con a 9.5% m/m gain. El region's underperformance was driven primarily by Brazil (-9.2% m/m), which struggled as broadening inflación pressures kept monetary policy cautious y political noise intensified around Senator Flávio Bolsonaro ahead de el 2026 race. Mexico rose 2.6% m/m con MXN appreciating 0.5%, despite Banxico's 25bp cut y rating pressure ahead de el July 1st USMCA milestone weighing on sentiment. El Southern Cone y Andean mercados outperformed, led by Argentina (+11.9% m/m) following IMF approval de its second program review y a $1bn disbursement, while Colombia, Peru, y Chile also posted gains amid key political developments. At el currency level, PEN, CLP, y MXN appreciated while ARS, COP, y BRL depreciated.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "4.7%",
+          "text": "4.7%",
+          "char_end": 48,
+          "char_start": 44
+        },
+        {
+          "kind": "percent",
+          "norm": "9.5%",
+          "text": "9.5%",
+          "char_end": 106,
+          "char_start": 102
+        },
+        {
+          "kind": "percent",
+          "norm": "-9.2%",
+          "text": "-9.2%",
+          "char_end": 184,
+          "char_start": 179
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 352,
+          "char_start": 348
+        },
+        {
+          "kind": "percent",
+          "norm": "2.6%",
+          "text": "2.6%",
+          "char_end": 375,
+          "char_start": 371
+        },
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 406,
+          "char_start": 402
+        },
+        {
+          "kind": "percent",
+          "norm": "11.9%",
+          "text": "11.9%",
+          "char_end": 591,
+          "char_start": 586
+        },
+        {
+          "kind": "currency",
+          "norm": "1000000000",
+          "text": "$1bn",
+          "char_end": 659,
+          "char_start": 655
+        },
+        {
+          "kind": "entity",
+          "norm": "MSCI",
+          "text": "MSCI",
+          "char_end": 20,
+          "char_start": 16
+        },
+        {
+          "kind": "entity",
+          "norm": "MSCI",
+          "text": "MSCI",
+          "char_end": 64,
+          "char_start": 60
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Mercados En May, MSCI Latin America declined 4.7% m/m, while MSCI Emerging Mercados led globally con a 9.5% m/m gain. El region's underperformance was driven primarily by Brazil (-9.2% m/m), which struggled as broadening inflación pressures kept monetary policy cautious y political noise intensified around Senator Flávio Bolsonaro ahead de el 2026 race. Mexico rose 2.6% m/m con MXN appreciating 0.5%, despite Banxico's 25bp cut y rating pressure ahead de el July 1st USMCA milestone weighing on sentiment. El Southern Cone y Andean mercados outperformed, led by Argentina (+11.9% m/m) following IMF approval de its second program review y a $1bn disbursement, while Colombia, Peru, y Chile also posted gains amid key political developments. At el currency level, PEN, CLP, y MXN appreciated while ARS, COP, y BRL depreciated.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Markets In May, MSCI Latin America declined 4.7% m/m, while MSCI Emerging Markets led globally with a 9.5% m/m gain. The region's underperformance was driven primarily by Brazil (-9.2% m/m), which struggled as broadening inflation pressures kept monetary policy cautious and political noise intensified around Senator Flávio Bolsonaro ahead of the 2026 race. Mexico rose 2.6% m/m with MXN appreciating 0.5%, despite Banxico's 25bp cut and rating pressure ahead of the July 1st USMCA milestone weighing on sentiment. The Southern Cone and Andean markets outperformed, led by Argentina (+11.9% m/m) following IMF approval of its second program review and a $1bn disbursement, while Colombia, Peru, and Chile also posted gains amid key political developments. At the currency level, PEN, CLP, and MXN appreciated while ARS, COP, and BRL depreciated.",
+      "critic_flags": [
+        {
+          "span": "emerging markets",
+          "category": "terminology",
+          "severity": "major",
+          "suggestion": "mercados emergentes"
+        }
+      ],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [
+            {
+              "span": "emerging markets",
+              "message": "Source term \"emerging markets\" should render as \"mercados emergentes\"",
+              "expected": "mercados emergentes"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_aa47c0cc-9b8",
+  "source": {
+    "type": "txt",
+    "filename": "latin-america-enters-mid-year-with-growth-holdin.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0.056
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "9a47e790ba8e8c81",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v1 | critic-mqm-regionalism-v1",
+    "critic_model_id": "gpt-5",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-02T22:29:28.564Z",
+  "deleted_at": "2026-06-03T11:13:56.912Z",
+  "updated_at": "2026-06-03T11:13:56.912Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "es-419",
+  "schema_version": "1.0"
+}

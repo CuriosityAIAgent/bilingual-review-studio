@@ -1,0 +1,752 @@
+{
+  "rev": 0,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "u-s-markets-u-s-equities-were-higher-s-p-500-0-7",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：美国股票上涨（标普500指数上涨0.7%，纳斯达克指数上涨1.1%），半导体板块在上周走弱后出现反弹。美国国债收益率表现分化，短端大幅下行（2年期下行6个基点至2.11%，10年期下行2个基点至4.47%，30年期上行1个基点至4.98%）。美元指数基本持平，黄金上涨1.0%，布伦特原油下跌-0.2%至$72以下。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 48,
+          "char_start": 45
+        },
+        {
+          "kind": "percent",
+          "norm": "0.7%",
+          "text": "0.7%",
+          "char_end": 54,
+          "char_start": 50
+        },
+        {
+          "kind": "percent",
+          "norm": "1.1%",
+          "text": "1.1%",
+          "char_end": 68,
+          "char_start": 64
+        },
+        {
+          "kind": "number",
+          "norm": "6000000000bps",
+          "text": "6bps",
+          "char_end": 204,
+          "char_start": 200
+        },
+        {
+          "kind": "percent",
+          "norm": "2.11%",
+          "text": "2.11%",
+          "char_end": 213,
+          "char_start": 208
+        },
+        {
+          "kind": "number",
+          "norm": "2000000000bps",
+          "text": "2bps",
+          "char_end": 224,
+          "char_start": 220
+        },
+        {
+          "kind": "percent",
+          "norm": "4.47%",
+          "text": "4.47%",
+          "char_end": 233,
+          "char_start": 228
+        },
+        {
+          "kind": "number",
+          "norm": "1000000000bps",
+          "text": "1bps",
+          "char_end": 244,
+          "char_start": 240
+        },
+        {
+          "kind": "percent",
+          "norm": "4.98%",
+          "text": "4.98%",
+          "char_end": 253,
+          "char_start": 248
+        },
+        {
+          "kind": "percent",
+          "norm": "1%",
+          "text": "1.0%",
+          "char_end": 300,
+          "char_start": 296
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.2%",
+          "text": "-0.2%",
+          "char_end": 330,
+          "char_start": 325
+        },
+        {
+          "kind": "currency",
+          "norm": "72",
+          "text": "$72.",
+          "char_end": 344,
+          "char_start": 340
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 48,
+          "char_start": 41
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 62,
+          "char_start": 56
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：美国股票上涨（标普500指数上涨0.7%，纳斯达克指数上涨1.1%），半导体板块在上周走弱后出现反弹。美国国债收益率表现分化，短端大幅下行（2年期下行6个基点至2.11%，10年期下行2个基点至4.47%，30年期上行1个基点至4.98%）。美元指数基本持平，黄金上涨1.0%，布伦特原油下跌-0.2%至$72以下。",
+      "iterations": 2,
+      "seg_status": "machine",
+      "source_text": "U.S. markets: U.S. equities were higher (S&P 500 +0.7%, Nasdaq +1.1%) amid a rebound in semiconductors after last week’s weakness. Treasury yields were mixed with sharp declines in the short end (2Y -6bps to 2.11%, 10Y -2bps to 4.47%, 30Y +1bps to 4.98%). The dollar index was flat, gold gained +1.0% and Brent crude fell by -0.2% to below $72.",
+      "critic_flags": [
+        {
+          "span": "$72.",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "72."
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "$72.",
+              "message": "Numeric value \"$72.\" (mantissa 72.) not preserved in translation",
+              "expected": "72."
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国宏观：6月ISM服务业指数为54.0，与市场预期54.0一致，低于5月的54.5；新订单从57.3降至55.1。就业分项从47.9升至51.2，为四个月来首次扩张；价格分项从71.2降至67.7，为2026年2月以来首次跌破70。欧洲市场：欧洲股票下跌（斯托克50指数下跌0.2%），市场消化了俄罗斯持续对乌克兰发动打击的相关消息，以及霍尔木兹海峡船舶通行不确定性带来的影响。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "54",
+          "text": "54.0",
+          "char_end": 37,
+          "char_start": 33
+        },
+        {
+          "kind": "number",
+          "norm": "54",
+          "text": "54.0",
+          "char_end": 55,
+          "char_start": 51
+        },
+        {
+          "kind": "number",
+          "norm": "54.5",
+          "text": "54.5",
+          "char_end": 70,
+          "char_start": 66
+        },
+        {
+          "kind": "number",
+          "norm": "55.1",
+          "text": "55.1",
+          "char_end": 95,
+          "char_start": 91
+        },
+        {
+          "kind": "number",
+          "norm": "57.3",
+          "text": "57.3",
+          "char_end": 105,
+          "char_start": 101
+        },
+        {
+          "kind": "number",
+          "norm": "51.2",
+          "text": "51.2",
+          "char_end": 130,
+          "char_start": 126
+        },
+        {
+          "kind": "number",
+          "norm": "47.9",
+          "text": "47.9",
+          "char_end": 140,
+          "char_start": 136
+        },
+        {
+          "kind": "number",
+          "norm": "67.7",
+          "text": "67.7",
+          "char_end": 208,
+          "char_start": 204
+        },
+        {
+          "kind": "number",
+          "norm": "71.2",
+          "text": "71.2",
+          "char_end": 218,
+          "char_start": 214
+        },
+        {
+          "kind": "number",
+          "norm": "70",
+          "text": "70",
+          "char_end": 243,
+          "char_start": 241
+        },
+        {
+          "kind": "number",
+          "norm": "26",
+          "text": "26",
+          "char_end": 256,
+          "char_start": 254
+        },
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 306,
+          "char_start": 304
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.2%",
+          "text": "-0.2%",
+          "char_end": 312,
+          "char_start": 307
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国宏观：6月ISM服务业指数为54.0，与市场预期54.0一致，低于5月的54.5；新订单从57.3降至55.1。就业分项从47.9升至51.2，为四个月来首次扩张；价格分项从71.2降至67.7，为2026年2月以来首次跌破70。欧洲市场：欧洲股票下跌（斯托克50指数下跌0.2%），市场消化了俄罗斯持续对乌克兰发动打击的相关消息，以及霍尔木兹海峡船舶通行不确定性带来的影响。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "U.S. macro: June ISM Services at 54.0 vs consensus 54.0 and May's 54.5; new orders fell to 55.1 from 57.3. Employment rose to 51.2 from 47.9, the first expansion in four months; while prices decreased to 67.7 from 71.2, the first time below 70 since Feb-26. Europe markets: European equities fell (Stoxx 50 -0.2%) as markets digested headlines around continued Russian strikes on Ukraine and uncertainty over Hormuz vessel flows.",
+      "critic_flags": [
+        {
+          "span": "26",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "26"
+        },
+        {
+          "span": "-0.2%",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "-0.2"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "26",
+              "message": "Numeric value \"26\" (mantissa 26) not preserved in translation",
+              "expected": "26"
+            },
+            {
+              "span": "-0.2%",
+              "message": "Numeric value \"-0.2%\" (mantissa -0.2) not preserved in translation",
+              "expected": "-0.2"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：日本股票表现分化（日经指数持平，东证指数上涨0.9%），受隔夜美国科技股走弱拖累，市场承压。日元兑美元再度走弱，突破162.30关口。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.9%",
+          "text": "0.9%",
+          "char_end": 69,
+          "char_start": 65
+        },
+        {
+          "kind": "number",
+          "norm": "162.3",
+          "text": "162.30",
+          "char_end": 196,
+          "char_start": 190
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：日本股票表现分化（日经指数持平，东证指数上涨0.9%），受隔夜美国科技股走弱拖累，市场承压。日元兑美元再度走弱，突破162.30关口。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Japan markets: Japanese equities were mixed (Nikkei flat, Topix +0.9%) as markets were under pressure from overnight tech weakness in the U.S. The yen weakened against the dollar again past 162.30.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：中国股票表现分化（恒生指数上涨1.1%，沪深300指数持平），投资者在半导体及人工智能(AI)相关板块获利了结后，持续轮动至涨幅落后的板块。本周香港市场将迎来创纪录规模的首次公开募股(IPO)限售股解禁潮，或对市场形成一定压制。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "1.1%",
+          "text": "1.1%",
+          "char_end": 59,
+          "char_start": 55
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 68,
+          "char_start": 65
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：中国股票表现分化（恒生指数上涨1.1%，沪深300指数持平），投资者在半导体及人工智能(AI)相关板块获利了结后，持续轮动至涨幅落后的板块。本周香港市场将迎来创纪录规模的首次公开募股(IPO)限售股解禁潮，或对市场形成一定压制。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "China markets: Chinese equities were mixed (Hang Seng +1.1%, CSI 300 flat) as investors continued rotating into lagging sectors after taking profits from the semiconductor and AI-related rally. A record wave of IPO lock-up shares are set to hit the Hong Kong market this week, which may create an overhang.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "initial public offering",
+          "applied": false,
+          "approved_target": "首次公开募股"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        },
+        {
+          "source": "scale",
+          "applied": false,
+          "approved_target": "规模"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_9c73633f-552",
+  "source": {
+    "type": "txt",
+    "filename": "u-s-markets-u-s-equities-were-higher-s-p-500-0-7.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 0.5,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-07T01:49:55.683Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-07T01:49:55.683Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

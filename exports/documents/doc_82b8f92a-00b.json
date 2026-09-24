@@ -1,0 +1,838 @@
+{
+  "rev": 1,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "u-s-markets-u-s-equities-fell-last-week-s-p-500-",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：上周美国股票下跌（标普500指数 -1.6%，纳斯达克指数 -2.9%），半导体（SOX -10%）、内存（DRAM -16%）及大型科技股表现疲软。国债收益率曲线呈陡峭化走势，短端下行而长端维持高位（2年期 -3个基点至4.18%，10年期 -1个基点至4.55%，30年期 +1个基点至5.07%）。黄金下跌 -2.3%，至近$4,000美元/盎司。布伦特原油因中东局势再度升温而大涨 +17%，至约$88美元。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 51,
+          "char_start": 48
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.6%",
+          "text": "-1.6%",
+          "char_end": 57,
+          "char_start": 52
+        },
+        {
+          "kind": "percent",
+          "norm": "-2.9%",
+          "text": "-2.9%",
+          "char_end": 71,
+          "char_start": 66
+        },
+        {
+          "kind": "percent",
+          "norm": "-10%",
+          "text": "-10%",
+          "char_end": 114,
+          "char_start": 110
+        },
+        {
+          "kind": "percent",
+          "norm": "-16%",
+          "text": "-16%",
+          "char_end": 134,
+          "char_start": 130
+        },
+        {
+          "kind": "number",
+          "norm": "3000000000bps",
+          "text": "3bps",
+          "char_end": 255,
+          "char_start": 251
+        },
+        {
+          "kind": "percent",
+          "norm": "4.18%",
+          "text": "4.18%",
+          "char_end": 264,
+          "char_start": 259
+        },
+        {
+          "kind": "number",
+          "norm": "1000000000bps",
+          "text": "1bps",
+          "char_end": 275,
+          "char_start": 271
+        },
+        {
+          "kind": "percent",
+          "norm": "4.55%",
+          "text": "4.55%",
+          "char_end": 284,
+          "char_start": 279
+        },
+        {
+          "kind": "number",
+          "norm": "1000000000bps",
+          "text": "1bps",
+          "char_end": 295,
+          "char_start": 291
+        },
+        {
+          "kind": "percent",
+          "norm": "5.07%",
+          "text": "5.07%",
+          "char_end": 304,
+          "char_start": 299
+        },
+        {
+          "kind": "percent",
+          "norm": "-2.3%",
+          "text": "-2.3%",
+          "char_end": 322,
+          "char_start": 317
+        },
+        {
+          "kind": "currency",
+          "norm": "4000",
+          "text": "$4,000",
+          "char_end": 339,
+          "char_start": 333
+        },
+        {
+          "kind": "percent",
+          "norm": "17%",
+          "text": "17%",
+          "char_end": 367,
+          "char_start": 364
+        },
+        {
+          "kind": "currency",
+          "norm": "88",
+          "text": "$88",
+          "char_end": 376,
+          "char_start": 372
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 51,
+          "char_start": 44
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 65,
+          "char_start": 59
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：上周美国股票下跌（标普500指数 -1.6%，纳斯达克指数 -2.9%），半导体（SOX -10%）、内存（DRAM -16%）及大型科技股表现疲软。国债收益率曲线呈陡峭化走势，短端下行而长端维持高位（2年期 -3个基点至4.18%，10年期 -1个基点至4.55%，30年期 +1个基点至5.07%）。黄金下跌 -2.3%，至近$4,000美元/盎司。布伦特原油因中东局势再度升温而大涨 +17%，至约$88美元。",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "U.S. markets: U.S. equities fell last week (S&P 500 -1.6%, Nasdaq -2.9%) with weakness in semiconductors (SOX -10%), memory (DRAM -16%) and big tech. Treasury yields fell on the short end while the long-end remained elevated in a steepening move (2Y -3bps to 4.18%, 10Y -1bps to 4.55%, 30Y +1bps to 5.07%). Gold fell -2.3% to nearly $4,000/oz. Brent crude surged +17% to ~$88 as Middle East tensions ramped up again.",
+      "critic_flags": [
+        {
+          "span": "3bps",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "3"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "yield curve",
+          "applied": false,
+          "approved_target": "收益率曲线"
+        },
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "3bps",
+              "message": "Numeric value \"3bps\" (mantissa 3) not preserved in translation",
+              "expected": "3"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国宏观：上周美国宏观经济日历较为繁忙。通胀数据低于预期，6月核心消费者价格指数环比持平，而市场共识预期为 +0.2%；核心生产者价格指数环比 +0.2%，而市场共识预期为 +0.4%。6月零售销售超出预期，反映出消费者支出具有韧性。密歇根大学消费者信心指数初值为54.4，高于市场共识预期51.0；1年期通胀预期下降0.4个百分点至4.2%。加息预期波动较大，最终稳定在年底前累计加息约30个基点，较上周下降6个基点，但仍低于周初因中东局势升温所推动的逾40个基点的高点。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 135,
+          "char_start": 131
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 161,
+          "char_start": 157
+        },
+        {
+          "kind": "percent",
+          "norm": "0.4%",
+          "text": "0.4%",
+          "char_end": 184,
+          "char_start": 180
+        },
+        {
+          "kind": "number",
+          "norm": "54.4",
+          "text": "54.4",
+          "char_end": 312,
+          "char_start": 308
+        },
+        {
+          "kind": "number",
+          "norm": "51",
+          "text": "51.0",
+          "char_end": 330,
+          "char_start": 326
+        },
+        {
+          "kind": "number",
+          "norm": "0.4",
+          "text": "0.4",
+          "char_end": 372,
+          "char_start": 369
+        },
+        {
+          "kind": "percent",
+          "norm": "4.2%",
+          "text": "4.2%",
+          "char_end": 383,
+          "char_start": 379
+        },
+        {
+          "kind": "number",
+          "norm": "30000000000bps",
+          "text": "30bps",
+          "char_end": 458,
+          "char_start": 453
+        },
+        {
+          "kind": "number",
+          "norm": "6000000000bps",
+          "text": "6bps",
+          "char_end": 494,
+          "char_start": 490
+        },
+        {
+          "kind": "number",
+          "norm": "40000000000bps",
+          "text": "40bps",
+          "char_end": 532,
+          "char_start": 527
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国宏观：上周美国宏观经济日历较为繁忙。通胀数据低于预期，6月核心消费者价格指数环比持平，而市场共识预期为 +0.2%；核心生产者价格指数环比 +0.2%，而市场共识预期为 +0.4%。6月零售销售超出预期，反映出消费者支出具有韧性。密歇根大学消费者信心指数初值为54.4，高于市场共识预期51.0；1年期通胀预期下降0.4个百分点至4.2%。加息预期波动较大，最终稳定在年底前累计加息约30个基点，较上周下降6个基点，但仍低于周初因中东局势升温所推动的逾40个基点的高点。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "U.S. macro: Last week’s U.S. macro calendar was busy. Inflation was softer than expected with June core CPI flat m/m vs consensus +0.2%, while core PPI was +0.2% m/m vs consensus +0.4%. June retail sales beat expectations, reflecting resilient consumer spending. Preliminary UMich Consumer Sentiment beat at 54.4 vs consensus 51.0, while 1Y inflation expectations fell 0.4 pp to 4.2%. Rate hike expectations were volatile, ultimately settling at around 30bps of hikes though year-end, down 6bps from last week, though off the >40bps high at the start of the week after the ramp up in Middle East tensions.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "Consumer Price Index",
+          "applied": false,
+          "approved_target": "消费者价格指数"
+        },
+        {
+          "source": "Producer Price Index",
+          "applied": false,
+          "approved_target": "生产者价格指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：尽管第二季度财报季开局时企业基本面较为强劲，欧洲股票仍随全球科技股抛售潮下跌（斯托克50指数 -0.6%）。中东局势重燃能源方面的担忧，但与此同时，6月通胀数据走软至2.8%，令市场预期欧洲央行将在7月维持利率不变。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 48,
+          "char_start": 46
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.6%",
+          "text": "-0.6%",
+          "char_end": 54,
+          "char_start": 49
+        },
+        {
+          "kind": "percent",
+          "norm": "2.8%",
+          "text": "2.8%",
+          "char_end": 284,
+          "char_start": 280
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：尽管第二季度财报季开局时企业基本面较为强劲，欧洲股票仍随全球科技股抛售潮下跌（斯托克50指数 -0.6%）。中东局势重燃能源方面的担忧，但与此同时，6月通胀数据走软至2.8%，令市场预期欧洲央行将在7月维持利率不变。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Europe markets: European equities fell (Stoxx 50 -0.6%) alongside the global selloff in tech despite stronger corporate fundamentals as Q2 earnings season kicked off. Middle East tensions reignited energy concerns, though this comes against a backdrop of softer June inflation at 2.8%, which led markets to expect a July hold from the ECB.",
+      "critic_flags": [
+        {
+          "span": "Q2",
+          "category": "accuracy",
+          "severity": "major",
+          "suggestion": "Q2"
+        },
+        {
+          "span": "earnings",
+          "category": "terminology",
+          "severity": "major",
+          "suggestion": "盈利"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "central bank",
+          "applied": false,
+          "approved_target": "央行"
+        },
+        {
+          "source": "Stoxx 50",
+          "applied": false,
+          "approved_target": "斯托克50指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [
+            {
+              "span": "Q2",
+              "message": "Quarter Q2 not clearly preserved (wrong or missing quarter)",
+              "expected": "Q2"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [
+            {
+              "span": "earnings",
+              "message": "Source term \"earnings\" should render as \"盈利\"",
+              "expected": "盈利"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "亚洲市场：上周日本股票下跌（日经指数 -6.4%，东证指数 -2.9%），多数板块走弱。中国股票表现分化（恒生指数 +1.6%，沪深300指数 -5.3%），投资者从硬件板块撤离，尽管内存芯片制造商长鑫存储(CXMT)在上海的首次公开募股获散户投资者超额认购212倍。人工智能(AI)初创公司月之暗面发布其Kimi K3模型，称其为全球最大的开放权重人工智能(AI)系统，并表示K3在大多数编程及通用人工智能(AI)智能体基准测试中可超越Claude Opus 4.8及OpenAI的GPT 5.5。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "-6.4%",
+          "text": "-6.4%",
+          "char_end": 60,
+          "char_start": 55
+        },
+        {
+          "kind": "percent",
+          "norm": "-2.9%",
+          "text": "-2.9%",
+          "char_end": 73,
+          "char_start": 68
+        },
+        {
+          "kind": "percent",
+          "norm": "1.6%",
+          "text": "1.6%",
+          "char_end": 145,
+          "char_start": 141
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 154,
+          "char_start": 151
+        },
+        {
+          "kind": "percent",
+          "norm": "-5.3%",
+          "text": "-5.3%",
+          "char_end": 160,
+          "char_start": 155
+        },
+        {
+          "kind": "number",
+          "norm": "212",
+          "text": "212",
+          "char_end": 279,
+          "char_start": 276
+        },
+        {
+          "kind": "number",
+          "norm": "4.8",
+          "text": "4.8",
+          "char_end": 447,
+          "char_start": 444
+        },
+        {
+          "kind": "number",
+          "norm": "5.5",
+          "text": "5.5",
+          "char_end": 468,
+          "char_start": 465
+        }
+      ],
+      "qe_score": 0.25,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "亚洲市场：上周日本股票下跌（日经指数 -6.4%，东证指数 -2.9%），多数板块走弱。中国股票表现分化（恒生指数 +1.6%，沪深300指数 -5.3%）。尽管投资者从硬件板块撤离，内存芯片制造商长鑫存储(CXMT)在上海的首次公开募股获散户投资者超额认购212倍。人工智能公司月之暗面发布其Kimi K3模型，称其为全球最大的开放权重AI系统，并表示K3在大多数编程及通用人工智能(AI)智能体基准测试中可超越Claude Opus 4.8及OpenAI的GPT 5.5。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Asia markets: Japanese equities fell last week (Nikkei -6.4%, Topix -2.9%) with most sectors weaker. Chinese equities were mixed (Hang Seng +1.6%, CSI 300 -5.3%) as investors rotated away from hardware, even as CXMT (a memory chipmaker) saw its IPO in Shanghai oversubscribed 212 times by retail investors. AI startup Moonshot launched its Kimi K3 model, saying it is the world's largest open-weight AI system, and that K3 can beat Claude Opus 4.8 and OpenAI's GPT 5.5 in most coding and general AI agent benchmarks.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "initial public offering",
+          "applied": false,
+          "approved_target": "首次公开募股"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_82b8f92a-00b",
+  "source": {
+    "type": "txt",
+    "filename": "u-s-markets-u-s-equities-fell-last-week-s-p-500-.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 3.44,
+    "hter_by_category": {
+      "accuracy": 0.071
+    },
+    "number_fail_rate": 0.25,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0.25
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_fc268844-78c",
+      "ts": "2026-07-18T08:44:11.478Z",
+      "hter": 0.071,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "亚洲市场：上周日本股票下跌（日经指数 -6.4%，东证指数 -2.9%），多数板块走弱。中国股票表现分化（恒生指数 +1.6%，沪深300指数 -5.3%）。尽管投资者从硬件板块撤离，内存芯片制造商长鑫存储(CXMT)在上海的首次公开募股获散户投资者超额认购212倍。人工智能公司月之暗面发布其Kimi K3模型，称其为全球最大的开放权重AI系统，并表示K3在大多数编程及通用人工智能(AI)智能体基准测试中可超越Claude Opus 4.8及OpenAI的GPT 5.5。",
+      "action": "edit",
+      "before": "亚洲市场：上周日本股票下跌（日经指数 -6.4%，东证指数 -2.9%），多数板块走弱。中国股票表现分化（恒生指数 +1.6%，沪深300指数 -5.3%），投资者从硬件板块撤离，尽管内存芯片制造商长鑫存储(CXMT)在上海的首次公开募股获散户投资者超额认购212倍。人工智能(AI)初创公司月之暗面发布其Kimi K3模型，称其为全球最大的开放权重人工智能(AI)系统，并表示K3在大多数编程及通用人工智能(AI)智能体基准测试中可超越Claude Opus 4.8及OpenAI的GPT 5.5。",
+      "segment_id": "b-004",
+      "char_edit_distance": 17,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-18T08:40:04.958Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-18T08:44:11.478Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

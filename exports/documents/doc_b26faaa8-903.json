@@ -1,0 +1,184 @@
+{
+  "rev": 1,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "june-retail-sales-was-in-line-with-expectations-",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "6月零售销售数据符合预期，但4月和5月数据的上修使Q2消费者支出有望远强于Q1（超过2%，而Q1为0.5%）。在年初表现疲软之后，这是一个令人欣慰的信号，表明美国消费者仍具韧性。尽管如此，仍有几点重要注意事项。第一，零售销售数据反映的是商品支出，而非服务支出，而正是服务支出拖累了Q1的增长。第二，服务支出可能并未明显加速。由于能源成本上升对交通运输和旅游业造成压力，Q2服务支出不太可能出现实质性回升（Q2美国运输安全管理局(TSA)安检数据下降了-1.5%）。零售销售总体数据所呈现的强劲态势，在纳入服务支出后，可能无法完全传导至更广泛的消费层面。第三，《一大美丽法案》(OBBBA)消费者税收返还支持可能在下半年耗尽，这或将成为消费者支出增长的阻力。总体而言：零售销售数据表明，美国消费者Q2的表现强于Q1，但我们提醒您不要将其解读为新趋势的开始。更有可能的情况是，这仅是一个表现稳健的季度，我们预计下半年消费者支出将实现温和增长。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "2%",
+          "text": "2%",
+          "char_end": 161,
+          "char_start": 159
+        },
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 170,
+          "char_start": 166
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.5%",
+          "text": "-1.5%",
+          "char_end": 659,
+          "char_start": 654
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "6月零售销售数据符合预期，但4月和5月数据的上修使Q2消费者支出有望远强于Q1（超过2%，而Q1为0.5%）。在年初表现疲软之后，这是一个令人欣慰的信号，表明美国消费者仍具韧性。尽管如此，仍有几点重要注意事项。第一，零售销售数据反映的是商品支出，而非服务支出，而正是服务支出拖累了Q1的增长。第二，服务支出可能并未明显加速。由于能源成本上升对交通运输和旅游业造成压力，Q2服务支出不太可能出现实质性回升（Q2美国运输安全管理局(TSA)安检数据下降了-1.5%）。零售销售总体数据所呈现的强劲态势，在纳入服务支出后，可能无法完全传导至更广泛的消费层面。第三，《一大美丽法案》(OBBBA)消费者税收返还支持可能在下半年耗尽，这或将成为消费者支出增长的阻力。总体而言：零售销售数据表明，美国消费者Q2的表现强于Q1，但不要将其解读为新趋势的开始。更有可能的情况是，这仅是一个表现稳健的季度，我们预计下半年消费者支出将实现相对较慢增长。",
+      "iterations": 2,
+      "seg_status": "edited",
+      "source_text": "June retail sales was in line with expectations, but upward revisions to April and May put Q2 consumer spending on track to be considerably stronger than Q1 (>2% vs. 0.5% in Q1). After a soft start to the year, that's a welcome signal that the U.S. consumer is still resilient. That said, there are few important caveats. First, retail sales capture goods spending, not services, and it was largely services spending that dragged on growth in Q1. Second, services likely didn't accelerate much. With higher energy costs weighing on transportation and travel, it's unlikely that services spending meaningfully picked up in Q2 (TSA checkpoint data fell by -1.5% in Q2). The strength we're seeing in the headline retail sales number may not fully carry through to broader consumption when services spending is included. Third, the OBBBA consumer tax rebate support is likely to be exhausted in H2, which could be a headwind to consumer spending growth. Bottom line: retail sales points to a stronger Q2 for the U.S. consumer than Q1, but we'd caution against reading it as the start of a new trend. More likely, this proves to be one solid quarter, and we expect moderate consumer growth in the second half of the year.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_b26faaa8-903",
+  "source": {
+    "type": "txt",
+    "filename": "june-retail-sales-was-in-line-with-expectations-.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 4.76,
+    "hter_by_category": {
+      "accuracy": 0.022
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_387ad9bd-619",
+      "ts": "2026-07-18T08:48:24.009Z",
+      "hter": 0.022,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "6月零售销售数据符合预期，但4月和5月数据的上修使Q2消费者支出有望远强于Q1（超过2%，而Q1为0.5%）。在年初表现疲软之后，这是一个令人欣慰的信号，表明美国消费者仍具韧性。尽管如此，仍有几点重要注意事项。第一，零售销售数据反映的是商品支出，而非服务支出，而正是服务支出拖累了Q1的增长。第二，服务支出可能并未明显加速。由于能源成本上升对交通运输和旅游业造成压力，Q2服务支出不太可能出现实质性回升（Q2美国运输安全管理局(TSA)安检数据下降了-1.5%）。零售销售总体数据所呈现的强劲态势，在纳入服务支出后，可能无法完全传导至更广泛的消费层面。第三，《一大美丽法案》(OBBBA)消费者税收返还支持可能在下半年耗尽，这或将成为消费者支出增长的阻力。总体而言：零售销售数据表明，美国消费者Q2的表现强于Q1，但不要将其解读为新趋势的开始。更有可能的情况是，这仅是一个表现稳健的季度，我们预计下半年消费者支出将实现相对较慢增长。",
+      "action": "edit",
+      "before": "6月零售销售数据符合预期，但4月和5月数据的上修使Q2消费者支出有望远强于Q1（超过2%，而Q1为0.5%）。在年初表现疲软之后，这是一个令人欣慰的信号，表明美国消费者仍具韧性。尽管如此，仍有几点重要注意事项。第一，零售销售数据反映的是商品支出，而非服务支出，而正是服务支出拖累了Q1的增长。第二，服务支出可能并未明显加速。由于能源成本上升对交通运输和旅游业造成压力，Q2服务支出不太可能出现实质性回升（Q2美国运输安全管理局(TSA)安检数据下降了-1.5%）。零售销售总体数据所呈现的强劲态势，在纳入服务支出后，可能无法完全传导至更广泛的消费层面。第三，《一大美丽法案》(OBBBA)消费者税收返还支持可能在下半年耗尽，这或将成为消费者支出增长的阻力。总体而言：零售销售数据表明，美国消费者Q2的表现强于Q1，但我们提醒您不要将其解读为新趋势的开始。更有可能的情况是，这仅是一个表现稳健的季度，我们预计下半年消费者支出将实现温和增长。",
+      "segment_id": "b-001",
+      "char_edit_distance": 9,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-18T08:45:18.078Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-18T08:48:24.009Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

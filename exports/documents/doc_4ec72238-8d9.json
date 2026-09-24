@@ -1,0 +1,292 @@
+{
+  "rev": 4,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "the-top-performing-asset-classes-in-the-first-ha",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "2026年上半年表现最佳的资产类别为股票，其中半导体板块表现尤为突出，这也带动了新兴市场的整体表现——由于对韩国和台湾的大规模配置，新兴市场在该主题上集中度较高。我们继续看好战略性行业及HALO（重资产低淘汰率）主题。我们认为，加速推进的资本支出周期、人工智能(AI)驱动的电力与电网瓶颈，以及持续推进的回流/近岸外包与供应链安全投资，将为盈利带来上行空间。在中东冲突及美联储最新表态引发通胀预期剧烈波动的背景下，对冲基金与基础设施资产持续提供稳定回报。固定收益回报表现平淡，但随着周期性基本面改善，我们对扩展信贷的看法转为正面。黄金因实际收益率走高及美元走强而表现落后，但我们认为当前水平仍有一定上行空间（尽管较此前有所收窄），并基于央行持续购金的趋势，维持中期正面看法。国防板块因中东局势趋于缓和而表现落后，这为布局这一结构性趋势提供了买入机会。离岸中国股票表现落后，基本面疲弱，资金流向亦缺乏支撑。估值具有吸引力，但持续复苏仍需耐心等待。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 58,
+          "char_start": 54
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "2026年上半年表现最佳的资产类别为股票，其中半导体板块表现尤为突出，这也带动了新兴市场的整体表现——由于对韩国和台湾的大量配置，新兴市场在该主题上集中度较高。我们继续看好战略性行业及HALO（重资产低淘汰）主题。我们认为，加速推进的资本支出周期、人工智能驱动的电力与电网瓶颈，以及持续推进的回流/近岸生产与供应链安全投资，将为盈利带来上行空间。在中东冲突及美联储最新表态引发通胀预期剧烈波动的背景下，对冲基金与基础设施资产持续提供稳定回报。固定收益回报表现平淡，但随着经济周期基本面改善，我们对风险信贷的看法转为正面。黄金因实际收益率走高及美元走强而表现落后，但我们认为当前水平仍有一定上行空间（尽管较此前有所缩小），并基于央行持续购金的趋势，维持中期正面看法。国防板块因中东局势趋于缓和而表现落后，这为布局这一结构性趋势提供了买入机会。离岸中国股票表现落后，基本面疲弱，资金流向亦缺乏支撑。估值具有吸引力，但持续性复苏仍需耐心等待。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "The top-performing asset classes in the first half of 2026 are equities, with particularly strong performance in semiconductors, which has also benefited Emerging Markets which have a heavy concentration to that theme due to the large allocations to South Korea and Taiwan. We remain positive on strategic industries and HALO (heavy asset low obsolescence) themes. We see earnings upside from an accelerating capex cycle, power and grid constraints driven by AI, and continued investments into reshoring/nearshoring and supply chain security. Hedge funds and infrastructure continued to deliver stable returns amid highly volatile inflation expectations as a result of the Middle East conflict and new Fed rhetoric. Fixed income returns have been muted, but we are turning positive on extended credit with an improving cyclical backdrop. Gold has underperformed with higher real yields and a stronger dollar, but we see some upside from current levels (albeit less than before) and remain positive medium-term on continued central bank buying. Defense underperformed as Middle East tensions ease, presenting a buying opportunity into a structural trend. Offshore Chinese equities underperformed as fundamentals are weak amid unsupportive flows. Valuations are attractive but patience is required for a sustained recovery.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "inflation",
+          "applied": false,
+          "approved_target": "通胀"
+        },
+        {
+          "source": "central bank",
+          "applied": false,
+          "approved_target": "央行"
+        },
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        },
+        {
+          "source": "supply chain",
+          "applied": false,
+          "approved_target": "供应链"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "emerging markets",
+          "applied": false,
+          "approved_target": "新兴市场"
+        },
+        {
+          "source": "hedge fund",
+          "applied": false,
+          "approved_target": "对冲基金"
+        },
+        {
+          "source": "fixed income",
+          "applied": false,
+          "approved_target": "固定收益"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "valuation",
+          "applied": false,
+          "approved_target": "估值"
+        },
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "盈利"
+        },
+        {
+          "source": "capital expenditure",
+          "applied": false,
+          "approved_target": "资本支出"
+        },
+        {
+          "source": "Federal Reserve",
+          "applied": false,
+          "approved_target": "美联储"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_4ec72238-8d9",
+  "source": {
+    "type": "txt",
+    "filename": "the-top-performing-asset-classes-in-the-first-ha.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 20.41,
+    "hter_by_category": {
+      "accuracy": 0.01
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_7a2cb749-78d",
+      "ts": "2026-07-01T14:10:35.950Z",
+      "hter": 0.005,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "2026年上半年表现最佳的资产类别为股票，其中半导体板块表现尤为突出，这也带动了新兴市场的整体表现——由于对韩国和台湾的大量配置，新兴市场在该主题上集中度较高。我们继续看好战略性行业及HALO（重资产低淘汰率）主题。我们认为，加速推进的资本支出周期、人工智能(AI)驱动的电力与电网瓶颈，以及持续推进的回流/近岸外包与供应链安全投资，将为盈利带来上行空间。在中东冲突及美联储最新表态引发通胀预期剧烈波动的背景下，对冲基金与基础设施资产持续提供稳定回报。固定收益回报表现平淡，但随着周期性基本面改善，我们对扩展信贷的看法转为正面。黄金因实际收益率走高及美元走强而表现落后，但我们认为当前水平仍有一定上行空间（尽管较此前有所收窄），并基于央行持续购金的趋势，维持中期正面看法。国防板块因中东局势趋于缓和而表现落后，这为布局这一结构性趋势提供了买入机会。离岸中国股票表现落后，基本面疲弱，资金流向亦缺乏支撑。估值具有吸引力，但持续复苏仍需耐心等待。",
+      "action": "edit",
+      "before": "2026年上半年表现最佳的资产类别为股票，其中半导体板块表现尤为突出，这也带动了新兴市场的整体表现——由于对韩国和台湾的大规模配置，新兴市场在该主题上集中度较高。我们继续看好战略性行业及HALO（重资产低淘汰率）主题。我们认为，加速推进的资本支出周期、人工智能(AI)驱动的电力与电网瓶颈，以及持续推进的回流/近岸外包与供应链安全投资，将为盈利带来上行空间。在中东冲突及美联储最新表态引发通胀预期剧烈波动的背景下，对冲基金与基础设施资产持续提供稳定回报。固定收益回报表现平淡，但随着周期性基本面改善，我们对扩展信贷的看法转为正面。黄金因实际收益率走高及美元走强而表现落后，但我们认为当前水平仍有一定上行空间（尽管较此前有所收窄），并基于央行持续购金的趋势，维持中期正面看法。国防板块因中东局势趋于缓和而表现落后，这为布局这一结构性趋势提供了买入机会。离岸中国股票表现落后，基本面疲弱，资金流向亦缺乏支撑。估值具有吸引力，但持续复苏仍需耐心等待。",
+      "segment_id": "b-001",
+      "char_edit_distance": 2,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_dadb63ef-44a",
+      "ts": "2026-07-01T14:12:09.519Z",
+      "hter": 0.014,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "2026年上半年表现最佳的资产类别为股票，其中半导体板块表现尤为突出，这也带动了新兴市场的整体表现——由于对韩国和台湾的大量配置，新兴市场在该主题上集中度较高。我们继续看好战略性行业及HALO（重资产低淘汰）主题。我们认为，加速推进的资本支出周期、人工智能(AI)驱动的电力与电网瓶颈，以及持续推进的回流/近岸生产与供应链安全投资，将为盈利带来上行空间。在中东冲突及美联储最新表态引发通胀预期剧烈波动的背景下，对冲基金与基础设施资产持续提供稳定回报。固定收益回报表现平淡，但随着经济周期基本面改善，我们对扩展信贷的看法转为正面。黄金因实际收益率走高及美元走强而表现落后，但我们认为当前水平仍有一定上行空间（尽管较此前有所收窄），并基于央行持续购金的趋势，维持中期正面看法。国防板块因中东局势趋于缓和而表现落后，这为布局这一结构性趋势提供了买入机会。离岸中国股票表现落后，基本面疲弱，资金流向亦缺乏支撑。估值具有吸引力，但持续复苏仍需耐心等待。",
+      "action": "edit",
+      "before": "2026年上半年表现最佳的资产类别为股票，其中半导体板块表现尤为突出，这也带动了新兴市场的整体表现——由于对韩国和台湾的大量配置，新兴市场在该主题上集中度较高。我们继续看好战略性行业及HALO（重资产低淘汰率）主题。我们认为，加速推进的资本支出周期、人工智能(AI)驱动的电力与电网瓶颈，以及持续推进的回流/近岸外包与供应链安全投资，将为盈利带来上行空间。在中东冲突及美联储最新表态引发通胀预期剧烈波动的背景下，对冲基金与基础设施资产持续提供稳定回报。固定收益回报表现平淡，但随着周期性基本面改善，我们对扩展信贷的看法转为正面。黄金因实际收益率走高及美元走强而表现落后，但我们认为当前水平仍有一定上行空间（尽管较此前有所收窄），并基于央行持续购金的趋势，维持中期正面看法。国防板块因中东局势趋于缓和而表现落后，这为布局这一结构性趋势提供了买入机会。离岸中国股票表现落后，基本面疲弱，资金流向亦缺乏支撑。估值具有吸引力，但持续复苏仍需耐心等待。",
+      "segment_id": "b-001",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_fb80e2c7-321",
+      "ts": "2026-07-01T14:13:48.426Z",
+      "hter": 0.007,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "2026年上半年表现最佳的资产类别为股票，其中半导体板块表现尤为突出，这也带动了新兴市场的整体表现——由于对韩国和台湾的大量配置，新兴市场在该主题上集中度较高。我们继续看好战略性行业及HALO（重资产低淘汰）主题。我们认为，加速推进的资本支出周期、人工智能(AI)驱动的电力与电网瓶颈，以及持续推进的回流/近岸生产与供应链安全投资，将为盈利带来上行空间。在中东冲突及美联储最新表态引发通胀预期剧烈波动的背景下，对冲基金与基础设施资产持续提供稳定回报。固定收益回报表现平淡，但随着经济周期基本面改善，我们对风险信贷的看法转为正面。黄金因实际收益率走高及美元走强而表现落后，但我们认为当前水平仍有一定上行空间（尽管较此前有所收窄），并基于央行持续购金的趋势，维持中期正面看法。国防板块因中东局势趋于缓和而表现落后，这为布局这一结构性趋势提供了买入机会。离岸中国股票表现落后，基本面疲弱，资金流向亦缺乏支撑。估值具有吸引力，但持续性复苏仍需耐心等待。",
+      "action": "edit",
+      "before": "2026年上半年表现最佳的资产类别为股票，其中半导体板块表现尤为突出，这也带动了新兴市场的整体表现——由于对韩国和台湾的大量配置，新兴市场在该主题上集中度较高。我们继续看好战略性行业及HALO（重资产低淘汰）主题。我们认为，加速推进的资本支出周期、人工智能(AI)驱动的电力与电网瓶颈，以及持续推进的回流/近岸生产与供应链安全投资，将为盈利带来上行空间。在中东冲突及美联储最新表态引发通胀预期剧烈波动的背景下，对冲基金与基础设施资产持续提供稳定回报。固定收益回报表现平淡，但随着经济周期基本面改善，我们对扩展信贷的看法转为正面。黄金因实际收益率走高及美元走强而表现落后，但我们认为当前水平仍有一定上行空间（尽管较此前有所收窄），并基于央行持续购金的趋势，维持中期正面看法。国防板块因中东局势趋于缓和而表现落后，这为布局这一结构性趋势提供了买入机会。离岸中国股票表现落后，基本面疲弱，资金流向亦缺乏支撑。估值具有吸引力，但持续复苏仍需耐心等待。",
+      "segment_id": "b-001",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_74def28a-b59",
+      "ts": "2026-07-01T14:22:24.589Z",
+      "hter": 0.014,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "2026年上半年表现最佳的资产类别为股票，其中半导体板块表现尤为突出，这也带动了新兴市场的整体表现——由于对韩国和台湾的大量配置，新兴市场在该主题上集中度较高。我们继续看好战略性行业及HALO（重资产低淘汰）主题。我们认为，加速推进的资本支出周期、人工智能驱动的电力与电网瓶颈，以及持续推进的回流/近岸生产与供应链安全投资，将为盈利带来上行空间。在中东冲突及美联储最新表态引发通胀预期剧烈波动的背景下，对冲基金与基础设施资产持续提供稳定回报。固定收益回报表现平淡，但随着经济周期基本面改善，我们对风险信贷的看法转为正面。黄金因实际收益率走高及美元走强而表现落后，但我们认为当前水平仍有一定上行空间（尽管较此前有所缩小），并基于央行持续购金的趋势，维持中期正面看法。国防板块因中东局势趋于缓和而表现落后，这为布局这一结构性趋势提供了买入机会。离岸中国股票表现落后，基本面疲弱，资金流向亦缺乏支撑。估值具有吸引力，但持续性复苏仍需耐心等待。",
+      "action": "edit",
+      "before": "2026年上半年表现最佳的资产类别为股票，其中半导体板块表现尤为突出，这也带动了新兴市场的整体表现——由于对韩国和台湾的大量配置，新兴市场在该主题上集中度较高。我们继续看好战略性行业及HALO（重资产低淘汰）主题。我们认为，加速推进的资本支出周期、人工智能(AI)驱动的电力与电网瓶颈，以及持续推进的回流/近岸生产与供应链安全投资，将为盈利带来上行空间。在中东冲突及美联储最新表态引发通胀预期剧烈波动的背景下，对冲基金与基础设施资产持续提供稳定回报。固定收益回报表现平淡，但随着经济周期基本面改善，我们对风险信贷的看法转为正面。黄金因实际收益率走高及美元走强而表现落后，但我们认为当前水平仍有一定上行空间（尽管较此前有所收窄），并基于央行持续购金的趋势，维持中期正面看法。国防板块因中东局势趋于缓和而表现落后，这为布局这一结构性趋势提供了买入机会。离岸中国股票表现落后，基本面疲弱，资金流向亦缺乏支撑。估值具有吸引力，但持续性复苏仍需耐心等待。",
+      "segment_id": "b-001",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-01T14:09:37.512Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-01T14:22:24.589Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

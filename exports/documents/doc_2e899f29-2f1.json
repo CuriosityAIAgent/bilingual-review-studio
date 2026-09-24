@@ -1,0 +1,319 @@
+{
+  "rev": 0,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "u-s-equities-gained-s-p-500-0-7-nasdaq-0-8-to-se",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国股票上涨（标普500指数 +0.7%，纳斯达克指数 +0.8%），创下历史新高，半导体、存储器及人工智能(AI)板块均跑赢大市，大型科技股表现亦佳。受生产者价格指数(PPI)数据整体偏软影响，美国国债收益率普遍下行（2年期下行5个基点至4.15%，10年期下行4个基点至4.65%，30年期下行3个基点至5.22%），但市场对9月加息的预期基本维持不变，约为34%。美元指数下跌-0.1%，黄金下跌-1.1%，布伦特原油下跌-1.7%至约$87。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 29,
+          "char_start": 26
+        },
+        {
+          "kind": "percent",
+          "norm": "0.7%",
+          "text": "0.7%",
+          "char_end": 35,
+          "char_start": 31
+        },
+        {
+          "kind": "percent",
+          "norm": "0.8%",
+          "text": "0.8%",
+          "char_end": 49,
+          "char_start": 45
+        },
+        {
+          "kind": "number",
+          "norm": "5000000000bps",
+          "text": "5bps",
+          "char_end": 176,
+          "char_start": 172
+        },
+        {
+          "kind": "percent",
+          "norm": "4.15%",
+          "text": "4.15%",
+          "char_end": 185,
+          "char_start": 180
+        },
+        {
+          "kind": "number",
+          "norm": "4000000000bps",
+          "text": "4bps",
+          "char_end": 196,
+          "char_start": 192
+        },
+        {
+          "kind": "percent",
+          "norm": "4.65%",
+          "text": "4.65%",
+          "char_end": 205,
+          "char_start": 200
+        },
+        {
+          "kind": "number",
+          "norm": "3000000000bps",
+          "text": "3bps",
+          "char_end": 216,
+          "char_start": 212
+        },
+        {
+          "kind": "percent",
+          "norm": "5.22%",
+          "text": "5.22%",
+          "char_end": 225,
+          "char_start": 220
+        },
+        {
+          "kind": "ticker",
+          "norm": "(PPI)",
+          "text": "(PPI)",
+          "char_end": 286,
+          "char_start": 281
+        },
+        {
+          "kind": "percent",
+          "norm": "34%",
+          "text": "34%",
+          "char_end": 377,
+          "char_start": 374
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.1%",
+          "text": "-0.1%",
+          "char_end": 406,
+          "char_start": 401
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.1%",
+          "text": "-1.1%",
+          "char_end": 427,
+          "char_start": 422
+        },
+        {
+          "kind": "percent",
+          "norm": "-1.7%",
+          "text": "-1.7%",
+          "char_end": 454,
+          "char_start": 449
+        },
+        {
+          "kind": "currency",
+          "norm": "87",
+          "text": "$87.",
+          "char_end": 463,
+          "char_start": 459
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 29,
+          "char_start": 22
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 43,
+          "char_start": 37
+        }
+      ],
+      "qe_score": 0.993,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国股票上涨（标普500指数 +0.7%，纳斯达克指数 +0.8%），创下历史新高，半导体、存储器及人工智能(AI)板块均跑赢大市，大型科技股表现亦佳。受生产者价格指数(PPI)数据整体偏软影响，美国国债收益率普遍下行（2年期下行5个基点至4.15%，10年期下行4个基点至4.65%，30年期下行3个基点至5.22%），但市场对9月加息的预期基本维持不变，约为34%。美元指数下跌-0.1%，黄金下跌-1.1%，布伦特原油下跌-1.7%至约$87。",
+      "iterations": 2,
+      "seg_status": "machine",
+      "source_text": "U.S. equities gained (S&P 500 +0.7%, Nasdaq +0.8%) to set fresh records as semis, memory and AI all outperformed alongside big tech. Treasury yields were mostly lower (2Y -5bps to 4.15%, 10Y -4bps to 4.65%, 30Y -3bps to 5.22%) on the back of the mostly softer producer price index (PPI) print, though rate hike expectations for September remain largely unchanged at around ~34%. The dollar index fell -0.1%, gold declined -1.1% and Brent crude fell -1.7% to ~$87.",
+      "critic_flags": [
+        {
+          "span": "$87.",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "87."
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        },
+        {
+          "source": "artificial intelligence",
+          "applied": false,
+          "approved_target": "人工智能"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        },
+        {
+          "source": "Producer Price Index",
+          "applied": false,
+          "approved_target": "生产者价格指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "$87.",
+              "message": "Numeric value \"$87.\" (mantissa 87.) not preserved in translation",
+              "expected": "87."
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "S&P 500",
+              "message": "DNT token \"S&P 500\" was altered or dropped",
+              "expected": "S&P 500"
+            },
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_2e899f29-2f1",
+  "source": {
+    "type": "txt",
+    "filename": "u-s-equities-gained-s-p-500-0-7-nasdaq-0-8-to-se.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 1,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "3f9c45f6111fdd7d",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-08-14T00:13:03.734Z",
+  "deleted_at": null,
+  "updated_at": "2026-08-14T00:13:03.734Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

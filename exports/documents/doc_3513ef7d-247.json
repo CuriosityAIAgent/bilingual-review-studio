@@ -1,0 +1,276 @@
+{
+  "rev": 4,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "oil-prices-have-declined-following-the-u-s-iran-",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "在美伊协议达成后，油价已有所下跌，我们认为仍存在进一步下行的空间。我们将2026年底的原油价格预测由每桶$80美元下调至$75美元，并将2027年年中的预测下调至$65美元。上行空间依然存在：库存水平偏低，经由霍尔木兹海峡的航运恢复正常或需时日，且能源基础设施已遭受损毁。但我们的基准情景是供应回升速度快于需求复苏。波斯湾产油国或缺乏生产纪律，伊朗可能提高产量，而过去三个月填补全球供应缺口的国家也可能迟迟不愿削减产量。经历数月的经济压力后，产油国很可能优先追求产量而非维护生产纪律。阿联酋退出欧佩克的决定是一个关键信号，表明该卡特尔可能难以遏制过剩产量。这或将导致市场供过于求，并在进入2027年后压低油价。霍尔木兹海峡的油轮过境量是值得重点关注的关键变量，可作为供应进入全球市场速度的风向标。效率提升与电气化趋势的推进也在抑制需求。多个亚洲经济体，尤其是中国，似乎已通过替代能源或提高能效的方式适应了较低的石油消费水平。中国原油进口量从伊朗战争爆发前一年的日均11.9百万桶，骤降至5月份的仅7.8百万桶。这意味着中国对原油的需求或可在较低进口水平下得到满足。若这一调整被证明具有持续性，需求增长疲软与供应增强的叠加效应，可能令油价在更长时间内承压。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "currency",
+          "norm": "80",
+          "text": "$80",
+          "char_end": 171,
+          "char_start": 167
+        },
+        {
+          "kind": "currency",
+          "norm": "75000000000",
+          "text": "$75 b",
+          "char_end": 179,
+          "char_start": 174
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 194,
+          "char_start": 190
+        },
+        {
+          "kind": "currency",
+          "norm": "65000000000",
+          "text": "$65 b",
+          "char_end": 208,
+          "char_start": 203
+        },
+        {
+          "kind": "date",
+          "norm": "2027",
+          "text": "2027",
+          "char_end": 223,
+          "char_start": 219
+        },
+        {
+          "kind": "date",
+          "norm": "2027",
+          "text": "2027",
+          "char_end": 906,
+          "char_start": 902
+        },
+        {
+          "kind": "number",
+          "norm": "11900000",
+          "text": "11.9 million",
+          "char_end": 1312,
+          "char_start": 1300
+        },
+        {
+          "kind": "number",
+          "norm": "7800000",
+          "text": "7.8 million",
+          "char_end": 1386,
+          "char_start": 1375
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "在美伊协议达成后，油价已有所下跌，我们认为仍存在进一步下行的空间。我们将2026年底的原油价格预测由每桶$80美元下调至$75美元，并将2027年年中的预测下调至$65美元。上行风险依然存在：库存水平偏低，经由霍尔木兹海峡的航运恢复正常或需时日，且能源基础设施已遭受损毁。但我们的基准情景是供应回升速度快于需求复苏。波斯湾产油国或缺乏生产纪律，伊朗可能提高产量，而过去三个月填补全球供应缺口的国家也可能迟迟不愿削减产量。经历数月的经济压力后，产油国很可能优先追求产量而非维护生产纪律。阿联酋退出OPEC的决定是一个关键信号，表明该组织可能难以遏制过剩产量。这或将导致市场供过于求，并在进入2027年后压低油价。霍尔木兹海峡的油轮过境量是值得重点关注的变量，可作为供应进入全球市场速度的风向标。效率提升与电气化趋势的推进也在抑制需求。多个亚洲经济体，尤其是中国，似乎已通过替代能源或提高能效的方式适应了较低的石油消耗水平。中国原油进口量从伊朗战争爆发前一年的日均11.9百万桶，降至5月份的7.8百万桶。这意味着中国的原油的需求或可在较低进口水平下满足。若这一调整被证明具有持续性，需求增长疲软与供应增强的叠加效应，可能令油价在更长时间内承压。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "Oil prices have declined following the U.S.-Iran agreement, and we think there could be room for them to fall further. We are revising down our oil price outlook from $80 to $75 by year-end 2026, and to $65 by mid-year 2027. There’s scope for upside risk: inventories are low, shipping through the Strait may take time to normalize and energy infrastructure has been damaged. But our base case is that supply comes back faster than demand. Persian Gulf producers may lack production discipline, Iran could increase output and countries that filled the global shortfall over the last three months may be slow to reduce production. After months of economic pressure, producers are likely to prioritize volumes over discipline. The UAE’s decision to leave OPEC is key indication that the cartel may struggle to curb excess production. This could lead to an oversupplied market and lower prices going into 2027. A key variable to watch is Hormuz tanker crossings as a sign of how quickly supply is hitting global markets. Increased efficiency and a drive towards electrification have also reduced demand. Several Asian economies, notably China, appear to have adjusted to lower oil consumption through substitution or a focus on increased efficiency. Chinese crude oil imports dropped from an average of 11.9 million barrels per day in the year before the Iran war began to only 7.8 million in May. The result is the potential that China’s demand for crude can be met with lower import levels. If that adjustment proves persistent, the combination of weaker demand growth and stronger supply could keep oil prices under pressure for longer.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_3513ef7d-247",
+  "source": {
+    "type": "txt",
+    "filename": "oil-prices-have-declined-following-the-u-s-iran-.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 14.98,
+    "hter_by_category": {
+      "accuracy": 0.009
+    },
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_0b406fd6-49a",
+      "ts": "2026-07-07T02:27:50.055Z",
+      "hter": 0.004,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "在美伊协议达成后，油价已有所下跌，我们认为仍存在进一步下行的空间。我们将2026年底的原油价格预测由每桶$80美元下调至$75美元，并将2027年年中的预测下调至$65美元。上行风险依然存在：库存水平偏低，经由霍尔木兹海峡的航运恢复正常或需时日，且能源基础设施已遭受损毁。但我们的基准情景是供应回升速度快于需求复苏。波斯湾产油国或缺乏生产纪律，伊朗可能提高产量，而过去三个月填补全球供应缺口的国家也可能迟迟不愿削减产量。经历数月的经济压力后，产油国很可能优先追求产量而非维护生产纪律。阿联酋退出欧佩克的决定是一个关键信号，表明该卡特尔可能难以遏制过剩产量。这或将导致市场供过于求，并在进入2027年后压低油价。霍尔木兹海峡的油轮过境量是值得重点关注的关键变量，可作为供应进入全球市场速度的风向标。效率提升与电气化趋势的推进也在抑制需求。多个亚洲经济体，尤其是中国，似乎已通过替代能源或提高能效的方式适应了较低的石油消费水平。中国原油进口量从伊朗战争爆发前一年的日均11.9百万桶，骤降至5月份的仅7.8百万桶。这意味着中国对原油的需求或可在较低进口水平下得到满足。若这一调整被证明具有持续性，需求增长疲软与供应增强的叠加效应，可能令油价在更长时间内承压。",
+      "action": "edit",
+      "before": "在美伊协议达成后，油价已有所下跌，我们认为仍存在进一步下行的空间。我们将2026年底的原油价格预测由每桶$80美元下调至$75美元，并将2027年年中的预测下调至$65美元。上行空间依然存在：库存水平偏低，经由霍尔木兹海峡的航运恢复正常或需时日，且能源基础设施已遭受损毁。但我们的基准情景是供应回升速度快于需求复苏。波斯湾产油国或缺乏生产纪律，伊朗可能提高产量，而过去三个月填补全球供应缺口的国家也可能迟迟不愿削减产量。经历数月的经济压力后，产油国很可能优先追求产量而非维护生产纪律。阿联酋退出欧佩克的决定是一个关键信号，表明该卡特尔可能难以遏制过剩产量。这或将导致市场供过于求，并在进入2027年后压低油价。霍尔木兹海峡的油轮过境量是值得重点关注的关键变量，可作为供应进入全球市场速度的风向标。效率提升与电气化趋势的推进也在抑制需求。多个亚洲经济体，尤其是中国，似乎已通过替代能源或提高能效的方式适应了较低的石油消费水平。中国原油进口量从伊朗战争爆发前一年的日均11.9百万桶，骤降至5月份的仅7.8百万桶。这意味着中国对原油的需求或可在较低进口水平下得到满足。若这一调整被证明具有持续性，需求增长疲软与供应增强的叠加效应，可能令油价在更长时间内承压。",
+      "segment_id": "b-001",
+      "char_edit_distance": 2,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_7b9fd3a5-6fc",
+      "ts": "2026-07-07T02:29:36.461Z",
+      "hter": 0.008,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "在美伊协议达成后，油价已有所下跌，我们认为仍存在进一步下行的空间。我们将2026年底的原油价格预测由每桶$80美元下调至$75美元，并将2027年年中的预测下调至$65美元。上行风险依然存在：库存水平偏低，经由霍尔木兹海峡的航运恢复正常或需时日，且能源基础设施已遭受损毁。但我们的基准情景是供应回升速度快于需求复苏。波斯湾产油国或缺乏生产纪律，伊朗可能提高产量，而过去三个月填补全球供应缺口的国家也可能迟迟不愿削减产量。经历数月的经济压力后，产油国很可能优先追求产量而非维护生产纪律。阿联酋退出OPEC的决定是一个关键信号，表明该卡特尔可能难以遏制过剩产量。这或将导致市场供过于求，并在进入2027年后压低油价。霍尔木兹海峡的油轮过境量是值得重点关注的关键变量，可作为供应进入全球市场速度的风向标。效率提升与电气化趋势的推进也在抑制需求。多个亚洲经济体，尤其是中国，似乎已通过替代能源或提高能效的方式适应了较低的石油消费水平。中国原油进口量从伊朗战争爆发前一年的日均11.9百万桶，骤降至5月份的仅7.8百万桶。这意味着中国对原油的需求或可在较低进口水平下得到满足。若这一调整被证明具有持续性，需求增长疲软与供应增强的叠加效应，可能令油价在更长时间内承压。",
+      "action": "edit",
+      "before": "在美伊协议达成后，油价已有所下跌，我们认为仍存在进一步下行的空间。我们将2026年底的原油价格预测由每桶$80美元下调至$75美元，并将2027年年中的预测下调至$65美元。上行风险依然存在：库存水平偏低，经由霍尔木兹海峡的航运恢复正常或需时日，且能源基础设施已遭受损毁。但我们的基准情景是供应回升速度快于需求复苏。波斯湾产油国或缺乏生产纪律，伊朗可能提高产量，而过去三个月填补全球供应缺口的国家也可能迟迟不愿削减产量。经历数月的经济压力后，产油国很可能优先追求产量而非维护生产纪律。阿联酋退出欧佩克的决定是一个关键信号，表明该卡特尔可能难以遏制过剩产量。这或将导致市场供过于求，并在进入2027年后压低油价。霍尔木兹海峡的油轮过境量是值得重点关注的关键变量，可作为供应进入全球市场速度的风向标。效率提升与电气化趋势的推进也在抑制需求。多个亚洲经济体，尤其是中国，似乎已通过替代能源或提高能效的方式适应了较低的石油消费水平。中国原油进口量从伊朗战争爆发前一年的日均11.9百万桶，骤降至5月份的仅7.8百万桶。这意味着中国对原油的需求或可在较低进口水平下得到满足。若这一调整被证明具有持续性，需求增长疲软与供应增强的叠加效应，可能令油价在更长时间内承压。",
+      "segment_id": "b-001",
+      "char_edit_distance": 4,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_43f653c6-48e",
+      "ts": "2026-07-07T02:31:00.773Z",
+      "hter": 0.01,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "在美伊协议达成后，油价已有所下跌，我们认为仍存在进一步下行的空间。我们将2026年底的原油价格预测由每桶$80美元下调至$75美元，并将2027年年中的预测下调至$65美元。上行风险依然存在：库存水平偏低，经由霍尔木兹海峡的航运恢复正常或需时日，且能源基础设施已遭受损毁。但我们的基准情景是供应回升速度快于需求复苏。波斯湾产油国或缺乏生产纪律，伊朗可能提高产量，而过去三个月填补全球供应缺口的国家也可能迟迟不愿削减产量。经历数月的经济压力后，产油国很可能优先追求产量而非维护生产纪律。阿联酋退出OPEC的决定是一个关键信号，表明该组织可能难以遏制过剩产量。这或将导致市场供过于求，并在进入2027年后压低油价。霍尔木兹海峡的油轮过境量是值得重点关注的变量，可作为供应进入全球市场速度的风向标。效率提升与电气化趋势的推进也在抑制需求。多个亚洲经济体，尤其是中国，似乎已通过替代能源或提高能效的方式适应了较低的石油消费水平。中国原油进口量从伊朗战争爆发前一年的日均11.9百万桶，骤降至5月份的仅7.8百万桶。这意味着中国对原油的需求或可在较低进口水平下得到满足。若这一调整被证明具有持续性，需求增长疲软与供应增强的叠加效应，可能令油价在更长时间内承压。",
+      "action": "edit",
+      "before": "在美伊协议达成后，油价已有所下跌，我们认为仍存在进一步下行的空间。我们将2026年底的原油价格预测由每桶$80美元下调至$75美元，并将2027年年中的预测下调至$65美元。上行风险依然存在：库存水平偏低，经由霍尔木兹海峡的航运恢复正常或需时日，且能源基础设施已遭受损毁。但我们的基准情景是供应回升速度快于需求复苏。波斯湾产油国或缺乏生产纪律，伊朗可能提高产量，而过去三个月填补全球供应缺口的国家也可能迟迟不愿削减产量。经历数月的经济压力后，产油国很可能优先追求产量而非维护生产纪律。阿联酋退出OPEC的决定是一个关键信号，表明该卡特尔可能难以遏制过剩产量。这或将导致市场供过于求，并在进入2027年后压低油价。霍尔木兹海峡的油轮过境量是值得重点关注的关键变量，可作为供应进入全球市场速度的风向标。效率提升与电气化趋势的推进也在抑制需求。多个亚洲经济体，尤其是中国，似乎已通过替代能源或提高能效的方式适应了较低的石油消费水平。中国原油进口量从伊朗战争爆发前一年的日均11.9百万桶，骤降至5月份的仅7.8百万桶。这意味着中国对原油的需求或可在较低进口水平下得到满足。若这一调整被证明具有持续性，需求增长疲软与供应增强的叠加效应，可能令油价在更长时间内承压。",
+      "segment_id": "b-001",
+      "char_edit_distance": 5,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_63c0c58f-2c1",
+      "ts": "2026-07-07T02:41:58.092Z",
+      "hter": 0.012,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "在美伊协议达成后，油价已有所下跌，我们认为仍存在进一步下行的空间。我们将2026年底的原油价格预测由每桶$80美元下调至$75美元，并将2027年年中的预测下调至$65美元。上行风险依然存在：库存水平偏低，经由霍尔木兹海峡的航运恢复正常或需时日，且能源基础设施已遭受损毁。但我们的基准情景是供应回升速度快于需求复苏。波斯湾产油国或缺乏生产纪律，伊朗可能提高产量，而过去三个月填补全球供应缺口的国家也可能迟迟不愿削减产量。经历数月的经济压力后，产油国很可能优先追求产量而非维护生产纪律。阿联酋退出OPEC的决定是一个关键信号，表明该组织可能难以遏制过剩产量。这或将导致市场供过于求，并在进入2027年后压低油价。霍尔木兹海峡的油轮过境量是值得重点关注的变量，可作为供应进入全球市场速度的风向标。效率提升与电气化趋势的推进也在抑制需求。多个亚洲经济体，尤其是中国，似乎已通过替代能源或提高能效的方式适应了较低的石油消耗水平。中国原油进口量从伊朗战争爆发前一年的日均11.9百万桶，降至5月份的7.8百万桶。这意味着中国的原油的需求或可在较低进口水平下满足。若这一调整被证明具有持续性，需求增长疲软与供应增强的叠加效应，可能令油价在更长时间内承压。",
+      "action": "edit",
+      "before": "在美伊协议达成后，油价已有所下跌，我们认为仍存在进一步下行的空间。我们将2026年底的原油价格预测由每桶$80美元下调至$75美元，并将2027年年中的预测下调至$65美元。上行风险依然存在：库存水平偏低，经由霍尔木兹海峡的航运恢复正常或需时日，且能源基础设施已遭受损毁。但我们的基准情景是供应回升速度快于需求复苏。波斯湾产油国或缺乏生产纪律，伊朗可能提高产量，而过去三个月填补全球供应缺口的国家也可能迟迟不愿削减产量。经历数月的经济压力后，产油国很可能优先追求产量而非维护生产纪律。阿联酋退出OPEC的决定是一个关键信号，表明该组织可能难以遏制过剩产量。这或将导致市场供过于求，并在进入2027年后压低油价。霍尔木兹海峡的油轮过境量是值得重点关注的变量，可作为供应进入全球市场速度的风向标。效率提升与电气化趋势的推进也在抑制需求。多个亚洲经济体，尤其是中国，似乎已通过替代能源或提高能效的方式适应了较低的石油消费水平。中国原油进口量从伊朗战争爆发前一年的日均11.9百万桶，骤降至5月份的仅7.8百万桶。这意味着中国对原油的需求或可在较低进口水平下得到满足。若这一调整被证明具有持续性，需求增长疲软与供应增强的叠加效应，可能令油价在更长时间内承压。",
+      "segment_id": "b-001",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-07T02:17:17.994Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-07T02:41:58.092Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

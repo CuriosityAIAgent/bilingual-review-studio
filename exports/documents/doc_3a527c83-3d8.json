@@ -1,0 +1,728 @@
+{
+  "rev": 2,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "u-s-macro-june-adp-private-payrolls-98k-m-m-vs-c",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国宏观：6月ADP私营部门就业人数环比增加98,000人，低于市场预期的113,000人及5月的122,000人，新增就业主要集中于服务业（+96,000人）。6月挑战者裁员人数为46,000人，低于5月的97,000人。6月ISM制造业指数为53.3，低于市场预期的54.0及5月的54.0；新订单从56.8降至56.0，但仍连续第六个月处于扩张区间；生产指数从54.3降至52.2。就业分项从48.6升至49.7；价格分项从82.1降至73.0。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "98000",
+          "text": "98K",
+          "char_end": 42,
+          "char_start": 39
+        },
+        {
+          "kind": "number",
+          "norm": "113000",
+          "text": "113K",
+          "char_end": 65,
+          "char_start": 61
+        },
+        {
+          "kind": "number",
+          "norm": "122000",
+          "text": "122K",
+          "char_end": 80,
+          "char_start": 76
+        },
+        {
+          "kind": "number",
+          "norm": "96000",
+          "text": "96K",
+          "char_end": 136,
+          "char_start": 133
+        },
+        {
+          "kind": "number",
+          "norm": "46000",
+          "text": "46K",
+          "char_end": 170,
+          "char_start": 167
+        },
+        {
+          "kind": "number",
+          "norm": "97000",
+          "text": "97K",
+          "char_end": 177,
+          "char_start": 174
+        },
+        {
+          "kind": "number",
+          "norm": "53.3",
+          "text": "53.3",
+          "char_end": 216,
+          "char_start": 212
+        },
+        {
+          "kind": "number",
+          "norm": "54",
+          "text": "54.0",
+          "char_end": 234,
+          "char_start": 230
+        },
+        {
+          "kind": "number",
+          "norm": "54",
+          "text": "54.0",
+          "char_end": 249,
+          "char_start": 245
+        },
+        {
+          "kind": "number",
+          "norm": "56",
+          "text": "56.0",
+          "char_end": 274,
+          "char_start": 270
+        },
+        {
+          "kind": "number",
+          "norm": "56.8",
+          "text": "56.8",
+          "char_end": 284,
+          "char_start": 280
+        },
+        {
+          "kind": "number",
+          "norm": "52.2",
+          "text": "52.2",
+          "char_end": 354,
+          "char_start": 350
+        },
+        {
+          "kind": "number",
+          "norm": "54.3",
+          "text": "54.3",
+          "char_end": 364,
+          "char_start": 360
+        },
+        {
+          "kind": "number",
+          "norm": "49.7",
+          "text": "49.7",
+          "char_end": 389,
+          "char_start": 385
+        },
+        {
+          "kind": "number",
+          "norm": "48.6",
+          "text": "48.6",
+          "char_end": 399,
+          "char_start": 395
+        },
+        {
+          "kind": "number",
+          "norm": "73",
+          "text": "73.0",
+          "char_end": 420,
+          "char_start": 416
+        },
+        {
+          "kind": "number",
+          "norm": "82.1",
+          "text": "82.1",
+          "char_end": 430,
+          "char_start": 426
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国宏观：6月ADP私营部门就业人数环比增加98,000人，低于市场预期的113,000人及5月的122,000人，新增就业主要集中于服务业（+96,000人）。6月Challenger裁员人数为46,000人，低于5月的97,000人。6月ISM制造业指数为53.3，低于市场预期的54.0及5月的54.0；新订单从56.8降至56.0，但仍连续第六个月处于扩张区间；生产从54.3降至52.2。就业从48.6升至49.7；价格从82.1降至73.0。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "U.S. macro: June ADP private payrolls +98K m/m vs. consensus 113K and May’s 122K, with the bulk of hiring concentrated in services (+96K). June Challenger job cuts at 46K vs 97K in May. June ISM manufacturing at 53.3 vs consensus 54.0 and May's 54.0; new orders fell to 56.0 from 56.8, still in expansion for sixth straight month; production fell to 52.2 from 54.3. Employment rose to 49.7 from 48.6; prices fell to 73.0 from 82.1.",
+      "critic_flags": [
+        {
+          "span": "98K",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "98"
+        },
+        {
+          "span": "113K",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "113"
+        },
+        {
+          "span": "122K",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "122"
+        },
+        {
+          "span": "96K",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "96"
+        },
+        {
+          "span": "46K",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "46"
+        },
+        {
+          "span": "97K",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "97"
+        }
+      ],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "98K",
+              "message": "Numeric value \"98K\" (mantissa 98) not preserved in translation",
+              "expected": "98"
+            },
+            {
+              "span": "113K",
+              "message": "Numeric value \"113K\" (mantissa 113) not preserved in translation",
+              "expected": "113"
+            },
+            {
+              "span": "122K",
+              "message": "Numeric value \"122K\" (mantissa 122) not preserved in translation",
+              "expected": "122"
+            },
+            {
+              "span": "96K",
+              "message": "Numeric value \"96K\" (mantissa 96) not preserved in translation",
+              "expected": "96"
+            },
+            {
+              "span": "46K",
+              "message": "Numeric value \"46K\" (mantissa 46) not preserved in translation",
+              "expected": "46"
+            },
+            {
+              "span": "97K",
+              "message": "Numeric value \"97K\" (mantissa 97) not preserved in translation",
+              "expected": "97"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：受市场消化最新美伊谈判进展及央行言论影响，欧洲股票下跌（斯托克50指数 -0.7%）。欧元区5月初步消费者价格指数同比上涨2.8%，低于市场预期的3.0%及前值3.2%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 48,
+          "char_start": 46
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.7%",
+          "text": "-0.7%",
+          "char_end": 54,
+          "char_start": 49
+        },
+        {
+          "kind": "percent",
+          "norm": "2.8%",
+          "text": "2.8%",
+          "char_end": 164,
+          "char_start": 160
+        },
+        {
+          "kind": "percent",
+          "norm": "3%",
+          "text": "3.0%",
+          "char_end": 187,
+          "char_start": 183
+        },
+        {
+          "kind": "percent",
+          "norm": "3.2%",
+          "text": "3.2%",
+          "char_end": 203,
+          "char_start": 199
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：市场消化最新美伊谈判进展及央行言论，欧洲股票下跌（斯托克50指数 -0.7%）。欧元区5月初步消费者价格指数同比上涨2.8%，低于市场预期的3.0%及前值3.2%。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Europe markets: European equities fell (Stoxx 50 -0.7%) as markets digested the latest U.S.-Iran talks and central bank rhetoric. Eurozone May preliminary CPI +2.8% y/y vs consensus +3.0% and prior +3.2%",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "central bank",
+          "applied": false,
+          "approved_target": "央行"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：日本股票上涨（日经指数 +0.6%，东证指数 +0.4%），与此同时日元兑美元汇率继续走弱，徘徊于162高位区间。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.6%",
+          "text": "0.6%",
+          "char_end": 51,
+          "char_start": 47
+        },
+        {
+          "kind": "percent",
+          "norm": "0.4%",
+          "text": "0.4%",
+          "char_end": 64,
+          "char_start": 60
+        },
+        {
+          "kind": "number",
+          "norm": "162",
+          "text": "162",
+          "char_end": 132,
+          "char_start": 129
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：日本股票上涨（日经指数 +0.6%，东证指数 +0.4%），与此同时日元兑美元汇率继续走弱，徘徊于162高位区间。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Japan markets: Japanese equities rose (Nikkei +0.6%, Topix +0.4%) while the yen continued pushing into weaker levels in the high-162 range against the dollar.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：受资金从成长板块轮动至价值及高股息相关个股影响，中国股票下跌（沪深300指数 -0.4%）。香港市场因公众假期休市。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 45,
+          "char_start": 42
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.4%",
+          "text": "-0.4%",
+          "char_end": 51,
+          "char_start": 46
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：受资金从成长板块轮动至价值及高股息相关个股影响，中国股票下跌（沪深300指数 -0.4%）。香港市场因公众假期休市。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "China markets: Chinese equities fell (CSI 300 -0.4%) amid a rotation out of growth sectors into value and dividend-related names. Hong Kong markets were closed for a holiday.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_3a527c83-3d8",
+  "source": {
+    "type": "txt",
+    "filename": "u-s-macro-june-adp-private-payrolls-98k-m-m-vs-c.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 13.61,
+    "hter_by_category": {
+      "accuracy": 0.052
+    },
+    "number_fail_rate": 0.25,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_2db3fedf-258",
+      "ts": "2026-07-01T16:51:40.974Z",
+      "hter": 0.07,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国宏观：6月ADP私营部门就业人数环比增加98,000人，低于市场预期的113,000人及5月的122,000人，新增就业主要集中于服务业（+96,000人）。6月Challenger裁员人数为46,000人，低于5月的97,000人。6月ISM制造业指数为53.3，低于市场预期的54.0及5月的54.0；新订单从56.8降至56.0，但仍连续第六个月处于扩张区间；生产从54.3降至52.2。就业从48.6升至49.7；价格从82.1降至73.0。",
+      "action": "edit",
+      "before": "美国宏观：6月ADP私营部门就业人数环比增加98,000人，低于市场预期的113,000人及5月的122,000人，新增就业主要集中于服务业（+96,000人）。6月挑战者裁员人数为46,000人，低于5月的97,000人。6月ISM制造业指数为53.3，低于市场预期的54.0及5月的54.0；新订单从56.8降至56.0，但仍连续第六个月处于扩张区间；生产指数从54.3降至52.2。就业分项从48.6升至49.7；价格分项从82.1降至73.0。",
+      "segment_id": "b-001",
+      "char_edit_distance": 16,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_eebf097c-c47",
+      "ts": "2026-07-01T16:52:02.792Z",
+      "hter": 0.034,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "欧洲市场：市场消化最新美伊谈判进展及央行言论，欧洲股票下跌（斯托克50指数 -0.7%）。欧元区5月初步消费者价格指数同比上涨2.8%，低于市场预期的3.0%及前值3.2%。",
+      "action": "edit",
+      "before": "欧洲市场：受市场消化最新美伊谈判进展及央行言论影响，欧洲股票下跌（斯托克50指数 -0.7%）。欧元区5月初步消费者价格指数同比上涨2.8%，低于市场预期的3.0%及前值3.2%。",
+      "segment_id": "b-002",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-01T16:49:42.297Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-01T16:52:02.792Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

@@ -1,0 +1,166 @@
+{
+  "rev": 0,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "markets-seem-positioned-for-a-prolonged-closure-",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Los mercados parecen estar posicionados para un cierre prolongado del Estrecho de Ormuz. Esto se refleja claramente en los precios de la energía, las tasas de interés y la concentración del liderazgo en renta variable. Sin embargo, si el panorama se desplaza —aunque sea marginalmente— hacia una desescalada, el ajuste podría ser rápido y subestimado. Un precio del petróleo más bajo incide directamente en la caída de los rendimientos y en condiciones financieras más favorables, y podría desencadenar una rotación de corto duración hacia segmentos del mercado que los inversionistas han ignorado en gran medida.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.892,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los mercados parecen estar posicionados para un cierre prolongado del Estrecho de Ormuz. Esto se refleja claramente en los precios de la energía, las tasas de interés y la concentración del liderazgo en renta variable. Sin embargo, si el panorama se desplaza —aunque sea marginalmente— hacia una desescalada, el ajuste podría ser rápido y subestimado. Un precio del petróleo más bajo incide directamente en la caída de los rendimientos y en condiciones financieras más favorables, y podría desencadenar una rotación de corto duración hacia segmentos del mercado que los inversionistas han ignorado en gran medida.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Markets seem positioned for a prolonged closure of the Strait of Hormuz. That's clear in energy prices, rates and in the concentration of equity leadership. But if the path shifts—even marginally—toward de-escalation, the adjustment could be swift and underappreciated. A lower oil price directly feeds into falling yields and easier financial conditions, and could trigger a short-term rotation into parts of the market that investors have largely ignored.",
+      "critic_flags": [
+        {
+          "span": "equity",
+          "category": "terminology",
+          "severity": "major",
+          "suggestion": "capital"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "renta variable"
+        },
+        {
+          "source": "duration",
+          "applied": true,
+          "approved_target": "duración"
+        },
+        {
+          "source": "investors",
+          "applied": false,
+          "approved_target": "inversionistas"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [
+            {
+              "span": "equity",
+              "message": "Source term \"equity\" should render as \"capital\"",
+              "expected": "capital"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_57ed7e10-ac6",
+  "source": {
+    "type": "txt",
+    "filename": "markets-seem-positioned-for-a-prolonged-closure-.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 0,
+    "hter_by_category": {},
+    "number_fail_rate": 0,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 1
+  },
+  "approval": {},
+  "edit_log": [],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "7598090256a281d8",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-05T09:40:51.047Z",
+  "deleted_at": null,
+  "updated_at": "2026-06-05T09:40:51.047Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "es-419",
+  "schema_version": "1.0"
+}

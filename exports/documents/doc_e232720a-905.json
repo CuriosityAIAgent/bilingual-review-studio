@@ -1,0 +1,2707 @@
+{
+  "rev": 6,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "How tech became everything to everyone",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "title",
+      "style": {
+        "level": 1
+      },
+      "mt_text": "Cómo la tecnología se convirtió en todo para todos",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Cómo la tecnología se convirtió en todo para todos",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "How tech became everything to everyone",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Cuando los inversionistas están entusiasmados con la inteligencia artificial, compran tecnología. Cuando les preocupa la inflación, compran tecnología. Cuando buscan superar al mercado, compran tecnología. Cuando piensan en sostenibilidad, compran tecnología. Cuando quieren invertir en crecimiento, compran tecnología. Cuando desean aprovechar el ciclo de gasto de capital, compran tecnología. Cuando les preocupa el entorno global y necesitan una empresa con reservas de efectivo, compran tecnología.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Cuando los inversionistas han estado entusiasmados con la inteligencia artificial, han comprado tecnología. Cuando les ha preocupado la inflación, han comprado tecnología. Cuando han buscado superar al mercado, compran tecnología. Cuando piensan en sostenibilidad, compran tecnología. Cuando quieren invertir en crecimiento, compran tecnología. Cuando desean aprovechar el ciclo de gasto de capital, compran tecnología. Cuando les preocupa el entorno global y necesitan una empresa con reservas de efectivo, compran tecnología.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "When investors are excited about AI, they have bought tech. When they're worried about inflation, they bought tech. When looking for outperformance, they bought tech. When thinking about sustainability, they bought tech. When they wanted to invest in growth, they bought tech. When they wanted to lean into the Capex cycle, they bought tech. When worried about the world and in need of a company with a cash cushion, they bought tech.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equity",
+          "applied": false,
+          "approved_target": "capital"
+        },
+        {
+          "source": "investors",
+          "applied": false,
+          "approved_target": "inversionistas"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Estas son solo algunas de las muchas razones por las que los inversionistas se han inclinado hacia la tecnología, incluso ante valuaciones elevadas. El sector ha sido percibido como la respuesta a todo y para todos. Es una asignación de portafolio indispensable, tanto una operación cíclica como defensiva, y el motor del crecimiento de ganancias. ¿Cómo llegamos aquí?",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Estas son solo algunas de las muchas razones por las que los inversionistas se han inclinado hacia la tecnología, incluso ante valuaciones elevadas. El sector ha sido percibido como la respuesta a todo y para todos. Es una asignación de portafolio indispensable, tanto una operación cíclica como defensiva, y el motor del crecimiento de ganancias. ¿Cómo llegamos aquí?",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "These are just some of the many reasons investors have leaned into tech, even in the face of lofty valuations. The sector has been perceived as the answer to everything and everyone. It's a must-have portfolio allocation, both a cyclical and defensive trade, and the driver of earnings growth. How did we get here?",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "ganancias"
+        },
+        {
+          "source": "portfolio",
+          "applied": false,
+          "approved_target": "portafolio"
+        },
+        {
+          "source": "investors",
+          "applied": false,
+          "approved_target": "inversionistas"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "Ganancias extraordinarias",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Ganancias extraordinarias",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Extraordinary earnings",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "ganancias"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-005",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Antes de la temporada de ganancias del primer trimestre de 2026, se esperaba que el sector tecnológico contribuyera con casi la mitad del crecimiento de ganancias proyectado. Eso es más del triple de la estimación para el S&P 500 en su conjunto. Respaldado por un sólido crecimiento de ingresos, la utilidad operativa se ha disparado, superando las incorporaciones de personal, lo que a su vez ha impulsado la expansión de márgenes. En pocas palabras, la escala está jugando a su favor, ya que las plataformas tecnológicas más grandes continúan creciendo mientras mantienen los costos incrementales bajo control.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 50,
+          "char_start": 46
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 188,
+          "char_start": 185
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 188,
+          "char_start": 181
+        }
+      ],
+      "qe_score": 0.948,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Antes de la temporada de ganancias del primer trimestre de 2026, se esperaba que el sector tecnológico contribuyera con casi la mitad del crecimiento de ganancias proyectado. Eso es más del triple de la estimación para el S&P 500 en su totalidad. Respaldado por un sólido crecimiento de ingresos, la utilidad operativa se ha disparado, superando las incorporaciones de personal, lo que a su vez ha impulsado la expansión de márgenes. En pocas palabras, la escala está jugando a su favor, ya que las plataformas tecnológicas más grandes continúan creciendo mientras mantienen los costos incrementales bajo control.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Ahead of the first-quarter earnings season of 2026, the tech sector was expected to contribute nearly half of expected earnings growth. That's more than triple the estimate for the S&P 500 as a whole. Supported by surging revenue growth, operating profit has surged, outpacing headcount additions, which in turn has fed margin expansion. In short, scale is working in their favor, as the largest technology platforms continue to grow while keeping incremental costs contained.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "ganancias"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-006",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "A principios de siglo, las acciones tecnológicas eran puramente una operación de crecimiento. Internet estaba llegando, y el mundo lo sabía. Pero las ganancias se rezagaron frente al cambio estructural en curso. Así llegó la burbuja puntocom. Tras la crisis financiera mundial, se convirtieron en algo distinto: una operación de duración. Un régimen de tasa de interés baja y una liquidez creciente en su balance general, impulsada por emisiones post-COVID a tasas cercanas a las del Tesoro y un flujo de caja libre extraordinario, contribuyeron a fortalecer su colchón de efectivo. Las tenencias de efectivo de las acciones de los Magnificent 7 —que ahora representan aproximadamente el 35% del S&P 500— crecieron más del 300% entre 2011 y 2025.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "35%",
+          "text": "35%",
+          "char_end": 538,
+          "char_start": 535
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 553,
+          "char_start": 550
+        },
+        {
+          "kind": "percent",
+          "norm": "300%",
+          "text": "300%",
+          "char_end": 568,
+          "char_start": 564
+        },
+        {
+          "kind": "date",
+          "norm": "2011",
+          "text": "2011",
+          "char_end": 581,
+          "char_start": 577
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 590,
+          "char_start": 586
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 553,
+          "char_start": 546
+        }
+      ],
+      "qe_score": 0.842,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "A principios de siglo, las acciones tecnológicas eran puramente una operación de crecimiento. Internet estaba llegando, y el mundo lo sabía. Pero las ganancias se rezagaron frente al cambio estructural en curso. Así llegó la burbuja puntocom. Tras la crisis financiera mundial, se convirtieron en algo distinto: una operación de duración. Un régimen de tasa de interés baja y una liquidez creciente en su balance general, impulsada por emisiones post-COVID a tasas cercanas a las del Tesoro y un flujo de caja libre extraordinario, contribuyeron a fortalecer su colchón de efectivo. Las tenencias de efectivo de las acciones de los Magnificent 7 —que ahora representan aproximadamente el 35% del S&P 500— crecieron más del 300% entre 2011 y 2025.",
+      "iterations": 1,
+      "seg_status": "machine",
+      "source_text": "At the turn of the century, technology stocks were purely a growth trade. The internet was coming, and the world knew it. But earnings lagged the structural shift at play. Cue the dot-com bubble. After the global financial crisis, they became something else: a duration trade. A low interest rate regime and growing liquidity on its balance sheet, thanks to post-COVID issuance at near Treasury-level rates and extraordinary free cash flow, helped build their cash cushion. Cash holdings in the Magnificent 7 stocks—which now make up ~35% of the S&P 500—grew over 300% between 2011 and 2025.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "duration",
+          "applied": false,
+          "approved_target": "duración"
+        },
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "ganancias"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-007",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Los saldos de efectivo se han disparado desde la crisis financiera. Este gráfico de áreas apiladas muestra las inversiones combinadas en efectivo y a corto duración mantenidas por las siete mayores empresas tecnológicas —Microsoft, Google, Tesla, Nvidia, Apple, Meta y Amazon— de forma trimestral desde 2011 hasta principios de 2026. El total comienza en aproximadamente $140 mil millones en 2011 y crece de manera significativa a lo largo del período, alcanzando $570 mil millones al final del gráfico. Entre las empresas individuales, Google y Apple han sido históricamente las mayores contribuyentes al conjunto, mientras que Amazon y Microsoft han crecido de forma sustancial.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2011",
+          "text": "2011",
+          "char_end": 262,
+          "char_start": 258
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 281,
+          "char_start": 277
+        },
+        {
+          "kind": "currency",
+          "norm": "140000000000",
+          "text": "$140 billion",
+          "char_end": 323,
+          "char_start": 311
+        },
+        {
+          "kind": "date",
+          "norm": "2011",
+          "text": "2011",
+          "char_end": 331,
+          "char_start": 327
+        },
+        {
+          "kind": "currency",
+          "norm": "570000000000",
+          "text": "$570 billion",
+          "char_end": 393,
+          "char_start": 381
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Los saldos de efectivo se han disparado desde la crisis financiera. Este gráfico de áreas apiladas muestra las inversiones combinadas en efectivo y a corto duración mantenidas por las siete mayores empresas tecnológicas —Microsoft, Google, Tesla, Nvidia, Apple, Meta y Amazon— de forma trimestral desde 2011 hasta principios de 2026. El total comienza en aproximadamente $140 mil millones en 2011 y crece de manera significativa a lo largo del período, alcanzando $570 mil millones al final del gráfico. Entre las empresas individuales, Google y Apple han sido históricamente las mayores contribuyentes al conjunto, mientras que Amazon y Microsoft han crecido de forma sustancial.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Cash balances have skyrocketed since the financial crisis. This stacked area chart shows the combined cash and short-term investments held by the seven largest tech companies—Microsoft, Google, Tesla, Nvidia, Apple, Meta and Amazon—on a quarterly basis from 2011 through early 2026. The total starts at roughly $140 billion in 2011 and grows dramatically over the period, reaching $570 billion by the end of the chart. Among the individual companies, Google and Apple have historically been the largest contributors to the stack, while Amazon and Microsoft have grown substantially.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "duration",
+          "applied": true,
+          "approved_target": "duración"
+        },
+        {
+          "source": "billion",
+          "applied": false,
+          "approved_target": "mil millones"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-008",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Fuente: FactSet. Datos al mes de diciembre de 2025 para todas las empresas, excepto Nvidia. Datos de Nvidia al mes de enero de 2026.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 41,
+          "char_start": 37
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 102,
+          "char_start": 98
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Fuente: FactSet. Datos al mes de diciembre de 2025 para todas las empresas, excepto Nvidia. Datos de Nvidia al mes de enero de 2026.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Source: FactSet. Data as of December 2025 for all companies but Nvidia. Nvidia data as of January 2026.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-009",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Pero incluso con —y quizás a causa de— balances generales sólidos como fortalezas, las acciones tecnológicas siguen siendo sensibles a los cambios en las tasas de interés, ya que sus valuaciones dependen de flujos de caja proyectados hacia el futuro lejano. Al fin y al cabo, siguen siendo acciones de crecimiento. Y, sin embargo, también representan una apuesta ante los cambios en las tasas de interés.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Pero incluso con —y quizás a causa de— balances generales sólidos como fortalezas, las acciones tecnológicas siguen siendo sensibles a los cambios en las tasas de interés, ya que sus valuaciones dependen de flujos de caja proyectados hacia el futuro lejano. Al fin y al cabo, siguen siendo acciones de crecimiento. Y, sin embargo, también representan una apuesta ante los cambios en las tasas de interés.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "But even with—and perhaps because of—fortress balance sheets, technology stocks remain sensitive to changes in interest rates, as their valuations hinge on cash flows far into the future. They are, after all, still growth stocks. And yet, also a play on changing interest rates.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-010",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Las ganancias duraderas y los colchones de efectivo han dotado al sector de resiliencia, incluso si las condiciones económicas se deterioran. Ya no se trata únicamente de crecimiento, ni siquiera de crecimiento acelerado. Trimestre a trimestre, las acciones tecnológicas se miden por su capacidad de superar las elevadas expectativas de los inversionistas. En otras palabras, ¿pueden estos estudiantes de excelencia seguir obteniendo calificaciones sobresalientes en sus informes de ganancias?",
+      "comments": [],
+      "entities": [],
+      "qe_score": 0.817,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Las ganancias duraderas y los colchones de efectivo han dotado al sector de resiliencia, incluso si las condiciones económicas se deterioran. Ya no se trata únicamente de crecimiento, ni siquiera de crecimiento acelerado. Trimestre a trimestre, las acciones tecnológicas se miden por su capacidad de superar las elevadas expectativas de los inversionistas. En otras palabras, ¿pueden estos estudiantes de excelencia seguir obteniendo calificaciones sobresalientes en sus informes de ganancias?",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Durable earnings and cash buffers have made the sector resilient, even if economic conditions weaken. It's no longer a question of growth or even speedy growth. Quarter by quarter, tech stocks are measured by whether they can beat high investor expectations. In other words, can these A+ students continue to get an A+ on their earnings report cards?",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "earnings",
+          "applied": false,
+          "approved_target": "ganancias"
+        },
+        {
+          "source": "investors",
+          "applied": false,
+          "approved_target": "inversionistas"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-011",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Y, sin embargo, siguen siendo algunas de las acciones más volátiles del mercado. El rango de movimiento habitual en cualquier dirección para las siete mayores acciones tecnológicas es más de un 60% superior al del S&P 500. Es poco frecuente que un solo sector encarne tantos aspectos diferentes al mismo tiempo.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "60%",
+          "text": "60%",
+          "char_end": 161,
+          "char_start": 158
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 193,
+          "char_start": 190
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 193,
+          "char_start": 186
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Y, sin embargo, siguen siendo algunas de las acciones más volátiles del mercado. El rango de movimiento habitual en cualquier dirección para las siete mayores acciones tecnológicas es más de un 60% superior al del S&P 500. Es poco frecuente que un solo sector incorpore tantos aspectos diferentes al mismo tiempo.",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "And yet, they remain some of the most volatile stocks in the market. A normal range of movement in either direction for the seven biggest tech stocks is over 60% larger than that of the S&P 500. It's rare for a single sector to embody so many different aspects at once.",
+      "critic_flags": [
+        {
+          "span": "500",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "500"
+        }
+      ],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "500",
+              "message": "Numeric value \"500\" (mantissa 500) not preserved in translation",
+              "expected": "500"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-012",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "La era industrial de la tecnología",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La era industrial de la tecnología",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Tech's industrial era",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-013",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "A pesar de su asociación con el crecimiento y con los grandes actores que se benefician de la demanda defensiva, la tecnología también es profundamente cíclica —ya sea por los cortos ciclos de auge y caída de los semiconductores, el gasto publicitario vinculado a los motores de búsqueda y las redes sociales, o el crecimiento basado en suscripciones sujeto a los vaivenes de la inversión empresarial.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "A pesar de su asociación con el crecimiento y con los grandes actores que se benefician de la demanda defensiva, la tecnología también es profundamente cíclica —ya sea por los cortos ciclos de auge y caída de los semiconductores, el gasto publicitario vinculado a los motores de búsqueda y las redes sociales, o el crecimiento basado en suscripciones sujeto a los vaivenes de la inversión empresarial.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "For all its association with growth and the biggest players benefitting from defensive bids, tech is also deeply cyclical—whether it's the short boom and bust cycles of semiconductors, ad spend associated with search engines and social media, or subscription-based growth at the whim of business investment.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-014",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Ahora, con la innovación de la inteligencia artificial, todo gira en torno a la infraestructura física, al tiempo que el sector ya está profundamente integrado en el ecosistema digital y constituye una asignación central del portafolio.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Ahora, con la innovación de la inteligencia artificial, todo gira en torno a la infraestructura física, al tiempo que el sector ya está profundamente integrado en el ecosistema digital y constituye una asignación central del portafolio.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Now, with the innovation of AI, it's all about physical infrastructure while already being deeply embedded in the digital ecosystem and a core portfolio allocation.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "portfolio",
+          "applied": false,
+          "approved_target": "portafolio"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-015",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "A la vanguardia de la ola de inteligencia artificial, las empresas tecnológicas están impulsando un aumento del gasto de capital —en centros de datos, chips e infraestructura energética— a una escala histórica. Esto comienza a asemejarse a los ciclos industriales más tradicionales, donde el crecimiento depende menos de la escalabilidad con activos ligeros y más de la capacidad de desplegar grandes volúmenes de capital de manera eficiente.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "A la vanguardia de la ola de inteligencia artificial, las empresas tecnológicas están impulsando un aumento del gasto de capital —en centros de datos, chips e infraestructura energética— a una escala histórica. Esto comienza a asemejarse a los ciclos industriales más tradicionales, donde el crecimiento depende menos de la escalabilidad con activos ligeros y más de la capacidad de desplegar grandes volúmenes de capital de manera eficiente.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "At the helm of the AI wave, tech companies are driving a surge in capital expenditure—on data centers, chips and energy infrastructure—at a historic scale. This is beginning to resemble older industrial cycles, where growth depends less on asset-light scalability and more on the ability to deploy vast amounts of capital efficiently.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equity",
+          "applied": false,
+          "approved_target": "capital"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-016",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Durante décadas, el atractivo de la tecnología radicó en los elevados retornos de capital y las mínimas necesidades de reinversión. Ahora ocurre lo contrario: se destinan miles de millones a infraestructura física para sostener la próxima ola de crecimiento.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Durante décadas, el atractivo de la tecnología radicó en los elevados retornos de capital y las mínimas necesidades de reinversión. Ahora ocurre lo contrario: se destinan miles de millones a infraestructura física para sostener la próxima ola de crecimiento.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "For decades, tech's appeal has been high capital returns and minimal reinvestment needs. Now, it's the opposite: pouring billions into physical infrastructure to sustain the next wave of growth.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equity",
+          "applied": false,
+          "approved_target": "capital"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-017",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "El gasto de capital de los hiperescaladores está aumentando rápidamente. Este gráfico de líneas muestra cómo han evolucionado las expectativas de crecimiento del gasto de capital para 2026 a lo largo del último año, de abril de 2025 a abril de 2026, para tres grupos: los hiperescaladores, el S&P 500 en su conjunto y el S&P 500 excluyendo a dichos hiperescaladores. Los hiperescaladores comenzaron con un crecimiento esperado del gasto de aproximadamente el 8% en abril de 2025 y ascendieron de forma escalonada, alcanzando el 64% al final del gráfico. El S&P 500 en su conjunto subió de aproximadamente el 2% al 28%, impulsado en gran medida por esos mismos hiperescaladores. Mientras tanto, el resto del S&P 500 sin los hiperescaladores apenas se movió, avanzando del 1% aproximadamente hasta solo el 8%.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 101,
+          "char_start": 97
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 174,
+          "char_start": 170
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 193,
+          "char_start": 189
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 250,
+          "char_start": 247
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 266,
+          "char_start": 263
+        },
+        {
+          "kind": "percent",
+          "norm": "8%",
+          "text": "8%",
+          "char_end": 331,
+          "char_start": 329
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 370,
+          "char_start": 366
+        },
+        {
+          "kind": "percent",
+          "norm": "64%",
+          "text": "64%",
+          "char_end": 419,
+          "char_start": 416
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 456,
+          "char_start": 453
+        },
+        {
+          "kind": "percent",
+          "norm": "2%",
+          "text": "2%",
+          "char_end": 485,
+          "char_start": 483
+        },
+        {
+          "kind": "percent",
+          "norm": "28%",
+          "text": "28%",
+          "char_end": 492,
+          "char_start": 489
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 584,
+          "char_start": 581
+        },
+        {
+          "kind": "percent",
+          "norm": "1%",
+          "text": "1%",
+          "char_end": 647,
+          "char_start": 645
+        },
+        {
+          "kind": "percent",
+          "norm": "8%",
+          "text": "8%",
+          "char_end": 661,
+          "char_start": 659
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 250,
+          "char_start": 243
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 266,
+          "char_start": 259
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 456,
+          "char_start": 449
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 584,
+          "char_start": 577
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "El gasto de capital de los hiperescaladores está aumentando rápidamente. Este gráfico de líneas muestra cómo han evolucionado las expectativas de crecimiento del gasto de capital para 2026 a lo largo del último año, de abril de 2025 a abril de 2026, para tres grupos: los hiperescaladores, el S&P 500 en su conjunto y el S&P 500 excluyendo a dichos hiperescaladores. Los hiperescaladores comenzaron con un crecimiento esperado del gasto de aproximadamente el 8% en abril de 2025 y ascendieron de forma escalonada, alcanzando el 64% al final del gráfico. El S&P 500 en su conjunto subió de aproximadamente el 2% al 28%, impulsado en gran medida por esos mismos hiperescaladores. Mientras tanto, el resto del S&P 500 sin los hiperescaladores apenas se movió, avanzando del 1% aproximadamente hasta solo el 8%.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Hyperscaler capital expenditures are rising rapidly. This line chart tracks how expectations for 2026 capital spending growth have evolved over the past year, from April 2025 through April 2026, for three groups: the hyperscalers, the overall S&P 500 and the S&P 500 excluding those hyperscalers. The hyperscalers started around 8% expected spending growth in April 2025 and climbed in a staircase pattern, reaching 64% by the end of the chart. The S&P 500 overall rose from roughly 2% to 28%, pulled higher in large part by those same hyperscalers. Meanwhile, the rest of the S&P 500 without the hyperscalers barely budged, creeping from about 1% up to just 8%.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equity",
+          "applied": false,
+          "approved_target": "capital"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-018",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Fuente: FactSet. Datos al 30 de abril de 2026. Nota: Hiperescaladores = Microsoft, Amazon, Google, Meta y Oracle.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "30",
+          "text": "30",
+          "char_end": 36,
+          "char_start": 34
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 42,
+          "char_start": 38
+        }
+      ],
+      "qe_score": 0.55,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Fuente: FactSet. Datos al 30 de abril de 2026. Nota: Hiperescaladores = Microsoft, Amazon, Google, Meta y Oracle.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Source: FactSet. Data as of April 30, 2026. Note: Hyperscalers = Microsoft, Amazon, Google, Meta, and Oracle.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-019",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La tecnología es simultáneamente de larga duración y cíclica, defensiva y de alto beta, con activos ligeros e intensiva en capital.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La tecnología es simultáneamente de larga duración y cíclica, defensiva y de alto beta, con activos ligeros e intensiva en capital.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Tech is simultaneously long-duration and cyclical, defensive and high-beta, capital-light and capital-intensive.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equity",
+          "applied": false,
+          "approved_target": "capital"
+        },
+        {
+          "source": "duration",
+          "applied": false,
+          "approved_target": "duración"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-020",
+      "dnt": false,
+      "type": "subhead",
+      "style": {
+        "level": 2
+      },
+      "mt_text": "Tecnología, al encuentro de la fragmentación",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Tecnología, al encuentro de la fragmentación",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Technology, meet fragmentation",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-021",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "El desarrollo de infraestructura y el crecimiento del sector tecnológico se han vuelto cada vez más sinónimos de las perspectivas de crecimiento de la economía estadounidense. Esto, a su vez, plantea interrogantes sobre la resiliencia de las cadenas de suministro y la relocalización cercana. Ya no basta con abastecerse de chips y materias primas de todo el mundo de manera económicamente viable.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "El desarrollo de infraestructura y el crecimiento del sector tecnológico se han vuelto cada vez más sinónimos de las perspectivas de crecimiento de la economía estadounidense. Esto, a su vez, plantea interrogantes sobre la resiliencia de las cadenas de suministro y la relocalización cercana. Ya no basta con abastecerse de chips y materias primas de todo el mundo de manera económicamente viable.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "The infrastructure build out and growth in the tech sector has become increasingly synonymous with the U.S. economy's growth prospects. That, in turn, raises questions around supply chain resilience and nearshoring. It's not enough to source chips and raw materials from around the world in an economically feasible way.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "supply chains",
+          "applied": false,
+          "approved_target": "cadenas de suministro"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-022",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Pagar una prima para financiar un desarrollo físico en suelo soberano, con cadenas de suministro tanto diversificadas como más cercanas al consumidor final, resulta más aceptable que nunca. Como parte de la tendencia más amplia de desglobalización, el ejemplo más claro del cambio en la tecnología es el aumento de las importaciones de productos tecnológicos avanzados provenientes de México, en detrimento de la participación de mercado de China.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Pagar una prima para financiar un desarrollo físico en suelo soberano, con cadenas de suministro tanto diversificadas como más cercanas al consumidor final, resulta más aceptable que nunca. Como parte de la tendencia más amplia de desglobalización, el ejemplo más claro del cambio en la tecnología es el aumento de las importaciones de productos tecnológicos avanzados provenientes de México, en detrimento de la participación de mercado de China.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Paying a premium to fund a physical build out on sovereign soil, and supply chains that are both diversified and a shorter distance from the end consumer, is more palatable than ever. As part of the broader deglobalization trend, the clearest example of the shift in technology is the increased imports of advanced technology products from Mexico, at the expense of China's share.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "supply chains",
+          "applied": false,
+          "approved_target": "cadenas de suministro"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-023",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "La dependencia de EE. UU. se desplaza de China a México. Este gráfico de barras compara el volumen de importaciones de productos tecnológicos avanzados que realizó Estados Unidos desde China y México en 2024 y 2025, medido en miles de millones de dólares. En 2024, China y México estaban cerca: China con $112 mil millones y México con $102 mil millones. Para 2025, el panorama cambió drásticamente. Las importaciones desde China se redujeron casi a la mitad, cayendo a $62 mil millones, mientras que las importaciones desde México se dispararon a $149 mil millones.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "date",
+          "norm": "2024",
+          "text": "2024",
+          "char_end": 167,
+          "char_start": 163
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 176,
+          "char_start": 172
+        },
+        {
+          "kind": "date",
+          "norm": "2024",
+          "text": "2024",
+          "char_end": 218,
+          "char_start": 214
+        },
+        {
+          "kind": "currency",
+          "norm": "112000000000",
+          "text": "$112 billion",
+          "char_end": 269,
+          "char_start": 257
+        },
+        {
+          "kind": "currency",
+          "norm": "102000000000",
+          "text": "$102 billion",
+          "char_end": 296,
+          "char_start": 284
+        },
+        {
+          "kind": "date",
+          "norm": "2025",
+          "text": "2025",
+          "char_end": 305,
+          "char_start": 301
+        },
+        {
+          "kind": "currency",
+          "norm": "62000000000",
+          "text": "$62 billion",
+          "char_end": 408,
+          "char_start": 397
+        },
+        {
+          "kind": "currency",
+          "norm": "149000000000",
+          "text": "$149 billion",
+          "char_end": 458,
+          "char_start": 446
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "La dependencia de EE. UU. se desplaza de China a México. Este gráfico de barras compara el volumen de importaciones de productos tecnológicos avanzados que realizó Estados Unidos desde China y México en 2024 y 2025, medido en miles de millones de dólares. En 2024, China y México estaban cerca: China con $112 mil millones y México con $102 mil millones. Para 2025, el panorama cambió drásticamente. Las importaciones desde China se redujeron casi a la mitad, cayendo a $62 mil millones, mientras que las importaciones desde México se dispararon a $149 mil millones.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "U.S. reliance shifts from China to Mexico. This bar chart compares how much the United States imported in advanced technology products from China versus Mexico in 2024 and 2025, measured in billions of dollars. In 2024, China and Mexico were close—China at $112 billion and Mexico at $102 billion. By 2025, the picture flipped dramatically. Imports from China were nearly cut in half, dropping to $62 billion, while imports from Mexico surged to $149 billion.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "billion",
+          "applied": false,
+          "approved_target": "mil millones"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-024",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "Fuente: J.P. Morgan Private Bank, Oficina del Censo de EE. UU. – Comercio de Productos Tecnológicos Avanzados (ATP). Datos al 24 de febrero de 2026.",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "ticker",
+          "norm": "(ATP)",
+          "text": "(ATP)",
+          "char_end": 89,
+          "char_start": 84
+        },
+        {
+          "kind": "number",
+          "norm": "24",
+          "text": "24",
+          "char_end": 119,
+          "char_start": 117
+        },
+        {
+          "kind": "date",
+          "norm": "2026",
+          "text": "2026",
+          "char_end": 125,
+          "char_start": 121
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "Fuente: J.P. Morgan Private Bank, Oficina del Censo de EE. UU. – Comercio de Productos Tecnológicos Avanzados (ATP). Datos al 24 de febrero de 2026.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Source: J.P. Morgan Private Bank, U.S. Census Bureau – Advanced Technology Products (ATP) Trade. Data as of February 24, 2026.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-025",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "En una variedad de regímenes macroeconómicos, la tecnología se ha convertido en la respuesta predeterminada del mercado —no porque encaje perfectamente en una sola categoría, sino porque encaja en todas ellas. Esa amplitud es su fortaleza y, por ahora, el sector continúa cumpliendo las expectativas.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "En una variedad de regímenes macroeconómicos, la tecnología se ha convertido en la respuesta predeterminada del mercado —no porque encaje perfectamente en una sola categoría, sino porque encaja en todas ellas. Esa amplitud es su fortaleza y, por ahora, el sector continúa cumpliendo las expectativas.",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "In a variety of macroeconomic regimes, technology has become the market's default answer—not because it fits neatly into any one category, but because it fits into all of them. That breadth is its strength, and, for now, the sector continues to deliver.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-026",
+      "dnt": false,
+      "type": "disclaimer",
+      "mt_text": "Este material tiene únicamente fines informativos y puede informarle sobre ciertos productos y servicios ofrecidos por los negocios de banca privada, parte de JPMorgan Chase & Co. Las opiniones, estrategias o productos analizados pueden no ser apropiados para todas las personas y están sujetos a riesgos. Los inversionistas podrían recuperar menos de lo que invirtieron, y el rendimiento pasado no es un indicador confiable de los resultados futuros. Este material no debe considerarse un informe de análisis.",
+      "comments": [],
+      "entities": [],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 1,
+        "tm_id": "tm-006",
+        "source": "TM"
+      },
+      "final_text": "Este material tiene únicamente fines informativos y puede informarle sobre ciertos productos y servicios ofrecidos por los negocios de banca privada, parte de JPMorgan Chase & Co. Las opiniones, estrategias o productos analizados pueden no ser apropiados para todas las personas y están sujetos a riesgos. Los inversionistas podrían recuperar menos de lo que invirtieron, y el rendimiento pasado no es un indicador confiable de los resultados futuros. Este material no debe considerarse un informe de análisis.",
+      "iterations": 0,
+      "seg_status": "locked",
+      "source_text": "This material is for information purposes only and may inform you of certain products and services offered by private banking businesses, part of JPMorgan Chase & Co. Any views, strategies or products discussed may not be appropriate for all individuals and are subject to risks. Investors may get back less than they invested, and past performance is not a reliable indicator of future results. This material should not be regarded as a research report.",
+      "critic_flags": [],
+      "glossary_hits": [],
+      "validator_results": [],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_e232720a-905",
+  "source": {
+    "type": "txt",
+    "filename": "jpm-05-tech-everything.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 3.38,
+    "hter_by_category": {
+      "accuracy": 0.022
+    },
+    "number_fail_rate": 0.038,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_57bc8e86-831",
+      "ts": "2026-06-03T14:00:28.376Z",
+      "hter": 0.05,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Cuando los inversionistas han estado entusiasmados con la inteligencia artificial, han comprado tecnología. Cuando les ha preocupado la inflación, compraron tecnología. Cuando han buscado superar al mercado, compran tecnología. Cuando piensan en sostenibilidad, compran tecnología. Cuando quieren invertir en crecimiento, compran tecnología. Cuando desean aprovechar el ciclo de gasto de capital, compran tecnología. Cuando les preocupa el entorno global y necesitan una empresa con reservas de efectivo, compran tecnología.",
+      "action": "edit",
+      "before": "Cuando los inversionistas están entusiasmados con la inteligencia artificial, compran tecnología. Cuando les preocupa la inflación, compran tecnología. Cuando buscan superar al mercado, compran tecnología. Cuando piensan en sostenibilidad, compran tecnología. Cuando quieren invertir en crecimiento, compran tecnología. Cuando desean aprovechar el ciclo de gasto de capital, compran tecnología. Cuando les preocupa el entorno global y necesitan una empresa con reservas de efectivo, compran tecnología.",
+      "segment_id": "b-002",
+      "char_edit_distance": 26,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_8d5507ff-32e",
+      "ts": "2026-06-03T14:02:12.744Z",
+      "hter": 0.013,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Antes de la temporada de ganancias del primer trimestre de 2026, se esperaba que el sector tecnológico contribuyera con casi la mitad del crecimiento de ganancias proyectado. Eso es más del triple de la estimación para el S&P 500 en su totalidad. Respaldado por un sólido crecimiento de ingresos, la utilidad operativa se ha disparado, superando las incorporaciones de personal, lo que a su vez ha impulsado la expansión de márgenes. En pocas palabras, la escala está jugando a su favor, ya que las plataformas tecnológicas más grandes continúan creciendo mientras mantienen los costos incrementales bajo control.",
+      "action": "edit",
+      "before": "Antes de la temporada de ganancias del primer trimestre de 2026, se esperaba que el sector tecnológico contribuyera con casi la mitad del crecimiento de ganancias proyectado. Eso es más del triple de la estimación para el S&P 500 en su conjunto. Respaldado por un sólido crecimiento de ingresos, la utilidad operativa se ha disparado, superando las incorporaciones de personal, lo que a su vez ha impulsado la expansión de márgenes. En pocas palabras, la escala está jugando a su favor, ya que las plataformas tecnológicas más grandes continúan creciendo mientras mantienen los costos incrementales bajo control.",
+      "segment_id": "b-005",
+      "char_edit_distance": 8,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_13f746a0-8ac",
+      "ts": "2026-06-03T14:09:07.554Z",
+      "hter": 0.011,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Cuando los inversionistas han estado entusiasmados con la inteligencia artificial, han comprado tecnología. Cuando les ha preocupado la inflación, han comprado tecnología. Cuando han buscado superar al mercado, compran tecnología. Cuando piensan en sostenibilidad, compran tecnología. Cuando quieren invertir en crecimiento, compran tecnología. Cuando desean aprovechar el ciclo de gasto de capital, compran tecnología. Cuando les preocupa el entorno global y necesitan una empresa con reservas de efectivo, compran tecnología.",
+      "action": "edit",
+      "before": "Cuando los inversionistas han estado entusiasmados con la inteligencia artificial, han comprado tecnología. Cuando les ha preocupado la inflación, compraron tecnología. Cuando han buscado superar al mercado, compran tecnología. Cuando piensan en sostenibilidad, compran tecnología. Cuando quieren invertir en crecimiento, compran tecnología. Cuando desean aprovechar el ciclo de gasto de capital, compran tecnología. Cuando les preocupa el entorno global y necesitan una empresa con reservas de efectivo, compran tecnología.",
+      "segment_id": "b-002",
+      "char_edit_distance": 6,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_414342a0-63a",
+      "ts": "2026-06-03T14:14:12.818Z",
+      "hter": 0.016,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "Y, sin embargo, siguen siendo algunas de las acciones más volátiles del mercado. El rango de movimiento habitual en cualquier dirección para las siete mayores acciones tecnológicas es más de un 60% superior al del S&P 500. Es poco frecuente que un solo sector incorpore tantos aspectos diferentes al mismo tiempo.",
+      "action": "edit",
+      "before": "Y, sin embargo, siguen siendo algunas de las acciones más volátiles del mercado. El rango de movimiento habitual en cualquier dirección para las siete mayores acciones tecnológicas es más de un 60% superior al del S&P 500. Es poco frecuente que un solo sector encarne tantos aspectos diferentes al mismo tiempo.",
+      "segment_id": "b-011",
+      "char_edit_distance": 5,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "9a47e790ba8e8c81",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v1 | critic-mqm-regionalism-v1",
+    "critic_model_id": "gpt-5 (deterministic fallback)",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-06-03T13:57:40.942Z",
+  "deleted_at": null,
+  "updated_at": "2026-06-03T14:14:12.818Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "es-419",
+  "schema_version": "1.0"
+}

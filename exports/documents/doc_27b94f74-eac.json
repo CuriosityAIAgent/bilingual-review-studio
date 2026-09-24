@@ -1,0 +1,751 @@
+{
+  "rev": 2,
+  "owner": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "title": "u-s-markets-u-s-equities-were-flat-s-p-500-flat-",
+  "blocks": [
+    {
+      "id": "b-001",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "美国市场：美国股票基本持平（S&P 500持平，纳斯达克指数 -0.2%），等权重标普500指数跑赢市值加权指数近80个基点。大型科技股出现反弹，微软(MSFT)和谷歌(GOOGL)录得上涨，但半导体板块持续承压。美国国债收益率普遍下行（2年期下行1个基点至4.32%，10年期下行3个基点至4.65%，30年期下行3个基点至5.13%）。美元上涨+0.1%，黄金上涨+0.2%，布伦特原油因美伊双方暂停攻击及持续谈判的消息下跌-11%至约1× $88。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 46,
+          "char_start": 43
+        },
+        {
+          "kind": "percent",
+          "norm": "-0.2%",
+          "text": "-0.2%",
+          "char_end": 65,
+          "char_start": 60
+        },
+        {
+          "kind": "number",
+          "norm": "500",
+          "text": "500",
+          "char_end": 94,
+          "char_start": 91
+        },
+        {
+          "kind": "number",
+          "norm": "80000000000bps",
+          "text": "80bps",
+          "char_end": 140,
+          "char_start": 135
+        },
+        {
+          "kind": "number",
+          "norm": "1000000000bps",
+          "text": "1bps",
+          "char_end": 289,
+          "char_start": 285
+        },
+        {
+          "kind": "percent",
+          "norm": "4.32%",
+          "text": "4.32%",
+          "char_end": 298,
+          "char_start": 293
+        },
+        {
+          "kind": "number",
+          "norm": "3000000000bps",
+          "text": "3bps",
+          "char_end": 309,
+          "char_start": 305
+        },
+        {
+          "kind": "percent",
+          "norm": "4.65%",
+          "text": "4.65%",
+          "char_end": 318,
+          "char_start": 313
+        },
+        {
+          "kind": "number",
+          "norm": "3000000000bps",
+          "text": "3bps",
+          "char_end": 329,
+          "char_start": 325
+        },
+        {
+          "kind": "percent",
+          "norm": "5.13%",
+          "text": "5.13%",
+          "char_end": 338,
+          "char_start": 333
+        },
+        {
+          "kind": "percent",
+          "norm": "0.1%",
+          "text": "0.1%",
+          "char_end": 364,
+          "char_start": 360
+        },
+        {
+          "kind": "percent",
+          "norm": "0.2%",
+          "text": "0.2%",
+          "char_end": 383,
+          "char_start": 379
+        },
+        {
+          "kind": "percent",
+          "norm": "-11%",
+          "text": "-11%",
+          "char_end": 403,
+          "char_start": 399
+        },
+        {
+          "kind": "currency",
+          "norm": "88",
+          "text": "$88",
+          "char_end": 412,
+          "char_start": 408
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 46,
+          "char_start": 39
+        },
+        {
+          "kind": "entity",
+          "norm": "S&P 500",
+          "text": "S&P 500",
+          "char_end": 94,
+          "char_start": 87
+        },
+        {
+          "kind": "entity",
+          "norm": "Nasdaq",
+          "text": "Nasdaq",
+          "char_end": 59,
+          "char_start": 53
+        }
+      ],
+      "qe_score": 0.4,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "美国市场：美国股票基本持平（S&P 500持平，纳斯达克指数 -0.2%），等权重标普500指数跑赢市值加权指数近80个基点。大型科技股出现反弹，微软(MSFT)和谷歌(GOOGL)录得上涨，但半导体板块持续承压。美国国债收益率普遍下行（2年期下行1个基点至4.32%，10年期下行3个基点至4.65%，30年期下行3个基点至5.13%）。美元上涨+0.1%，黄金上涨+0.2%，布伦特原油因美伊双方暂停攻击及持续谈判的消息下跌-11%至约$88。",
+      "iterations": 1,
+      "seg_status": "edited",
+      "source_text": "U.S. markets: U.S. equities were flat (S&P 500 flat, Nasdaq -0.2%) as the equal-weight S&P 500 outperformed the cap-weighted by nearly 80bps. Big tech staged a recovery with MSFT and GOOGL gaining though semiconductors continued to see pressure. Treasury yields were mostly lower (2Y -1bps to 4.32%, 10Y -3bps to 4.65%, 30Y -3bps to 5.13%). The dollar was up +0.1%, gold gained +0.2% and Brent fell -11% to ~$88 on news of a pause in attacks between the U.S. and Iran and reports of ongoing talks.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "semiconductor",
+          "applied": false,
+          "approved_target": "半导体"
+        },
+        {
+          "source": "gold",
+          "applied": false,
+          "approved_target": "黄金"
+        },
+        {
+          "source": "crude oil",
+          "applied": false,
+          "approved_target": "原油"
+        },
+        {
+          "source": "S&P 500",
+          "applied": false,
+          "approved_target": "标普500指数"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [
+            {
+              "span": "Nasdaq",
+              "message": "DNT token \"Nasdaq\" was altered or dropped",
+              "expected": "Nasdaq"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "major",
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-002",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "欧洲市场：随着市场消化中东局势暂时缓和的消息，欧洲股票基本持平。然而，市场对潜在能源危机的担忧日益加剧，目前天然气储量约为50%至54%，为7月下旬历史低位，低于约90%的五年均值。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "number",
+          "norm": "50",
+          "text": "50",
+          "char_end": 185,
+          "char_start": 183
+        },
+        {
+          "kind": "percent",
+          "norm": "-54%",
+          "text": "-54%",
+          "char_end": 189,
+          "char_start": 185
+        },
+        {
+          "kind": "percent",
+          "norm": "90%",
+          "text": "90%",
+          "char_end": 264,
+          "char_start": 261
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "欧洲市场：随着市场消化中东局势暂时缓和的消息，欧洲股票基本持平。然而，市场对潜在能源危机的担忧日益加剧，目前天然气储量约为50%至54%，为7月下旬历史低位，低于约90%的五年均值。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "Europe markets: European equities were flat as markets digested a pause in Middle East hostilities. However, concerns are rising over a potential energy crisis as gas storage is near 50-54% full, a historic low for late July and below the five-year average of ~90%.",
+      "critic_flags": [
+        {
+          "span": "-54%",
+          "category": "number",
+          "severity": "critical",
+          "suggestion": "-54"
+        }
+      ],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [
+            {
+              "span": "-54%",
+              "message": "Numeric value \"-54%\" (mantissa -54) not preserved in translation",
+              "expected": "-54"
+            }
+          ],
+          "status": "fail",
+          "blocking": true,
+          "severity": "critical",
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-003",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "日本市场：日本股票上涨（日经指数+0.5%，东证指数+1.4%），存储芯片股小幅回落。高市内阁7月支持率下滑10个百分点至58%，为其去年10月就任以来首次跌破60%。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "0.5%",
+          "text": "0.5%",
+          "char_end": 51,
+          "char_start": 47
+        },
+        {
+          "kind": "percent",
+          "norm": "1.4%",
+          "text": "1.4%",
+          "char_end": 64,
+          "char_start": 60
+        },
+        {
+          "kind": "number",
+          "norm": "10",
+          "text": "10",
+          "char_end": 148,
+          "char_start": 146
+        },
+        {
+          "kind": "percent",
+          "norm": "58%",
+          "text": "58%",
+          "char_end": 170,
+          "char_start": 167
+        },
+        {
+          "kind": "percent",
+          "norm": "60%",
+          "text": "60%",
+          "char_end": 189,
+          "char_start": 186
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "日本市场：日本股票上涨（日经指数+0.5%，东证指数+1.4%），存储芯片股小幅回落。首相高市早苗的内阁7月支持率下滑10个百分点至58%，为其去年10月就任以来首次跌破60%。",
+      "iterations": 0,
+      "seg_status": "edited",
+      "source_text": "Japan markets: Japanese equities rose (Nikkei +0.5%, Topix +1.4%) as memory stocks dipped. Prime Minister Takaichi’s cabinet approval rating fell 10 points in July to 58%, dipping below 60% for the first time since she took office last October.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    },
+    {
+      "id": "b-004",
+      "dnt": false,
+      "type": "body",
+      "mt_text": "中国市场：中国股票上涨（恒生指数+1.0%，沪深300指数+1.2%），科技板块表现强劲（恒生科技指数+1.6%）。长鑫存储技术（688825 CH）上市首日收盘大涨466%，盘中涨幅一度高达535%，推动这家存储芯片制造商跻身中国境内上市规模最大的公司之列。",
+      "comments": [],
+      "entities": [
+        {
+          "kind": "percent",
+          "norm": "1%",
+          "text": "1.0%",
+          "char_end": 53,
+          "char_start": 49
+        },
+        {
+          "kind": "number",
+          "norm": "300",
+          "text": "300",
+          "char_end": 62,
+          "char_start": 59
+        },
+        {
+          "kind": "percent",
+          "norm": "1.2%",
+          "text": "1.2%",
+          "char_end": 68,
+          "char_start": 64
+        },
+        {
+          "kind": "percent",
+          "norm": "1.6%",
+          "text": "1.6%",
+          "char_end": 113,
+          "char_start": 109
+        },
+        {
+          "kind": "number",
+          "norm": "688825",
+          "text": "688825",
+          "char_end": 152,
+          "char_start": 146
+        },
+        {
+          "kind": "percent",
+          "norm": "466%",
+          "text": "466%",
+          "char_end": 168,
+          "char_start": 164
+        },
+        {
+          "kind": "percent",
+          "norm": "535%",
+          "text": "535%",
+          "char_end": 244,
+          "char_start": 240
+        }
+      ],
+      "qe_score": 1,
+      "tm_match": {
+        "score": 0,
+        "source": "none"
+      },
+      "final_text": "中国市场：中国股票上涨（恒生指数+1.0%，沪深300指数+1.2%），科技板块表现强劲（恒生科技指数+1.6%）。长鑫存储技术（688825 CH）上市首日收盘大涨466%，盘中涨幅一度高达535%，推动这家存储芯片制造商跻身中国境内上市规模最大的公司之列。",
+      "iterations": 0,
+      "seg_status": "machine",
+      "source_text": "China markets: Chinese equities rose (Hang Seng +1.0%, CSI 300 +1.2%) with strength in tech (Hang Seng Tech +1.6%). ChangXin Memory Technologies (688825 CH) closed 466% higher on its trading debut, with the intraday price rising as much as 535%, propelling the memory chipmaker to become China's largest onshore listed company.",
+      "critic_flags": [],
+      "glossary_hits": [
+        {
+          "source": "equities",
+          "applied": false,
+          "approved_target": "股票"
+        },
+        {
+          "source": "Hang Seng Index",
+          "applied": false,
+          "approved_target": "恒生指数"
+        },
+        {
+          "source": "CSI 300",
+          "applied": false,
+          "approved_target": "沪深300指数"
+        },
+        {
+          "source": "scale",
+          "applied": false,
+          "approved_target": "规模"
+        }
+      ],
+      "validator_results": [
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "number"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "currency"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "date"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "ticker"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "isin"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "dnt"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "glossary"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "regionalism"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "disclaimer"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": false,
+          "validator": "english_leakage"
+        },
+        {
+          "issues": [],
+          "status": "pass",
+          "blocking": true,
+          "validator": "script_consistency"
+        }
+      ],
+      "neutralization_hits": []
+    }
+  ],
+  "doc_id": "doc_27b94f74-eac",
+  "source": {
+    "type": "txt",
+    "filename": "u-s-markets-u-s-equities-were-flat-s-p-500-flat-.md",
+    "ocr_used": false
+  },
+  "status": "draft",
+  "figures": [],
+  "metrics": {
+    "edits_per_1k": 9.71,
+    "hter_by_category": {
+      "accuracy": 0.035
+    },
+    "number_fail_rate": 0.25,
+    "time_to_approval_s": 0,
+    "reviewer_accept_rate": 0,
+    "regionalism_fail_rate": 0,
+    "terminology_fail_rate": 0
+  },
+  "approval": {},
+  "edit_log": [
+    {
+      "id": "edit_15669a15-a68",
+      "ts": "2026-07-28T01:35:32.552Z",
+      "hter": 0.013,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "美国市场：美国股票基本持平（S&P 500持平，纳斯达克指数 -0.2%），等权重标普500指数跑赢市值加权指数近80个基点。大型科技股出现反弹，微软(MSFT)和谷歌(GOOGL)录得上涨，但半导体板块持续承压。美国国债收益率普遍下行（2年期下行1个基点至4.32%，10年期下行3个基点至4.65%，30年期下行3个基点至5.13%）。美元上涨+0.1%，黄金上涨+0.2%，布伦特原油因美伊双方暂停攻击及持续谈判的消息下跌-11%至约$88。",
+      "action": "edit",
+      "before": "美国市场：美国股票基本持平（S&P 500持平，纳斯达克指数 -0.2%），等权重标普500指数跑赢市值加权指数近80个基点。大型科技股出现反弹，微软(MSFT)和谷歌(GOOGL)录得上涨，但半导体板块持续承压。美国国债收益率普遍下行（2年期下行1个基点至4.32%，10年期下行3个基点至4.65%，30年期下行3个基点至5.13%）。美元上涨+0.1%，黄金上涨+0.2%，布伦特原油因美伊双方暂停攻击及持续谈判的消息下跌-11%至约1× $88。",
+      "segment_id": "b-001",
+      "char_edit_distance": 3,
+      "error_categories_corrected": []
+    },
+    {
+      "id": "edit_55708ec7-323",
+      "ts": "2026-07-28T01:38:52.510Z",
+      "hter": 0.056,
+      "actor": {
+        "role": "author",
+        "team_id": "latam-strategy",
+        "user_id": "ana",
+        "display_name": "Ana Reyes"
+      },
+      "after": "日本市场：日本股票上涨（日经指数+0.5%，东证指数+1.4%），存储芯片股小幅回落。首相高市早苗的内阁7月支持率下滑10个百分点至58%，为其去年10月就任以来首次跌破60%。",
+      "action": "edit",
+      "before": "日本市场：日本股票上涨（日经指数+0.5%，东证指数+1.4%），存储芯片股小幅回落。高市内阁7月支持率下滑10个百分点至58%，为其去年10月就任以来首次跌破60%。",
+      "segment_id": "b-003",
+      "char_edit_distance": 5,
+      "error_categories_corrected": []
+    }
+  ],
+  "model_run": {
+    "thresholds": {
+      "max_iters": 2,
+      "human_floor": 0.55,
+      "qe_threshold": 0.9
+    },
+    "config_hash": "f70bc69c9e281b8c",
+    "qe_model_id": "Xenova/paraphrase-multilingual-MiniLM-L12-v2 (in-container)",
+    "rules_version": "neutralization-2026.1",
+    "prompt_version": "translator-neutral-es-v2 | critic-mqm-regionalism-v2",
+    "critic_model_id": "gpt-4o",
+    "glossary_version": "neutral-es-2026.1",
+    "translator_model_id": "claude-sonnet-4-6"
+  },
+  "created_at": "2026-07-28T01:24:54.005Z",
+  "deleted_at": null,
+  "updated_at": "2026-07-28T01:38:52.510Z",
+  "assigned_to": {
+    "team_id": "latam-strategy",
+    "user_id": "ana"
+  },
+  "handoff_log": [],
+  "source_lang": "en",
+  "target_locale": "zh-Hans",
+  "schema_version": "1.0"
+}

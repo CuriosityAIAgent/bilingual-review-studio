@@ -7,11 +7,21 @@ drives export), plus `entities`, `validator_results`, `glossary_hits`,
 `neutralization_hits`, `tm_match`, `comments`, `seg_status`, `metrics`,
 `model_run` provenance, `approval`, and the append-only `edit_log` / `handoff_log`.
 
-Produced by [`scripts/export-documents.mjs`](../../scripts/export-documents.mjs).
+## What's here now
 
-> This directory ships with only this README because the corpus lives in the
-> running store, not in the repo. Run the exporter against the environment that
-> holds the data (below) to populate `<doc_id>.json` + `index.json` here.
+**69 documents** exported from the Railway Postgres store (`STORAGE=postgres`),
+one `<doc_id>.json` per document plus `index.json`:
+
+- 58 active, 11 soft-deleted (flagged `deleted: true` in the index)
+- by target locale: **es-419 ×21, zh-Hans ×46, zh-Hant ×2**
+
+Provenance: captured via `SELECT json_agg(doc) FROM brs_documents` from Railway and
+packaged verbatim. The paste contained two renderings of the result; the
+whitespace-faithful copy was kept (the other had double-spaces collapsed by HTML
+rendering). `index.json` records per-doc `content_hash`, counts, and source.
+
+To refresh from the live store, re-run the exporter (below) — it produces the same
+layout automatically.
 
 ## How to export
 
